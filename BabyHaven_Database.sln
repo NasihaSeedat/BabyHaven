@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.33801.447
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BabyHaven_Database", "BabyHaven_Database.csproj", "{2B3F967B-64B4-4BD0-9283-68756824FB08}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2B3F967B-64B4-4BD0-9283-68756824FB08}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2B3F967B-64B4-4BD0-9283-68756824FB08}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2B3F967B-64B4-4BD0-9283-68756824FB08}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2B3F967B-64B4-4BD0-9283-68756824FB08}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {B2123FBA-DBB9-4926-95F8-8F095C010DFD}
+	EndGlobalSection
+EndGlobal
