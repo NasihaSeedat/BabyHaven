@@ -85,7 +85,25 @@
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
     <Content Include="Contact.aspx" />
+    <Content Include="css\bootstrap.min.css" />
+    <Content Include="css\elegant-icons.css" />
+    <Content Include="css\font-awesome.min.css" />
+    <Content Include="css\jquery-ui.min.css" />
+    <Content Include="css\magnific-popup.css" />
+    <Content Include="css\owl.carousel.min.css" />
+    <Content Include="css\slicknav.min.css" />
+    <Content Include="css\style.css" />
     <Content Include="Home.aspx" />
+    <Content Include="js\bootstrap.min.js" />
+    <Content Include="js\jquery-3.3.1.min.js" />
+    <Content Include="js\jquery-ui.min.js" />
+    <Content Include="js\jquery.countdown.min.js" />
+    <Content Include="js\jquery.magnific-popup.min.js" />
+    <Content Include="js\jquery.nicescroll.min.js" />
+    <Content Include="js\jquery.slicknav.js" />
+    <Content Include="js\main.js" />
+    <Content Include="js\mixitup.min.js" />
+    <Content Include="js\owl.carousel.min.js" />
     <Content Include="ProductDetails.aspx" />
     <Content Include="Shop.aspx" />
     <Content Include="Web.config" />

@@ -17,7 +17,7 @@
                                 <div class="accordion" id="accordionExample">
                                     <div class="card">
                                         <div class="card-heading active">
-                                            <a data-toggle="collapse" data-target="#collapseOne">Women</a>
+                                            <a data-toggle="collapse" data-target="#collapseOne">Nursery Items</a>
                                         </div>
                                         <div id="collapseOne" class="collapse show" data-parent="#accordionExample">
                                             <div class="card-body">
@@ -34,7 +34,7 @@
                                     </div>
                                     <div class="card">
                                         <div class="card-heading">
-                                            <a data-toggle="collapse" data-target="#collapseTwo">Men</a>
+                                            <a data-toggle="collapse" data-target="#collapseTwo">Baby Gear</a>
                                         </div>
                                         <div id="collapseTwo" class="collapse" data-parent="#accordionExample">
                                             <div class="card-body">
@@ -51,7 +51,7 @@
                                     </div>
                                     <div class="card">
                                         <div class="card-heading">
-                                            <a data-toggle="collapse" data-target="#collapseThree">Kids</a>
+                                            <a data-toggle="collapse" data-target="#collapseThree">Baby Clothes</a>
                                         </div>
                                         <div id="collapseThree" class="collapse" data-parent="#accordionExample">
                                             <div class="card-body">
@@ -68,7 +68,7 @@
                                     </div>
                                     <div class="card">
                                         <div class="card-heading">
-                                            <a data-toggle="collapse" data-target="#collapseFour">Accessories</a>
+                                            <a data-toggle="collapse" data-target="#collapseFour">Feeding Essentials</a>
                                         </div>
                                         <div id="collapseFour" class="collapse" data-parent="#accordionExample">
                                             <div class="card-body">
@@ -85,9 +85,60 @@
                                     </div>
                                     <div class="card">
                                         <div class="card-heading">
-                                            <a data-toggle="collapse" data-target="#collapseFive">Cosmetic</a>
+                                            <a data-toggle="collapse" data-target="#collapseFive">Health Products</a>
                                         </div>
                                         <div id="collapseFive" class="collapse" data-parent="#accordionExample">
+                                            <div class="card-body">
+                                                <ul>
+                                                    <li><a href="#">Coats</a></li>
+                                                    <li><a href="#">Jackets</a></li>
+                                                    <li><a href="#">Dresses</a></li>
+                                                    <li><a href="#">Shirts</a></li>
+                                                    <li><a href="#">T-shirts</a></li>
+                                                    <li><a href="#">Jeans</a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card">
+                                        <div class="card-heading">
+                                            <a data-toggle="collapse" data-target="#collapseSix">Baby Gear</a>
+                                        </div>
+                                        <div id="collapseSix" class="collapse" data-parent="#accordionExample">
+                                            <div class="card-body">
+                                                <ul>
+                                                    <li><a href="#">Coats</a></li>
+                                                    <li><a href="#">Jackets</a></li>
+                                                    <li><a href="#">Dresses</a></li>
+                                                    <li><a href="#">Shirts</a></li>
+                                                    <li><a href="#">T-shirts</a></li>
+                                                    <li><a href="#">Jeans</a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card">
+                                        <div class="card-heading">
+                                            <a data-toggle="collapse" data-target="#collapseSeven">Baby Gear</a>
+                                        </div>
+                                        <div id="collapseSeven" class="collapse" data-parent="#accordionExample">
+                                            <div class="card-body">
+                                                <ul>
+                                                    <li><a href="#">Coats</a></li>
+                                                    <li><a href="#">Jackets</a></li>
+                                                    <li><a href="#">Dresses</a></li>
+                                                    <li><a href="#">Shirts</a></li>
+                                                    <li><a href="#">T-shirts</a></li>
+                                                    <li><a href="#">Jeans</a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card">
+                                        <div class="card-heading">
+                                            <a data-toggle="collapse" data-target="#collapseEight">Baby Gear</a>
+                                        </div>
+                                        <div id="collapseEight" class="collapse" data-parent="#accordionExample">
                                             <div class="card-body">
                                                 <ul>
                                                     <li><a href="#">Coats</a></li>

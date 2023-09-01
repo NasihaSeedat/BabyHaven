@@ -72,7 +72,6 @@
                         <ul>
                             <li class="active"><a href="Home.aspx">Home</a>
                                 <ul class="dropdown">
-                                    <li><a href="ProductDetails.aspx">Product Details</a></li>
                                     <li><a href="Cart.aspx">Shop Cart</a></li>
                                     <li><a href="Checkout.aspx">Checkout</a></li>
                                 </ul>
@@ -80,7 +79,11 @@
                                 
                             <li><a href="#">Women’s</a></li>
                             <li><a href="#">Men’s</a></li>
-                            <li><a href="Shop.aspx">Shop</a></li>
+                            <li><a href="Shop.aspx">Shop</a>
+                                <ul class="dropdown">
+                                    <li><a href="ProductDetails.aspx">Product Details</a></li>
+                                </ul>
+                            </li>
 
                             <li><a href="Blog.aspx">Blog</a>
                                 <ul class="dropdown">
