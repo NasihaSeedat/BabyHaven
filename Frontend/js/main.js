@@ -223,14 +223,39 @@ Created: Colorib
 		}
 		$button.parent().find('input').val(newVal);
     });
-    
-    /*-------------------
+	
+	/*-------------------
 		Radio Btn
 	--------------------- */
     $(".size__btn label").on('click', function () {
         $(".size__btn label").removeClass('active');
         $(this).addClass('active');
     });
+	
+    // Code to set the "active" class on menu items based on the current page
+	var currentPage = window.location.pathname.toLowerCase();
+	var menuItems = [
+		{ url: "home.aspx", menuItem: $(".header__menu ul li:has(a[href='Home.aspx'])") },
+		{ url: "shop.aspx", menuItem: $(".header__menu ul li:has(a[href='Shop.aspx'])") },
+		{ url: "blog.aspx", menuItem: $(".header__menu ul li:has(a[href='Blog.aspx'])") },
+		{ url: "contact.aspx", menuItem: $(".header__menu ul li:has(a[href='Contact.aspx'])") }
+	];
+
+	for (var i = 0; i < menuItems.length; i++) {
+		if (currentPage.includes(menuItems[i].url)) {
+			menuItems[i].menuItem.addClass("active");
+		}
+	}
+
+	// Handle dropdown links
+	$(".header__menu ul li ul.dropdown li a").on('click', function () {
+		$(".header__menu ul li.active").removeClass("active"); // Remove active class from all main menu items
+		$(this).closest("li").parents("li:first").addClass("active"); // Set active class on the closest parent main menu item
+	});
+
+
+
+
 
 
 })(jQuery);
