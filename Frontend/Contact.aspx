@@ -16,7 +16,7 @@
                             <ul>
                                 <li>
                                     <h6><i class="fa fa-map-marker"></i> Address</h6>
-                                    <p>160 Pennsylvania Ave NW, Washington, Castle, PA 16101-5161</p>
+                                    <p>University of Johannesburg</p>
                                 </li>
                                 <li>
                                     <h6><i class="fa fa-phone"></i> Phone</h6>
@@ -43,7 +43,7 @@
                 <div class="col-lg-6 col-md-6">
                     <div class="contact__map">
                         <iframe
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d48158.305462977965!2d-74.13283844036356!3d41.02757295168286!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c2e440473470d7%3A0xcaf503ca2ee57958!2sSaddle%20River%2C%20NJ%2007458%2C%20USA!5e0!3m2!1sen!2sbd!4v1575917275626!5m2!1sen!2sbd"
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3579.4169594562995!2d28.009124115325353!3d-26.18312028345953!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1e950db9bf071c57%3A0xfb7d187ee11cb674!2s10%20Ditton%20Ave%2C%20Rossmore%2C%20Johannesburg%2C%202092!5e0!3m2!1sen!2sza!4v1630670585321!5m2!1sen!2sza"
                         height="780" style="border:0" allowfullscreen="">
                         </iframe>
                     </div>
