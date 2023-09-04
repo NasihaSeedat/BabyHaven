@@ -24,31 +24,31 @@ namespace Frontend
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
 
         /// <summary>
-        /// Username control.
+        /// firstname control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText Username;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText firstname;
 
         /// <summary>
-        /// Name control.
+        /// lastname control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText Name;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText lastname;
 
         /// <summary>
-        /// Contact control.
+        /// contact control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText Contact;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText contact;
 
         /// <summary>
         /// Email control.
@@ -87,13 +87,13 @@ namespace Frontend
         protected global::System.Web.UI.HtmlControls.HtmlInputPassword ConfirmPass;
 
         /// <summary>
-        /// btn_register control.
+        /// register control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btn_register;
+        protected global::System.Web.UI.WebControls.Button register;
 
         /// <summary>
         /// error control.

@@ -20,6 +20,15 @@ namespace Frontend
             Quantity = quantity;
         }
 
+        public CartItem(string productName, double price)
+        {
+            ProductName = productName;
+
+            // Explicitly convert 'price' from double to decimal
+            Price = (decimal)price;
+        }
+
+
         // You can add other properties or methods as needed.
     }
 

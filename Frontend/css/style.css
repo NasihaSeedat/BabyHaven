@@ -128,7 +128,7 @@ ol {
 	bottom: -4px;
 	height: 2px;
 	width: 70px;
-	background: #ca1515;
+	background: #84B7EE;
 	content: "";
 }
 
@@ -165,13 +165,13 @@ ol {
 	font-weight: 600;
 	padding: 12px 30px 10px;
 	color: #ffffff;
-	background: #ca1515;
+	background: #84B7EE;
 }
 
 .site-btn {
 	font-size: 14px;
 	color: #ffffff;
-	background: #ca1515;
+	background: #84B7EE;
 	font-weight: 600;
 	border: none;
 	text-transform: uppercase;
@@ -412,7 +412,7 @@ ol {
 	bottom: 0;
 	width: 100%;
 	height: 2px;
-	background: #ca1515;
+	background: #84B7EE;
 	content: "";
 	-webkit-transition: all, 0.5s;
 	-o-transition: all, 0.5s;
@@ -511,7 +511,7 @@ ol {
 
 .banner__text span {
 	font-size: 18px;
-	color: #ca1515;
+	color: #84B7EE;
 	text-transform: uppercase;
 }
 
@@ -538,7 +538,7 @@ ol {
 	bottom: 0;
 	height: 2px;
 	width: 100%;
-	background: #ca1515;
+	background: #84B7EE;
 	content: "";
 }
 
@@ -564,7 +564,7 @@ ol {
 }
 
 .banner__slider.owl-carousel .owl-dots button.active {
-	background: #ca1515;
+	background: #84B7EE;
 }
 
 .banner__slider.owl-carousel .owl-dots button:last-child {
@@ -667,7 +667,7 @@ ol {
 	bottom: 0;
 	height: 2px;
 	width: 100%;
-	background: #ca1515;
+	background: #84B7EE;
 	content: "";
 }
 
@@ -700,14 +700,14 @@ ol {
 
 .discount__text__title h2 {
 	font-size: 60px;
-	color: #ca1515;
+	color: #84B7EE;
 	font-family: "Cookie", cursive;
 	line-height: 46px;
 	margin-bottom: 10px;
 }
 
 .discount__text__title h5 {
-	color: #ca1515;
+	color: #84B7EE;
 	font-weight: 700;
 }
 
@@ -763,7 +763,7 @@ ol {
 
 .services__item i {
 	font-size: 36px;
-	color: #ca1515;
+	color: #84B7EE;
 	position: absolute;
 	left: 0;
 	top: 4px;
@@ -933,7 +933,7 @@ ol {
 	color: #666666;
 }
 
-.footer__newslatter form input::-ms-input-placeholder {
+.footer__newslatter form input:-ms-input-placeholder {
 	color: #666666;
 }
 
@@ -981,11 +981,11 @@ ol {
 }
 
 .footer__copyright__text i {
-	color: #ca1515;
+	color: #84B7EE;
 }
 
 .footer__copyright__text a:hover {
-	color: #ca1515;
+	color: #84B7EE;
 }
 
 /*---------------------
@@ -1094,7 +1094,7 @@ ol {
 	bottom: 0;
 	height: 2px;
 	width: 100%;
-	background: #ca1515;
+	background: #84B7EE;
 	content: "";
 }
 
@@ -1132,7 +1132,7 @@ ol {
 	bottom: -4px;
 	height: 2px;
 	width: 100%;
-	background: #ca1515;
+	background: #84B7EE;
 	content: "";
 	opacity: 0;
 }
@@ -1151,11 +1151,11 @@ ol {
 }
 
 .product__item.sale .product__item__pic .label {
-	background: #ca1515;
+	background: #84B7EE;
 }
 
 .product__item.sale .product__item__text .product__price {
-	color: #ca1515;
+	color: #84B7EE;
 }
 
 .product__item__pic {
@@ -1189,7 +1189,7 @@ ol {
 }
 
 .product__item__pic .label.sale {
-	background: #ca1515;
+	background: #84B7EE;
 }
 
 .product__hover {
@@ -1232,7 +1232,7 @@ ol {
 }
 
 .product__hover li:hover a {
-	background: #ca1515;
+	background: #84B7EE;
 }
 
 .product__hover li:hover a span {
@@ -1487,14 +1487,14 @@ ol {
 	height: 14px;
 	width: 14px;
 	border-radius: 50%;
-	background: #ca1515;
+	background: #84B7EE;
 	border: none;
 	outline: none;
 	cursor: pointer;
 }
 
 .filter-range-wrap .price-range .ui-slider-range {
-	background: #ca1515;
+	background: #84B7EE;
 	border-radius: 0;
 }
 
@@ -1532,12 +1532,12 @@ ol {
 
 .sidebar__sizes .size__list label input:checked~.checkmark,
 .sidebar__color .size__list label input:checked~.checkmark {
-	border-color: #ca1515;
+	border-color: #84B7EE;
 }
 
 .sidebar__sizes .size__list label input:checked~.checkmark:after,
 .sidebar__color .size__list label input:checked~.checkmark:after {
-	border-color: #ca1515;
+	border-color: #84B7EE;
 	opacity: 1;
 }
 
@@ -1722,7 +1722,7 @@ ol {
 .product__details__price {
 	font-size: 30px;
 	font-weight: 600;
-	color: #ca1515;
+	color: #84B7EE;
 	margin-bottom: 30px;
 }
 
@@ -1788,7 +1788,7 @@ ol {
 	display: inline-block;
 	font-size: 14px;
 	color: #ffffff;
-	background: #ca1515;
+	background: #84B7EE;
 	font-weight: 600;
 	text-transform: uppercase;
 	padding: 14px 30px 15px;
@@ -1870,11 +1870,11 @@ ol {
 }
 
 .product__details__widget ul li .stock__checkbox label input:checked~.checkmark {
-	border-color: #ca1515;
+	border-color: #84B7EE;
 }
 
 .product__details__widget ul li .stock__checkbox label input:checked~.checkmark:after {
-	border-color: #ca1515;
+	border-color: #84B7EE;
 	opacity: 1;
 }
 
@@ -1978,7 +1978,7 @@ ol {
 }
 
 .product__details__widget ul li .size__btn label.active {
-	color: #ca1515;
+	color: #84B7EE;
 }
 
 .product__details__widget ul li .size__btn label input {
@@ -2130,7 +2130,7 @@ ol {
 
 .shop__cart__table tbody tr .cart__price {
 	font-size: 16px;
-	color: #ca1515;
+	color: #84B7EE;
 	font-weight: 600;
 	width: 190px;
 }
@@ -2157,7 +2157,7 @@ ol {
 
 .shop__cart__table tbody tr .cart__total {
 	font-size: 16px;
-	color: #ca1515;
+	color: #84B7EE;
 	font-weight: 600;
 	width: 150px;
 }
@@ -2199,7 +2199,7 @@ ol {
 }
 
 .cart__btn a span {
-	color: #ca1515;
+	color: #84B7EE;
 	font-size: 14px;
 	margin-right: 5px;
 }
@@ -2241,7 +2241,7 @@ ol {
 	color: #444444;
 }
 
-.discount__content form input::-ms-input-placeholder {
+.discount__content form input:-ms-input-placeholder {
 	color: #444444;
 }
 
@@ -2281,7 +2281,7 @@ ol {
 }
 
 .cart__total__procced ul li span {
-	color: #ca1515;
+	color: #84B7EE;
 	float: right;
 }
 
@@ -2306,19 +2306,59 @@ ol {
 	color: #444444;
 	padding: 14px 0;
 	background: #f5f5f5;
-	border-top: 2px solid #ca1515;
+	border-top: 2px solid #84B7EE;
 	text-align: center;
-	margin-bottom: 50px;
+	margin-bottom: 25px;
+	cursor: pointer; /* Change cursor on hover to indicate it's clickable */
+	transition: background-color 0.3s; /* Add a smooth background color transition on hover */
+}
+
+/* Style the coupon link on hover */
+.coupon__link:hover {
+	background: #84B7EE; /* Change background color to red on hover */
+	color: white; /* Change text color to white on hover */
 }
 
 .coupon__link a {
 	font-size: 14px;
-	color: #444444;
+	color: inherit; /* Inherit text color from the container */
+	text-decoration: none; /* Remove underline from the link */
 }
 
 .coupon__link span {
 	font-size: 14px;
-	color: #ca1515;
+	color: #84B7EE;
+}
+
+.coupon__input {
+	display: none; /* Hidden by default */
+	margin-top: 10px; /* Add spacing to separate it from the previous section */
+}
+
+/* Style the coupon input field */
+.coupon__input input[type="text"] {
+	height: 50px;
+	width: 100%;
+	border: 1px solid #e1e1e1;
+	border-radius: 2px;
+	margin-bottom: 10px;
+	font-size: 14px;
+	padding-left: 20px;
+	color: #666666;
+}
+
+/* Style the Apply button */
+.coupon__input button {
+	font-size: 14px;
+	color: #ffffff;
+	background: #84B7EE;
+	font-weight: 600;
+	border: none;
+	text-transform: uppercase;
+	display: inline-block;
+	padding: 12px 30px;
+	border-radius: 50px;
+	margin-bottom: 20px;
 }
 
 .checkout__form h5 {
@@ -2337,7 +2377,7 @@ ol {
 }
 
 .checkout__form .checkout__form__input p span {
-	color: #ca1515;
+	color: #84B7EE;
 }
 
 .checkout__form .checkout__form__input input {
@@ -2363,7 +2403,7 @@ ol {
 	color: #666666;
 }
 
-.checkout__form .checkout__form__input input::-ms-input-placeholder {
+.checkout__form .checkout__form__input input:-ms-input-placeholder {
 	color: #666666;
 }
 
@@ -2392,11 +2432,11 @@ ol {
 }
 
 .checkout__form .checkout__form__checkbox label input:checked~.checkmark {
-	border-color: #ca1515;
+	border-color: #84B7EE;
 }
 
 .checkout__form .checkout__form__checkbox label input:checked~.checkmark:after {
-	border-color: #ca1515;
+	border-color: #84B7EE;
 	opacity: 1;
 }
 
@@ -2500,7 +2540,7 @@ ol {
 }
 
 .checkout__order__total ul li span {
-	color: #ca1515;
+	color: #84B7EE;
 	float: right;
 }
 
@@ -2525,11 +2565,11 @@ ol {
 }
 
 .checkout__order__widget label input:checked~.checkmark {
-	border-color: #ca1515;
+	border-color: #84B7EE;
 }
 
 .checkout__order__widget label input:checked~.checkmark:after {
-	border-color: #ca1515;
+	border-color: #84B7EE;
 	opacity: 1;
 }
 
@@ -2673,7 +2713,7 @@ ol {
 }
 
 .blog__sidebar__item ul li a:hover {
-	color: #ca1515;
+	color: #84B7EE;
 }
 
 .blog__sidebar__item ul li a:hover span {
@@ -2765,7 +2805,7 @@ ol {
 .blog__details__item__title .tip {
 	font-size: 12px;
 	color: #ffffff;
-	background: #ca1515;
+	background: #84B7EE;
 	text-transform: uppercase;
 	font-weight: 500;
 	display: inline-block;
@@ -2824,7 +2864,7 @@ ol {
 }
 
 .blog__details__quote {
-	border-top: 2px solid #ca1515;
+	border-top: 2px solid #84B7EE;
 	position: relative;
 	padding-top: 22px;
 	margin-bottom: 20px;
@@ -2834,7 +2874,7 @@ ol {
 	height: 30px;
 	width: 30px;
 	font-size: 18px;
-	color: #ca1515;
+	color: #84B7EE;
 	background: #ffffff;
 	position: absolute;
 	left: 0;
@@ -2932,7 +2972,7 @@ ol {
 	bottom: -5px;
 	height: 1px;
 	width: 100%;
-	background: #ca1515;
+	background: #84B7EE;
 	content: "";
 }
 
@@ -2987,7 +3027,7 @@ ol {
 
 .blog__comment__item__text ul li i {
 	font-size: 14px;
-	color: #ca1515;
+	color: #84B7EE;
 	margin-right: 5px;
 }
 
@@ -3030,7 +3070,7 @@ ol {
 
 .contact__address ul li h6 i {
 	font-size: 16px;
-	color: #ca1515;
+	color: #84B7EE;
 	margin-right: 5px;
 }
 
@@ -3095,7 +3135,7 @@ ol {
 	color: #444444;
 }
 
-.contact__form form input::-ms-input-placeholder {
+.contact__form form input:-ms-input-placeholder {
 	color: #444444;
 }
 
@@ -3128,7 +3168,7 @@ ol {
 	color: #444444;
 }
 
-.contact__form form textarea::-ms-input-placeholder {
+.contact__form form textarea:-ms-input-placeholder {
 	color: #444444;
 }
 
@@ -3142,6 +3182,194 @@ ol {
 
 .contact__map iframe {
 	width: 100%;
+}
+
+/*---------------------
+  Login
+-----------------------*/
+
+.login {
+	padding-top: 70px;
+	padding-bottom: 90px;
+}
+
+.login__form h5 {
+	color: #111111;
+	font-weight: 600;
+	text-transform: uppercase;
+	border-bottom: 1px solid #e1e1e1;
+	padding-bottom: 20px;
+	margin-bottom: 25px;
+}
+
+.login__form .login__form p {
+	color: #444444;
+	font-weight: 500;
+	margin-bottom: 10px;
+}
+
+.login__form .login__form p span {
+	color: #84B7EE;
+}
+
+.login__form .login__form input {
+	height: 50px;
+	width: 100%;
+	border: 1px solid #e1e1e1;
+	border-radius: 2px;
+	margin-bottom: 25px;
+	font-size: 14px;
+	padding-left: 20px;
+	color: #666666;
+}
+
+.single-input {
+	width: 100%;
+	padding: 10px;
+	border: 1px solid #ccc;
+	border-radius: 5px;
+	margin-bottom: 25px;
+}
+
+.login__button {
+	font-size: 14px;
+	color: #ffffff;
+	background: #84B7EE;
+	font-weight: 600;
+	border: none;
+	text-transform: uppercase;
+	display: inline-block;
+	padding: 6px 30px;
+	border-radius: 50px;
+	margin-bottom: 20px;
+	margin-top: 20px;
+}
+
+.login__error {
+	color: #f00;
+	font-weight: bold;
+}
+
+.registration__link {
+	font-size: 14px;
+	color: #444444;
+	padding: 14px 0;
+	background: #f5f5f5;
+	border-top: 2px solid #84B7EE;
+	text-align: center;
+	margin-bottom: 25px;
+	cursor: pointer; /* Change cursor on hover to indicate it's clickable */
+	transition: background-color 0.3s; /* Add a smooth background color transition on hover */
+}
+
+.registration__link:hover {
+	background: #84B7EE; /* Change background color to blue on hover */
+	color: white; /* Change text color to white on hover */
+}
+
+.registration__link a {
+	font-size: 14px;
+	color: inherit; /* Inherit text color from the container */
+	text-decoration: none; /* Remove underline from the link */
+}
+
+.registration__link span {
+	font-size: 14px;
+	color: #84B7EE;
+}
+
+/*---------------------
+          Register
+-----------------------*/
+
+.register {
+	padding-top: 70px;
+	padding-bottom: 90px;
+}
+
+.register__form h5 {
+	color: #111111;
+	font-weight: 600;
+	text-transform: uppercase;
+	border-bottom: 1px solid #e1e1e1;
+	padding-bottom: 20px;
+	margin-bottom: 25px;
+}
+
+.register__form .register__form p {
+	color: #444444;
+	font-weight: 500;
+	margin-bottom: 10px;
+}
+
+.register__form .register__form p span {
+	color: #84B7EE;
+}
+
+.register__form .register__form input {
+	height: 50px;
+	width: 100%;
+	border: 1px solid #e1e1e1;
+	border-radius: 2px;
+	margin-bottom: 25px;
+	font-size: 14px;
+	padding-left: 20px;
+	color: #666666;
+}
+
+.single-input {
+	width: 100%;
+	padding: 10px;
+	border: 1px solid #ccc;
+	border-radius: 5px;
+	margin-bottom: 25px;
+}
+
+.register__button {
+	font-size: 14px;
+	color: #ffffff;
+	background: #84B7EE;
+	font-weight: 600;
+	border: none;
+	text-transform: uppercase;
+	display: inline-block;
+	padding: 6px 30px;
+	border-radius: 50px;
+	margin-bottom: 20px;
+	margin-top: 20px;
+}
+
+register__error {
+	color: #f00;
+	font-weight: bold;
+}
+
+.login__link {
+	font-size: 14px;
+	color: #444444;
+	padding: 14px 0;
+	background: #f5f5f5;
+	border-top: 2px solid #84B7EE;
+	text-align: center;
+	margin-bottom: 25px;
+	cursor: pointer; /* Change cursor on hover to indicate it's clickable */
+	transition: background-color 0.3s; /* Add a smooth background color transition on hover */
+}
+
+.login__link:hover {
+	background: #84B7EE; /* Change background color to red on hover */
+	color: white; /* Change text color to white on hover */
+}
+
+.login__link a {
+	font-size: 14px;
+	color: inherit; /* Inherit text color from the container */
+	text-decoration: none; /* Remove underline from the link */
+}
+
+.login__link span {
+	font-size: 14px;
+	color: #84B7EE;
 }
 
 /*--------------------------------- Responsive Media Quaries -----------------------------*/

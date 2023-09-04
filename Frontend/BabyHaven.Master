@@ -192,8 +192,7 @@
                         <div class="footer__logo">
                             <a href="Home.aspx"><img src="img/logo.png" alt=""></a>
                         </div>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
-                        cilisis.</p>
+                        <p>BabyHaven, catering for your baby's needs.</p>
                         <div class="footer__payment">
                             <a href="#"><img src="img/payment/payment-1.png" alt=""></a>
                             <a href="#"><img src="img/payment/payment-2.png" alt=""></a>
@@ -208,9 +207,8 @@
                         <h6>Quick links</h6>
                         <ul>
                             <li><a href="#">About</a></li>
-                            <li><a href="#">Blogs</a></li>
-                            <li><a href="#">Contact</a></li>
-                            <li><a href="#">FAQ</a></li>
+                            <li><a href="Blog.aspx">Blogs</a></li>
+                            <li><a href="Contact.aspx">Contact</a></li>
                         </ul>
                     </div>
                 </div>
