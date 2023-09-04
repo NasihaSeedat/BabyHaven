@@ -73,13 +73,29 @@
     <Content Include="BlogDetails.aspx" />
     <Content Include="Cart.aspx" />
     <Content Include="Checkout.aspx" />
-    <Content Include="Connected Services\BackendReference\Frontend.BackendReference.CompositeType.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Content>
+    <None Include="Connected Services\BackendReference\BabyHavenService.disco" />
     <Content Include="BabyHaven.Master" />
-    <None Include="Connected Services\BackendReference\Service1.disco" />
+    <None Include="Connected Services\BackendReference\BabyHavenService.wsdl" />
+    <None Include="Connected Services\BackendReference\BabyHavenService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\BackendReference\BabyHavenService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\BackendReference\BabyHavenService2.xsd">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Connected Services\BackendReference\configuration91.svcinfo" />
     <None Include="Connected Services\BackendReference\configuration.svcinfo" />
+    <Content Include="Connected Services\BackendReference\Frontend.BackendReference.Admin.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\BackendReference\Frontend.BackendReference.Client.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\BackendReference\Frontend.BackendReference.User_Table.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
     <None Include="Connected Services\BackendReference\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
@@ -159,6 +175,7 @@
     <Compile Include="Contact.aspx.designer.cs">
       <DependentUpon>Contact.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Hash.cs" />
     <Compile Include="Home.aspx.cs">
       <DependentUpon>Home.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -197,16 +214,6 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Connected Services\BackendReference\Service1.wsdl" />
-    <None Include="Connected Services\BackendReference\Service1.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Connected Services\BackendReference\Service11.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Connected Services\BackendReference\Service12.xsd">
-      <SubType>Designer</SubType>
-    </None>
     <None Include="packages.config" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>

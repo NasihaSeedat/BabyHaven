@@ -11,9 +11,27 @@ namespace BabyHaven_Database
     [ServiceContract]
     public interface IBabyHavenService
     {
+        //getting user
         [OperationContract]
         int Login(string email, string password);
 
+
+        //getting the user from the table
+        [OperationContract]
+        User_Table GetUser(int id);
+
+
+        //getting email
+        [OperationContract]
+        User_Table GetEmail(string email, int id);
+
+        //getting admin
+        [OperationContract]
+        Admin GetAdmin(int id);
+
+        //getting client
+        [OperationContract]
+        Client GetClient(int id);
 
         [OperationContract]
         string Register(string email, string password, string name, string surname, string phoneno, string address, int usetype = 1);

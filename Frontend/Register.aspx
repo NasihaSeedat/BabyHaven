@@ -44,6 +44,15 @@
 
                                     <div class="col-lg-12">
                                         <div class="register__form__input">
+
+                                            <p>Address <span>*</span></p>
+                                            <input type="text" name="address1" class="single-input" runat="server" id="addressUser">
+                                        </div>
+                                    </div>
+
+                                    <div class="col-lg-12">
+                                        <div class="register__form__input">
+
                                             <p>Password <span>*</span></p>
                                             <input type="Password" name="last_name" class="single-input" runat="server" id="Password">
                                         </div>
@@ -59,7 +68,9 @@
                                 </div>
 
                                 <div class="register__button">
-                                    <asp:Button id="register" class="site-btn" runat="server" Text="Register"/>
+
+                                    <asp:Button id="register" class="site-btn" runat="server" Text="Register" OnClick="Register_Click"/>
+
                                 </div>
 
                                 <div class="register__error">
@@ -71,13 +82,18 @@
                                     <a href="Login.aspx">Already registered? Login here.</a>
                                 </div>
 
+
+                        
+                            </div>
+
+
                         
                             </div>
 
                         </div>
                     </div>
                 </div>
-            </div>
+            
         </form>
     </section>
 

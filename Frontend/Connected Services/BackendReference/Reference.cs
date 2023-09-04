@@ -15,18 +15,54 @@ namespace Frontend.BackendReference {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="CompositeType", Namespace="http://schemas.datacontract.org/2004/07/BabyHaven_Database")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="User_Table", Namespace="http://schemas.datacontract.org/2004/07/BabyHaven_Database")]
     [System.SerializableAttribute()]
-    public partial class CompositeType : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+    public partial class User_Table : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
         [System.NonSerializedAttribute()]
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private bool BoolValueField;
+        private string AddressField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string StringValueField;
+        private Frontend.BackendReference.Admin AdminField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private Frontend.BackendReference.Cart[] CartsField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private Frontend.BackendReference.Client ClientField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private Frontend.BackendReference.Custom_Prod[] Custom_ProdsField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string EmailField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private Frontend.BackendReference.HackFeedback[] HackFeedbacksField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string NameField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string PasswordField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string Phone_NumberField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.DateTime Register_DateField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string SurnameField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int UserTypeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int User_IdField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
@@ -39,27 +75,1167 @@ namespace Frontend.BackendReference {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public bool BoolValue {
+        public string Address {
             get {
-                return this.BoolValueField;
+                return this.AddressField;
             }
             set {
-                if ((this.BoolValueField.Equals(value) != true)) {
-                    this.BoolValueField = value;
-                    this.RaisePropertyChanged("BoolValue");
+                if ((object.ReferenceEquals(this.AddressField, value) != true)) {
+                    this.AddressField = value;
+                    this.RaisePropertyChanged("Address");
                 }
             }
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public string StringValue {
+        public Frontend.BackendReference.Admin Admin {
             get {
-                return this.StringValueField;
+                return this.AdminField;
             }
             set {
-                if ((object.ReferenceEquals(this.StringValueField, value) != true)) {
-                    this.StringValueField = value;
-                    this.RaisePropertyChanged("StringValue");
+                if ((object.ReferenceEquals(this.AdminField, value) != true)) {
+                    this.AdminField = value;
+                    this.RaisePropertyChanged("Admin");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public Frontend.BackendReference.Cart[] Carts {
+            get {
+                return this.CartsField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.CartsField, value) != true)) {
+                    this.CartsField = value;
+                    this.RaisePropertyChanged("Carts");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public Frontend.BackendReference.Client Client {
+            get {
+                return this.ClientField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ClientField, value) != true)) {
+                    this.ClientField = value;
+                    this.RaisePropertyChanged("Client");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public Frontend.BackendReference.Custom_Prod[] Custom_Prods {
+            get {
+                return this.Custom_ProdsField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.Custom_ProdsField, value) != true)) {
+                    this.Custom_ProdsField = value;
+                    this.RaisePropertyChanged("Custom_Prods");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Email {
+            get {
+                return this.EmailField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.EmailField, value) != true)) {
+                    this.EmailField = value;
+                    this.RaisePropertyChanged("Email");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public Frontend.BackendReference.HackFeedback[] HackFeedbacks {
+            get {
+                return this.HackFeedbacksField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.HackFeedbacksField, value) != true)) {
+                    this.HackFeedbacksField = value;
+                    this.RaisePropertyChanged("HackFeedbacks");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Name {
+            get {
+                return this.NameField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.NameField, value) != true)) {
+                    this.NameField = value;
+                    this.RaisePropertyChanged("Name");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Password {
+            get {
+                return this.PasswordField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.PasswordField, value) != true)) {
+                    this.PasswordField = value;
+                    this.RaisePropertyChanged("Password");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Phone_Number {
+            get {
+                return this.Phone_NumberField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.Phone_NumberField, value) != true)) {
+                    this.Phone_NumberField = value;
+                    this.RaisePropertyChanged("Phone_Number");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.DateTime Register_Date {
+            get {
+                return this.Register_DateField;
+            }
+            set {
+                if ((this.Register_DateField.Equals(value) != true)) {
+                    this.Register_DateField = value;
+                    this.RaisePropertyChanged("Register_Date");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Surname {
+            get {
+                return this.SurnameField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.SurnameField, value) != true)) {
+                    this.SurnameField = value;
+                    this.RaisePropertyChanged("Surname");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int UserType {
+            get {
+                return this.UserTypeField;
+            }
+            set {
+                if ((this.UserTypeField.Equals(value) != true)) {
+                    this.UserTypeField = value;
+                    this.RaisePropertyChanged("UserType");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int User_Id {
+            get {
+                return this.User_IdField;
+            }
+            set {
+                if ((this.User_IdField.Equals(value) != true)) {
+                    this.User_IdField = value;
+                    this.RaisePropertyChanged("User_Id");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Admin", Namespace="http://schemas.datacontract.org/2004/07/BabyHaven_Database")]
+    [System.SerializableAttribute()]
+    public partial class Admin : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string SurnameField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int U_IdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private Frontend.BackendReference.User_Table User_TableField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Surname {
+            get {
+                return this.SurnameField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.SurnameField, value) != true)) {
+                    this.SurnameField = value;
+                    this.RaisePropertyChanged("Surname");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int U_Id {
+            get {
+                return this.U_IdField;
+            }
+            set {
+                if ((this.U_IdField.Equals(value) != true)) {
+                    this.U_IdField = value;
+                    this.RaisePropertyChanged("U_Id");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public Frontend.BackendReference.User_Table User_Table {
+            get {
+                return this.User_TableField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.User_TableField, value) != true)) {
+                    this.User_TableField = value;
+                    this.RaisePropertyChanged("User_Table");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Client", Namespace="http://schemas.datacontract.org/2004/07/BabyHaven_Database")]
+    [System.SerializableAttribute()]
+    public partial class Client : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string EmailField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int U_IdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private Frontend.BackendReference.User_Table User_TableField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Email {
+            get {
+                return this.EmailField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.EmailField, value) != true)) {
+                    this.EmailField = value;
+                    this.RaisePropertyChanged("Email");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int U_Id {
+            get {
+                return this.U_IdField;
+            }
+            set {
+                if ((this.U_IdField.Equals(value) != true)) {
+                    this.U_IdField = value;
+                    this.RaisePropertyChanged("U_Id");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public Frontend.BackendReference.User_Table User_Table {
+            get {
+                return this.User_TableField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.User_TableField, value) != true)) {
+                    this.User_TableField = value;
+                    this.RaisePropertyChanged("User_Table");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Cart", Namespace="http://schemas.datacontract.org/2004/07/BabyHaven_Database")]
+    [System.SerializableAttribute()]
+    public partial class Cart : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string Cart_PriceField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int Cart_QuantityField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int P_IdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private Frontend.BackendReference.Product ProductField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int U_IdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private Frontend.BackendReference.User_Table User_TableField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Cart_Price {
+            get {
+                return this.Cart_PriceField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.Cart_PriceField, value) != true)) {
+                    this.Cart_PriceField = value;
+                    this.RaisePropertyChanged("Cart_Price");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int Cart_Quantity {
+            get {
+                return this.Cart_QuantityField;
+            }
+            set {
+                if ((this.Cart_QuantityField.Equals(value) != true)) {
+                    this.Cart_QuantityField = value;
+                    this.RaisePropertyChanged("Cart_Quantity");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int P_Id {
+            get {
+                return this.P_IdField;
+            }
+            set {
+                if ((this.P_IdField.Equals(value) != true)) {
+                    this.P_IdField = value;
+                    this.RaisePropertyChanged("P_Id");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public Frontend.BackendReference.Product Product {
+            get {
+                return this.ProductField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ProductField, value) != true)) {
+                    this.ProductField = value;
+                    this.RaisePropertyChanged("Product");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int U_Id {
+            get {
+                return this.U_IdField;
+            }
+            set {
+                if ((this.U_IdField.Equals(value) != true)) {
+                    this.U_IdField = value;
+                    this.RaisePropertyChanged("U_Id");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public Frontend.BackendReference.User_Table User_Table {
+            get {
+                return this.User_TableField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.User_TableField, value) != true)) {
+                    this.User_TableField = value;
+                    this.RaisePropertyChanged("User_Table");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Custom_Prod", Namespace="http://schemas.datacontract.org/2004/07/BabyHaven_Database")]
+    [System.SerializableAttribute()]
+    public partial class Custom_Prod : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int CustProd_IdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string CustProd_ImageField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int O_IdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private Frontend.BackendReference.Order_Table Order_TableField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int U_IdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private Frontend.BackendReference.User_Table User_TableField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int CustProd_Id {
+            get {
+                return this.CustProd_IdField;
+            }
+            set {
+                if ((this.CustProd_IdField.Equals(value) != true)) {
+                    this.CustProd_IdField = value;
+                    this.RaisePropertyChanged("CustProd_Id");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string CustProd_Image {
+            get {
+                return this.CustProd_ImageField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.CustProd_ImageField, value) != true)) {
+                    this.CustProd_ImageField = value;
+                    this.RaisePropertyChanged("CustProd_Image");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int O_Id {
+            get {
+                return this.O_IdField;
+            }
+            set {
+                if ((this.O_IdField.Equals(value) != true)) {
+                    this.O_IdField = value;
+                    this.RaisePropertyChanged("O_Id");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public Frontend.BackendReference.Order_Table Order_Table {
+            get {
+                return this.Order_TableField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.Order_TableField, value) != true)) {
+                    this.Order_TableField = value;
+                    this.RaisePropertyChanged("Order_Table");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int U_Id {
+            get {
+                return this.U_IdField;
+            }
+            set {
+                if ((this.U_IdField.Equals(value) != true)) {
+                    this.U_IdField = value;
+                    this.RaisePropertyChanged("U_Id");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public Frontend.BackendReference.User_Table User_Table {
+            get {
+                return this.User_TableField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.User_TableField, value) != true)) {
+                    this.User_TableField = value;
+                    this.RaisePropertyChanged("User_Table");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="HackFeedback", Namespace="http://schemas.datacontract.org/2004/07/BabyHaven_Database")]
+    [System.SerializableAttribute()]
+    public partial class HackFeedback : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string HF_HackField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int HF_IdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int U_IdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private Frontend.BackendReference.User_Table User_TableField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string HF_Hack {
+            get {
+                return this.HF_HackField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.HF_HackField, value) != true)) {
+                    this.HF_HackField = value;
+                    this.RaisePropertyChanged("HF_Hack");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int HF_Id {
+            get {
+                return this.HF_IdField;
+            }
+            set {
+                if ((this.HF_IdField.Equals(value) != true)) {
+                    this.HF_IdField = value;
+                    this.RaisePropertyChanged("HF_Id");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int U_Id {
+            get {
+                return this.U_IdField;
+            }
+            set {
+                if ((this.U_IdField.Equals(value) != true)) {
+                    this.U_IdField = value;
+                    this.RaisePropertyChanged("U_Id");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public Frontend.BackendReference.User_Table User_Table {
+            get {
+                return this.User_TableField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.User_TableField, value) != true)) {
+                    this.User_TableField = value;
+                    this.RaisePropertyChanged("User_Table");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Product", Namespace="http://schemas.datacontract.org/2004/07/BabyHaven_Database")]
+    [System.SerializableAttribute()]
+    public partial class Product : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private Frontend.BackendReference.Cart[] CartsField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string P_CategoryField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.DateTime P_DateCreatedField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string P_DescriptionField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string P_ImageField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string P_NameField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private decimal P_PriceField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int P_QuantityField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int Product_IdField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public Frontend.BackendReference.Cart[] Carts {
+            get {
+                return this.CartsField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.CartsField, value) != true)) {
+                    this.CartsField = value;
+                    this.RaisePropertyChanged("Carts");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string P_Category {
+            get {
+                return this.P_CategoryField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.P_CategoryField, value) != true)) {
+                    this.P_CategoryField = value;
+                    this.RaisePropertyChanged("P_Category");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.DateTime P_DateCreated {
+            get {
+                return this.P_DateCreatedField;
+            }
+            set {
+                if ((this.P_DateCreatedField.Equals(value) != true)) {
+                    this.P_DateCreatedField = value;
+                    this.RaisePropertyChanged("P_DateCreated");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string P_Description {
+            get {
+                return this.P_DescriptionField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.P_DescriptionField, value) != true)) {
+                    this.P_DescriptionField = value;
+                    this.RaisePropertyChanged("P_Description");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string P_Image {
+            get {
+                return this.P_ImageField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.P_ImageField, value) != true)) {
+                    this.P_ImageField = value;
+                    this.RaisePropertyChanged("P_Image");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string P_Name {
+            get {
+                return this.P_NameField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.P_NameField, value) != true)) {
+                    this.P_NameField = value;
+                    this.RaisePropertyChanged("P_Name");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public decimal P_Price {
+            get {
+                return this.P_PriceField;
+            }
+            set {
+                if ((this.P_PriceField.Equals(value) != true)) {
+                    this.P_PriceField = value;
+                    this.RaisePropertyChanged("P_Price");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int P_Quantity {
+            get {
+                return this.P_QuantityField;
+            }
+            set {
+                if ((this.P_QuantityField.Equals(value) != true)) {
+                    this.P_QuantityField = value;
+                    this.RaisePropertyChanged("P_Quantity");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int Product_Id {
+            get {
+                return this.Product_IdField;
+            }
+            set {
+                if ((this.Product_IdField.Equals(value) != true)) {
+                    this.Product_IdField = value;
+                    this.RaisePropertyChanged("Product_Id");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Order_Table", Namespace="http://schemas.datacontract.org/2004/07/BabyHaven_Database")]
+    [System.SerializableAttribute()]
+    public partial class Order_Table : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private Frontend.BackendReference.Custom_Prod[] Custom_ProdsField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.DateTime O_DateField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private decimal O_DiscountField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int O_IdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string O_QuantityField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private decimal O_ShippingField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private decimal O_TaxField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private decimal O_TotalField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private Frontend.BackendReference.Payment[] PaymentsField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public Frontend.BackendReference.Custom_Prod[] Custom_Prods {
+            get {
+                return this.Custom_ProdsField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.Custom_ProdsField, value) != true)) {
+                    this.Custom_ProdsField = value;
+                    this.RaisePropertyChanged("Custom_Prods");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.DateTime O_Date {
+            get {
+                return this.O_DateField;
+            }
+            set {
+                if ((this.O_DateField.Equals(value) != true)) {
+                    this.O_DateField = value;
+                    this.RaisePropertyChanged("O_Date");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public decimal O_Discount {
+            get {
+                return this.O_DiscountField;
+            }
+            set {
+                if ((this.O_DiscountField.Equals(value) != true)) {
+                    this.O_DiscountField = value;
+                    this.RaisePropertyChanged("O_Discount");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int O_Id {
+            get {
+                return this.O_IdField;
+            }
+            set {
+                if ((this.O_IdField.Equals(value) != true)) {
+                    this.O_IdField = value;
+                    this.RaisePropertyChanged("O_Id");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string O_Quantity {
+            get {
+                return this.O_QuantityField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.O_QuantityField, value) != true)) {
+                    this.O_QuantityField = value;
+                    this.RaisePropertyChanged("O_Quantity");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public decimal O_Shipping {
+            get {
+                return this.O_ShippingField;
+            }
+            set {
+                if ((this.O_ShippingField.Equals(value) != true)) {
+                    this.O_ShippingField = value;
+                    this.RaisePropertyChanged("O_Shipping");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public decimal O_Tax {
+            get {
+                return this.O_TaxField;
+            }
+            set {
+                if ((this.O_TaxField.Equals(value) != true)) {
+                    this.O_TaxField = value;
+                    this.RaisePropertyChanged("O_Tax");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public decimal O_Total {
+            get {
+                return this.O_TotalField;
+            }
+            set {
+                if ((this.O_TotalField.Equals(value) != true)) {
+                    this.O_TotalField = value;
+                    this.RaisePropertyChanged("O_Total");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public Frontend.BackendReference.Payment[] Payments {
+            get {
+                return this.PaymentsField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.PaymentsField, value) != true)) {
+                    this.PaymentsField = value;
+                    this.RaisePropertyChanged("Payments");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Payment", Namespace="http://schemas.datacontract.org/2004/07/BabyHaven_Database")]
+    [System.SerializableAttribute()]
+    public partial class Payment : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string CVVField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string CardHolder_NameField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string Card_NumField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string Expiry_dateField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int O_IdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private Frontend.BackendReference.Order_Table Order_TableField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int Pay_IdField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string CVV {
+            get {
+                return this.CVVField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.CVVField, value) != true)) {
+                    this.CVVField = value;
+                    this.RaisePropertyChanged("CVV");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string CardHolder_Name {
+            get {
+                return this.CardHolder_NameField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.CardHolder_NameField, value) != true)) {
+                    this.CardHolder_NameField = value;
+                    this.RaisePropertyChanged("CardHolder_Name");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Card_Num {
+            get {
+                return this.Card_NumField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.Card_NumField, value) != true)) {
+                    this.Card_NumField = value;
+                    this.RaisePropertyChanged("Card_Num");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Expiry_date {
+            get {
+                return this.Expiry_dateField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.Expiry_dateField, value) != true)) {
+                    this.Expiry_dateField = value;
+                    this.RaisePropertyChanged("Expiry_date");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int O_Id {
+            get {
+                return this.O_IdField;
+            }
+            set {
+                if ((this.O_IdField.Equals(value) != true)) {
+                    this.O_IdField = value;
+                    this.RaisePropertyChanged("O_Id");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public Frontend.BackendReference.Order_Table Order_Table {
+            get {
+                return this.Order_TableField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.Order_TableField, value) != true)) {
+                    this.Order_TableField = value;
+                    this.RaisePropertyChanged("Order_Table");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int Pay_Id {
+            get {
+                return this.Pay_IdField;
+            }
+            set {
+                if ((this.Pay_IdField.Equals(value) != true)) {
+                    this.Pay_IdField = value;
+                    this.RaisePropertyChanged("Pay_Id");
                 }
             }
         }
@@ -75,63 +1251,119 @@ namespace Frontend.BackendReference {
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="BackendReference.IService1")]
-    public interface IService1 {
+    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="BackendReference.IBabyHavenService")]
+    public interface IBabyHavenService {
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetData", ReplyAction="http://tempuri.org/IService1/GetDataResponse")]
-        string GetData(int value);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBabyHavenService/Login", ReplyAction="http://tempuri.org/IBabyHavenService/LoginResponse")]
+        int Login(string email, string password);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetData", ReplyAction="http://tempuri.org/IService1/GetDataResponse")]
-        System.Threading.Tasks.Task<string> GetDataAsync(int value);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBabyHavenService/Login", ReplyAction="http://tempuri.org/IBabyHavenService/LoginResponse")]
+        System.Threading.Tasks.Task<int> LoginAsync(string email, string password);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetDataUsingDataContract", ReplyAction="http://tempuri.org/IService1/GetDataUsingDataContractResponse")]
-        Frontend.BackendReference.CompositeType GetDataUsingDataContract(Frontend.BackendReference.CompositeType composite);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBabyHavenService/GetUser", ReplyAction="http://tempuri.org/IBabyHavenService/GetUserResponse")]
+        Frontend.BackendReference.User_Table GetUser(int id);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetDataUsingDataContract", ReplyAction="http://tempuri.org/IService1/GetDataUsingDataContractResponse")]
-        System.Threading.Tasks.Task<Frontend.BackendReference.CompositeType> GetDataUsingDataContractAsync(Frontend.BackendReference.CompositeType composite);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBabyHavenService/GetUser", ReplyAction="http://tempuri.org/IBabyHavenService/GetUserResponse")]
+        System.Threading.Tasks.Task<Frontend.BackendReference.User_Table> GetUserAsync(int id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBabyHavenService/GetEmail", ReplyAction="http://tempuri.org/IBabyHavenService/GetEmailResponse")]
+        Frontend.BackendReference.User_Table GetEmail(string email, int id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBabyHavenService/GetEmail", ReplyAction="http://tempuri.org/IBabyHavenService/GetEmailResponse")]
+        System.Threading.Tasks.Task<Frontend.BackendReference.User_Table> GetEmailAsync(string email, int id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBabyHavenService/GetAdmin", ReplyAction="http://tempuri.org/IBabyHavenService/GetAdminResponse")]
+        Frontend.BackendReference.Admin GetAdmin(int id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBabyHavenService/GetAdmin", ReplyAction="http://tempuri.org/IBabyHavenService/GetAdminResponse")]
+        System.Threading.Tasks.Task<Frontend.BackendReference.Admin> GetAdminAsync(int id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBabyHavenService/GetClient", ReplyAction="http://tempuri.org/IBabyHavenService/GetClientResponse")]
+        Frontend.BackendReference.Client GetClient(int id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBabyHavenService/GetClient", ReplyAction="http://tempuri.org/IBabyHavenService/GetClientResponse")]
+        System.Threading.Tasks.Task<Frontend.BackendReference.Client> GetClientAsync(int id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBabyHavenService/Register", ReplyAction="http://tempuri.org/IBabyHavenService/RegisterResponse")]
+        string Register(string email, string password, string name, string surname, string phoneno, string address, int usetype);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBabyHavenService/Register", ReplyAction="http://tempuri.org/IBabyHavenService/RegisterResponse")]
+        System.Threading.Tasks.Task<string> RegisterAsync(string email, string password, string name, string surname, string phoneno, string address, int usetype);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public interface IService1Channel : Frontend.BackendReference.IService1, System.ServiceModel.IClientChannel {
+    public interface IBabyHavenServiceChannel : Frontend.BackendReference.IBabyHavenService, System.ServiceModel.IClientChannel {
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public partial class Service1Client : System.ServiceModel.ClientBase<Frontend.BackendReference.IService1>, Frontend.BackendReference.IService1 {
+    public partial class BabyHavenServiceClient : System.ServiceModel.ClientBase<Frontend.BackendReference.IBabyHavenService>, Frontend.BackendReference.IBabyHavenService {
         
-        public Service1Client() {
+        public BabyHavenServiceClient() {
         }
         
-        public Service1Client(string endpointConfigurationName) : 
+        public BabyHavenServiceClient(string endpointConfigurationName) : 
                 base(endpointConfigurationName) {
         }
         
-        public Service1Client(string endpointConfigurationName, string remoteAddress) : 
+        public BabyHavenServiceClient(string endpointConfigurationName, string remoteAddress) : 
                 base(endpointConfigurationName, remoteAddress) {
         }
         
-        public Service1Client(string endpointConfigurationName, System.ServiceModel.EndpointAddress remoteAddress) : 
+        public BabyHavenServiceClient(string endpointConfigurationName, System.ServiceModel.EndpointAddress remoteAddress) : 
                 base(endpointConfigurationName, remoteAddress) {
         }
         
-        public Service1Client(System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) : 
+        public BabyHavenServiceClient(System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) : 
                 base(binding, remoteAddress) {
         }
         
-        public string GetData(int value) {
-            return base.Channel.GetData(value);
+        public int Login(string email, string password) {
+            return base.Channel.Login(email, password);
         }
         
-        public System.Threading.Tasks.Task<string> GetDataAsync(int value) {
-            return base.Channel.GetDataAsync(value);
+        public System.Threading.Tasks.Task<int> LoginAsync(string email, string password) {
+            return base.Channel.LoginAsync(email, password);
         }
         
-        public Frontend.BackendReference.CompositeType GetDataUsingDataContract(Frontend.BackendReference.CompositeType composite) {
-            return base.Channel.GetDataUsingDataContract(composite);
+        public Frontend.BackendReference.User_Table GetUser(int id) {
+            return base.Channel.GetUser(id);
         }
         
-        public System.Threading.Tasks.Task<Frontend.BackendReference.CompositeType> GetDataUsingDataContractAsync(Frontend.BackendReference.CompositeType composite) {
-            return base.Channel.GetDataUsingDataContractAsync(composite);
+        public System.Threading.Tasks.Task<Frontend.BackendReference.User_Table> GetUserAsync(int id) {
+            return base.Channel.GetUserAsync(id);
+        }
+        
+        public Frontend.BackendReference.User_Table GetEmail(string email, int id) {
+            return base.Channel.GetEmail(email, id);
+        }
+        
+        public System.Threading.Tasks.Task<Frontend.BackendReference.User_Table> GetEmailAsync(string email, int id) {
+            return base.Channel.GetEmailAsync(email, id);
+        }
+        
+        public Frontend.BackendReference.Admin GetAdmin(int id) {
+            return base.Channel.GetAdmin(id);
+        }
+        
+        public System.Threading.Tasks.Task<Frontend.BackendReference.Admin> GetAdminAsync(int id) {
+            return base.Channel.GetAdminAsync(id);
+        }
+        
+        public Frontend.BackendReference.Client GetClient(int id) {
+            return base.Channel.GetClient(id);
+        }
+        
+        public System.Threading.Tasks.Task<Frontend.BackendReference.Client> GetClientAsync(int id) {
+            return base.Channel.GetClientAsync(id);
+        }
+        
+        public string Register(string email, string password, string name, string surname, string phoneno, string address, int usetype) {
+            return base.Channel.Register(email, password, name, surname, phoneno, address, usetype);
+        }
+        
+        public System.Threading.Tasks.Task<string> RegisterAsync(string email, string password, string name, string surname, string phoneno, string address, int usetype) {
+            return base.Channel.RegisterAsync(email, password, name, surname, phoneno, address, usetype);
         }
     }
 }

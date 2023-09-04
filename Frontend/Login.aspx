@@ -22,6 +22,7 @@
             </div>
         </div>
     </div>
+
     <!-- Breadcrumb End -->
 
     <section class="login spad">
@@ -49,7 +50,10 @@
                                 </div>
 
                                 <div class="login__button">
-                                    <asp:Button id="login" class="site-btn" runat="server" Text="Login"/>
+
+                                    <asp:Button id="login" class="site-btn" runat="server" Text="Login" OnClick="login_Click"/>
+
+
                                 </div>
                                 <div class="login__error">
                                     <asp:Label ID="error" runat="server" Text="Incorrect Password or Username" visible="false" ></asp:Label>
@@ -68,4 +72,5 @@
             </div>
         </form>
     </section>
+
 </asp:Content>

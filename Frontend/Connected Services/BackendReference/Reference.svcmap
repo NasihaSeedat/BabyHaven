@@ -19,14 +19,14 @@
     <ServiceContractMappings />
   </ClientOptions>
   <MetadataSources>
-    <MetadataSource Address="http://localhost:63329/Service1.svc" Protocol="http" SourceId="1" />
+    <MetadataSource Address="http://localhost:63329/BabyHavenService.svc" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="Service1.xsd" MetadataType="Schema" ID="c76fb04f-bfa4-4528-b53e-a40fd3d1d9ac" SourceId="1" SourceUrl="http://localhost:63329/Service1.svc?xsd=xsd2" />
-    <MetadataFile FileName="Service1.disco" MetadataType="Disco" ID="9d817e2f-57ef-41b6-8680-7c3261d4cf97" SourceId="1" SourceUrl="http://localhost:63329/Service1.svc?disco" />
-    <MetadataFile FileName="Service1.wsdl" MetadataType="Wsdl" ID="7c9ddbe2-748c-4932-b993-c63999008f6e" SourceId="1" SourceUrl="http://localhost:63329/Service1.svc?wsdl" />
-    <MetadataFile FileName="Service11.xsd" MetadataType="Schema" ID="2864b8c2-8030-4af7-b9c0-7d40cb297183" SourceId="1" SourceUrl="http://localhost:63329/Service1.svc?xsd=xsd1" />
-    <MetadataFile FileName="Service12.xsd" MetadataType="Schema" ID="a4acc826-e6b5-42d9-9f9f-ab530ba0830b" SourceId="1" SourceUrl="http://localhost:63329/Service1.svc?xsd=xsd0" />
+    <MetadataFile FileName="BabyHavenService.xsd" MetadataType="Schema" ID="f6e3bf65-713f-4d9e-adef-c20b8022f902" SourceId="1" SourceUrl="http://localhost:63329/BabyHavenService.svc?xsd=xsd0" />
+    <MetadataFile FileName="BabyHavenService2.xsd" MetadataType="Schema" ID="f304236e-ebf1-4fe8-967a-54fd80be54c0" SourceId="1" SourceUrl="http://localhost:63329/BabyHavenService.svc?xsd=xsd2" />
+    <MetadataFile FileName="BabyHavenService1.xsd" MetadataType="Schema" ID="d87d7e36-0039-4893-b2ca-8251556d7803" SourceId="1" SourceUrl="http://localhost:63329/BabyHavenService.svc?xsd=xsd1" />
+    <MetadataFile FileName="BabyHavenService.disco" MetadataType="Disco" ID="46df31c8-1997-41ad-9f90-4b109ee98355" SourceId="1" SourceUrl="http://localhost:63329/BabyHavenService.svc?disco" />
+    <MetadataFile FileName="BabyHavenService.wsdl" MetadataType="Wsdl" ID="18d8211a-f50e-494d-862c-6bc27d6b291b" SourceId="1" SourceUrl="http://localhost:63329/BabyHavenService.svc?wsdl" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
