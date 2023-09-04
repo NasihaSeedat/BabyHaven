@@ -1,6 +1,7 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/BabyHaven.Master" AutoEventWireup="true" CodeBehind="Checkout.aspx.cs" Inherits="Frontend.Checkout" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+
 </asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
@@ -25,14 +26,20 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
-                    <h6 class="coupon__link"><span class="icon_tag_alt"></span> <a href="#">Have a coupon?</a> Click
-                    here to enter your code.</h6>
+                    <h6 class="coupon__link" id="couponLink">
+                        <span class="icon_tag_alt"></span>
+                        Have a coupon? Click here to enter your code.
+                    </h6>
+                    <div class="coupon__input" id="couponInput" style="display: none;">
+                        <input type="text" id="txtCouponCode" placeholder="Enter coupon code" runat="server">
+                        <button type="button" id="btnApplyCoupon" runat="server">Apply</button>
+                    </div>
                 </div>
             </div>
             <form action="#" class="checkout__form" runat="server">
                 <div class="row">
                     <div class="col-lg-8">
-                        <h5>Billing detail</h5>
+                        <h5>Billing details</h5>
                         <div class="row">
                             <div class="col-lg-6 col-md-6 col-sm-6">
                                 <div class="checkout__form__input">
@@ -94,15 +101,15 @@
                                         <span class="checkmark"></span>
                                     </label>
                                     <p>Create an account by entering the information below. If you are a returning
-                                        customer login at the <br />top of the page</p>
+                                        customer login at the top of the page</p>
                                     </div>
                                     <div class="checkout__form__input">
                                         <p>Account Password <span>*</span></p>
-                                        <input type="text">
+                                        <input type="text" id="txtPassword" runat="server">
                                     </div>
                                     <div class="checkout__form__checkbox">
                                         <label for="note">
-                                            Note about your order, e.g, special noe for delivery
+                                            Note about your order, e.g, special now for delivery
                                             <input type="checkbox" id="note">
                                             <span class="checkmark"></span>
                                         </label>

@@ -2308,17 +2308,57 @@ ol {
 	background: #f5f5f5;
 	border-top: 2px solid #ca1515;
 	text-align: center;
-	margin-bottom: 50px;
+	margin-bottom: 25px;
+	cursor: pointer; /* Change cursor on hover to indicate it's clickable */
+	transition: background-color 0.3s; /* Add a smooth background color transition on hover */
+}
+
+/* Style the coupon link on hover */
+.coupon__link:hover {
+	background: #ca1515; /* Change background color to red on hover */
+	color: white; /* Change text color to white on hover */
 }
 
 .coupon__link a {
 	font-size: 14px;
-	color: #444444;
+	color: inherit; /* Inherit text color from the container */
+	text-decoration: none; /* Remove underline from the link */
 }
 
 .coupon__link span {
 	font-size: 14px;
 	color: #ca1515;
+}
+
+.coupon__input {
+	display: none; /* Hidden by default */
+	margin-top: 10px; /* Add spacing to separate it from the previous section */
+}
+
+/* Style the coupon input field */
+.coupon__input input[type="text"] {
+	height: 50px;
+	width: 100%;
+	border: 1px solid #e1e1e1;
+	border-radius: 2px;
+	margin-bottom: 10px;
+	font-size: 14px;
+	padding-left: 20px;
+	color: #666666;
+}
+
+/* Style the Apply button */
+.coupon__input button {
+	font-size: 14px;
+	color: #ffffff;
+	background: #ca1515;
+	font-weight: 600;
+	border: none;
+	text-transform: uppercase;
+	display: inline-block;
+	padding: 12px 30px;
+	border-radius: 50px;
+	margin-bottom: 20px;
 }
 
 .checkout__form h5 {

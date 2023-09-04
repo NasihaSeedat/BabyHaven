@@ -251,11 +251,21 @@ Created: Colorib
 	$(".header__menu ul li ul.dropdown li a").on('click', function () {
 		$(".header__menu ul li.active").removeClass("active"); // Remove active class from all main menu items
 		$(this).closest("li").parents("li:first").addClass("active"); // Set active class on the closest parent main menu item
-	});
+    });
 
+    // Get references to the link and input field
+    var couponLink = document.getElementById("couponLink");
+    var couponInput = document.getElementById("couponInput");
 
-
-
+    // Add a click event listener to the link
+    couponLink.addEventListener("click", function () {
+        // Toggle the visibility of the input field
+        if (couponInput.style.display === "none" || couponInput.style.display === "") {
+            couponInput.style.display = "block";
+        } else {
+            couponInput.style.display = "none";
+        }
+    });
 
 
 })(jQuery);
