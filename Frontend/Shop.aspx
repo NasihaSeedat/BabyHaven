@@ -53,11 +53,9 @@
                                             <div class="card-body">
                                                 <ul>
                                                     <li><a href="#">Onesies</a></li>
-                                                    <li><a href="#">Undershirts</a></li>
                                                     <li><a href="#">Pajamas</a></li>
                                                     <li><a href="#">Sweaters/Jackets</a></li>
-                                                    <li><a href="#">Socks</a></li>
-                                                    <li><a href="#">Hats</a></li>
+                                                    <li><a href="#">Socks</a></li>    
                                                 </ul>
                                             </div>
                                         </div>
@@ -70,10 +68,8 @@
                                             <div class="card-body">
                                                 <ul>
                                                     <li><a href="#">Bottles</a></li>
-                                                    <li><a href="#">Feeding Spoons</a></li>
                                                     <li><a href="#">Bibs</a></li>
                                                     <li><a href="#">Pacifiers</a></li>
-                                                    <li><a href="#">Bottle Brushs</a></li>
                                                 </ul>
                                             </div>
                                         </div>
@@ -238,27 +234,21 @@
                         </div>
                     </div>
                 </div>
+                <!-- Nursery Items -->
                 <div class="col-lg-9 col-md-9">
                     <div class="row">
                         <div class="col-lg-4 col-md-6">
                             <div class="product__item">
                                 <div class="product__item__pic set-bg" data-setbg="img/shop/white-crib.jpeg">
-                                    <div class="label new">New</div>
                                     <ul class="product__hover">
-                                        <li><a href="img/shop/shop-1.jpg" class="image-popup"><span class="arrow_expand"></span></a></li>
+                                        <li><a href="img/shop/white-crib.jpeg" class="image-popup"><span class="arrow_expand"></span></a></li>
                                         <li><a href="#"><span class="icon_heart_alt"></span></a></li>
                                         <li><a href="#"><span class="icon_bag_alt"></span></a></li>
                                     </ul>
                                 </div>
                                 <div class="product__item__text">
                                     <h6><a href="#">White Wooden Cot</a></h6>
-                                    <div class="rating">
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                    </div>
+                                  <br />
                                     <div class="product__price">R3500,99</div>
                                 </div>
                             </div>
@@ -267,20 +257,14 @@
                             <div class="product__item">
                                 <div class="product__item__pic set-bg" data-setbg="img/shop/wooden-crib.jpeg">
                                     <ul class="product__hover">
-                                        <li><a href="img/shop/shop-2.jpg" class="image-popup"><span class="arrow_expand"></span></a></li>
+                                        <li><a href="img/shop/wooden-crib.jpeg" class="image-popup"><span class="arrow_expand"></span></a></li>
                                         <li><a href="#"><span class="icon_heart_alt"></span></a></li>
                                         <li><a href="#"><span class="icon_bag_alt"></span></a></li>
                                     </ul>
                                 </div>
                                 <div class="product__item__text">
                                     <h6><a href="#">Solid Wood Baby Crib Cot</a></h6>
-                                    <div class="rating">
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                    </div>
+                                    <br />
                                     <div class="product__price">R2499,99</div>
                                 </div>
                             </div>
@@ -289,20 +273,14 @@
                             <div class="product__item">
                                 <div class="product__item__pic set-bg" data-setbg="img/shop/baby-monitor.jpeg">
                                     <ul class="product__hover">
-                                        <li><a href="img/shop/shop-3.jpg" class="image-popup"><span class="arrow_expand"></span></a></li>
+                                        <li><a href="img/shop/baby-monitor.jpeg" class="image-popup"><span class="arrow_expand"></span></a></li>
                                         <li><a href="#"><span class="icon_heart_alt"></span></a></li>
                                         <li><a href="#"><span class="icon_bag_alt"></span></a></li>
                                     </ul>
                                 </div>
                                 <div class="product__item__text">
                                     <h6><a href="#">Baby Monitor Wireless Two-way Speaker</a></h6>
-                                    <div class="rating">
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                    </div>
+                                    <br />
                                     <div class="product__price">R1489,00</div>
                                 </div>
                             </div>
@@ -311,20 +289,14 @@
                             <div class="product__item">
                                 <div class="product__item__pic set-bg" data-setbg="img/shop/multi-cradlechair.jpeg">
                                     <ul class="product__hover">
-                                        <li><a href="img/shop/shop-4.jpg" class="image-popup"><span class="arrow_expand"></span></a></li>
+                                        <li><a href="img/shop/multi-cradlechair.jpeg" class="image-popup"><span class="arrow_expand"></span></a></li>
                                         <li><a href="#"><span class="icon_heart_alt"></span></a></li>
                                         <li><a href="#"><span class="icon_bag_alt"></span></a></li>
                                     </ul>
                                 </div>
                                 <div class="product__item__text">
                                     <h6><a href="#">Multifunctional baby Cradle Chair</a></h6>
-                                    <div class="rating">
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                    </div>
+                                   <br />
                                     <div class="product__price">R2399,99</div>
                                 </div>
                             </div>
@@ -334,25 +306,206 @@
                                 <div class="product__item__pic set-bg" data-setbg="img/shop/wooden-cradlechair.jpeg">
                                     <div class="label">Sale</div>
                                     <ul class="product__hover">
-                                        <li><a href="img/shop/shop-5.jpg" class="image-popup"><span class="arrow_expand"></span></a></li>
+                                        <li><a href="img/shop/wooden-cradlechair.jpeg" class="image-popup"><span class="arrow_expand"></span></a></li>
                                         <li><a href="#"><span class="icon_heart_alt"></span></a></li>
                                         <li><a href="#"><span class="icon_bag_alt"></span></a></li>
                                     </ul>
                                 </div>
                                 <div class="product__item__text">
                                     <h6><a href="#">Wooden Baby Bouncer Cradle Chair </a></h6>
-                                    <div class="rating">
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                    </div>
+                                    <br />
                                     <div class="product__price">R1250,99<span>R1899,99</span></div>
                                 </div>
                             </div>
                         </div>
-                        
+                        <!-- Baby Gear -->
+                        <div class="col-lg-4 col-md-6">
+                            <div class="product__item">
+                                <div class="product__item__pic set-bg" data-setbg="img/shop/carseat.jpg">
+                                    <ul class="product__hover">
+                                        <li><a href="img/shop/carseat.jpg" class="image-popup"><span class="arrow_expand"></span></a></li>
+                                        <li><a href="#"><span class="icon_heart_alt"></span></a></li>
+                                        <li><a href="#"><span class="icon_bag_alt"></span></a></li>
+                                    </ul>
+                                </div>
+                                <div class="product__item__text">
+                                    <h6><a href="#">LuvLap Sports Convertible Car Seat</a></h6>
+                                    <br />
+                                    <div class="product__price">R1199,99</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-4 col-md-6">
+                            <div class="product__item">
+                                <div class="product__item__pic set-bg" data-setbg="img/shop/stroller.jpg">
+                                    <ul class="product__hover">
+                                        <li><a href="img/shop/stroller.jpg" class="image-popup"><span class="arrow_expand"></span></a></li>
+                                        <li><a href="#"><span class="icon_heart_alt"></span></a></li>
+                                        <li><a href="#"><span class="icon_bag_alt"></span></a></li>
+                                    </ul>
+                                </div>
+                                <div class="product__item__text">
+                                    <h6><a href="#">Infant Baby Stroller</a></h6>
+                                    <br />
+                                    <div class="product__price">R850,00</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-4 col-md-6">
+                            <div class="product__item">
+                                <div class="product__item__pic set-bg" data-setbg="img/shop/swing.jpg">
+                                    <ul class="product__hover">
+                                        <li><a href="img/shop/swing.jpg" class="image-popup"><span class="arrow_expand"></span></a></li>
+                                        <li><a href="#"><span class="icon_heart_alt"></span></a></li>
+                                        <li><a href="#"><span class="icon_bag_alt"></span></a></li>
+                                    </ul>
+                                </div>
+                                <div class="product__item__text">
+                                    <h6><a href="#">Compact Baby Swing</a></h6>
+                                    <br />
+                                    <div class="product__price">R950,00</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-4 col-md-6">
+                            <div class="product__item">
+                                <div class="product__item__pic set-bg" data-setbg="img/shop/playard.jpg">
+                                    <ul class="product__hover">
+                                        <li><a href="img/shop/playard.jpg" class="image-popup"><span class="arrow_expand"></span></a></li>
+                                        <li><a href="#"><span class="icon_heart_alt"></span></a></li>
+                                        <li><a href="#"><span class="icon_bag_alt"></span></a></li>
+                                    </ul>
+                                </div>
+                                <div class="product__item__text">
+                                    <h6><a href="#">Lullaby Baby Playard</a></h6>
+                                    <br />
+                                    <div class="product__price">R6999,00</div>
+                                </div>
+                            </div>
+                        </div>
+
+                         <div class="col-lg-4 col-md-6">
+                            <div class="product__item">
+                                <div class="product__item__pic set-bg" data-setbg="img/shop/onesie.jpg">
+                                    <ul class="product__hover">
+                                        <li><a href="img/shop/onesie.jpg" class="image-popup"><span class="arrow_expand"></span></a></li>
+                                        <li><a href="#"><span class="icon_heart_alt"></span></a></li>
+                                        <li><a href="#"><span class="icon_bag_alt"></span></a></li>
+                                    </ul>
+                                </div>
+                                <div class="product__item__text">
+                                    <h6><a href="#">Daddys Girl Onesie</a></h6>
+                                    <br />
+                                    <div class="product__price">399,00</div>
+                                </div>
+                            </div>
+                        </div>
+
+                         <div class="col-lg-4 col-md-6">
+                            <div class="product__item">
+                                <div class="product__item__pic set-bg" data-setbg="img/shop/pjs.jpg">
+                                    <ul class="product__hover">
+                                        <li><a href="img/shop/pjs.jpg" class="image-popup"><span class="arrow_expand"></span></a></li>
+                                        <li><a href="#"><span class="icon_heart_alt"></span></a></li>
+                                        <li><a href="#"><span class="icon_bag_alt"></span></a></li>
+                                    </ul>
+                                </div>
+                                <div class="product__item__text">
+                                    <h6><a href="#">Cute Cotton Pyjamas</a></h6>
+                                    <br />
+                                    <div class="product__price">R199,00</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-4 col-md-6">
+                            <div class="product__item">
+                                <div class="product__item__pic set-bg" data-setbg="img/shop/sweater.jfif">
+                                    <ul class="product__hover">
+                                        <li><a href="img/shop/sweater.jfif" class="image-popup"><span class="arrow_expand"></span></a></li>
+                                        <li><a href="#"><span class="icon_heart_alt"></span></a></li>
+                                        <li><a href="#"><span class="icon_bag_alt"></span></a></li>
+                                    </ul>
+                                </div>
+                                <div class="product__item__text">
+                                    <h6><a href="#">Crochet Baby Sweater</a></h6>
+                                    <br />
+                                    <div class="product__price">R399,00</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-6">
+                            <div class="product__item">
+                                <div class="product__item__pic set-bg" data-setbg="img/shop/socks.jpg">
+                                    <ul class="product__hover">
+                                        <li><a href="img/shop/socks.jpg" class="image-popup"><span class="arrow_expand"></span></a></li>
+                                        <li><a href="#"><span class="icon_heart_alt"></span></a></li>
+                                        <li><a href="#"><span class="icon_bag_alt"></span></a></li>
+                                    </ul>
+                                </div>
+                                <div class="product__item__text">
+                                    <h6><a href="#">5 Pairs Baby Socks</a></h6>
+                                    <br />
+                                    <div class="product__price">R419,99</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Feeding Essentials -->
+                        <div class="col-lg-4 col-md-6">
+                            <div class="product__item">
+                                <div class="product__item__pic set-bg" data-setbg="img/shop/bottle.jpg">
+                                    <ul class="product__hover">
+                                        <li><a href="img/shop/bottle.jpg" class="image-popup"><span class="arrow_expand"></span></a></li>
+                                        <li><a href="#"><span class="icon_heart_alt"></span></a></li>
+                                        <li><a href="#"><span class="icon_bag_alt"></span></a></li>
+                                    </ul>
+                                </div>
+                                <div class="product__item__text">
+                                    <h6><a href="#">NUK Baby Bottle</a></h6>
+                                    <br />
+                                    <div class="product__price">R199,99</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-4 col-md-6">
+                            <div class="product__item">
+                                <div class="product__item__pic set-bg" data-setbg="img/shop/bib.jpg">
+                                    <ul class="product__hover">
+                                        <li><a href="img/shop/bib.jpg" class="image-popup"><span class="arrow_expand"></span></a></li>
+                                        <li><a href="#"><span class="icon_heart_alt"></span></a></li>
+                                        <li><a href="#"><span class="icon_bag_alt"></span></a></li>
+                                    </ul>
+                                </div>
+                                <div class="product__item__text">
+                                    <h6><a href="#">Skattig Baby Bib</a></h6>
+                                    <br />
+                                    <div class="product__price">R80,00</div>
+                                </div>
+                            </div>
+                        </div>
+
+                         <div class="col-lg-4 col-md-6">
+                            <div class="product__item">
+                                <div class="product__item__pic set-bg" data-setbg="img/shop/dummy.jfif">
+                                    <ul class="product__hover">
+                                        <li><a href="img/shop/dummy.jfif" class="image-popup"><span class="arrow_expand"></span></a></li>
+                                        <li><a href="#"><span class="icon_heart_alt"></span></a></li>
+                                        <li><a href="#"><span class="icon_bag_alt"></span></a></li>
+                                    </ul>
+                                </div>
+                                <div class="product__item__text">
+                                    <h6><a href="#">Baby Pink Pacifier</a></h6>
+                                    <br />
+                                    <div class="product__price">R100,00</div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Health Products 
                         <!-- Health Products -->
                         <div class="col-lg-4 col-md-6">
                             <div class="product__item">
