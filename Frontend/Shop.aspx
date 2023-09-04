@@ -287,7 +287,7 @@
                         </div>
                         <div class="col-lg-4 col-md-6">
                             <div class="product__item">
-                                <div class="product__item__pic set-bg" data-setbg="img/shop/shop-3.jpg">
+                                <div class="product__item__pic set-bg" data-setbg="img/shop/baby-monitor.jpeg">
                                     <ul class="product__hover">
                                         <li><a href="img/shop/shop-3.jpg" class="image-popup"><span class="arrow_expand"></span></a></li>
                                         <li><a href="#"><span class="icon_heart_alt"></span></a></li>
@@ -295,7 +295,7 @@
                                     </ul>
                                 </div>
                                 <div class="product__item__text">
-                                    <h6><a href="#">Croc-effect bag</a></h6>
+                                    <h6><a href="#">Baby Monitor Wireless Two-way Speaker</a></h6>
                                     <div class="rating">
                                         <i class="fa fa-star"></i>
                                         <i class="fa fa-star"></i>
@@ -303,13 +303,13 @@
                                         <i class="fa fa-star"></i>
                                         <i class="fa fa-star"></i>
                                     </div>
-                                    <div class="product__price">$ 59.0</div>
+                                    <div class="product__price">R1489,00</div>
                                 </div>
                             </div>
                         </div>
                         <div class="col-lg-4 col-md-6">
                             <div class="product__item">
-                                <div class="product__item__pic set-bg" data-setbg="img/shop/shop-4.jpg">
+                                <div class="product__item__pic set-bg" data-setbg="img/shop/multi-cradlechair.jpeg">
                                     <ul class="product__hover">
                                         <li><a href="img/shop/shop-4.jpg" class="image-popup"><span class="arrow_expand"></span></a></li>
                                         <li><a href="#"><span class="icon_heart_alt"></span></a></li>
@@ -317,7 +317,7 @@
                                     </ul>
                                 </div>
                                 <div class="product__item__text">
-                                    <h6><a href="#">Dark wash Xavi jeans</a></h6>
+                                    <h6><a href="#">Multifunctional baby Cradle Chair</a></h6>
                                     <div class="rating">
                                         <i class="fa fa-star"></i>
                                         <i class="fa fa-star"></i>
@@ -325,13 +325,13 @@
                                         <i class="fa fa-star"></i>
                                         <i class="fa fa-star"></i>
                                     </div>
-                                    <div class="product__price">$ 59.0</div>
+                                    <div class="product__price">R2399,99</div>
                                 </div>
                             </div>
                         </div>
                         <div class="col-lg-4 col-md-6">
                             <div class="product__item sale">
-                                <div class="product__item__pic set-bg" data-setbg="img/shop/shop-5.jpg">
+                                <div class="product__item__pic set-bg" data-setbg="img/shop/wooden-cradlechair.jpeg">
                                     <div class="label">Sale</div>
                                     <ul class="product__hover">
                                         <li><a href="img/shop/shop-5.jpg" class="image-popup"><span class="arrow_expand"></span></a></li>
@@ -340,7 +340,7 @@
                                     </ul>
                                 </div>
                                 <div class="product__item__text">
-                                    <h6><a href="#">Ankle-cuff sandals</a></h6>
+                                    <h6><a href="#">Wooden Baby Bouncer Cradle Chair </a></h6>
                                     <div class="rating">
                                         <i class="fa fa-star"></i>
                                         <i class="fa fa-star"></i>
@@ -348,7 +348,7 @@
                                         <i class="fa fa-star"></i>
                                         <i class="fa fa-star"></i>
                                     </div>
-                                    <div class="product__price">$ 49.0 <span>$ 59.0</span></div>
+                                    <div class="product__price">R1250,99<span>R1899,99</span></div>
                                 </div>
                             </div>
                         </div>
