@@ -13,6 +13,70 @@ namespace BabyHaven_Database
     {
         BabyHavenDataContext db = new BabyHavenDataContext();
 
+        public Admin GetAdmin(int id)
+        {
+            var adm = (from a in db.Admins
+                       where a.U_Id.Equals(id)
+                       select a).FirstOrDefault();
+            if (adm == null)
+            {
+                return null;
+            }
+            else
+            {
+                return adm;
+            }
+        }
+
+        public Client GetClient(int id)
+        {
+            var cl = (from c in db.Clients
+                      where c.U_Id.Equals(id)
+                      select c).FirstOrDefault();
+
+            if (cl == null)
+            {
+                return null;
+            }
+            else
+            {
+                return cl;
+            }
+        }
+
+        public User_Table GetEmail(string email, int id)
+        {
+            var us = (from e in db.User_Tables
+                      where e.Email.Equals(email) && e.User_Id != id
+                      select e).FirstOrDefault();
+
+            if (us == null)
+            {
+                return null;
+            }
+            else
+            {
+                return us;
+            }
+        }
+
+        public User_Table GetUser(int id)
+        {
+            var us = (from u in db.User_Tables
+                      where u.User_Id.Equals(id)
+                      select u).FirstOrDefault();
+
+            if (us == null)
+            {
+                return null;
+
+            }
+            else
+            {
+                return us;
+            }
+        }
+
         public int Login(string email, string password)
         {
             var us = (from u in db.User_Tables
