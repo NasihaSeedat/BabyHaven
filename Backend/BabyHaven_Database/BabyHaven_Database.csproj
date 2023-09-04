@@ -62,36 +62,36 @@
     <Reference Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="App_Data\Database1.mdf" />
-    <Content Include="App_Data\Database1_log.ldf">
-      <DependentUpon>Database1.mdf</DependentUpon>
+    <Content Include="App_Data\BabyHavenDatabase.mdf" />
+    <Content Include="App_Data\BabyHavenDatabase_log.ldf">
+      <DependentUpon>BabyHavenDatabase.mdf</DependentUpon>
     </Content>
-    <Content Include="Service1.svc" />
+    <Content Include="BabyHavenService.svc" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DataClasses1.designer.cs">
+    <Compile Include="BabyHaven.designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>DataClasses1.dbml</DependentUpon>
+      <DependentUpon>BabyHaven.dbml</DependentUpon>
     </Compile>
-    <Compile Include="Service1.svc.cs">
-      <DependentUpon>Service1.svc</DependentUpon>
+    <Compile Include="BabyHavenService.svc.cs">
+      <DependentUpon>BabyHavenService.svc</DependentUpon>
     </Compile>
-    <Compile Include="IService1.cs" />
+    <Compile Include="IBabyHavenService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="DataClasses1.dbml">
+    <Content Include="BabyHaven.dbml">
       <Generator>MSLinqToSQLGenerator</Generator>
-      <LastGenOutput>DataClasses1.designer.cs</LastGenOutput>
+      <LastGenOutput>BabyHaven.designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </Content>
-    <None Include="DataClasses1.dbml.layout">
-      <DependentUpon>DataClasses1.dbml</DependentUpon>
+    <None Include="BabyHaven.dbml.layout">
+      <DependentUpon>BabyHaven.dbml</DependentUpon>
     </None>
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
