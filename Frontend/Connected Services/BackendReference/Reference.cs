@@ -1285,10 +1285,10 @@ namespace Frontend.BackendReference {
         System.Threading.Tasks.Task<Frontend.BackendReference.Client> GetClientAsync(int id);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBabyHavenService/Register", ReplyAction="http://tempuri.org/IBabyHavenService/RegisterResponse")]
-        string Register(string email, string password, string name, string surname, string phoneno, string address, int usetype);
+        bool Register(string email, string password, string name, string surname, string phoneno, string address, int usetype);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBabyHavenService/Register", ReplyAction="http://tempuri.org/IBabyHavenService/RegisterResponse")]
-        System.Threading.Tasks.Task<string> RegisterAsync(string email, string password, string name, string surname, string phoneno, string address, int usetype);
+        System.Threading.Tasks.Task<bool> RegisterAsync(string email, string password, string name, string surname, string phoneno, string address, int usetype);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -1358,11 +1358,11 @@ namespace Frontend.BackendReference {
             return base.Channel.GetClientAsync(id);
         }
         
-        public string Register(string email, string password, string name, string surname, string phoneno, string address, int usetype) {
+        public bool Register(string email, string password, string name, string surname, string phoneno, string address, int usetype) {
             return base.Channel.Register(email, password, name, surname, phoneno, address, usetype);
         }
         
-        public System.Threading.Tasks.Task<string> RegisterAsync(string email, string password, string name, string surname, string phoneno, string address, int usetype) {
+        public System.Threading.Tasks.Task<bool> RegisterAsync(string email, string password, string name, string surname, string phoneno, string address, int usetype) {
             return base.Channel.RegisterAsync(email, password, name, surname, phoneno, address, usetype);
         }
     }

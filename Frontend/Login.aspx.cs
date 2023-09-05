@@ -23,7 +23,7 @@ namespace Frontend
             int Id = s.Login(Email.Value, Password.Value);
 
             var user = s.GetUser(Id);
-            if (Id < 0)
+            if (Id == 0)
             {
                 error.Visible = true;
             }

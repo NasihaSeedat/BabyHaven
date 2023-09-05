@@ -93,7 +93,7 @@ namespace BabyHaven_Database
             }
         }
 
-        public string Register(string email, string password, string name, string surname, string phoneno, string address, int usetype = 1)
+        public bool Register(string email, string password, string name, string surname, string phoneno, string address, int usetype = 1)
         {
             var use = (from u in db.User_Tables
                        where u.Email.Equals(email)
@@ -137,16 +137,16 @@ namespace BabyHaven_Database
                 try
                 {
                     db.SubmitChanges();
-                    return "REGISTERED";
+                    return true;
                 }catch(Exception ex)
                 {
                     ex.GetBaseException();
-                    return "REGISTERING UNSUCCESSFUL";
+                    return false;
                 }
             }
             else
             {
-                return "REGISTERING UNSUCCESSFUL";
+                return false;
             }
         }
     }
