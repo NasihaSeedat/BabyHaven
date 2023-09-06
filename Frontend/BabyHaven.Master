@@ -95,8 +95,13 @@
                 <div class="col-lg-3">
                     <div class="header__right">
                         <div class="header__right__auth">
-                            <a href="Login.aspx">Login</a>
-                            <a href="Register.aspx">Register</a>
+
+                         <% if (Session["LoggedInUserID"] == null) { %>
+                                    <a href="Login.aspx">Login</a>
+                                    <a href="Register.aspx">Register</a>
+                                <% } else { %>
+                                    <a href="Logout.aspx">Logout</a> 
+                                <% } %>
                         </div>
                         <ul class="header__right__widget">
                             <li><span class="icon_search search-switch"></span></li>
