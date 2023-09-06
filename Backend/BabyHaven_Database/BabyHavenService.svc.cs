@@ -146,6 +146,7 @@ namespace BabyHaven_Database
             }
             else
             {
+                //already exists
                 return false;
             }
         }

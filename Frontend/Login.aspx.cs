@@ -20,7 +20,8 @@ namespace Frontend
 
         protected void login_Click(object sender, EventArgs e)
         {
-            int Id = s.Login(Email.Value, Password.Value);
+            var hashedpass = Hash.HashPassword(Password.Value);
+            int Id = s.Login(Email.Value, hashedpass);
 
             var user = s.GetUser(Id);
             if (Id == 0)
