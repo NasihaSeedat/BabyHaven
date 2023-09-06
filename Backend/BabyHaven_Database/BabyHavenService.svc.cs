@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.Serialization;
+using System.Security.Cryptography;
 using System.ServiceModel;
 using System.Text;
 
@@ -155,6 +156,47 @@ namespace BabyHaven_Database
                 //already exists
                 return false;
             }
+        }
+
+        public Product getSingleProd(int id)
+        {
+            var prod = (from p in db.Products
+                        where p.Product_Id == id
+                        select p).FirstOrDefault();
+            if (prod != null)
+            {
+                return prod;
+            }
+            else
+            {
+                return null;
+            }
+
+        }
+
+        public List<Product> GetCartProducts(int id)
+        {
+            dynamic Pid = (from p in db.Carts
+                           where p.U_Id == id && p.P_Id != null
+                           select p.P_Id).ToList();
+
+            List<Product> products = new List<Product>();
+            foreach (int productid in Pid)
+            {
+                Product pr = getSingleProd(productid);
+                if (pr != null)
+                    products.Add(pr);
+            }
+
+            return products;
+        }
+
+        public int GetQuantity(int UserID, int ProductID)
+        {
+            int Quantity = (from p in db.Carts
+                            where p.U_Id == UserID && p.P_Id == ProductID
+                            select p.Cart_Quantity).FirstOrDefault();
+            return Quantity;
         }
     }
 }

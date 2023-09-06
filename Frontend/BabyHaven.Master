@@ -44,7 +44,10 @@
                 <div class="tip">2</div>
             </a></li>
             <li><a href="#"><span class="fa fa-shopping-cart"></span>
-                <div class="tip">2</div>
+                <div class="tip">
+                    <% int cartItemCount = GetCartItemCount(); %>
+                    <%= cartItemCount %>
+                </div>
             </a></li>
         </ul>
         <div class="offcanvas__logo">
@@ -100,7 +103,10 @@
                                 <div class="tip">2</div>
                             </a></li>
                             <li><a href="Cart.aspx"><span class="fa fa-shopping-cart"></span>
-                                <div class="tip">2</div>
+                                <div class="tip">
+                                    <% cartItemCount = GetCartItemCount(); %>
+                                    <%= cartItemCount %>
+                                </div>
                             </a></li>
                         </ul>
                     </div>
@@ -214,7 +220,7 @@
                         <ul>
                             <li><a href="#">My Account</a></li>
                             <li><a href="#">Orders Tracking</a></li>
-                            <li><a href="Cart.aspx">Checkout</a></li>
+                            <li><a href="Checkout.aspx">Checkout</a></li>
                             <li><a href="#">Wishlist</a></li>
                         </ul>
                     </div>
