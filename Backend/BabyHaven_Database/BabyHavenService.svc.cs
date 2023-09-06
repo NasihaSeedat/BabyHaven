@@ -66,14 +66,14 @@ namespace BabyHaven_Database
                       where u.User_Id.Equals(id)
                       select u).FirstOrDefault();
 
-            if (us == null)
+            if (us != null)
             {
-                return null;
+                return us;
 
             }
             else
             {
-                return us;
+                return null;
             }
         }
 

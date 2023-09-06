@@ -53,7 +53,7 @@ namespace Frontend.BackendReference {
         private string Phone_NumberField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Nullable<System.DateTime> Register_DateField;
+        private System.DateTime Register_DateField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string SurnameField;
@@ -205,7 +205,7 @@ namespace Frontend.BackendReference {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Nullable<System.DateTime> Register_Date {
+        public System.DateTime Register_Date {
             get {
                 return this.Register_DateField;
             }
