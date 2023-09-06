@@ -11,12 +11,12 @@
             <div class="row">
                 <div class="col-lg-4 col-md-4 col-sm-6">
                     <div class="blog__item">
-                        <div class="blog__item__pic large__item set-bg" data-setbg="img/blog/blog-1.jpg"></div>
+                        <div class="blog__item__pic large__item set-bg" data-setbg="img/blog/blog1.jpg"></div>
                         <div class="blog__item__text">
-                            <h6><a href="#">No Bad Blood! The Reason Why Tamr Judge Finally Made Up With...</a></h6>
+                            <h6><a href="https://www.adensmom.com/baby-hacks/">60 Baby Hacks: The Ultimate List of Life Hacks for New Moms</a></h6>
                             <ul>
-                                <li>by <span>Ema Timahe</span></li>
-                                <li>Seb 17, 2019</li>
+                                <li>by <span>Adensmom</span></li>
+                                <li>Mar 18, 2020</li>
                             </ul>
                         </div>
                     </div>

@@ -132,6 +132,18 @@
                                             </div>
                                         </div>
                                     </div>
+                                    <div class="card">
+                                        <div class="card-heading">
+                                            <a data-toggle="collapse" data-target="#collapseNine">Project SafeHaven</a>
+                                        </div>
+                                        <div id="collapseNine" class="collapse" data-parent="#accordionExample">
+                                            <div class="card-body">
+                                                <ul>
+                                                    <li><a href="#">SafeHaven Socks</a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -741,6 +753,23 @@
                                     <h6><a href="#">Snuggletime Washcloth</a></h6>
                                     <br />
                                     <div class="product__price">R99,99</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-4 col-md-6">
+                            <div class="product__item">
+                                <div class="product__item__pic set-bg" data-setbg="img/shop/safehaven.jpg">
+                                    <ul class="product__hover">
+                                        <li><a href="img/shop/safehaven.jpg" class="image-popup"><span class="arrow_expand"></span></a></li>
+                                        <li><a href="#"><span class="icon_heart_alt"></span></a></li>
+                                        <li><a href="#"><span class="icon_bag_alt"></span></a></li>
+                                    </ul>
+                                </div>
+                                <div class="product__item__text">
+                                    <h6><a href="#">SafeHaven Project Sock</a></h6>
+                                    <br />
+                                    <div class="product__price">R0</div>
                                 </div>
                             </div>
                         </div>

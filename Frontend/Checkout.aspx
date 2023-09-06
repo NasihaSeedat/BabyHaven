@@ -109,7 +109,7 @@
                                     </div>
                                     <div class="checkout__form__checkbox">
                                         <label for="note">
-                                            Note about your order, e.g, special now for delivery
+                                            Note about your order, e.g, special note for delivery
                                             <input type="checkbox" id="note">
                                             <span class="checkmark"></span>
                                         </label>
@@ -117,7 +117,7 @@
                                     <div class="checkout__form__input">
                                         <p>Order notes <span>*</span></p>
                                         <input type="text"
-                                        placeholder="Note about your order, e.g, special noe for delivery">
+                                        placeholder="Note about your order, e.g, special note for delivery">
                                     </div>
                                 </div>
                             </div>
