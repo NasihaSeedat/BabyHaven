@@ -33,7 +33,6 @@ namespace Frontend
             //}
         }
 
-        // Modify the GetCartItemCount method to accept the user's UID as an argument
         public int GetCartItemCount()
         {
             int UserID;
