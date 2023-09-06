@@ -65,25 +65,26 @@
                     <div class="banner__slider owl-carousel">
                         <div class="banner__item">
                             <div class="banner__text">
-                                <span>The Chloe Collection</span>
-                                <h1>The Project Jacket</h1>
-                                <a href="#">Shop now</a>
+                                <span>BabyHaven</span>
+                                <h1>Catering for your baby's needs</h1>
+                                <a href="Shop.aspx">Shop now</a>
                             </div>
                         </div>
                         <div class="banner__item">
                             <div class="banner__text">
-                                <span>The Chloe Collection</span>
-                                <h1>The Project Jacket</h1>
-                                <a href="#">Shop now</a>
+                                <span>BabyHaven</span>
+                                <h1>Free Shipping for all orders over R1000</h1>
+                                <a href="Shop.aspx">Shop now</a>
                             </div>
                         </div>
                         <div class="banner__item">
                             <div class="banner__text">
-                                <span>The Chloe Collection</span>
-                                <h1>The Project Jacket</h1>
-                                <a href="#">Shop now</a>
+                                <span>BabyHaven</span>
+                                <h1>Project SafeHaven</h1>
+                                <a href="#">need help with GBV?</a>
                             </div>
                         </div>
+                        
                     </div>
                 </div>
             </div>
@@ -99,7 +100,7 @@
             <div class="row">
                 <div class="col-lg-6 p-0">
                     <div class="discount__pic">
-                        <img src="img/discount.jpg" alt="">
+                        <img src="img/discount1.jpg" alt="">
                     </div>
                 </div>
                 <div class="col-lg-6 p-0">
@@ -143,14 +144,14 @@
                     <div class="services__item">
                         <i class="fa fa-car"></i>
                         <h6>Free Shipping</h6>
-                        <p>For all oder over $99</p>
+                        <p>For all orders over R1000</p>
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-4 col-sm-6">
                     <div class="services__item">
                         <i class="fa fa-money"></i>
                         <h6>Money Back Guarantee</h6>
-                        <p>If good have Problems</p>
+                        <p>If goods has problems</p>
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-4 col-sm-6">
