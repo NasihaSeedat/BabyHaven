@@ -27,17 +27,14 @@ namespace Frontend
             {
                 bool registered = s.Register(Email.Value, Hash.HashPassword(Password.Value), firstname.Value, lastname.Value, contact.Value, addressUser.Value, 1);
 
-                if(registered== true)
+                if (registered)
                 {
                     Response.Redirect("Login.aspx");
-                }else if(registered== false)
+                }
+                else
                 {
-                    error.Text = "Something went wrong, please try again later";
+                    error.Text = "Something went wrong or the user already exists. Please try again later.";
                     error.Visible = true;
-
-                }else if(registered== false)
-                {
-                    error.Text = "The user already exists";
                 }
             }
         }
