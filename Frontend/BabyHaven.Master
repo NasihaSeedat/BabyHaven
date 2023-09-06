@@ -42,10 +42,7 @@
         <div class="offcanvas__close">+</div>
         <ul class="offcanvas__widget">
             <li><span class="icon_search search-switch"></span></li>
-            <li><a href="#"><span class="icon_heart_alt"></span>
-                <div class="tip">2</div>
-            </a></li>
-            <li><a href="#"><span class="fa fa-shopping-cart"></span>
+            <li><a href="Cart.aspx"><span class="fa fa-shopping-cart"></span>
                 <div class="tip">
                     <% int cartItemCount = GetCartItemCount(); %>
                     <%= cartItemCount %>
@@ -101,9 +98,6 @@
                         </div>
                         <ul class="header__right__widget">
                             <li><span class="icon_search search-switch"></span></li>
-                            <li><a href="#"><span class="icon_heart_alt"></span>
-                                <div class="tip">2</div>
-                            </a></li>
                             <li><a href="Cart.aspx"><span class="fa fa-shopping-cart"></span>
                                 <div class="tip">
                                     <% cartItemCount = GetCartItemCount(); %>
