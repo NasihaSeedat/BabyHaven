@@ -81,7 +81,7 @@
   </Table>
   <Table Name="dbo.User_Table" Member="User_Tables">
     <Type Name="User_Table">
-      <Column Name="User_Id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="User_Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
       <Column Name="Email" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
       <Column Name="Password" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
       <Column Name="UserType" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
@@ -89,7 +89,7 @@
       <Column Name="Surname" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
       <Column Name="Phone_Number" Type="System.String" DbType="VarChar(15) NOT NULL" CanBeNull="false" />
       <Column Name="Address" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
-      <Column Name="Register_Date" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="Register_Date" Type="System.DateTime" DbType="Date" CanBeNull="true" />
       <Association Name="User_Table_Admin" Member="Admin" ThisKey="User_Id" OtherKey="U_Id" Type="Admin" Cardinality="One" />
       <Association Name="User_Table_Cart" Member="Carts" ThisKey="User_Id" OtherKey="U_Id" Type="Cart" />
       <Association Name="User_Table_Client" Member="Client" ThisKey="User_Id" OtherKey="U_Id" Type="Client" Cardinality="One" />

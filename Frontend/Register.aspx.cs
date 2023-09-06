@@ -18,7 +18,7 @@ namespace Frontend
 
         protected void Register_Click(object sender, EventArgs e)
         {
-            if(Password.Value!= ConfirmPass.Value)
+            if (Password.Value != ConfirmPass.Value)
             {
                 error.Text = "Passwords do not match";
                 error.Visible = true;
