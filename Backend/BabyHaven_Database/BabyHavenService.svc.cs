@@ -93,7 +93,7 @@ namespace BabyHaven_Database
             }
         }
 
-        public bool Register(string email, string password, string name, string surname, string phoneno, string address, int usetype = 1)
+        public bool Register(string email, string password, string name, string surname, string phoneno, string address, int usetype)
         {
             var use = (from u in db.User_Tables
                        where u.Email.Equals(email)
@@ -101,7 +101,9 @@ namespace BabyHaven_Database
 
             if (use == null)
             {
-                var newUser = new User_Table
+                try
+                {
+                    var newUser = new User_Table
                 {
                     Email = email,
                     Password = password,
@@ -114,28 +116,32 @@ namespace BabyHaven_Database
                 };
                 db.User_Tables.InsertOnSubmit(newUser);
 
-                if (usetype == 0)
-                {
-                    Admin a = new Admin
-                    {
-                        U_Id = newUser.User_Id,
-                        Surname = surname
-                    };
-                    db.Admins.InsertOnSubmit(a);
-                }
-                else
-                {
-                    Client c = new Client
-                    {
-                        U_Id = newUser.User_Id,
-                        Email = email
-                    };
-                    db.Clients.InsertOnSubmit(c);
+               
 
-                }
+               
+                    db.SubmitChanges();
+                    var userr = (from u in db.User_Tables
+                                 where u.Email.Equals(email)
+                                 select u).FirstOrDefault();
+                    if (usetype == 0)
+                    {
+                        Admin a = new Admin
+                        {
+                            U_Id = userr.User_Id,
+                            Surname = surname
+                        };
+                        db.Admins.InsertOnSubmit(a);
+                    }
+                    else
+                    {
+                        Client c = new Client
+                        {
+                            U_Id = userr.User_Id,
+                            Email = email
+                        };
+                        db.Clients.InsertOnSubmit(c);
 
-                try
-                {
+                    }
                     db.SubmitChanges();
                     return true;
                 }catch(Exception ex)

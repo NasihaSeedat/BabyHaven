@@ -12,7 +12,7 @@
       <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Password" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Phone_Number" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="Register_Date" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Register_Date" nillable="true" type="xs:dateTime" />
       <xs:element minOccurs="0" name="Surname" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="UserType" type="xs:int" />
       <xs:element minOccurs="0" name="User_Id" type="xs:int" />

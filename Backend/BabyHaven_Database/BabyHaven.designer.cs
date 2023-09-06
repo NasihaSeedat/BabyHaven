@@ -1764,7 +1764,7 @@ namespace BabyHaven_Database
 		
 		private string _Address;
 		
-		private System.DateTime _Register_Date;
+		private System.Nullable<System.DateTime> _Register_Date;
 		
 		private EntityRef<Admin> _Admin;
 		
@@ -1796,7 +1796,7 @@ namespace BabyHaven_Database
     partial void OnPhone_NumberChanged();
     partial void OnAddressChanging(string value);
     partial void OnAddressChanged();
-    partial void OnRegister_DateChanging(System.DateTime value);
+    partial void OnRegister_DateChanging(System.Nullable<System.DateTime> value);
     partial void OnRegister_DateChanged();
     #endregion
 		
@@ -1810,7 +1810,7 @@ namespace BabyHaven_Database
 			OnCreated();
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_User_Id", DbType="Int NOT NULL", IsPrimaryKey=true)]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_User_Id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
 		public int User_Id
 		{
 			get
@@ -1970,8 +1970,8 @@ namespace BabyHaven_Database
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Register_Date", DbType="Date NOT NULL")]
-		public System.DateTime Register_Date
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Register_Date", DbType="Date")]
+		public System.Nullable<System.DateTime> Register_Date
 		{
 			get
 			{
