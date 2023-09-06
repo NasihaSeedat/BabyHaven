@@ -21,104 +21,102 @@
                         </div>
                     </div>
                     <div class="blog__item">
-                        <div class="blog__item__pic set-bg" data-setbg="img/blog/blog-7.jpg"></div>
+                        <div class="blog__item__pic set-bg" data-setbg="img/blog/blog2.jpg"></div>
                         <div class="blog__item__text">
-                            <h6><a href="#">Pot Party! See Farrah Abraham Flaunt Smoking Body At...</a></h6>
+                            <h6><a href="https://www.parents.com/baby/care/american-baby-how-tos/newborn-baby-boot-camp/">Everything You've Wanted to Know About Taking Care of a Newborn Baby</a></h6>
                             <ul>
-                                <li>by <span>Ema Timahe</span></li>
-                                <li>Seb 17, 2019</li>
+                                <li>by <span>Lisa Milbrand</span></li>
+                                <li>May 30, 2023</li>
                             </ul>
                         </div>
                     </div>
                     <div class="blog__item">
-                        <div class="blog__item__pic set-bg" data-setbg="img/blog/blog-9.jpg"></div>
+                        <div class="blog__item__pic set-bg" data-setbg="img/blog/blog3.jpg"></div>
                         <div class="blog__item__text">
-                            <h6><a href="#">CMT Awards 2019 Red Carpet Arrivals Carrie Underwood, Sheryl...</a></h6>
+                            <h6><a href="https://pickyeaterblog.com/best-natural-products-for-babies/">The Best Natural Products for Babies</a></h6>
                             <ul>
-                                <li>by <span>Ema Timahe</span></li>
-                                <li>Seb 17, 2019</li>
+                                <li>by <span>Anjali Shah</span></li>
+                                <li>Jan 2, 2023</li>
                             </ul>
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-4 col-sm-6">
                     <div class="blog__item">
-                        <div class="blog__item__pic set-bg" data-setbg="img/blog/blog-2.jpg"></div>
+                        <div class="blog__item__pic set-bg" data-setbg="img/blog/blog4.jpg"></div>
                         <div class="blog__item__text">
-                            <h6><a href="#">Amf Cannes Red Carpet Celebrities Kendall Jenner, Pamela...</a></h6>
+                            <h6><a href="https://kidshealth.org/en/parents/guide-parents.html">A Guide for First-Time Parents</a></h6>
                             <ul>
-                                <li>by <span>Ema Timahe</span></li>
-                                <li>Seb 17, 2019</li>
+                                <li>by <span>Amy W. Anzilotti</span></li>
+                                <li>May, 2023</li>
                             </ul>
                         </div>
                     </div>
                     <div class="blog__item">
-                        <div class="blog__item__pic set-bg" data-setbg="img/blog/blog-4.jpg"></div>
+                        <div class="blog__item__pic set-bg" data-setbg="img/blog/blog5.jpg"></div>
                         <div class="blog__item__text">
-                            <h6><a href="#">Ireland Baldwin Shows Off Trendy Ilse Valfre Tattoo At Stagecoach...</a>
+                            <h6><a href="https://mommylabornurse.com/blog/1st-trimester/prepare-your-relationship-for-baby/">8 Essential Ways to Prepare Your Relationship for Baby</a>
                             </h6>
                             <ul>
-                                <li>by <span>Ema Timahe</span></li>
-                                <li>Seb 17, 2019</li>
+                                <li>by <span>Liesel Teen, BSN, RN</span></li>
+                                <li>2021</li>
                             </ul>
                         </div>
                     </div>
                     <div class="blog__item">
-                        <div class="blog__item__pic set-bg" data-setbg="img/blog/blog-8.jpg"></div>
+                        <div class="blog__item__pic set-bg" data-setbg="img/blog/blog6.jpg"></div>
                         <div class="blog__item__text">
-                            <h6><a href="#">Kim Kardashian Steps Out In Paris Wearing Shocking Sparkly...</a></h6>
+                            <h6><a href="https://fitbottomedgirls.com/2020/12/nutrition-for-new-moms/">Nutrition for New Moms</a></h6>
                             <ul>
-                                <li>by <span>Ema Timahe</span></li>
-                                <li>Seb 17, 2019</li>
+                                <li>by <span>Kim Daly Farrell</span></li>
+                                <li>Dec 8, 2020</li>
                             </ul>
                         </div>
                     </div>
                     <div class="blog__item">
-                        <div class="blog__item__pic set-bg" data-setbg="img/blog/blog-10.jpg"></div>
+                        <div class="blog__item__pic set-bg" data-setbg="img/blog/blog7.jpg"></div>
                         <div class="blog__item__text">
-                            <h6><a href="#">A-list Battle! Angelina Jolie & Lady Gaga Fighting Over Who...</a></h6>
+                            <h6><a href="https://www.baby-chick.com/things-parents-can-do-to-help-their-children-be-more-successful-in-life/">10 Things Parents Can Do to Help Their Children Be More Successful in Life</a></h6>
                             <ul>
-                                <li>by <span>Ema Timahe</span></li>
-                                <li>Seb 17, 2019</li>
+                                <li>by <span>Holly Garcia</span></li>
+                                <li>Aug 31, 2023</li>
                             </ul>
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-4 col-sm-6">
                     <div class="blog__item">
-                        <div class="blog__item__pic set-bg" data-setbg="img/blog/blog-3.jpg"></div>
+                        <div class="blog__item__pic set-bg" data-setbg="img/blog/blog8.jpg"></div>
                         <div class="blog__item__text">
-                            <h6><a href="#">Gigi Hadid, Rita Ora, Serena & Other Hot Celebs Stun At 2019...</a></h6>
+                            <h6><a href="https://www.todaysparent.com/baby/newborn-care/a-rookie-dads-guide-to-newborns/">The ultimate rookie dad guide to newborns</a></h6>
                             <ul>
-                                <li>by <span>Ema Timahe</span></li>
-                                <li>Seb 17, 2019</li>
+                                <li>by <span>John Hoffman</span></li>
+                                <li>Apr 10, 2023</li>
                             </ul>
                         </div>
                     </div>
                     <div class="blog__item">
-                        <div class="blog__item__pic set-bg" data-setbg="img/blog/blog-5.jpg"></div>
+                        <div class="blog__item__pic set-bg" data-setbg="img/blog/blog9.jpg"></div>
                         <div class="blog__item__text">
-                            <h6><a href="#">Billboard Music Awards: Best, Worst & Wackiest Dresses On The...</a></h6>
+                            <h6><a href="https://raisingchildren.net.au/pregnancy/pregnancy-for-partners/early-parenting/great-start-to-parenthood-non-birthing-parents-tips">Making a great start to parenthood: tips for non-birthing parents</a></h6>
                             <ul>
-                                <li>by <span>Ema Timahe</span></li>
-                                <li>Seb 17, 2019</li>
+                                <li>by <span>raisingchildren</span></li>
+                                <li>Aug 28, 2023</li>
                             </ul>
                         </div>
                     </div>
                     <div class="blog__item">
-                        <div class="blog__item__pic large__item set-bg" data-setbg="img/blog/blog-6.jpg"></div>
+                        <div class="blog__item__pic large__item set-bg" data-setbg="img/blog/blog10.jpg"></div>
                         <div class="blog__item__text">
-                            <h6><a href="#">Stephanie Pratt Busts Out Of Teeny Black Bikini During Hawaii...</a></h6>
+                            <h6><a href="https://www.thebump.com/a/what-is-a-godparent">Your Guide to Picking Godparents: What They Do and How to Choose</a></h6>
                             <ul>
-                                <li>by <span>Ema Timahe</span></li>
-                                <li>Seb 17, 2019</li>
+                                <li>by <span>Stephanie Grassullo</span></li>
+                                <li>May 8, 2020</li>
                             </ul>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-12 text-center">
-                    <a href="#" class="primary-btn load-btn">Load more posts</a>
-                </div>
+               
             </div>
         </div>
     </section>
