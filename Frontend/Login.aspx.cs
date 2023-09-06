@@ -23,7 +23,7 @@ namespace Frontend
             var hashedpass = Hash.HashPassword(Password.Value);
             int Id = s.Login(Email.Value, hashedpass);
 
-            var user = s.GetUser(Id);
+            //var user = s.GetUser(Id);
             if (Id == 0)
             {
                 error.Visible = true;
