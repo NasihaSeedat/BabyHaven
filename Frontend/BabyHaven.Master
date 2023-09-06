@@ -43,7 +43,7 @@
             <li><a href="#"><span class="icon_heart_alt"></span>
                 <div class="tip">2</div>
             </a></li>
-            <li><a href="#"><span class="icon_bag_alt"></span>
+            <li><a href="#"><span class="fa fa-shopping-cart"></span>
                 <div class="tip">2</div>
             </a></li>
         </ul>
@@ -83,11 +83,7 @@
                                 </ul>
                             </li>
 
-                            <li><a href="Blog.aspx">Blog</a>
-                                <ul class="dropdown">
-                                    <li><a href="BlogDetails.aspx">Blog Details</a></li>
-                                </ul>
-                            </li>
+                            <li><a href="Blog.aspx">Blog</a></li>
                             <li><a href="Contact.aspx">Contact</a></li>
                         </ul>
                     </nav>
@@ -103,7 +99,7 @@
                             <li><a href="#"><span class="icon_heart_alt"></span>
                                 <div class="tip">2</div>
                             </a></li>
-                            <li><a href="Cart.aspx"><span class="icon_bag_alt"></span>
+                            <li><a href="Cart.aspx"><span class="fa fa-shopping-cart"></span>
                                 <div class="tip">2</div>
                             </a></li>
                         </ul>

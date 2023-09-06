@@ -255,7 +255,7 @@
                                     <ul class="product__hover">
                                         <li><a href="img/shop/white-crib.jpeg" class="image-popup"><span class="arrow_expand"></span></a></li>
                                         <li><a href="#"><span class="icon_heart_alt"></span></a></li>
-                                        <li><a href="#"><span class="icon_bag_alt"></span></a></li>
+                                        <li><a href="#"><span class="fa fa-shopping-cart"></span></a></li>
                                     </ul>
                                 </div>
                                 <div class="product__item__text">
@@ -271,7 +271,7 @@
                                     <ul class="product__hover">
                                         <li><a href="img/shop/wooden-crib.jpeg" class="image-popup"><span class="arrow_expand"></span></a></li>
                                         <li><a href="#"><span class="icon_heart_alt"></span></a></li>
-                                        <li><a href="#"><span class="icon_bag_alt"></span></a></li>
+                                        <li><a href="#"><span class="fa fa-shopping-cart"></span></a></li>
                                     </ul>
                                 </div>
                                 <div class="product__item__text">
@@ -287,7 +287,7 @@
                                     <ul class="product__hover">
                                         <li><a href="img/shop/baby-monitor.jpeg" class="image-popup"><span class="arrow_expand"></span></a></li>
                                         <li><a href="#"><span class="icon_heart_alt"></span></a></li>
-                                        <li><a href="#"><span class="icon_bag_alt"></span></a></li>
+                                        <li><a href="#"><span class="fa fa-shopping-cart"></span></a></li>
                                     </ul>
                                 </div>
                                 <div class="product__item__text">
@@ -303,7 +303,7 @@
                                     <ul class="product__hover">
                                         <li><a href="img/shop/multi-cradlechair.jpeg" class="image-popup"><span class="arrow_expand"></span></a></li>
                                         <li><a href="#"><span class="icon_heart_alt"></span></a></li>
-                                        <li><a href="#"><span class="icon_bag_alt"></span></a></li>
+                                        <li><a href="#"><span class="fa fa-shopping-cart"></span></a></li>
                                     </ul>
                                 </div>
                                 <div class="product__item__text">
@@ -320,7 +320,7 @@
                                     <ul class="product__hover">
                                         <li><a href="img/shop/wooden-cradlechair.jpeg" class="image-popup"><span class="arrow_expand"></span></a></li>
                                         <li><a href="#"><span class="icon_heart_alt"></span></a></li>
-                                        <li><a href="#"><span class="icon_bag_alt"></span></a></li>
+                                        <li><a href="#"><span class="fa fa-shopping-cart"></span></a></li>
                                     </ul>
                                 </div>
                                 <div class="product__item__text">
@@ -337,7 +337,7 @@
                                     <ul class="product__hover">
                                         <li><a href="img/shop/carseat.jpg" class="image-popup"><span class="arrow_expand"></span></a></li>
                                         <li><a href="#"><span class="icon_heart_alt"></span></a></li>
-                                        <li><a href="#"><span class="icon_bag_alt"></span></a></li>
+                                        <li><a href="#"><span class="fa fa-shopping-cart"></span></a></li>
                                     </ul>
                                 </div>
                                 <div class="product__item__text">
@@ -354,7 +354,7 @@
                                     <ul class="product__hover">
                                         <li><a href="img/shop/stroller.jpg" class="image-popup"><span class="arrow_expand"></span></a></li>
                                         <li><a href="#"><span class="icon_heart_alt"></span></a></li>
-                                        <li><a href="#"><span class="icon_bag_alt"></span></a></li>
+                                        <li><a href="#"><span class="fa fa-shopping-cart"></span></a></li>
                                     </ul>
                                 </div>
                                 <div class="product__item__text">
@@ -371,7 +371,7 @@
                                     <ul class="product__hover">
                                         <li><a href="img/shop/swing.jpg" class="image-popup"><span class="arrow_expand"></span></a></li>
                                         <li><a href="#"><span class="icon_heart_alt"></span></a></li>
-                                        <li><a href="#"><span class="icon_bag_alt"></span></a></li>
+                                        <li><a href="#"><span class="fa fa-shopping-cart"></span></a></li>
                                     </ul>
                                 </div>
                                 <div class="product__item__text">
@@ -388,7 +388,7 @@
                                     <ul class="product__hover">
                                         <li><a href="img/shop/playard.jpg" class="image-popup"><span class="arrow_expand"></span></a></li>
                                         <li><a href="#"><span class="icon_heart_alt"></span></a></li>
-                                        <li><a href="#"><span class="icon_bag_alt"></span></a></li>
+                                        <li><a href="#"><span class="fa fa-shopping-cart"></span></a></li>
                                     </ul>
                                 </div>
                                 <div class="product__item__text">
@@ -405,7 +405,7 @@
                                     <ul class="product__hover">
                                         <li><a href="img/shop/onesie.jpg" class="image-popup"><span class="arrow_expand"></span></a></li>
                                         <li><a href="#"><span class="icon_heart_alt"></span></a></li>
-                                        <li><a href="#"><span class="icon_bag_alt"></span></a></li>
+                                        <li><a href="#"><span class="fa fa-shopping-cart"></span></a></li>
                                     </ul>
                                 </div>
                                 <div class="product__item__text">
@@ -422,7 +422,7 @@
                                     <ul class="product__hover">
                                         <li><a href="img/shop/pjs.jpg" class="image-popup"><span class="arrow_expand"></span></a></li>
                                         <li><a href="#"><span class="icon_heart_alt"></span></a></li>
-                                        <li><a href="#"><span class="icon_bag_alt"></span></a></li>
+                                        <li><a href="#"><span class="fa fa-shopping-cart"></span></a></li>
                                     </ul>
                                 </div>
                                 <div class="product__item__text">
@@ -439,7 +439,7 @@
                                     <ul class="product__hover">
                                         <li><a href="img/shop/sweater.jfif" class="image-popup"><span class="arrow_expand"></span></a></li>
                                         <li><a href="#"><span class="icon_heart_alt"></span></a></li>
-                                        <li><a href="#"><span class="icon_bag_alt"></span></a></li>
+                                        <li><a href="#"><span class="fa fa-shopping-cart"></span></a></li>
                                     </ul>
                                 </div>
                                 <div class="product__item__text">
@@ -455,7 +455,7 @@
                                     <ul class="product__hover">
                                         <li><a href="img/shop/socks.jpg" class="image-popup"><span class="arrow_expand"></span></a></li>
                                         <li><a href="#"><span class="icon_heart_alt"></span></a></li>
-                                        <li><a href="#"><span class="icon_bag_alt"></span></a></li>
+                                        <li><a href="#"><span class="fa fa-shopping-cart"></span></a></li>
                                     </ul>
                                 </div>
                                 <div class="product__item__text">
@@ -473,7 +473,7 @@
                                     <ul class="product__hover">
                                         <li><a href="img/shop/bottle.jpg" class="image-popup"><span class="arrow_expand"></span></a></li>
                                         <li><a href="#"><span class="icon_heart_alt"></span></a></li>
-                                        <li><a href="#"><span class="icon_bag_alt"></span></a></li>
+                                        <li><a href="#"><span class="fa fa-shopping-cart"></span></a></li>
                                     </ul>
                                 </div>
                                 <div class="product__item__text">
@@ -490,7 +490,7 @@
                                     <ul class="product__hover">
                                         <li><a href="img/shop/bib.jpg" class="image-popup"><span class="arrow_expand"></span></a></li>
                                         <li><a href="#"><span class="icon_heart_alt"></span></a></li>
-                                        <li><a href="#"><span class="icon_bag_alt"></span></a></li>
+                                        <li><a href="#"><span class="fa fa-shopping-cart"></span></a></li>
                                     </ul>
                                 </div>
                                 <div class="product__item__text">
@@ -507,7 +507,7 @@
                                     <ul class="product__hover">
                                         <li><a href="img/shop/dummy.jfif" class="image-popup"><span class="arrow_expand"></span></a></li>
                                         <li><a href="#"><span class="icon_heart_alt"></span></a></li>
-                                        <li><a href="#"><span class="icon_bag_alt"></span></a></li>
+                                        <li><a href="#"><span class="fa fa-shopping-cart"></span></a></li>
                                     </ul>
                                 </div>
                                 <div class="product__item__text">
@@ -525,7 +525,7 @@
                                     <ul class="product__hover">
                                         <li><a href="img/shop/thermo.jpg" class="image-popup"><span class="arrow_expand"></span></a></li>
                                         <li><a href="#"><span class="icon_heart_alt"></span></a></li>
-                                        <li><a href="#"><span class="icon_bag_alt"></span></a></li>
+                                        <li><a href="#"><span class="fa fa-shopping-cart"></span></a></li>
                                     </ul>
                                 </div>
                                 <div class="product__item__text">
@@ -542,7 +542,7 @@
                                     <ul class="product__hover">
                                         <li><a href="img/shop/firstaid1.jpg" class="image-popup"><span class="arrow_expand"></span></a></li>
                                         <li><a href="#"><span class="icon_heart_alt"></span></a></li>
-                                        <li><a href="#"><span class="icon_bag_alt"></span></a></li>
+                                        <li><a href="#"><span class="fa fa-shopping-cart"></span></a></li>
                                     </ul>
                                 </div>
                                 <div class="product__item__text">
@@ -559,7 +559,7 @@
                                     <ul class="product__hover">
                                         <li><a href="img/shop/matresspad1.jpg" class="image-popup"><span class="arrow_expand"></span></a></li>
                                         <li><a href="#"><span class="icon_heart_alt"></span></a></li>
-                                        <li><a href="#"><span class="icon_bag_alt"></span></a></li>
+                                        <li><a href="#"><span class="fa fa-shopping-cart"></span></a></li>
                                     </ul>
                                 </div>
                                 <div class="product__item__text">
@@ -576,7 +576,7 @@
                                     <ul class="product__hover">
                                         <li><a href="img/shop/babysheets.jpg" class="image-popup"><span class="arrow_expand"></span></a></li>
                                         <li><a href="#"><span class="icon_heart_alt"></span></a></li>
-                                        <li><a href="#"><span class="icon_bag_alt"></span></a></li>
+                                        <li><a href="#"><span class="fa fa-shopping-cart"></span></a></li>
                                     </ul>
                                 </div>
                                 <div class="product__item__text">
@@ -593,7 +593,7 @@
                                     <ul class="product__hover">
                                         <li><a href="img/shop/blanket.jpg" class="image-popup"><span class="arrow_expand"></span></a></li>
                                         <li><a href="#"><span class="icon_heart_alt"></span></a></li>
-                                        <li><a href="#"><span class="icon_bag_alt"></span></a></li>
+                                        <li><a href="#"><span class="fa fa-shopping-cart"></span></a></li>
                                     </ul>
                                 </div>
                                 <div class="product__item__text">
@@ -610,7 +610,7 @@
                                     <ul class="product__hover">
                                         <li><a href="img/shop/babytable.jpg" class="image-popup"><span class="arrow_expand"></span></a></li>
                                         <li><a href="#"><span class="icon_heart_alt"></span></a></li>
-                                        <li><a href="#"><span class="icon_bag_alt"></span></a></li>
+                                        <li><a href="#"><span class="fa fa-shopping-cart"></span></a></li>
                                     </ul>
                                 </div>
                                 <div class="product__item__text">
@@ -627,7 +627,7 @@
                                     <ul class="product__hover">
                                         <li><a href="img/shop/diaperbag.jpg" class="image-popup"><span class="arrow_expand"></span></a></li>
                                         <li><a href="#"><span class="icon_heart_alt"></span></a></li>
-                                        <li><a href="#"><span class="icon_bag_alt"></span></a></li>
+                                        <li><a href="#"><span class="fa fa-shopping-cart"></span></a></li>
                                     </ul>
                                 </div>
                                 <div class="product__item__text">
@@ -644,7 +644,7 @@
                                     <ul class="product__hover">
                                         <li><a href="img/shop/diapercream.jpg" class="image-popup"><span class="arrow_expand"></span></a></li>
                                         <li><a href="#"><span class="icon_heart_alt"></span></a></li>
-                                        <li><a href="#"><span class="icon_bag_alt"></span></a></li>
+                                        <li><a href="#"><span class="fa fa-shopping-cart"></span></a></li>
                                     </ul>
                                 </div>
                                 <div class="product__item__text">
@@ -661,7 +661,7 @@
                                     <ul class="product__hover">
                                         <li><a href="img/shop/babywipes.jpg" class="image-popup"><span class="arrow_expand"></span></a></li>
                                         <li><a href="#"><span class="icon_heart_alt"></span></a></li>
-                                        <li><a href="#"><span class="icon_bag_alt"></span></a></li>
+                                        <li><a href="#"><span class="fa fa-shopping-cart"></span></a></li>
                                     </ul>
                                 </div>
                                 <div class="product__item__text">
@@ -678,7 +678,7 @@
                                     <ul class="product__hover">
                                         <li><a href="img/shop/diapers.jpg" class="image-popup"><span class="arrow_expand"></span></a></li>
                                         <li><a href="#"><span class="icon_heart_alt"></span></a></li>
-                                        <li><a href="#"><span class="icon_bag_alt"></span></a></li>
+                                        <li><a href="#"><span class="fa fa-shopping-cart"></span></a></li>
                                     </ul>
                                 </div>
                                 <div class="product__item__text">
@@ -695,7 +695,7 @@
                                     <ul class="product__hover">
                                         <li><a href="img/shop/bathtub.jpg" class="image-popup"><span class="arrow_expand"></span></a></li>
                                         <li><a href="#"><span class="icon_heart_alt"></span></a></li>
-                                        <li><a href="#"><span class="icon_bag_alt"></span></a></li>
+                                        <li><a href="#"><span class="fa fa-shopping-cart"></span></a></li>
                                     </ul>
                                 </div>
                                 <div class="product__item__text">
@@ -712,7 +712,7 @@
                                     <ul class="product__hover">
                                         <li><a href="img/shop/towel.jpg" class="image-popup"><span class="arrow_expand"></span></a></li>
                                         <li><a href="#"><span class="icon_heart_alt"></span></a></li>
-                                        <li><a href="#"><span class="icon_bag_alt"></span></a></li>
+                                        <li><a href="#"><span class="fa fa-shopping-cart"></span></a></li>
                                     </ul>
                                 </div>
                                 <div class="product__item__text">
@@ -729,7 +729,7 @@
                                     <ul class="product__hover">
                                         <li><a href="img/shop/brush.jpg" class="image-popup"><span class="arrow_expand"></span></a></li>
                                         <li><a href="#"><span class="icon_heart_alt"></span></a></li>
-                                        <li><a href="#"><span class="icon_bag_alt"></span></a></li>
+                                        <li><a href="#"><span class="fa fa-shopping-cart"></span></a></li>
                                     </ul>
                                 </div>
                                 <div class="product__item__text">
@@ -746,7 +746,7 @@
                                     <ul class="product__hover">
                                         <li><a href="img/shop/washcloth.jpg" class="image-popup"><span class="arrow_expand"></span></a></li>
                                         <li><a href="#"><span class="icon_heart_alt"></span></a></li>
-                                        <li><a href="#"><span class="icon_bag_alt"></span></a></li>
+                                        <li><a href="#"><span class="fa fa-shopping-cart"></span></a></li>
                                     </ul>
                                 </div>
                                 <div class="product__item__text">
@@ -763,8 +763,7 @@
                                     <ul class="product__hover">
                                         <li><a href="img/shop/safehaven.jpg" class="image-popup"><span class="arrow_expand"></span></a></li>
                                         <li><a href="#"><span class="icon_heart_alt"></span></a></li>
-                                        <li><a href="#"><span class="icon_bag_alt"></span></a></li>
-                                    </ul>
+                                        <li><a href="#"><span class="fa fa-shopping-cart"></span></a></li>                                    </ul>
                                 </div>
                                 <div class="product__item__text">
                                     <h6><a href="#">SafeHaven Project Sock</a></h6>
