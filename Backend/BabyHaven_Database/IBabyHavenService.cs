@@ -45,5 +45,12 @@ namespace BabyHaven_Database
 
         [OperationContract]
         int GetQuantity(int UserID, int ProductID);
+
+        //PRODUCTS
+        [OperationContract]
+        List<Product> Getallproducts();
+
+        [OperationContract]
+        Product GetProduct(int id);
     }
 }

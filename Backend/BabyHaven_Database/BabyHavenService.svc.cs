@@ -198,5 +198,37 @@ namespace BabyHaven_Database
                             select p.Cart_Quantity).FirstOrDefault();
             return Quantity;
         }
+
+        public List<Product> Getallproducts()
+        {
+            var prods = new List<Product>();
+
+            dynamic prod = (from t in db.Products
+                            select t);
+
+            foreach (Product p in prod)
+            {
+                var ps = GetProduct(p.Product_Id);
+                prods.Add(ps);
+            }
+
+            return prods;
+        }
+
+        public Product GetProduct(int id)
+        {
+            var us = (from p in db.Products
+                      where p.Product_Id.Equals(id)
+                      select p).FirstOrDefault();
+
+            if (us == null)
+            {
+                return null;
+            }
+            else
+            {
+                return us;
+            }
+        }
     }
 }
