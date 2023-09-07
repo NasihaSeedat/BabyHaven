@@ -39,6 +39,9 @@ namespace BabyHaven_Database
         [OperationContract]
         Product getSingleProd(int id);
 
+        //CART
+        [OperationContract]
+        bool AddToCart(int uId, int pId);
 
         [OperationContract]
         List<Product> GetCartProducts(int id);

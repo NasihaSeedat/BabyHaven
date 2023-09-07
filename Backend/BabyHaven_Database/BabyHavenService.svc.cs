@@ -1,5 +1,8 @@
 ﻿using System;
+using System.CodeDom;
 using System.Collections.Generic;
+using System.Data.SqlClient;
+using System.Diagnostics;
 using System.Linq;
 using System.Runtime.Serialization;
 using System.Security.Cryptography;
@@ -174,10 +177,57 @@ namespace BabyHaven_Database
 
         }
 
+        //CART
+        public bool AddToCart(int uId, int pId)
+        {
+            var CP = (from c in db.Carts
+                        where c.U_Id.Equals(uId) && c.P_Id.Equals(pId)
+                        select c).FirstOrDefault();
+
+            if (CP != null)
+            {
+                CP.Cart_Quantity += 1;
+                try
+                {
+                    db.SubmitChanges();
+                    return true;
+                }
+                catch (Exception ex)
+                {
+                    Debug.WriteLine(ex.GetBaseException());
+                    return false;
+                }
+            }
+            else
+            {
+                Cart newProduct = new Cart
+                {
+                    U_Id = uId,
+                    P_Id = pId,
+                    Cart_Quantity = 1,
+                    Cart_Price = "TODO",
+                };
+
+                db.Carts.InsertOnSubmit(newProduct);
+                try
+                {
+                    db.SubmitChanges();
+                    return true;
+                }
+                catch (Exception ex)
+                {
+                    Debug.WriteLine(ex.GetBaseException());
+                    return false;
+                }
+            }
+
+        }
+
+
         public List<Product> GetCartProducts(int id)
         {
             dynamic Pid = (from p in db.Carts
-                           where p.U_Id == id && p.P_Id != null
+                           where p.U_Id == id
                            select p.P_Id).ToList();
 
             List<Product> products = new List<Product>();
