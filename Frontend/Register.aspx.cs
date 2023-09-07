@@ -18,26 +18,23 @@ namespace Frontend
 
         protected void Register_Click(object sender, EventArgs e)
         {
-            if(Password.Value!= ConfirmPass.Value)
+            if (Password.Value != ConfirmPass.Value)
             {
                 error.Text = "Passwords do not match";
                 error.Visible = true;
             }
             else
             {
-                string registered = s.Register(Email.Value, Hash.HashPassword(Password.Value), firstname.Value, lastname.Value, contact.Value, addressUser.Value, 1);
+                bool registered = s.Register(Email.Value, Hash.HashPassword(Password.Value), firstname.Value, lastname.Value, contact.Value, addressUser.Value, 1);
 
-                if(registered== "REGISTERED")
+                if (registered)
                 {
                     Response.Redirect("Login.aspx");
-                }else if(registered== "REGISTERING UNSUCCESSFUL")
+                }
+                else
                 {
-                    error.Text = "Something went wrong, please try again later";
+                    error.Text = "Something went wrong or the user already exists. Please try again later.";
                     error.Visible = true;
-
-                }else if(registered== "REGISTERING UNSUCCESSFUL")
-                {
-                    error.Text = "The user already exists";
                 }
             }
         }

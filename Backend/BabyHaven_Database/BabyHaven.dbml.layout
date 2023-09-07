@@ -38,7 +38,7 @@
         <elementListCompartment Id="3bf1ceaa-2eec-4628-ad28-3cbc4b1c6005" absoluteBounds="8.64, 3.21, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <associationConnector edgePoints="[(8.625 : 3.82774983723958); (8.25 : 3.82774983723958); (8.25 : 3.95359537760417); (5.625 : 3.95359537760417); (5.625 : 3.625); (2.031252 : 3.625); (2.031252 : 4)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(9.625 : 2.75); (9.625 : 2.5); (8.375 : 2.5); (8.375 : 6.47280110677083); (1.5 : 6.47280110677083); (1.5 : 5.57859537760417)]" fixedFrom="Algorithm" fixedTo="Algorithm">
       <AssociationMoniker Name="/BabyHavenDataContext/Order_Table/Order_Table_Custom_Prod" />
       <nodes>
         <classShapeMoniker Id="86a56616-c9a5-4919-85c8-a3b86cc525dd" />
@@ -51,7 +51,7 @@
         <elementListCompartment Id="16177dbd-5961-461f-ab6a-4ef3b3a4de0d" absoluteBounds="6.14, 4.585, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <associationConnector edgePoints="[(8.625 : 4.51524983723958); (8.125 : 4.51524983723958)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(8.625 : 4.51524983723958); (8.45833333333333 : 4.51524983723958 : JumpStart); (8.29166666666667 : 4.51524983723958 : JumpEnd); (8.125 : 4.51524983723958)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/BabyHavenDataContext/Order_Table/Order_Table_Payment" />
       <nodes>
         <classShapeMoniker Id="86a56616-c9a5-4919-85c8-a3b86cc525dd" />
@@ -64,51 +64,51 @@
         <elementListCompartment Id="430e7573-5430-467f-90be-81c31a9cb902" absoluteBounds="3.3900000000000006, 4.335, 1.9700000000000002, 1.7878011067708335" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <associationConnector edgePoints="[(5.375 : 3.875); (5.54463410669014 : 3.82847828799571 : JumpStart); (5.70536589330986 : 3.78439801408762 : JumpEnd); (6 : 3.70359537760417)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+    <associationConnector edgePoints="[(5.375 : 3.875); (6 : 3.70359537760417)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/BabyHavenDataContext/Product/Product_Cart" />
       <nodes>
         <classShapeMoniker Id="658a4f3f-4dee-4228-8f2c-55a38639b216" />
         <classShapeMoniker Id="21f07a2c-1529-49d9-a537-76c45277d539" />
       </nodes>
     </associationConnector>
-    <classShape Id="bd51dd2e-c665-48db-8460-d7bed36a5da2" absoluteBounds="0.5, 0.625, 2, 2.5401025390625">
+    <classShape Id="6bfd2890-2bbf-4593-a93a-1411d0a998ce" absoluteBounds="0.875, 0.625, 2, 2.5401025390625">
       <DataClassMoniker Name="/BabyHavenDataContext/User_Table" />
       <nestedChildShapes>
-        <elementListCompartment Id="642aec64-dd03-4548-8d87-db29df616fc4" absoluteBounds="0.51500000000000012, 1.085, 1.9700000000000002, 1.9801025390625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="3e00e4c1-4762-4de1-bf2c-000e3ab10619" absoluteBounds="0.89000000000000012, 1.085, 1.9700000000000002, 1.9801025390625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <associationConnector edgePoints="[(2.5 : 1.15949625651042); (3.5 : 1.15949625651042)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(2.875 : 1.15949625651042); (3.5 : 1.15949625651042)]" fixedFrom="Algorithm" fixedTo="Algorithm">
       <AssociationMoniker Name="/BabyHavenDataContext/User_Table/User_Table_Admin" />
       <nodes>
-        <classShapeMoniker Id="bd51dd2e-c665-48db-8460-d7bed36a5da2" />
+        <classShapeMoniker Id="6bfd2890-2bbf-4593-a93a-1411d0a998ce" />
         <classShapeMoniker Id="6b50cc5a-a5f5-4c96-bdc3-70162cdceebb" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(2.5 : 3.14829752604167); (6 : 3.14829752604167)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(2.875 : 3.14829752604167); (6 : 3.14829752604167)]" fixedFrom="Algorithm" fixedTo="Algorithm">
       <AssociationMoniker Name="/BabyHavenDataContext/User_Table/User_Table_Cart" />
       <nodes>
-        <classShapeMoniker Id="bd51dd2e-c665-48db-8460-d7bed36a5da2" />
+        <classShapeMoniker Id="6bfd2890-2bbf-4593-a93a-1411d0a998ce" />
         <classShapeMoniker Id="21f07a2c-1529-49d9-a537-76c45277d539" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(2.5 : 2.69377195540365); (3.375 : 2.69377195540365)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(2.875 : 2.47199625651042); (3.375 : 2.47199625651042)]" fixedFrom="Algorithm" fixedTo="Algorithm">
       <AssociationMoniker Name="/BabyHavenDataContext/User_Table/User_Table_Client" />
       <nodes>
-        <classShapeMoniker Id="bd51dd2e-c665-48db-8460-d7bed36a5da2" />
+        <classShapeMoniker Id="6bfd2890-2bbf-4593-a93a-1411d0a998ce" />
         <classShapeMoniker Id="32d858cf-7f22-43ff-8836-de358c3bf6c0" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(1.5 : 3.1651025390625); (1.5 : 4)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(1.6875 : 3.1651025390625); (1.6875 : 4)]" fixedFrom="Algorithm" fixedTo="Algorithm">
       <AssociationMoniker Name="/BabyHavenDataContext/User_Table/User_Table_Custom_Prod" />
       <nodes>
-        <classShapeMoniker Id="bd51dd2e-c665-48db-8460-d7bed36a5da2" />
+        <classShapeMoniker Id="6bfd2890-2bbf-4593-a93a-1411d0a998ce" />
         <classShapeMoniker Id="692cf18e-9d0d-4cb2-86a5-4f8a16827cd8" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(2.5 : 1.78449625651042); (7.125 : 1.78449625651042)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(2.875 : 1.78449625651042); (7.125 : 1.78449625651042)]" fixedFrom="Algorithm" fixedTo="Algorithm">
       <AssociationMoniker Name="/BabyHavenDataContext/User_Table/User_Table_HackFeedback" />
       <nodes>
-        <classShapeMoniker Id="bd51dd2e-c665-48db-8460-d7bed36a5da2" />
+        <classShapeMoniker Id="6bfd2890-2bbf-4593-a93a-1411d0a998ce" />
         <classShapeMoniker Id="0fc96b08-6150-4323-9020-5518f1121b97" />
       </nodes>
     </associationConnector>

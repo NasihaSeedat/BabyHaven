@@ -81,7 +81,7 @@
   </Table>
   <Table Name="dbo.User_Table" Member="User_Tables">
     <Type Name="User_Table">
-      <Column Name="User_Id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="User_Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
       <Column Name="Email" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
       <Column Name="Password" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
       <Column Name="UserType" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />

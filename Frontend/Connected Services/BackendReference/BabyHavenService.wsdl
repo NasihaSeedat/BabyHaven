@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="BabyHavenService" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+<wsdl:definitions xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tns="http://tempuri.org/" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" name="BabyHavenService" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
   <wsdl:types>
     <xsd:schema targetNamespace="http://tempuri.org/Imports">
       <xsd:import schemaLocation="http://localhost:63329/BabyHavenService.svc?xsd=xsd0" namespace="http://tempuri.org/" />
@@ -43,6 +43,24 @@
   <wsdl:message name="IBabyHavenService_Register_OutputMessage">
     <wsdl:part name="parameters" element="tns:RegisterResponse" />
   </wsdl:message>
+  <wsdl:message name="IBabyHavenService_getSingleProd_InputMessage">
+    <wsdl:part name="parameters" element="tns:getSingleProd" />
+  </wsdl:message>
+  <wsdl:message name="IBabyHavenService_getSingleProd_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getSingleProdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBabyHavenService_GetCartProducts_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCartProducts" />
+  </wsdl:message>
+  <wsdl:message name="IBabyHavenService_GetCartProducts_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCartProductsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBabyHavenService_GetQuantity_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetQuantity" />
+  </wsdl:message>
+  <wsdl:message name="IBabyHavenService_GetQuantity_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetQuantityResponse" />
+  </wsdl:message>
   <wsdl:portType name="IBabyHavenService">
     <wsdl:operation name="Login">
       <wsdl:input wsaw:Action="http://tempuri.org/IBabyHavenService/Login" message="tns:IBabyHavenService_Login_InputMessage" />
@@ -67,6 +85,18 @@
     <wsdl:operation name="Register">
       <wsdl:input wsaw:Action="http://tempuri.org/IBabyHavenService/Register" message="tns:IBabyHavenService_Register_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IBabyHavenService/RegisterResponse" message="tns:IBabyHavenService_Register_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getSingleProd">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBabyHavenService/getSingleProd" message="tns:IBabyHavenService_getSingleProd_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBabyHavenService/getSingleProdResponse" message="tns:IBabyHavenService_getSingleProd_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCartProducts">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBabyHavenService/GetCartProducts" message="tns:IBabyHavenService_GetCartProducts_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBabyHavenService/GetCartProductsResponse" message="tns:IBabyHavenService_GetCartProducts_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetQuantity">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBabyHavenService/GetQuantity" message="tns:IBabyHavenService_GetQuantity_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBabyHavenService/GetQuantityResponse" message="tns:IBabyHavenService_GetQuantity_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_IBabyHavenService" type="tns:IBabyHavenService">
@@ -118,6 +148,33 @@
     </wsdl:operation>
     <wsdl:operation name="Register">
       <soap:operation soapAction="http://tempuri.org/IBabyHavenService/Register" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getSingleProd">
+      <soap:operation soapAction="http://tempuri.org/IBabyHavenService/getSingleProd" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCartProducts">
+      <soap:operation soapAction="http://tempuri.org/IBabyHavenService/GetCartProducts" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetQuantity">
+      <soap:operation soapAction="http://tempuri.org/IBabyHavenService/GetQuantity" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

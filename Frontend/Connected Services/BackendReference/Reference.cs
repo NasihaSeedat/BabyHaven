@@ -1285,10 +1285,28 @@ namespace Frontend.BackendReference {
         System.Threading.Tasks.Task<Frontend.BackendReference.Client> GetClientAsync(int id);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBabyHavenService/Register", ReplyAction="http://tempuri.org/IBabyHavenService/RegisterResponse")]
-        string Register(string email, string password, string name, string surname, string phoneno, string address, int usetype);
+        bool Register(string email, string password, string name, string surname, string phoneno, string address, int usetype);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBabyHavenService/Register", ReplyAction="http://tempuri.org/IBabyHavenService/RegisterResponse")]
-        System.Threading.Tasks.Task<string> RegisterAsync(string email, string password, string name, string surname, string phoneno, string address, int usetype);
+        System.Threading.Tasks.Task<bool> RegisterAsync(string email, string password, string name, string surname, string phoneno, string address, int usetype);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBabyHavenService/getSingleProd", ReplyAction="http://tempuri.org/IBabyHavenService/getSingleProdResponse")]
+        Frontend.BackendReference.Product getSingleProd(int id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBabyHavenService/getSingleProd", ReplyAction="http://tempuri.org/IBabyHavenService/getSingleProdResponse")]
+        System.Threading.Tasks.Task<Frontend.BackendReference.Product> getSingleProdAsync(int id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBabyHavenService/GetCartProducts", ReplyAction="http://tempuri.org/IBabyHavenService/GetCartProductsResponse")]
+        Frontend.BackendReference.Product[] GetCartProducts(int id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBabyHavenService/GetCartProducts", ReplyAction="http://tempuri.org/IBabyHavenService/GetCartProductsResponse")]
+        System.Threading.Tasks.Task<Frontend.BackendReference.Product[]> GetCartProductsAsync(int id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBabyHavenService/GetQuantity", ReplyAction="http://tempuri.org/IBabyHavenService/GetQuantityResponse")]
+        int GetQuantity(int UserID, int ProductID);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBabyHavenService/GetQuantity", ReplyAction="http://tempuri.org/IBabyHavenService/GetQuantityResponse")]
+        System.Threading.Tasks.Task<int> GetQuantityAsync(int UserID, int ProductID);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -1358,12 +1376,36 @@ namespace Frontend.BackendReference {
             return base.Channel.GetClientAsync(id);
         }
         
-        public string Register(string email, string password, string name, string surname, string phoneno, string address, int usetype) {
+        public bool Register(string email, string password, string name, string surname, string phoneno, string address, int usetype) {
             return base.Channel.Register(email, password, name, surname, phoneno, address, usetype);
         }
         
-        public System.Threading.Tasks.Task<string> RegisterAsync(string email, string password, string name, string surname, string phoneno, string address, int usetype) {
+        public System.Threading.Tasks.Task<bool> RegisterAsync(string email, string password, string name, string surname, string phoneno, string address, int usetype) {
             return base.Channel.RegisterAsync(email, password, name, surname, phoneno, address, usetype);
+        }
+        
+        public Frontend.BackendReference.Product getSingleProd(int id) {
+            return base.Channel.getSingleProd(id);
+        }
+        
+        public System.Threading.Tasks.Task<Frontend.BackendReference.Product> getSingleProdAsync(int id) {
+            return base.Channel.getSingleProdAsync(id);
+        }
+        
+        public Frontend.BackendReference.Product[] GetCartProducts(int id) {
+            return base.Channel.GetCartProducts(id);
+        }
+        
+        public System.Threading.Tasks.Task<Frontend.BackendReference.Product[]> GetCartProductsAsync(int id) {
+            return base.Channel.GetCartProductsAsync(id);
+        }
+        
+        public int GetQuantity(int UserID, int ProductID) {
+            return base.Channel.GetQuantity(UserID, ProductID);
+        }
+        
+        public System.Threading.Tasks.Task<int> GetQuantityAsync(int UserID, int ProductID) {
+            return base.Channel.GetQuantityAsync(UserID, ProductID);
         }
     }
 }

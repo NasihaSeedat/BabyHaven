@@ -1,4 +1,4 @@
-﻿INSERT INTO Product(P_Name,P_Description,P_Category,P_Quantity,P_Price,P_DateCreated,P_Image,isActive)
+INSERT INTO Product(P_Name,P_Description,P_Category,P_Quantity,P_Price,P_DateCreated,P_Image,isActive)
 VALUES('White Wooden Cot','This high quality cot is made of New Zealand Pine and comes with a mattress.',
 'Nursery Items',30,3500.99,'2023-09-06','BabyHaven\Frontend\img\shop\white-crib.jpeg',1);
 

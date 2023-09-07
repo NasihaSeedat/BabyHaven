@@ -34,7 +34,16 @@ namespace BabyHaven_Database
         Client GetClient(int id);
 
         [OperationContract]
-        string Register(string email, string password, string name, string surname, string phoneno, string address, int usetype = 1);
+        bool Register(string email, string password, string name, string surname, string phoneno, string address, int usetype = 1);
 
+        [OperationContract]
+        Product getSingleProd(int id);
+
+
+        [OperationContract]
+        List<Product> GetCartProducts(int id);
+
+        [OperationContract]
+        int GetQuantity(int UserID, int ProductID);
     }
 }
