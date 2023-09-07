@@ -12,7 +12,7 @@
       <Column Name="U_Id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
       <Column Name="P_Id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
       <Column Name="Cart_Quantity" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="Cart_Price" Type="System.String" DbType="NChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="Cart_Price" Type="System.Decimal" DbType="Money NOT NULL" CanBeNull="false" />
       <Association Name="User_Table_Cart" Member="User_Table" ThisKey="U_Id" OtherKey="User_Id" Type="User_Table" IsForeignKey="true" />
       <Association Name="Product_Cart" Member="Product" ThisKey="P_Id" OtherKey="Product_Id" Type="Product" IsForeignKey="true" />
     </Type>
@@ -42,19 +42,6 @@
       <Association Name="User_Table_HackFeedback" Member="User_Table" ThisKey="U_Id" OtherKey="User_Id" Type="User_Table" IsForeignKey="true" />
     </Type>
   </Table>
-  <Table Name="dbo.Order_Table" Member="Order_Tables">
-    <Type Name="Order_Table">
-      <Column Name="O_Id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="O_Date" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
-      <Column Name="O_Total" Type="System.Decimal" DbType="Money NOT NULL" CanBeNull="false" />
-      <Column Name="O_Tax" Type="System.Decimal" DbType="Money NOT NULL" CanBeNull="false" />
-      <Column Name="O_Discount" Type="System.Decimal" DbType="Money NOT NULL" CanBeNull="false" />
-      <Column Name="O_Shipping" Type="System.Decimal" DbType="Money NOT NULL" CanBeNull="false" />
-      <Column Name="O_Quantity" Type="System.String" DbType="VARChar(10) NOT NULL" CanBeNull="false" />
-      <Association Name="Order_Table_Custom_Prod" Member="Custom_Prods" ThisKey="O_Id" OtherKey="O_Id" Type="Custom_Prod" />
-      <Association Name="Order_Table_Payment" Member="Payments" ThisKey="O_Id" OtherKey="O_Id" Type="Payment" />
-    </Type>
-  </Table>
   <Table Name="dbo.Payment" Member="Payments">
     <Type Name="Payment">
       <Column Name="Pay_Id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
@@ -64,6 +51,19 @@
       <Column Name="Expiry_date" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
       <Column Name="CardHolder_Name" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
       <Association Name="Order_Table_Payment" Member="Order_Table" ThisKey="O_Id" OtherKey="O_Id" Type="Order_Table" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Order_Table" Member="Order_Tables">
+    <Type Name="Order_Table">
+      <Column Name="O_Id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="O_Date" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="O_Total" Type="System.Decimal" DbType="Money NOT NULL" CanBeNull="false" />
+      <Column Name="O_Tax" Type="System.Decimal" DbType="Money NOT NULL" CanBeNull="false" />
+      <Column Name="O_Discount" Type="System.Decimal" DbType="Money NOT NULL" CanBeNull="false" />
+      <Column Name="O_Shipping" Type="System.Decimal" DbType="Money NOT NULL" CanBeNull="false" />
+      <Column Name="O_Quantity" Type="System.String" DbType="NChar(10) NOT NULL" CanBeNull="false" />
+      <Association Name="Order_Table_Custom_Prod" Member="Custom_Prods" ThisKey="O_Id" OtherKey="O_Id" Type="Custom_Prod" />
+      <Association Name="Order_Table_Payment" Member="Payments" ThisKey="O_Id" OtherKey="O_Id" Type="Payment" />
     </Type>
   </Table>
   <Table Name="dbo.User_Table" Member="User_Tables">
@@ -78,6 +78,7 @@
       <Column Name="Address" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
       <Column Name="Register_Date" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
       <Association Name="User_Table_Admin" Member="Admin" ThisKey="User_Id" OtherKey="U_Id" Type="Admin" Cardinality="One" />
+      <Association Name="User_Table_Cart" Member="Carts" ThisKey="User_Id" OtherKey="U_Id" Type="Cart" />
       <Association Name="User_Table_Client" Member="Client" ThisKey="User_Id" OtherKey="U_Id" Type="Client" Cardinality="One" />
       <Association Name="User_Table_Custom_Prod" Member="Custom_Prods" ThisKey="User_Id" OtherKey="U_Id" Type="Custom_Prod" />
       <Association Name="User_Table_HackFeedback" Member="HackFeedbacks" ThisKey="User_Id" OtherKey="U_Id" Type="HackFeedback" />

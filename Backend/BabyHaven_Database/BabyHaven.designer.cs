@@ -33,6 +33,9 @@ namespace BabyHaven_Database
     partial void InsertAdmin(Admin instance);
     partial void UpdateAdmin(Admin instance);
     partial void DeleteAdmin(Admin instance);
+    partial void InsertCart(Cart instance);
+    partial void UpdateCart(Cart instance);
+    partial void DeleteCart(Cart instance);
     partial void InsertClient(Client instance);
     partial void UpdateClient(Client instance);
     partial void DeleteClient(Client instance);
@@ -42,15 +45,18 @@ namespace BabyHaven_Database
     partial void InsertHackFeedback(HackFeedback instance);
     partial void UpdateHackFeedback(HackFeedback instance);
     partial void DeleteHackFeedback(HackFeedback instance);
-    partial void InsertOrder_Table(Order_Table instance);
-    partial void UpdateOrder_Table(Order_Table instance);
-    partial void DeleteOrder_Table(Order_Table instance);
     partial void InsertPayment(Payment instance);
     partial void UpdatePayment(Payment instance);
     partial void DeletePayment(Payment instance);
+    partial void InsertOrder_Table(Order_Table instance);
+    partial void UpdateOrder_Table(Order_Table instance);
+    partial void DeleteOrder_Table(Order_Table instance);
     partial void InsertUser_Table(User_Table instance);
     partial void UpdateUser_Table(User_Table instance);
     partial void DeleteUser_Table(User_Table instance);
+    partial void InsertProduct(Product instance);
+    partial void UpdateProduct(Product instance);
+    partial void DeleteProduct(Product instance);
     #endregion
 		
 		public BabyHavenDataContext() : 
@@ -123,19 +129,19 @@ namespace BabyHaven_Database
 			}
 		}
 		
-		public System.Data.Linq.Table<Order_Table> Order_Tables
-		{
-			get
-			{
-				return this.GetTable<Order_Table>();
-			}
-		}
-		
 		public System.Data.Linq.Table<Payment> Payments
 		{
 			get
 			{
 				return this.GetTable<Payment>();
+			}
+		}
+		
+		public System.Data.Linq.Table<Order_Table> Order_Tables
+		{
+			get
+			{
+				return this.GetTable<Order_Table>();
 			}
 		}
 		
@@ -152,14 +158,6 @@ namespace BabyHaven_Database
 			get
 			{
 				return this.GetTable<Product>();
-			}
-		}
-		
-		public System.Data.Linq.Table<Cart> Carts
-		{
-			get
-			{
-				return this.GetTable<Cart>();
 			}
 		}
 	}
@@ -303,7 +301,7 @@ namespace BabyHaven_Database
 		
 		private int _Cart_Quantity;
 		
-		private string _Cart_Price;
+		private decimal _Cart_Price;
 		
 		private EntityRef<User_Table> _User_Table;
 		
@@ -319,7 +317,7 @@ namespace BabyHaven_Database
     partial void OnP_IdChanged();
     partial void OnCart_QuantityChanging(int value);
     partial void OnCart_QuantityChanged();
-    partial void OnCart_PriceChanging(string value);
+    partial void OnCart_PriceChanging(decimal value);
     partial void OnCart_PriceChanged();
     #endregion
 		
@@ -398,8 +396,8 @@ namespace BabyHaven_Database
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Cart_Price", DbType="NChar(10) NOT NULL", CanBeNull=false)]
-		public string Cart_Price
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Cart_Price", DbType="Money NOT NULL")]
+		public decimal Cart_Price
 		{
 			get
 			{
@@ -1001,268 +999,6 @@ namespace BabyHaven_Database
 		}
 	}
 	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Order_Table")]
-	public partial class Order_Table : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private int _O_Id;
-		
-		private System.DateTime _O_Date;
-		
-		private decimal _O_Total;
-		
-		private decimal _O_Tax;
-		
-		private decimal _O_Discount;
-		
-		private decimal _O_Shipping;
-		
-		private string _O_Quantity;
-		
-		private EntitySet<Custom_Prod> _Custom_Prods;
-		
-		private EntitySet<Payment> _Payments;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnO_IdChanging(int value);
-    partial void OnO_IdChanged();
-    partial void OnO_DateChanging(System.DateTime value);
-    partial void OnO_DateChanged();
-    partial void OnO_TotalChanging(decimal value);
-    partial void OnO_TotalChanged();
-    partial void OnO_TaxChanging(decimal value);
-    partial void OnO_TaxChanged();
-    partial void OnO_DiscountChanging(decimal value);
-    partial void OnO_DiscountChanged();
-    partial void OnO_ShippingChanging(decimal value);
-    partial void OnO_ShippingChanged();
-    partial void OnO_QuantityChanging(string value);
-    partial void OnO_QuantityChanged();
-    #endregion
-		
-		public Order_Table()
-		{
-			this._Custom_Prods = new EntitySet<Custom_Prod>(new Action<Custom_Prod>(this.attach_Custom_Prods), new Action<Custom_Prod>(this.detach_Custom_Prods));
-			this._Payments = new EntitySet<Payment>(new Action<Payment>(this.attach_Payments), new Action<Payment>(this.detach_Payments));
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_O_Id", DbType="Int NOT NULL", IsPrimaryKey=true)]
-		public int O_Id
-		{
-			get
-			{
-				return this._O_Id;
-			}
-			set
-			{
-				if ((this._O_Id != value))
-				{
-					this.OnO_IdChanging(value);
-					this.SendPropertyChanging();
-					this._O_Id = value;
-					this.SendPropertyChanged("O_Id");
-					this.OnO_IdChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_O_Date", DbType="Date NOT NULL")]
-		public System.DateTime O_Date
-		{
-			get
-			{
-				return this._O_Date;
-			}
-			set
-			{
-				if ((this._O_Date != value))
-				{
-					this.OnO_DateChanging(value);
-					this.SendPropertyChanging();
-					this._O_Date = value;
-					this.SendPropertyChanged("O_Date");
-					this.OnO_DateChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_O_Total", DbType="Money NOT NULL")]
-		public decimal O_Total
-		{
-			get
-			{
-				return this._O_Total;
-			}
-			set
-			{
-				if ((this._O_Total != value))
-				{
-					this.OnO_TotalChanging(value);
-					this.SendPropertyChanging();
-					this._O_Total = value;
-					this.SendPropertyChanged("O_Total");
-					this.OnO_TotalChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_O_Tax", DbType="Money NOT NULL")]
-		public decimal O_Tax
-		{
-			get
-			{
-				return this._O_Tax;
-			}
-			set
-			{
-				if ((this._O_Tax != value))
-				{
-					this.OnO_TaxChanging(value);
-					this.SendPropertyChanging();
-					this._O_Tax = value;
-					this.SendPropertyChanged("O_Tax");
-					this.OnO_TaxChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_O_Discount", DbType="Money NOT NULL")]
-		public decimal O_Discount
-		{
-			get
-			{
-				return this._O_Discount;
-			}
-			set
-			{
-				if ((this._O_Discount != value))
-				{
-					this.OnO_DiscountChanging(value);
-					this.SendPropertyChanging();
-					this._O_Discount = value;
-					this.SendPropertyChanged("O_Discount");
-					this.OnO_DiscountChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_O_Shipping", DbType="Money NOT NULL")]
-		public decimal O_Shipping
-		{
-			get
-			{
-				return this._O_Shipping;
-			}
-			set
-			{
-				if ((this._O_Shipping != value))
-				{
-					this.OnO_ShippingChanging(value);
-					this.SendPropertyChanging();
-					this._O_Shipping = value;
-					this.SendPropertyChanged("O_Shipping");
-					this.OnO_ShippingChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_O_Quantity", DbType="VARChar(10) NOT NULL", CanBeNull=false)]
-		public string O_Quantity
-		{
-			get
-			{
-				return this._O_Quantity;
-			}
-			set
-			{
-				if ((this._O_Quantity != value))
-				{
-					this.OnO_QuantityChanging(value);
-					this.SendPropertyChanging();
-					this._O_Quantity = value;
-					this.SendPropertyChanged("O_Quantity");
-					this.OnO_QuantityChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Order_Table_Custom_Prod", Storage="_Custom_Prods", ThisKey="O_Id", OtherKey="O_Id")]
-		public EntitySet<Custom_Prod> Custom_Prods
-		{
-			get
-			{
-				return this._Custom_Prods;
-			}
-			set
-			{
-				this._Custom_Prods.Assign(value);
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Order_Table_Payment", Storage="_Payments", ThisKey="O_Id", OtherKey="O_Id")]
-		public EntitySet<Payment> Payments
-		{
-			get
-			{
-				return this._Payments;
-			}
-			set
-			{
-				this._Payments.Assign(value);
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-		
-		private void attach_Custom_Prods(Custom_Prod entity)
-		{
-			this.SendPropertyChanging();
-			entity.Order_Table = this;
-		}
-		
-		private void detach_Custom_Prods(Custom_Prod entity)
-		{
-			this.SendPropertyChanging();
-			entity.Order_Table = null;
-		}
-		
-		private void attach_Payments(Payment entity)
-		{
-			this.SendPropertyChanging();
-			entity.Order_Table = this;
-		}
-		
-		private void detach_Payments(Payment entity)
-		{
-			this.SendPropertyChanging();
-			entity.Order_Table = null;
-		}
-	}
-	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Payment")]
 	public partial class Payment : INotifyPropertyChanging, INotifyPropertyChanged
 	{
@@ -1486,228 +1222,220 @@ namespace BabyHaven_Database
 		}
 	}
 	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Product")]
-	public partial class Product : INotifyPropertyChanging, INotifyPropertyChanged
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Order_Table")]
+	public partial class Order_Table : INotifyPropertyChanging, INotifyPropertyChanged
 	{
 		
 		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
 		
-		private int _Product_Id;
+		private int _O_Id;
 		
-		private string _P_Name;
+		private System.DateTime _O_Date;
 		
-		private string _P_Description;
+		private decimal _O_Total;
 		
-		private string _P_Category;
+		private decimal _O_Tax;
 		
-		private int _P_Quantity;
+		private decimal _O_Discount;
 		
-		private decimal _P_Price;
+		private decimal _O_Shipping;
 		
-		private System.DateTime _P_DateCreated;
+		private string _O_Quantity;
 		
-		private string _P_Image;
+		private EntitySet<Custom_Prod> _Custom_Prods;
 		
-		private EntitySet<Cart> _Carts;
+		private EntitySet<Payment> _Payments;
 		
     #region Extensibility Method Definitions
     partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
     partial void OnCreated();
-    partial void OnProduct_IdChanging(int value);
-    partial void OnProduct_IdChanged();
-    partial void OnP_NameChanging(string value);
-    partial void OnP_NameChanged();
-    partial void OnP_DescriptionChanging(string value);
-    partial void OnP_DescriptionChanged();
-    partial void OnP_CategoryChanging(string value);
-    partial void OnP_CategoryChanged();
-    partial void OnP_QuantityChanging(int value);
-    partial void OnP_QuantityChanged();
-    partial void OnP_PriceChanging(decimal value);
-    partial void OnP_PriceChanged();
-    partial void OnP_DateCreatedChanging(System.DateTime value);
-    partial void OnP_DateCreatedChanged();
-    partial void OnP_ImageChanging(string value);
-    partial void OnP_ImageChanged();
+    partial void OnO_IdChanging(int value);
+    partial void OnO_IdChanged();
+    partial void OnO_DateChanging(System.DateTime value);
+    partial void OnO_DateChanged();
+    partial void OnO_TotalChanging(decimal value);
+    partial void OnO_TotalChanged();
+    partial void OnO_TaxChanging(decimal value);
+    partial void OnO_TaxChanged();
+    partial void OnO_DiscountChanging(decimal value);
+    partial void OnO_DiscountChanged();
+    partial void OnO_ShippingChanging(decimal value);
+    partial void OnO_ShippingChanged();
+    partial void OnO_QuantityChanging(string value);
+    partial void OnO_QuantityChanged();
     #endregion
 		
-		public Product()
+		public Order_Table()
 		{
-			this._Carts = new EntitySet<Cart>(new Action<Cart>(this.attach_Carts), new Action<Cart>(this.detach_Carts));
+			this._Custom_Prods = new EntitySet<Custom_Prod>(new Action<Custom_Prod>(this.attach_Custom_Prods), new Action<Custom_Prod>(this.detach_Custom_Prods));
+			this._Payments = new EntitySet<Payment>(new Action<Payment>(this.attach_Payments), new Action<Payment>(this.detach_Payments));
 			OnCreated();
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Product_Id", DbType="Int NOT NULL", IsPrimaryKey=true)]
-		public int Product_Id
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_O_Id", DbType="Int NOT NULL", IsPrimaryKey=true)]
+		public int O_Id
 		{
 			get
 			{
-				return this._Product_Id;
+				return this._O_Id;
 			}
 			set
 			{
-				if ((this._Product_Id != value))
+				if ((this._O_Id != value))
 				{
-					this.OnProduct_IdChanging(value);
+					this.OnO_IdChanging(value);
 					this.SendPropertyChanging();
-					this._Product_Id = value;
-					this.SendPropertyChanged("Product_Id");
-					this.OnProduct_IdChanged();
+					this._O_Id = value;
+					this.SendPropertyChanged("O_Id");
+					this.OnO_IdChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_P_Name", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
-		public string P_Name
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_O_Date", DbType="Date NOT NULL")]
+		public System.DateTime O_Date
 		{
 			get
 			{
-				return this._P_Name;
+				return this._O_Date;
 			}
 			set
 			{
-				if ((this._P_Name != value))
+				if ((this._O_Date != value))
 				{
-					this.OnP_NameChanging(value);
+					this.OnO_DateChanging(value);
 					this.SendPropertyChanging();
-					this._P_Name = value;
-					this.SendPropertyChanged("P_Name");
-					this.OnP_NameChanged();
+					this._O_Date = value;
+					this.SendPropertyChanged("O_Date");
+					this.OnO_DateChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_P_Description", DbType="VarChar(MAX) NOT NULL", CanBeNull=false)]
-		public string P_Description
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_O_Total", DbType="Money NOT NULL")]
+		public decimal O_Total
 		{
 			get
 			{
-				return this._P_Description;
+				return this._O_Total;
 			}
 			set
 			{
-				if ((this._P_Description != value))
+				if ((this._O_Total != value))
 				{
-					this.OnP_DescriptionChanging(value);
+					this.OnO_TotalChanging(value);
 					this.SendPropertyChanging();
-					this._P_Description = value;
-					this.SendPropertyChanged("P_Description");
-					this.OnP_DescriptionChanged();
+					this._O_Total = value;
+					this.SendPropertyChanged("O_Total");
+					this.OnO_TotalChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_P_Category", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
-		public string P_Category
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_O_Tax", DbType="Money NOT NULL")]
+		public decimal O_Tax
 		{
 			get
 			{
-				return this._P_Category;
+				return this._O_Tax;
 			}
 			set
 			{
-				if ((this._P_Category != value))
+				if ((this._O_Tax != value))
 				{
-					this.OnP_CategoryChanging(value);
+					this.OnO_TaxChanging(value);
 					this.SendPropertyChanging();
-					this._P_Category = value;
-					this.SendPropertyChanged("P_Category");
-					this.OnP_CategoryChanged();
+					this._O_Tax = value;
+					this.SendPropertyChanged("O_Tax");
+					this.OnO_TaxChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_P_Quantity", DbType="Int NOT NULL")]
-		public int P_Quantity
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_O_Discount", DbType="Money NOT NULL")]
+		public decimal O_Discount
 		{
 			get
 			{
-				return this._P_Quantity;
+				return this._O_Discount;
 			}
 			set
 			{
-				if ((this._P_Quantity != value))
+				if ((this._O_Discount != value))
 				{
-					this.OnP_QuantityChanging(value);
+					this.OnO_DiscountChanging(value);
 					this.SendPropertyChanging();
-					this._P_Quantity = value;
-					this.SendPropertyChanged("P_Quantity");
-					this.OnP_QuantityChanged();
+					this._O_Discount = value;
+					this.SendPropertyChanged("O_Discount");
+					this.OnO_DiscountChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_P_Price", DbType="Money NOT NULL")]
-		public decimal P_Price
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_O_Shipping", DbType="Money NOT NULL")]
+		public decimal O_Shipping
 		{
 			get
 			{
-				return this._P_Price;
+				return this._O_Shipping;
 			}
 			set
 			{
-				if ((this._P_Price != value))
+				if ((this._O_Shipping != value))
 				{
-					this.OnP_PriceChanging(value);
+					this.OnO_ShippingChanging(value);
 					this.SendPropertyChanging();
-					this._P_Price = value;
-					this.SendPropertyChanged("P_Price");
-					this.OnP_PriceChanged();
+					this._O_Shipping = value;
+					this.SendPropertyChanged("O_Shipping");
+					this.OnO_ShippingChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_P_DateCreated", DbType="Date NOT NULL")]
-		public System.DateTime P_DateCreated
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_O_Quantity", DbType="NChar(10) NOT NULL", CanBeNull=false)]
+		public string O_Quantity
 		{
 			get
 			{
-				return this._P_DateCreated;
+				return this._O_Quantity;
 			}
 			set
 			{
-				if ((this._P_DateCreated != value))
+				if ((this._O_Quantity != value))
 				{
-					this.OnP_DateCreatedChanging(value);
+					this.OnO_QuantityChanging(value);
 					this.SendPropertyChanging();
-					this._P_DateCreated = value;
-					this.SendPropertyChanged("P_DateCreated");
-					this.OnP_DateCreatedChanged();
+					this._O_Quantity = value;
+					this.SendPropertyChanged("O_Quantity");
+					this.OnO_QuantityChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_P_Image", DbType="VarChar(MAX) NOT NULL", CanBeNull=false)]
-		public string P_Image
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Order_Table_Custom_Prod", Storage="_Custom_Prods", ThisKey="O_Id", OtherKey="O_Id")]
+		public EntitySet<Custom_Prod> Custom_Prods
 		{
 			get
 			{
-				return this._P_Image;
+				return this._Custom_Prods;
 			}
 			set
 			{
-				if ((this._P_Image != value))
-				{
-					this.OnP_ImageChanging(value);
-					this.SendPropertyChanging();
-					this._P_Image = value;
-					this.SendPropertyChanged("P_Image");
-					this.OnP_ImageChanged();
-				}
+				this._Custom_Prods.Assign(value);
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Product_Cart", Storage="_Carts", ThisKey="Product_Id", OtherKey="P_Id")]
-		public EntitySet<Cart> Carts
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Order_Table_Payment", Storage="_Payments", ThisKey="O_Id", OtherKey="O_Id")]
+		public EntitySet<Payment> Payments
 		{
 			get
 			{
-				return this._Carts;
+				return this._Payments;
 			}
 			set
 			{
-				this._Carts.Assign(value);
+				this._Payments.Assign(value);
 			}
 		}
 		
@@ -1731,16 +1459,28 @@ namespace BabyHaven_Database
 			}
 		}
 		
-		private void attach_Carts(Cart entity)
+		private void attach_Custom_Prods(Custom_Prod entity)
 		{
 			this.SendPropertyChanging();
-			entity.Product = this;
+			entity.Order_Table = this;
 		}
 		
-		private void detach_Carts(Cart entity)
+		private void detach_Custom_Prods(Custom_Prod entity)
 		{
 			this.SendPropertyChanging();
-			entity.Product = null;
+			entity.Order_Table = null;
+		}
+		
+		private void attach_Payments(Payment entity)
+		{
+			this.SendPropertyChanging();
+			entity.Order_Table = this;
+		}
+		
+		private void detach_Payments(Payment entity)
+		{
+			this.SendPropertyChanging();
+			entity.Order_Table = null;
 		}
 	}
 	
@@ -1770,13 +1510,13 @@ namespace BabyHaven_Database
 		
 		private EntityRef<Admin> _Admin;
 		
+		private EntitySet<Cart> _Carts;
+		
 		private EntityRef<Client> _Client;
 		
 		private EntitySet<Custom_Prod> _Custom_Prods;
 		
 		private EntitySet<HackFeedback> _HackFeedbacks;
-		
-		private EntitySet<Cart> _Carts;
 		
     #region Extensibility Method Definitions
     partial void OnLoaded();
@@ -1805,10 +1545,10 @@ namespace BabyHaven_Database
 		public User_Table()
 		{
 			this._Admin = default(EntityRef<Admin>);
+			this._Carts = new EntitySet<Cart>(new Action<Cart>(this.attach_Carts), new Action<Cart>(this.detach_Carts));
 			this._Client = default(EntityRef<Client>);
 			this._Custom_Prods = new EntitySet<Custom_Prod>(new Action<Custom_Prod>(this.attach_Custom_Prods), new Action<Custom_Prod>(this.detach_Custom_Prods));
 			this._HackFeedbacks = new EntitySet<HackFeedback>(new Action<HackFeedback>(this.attach_HackFeedbacks), new Action<HackFeedback>(this.detach_HackFeedbacks));
-			this._Carts = new EntitySet<Cart>(new Action<Cart>(this.attach_Carts), new Action<Cart>(this.detach_Carts));
 			OnCreated();
 		}
 		
@@ -2089,19 +1829,6 @@ namespace BabyHaven_Database
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="User_Table_Cart", Storage="_Carts", ThisKey="User_Id", OtherKey="U_Id")]
-		public EntitySet<Cart> Carts
-		{
-			get
-			{
-				return this._Carts;
-			}
-			set
-			{
-				this._Carts.Assign(value);
-			}
-		}
-		
 		public event PropertyChangingEventHandler PropertyChanging;
 		
 		public event PropertyChangedEventHandler PropertyChanged;
@@ -2120,6 +1847,18 @@ namespace BabyHaven_Database
 			{
 				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
 			}
+		}
+		
+		private void attach_Carts(Cart entity)
+		{
+			this.SendPropertyChanging();
+			entity.User_Table = this;
+		}
+		
+		private void detach_Carts(Cart entity)
+		{
+			this.SendPropertyChanging();
+			entity.User_Table = null;
 		}
 		
 		private void attach_Custom_Prods(Custom_Prod entity)
@@ -2141,18 +1880,6 @@ namespace BabyHaven_Database
 		}
 		
 		private void detach_HackFeedbacks(HackFeedback entity)
-		{
-			this.SendPropertyChanging();
-			entity.User_Table = null;
-		}
-		
-		private void attach_Carts(Cart entity)
-		{
-			this.SendPropertyChanging();
-			entity.User_Table = this;
-		}
-		
-		private void detach_Carts(Cart entity)
 		{
 			this.SendPropertyChanging();
 			entity.User_Table = null;

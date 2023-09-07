@@ -224,7 +224,8 @@ namespace BabyHaven_Database
                     U_Id = uId,
                     P_Id = pId,
                     Cart_Quantity = 1,
-                    Cart_Price = "TODO",
+                    //TODO
+                    Cart_Price = pId * 1 ,
                 };
 
                 db.Carts.InsertOnSubmit(newProduct);
