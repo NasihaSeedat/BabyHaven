@@ -66,19 +66,6 @@
       <Association Name="Order_Table_Payment" Member="Order_Table" ThisKey="O_Id" OtherKey="O_Id" Type="Order_Table" IsForeignKey="true" />
     </Type>
   </Table>
-  <Table Name="dbo.Product" Member="Products">
-    <Type Name="Product">
-      <Column Name="Product_Id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="P_Name" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
-      <Column Name="P_Description" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
-      <Column Name="P_Category" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
-      <Column Name="P_Quantity" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="P_Price" Type="System.Decimal" DbType="Money NOT NULL" CanBeNull="false" />
-      <Column Name="P_DateCreated" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
-      <Column Name="P_Image" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
-      <Association Name="Product_Cart" Member="Carts" ThisKey="Product_Id" OtherKey="P_Id" Type="Cart" />
-    </Type>
-  </Table>
   <Table Name="dbo.User_Table" Member="User_Tables">
     <Type Name="User_Table">
       <Column Name="User_Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />

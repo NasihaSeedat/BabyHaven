@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
+using System.Data;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -9,9 +11,50 @@ namespace Frontend
 {
     public partial class BabyHaven : System.Web.UI.MasterPage
     {
+        BackendReference.BabyHavenServiceClient sr = new BackendReference.BabyHavenServiceClient();
         protected void Page_Load(object sender, EventArgs e)
         {
+            //int UserID;
+            //int totalItems = 0;
 
+            //if (Session["LoggedInUserID"] != null)
+            //{
+            //    UserID = Convert.ToInt32(Session["LoggedInUserID"]);
+            //    dynamic products = sr.GetCartProducts(UserID);
+            //    foreach (BackendReference.Product pr in products)
+            //    {
+            //        int Quantity = sr.GetQuantity(UserID, pr.Product_Id);
+            //        totalItems += Quantity;
+            //    }
+            //}
+            //else
+            //{
+            //    totalItems = 0;
+            //}
         }
+
+        public int GetCartItemCount()
+        {
+            int UserID;
+            int totalItems = 0;
+
+            if (Session["LoggedInUserID"] != null)
+            {
+                UserID = Convert.ToInt32(Session["LoggedInUserID"]);
+                dynamic products = sr.GetCartProducts(UserID);
+                foreach (BackendReference.Product pr in products)
+                {
+                    int Quantity = sr.GetQuantity(UserID, pr.Product_Id);
+                    totalItems += Quantity;
+                }
+            }
+            else
+            {
+                totalItems = 0;
+            }
+
+            return totalItems;
+        }
+
     }
 }

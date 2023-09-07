@@ -31,7 +31,9 @@
 <body>
     <!-- Page Preloader -->
     <div id="preloder">
-        <div class="loader"></div>
+        <img src="babyloader.gif" alt="Loading..." class="loader">
+
+       <%-- <div class="loader"></div>--%>
     </div>
 
     <!-- Offcanvas Menu Begin -->
@@ -40,11 +42,11 @@
         <div class="offcanvas__close">+</div>
         <ul class="offcanvas__widget">
             <li><span class="icon_search search-switch"></span></li>
-            <li><a href="#"><span class="icon_heart_alt"></span>
-                <div class="tip">2</div>
-            </a></li>
-            <li><a href="#"><span class="icon_bag_alt"></span>
-                <div class="tip">2</div>
+            <li><a href="Cart.aspx"><span class="fa fa-shopping-cart"></span>
+                <div class="tip">
+                    <% int cartItemCount = GetCartItemCount(); %>
+                    <%= cartItemCount %>
+                </div>
             </a></li>
         </ul>
         <div class="offcanvas__logo">
@@ -70,12 +72,7 @@
                 <div class="col-xl-6 col-lg-7">
                     <nav class="header__menu">
                         <ul>
-                            <li><a href="Home.aspx">Home</a>
-                                <ul class="dropdown">
-                                    <li><a href="Cart.aspx">Shop Cart</a></li>
-                                    <li><a href="Checkout.aspx">Checkout</a></li>
-                                </ul>
-                            </li>
+                            <li><a href="Home.aspx">Home</a></li>
                             
                             <li><a href="Shop.aspx">Shop</a>
                                 <ul class="dropdown">
@@ -108,10 +105,10 @@
                         <ul class="header__right__widget">
                             <li><span class="icon_search search-switch"></span></li>
                             <li><a href="Cart.aspx"><span class="fa fa-shopping-cart"></span>
-                              <%--  <div class="tip">
+                                <div class="tip">
                                     <% cartItemCount = GetCartItemCount(); %>
                                     <%= cartItemCount %>
-                                </div>--%>
+                                </div>
                             </a></li>
                         </ul>
                     </div>
@@ -225,8 +222,7 @@
                         <ul>
                             <li><a href="#">My Account</a></li>
                             <li><a href="#">Orders Tracking</a></li>
-                            <li><a href="Cart.aspx">Checkout</a></li>
-                            <li><a href="#">Wishlist</a></li>
+                            <li><a href="Checkout.aspx">Checkout</a></li>
                         </ul>
                     </div>
                 </div>

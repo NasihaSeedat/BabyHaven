@@ -1,7 +1,11 @@
 ﻿using System;
+using System.CodeDom;
 using System.Collections.Generic;
+using System.Data.SqlClient;
+using System.Diagnostics;
 using System.Linq;
 using System.Runtime.Serialization;
+using System.Security.Cryptography;
 using System.ServiceModel;
 using System.Text;
 
@@ -173,6 +177,165 @@ namespace BabyHaven_Database
             {
                 //already exists
                 return false;
+            }
+        }
+
+        public Product getSingleProd(int id)
+        {
+            var prod = (from p in db.Products
+                        where p.Product_Id == id
+                        select p).FirstOrDefault();
+            if (prod != null)
+            {
+                return prod;
+            }
+            else
+            {
+                return null;
+            }
+
+        }
+
+        //CART
+        public bool AddToCart(int uId, int pId)
+        {
+            var CP = (from c in db.Carts
+                        where c.U_Id.Equals(uId) && c.P_Id.Equals(pId)
+                        select c).FirstOrDefault();
+
+            if (CP != null)
+            {
+                CP.Cart_Quantity += 1;
+                try
+                {
+                    db.SubmitChanges();
+                    return true;
+                }
+                catch (Exception ex)
+                {
+                    Debug.WriteLine(ex.GetBaseException());
+                    return false;
+                }
+            }
+            else
+            {
+                Cart newProduct = new Cart
+                {
+                    U_Id = uId,
+                    P_Id = pId,
+                    Cart_Quantity = 1,
+                    Cart_Price = "TODO",
+                };
+
+                db.Carts.InsertOnSubmit(newProduct);
+                try
+                {
+                    db.SubmitChanges();
+                    return true;
+                }
+                catch (Exception ex)
+                {
+                    Debug.WriteLine(ex.GetBaseException());
+                    return false;
+                }
+            }
+
+        }
+
+        //public decimal CalculateTotalPrice(int UserID)
+        //{
+        //    Decimal Total = 0;
+        //    List<Cart> products = new List<Cart>();
+        //    products = GetCartProducts(UserID);
+        //    foreach (Cart c in products)
+        //    {
+        //        Total += c.Cart_Price * c.Cart_Quantity;
+        //    }
+        //    return Total;
+        //}
+
+
+        public List<Product> GetCartProducts(int id)
+        {
+            dynamic Pid = (from p in db.Carts
+                           where p.U_Id == id
+                           select p.P_Id).ToList();
+
+            List<Product> products = new List<Product>();
+            foreach (int productid in Pid)
+            {
+                Product pr = getSingleProd(productid);
+                if (pr != null)
+                    products.Add(pr);
+            }
+
+            return products;
+        }
+
+        public int GetQuantity(int UserID, int ProductID)
+        {
+            int Quantity = (from p in db.Carts
+                            where p.U_Id == UserID && p.P_Id == ProductID
+                            select p.Cart_Quantity).FirstOrDefault();
+            return Quantity;
+        }
+
+        public List<Product> Getallproducts()
+        {
+            var prods = new List<Product>();
+
+            dynamic prod = (from t in db.Products
+                            select t);
+
+            foreach (Product p in prod)
+            {
+                var ps = getSingleProd(p.Product_Id);
+                prods.Add(ps);
+            }
+
+            return prods;
+        }
+
+        public string Addproducts(string name, string description, string cat, int quantity, decimal price, bool active, int prodID, int admin)
+        {
+            var prod = (from p in db.Products
+                        where p.P_Name.Equals(name)
+                        select p).FirstOrDefault();
+
+            var a = GetAdmin(admin);
+            a.U_Id = admin;
+
+            var pr = getSingleProd(prodID);
+            pr.Product_Id = prodID;
+
+            if (prod == null)
+            {
+                var newprod = new Product
+                {
+                    P_Name = name,
+                    P_Description = description,
+                    P_Category = cat,
+                    P_Quantity = quantity,
+                    P_Price = price,
+                    isActive = active,
+                    P_DateCreated = DateTime.Today,
+                };
+                db.Products.InsertOnSubmit(newprod);
+
+                try
+                {
+                    db.SubmitChanges();
+                    return "added";
+                }
+                catch (Exception ex)
+                {
+                    ex.GetBaseException();
+                    return "not added";
+                }
+            }
+            else
+            {
+                return "error";
             }
         }
     }

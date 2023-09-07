@@ -132,6 +132,18 @@
                                             </div>
                                         </div>
                                     </div>
+                                    <div class="card">
+                                        <div class="card-heading">
+                                            <a data-toggle="collapse" data-target="#collapseNine">Project SafeHaven</a>
+                                        </div>
+                                        <div id="collapseNine" class="collapse" data-parent="#accordionExample">
+                                            <div class="card-body">
+                                                <ul>
+                                                    <li><a href="#">SafeHaven Socks</a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -242,8 +254,7 @@
                                 <div class="product__item__pic set-bg" data-setbg="img/shop/white-crib.jpeg">
                                     <ul class="product__hover">
                                         <li><a href="img/shop/white-crib.jpeg" class="image-popup"><span class="arrow_expand"></span></a></li>
-                                        <li><a href="#"><span class="icon_heart_alt"></span></a></li>
-                                        <li><a href="#"><span class="icon_bag_alt"></span></a></li>
+                                        <li><a href="#"><span class="fa fa-shopping-cart"></span></a></li>
                                     </ul>
                                 </div>
                                 <div class="product__item__text">
@@ -258,8 +269,7 @@
                                 <div class="product__item__pic set-bg" data-setbg="img/shop/wooden-crib.jpeg">
                                     <ul class="product__hover">
                                         <li><a href="img/shop/wooden-crib.jpeg" class="image-popup"><span class="arrow_expand"></span></a></li>
-                                        <li><a href="#"><span class="icon_heart_alt"></span></a></li>
-                                        <li><a href="#"><span class="icon_bag_alt"></span></a></li>
+                                        <li><a href="#"><span class="fa fa-shopping-cart"></span></a></li>
                                     </ul>
                                 </div>
                                 <div class="product__item__text">
@@ -274,8 +284,7 @@
                                 <div class="product__item__pic set-bg" data-setbg="img/shop/baby-monitor.jpeg">
                                     <ul class="product__hover">
                                         <li><a href="img/shop/baby-monitor.jpeg" class="image-popup"><span class="arrow_expand"></span></a></li>
-                                        <li><a href="#"><span class="icon_heart_alt"></span></a></li>
-                                        <li><a href="#"><span class="icon_bag_alt"></span></a></li>
+                                        <li><a href="#"><span class="fa fa-shopping-cart"></span></a></li>
                                     </ul>
                                 </div>
                                 <div class="product__item__text">
@@ -290,8 +299,7 @@
                                 <div class="product__item__pic set-bg" data-setbg="img/shop/multi-cradlechair.jpeg">
                                     <ul class="product__hover">
                                         <li><a href="img/shop/multi-cradlechair.jpeg" class="image-popup"><span class="arrow_expand"></span></a></li>
-                                        <li><a href="#"><span class="icon_heart_alt"></span></a></li>
-                                        <li><a href="#"><span class="icon_bag_alt"></span></a></li>
+                                        <li><a href="#"><span class="fa fa-shopping-cart"></span></a></li>
                                     </ul>
                                 </div>
                                 <div class="product__item__text">
@@ -307,8 +315,7 @@
                                     <div class="label">Sale</div>
                                     <ul class="product__hover">
                                         <li><a href="img/shop/wooden-cradlechair.jpeg" class="image-popup"><span class="arrow_expand"></span></a></li>
-                                        <li><a href="#"><span class="icon_heart_alt"></span></a></li>
-                                        <li><a href="#"><span class="icon_bag_alt"></span></a></li>
+                                        <li><a href="#"><span class="fa fa-shopping-cart"></span></a></li>
                                     </ul>
                                 </div>
                                 <div class="product__item__text">
@@ -324,8 +331,7 @@
                                 <div class="product__item__pic set-bg" data-setbg="img/shop/carseat.jpg">
                                     <ul class="product__hover">
                                         <li><a href="img/shop/carseat.jpg" class="image-popup"><span class="arrow_expand"></span></a></li>
-                                        <li><a href="#"><span class="icon_heart_alt"></span></a></li>
-                                        <li><a href="#"><span class="icon_bag_alt"></span></a></li>
+                                        <li><a href="#"><span class="fa fa-shopping-cart"></span></a></li>
                                     </ul>
                                 </div>
                                 <div class="product__item__text">
@@ -341,8 +347,7 @@
                                 <div class="product__item__pic set-bg" data-setbg="img/shop/stroller.jpg">
                                     <ul class="product__hover">
                                         <li><a href="img/shop/stroller.jpg" class="image-popup"><span class="arrow_expand"></span></a></li>
-                                        <li><a href="#"><span class="icon_heart_alt"></span></a></li>
-                                        <li><a href="#"><span class="icon_bag_alt"></span></a></li>
+                                        <li><a href="#"><span class="fa fa-shopping-cart"></span></a></li>
                                     </ul>
                                 </div>
                                 <div class="product__item__text">
@@ -358,8 +363,7 @@
                                 <div class="product__item__pic set-bg" data-setbg="img/shop/swing.jpg">
                                     <ul class="product__hover">
                                         <li><a href="img/shop/swing.jpg" class="image-popup"><span class="arrow_expand"></span></a></li>
-                                        <li><a href="#"><span class="icon_heart_alt"></span></a></li>
-                                        <li><a href="#"><span class="icon_bag_alt"></span></a></li>
+                                        <li><a href="#"><span class="fa fa-shopping-cart"></span></a></li>
                                     </ul>
                                 </div>
                                 <div class="product__item__text">
@@ -375,8 +379,7 @@
                                 <div class="product__item__pic set-bg" data-setbg="img/shop/playard.jpg">
                                     <ul class="product__hover">
                                         <li><a href="img/shop/playard.jpg" class="image-popup"><span class="arrow_expand"></span></a></li>
-                                        <li><a href="#"><span class="icon_heart_alt"></span></a></li>
-                                        <li><a href="#"><span class="icon_bag_alt"></span></a></li>
+                                        <li><a href="#"><span class="fa fa-shopping-cart"></span></a></li>
                                     </ul>
                                 </div>
                                 <div class="product__item__text">
@@ -392,8 +395,7 @@
                                 <div class="product__item__pic set-bg" data-setbg="img/shop/onesie.jpg">
                                     <ul class="product__hover">
                                         <li><a href="img/shop/onesie.jpg" class="image-popup"><span class="arrow_expand"></span></a></li>
-                                        <li><a href="#"><span class="icon_heart_alt"></span></a></li>
-                                        <li><a href="#"><span class="icon_bag_alt"></span></a></li>
+                                        <li><a href="#"><span class="fa fa-shopping-cart"></span></a></li>
                                     </ul>
                                 </div>
                                 <div class="product__item__text">
@@ -409,8 +411,7 @@
                                 <div class="product__item__pic set-bg" data-setbg="img/shop/pjs.jpg">
                                     <ul class="product__hover">
                                         <li><a href="img/shop/pjs.jpg" class="image-popup"><span class="arrow_expand"></span></a></li>
-                                        <li><a href="#"><span class="icon_heart_alt"></span></a></li>
-                                        <li><a href="#"><span class="icon_bag_alt"></span></a></li>
+                                        <li><a href="#"><span class="fa fa-shopping-cart"></span></a></li>
                                     </ul>
                                 </div>
                                 <div class="product__item__text">
@@ -426,8 +427,7 @@
                                 <div class="product__item__pic set-bg" data-setbg="img/shop/sweater.jfif">
                                     <ul class="product__hover">
                                         <li><a href="img/shop/sweater.jfif" class="image-popup"><span class="arrow_expand"></span></a></li>
-                                        <li><a href="#"><span class="icon_heart_alt"></span></a></li>
-                                        <li><a href="#"><span class="icon_bag_alt"></span></a></li>
+                                        <li><a href="#"><span class="fa fa-shopping-cart"></span></a></li>
                                     </ul>
                                 </div>
                                 <div class="product__item__text">
@@ -442,8 +442,7 @@
                                 <div class="product__item__pic set-bg" data-setbg="img/shop/socks.jpg">
                                     <ul class="product__hover">
                                         <li><a href="img/shop/socks.jpg" class="image-popup"><span class="arrow_expand"></span></a></li>
-                                        <li><a href="#"><span class="icon_heart_alt"></span></a></li>
-                                        <li><a href="#"><span class="icon_bag_alt"></span></a></li>
+                                        <li><a href="#"><span class="fa fa-shopping-cart"></span></a></li>
                                     </ul>
                                 </div>
                                 <div class="product__item__text">
@@ -460,8 +459,7 @@
                                 <div class="product__item__pic set-bg" data-setbg="img/shop/bottle.jpg">
                                     <ul class="product__hover">
                                         <li><a href="img/shop/bottle.jpg" class="image-popup"><span class="arrow_expand"></span></a></li>
-                                        <li><a href="#"><span class="icon_heart_alt"></span></a></li>
-                                        <li><a href="#"><span class="icon_bag_alt"></span></a></li>
+                                        <li><a href="#"><span class="fa fa-shopping-cart"></span></a></li>
                                     </ul>
                                 </div>
                                 <div class="product__item__text">
@@ -477,8 +475,7 @@
                                 <div class="product__item__pic set-bg" data-setbg="img/shop/bib.jpg">
                                     <ul class="product__hover">
                                         <li><a href="img/shop/bib.jpg" class="image-popup"><span class="arrow_expand"></span></a></li>
-                                        <li><a href="#"><span class="icon_heart_alt"></span></a></li>
-                                        <li><a href="#"><span class="icon_bag_alt"></span></a></li>
+                                        <li><a href="#"><span class="fa fa-shopping-cart"></span></a></li>
                                     </ul>
                                 </div>
                                 <div class="product__item__text">
@@ -494,8 +491,7 @@
                                 <div class="product__item__pic set-bg" data-setbg="img/shop/dummy.jfif">
                                     <ul class="product__hover">
                                         <li><a href="img/shop/dummy.jfif" class="image-popup"><span class="arrow_expand"></span></a></li>
-                                        <li><a href="#"><span class="icon_heart_alt"></span></a></li>
-                                        <li><a href="#"><span class="icon_bag_alt"></span></a></li>
+                                        <li><a href="#"><span class="fa fa-shopping-cart"></span></a></li>
                                     </ul>
                                 </div>
                                 <div class="product__item__text">
@@ -512,8 +508,7 @@
                                 <div class="product__item__pic set-bg" data-setbg="img/shop/thermo.jpg">
                                     <ul class="product__hover">
                                         <li><a href="img/shop/thermo.jpg" class="image-popup"><span class="arrow_expand"></span></a></li>
-                                        <li><a href="#"><span class="icon_heart_alt"></span></a></li>
-                                        <li><a href="#"><span class="icon_bag_alt"></span></a></li>
+                                        <li><a href="#"><span class="fa fa-shopping-cart"></span></a></li>
                                     </ul>
                                 </div>
                                 <div class="product__item__text">
@@ -529,8 +524,7 @@
                                 <div class="product__item__pic set-bg" data-setbg="img/shop/firstaid1.jpg">
                                     <ul class="product__hover">
                                         <li><a href="img/shop/firstaid1.jpg" class="image-popup"><span class="arrow_expand"></span></a></li>
-                                        <li><a href="#"><span class="icon_heart_alt"></span></a></li>
-                                        <li><a href="#"><span class="icon_bag_alt"></span></a></li>
+                                        <li><a href="#"><span class="fa fa-shopping-cart"></span></a></li>
                                     </ul>
                                 </div>
                                 <div class="product__item__text">
@@ -546,8 +540,7 @@
                                 <div class="product__item__pic set-bg" data-setbg="img/shop/matresspad1.jpg">
                                     <ul class="product__hover">
                                         <li><a href="img/shop/matresspad1.jpg" class="image-popup"><span class="arrow_expand"></span></a></li>
-                                        <li><a href="#"><span class="icon_heart_alt"></span></a></li>
-                                        <li><a href="#"><span class="icon_bag_alt"></span></a></li>
+                                        <li><a href="#"><span class="fa fa-shopping-cart"></span></a></li>
                                     </ul>
                                 </div>
                                 <div class="product__item__text">
@@ -563,8 +556,7 @@
                                 <div class="product__item__pic set-bg" data-setbg="img/shop/babysheets.jpg">
                                     <ul class="product__hover">
                                         <li><a href="img/shop/babysheets.jpg" class="image-popup"><span class="arrow_expand"></span></a></li>
-                                        <li><a href="#"><span class="icon_heart_alt"></span></a></li>
-                                        <li><a href="#"><span class="icon_bag_alt"></span></a></li>
+                                        <li><a href="#"><span class="fa fa-shopping-cart"></span></a></li>
                                     </ul>
                                 </div>
                                 <div class="product__item__text">
@@ -580,8 +572,7 @@
                                 <div class="product__item__pic set-bg" data-setbg="img/shop/blanket.jpg">
                                     <ul class="product__hover">
                                         <li><a href="img/shop/blanket.jpg" class="image-popup"><span class="arrow_expand"></span></a></li>
-                                        <li><a href="#"><span class="icon_heart_alt"></span></a></li>
-                                        <li><a href="#"><span class="icon_bag_alt"></span></a></li>
+                                        <li><a href="#"><span class="fa fa-shopping-cart"></span></a></li>
                                     </ul>
                                 </div>
                                 <div class="product__item__text">
@@ -597,8 +588,7 @@
                                 <div class="product__item__pic set-bg" data-setbg="img/shop/babytable.jpg">
                                     <ul class="product__hover">
                                         <li><a href="img/shop/babytable.jpg" class="image-popup"><span class="arrow_expand"></span></a></li>
-                                        <li><a href="#"><span class="icon_heart_alt"></span></a></li>
-                                        <li><a href="#"><span class="icon_bag_alt"></span></a></li>
+                                        <li><a href="#"><span class="fa fa-shopping-cart"></span></a></li>
                                     </ul>
                                 </div>
                                 <div class="product__item__text">
@@ -614,8 +604,7 @@
                                 <div class="product__item__pic set-bg" data-setbg="img/shop/diaperbag.jpg">
                                     <ul class="product__hover">
                                         <li><a href="img/shop/diaperbag.jpg" class="image-popup"><span class="arrow_expand"></span></a></li>
-                                        <li><a href="#"><span class="icon_heart_alt"></span></a></li>
-                                        <li><a href="#"><span class="icon_bag_alt"></span></a></li>
+                                        <li><a href="#"><span class="fa fa-shopping-cart"></span></a></li>
                                     </ul>
                                 </div>
                                 <div class="product__item__text">
@@ -631,8 +620,7 @@
                                 <div class="product__item__pic set-bg" data-setbg="img/shop/diapercream.jpg">
                                     <ul class="product__hover">
                                         <li><a href="img/shop/diapercream.jpg" class="image-popup"><span class="arrow_expand"></span></a></li>
-                                        <li><a href="#"><span class="icon_heart_alt"></span></a></li>
-                                        <li><a href="#"><span class="icon_bag_alt"></span></a></li>
+                                        <li><a href="#"><span class="fa fa-shopping-cart"></span></a></li>
                                     </ul>
                                 </div>
                                 <div class="product__item__text">
@@ -648,8 +636,7 @@
                                 <div class="product__item__pic set-bg" data-setbg="img/shop/babywipes.jpg">
                                     <ul class="product__hover">
                                         <li><a href="img/shop/babywipes.jpg" class="image-popup"><span class="arrow_expand"></span></a></li>
-                                        <li><a href="#"><span class="icon_heart_alt"></span></a></li>
-                                        <li><a href="#"><span class="icon_bag_alt"></span></a></li>
+                                        <li><a href="#"><span class="fa fa-shopping-cart"></span></a></li>
                                     </ul>
                                 </div>
                                 <div class="product__item__text">
@@ -665,8 +652,7 @@
                                 <div class="product__item__pic set-bg" data-setbg="img/shop/diapers.jpg">
                                     <ul class="product__hover">
                                         <li><a href="img/shop/diapers.jpg" class="image-popup"><span class="arrow_expand"></span></a></li>
-                                        <li><a href="#"><span class="icon_heart_alt"></span></a></li>
-                                        <li><a href="#"><span class="icon_bag_alt"></span></a></li>
+                                        <li><a href="#"><span class="fa fa-shopping-cart"></span></a></li>
                                     </ul>
                                 </div>
                                 <div class="product__item__text">
@@ -682,8 +668,7 @@
                                 <div class="product__item__pic set-bg" data-setbg="img/shop/bathtub.jpg">
                                     <ul class="product__hover">
                                         <li><a href="img/shop/bathtub.jpg" class="image-popup"><span class="arrow_expand"></span></a></li>
-                                        <li><a href="#"><span class="icon_heart_alt"></span></a></li>
-                                        <li><a href="#"><span class="icon_bag_alt"></span></a></li>
+                                        <li><a href="#"><span class="fa fa-shopping-cart"></span></a></li>
                                     </ul>
                                 </div>
                                 <div class="product__item__text">
@@ -699,8 +684,7 @@
                                 <div class="product__item__pic set-bg" data-setbg="img/shop/towel.jpg">
                                     <ul class="product__hover">
                                         <li><a href="img/shop/towel.jpg" class="image-popup"><span class="arrow_expand"></span></a></li>
-                                        <li><a href="#"><span class="icon_heart_alt"></span></a></li>
-                                        <li><a href="#"><span class="icon_bag_alt"></span></a></li>
+                                        <li><a href="#"><span class="fa fa-shopping-cart"></span></a></li>
                                     </ul>
                                 </div>
                                 <div class="product__item__text">
@@ -716,8 +700,7 @@
                                 <div class="product__item__pic set-bg" data-setbg="img/shop/brush.jpg">
                                     <ul class="product__hover">
                                         <li><a href="img/shop/brush.jpg" class="image-popup"><span class="arrow_expand"></span></a></li>
-                                        <li><a href="#"><span class="icon_heart_alt"></span></a></li>
-                                        <li><a href="#"><span class="icon_bag_alt"></span></a></li>
+                                        <li><a href="#"><span class="fa fa-shopping-cart"></span></a></li>
                                     </ul>
                                 </div>
                                 <div class="product__item__text">
@@ -733,14 +716,29 @@
                                 <div class="product__item__pic set-bg" data-setbg="img/shop/washcloth.jpg">
                                     <ul class="product__hover">
                                         <li><a href="img/shop/washcloth.jpg" class="image-popup"><span class="arrow_expand"></span></a></li>
-                                        <li><a href="#"><span class="icon_heart_alt"></span></a></li>
-                                        <li><a href="#"><span class="icon_bag_alt"></span></a></li>
+                                        <li><a href="#"><span class="fa fa-shopping-cart"></span></a></li>
                                     </ul>
                                 </div>
                                 <div class="product__item__text">
                                     <h6><a href="#">Snuggletime Washcloth</a></h6>
                                     <br />
                                     <div class="product__price">R99,99</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-4 col-md-6">
+                            <div class="product__item">
+                                <div class="product__item__pic set-bg" data-setbg="img/shop/safehaven.jpg">
+                                    <ul class="product__hover">
+                                        <li><a href="img/shop/safehaven.jpg" class="image-popup"><span class="arrow_expand"></span></a></li>
+                                        <li><a href="#"><span class="fa fa-shopping-cart"></span></a></li>
+                                    </ul>
+                                </div>
+                                <div class="product__item__text">
+                                    <h6><a href="#">SafeHaven Project Sock</a></h6>
+                                    <br />
+                                    <div class="product__price">R0</div>
                                 </div>
                             </div>
                         </div>

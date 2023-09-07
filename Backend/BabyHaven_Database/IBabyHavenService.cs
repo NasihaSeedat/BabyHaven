@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.Serialization;
+using System.Security.Policy;
 using System.ServiceModel;
 using System.Text;
 
@@ -41,5 +42,29 @@ namespace BabyHaven_Database
         [OperationContract]
         bool Register(string email, string password, string name, string surname, string phoneno, string address, int usetype = 1);
 
+       
+
+        //CART
+        [OperationContract]
+        bool AddToCart(int uId, int pId);
+
+        //[OperationContract]
+        //Decimal CalculateTotalPrice(int ClientID);
+
+        [OperationContract]
+        List<Product> GetCartProducts(int id);
+
+        [OperationContract]
+        int GetQuantity(int UserID, int ProductID);
+
+        //-------------------------------------------PRODUCTS------------------------------------------------------//
+        [OperationContract]
+        List<Product> Getallproducts();
+
+        [OperationContract]
+        Product getSingleProd(int id);
+
+        [OperationContract]
+        string Addproducts(string name, string description, string cat, int quantity, decimal price, bool active, int prodID, int admin);
     }
 }

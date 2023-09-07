@@ -12,6 +12,11 @@
                 <div class="col-lg-6 col-md-6">
                     <div class="contact__content">
                         <div class="contact__address">
+                            <h5>About Us</h5>
+                            <p>We at BabyHaven aim to make this website accessible for parents and caregivers. We offer a wide range of baby items and
+                            accessories. Our goal is to make baby shopping simple and enjoyable, providing a
+                            convenient and easy online experience. From high-quality clothing, toys, feeding essentials,
+                            to nursery furniture, we have everything your baby needs.                            </p>
                             <h5>Contact info</h5>
                             <ul>
                                 <li>

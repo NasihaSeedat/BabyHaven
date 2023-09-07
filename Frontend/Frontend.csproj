@@ -72,7 +72,6 @@
     <Content Include="AddAdmin.aspx" />
     <Content Include="AdminMain.aspx" />
     <Content Include="Blog.aspx" />
-    <Content Include="BlogDetails.aspx" />
     <Content Include="Cart.aspx" />
     <Content Include="Checkout.aspx" />
     <None Include="Connected Services\BackendReference\BabyHavenService.disco" />
@@ -96,6 +95,9 @@
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
     <Content Include="Connected Services\BackendReference\Frontend.BackendReference.User_Table.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\BackendReference\Frontend.BackendReference.Product.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
     <None Include="Connected Services\BackendReference\Reference.svcmap">
@@ -157,13 +159,6 @@
     </Compile>
     <Compile Include="Blog.aspx.designer.cs">
       <DependentUpon>Blog.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="BlogDetails.aspx.cs">
-      <DependentUpon>BlogDetails.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="BlogDetails.aspx.designer.cs">
-      <DependentUpon>BlogDetails.aspx</DependentUpon>
     </Compile>
     <Compile Include="Cart.aspx.cs">
       <DependentUpon>Cart.aspx</DependentUpon>
