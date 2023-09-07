@@ -430,7 +430,7 @@ namespace Frontend.BackendReference {
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string Cart_PriceField;
+        private decimal Cart_PriceField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private int Cart_QuantityField;
@@ -458,12 +458,12 @@ namespace Frontend.BackendReference {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Cart_Price {
+        public decimal Cart_Price {
             get {
                 return this.Cart_PriceField;
             }
             set {
-                if ((object.ReferenceEquals(this.Cart_PriceField, value) != true)) {
+                if ((this.Cart_PriceField.Equals(value) != true)) {
                     this.Cart_PriceField = value;
                     this.RaisePropertyChanged("Cart_Price");
                 }
@@ -799,6 +799,9 @@ namespace Frontend.BackendReference {
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private int Product_IdField;
         
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private bool isActiveField;
+        
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
             get {
@@ -922,6 +925,19 @@ namespace Frontend.BackendReference {
                 if ((this.Product_IdField.Equals(value) != true)) {
                     this.Product_IdField = value;
                     this.RaisePropertyChanged("Product_Id");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public bool isActive {
+            get {
+                return this.isActiveField;
+            }
+            set {
+                if ((this.isActiveField.Equals(value) != true)) {
+                    this.isActiveField = value;
+                    this.RaisePropertyChanged("isActive");
                 }
             }
         }
@@ -1296,11 +1312,11 @@ namespace Frontend.BackendReference {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBabyHavenService/Register", ReplyAction="http://tempuri.org/IBabyHavenService/RegisterResponse")]
         System.Threading.Tasks.Task<bool> RegisterAsync(string email, string password, string name, string surname, string phoneno, string address, int usetype);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBabyHavenService/getSingleProd", ReplyAction="http://tempuri.org/IBabyHavenService/getSingleProdResponse")]
-        Frontend.BackendReference.Product getSingleProd(int id);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBabyHavenService/AddToCart", ReplyAction="http://tempuri.org/IBabyHavenService/AddToCartResponse")]
+        bool AddToCart(int uId, int pId);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBabyHavenService/getSingleProd", ReplyAction="http://tempuri.org/IBabyHavenService/getSingleProdResponse")]
-        System.Threading.Tasks.Task<Frontend.BackendReference.Product> getSingleProdAsync(int id);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBabyHavenService/AddToCart", ReplyAction="http://tempuri.org/IBabyHavenService/AddToCartResponse")]
+        System.Threading.Tasks.Task<bool> AddToCartAsync(int uId, int pId);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBabyHavenService/GetCartProducts", ReplyAction="http://tempuri.org/IBabyHavenService/GetCartProductsResponse")]
         Frontend.BackendReference.Product[] GetCartProducts(int id);
@@ -1313,6 +1329,24 @@ namespace Frontend.BackendReference {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBabyHavenService/GetQuantity", ReplyAction="http://tempuri.org/IBabyHavenService/GetQuantityResponse")]
         System.Threading.Tasks.Task<int> GetQuantityAsync(int UserID, int ProductID);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBabyHavenService/Getallproducts", ReplyAction="http://tempuri.org/IBabyHavenService/GetallproductsResponse")]
+        Frontend.BackendReference.Product[] Getallproducts();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBabyHavenService/Getallproducts", ReplyAction="http://tempuri.org/IBabyHavenService/GetallproductsResponse")]
+        System.Threading.Tasks.Task<Frontend.BackendReference.Product[]> GetallproductsAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBabyHavenService/getSingleProd", ReplyAction="http://tempuri.org/IBabyHavenService/getSingleProdResponse")]
+        Frontend.BackendReference.Product getSingleProd(int id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBabyHavenService/getSingleProd", ReplyAction="http://tempuri.org/IBabyHavenService/getSingleProdResponse")]
+        System.Threading.Tasks.Task<Frontend.BackendReference.Product> getSingleProdAsync(int id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBabyHavenService/Addproducts", ReplyAction="http://tempuri.org/IBabyHavenService/AddproductsResponse")]
+        string Addproducts(string name, string description, string cat, int quantity, decimal price, bool active, int prodID, int admin);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBabyHavenService/Addproducts", ReplyAction="http://tempuri.org/IBabyHavenService/AddproductsResponse")]
+        System.Threading.Tasks.Task<string> AddproductsAsync(string name, string description, string cat, int quantity, decimal price, bool active, int prodID, int admin);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -1398,12 +1432,12 @@ namespace Frontend.BackendReference {
             return base.Channel.RegisterAsync(email, password, name, surname, phoneno, address, usetype);
         }
         
-        public Frontend.BackendReference.Product getSingleProd(int id) {
-            return base.Channel.getSingleProd(id);
+        public bool AddToCart(int uId, int pId) {
+            return base.Channel.AddToCart(uId, pId);
         }
         
-        public System.Threading.Tasks.Task<Frontend.BackendReference.Product> getSingleProdAsync(int id) {
-            return base.Channel.getSingleProdAsync(id);
+        public System.Threading.Tasks.Task<bool> AddToCartAsync(int uId, int pId) {
+            return base.Channel.AddToCartAsync(uId, pId);
         }
         
         public Frontend.BackendReference.Product[] GetCartProducts(int id) {
@@ -1420,6 +1454,30 @@ namespace Frontend.BackendReference {
         
         public System.Threading.Tasks.Task<int> GetQuantityAsync(int UserID, int ProductID) {
             return base.Channel.GetQuantityAsync(UserID, ProductID);
+        }
+        
+        public Frontend.BackendReference.Product[] Getallproducts() {
+            return base.Channel.Getallproducts();
+        }
+        
+        public System.Threading.Tasks.Task<Frontend.BackendReference.Product[]> GetallproductsAsync() {
+            return base.Channel.GetallproductsAsync();
+        }
+        
+        public Frontend.BackendReference.Product getSingleProd(int id) {
+            return base.Channel.getSingleProd(id);
+        }
+        
+        public System.Threading.Tasks.Task<Frontend.BackendReference.Product> getSingleProdAsync(int id) {
+            return base.Channel.getSingleProdAsync(id);
+        }
+        
+        public string Addproducts(string name, string description, string cat, int quantity, decimal price, bool active, int prodID, int admin) {
+            return base.Channel.Addproducts(name, description, cat, quantity, price, active, prodID, admin);
+        }
+        
+        public System.Threading.Tasks.Task<string> AddproductsAsync(string name, string description, string cat, int quantity, decimal price, bool active, int prodID, int admin) {
+            return base.Channel.AddproductsAsync(name, description, cat, quantity, price, active, prodID, admin);
         }
     }
 }
