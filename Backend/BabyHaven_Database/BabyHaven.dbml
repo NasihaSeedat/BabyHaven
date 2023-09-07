@@ -78,7 +78,6 @@
       <Column Name="Address" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
       <Column Name="Register_Date" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
       <Association Name="User_Table_Admin" Member="Admin" ThisKey="User_Id" OtherKey="U_Id" Type="Admin" Cardinality="One" />
-      <Association Name="User_Table_Cart" Member="Carts" ThisKey="User_Id" OtherKey="U_Id" Type="Cart" />
       <Association Name="User_Table_Client" Member="Client" ThisKey="User_Id" OtherKey="U_Id" Type="Client" Cardinality="One" />
       <Association Name="User_Table_Custom_Prod" Member="Custom_Prods" ThisKey="User_Id" OtherKey="U_Id" Type="Custom_Prod" />
       <Association Name="User_Table_HackFeedback" Member="HackFeedbacks" ThisKey="User_Id" OtherKey="U_Id" Type="HackFeedback" />

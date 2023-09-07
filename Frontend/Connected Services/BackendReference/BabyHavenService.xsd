@@ -73,6 +73,18 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+  <xs:element name="GetAllUsers">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAllUsersResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/BabyHaven_Database" minOccurs="0" name="GetAllUsersResult" nillable="true" type="q5:ArrayOfUser_Table" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
   <xs:element name="Register">
     <xs:complexType>
       <xs:sequence>

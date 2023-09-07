@@ -97,6 +97,25 @@ namespace BabyHaven_Database
             }
         }
 
+
+       public List<User_Table> GetAllUsers()
+        {
+            var u = new List<User_Table>();
+
+            dynamic users = (from us in db.User_Tables
+                             select us);
+
+            foreach(User_Table n in users)
+            {
+                var use = GetUser(n.User_Id);
+                u.Add(use);
+            }
+
+            return u;
+
+
+        }
+
         public bool Register(string email, string password, string name, string surname, string phoneno, string address, int usetype)
         {
             var use = (from u in db.User_Tables

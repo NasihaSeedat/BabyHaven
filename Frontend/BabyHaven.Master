@@ -80,8 +80,14 @@
                                 </ul>
                             </li>
 
-                            <li><a href="Blog.aspx">Blog</a></li>
-                            <li><a href="Contact.aspx">About Us</a></li>
+                            <li><a href="Blog.aspx">Blog</a>
+                                <ul class="dropdown">
+                                    <li><a href="BlogDetails.aspx">Blog Details</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="Contact.aspx">Contact</a></li>
+                            <li runat="server" id="adminLink" Visible="false"><a href="#">Admin Panel</a></li>
+       
                         </ul>
                     </nav>
                 </div>
