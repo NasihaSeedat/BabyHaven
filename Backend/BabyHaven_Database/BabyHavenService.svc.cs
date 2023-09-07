@@ -270,26 +270,53 @@ namespace BabyHaven_Database
 
             foreach (Product p in prod)
             {
-                var ps = GetProduct(p.Product_Id);
+                var ps = getSingleProd(p.Product_Id);
                 prods.Add(ps);
             }
 
             return prods;
         }
 
-        public Product GetProduct(int id)
+        public string Addproducts(string name, string description, string cat, int quantity, decimal price, bool active, int prodID, int admin)
         {
-            var us = (from p in db.Products
-                      where p.Product_Id.Equals(id)
-                      select p).FirstOrDefault();
+            var prod = (from p in db.Products
+                        where p.P_Name.Equals(name)
+                        select p).FirstOrDefault();
 
-            if (us == null)
+            var a = GetAdmin(admin);
+            a.U_Id = admin;
+
+            var pr = getSingleProd(prodID);
+            pr.Product_Id = prodID;
+
+            if (prod == null)
             {
-                return null;
+                var newprod = new Product
+                {
+                    P_Name = name,
+                    P_Description = description,
+                    P_Category = cat,
+                    P_Quantity = quantity,
+                    P_Price = price,
+                    isActive = active,
+                    P_DateCreated = DateTime.Today,
+                };
+                db.Products.InsertOnSubmit(newprod);
+
+                try
+                {
+                    db.SubmitChanges();
+                    return "added";
+                }
+                catch (Exception ex)
+                {
+                    ex.GetBaseException();
+                    return "not added";
+                }
             }
             else
             {
-                return us;
+                return "error";
             }
         }
     }

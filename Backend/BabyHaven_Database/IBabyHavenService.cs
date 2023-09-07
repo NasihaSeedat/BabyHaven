@@ -37,8 +37,7 @@ namespace BabyHaven_Database
         [OperationContract]
         bool Register(string email, string password, string name, string surname, string phoneno, string address, int usetype = 1);
 
-        [OperationContract]
-        Product getSingleProd(int id);
+       
 
         //CART
         [OperationContract]
@@ -53,11 +52,14 @@ namespace BabyHaven_Database
         [OperationContract]
         int GetQuantity(int UserID, int ProductID);
 
-        //PRODUCTS
+        //-------------------------------------------PRODUCTS------------------------------------------------------//
         [OperationContract]
         List<Product> Getallproducts();
 
         [OperationContract]
-        Product GetProduct(int id);
+        Product getSingleProd(int id);
+
+        [OperationContract]
+        string Addproducts(string name, string description, string cat, int quantity, decimal price, bool active, int prodID, int admin);
     }
 }
