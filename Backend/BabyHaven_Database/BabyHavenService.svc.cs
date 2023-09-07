@@ -223,6 +223,18 @@ namespace BabyHaven_Database
 
         }
 
+        //public decimal CalculateTotalPrice(int UserID)
+        //{
+        //    Decimal Total = 0;
+        //    List<Cart> products = new List<Cart>();
+        //    products = GetCartProducts(UserID);
+        //    foreach (Cart c in products)
+        //    {
+        //        Total += c.Cart_Price * c.Cart_Quantity;
+        //    }
+        //    return Total;
+        //}
+
 
         public List<Product> GetCartProducts(int id)
         {

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.Serialization;
+using System.Security.Policy;
 using System.ServiceModel;
 using System.Text;
 
@@ -42,6 +43,9 @@ namespace BabyHaven_Database
         //CART
         [OperationContract]
         bool AddToCart(int uId, int pId);
+
+        //[OperationContract]
+        //Decimal CalculateTotalPrice(int ClientID);
 
         [OperationContract]
         List<Product> GetCartProducts(int id);
