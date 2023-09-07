@@ -35,7 +35,7 @@
   <xs:element name="ArrayOfCart" nillable="true" type="tns:ArrayOfCart" />
   <xs:complexType name="Cart">
     <xs:sequence>
-      <xs:element minOccurs="0" name="Cart_Price" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Cart_Price" type="xs:decimal" />
       <xs:element minOccurs="0" name="Cart_Quantity" type="xs:int" />
       <xs:element minOccurs="0" name="P_Id" type="xs:int" />
       <xs:element minOccurs="0" name="Product" nillable="true" type="tns:Product" />
@@ -55,6 +55,7 @@
       <xs:element minOccurs="0" name="P_Price" type="xs:decimal" />
       <xs:element minOccurs="0" name="P_Quantity" type="xs:int" />
       <xs:element minOccurs="0" name="Product_Id" type="xs:int" />
+      <xs:element minOccurs="0" name="isActive" type="xs:boolean" />
     </xs:sequence>
   </xs:complexType>
   <xs:element name="Product" nillable="true" type="tns:Product" />
@@ -130,6 +131,12 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="HackFeedback" nillable="true" type="tns:HackFeedback" />
+  <xs:complexType name="ArrayOfUser_Table">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="User_Table" nillable="true" type="tns:User_Table" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfUser_Table" nillable="true" type="tns:ArrayOfUser_Table" />
   <xs:complexType name="ArrayOfProduct">
     <xs:sequence>
       <xs:element minOccurs="0" maxOccurs="unbounded" name="Product" nillable="true" type="tns:Product" />
