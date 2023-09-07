@@ -89,6 +89,8 @@
                                 </ul>
                             </li>
                             <li><a href="Contact.aspx">Contact</a></li>
+                            <li runat="server" id="adminLink" Visible="false"><a href="#">Admin Panel</a></li>
+       
                         </ul>
                     </nav>
                 </div>
@@ -105,11 +107,11 @@
                         </div>
                         <ul class="header__right__widget">
                             <li><span class="icon_search search-switch"></span></li>
-                            <li><a href="#"><span class="icon_heart_alt"></span>
-                                <div class="tip">2</div>
-                            </a></li>
-                            <li><a href="Cart.aspx"><span class="icon_bag_alt"></span>
-                                <div class="tip">2</div>
+                            <li><a href="Cart.aspx"><span class="fa fa-shopping-cart"></span>
+                              <%--  <div class="tip">
+                                    <% cartItemCount = GetCartItemCount(); %>
+                                    <%= cartItemCount %>
+                                </div>--%>
                             </a></li>
                         </ul>
                     </div>

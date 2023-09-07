@@ -33,9 +33,6 @@ namespace BabyHaven_Database
     partial void InsertAdmin(Admin instance);
     partial void UpdateAdmin(Admin instance);
     partial void DeleteAdmin(Admin instance);
-    partial void InsertCart(Cart instance);
-    partial void UpdateCart(Cart instance);
-    partial void DeleteCart(Cart instance);
     partial void InsertClient(Client instance);
     partial void UpdateClient(Client instance);
     partial void DeleteClient(Client instance);
@@ -97,14 +94,6 @@ namespace BabyHaven_Database
 			}
 		}
 		
-		public System.Data.Linq.Table<Cart> Carts
-		{
-			get
-			{
-				return this.GetTable<Cart>();
-			}
-		}
-		
 		public System.Data.Linq.Table<Client> Clients
 		{
 			get
@@ -158,6 +147,14 @@ namespace BabyHaven_Database
 			get
 			{
 				return this.GetTable<User_Table>();
+			}
+		}
+		
+		public System.Data.Linq.Table<Cart> Carts
+		{
+			get
+			{
+				return this.GetTable<Cart>();
 			}
 		}
 	}
@@ -1768,13 +1765,13 @@ namespace BabyHaven_Database
 		
 		private EntityRef<Admin> _Admin;
 		
-		private EntitySet<Cart> _Carts;
-		
 		private EntityRef<Client> _Client;
 		
 		private EntitySet<Custom_Prod> _Custom_Prods;
 		
 		private EntitySet<HackFeedback> _HackFeedbacks;
+		
+		private EntitySet<Cart> _Carts;
 		
     #region Extensibility Method Definitions
     partial void OnLoaded();
@@ -1803,10 +1800,10 @@ namespace BabyHaven_Database
 		public User_Table()
 		{
 			this._Admin = default(EntityRef<Admin>);
-			this._Carts = new EntitySet<Cart>(new Action<Cart>(this.attach_Carts), new Action<Cart>(this.detach_Carts));
 			this._Client = default(EntityRef<Client>);
 			this._Custom_Prods = new EntitySet<Custom_Prod>(new Action<Custom_Prod>(this.attach_Custom_Prods), new Action<Custom_Prod>(this.detach_Custom_Prods));
 			this._HackFeedbacks = new EntitySet<HackFeedback>(new Action<HackFeedback>(this.attach_HackFeedbacks), new Action<HackFeedback>(this.detach_HackFeedbacks));
+			this._Carts = new EntitySet<Cart>(new Action<Cart>(this.attach_Carts), new Action<Cart>(this.detach_Carts));
 			OnCreated();
 		}
 		
@@ -2019,19 +2016,6 @@ namespace BabyHaven_Database
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="User_Table_Cart", Storage="_Carts", ThisKey="User_Id", OtherKey="U_Id")]
-		public EntitySet<Cart> Carts
-		{
-			get
-			{
-				return this._Carts;
-			}
-			set
-			{
-				this._Carts.Assign(value);
-			}
-		}
-		
 		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="User_Table_Client", Storage="_Client", ThisKey="User_Id", OtherKey="U_Id", IsUnique=true, IsForeignKey=false)]
 		public Client Client
 		{
@@ -2087,6 +2071,19 @@ namespace BabyHaven_Database
 			}
 		}
 		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="User_Table_Cart", Storage="_Carts", ThisKey="User_Id", OtherKey="U_Id")]
+		public EntitySet<Cart> Carts
+		{
+			get
+			{
+				return this._Carts;
+			}
+			set
+			{
+				this._Carts.Assign(value);
+			}
+		}
+		
 		public event PropertyChangingEventHandler PropertyChanging;
 		
 		public event PropertyChangedEventHandler PropertyChanged;
@@ -2105,18 +2102,6 @@ namespace BabyHaven_Database
 			{
 				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
 			}
-		}
-		
-		private void attach_Carts(Cart entity)
-		{
-			this.SendPropertyChanging();
-			entity.User_Table = this;
-		}
-		
-		private void detach_Carts(Cart entity)
-		{
-			this.SendPropertyChanging();
-			entity.User_Table = null;
 		}
 		
 		private void attach_Custom_Prods(Custom_Prod entity)
@@ -2138,6 +2123,18 @@ namespace BabyHaven_Database
 		}
 		
 		private void detach_HackFeedbacks(HackFeedback entity)
+		{
+			this.SendPropertyChanging();
+			entity.User_Table = null;
+		}
+		
+		private void attach_Carts(Cart entity)
+		{
+			this.SendPropertyChanging();
+			entity.User_Table = this;
+		}
+		
+		private void detach_Carts(Cart entity)
 		{
 			this.SendPropertyChanging();
 			entity.User_Table = null;

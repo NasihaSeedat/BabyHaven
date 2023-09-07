@@ -130,4 +130,10 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="HackFeedback" nillable="true" type="tns:HackFeedback" />
+  <xs:complexType name="ArrayOfUser_Table">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="User_Table" nillable="true" type="tns:User_Table" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfUser_Table" nillable="true" type="tns:ArrayOfUser_Table" />
 </xs:schema>

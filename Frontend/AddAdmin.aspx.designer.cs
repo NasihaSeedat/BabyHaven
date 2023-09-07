@@ -11,34 +11,34 @@ namespace Frontend
 {
 
 
-    public partial class BabyHaven
+    public partial class AddAdmin
     {
 
         /// <summary>
-        /// head control.
+        /// addadmins control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ContentPlaceHolder head;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl addadmins;
 
         /// <summary>
-        /// adminLink control.
+        /// AddAminbtn control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl adminLink;
+        protected global::System.Web.UI.WebControls.Button AddAminbtn;
 
         /// <summary>
-        /// ContentPlaceHolder1 control.
+        /// error control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ContentPlaceHolder ContentPlaceHolder1;
+        protected global::System.Web.UI.WebControls.Label error;
     }
 }

@@ -33,6 +33,11 @@ namespace BabyHaven_Database
         [OperationContract]
         Client GetClient(int id);
 
+
+        //getting all users
+        [OperationContract]
+        List<User_Table> GetAllUsers();
+
         [OperationContract]
         bool Register(string email, string password, string name, string surname, string phoneno, string address, int usetype = 1);
 

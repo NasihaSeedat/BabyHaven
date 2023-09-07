@@ -69,6 +69,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="AddAdmin.aspx" />
+    <Content Include="AdminMain.aspx" />
     <Content Include="Blog.aspx" />
     <Content Include="BlogDetails.aspx" />
     <Content Include="Cart.aspx" />
@@ -128,6 +130,20 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AddAdmin.aspx.cs">
+      <DependentUpon>AddAdmin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AddAdmin.aspx.designer.cs">
+      <DependentUpon>AddAdmin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AdminMain.aspx.cs">
+      <DependentUpon>AdminMain.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminMain.aspx.designer.cs">
+      <DependentUpon>AdminMain.aspx</DependentUpon>
+    </Compile>
     <Compile Include="BabyHaven.Master.cs">
       <DependentUpon>BabyHaven.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
