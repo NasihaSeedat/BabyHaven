@@ -268,6 +268,16 @@ namespace BabyHaven_Database
             }
         }
 
+        public decimal GetTotalCartPrice(int clientId)
+        {
+            decimal totalCartPrice = db.Carts
+                .Where(cart => cart.U_Id == clientId)
+                .Sum(cart => cart.Cart_Price);
+
+            return totalCartPrice;
+        }
+
+
         public List<Product> GetCartProducts(int id)
         {
             dynamic Pid = (from p in db.Carts
