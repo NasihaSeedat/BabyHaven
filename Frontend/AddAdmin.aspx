@@ -16,23 +16,39 @@
     </div>
 
     <!-- Breadcrumb End -->
-               <section >
+    <form id="userForm" runat="server">
+              <section>
         <div class="container">
-            <div class ="row"  id="addadmins" runat="server">
-   
-                        <div class="mt-10">
-                         
-                             <asp:Button id="AddAminbtn" class="site-btn" runat="server" Text="Add Admin"  OnClick="btn_register"/>
-                        </div>
-                        <div class="mt-10">
-                            <asp:Label ID="error" runat="server" Text="" visible="false" ></asp:Label>
-                        </div>
-                       
-                        
-       </div>
+            <div class="row">
+               <div class="row">
+    <div class="col-md-6">
+        <input type="text" id="txtSearch" class="form-control" placeholder="Search by Name" runat="server" />
+    </div>
+    <div class="col-md-6">
 
-               
-          </div>
+        <asp:Button id="btnSearch" class="site-button" runat="server" Text="Search"  />
+
+       
+    </div>
+</div>
+
+                <asp:Label ID="error" runat="server" Text="" Visible="false"></asp:Label>
+            </div>
+            <!-- User data table -->
+            <div class="row">
+                <asp:Table ID="userTable" runat="server" Class="table table-bordered">
+                    <asp:TableHeaderRow>
+                        <asp:TableHeaderCell>User ID</asp:TableHeaderCell>
+                        <asp:TableHeaderCell>Email</asp:TableHeaderCell>
+                        <asp:TableHeaderCell>Name</asp:TableHeaderCell>
+                        <asp:TableHeaderCell>Surname</asp:TableHeaderCell>
+                        <asp:TableHeaderCell>Phone Number</asp:TableHeaderCell>
+                        <asp:TableHeaderCell>Add Admin</asp:TableHeaderCell>
+                    </asp:TableHeaderRow>
+                </asp:Table>
+            </div>
+        </div>
     </section>
+        </form>
 
 </asp:Content>

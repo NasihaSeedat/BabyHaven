@@ -361,5 +361,36 @@ namespace BabyHaven_Database
                 return "error";
             }
         }
+
+        public bool AddAdmin(User_Table user, string surname)
+        {
+            var ad = (from a in db.User_Tables
+                      where a.User_Id.Equals(user.User_Id)
+                      select a).FirstOrDefault();
+
+            if (ad == null)
+            {
+                var newAd = new Admin()
+                {
+                    U_Id = user.User_Id,
+                    Surname = surname
+                };
+                db.Admins.InsertOnSubmit(newAd);
+
+                try
+                {
+                    db.SubmitChanges();
+                    return true;
+                }catch(Exception ex)
+                {
+                    ex.GetBaseException();
+                    return false;
+                }
+            }
+            else
+            {
+                return false;
+            }
+        }
     }
 }
