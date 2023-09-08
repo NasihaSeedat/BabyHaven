@@ -48,9 +48,6 @@ namespace BabyHaven_Database
         [OperationContract]
         bool AddToCart(int uId, int pId);
 
-        //[OperationContract]
-        //Decimal CalculateTotalPrice(int ClientID);
-
         [OperationContract]
         List<Product> GetCartProducts(int id);
 

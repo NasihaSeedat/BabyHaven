@@ -199,62 +199,74 @@ namespace BabyHaven_Database
         //CART
         public bool AddToCart(int uId, int pId)
         {
-            var CP = (from c in db.Carts
-                        where c.U_Id.Equals(uId) && c.P_Id.Equals(pId)
-                        select c).FirstOrDefault();
+            var existingCartItem = (from c in db.Carts
+                                    where c.U_Id == uId && c.P_Id == pId
+                                    select c).FirstOrDefault();
 
-            if (CP != null)
+            if (existingCartItem != null)
             {
-                CP.Cart_Quantity += 1;
-                try
-                {
-                    db.SubmitChanges();
-                    return true;
-                }
-                catch (Exception ex)
-                {
-                    Debug.WriteLine(ex.GetBaseException());
-                    return false;
-                }
+                // Item already exists in the cart, increase quantity
+                existingCartItem.Cart_Quantity += 1;
             }
             else
             {
-                Cart newProduct = new Cart
-                {
-                    U_Id = uId,
-                    P_Id = pId,
-                    Cart_Quantity = 1,
-                    //TODO
-                    Cart_Price = pId * 1 ,
-                };
+                // Item does not exist in the cart, add it
+                var product = (from p in db.Products
+                               where p.Product_Id == pId
+                               select p).FirstOrDefault();
 
-                db.Carts.InsertOnSubmit(newProduct);
-                try
+                if (product != null)
                 {
-                    db.SubmitChanges();
-                    return true;
+                    Cart newProduct = new Cart
+                    {
+                        U_Id = uId,
+                        P_Id = pId,
+                        Cart_Quantity = 1
+                    };
+
+                    db.Carts.InsertOnSubmit(newProduct);
                 }
-                catch (Exception ex)
+                else
                 {
-                    Debug.WriteLine(ex.GetBaseException());
+                    // Handle the case where the product does not exist
                     return false;
                 }
             }
 
+            // Submit changes before calculating the total cart price
+            try
+            {
+                db.SubmitChanges();
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine(ex.GetBaseException());
+                return false;
+            }
+
+            // Update Cart_Price for the entire cart
+            var cartItems = (from c in db.Carts
+                             where c.U_Id == uId
+                             select c).ToList();
+
+            decimal totalCartPrice = cartItems.Sum(c => c.Cart_Price);
+
+            foreach (var cartItem in cartItems)
+            {
+                cartItem.Cart_Price = cartItem.Product.P_Price * cartItem.Cart_Quantity; // Calculate based on product price
+            }
+
+            try
+            {
+                db.SubmitChanges();
+                return true;
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine(ex.GetBaseException());
+                return false;
+            }
         }
-
-        //public decimal CalculateTotalPrice(int UserID)
-        //{
-        //    Decimal Total = 0;
-        //    List<Cart> products = new List<Cart>();
-        //    products = GetCartProducts(UserID);
-        //    foreach (Cart c in products)
-        //    {
-        //        Total += c.Cart_Price * c.Cart_Quantity;
-        //    }
-        //    return Total;
-        //}
-
 
         public List<Product> GetCartProducts(int id)
         {
