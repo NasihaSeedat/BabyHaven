@@ -15,23 +15,39 @@ namespace Frontend
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            //if (!IsPostBack)
-            //{
-            //    // Bind the cart items to the table
-            //    BindCart();
-            //}
+            if (!IsPostBack)
+            {
+                // Assuming you have a method in your service reference to get the total cart price
+                // Replace 'GetTotalCartPrice' with the actual method name in your service reference
+                int clientId = GetClientId(); // Implement GetClientId method to get the client ID
+                decimal totalCartPrice = sr.GetTotalCartPrice(clientId);
+
+                // Format the total cart price as currency (e.g., "R 123.45")
+                string formattedTotalPrice = string.Format("R {0:N2}", totalCartPrice);
+
+                // Set the formatted total cart price to the TotalLabel
+                TotalLabel.Text = formattedTotalPrice;
+            }
         }
+
+        private int GetClientId()
+        {
+            if (Session["ClientId"] != null)
+            {
+                return (int)Session["ClientId"];
+            }
+            else
+            {
+                // Handle the case where the client ID is not found in the session (e.g., redirect to login)
+                Response.Redirect("Login.aspx"); // Redirect to your login page
+                return 0; // Return a default value or throw an exception
+            }
+        }
+
 
         protected void RemoveFromCartButton_Click(object sender, EventArgs e)
         {
-            //// Get the product ID to remove
-            //string productIdToRemove = ((Button)sender).CommandArgument;
-
-            //// Remove the item from the cart based on the product ID
-            //cartItems.RemoveAll(item => item.ProductId == productIdToRemove);
-
-            //// Update the cart table
-            //BindCart();
+            //have to create function in backend for this
         }
 
 
