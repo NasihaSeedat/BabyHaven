@@ -13,8 +13,8 @@
       <Column Name="P_Id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
       <Column Name="Cart_Quantity" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="Cart_Price" Type="System.String" DbType="NChar(10) NOT NULL" CanBeNull="false" />
-      <Association Name="Product_Cart" Member="Product" ThisKey="P_Id" OtherKey="Product_Id" Type="Product" IsForeignKey="true" />
       <Association Name="User_Table_Cart" Member="User_Table" ThisKey="U_Id" OtherKey="User_Id" Type="User_Table" IsForeignKey="true" />
+      <Association Name="Product1_Cart" Member="Product" ThisKey="P_Id" OtherKey="Product_Id" Type="Product" IsForeignKey="true" />
     </Type>
   </Table>
   <Table Name="dbo.Client" Member="Clients">
@@ -66,19 +66,6 @@
       <Association Name="Order_Table_Payment" Member="Order_Table" ThisKey="O_Id" OtherKey="O_Id" Type="Order_Table" IsForeignKey="true" />
     </Type>
   </Table>
-  <Table Name="dbo.Product" Member="Products">
-    <Type Name="Product">
-      <Column Name="Product_Id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="P_Name" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
-      <Column Name="P_Description" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
-      <Column Name="P_Category" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
-      <Column Name="P_Quantity" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="P_Price" Type="System.Decimal" DbType="Money NOT NULL" CanBeNull="false" />
-      <Column Name="P_DateCreated" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
-      <Column Name="P_Image" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
-      <Association Name="Product_Cart" Member="Carts" ThisKey="Product_Id" OtherKey="P_Id" Type="Cart" />
-    </Type>
-  </Table>
   <Table Name="dbo.User_Table" Member="User_Tables">
     <Type Name="User_Table">
       <Column Name="User_Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
@@ -95,6 +82,20 @@
       <Association Name="User_Table_Client" Member="Client" ThisKey="User_Id" OtherKey="U_Id" Type="Client" Cardinality="One" />
       <Association Name="User_Table_Custom_Prod" Member="Custom_Prods" ThisKey="User_Id" OtherKey="U_Id" Type="Custom_Prod" />
       <Association Name="User_Table_HackFeedback" Member="HackFeedbacks" ThisKey="User_Id" OtherKey="U_Id" Type="HackFeedback" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Product" Member="Products">
+    <Type Name="Product">
+      <Column Name="Product_Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="P_Name" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="P_Description" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="P_Category" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="P_Quantity" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="P_Price" Type="System.Decimal" DbType="Money NOT NULL" CanBeNull="false" />
+      <Column Name="P_DateCreated" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="P_Image" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="isActive" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Association Name="Product1_Cart" Member="Carts" ThisKey="Product_Id" OtherKey="P_Id" Type="Cart" />
     </Type>
   </Table>
 </Database>
