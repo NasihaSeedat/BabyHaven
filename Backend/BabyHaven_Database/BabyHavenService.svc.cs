@@ -233,7 +233,7 @@ namespace BabyHaven_Database
                 }
             }
 
-            // Submit changes before calculating the total cart price
+            // Submit changes before calculating and updating the total cart price
             try
             {
                 db.SubmitChanges();
@@ -244,16 +244,27 @@ namespace BabyHaven_Database
                 return false;
             }
 
-            // Update Cart_Price for the entire cart
+            // Calculate and update Cart_Price for the entire cart
             var cartItems = (from c in db.Carts
                              where c.U_Id == uId
                              select c).ToList();
 
-            decimal totalCartPrice = cartItems.Sum(c => c.Cart_Price);
-
             foreach (var cartItem in cartItems)
             {
-               // cartItem.Cart_Price = cartItem.Product.P_Price * cartItem.Cart_Quantity; // Calculate based on product price
+                // Calculate Cart_Price based on the product's price
+                var product = (from p in db.Products
+                               where p.Product_Id == cartItem.P_Id
+                               select p).FirstOrDefault();
+
+                if (product != null)
+                {
+                    cartItem.Cart_Price = product.P_Price * cartItem.Cart_Quantity;
+                }
+                else
+                {
+                    Debug.WriteLine("Product does not exist");
+                    return false;
+                }
             }
 
             try
@@ -276,7 +287,6 @@ namespace BabyHaven_Database
 
             return totalCartPrice;
         }
-
 
         public List<Product> GetCartProducts(int id)
         {
