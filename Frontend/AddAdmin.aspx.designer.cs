@@ -15,22 +15,31 @@ namespace Frontend
     {
 
         /// <summary>
-        /// addadmins control.
+        /// userForm control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl addadmins;
+        protected global::System.Web.UI.HtmlControls.HtmlForm userForm;
 
         /// <summary>
-        /// AddAminbtn control.
+        /// txtSearch control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button AddAminbtn;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText txtSearch;
+
+        /// <summary>
+        /// btnSearch control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnSearch;
 
         /// <summary>
         /// error control.
@@ -40,5 +49,14 @@ namespace Frontend
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label error;
+
+        /// <summary>
+        /// userTable control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Table userTable;
     }
 }

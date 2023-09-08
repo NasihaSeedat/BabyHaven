@@ -42,7 +42,9 @@ namespace BabyHaven_Database
         [OperationContract]
         bool Register(string email, string password, string name, string surname, string phoneno, string address, int usetype = 1);
 
-       
+        //Adding Admin
+        [OperationContract]
+        bool AddAdmin(User_Table user, string surname);
 
         //CART
         [OperationContract]
