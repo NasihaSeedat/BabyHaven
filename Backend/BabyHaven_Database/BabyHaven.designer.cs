@@ -45,18 +45,18 @@ namespace BabyHaven_Database
     partial void InsertHackFeedback(HackFeedback instance);
     partial void UpdateHackFeedback(HackFeedback instance);
     partial void DeleteHackFeedback(HackFeedback instance);
-    partial void InsertPayment(Payment instance);
-    partial void UpdatePayment(Payment instance);
-    partial void DeletePayment(Payment instance);
     partial void InsertOrder_Table(Order_Table instance);
     partial void UpdateOrder_Table(Order_Table instance);
     partial void DeleteOrder_Table(Order_Table instance);
-    partial void InsertUser_Table(User_Table instance);
-    partial void UpdateUser_Table(User_Table instance);
-    partial void DeleteUser_Table(User_Table instance);
+    partial void InsertPayment(Payment instance);
+    partial void UpdatePayment(Payment instance);
+    partial void DeletePayment(Payment instance);
     partial void InsertProduct(Product instance);
     partial void UpdateProduct(Product instance);
     partial void DeleteProduct(Product instance);
+    partial void InsertUser_Table(User_Table instance);
+    partial void UpdateUser_Table(User_Table instance);
+    partial void DeleteUser_Table(User_Table instance);
     #endregion
 		
 		public BabyHavenDataContext() : 
@@ -129,14 +129,6 @@ namespace BabyHaven_Database
 			}
 		}
 		
-		public System.Data.Linq.Table<Payment> Payments
-		{
-			get
-			{
-				return this.GetTable<Payment>();
-			}
-		}
-		
 		public System.Data.Linq.Table<Order_Table> Order_Tables
 		{
 			get
@@ -145,11 +137,11 @@ namespace BabyHaven_Database
 			}
 		}
 		
-		public System.Data.Linq.Table<User_Table> User_Tables
+		public System.Data.Linq.Table<Payment> Payments
 		{
 			get
 			{
-				return this.GetTable<User_Table>();
+				return this.GetTable<Payment>();
 			}
 		}
 		
@@ -158,6 +150,14 @@ namespace BabyHaven_Database
 			get
 			{
 				return this.GetTable<Product>();
+			}
+		}
+		
+		public System.Data.Linq.Table<User_Table> User_Tables
+		{
+			get
+			{
+				return this.GetTable<User_Table>();
 			}
 		}
 	}
@@ -172,8 +172,6 @@ namespace BabyHaven_Database
 		
 		private string _Surname;
 		
-		private EntityRef<User_Table> _User_Table;
-		
     #region Extensibility Method Definitions
     partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
@@ -186,7 +184,6 @@ namespace BabyHaven_Database
 		
 		public Admin()
 		{
-			this._User_Table = default(EntityRef<User_Table>);
 			OnCreated();
 		}
 		
@@ -201,10 +198,6 @@ namespace BabyHaven_Database
 			{
 				if ((this._U_Id != value))
 				{
-					if (this._User_Table.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
 					this.OnU_IdChanging(value);
 					this.SendPropertyChanging();
 					this._U_Id = value;
@@ -214,7 +207,7 @@ namespace BabyHaven_Database
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Surname", DbType="VarChar(50)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Surname", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
 		public string Surname
 		{
 			get
@@ -230,40 +223,6 @@ namespace BabyHaven_Database
 					this._Surname = value;
 					this.SendPropertyChanged("Surname");
 					this.OnSurnameChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="User_Table_Admin", Storage="_User_Table", ThisKey="U_Id", OtherKey="User_Id", IsForeignKey=true)]
-		public User_Table User_Table
-		{
-			get
-			{
-				return this._User_Table.Entity;
-			}
-			set
-			{
-				User_Table previousValue = this._User_Table.Entity;
-				if (((previousValue != value) 
-							|| (this._User_Table.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._User_Table.Entity = null;
-						previousValue.Admin = null;
-					}
-					this._User_Table.Entity = value;
-					if ((value != null))
-					{
-						value.Admin = this;
-						this._U_Id = value.User_Id;
-					}
-					else
-					{
-						this._U_Id = default(int);
-					}
-					this.SendPropertyChanged("User_Table");
 				}
 			}
 		}
@@ -303,10 +262,6 @@ namespace BabyHaven_Database
 		
 		private decimal _Cart_Price;
 		
-		private EntityRef<User_Table> _User_Table;
-		
-		private EntityRef<Product> _Product;
-		
     #region Extensibility Method Definitions
     partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
@@ -323,8 +278,6 @@ namespace BabyHaven_Database
 		
 		public Cart()
 		{
-			this._User_Table = default(EntityRef<User_Table>);
-			this._Product = default(EntityRef<Product>);
 			OnCreated();
 		}
 		
@@ -339,10 +292,6 @@ namespace BabyHaven_Database
 			{
 				if ((this._U_Id != value))
 				{
-					if (this._User_Table.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
 					this.OnU_IdChanging(value);
 					this.SendPropertyChanging();
 					this._U_Id = value;
@@ -363,10 +312,6 @@ namespace BabyHaven_Database
 			{
 				if ((this._P_Id != value))
 				{
-					if (this._Product.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
 					this.OnP_IdChanging(value);
 					this.SendPropertyChanging();
 					this._P_Id = value;
@@ -416,74 +361,6 @@ namespace BabyHaven_Database
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="User_Table_Cart", Storage="_User_Table", ThisKey="U_Id", OtherKey="User_Id", IsForeignKey=true)]
-		public User_Table User_Table
-		{
-			get
-			{
-				return this._User_Table.Entity;
-			}
-			set
-			{
-				User_Table previousValue = this._User_Table.Entity;
-				if (((previousValue != value) 
-							|| (this._User_Table.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._User_Table.Entity = null;
-						previousValue.Carts.Remove(this);
-					}
-					this._User_Table.Entity = value;
-					if ((value != null))
-					{
-						value.Carts.Add(this);
-						this._U_Id = value.User_Id;
-					}
-					else
-					{
-						this._U_Id = default(int);
-					}
-					this.SendPropertyChanged("User_Table");
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Product_Cart", Storage="_Product", ThisKey="P_Id", OtherKey="Product_Id", IsForeignKey=true)]
-		public Product Product
-		{
-			get
-			{
-				return this._Product.Entity;
-			}
-			set
-			{
-				Product previousValue = this._Product.Entity;
-				if (((previousValue != value) 
-							|| (this._Product.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._Product.Entity = null;
-						previousValue.Carts.Remove(this);
-					}
-					this._Product.Entity = value;
-					if ((value != null))
-					{
-						value.Carts.Add(this);
-						this._P_Id = value.Product_Id;
-					}
-					else
-					{
-						this._P_Id = default(int);
-					}
-					this.SendPropertyChanged("Product");
-				}
-			}
-		}
-		
 		public event PropertyChangingEventHandler PropertyChanging;
 		
 		public event PropertyChangedEventHandler PropertyChanged;
@@ -515,8 +392,6 @@ namespace BabyHaven_Database
 		
 		private string _Email;
 		
-		private EntityRef<User_Table> _User_Table;
-		
     #region Extensibility Method Definitions
     partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
@@ -529,7 +404,6 @@ namespace BabyHaven_Database
 		
 		public Client()
 		{
-			this._User_Table = default(EntityRef<User_Table>);
 			OnCreated();
 		}
 		
@@ -544,10 +418,6 @@ namespace BabyHaven_Database
 			{
 				if ((this._U_Id != value))
 				{
-					if (this._User_Table.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
 					this.OnU_IdChanging(value);
 					this.SendPropertyChanging();
 					this._U_Id = value;
@@ -573,40 +443,6 @@ namespace BabyHaven_Database
 					this._Email = value;
 					this.SendPropertyChanged("Email");
 					this.OnEmailChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="User_Table_Client", Storage="_User_Table", ThisKey="U_Id", OtherKey="User_Id", IsForeignKey=true)]
-		public User_Table User_Table
-		{
-			get
-			{
-				return this._User_Table.Entity;
-			}
-			set
-			{
-				User_Table previousValue = this._User_Table.Entity;
-				if (((previousValue != value) 
-							|| (this._User_Table.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._User_Table.Entity = null;
-						previousValue.Client = null;
-					}
-					this._User_Table.Entity = value;
-					if ((value != null))
-					{
-						value.Client = this;
-						this._U_Id = value.User_Id;
-					}
-					else
-					{
-						this._U_Id = default(int);
-					}
-					this.SendPropertyChanged("User_Table");
 				}
 			}
 		}
@@ -646,10 +482,6 @@ namespace BabyHaven_Database
 		
 		private int _O_Id;
 		
-		private EntityRef<Order_Table> _Order_Table;
-		
-		private EntityRef<User_Table> _User_Table;
-		
     #region Extensibility Method Definitions
     partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
@@ -666,8 +498,6 @@ namespace BabyHaven_Database
 		
 		public Custom_Prod()
 		{
-			this._Order_Table = default(EntityRef<Order_Table>);
-			this._User_Table = default(EntityRef<User_Table>);
 			OnCreated();
 		}
 		
@@ -722,10 +552,6 @@ namespace BabyHaven_Database
 			{
 				if ((this._U_Id != value))
 				{
-					if (this._User_Table.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
 					this.OnU_IdChanging(value);
 					this.SendPropertyChanging();
 					this._U_Id = value;
@@ -746,83 +572,11 @@ namespace BabyHaven_Database
 			{
 				if ((this._O_Id != value))
 				{
-					if (this._Order_Table.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
 					this.OnO_IdChanging(value);
 					this.SendPropertyChanging();
 					this._O_Id = value;
 					this.SendPropertyChanged("O_Id");
 					this.OnO_IdChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Order_Table_Custom_Prod", Storage="_Order_Table", ThisKey="O_Id", OtherKey="O_Id", IsForeignKey=true)]
-		public Order_Table Order_Table
-		{
-			get
-			{
-				return this._Order_Table.Entity;
-			}
-			set
-			{
-				Order_Table previousValue = this._Order_Table.Entity;
-				if (((previousValue != value) 
-							|| (this._Order_Table.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._Order_Table.Entity = null;
-						previousValue.Custom_Prods.Remove(this);
-					}
-					this._Order_Table.Entity = value;
-					if ((value != null))
-					{
-						value.Custom_Prods.Add(this);
-						this._O_Id = value.O_Id;
-					}
-					else
-					{
-						this._O_Id = default(int);
-					}
-					this.SendPropertyChanged("Order_Table");
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="User_Table_Custom_Prod", Storage="_User_Table", ThisKey="U_Id", OtherKey="User_Id", IsForeignKey=true)]
-		public User_Table User_Table
-		{
-			get
-			{
-				return this._User_Table.Entity;
-			}
-			set
-			{
-				User_Table previousValue = this._User_Table.Entity;
-				if (((previousValue != value) 
-							|| (this._User_Table.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._User_Table.Entity = null;
-						previousValue.Custom_Prods.Remove(this);
-					}
-					this._User_Table.Entity = value;
-					if ((value != null))
-					{
-						value.Custom_Prods.Add(this);
-						this._U_Id = value.User_Id;
-					}
-					else
-					{
-						this._U_Id = default(int);
-					}
-					this.SendPropertyChanged("User_Table");
 				}
 			}
 		}
@@ -860,8 +614,6 @@ namespace BabyHaven_Database
 		
 		private string _HF_Hack;
 		
-		private EntityRef<User_Table> _User_Table;
-		
     #region Extensibility Method Definitions
     partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
@@ -876,7 +628,6 @@ namespace BabyHaven_Database
 		
 		public HackFeedback()
 		{
-			this._User_Table = default(EntityRef<User_Table>);
 			OnCreated();
 		}
 		
@@ -911,10 +662,6 @@ namespace BabyHaven_Database
 			{
 				if ((this._U_Id != value))
 				{
-					if (this._User_Table.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
 					this.OnU_IdChanging(value);
 					this.SendPropertyChanging();
 					this._U_Id = value;
@@ -940,263 +687,6 @@ namespace BabyHaven_Database
 					this._HF_Hack = value;
 					this.SendPropertyChanged("HF_Hack");
 					this.OnHF_HackChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="User_Table_HackFeedback", Storage="_User_Table", ThisKey="U_Id", OtherKey="User_Id", IsForeignKey=true)]
-		public User_Table User_Table
-		{
-			get
-			{
-				return this._User_Table.Entity;
-			}
-			set
-			{
-				User_Table previousValue = this._User_Table.Entity;
-				if (((previousValue != value) 
-							|| (this._User_Table.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._User_Table.Entity = null;
-						previousValue.HackFeedbacks.Remove(this);
-					}
-					this._User_Table.Entity = value;
-					if ((value != null))
-					{
-						value.HackFeedbacks.Add(this);
-						this._U_Id = value.User_Id;
-					}
-					else
-					{
-						this._U_Id = default(int);
-					}
-					this.SendPropertyChanged("User_Table");
-				}
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Payment")]
-	public partial class Payment : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private int _Pay_Id;
-		
-		private int _O_Id;
-		
-		private string _Card_Num;
-		
-		private string _CVV;
-		
-		private string _Expiry_date;
-		
-		private string _CardHolder_Name;
-		
-		private EntityRef<Order_Table> _Order_Table;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnPay_IdChanging(int value);
-    partial void OnPay_IdChanged();
-    partial void OnO_IdChanging(int value);
-    partial void OnO_IdChanged();
-    partial void OnCard_NumChanging(string value);
-    partial void OnCard_NumChanged();
-    partial void OnCVVChanging(string value);
-    partial void OnCVVChanged();
-    partial void OnExpiry_dateChanging(string value);
-    partial void OnExpiry_dateChanged();
-    partial void OnCardHolder_NameChanging(string value);
-    partial void OnCardHolder_NameChanged();
-    #endregion
-		
-		public Payment()
-		{
-			this._Order_Table = default(EntityRef<Order_Table>);
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Pay_Id", DbType="Int NOT NULL", IsPrimaryKey=true)]
-		public int Pay_Id
-		{
-			get
-			{
-				return this._Pay_Id;
-			}
-			set
-			{
-				if ((this._Pay_Id != value))
-				{
-					this.OnPay_IdChanging(value);
-					this.SendPropertyChanging();
-					this._Pay_Id = value;
-					this.SendPropertyChanged("Pay_Id");
-					this.OnPay_IdChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_O_Id", DbType="Int NOT NULL", IsPrimaryKey=true)]
-		public int O_Id
-		{
-			get
-			{
-				return this._O_Id;
-			}
-			set
-			{
-				if ((this._O_Id != value))
-				{
-					if (this._Order_Table.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.OnO_IdChanging(value);
-					this.SendPropertyChanging();
-					this._O_Id = value;
-					this.SendPropertyChanged("O_Id");
-					this.OnO_IdChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Card_Num", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
-		public string Card_Num
-		{
-			get
-			{
-				return this._Card_Num;
-			}
-			set
-			{
-				if ((this._Card_Num != value))
-				{
-					this.OnCard_NumChanging(value);
-					this.SendPropertyChanging();
-					this._Card_Num = value;
-					this.SendPropertyChanged("Card_Num");
-					this.OnCard_NumChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CVV", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
-		public string CVV
-		{
-			get
-			{
-				return this._CVV;
-			}
-			set
-			{
-				if ((this._CVV != value))
-				{
-					this.OnCVVChanging(value);
-					this.SendPropertyChanging();
-					this._CVV = value;
-					this.SendPropertyChanged("CVV");
-					this.OnCVVChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Expiry_date", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
-		public string Expiry_date
-		{
-			get
-			{
-				return this._Expiry_date;
-			}
-			set
-			{
-				if ((this._Expiry_date != value))
-				{
-					this.OnExpiry_dateChanging(value);
-					this.SendPropertyChanging();
-					this._Expiry_date = value;
-					this.SendPropertyChanged("Expiry_date");
-					this.OnExpiry_dateChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CardHolder_Name", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
-		public string CardHolder_Name
-		{
-			get
-			{
-				return this._CardHolder_Name;
-			}
-			set
-			{
-				if ((this._CardHolder_Name != value))
-				{
-					this.OnCardHolder_NameChanging(value);
-					this.SendPropertyChanging();
-					this._CardHolder_Name = value;
-					this.SendPropertyChanged("CardHolder_Name");
-					this.OnCardHolder_NameChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Order_Table_Payment", Storage="_Order_Table", ThisKey="O_Id", OtherKey="O_Id", IsForeignKey=true)]
-		public Order_Table Order_Table
-		{
-			get
-			{
-				return this._Order_Table.Entity;
-			}
-			set
-			{
-				Order_Table previousValue = this._Order_Table.Entity;
-				if (((previousValue != value) 
-							|| (this._Order_Table.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._Order_Table.Entity = null;
-						previousValue.Payments.Remove(this);
-					}
-					this._Order_Table.Entity = value;
-					if ((value != null))
-					{
-						value.Payments.Add(this);
-						this._O_Id = value.O_Id;
-					}
-					else
-					{
-						this._O_Id = default(int);
-					}
-					this.SendPropertyChanged("Order_Table");
 				}
 			}
 		}
@@ -1242,10 +732,6 @@ namespace BabyHaven_Database
 		
 		private string _O_Quantity;
 		
-		private EntitySet<Custom_Prod> _Custom_Prods;
-		
-		private EntitySet<Payment> _Payments;
-		
     #region Extensibility Method Definitions
     partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
@@ -1268,8 +754,6 @@ namespace BabyHaven_Database
 		
 		public Order_Table()
 		{
-			this._Custom_Prods = new EntitySet<Custom_Prod>(new Action<Custom_Prod>(this.attach_Custom_Prods), new Action<Custom_Prod>(this.detach_Custom_Prods));
-			this._Payments = new EntitySet<Payment>(new Action<Payment>(this.attach_Payments), new Action<Payment>(this.detach_Payments));
 			OnCreated();
 		}
 		
@@ -1413,32 +897,6 @@ namespace BabyHaven_Database
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Order_Table_Custom_Prod", Storage="_Custom_Prods", ThisKey="O_Id", OtherKey="O_Id")]
-		public EntitySet<Custom_Prod> Custom_Prods
-		{
-			get
-			{
-				return this._Custom_Prods;
-			}
-			set
-			{
-				this._Custom_Prods.Assign(value);
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Order_Table_Payment", Storage="_Payments", ThisKey="O_Id", OtherKey="O_Id")]
-		public EntitySet<Payment> Payments
-		{
-			get
-			{
-				return this._Payments;
-			}
-			set
-			{
-				this._Payments.Assign(value);
-			}
-		}
-		
 		public event PropertyChangingEventHandler PropertyChanging;
 		
 		public event PropertyChangedEventHandler PropertyChanged;
@@ -1458,374 +916,166 @@ namespace BabyHaven_Database
 				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
 			}
 		}
-		
-		private void attach_Custom_Prods(Custom_Prod entity)
-		{
-			this.SendPropertyChanging();
-			entity.Order_Table = this;
-		}
-		
-		private void detach_Custom_Prods(Custom_Prod entity)
-		{
-			this.SendPropertyChanging();
-			entity.Order_Table = null;
-		}
-		
-		private void attach_Payments(Payment entity)
-		{
-			this.SendPropertyChanging();
-			entity.Order_Table = this;
-		}
-		
-		private void detach_Payments(Payment entity)
-		{
-			this.SendPropertyChanging();
-			entity.Order_Table = null;
-		}
 	}
 	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.User_Table")]
-	public partial class User_Table : INotifyPropertyChanging, INotifyPropertyChanged
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Payment")]
+	public partial class Payment : INotifyPropertyChanging, INotifyPropertyChanged
 	{
 		
 		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
 		
-		private int _User_Id;
+		private int _Pay_Id;
 		
-		private string _Email;
+		private int _O_Id;
 		
-		private string _Password;
+		private string _Card_Num;
 		
-		private int _UserType;
+		private string _CVV;
 		
-		private string _Name;
+		private string _Expiry_date;
 		
-		private string _Surname;
-		
-		private string _Phone_Number;
-		
-		private string _Address;
-		
-		private System.DateTime _Register_Date;
-		
-		private EntityRef<Admin> _Admin;
-		
-		private EntitySet<Cart> _Carts;
-		
-		private EntityRef<Client> _Client;
-		
-		private EntitySet<Custom_Prod> _Custom_Prods;
-		
-		private EntitySet<HackFeedback> _HackFeedbacks;
+		private string _CardHolder_Name;
 		
     #region Extensibility Method Definitions
     partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
     partial void OnCreated();
-    partial void OnUser_IdChanging(int value);
-    partial void OnUser_IdChanged();
-    partial void OnEmailChanging(string value);
-    partial void OnEmailChanged();
-    partial void OnPasswordChanging(string value);
-    partial void OnPasswordChanged();
-    partial void OnUserTypeChanging(int value);
-    partial void OnUserTypeChanged();
-    partial void OnNameChanging(string value);
-    partial void OnNameChanged();
-    partial void OnSurnameChanging(string value);
-    partial void OnSurnameChanged();
-    partial void OnPhone_NumberChanging(string value);
-    partial void OnPhone_NumberChanged();
-    partial void OnAddressChanging(string value);
-    partial void OnAddressChanged();
-    partial void OnRegister_DateChanging(System.DateTime value);
-    partial void OnRegister_DateChanged();
+    partial void OnPay_IdChanging(int value);
+    partial void OnPay_IdChanged();
+    partial void OnO_IdChanging(int value);
+    partial void OnO_IdChanged();
+    partial void OnCard_NumChanging(string value);
+    partial void OnCard_NumChanged();
+    partial void OnCVVChanging(string value);
+    partial void OnCVVChanged();
+    partial void OnExpiry_dateChanging(string value);
+    partial void OnExpiry_dateChanged();
+    partial void OnCardHolder_NameChanging(string value);
+    partial void OnCardHolder_NameChanged();
     #endregion
 		
-		public User_Table()
+		public Payment()
 		{
-			this._Admin = default(EntityRef<Admin>);
-			this._Carts = new EntitySet<Cart>(new Action<Cart>(this.attach_Carts), new Action<Cart>(this.detach_Carts));
-			this._Client = default(EntityRef<Client>);
-			this._Custom_Prods = new EntitySet<Custom_Prod>(new Action<Custom_Prod>(this.attach_Custom_Prods), new Action<Custom_Prod>(this.detach_Custom_Prods));
-			this._HackFeedbacks = new EntitySet<HackFeedback>(new Action<HackFeedback>(this.attach_HackFeedbacks), new Action<HackFeedback>(this.detach_HackFeedbacks));
 			OnCreated();
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_User_Id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
-		public int User_Id
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Pay_Id", DbType="Int NOT NULL", IsPrimaryKey=true)]
+		public int Pay_Id
 		{
 			get
 			{
-				return this._User_Id;
+				return this._Pay_Id;
 			}
 			set
 			{
-				if ((this._User_Id != value))
+				if ((this._Pay_Id != value))
 				{
-					this.OnUser_IdChanging(value);
+					this.OnPay_IdChanging(value);
 					this.SendPropertyChanging();
-					this._User_Id = value;
-					this.SendPropertyChanged("User_Id");
-					this.OnUser_IdChanged();
+					this._Pay_Id = value;
+					this.SendPropertyChanged("Pay_Id");
+					this.OnPay_IdChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Email", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
-		public string Email
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_O_Id", DbType="Int NOT NULL", IsPrimaryKey=true)]
+		public int O_Id
 		{
 			get
 			{
-				return this._Email;
+				return this._O_Id;
 			}
 			set
 			{
-				if ((this._Email != value))
+				if ((this._O_Id != value))
 				{
-					this.OnEmailChanging(value);
+					this.OnO_IdChanging(value);
 					this.SendPropertyChanging();
-					this._Email = value;
-					this.SendPropertyChanged("Email");
-					this.OnEmailChanged();
+					this._O_Id = value;
+					this.SendPropertyChanged("O_Id");
+					this.OnO_IdChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Password", DbType="VarChar(100) NOT NULL", CanBeNull=false)]
-		public string Password
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Card_Num", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
+		public string Card_Num
 		{
 			get
 			{
-				return this._Password;
+				return this._Card_Num;
 			}
 			set
 			{
-				if ((this._Password != value))
+				if ((this._Card_Num != value))
 				{
-					this.OnPasswordChanging(value);
+					this.OnCard_NumChanging(value);
 					this.SendPropertyChanging();
-					this._Password = value;
-					this.SendPropertyChanged("Password");
-					this.OnPasswordChanged();
+					this._Card_Num = value;
+					this.SendPropertyChanged("Card_Num");
+					this.OnCard_NumChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UserType", DbType="Int NOT NULL")]
-		public int UserType
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CVV", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
+		public string CVV
 		{
 			get
 			{
-				return this._UserType;
+				return this._CVV;
 			}
 			set
 			{
-				if ((this._UserType != value))
+				if ((this._CVV != value))
 				{
-					this.OnUserTypeChanging(value);
+					this.OnCVVChanging(value);
 					this.SendPropertyChanging();
-					this._UserType = value;
-					this.SendPropertyChanged("UserType");
-					this.OnUserTypeChanged();
+					this._CVV = value;
+					this.SendPropertyChanged("CVV");
+					this.OnCVVChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Name", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
-		public string Name
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Expiry_date", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
+		public string Expiry_date
 		{
 			get
 			{
-				return this._Name;
+				return this._Expiry_date;
 			}
 			set
 			{
-				if ((this._Name != value))
+				if ((this._Expiry_date != value))
 				{
-					this.OnNameChanging(value);
+					this.OnExpiry_dateChanging(value);
 					this.SendPropertyChanging();
-					this._Name = value;
-					this.SendPropertyChanged("Name");
-					this.OnNameChanged();
+					this._Expiry_date = value;
+					this.SendPropertyChanged("Expiry_date");
+					this.OnExpiry_dateChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Surname", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
-		public string Surname
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CardHolder_Name", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
+		public string CardHolder_Name
 		{
 			get
 			{
-				return this._Surname;
+				return this._CardHolder_Name;
 			}
 			set
 			{
-				if ((this._Surname != value))
+				if ((this._CardHolder_Name != value))
 				{
-					this.OnSurnameChanging(value);
+					this.OnCardHolder_NameChanging(value);
 					this.SendPropertyChanging();
-					this._Surname = value;
-					this.SendPropertyChanged("Surname");
-					this.OnSurnameChanged();
+					this._CardHolder_Name = value;
+					this.SendPropertyChanged("CardHolder_Name");
+					this.OnCardHolder_NameChanged();
 				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Phone_Number", DbType="VarChar(15) NOT NULL", CanBeNull=false)]
-		public string Phone_Number
-		{
-			get
-			{
-				return this._Phone_Number;
-			}
-			set
-			{
-				if ((this._Phone_Number != value))
-				{
-					this.OnPhone_NumberChanging(value);
-					this.SendPropertyChanging();
-					this._Phone_Number = value;
-					this.SendPropertyChanged("Phone_Number");
-					this.OnPhone_NumberChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Address", DbType="VarChar(MAX) NOT NULL", CanBeNull=false)]
-		public string Address
-		{
-			get
-			{
-				return this._Address;
-			}
-			set
-			{
-				if ((this._Address != value))
-				{
-					this.OnAddressChanging(value);
-					this.SendPropertyChanging();
-					this._Address = value;
-					this.SendPropertyChanged("Address");
-					this.OnAddressChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Register_Date", DbType="Date NOT NULL")]
-		public System.DateTime Register_Date
-		{
-			get
-			{
-				return this._Register_Date;
-			}
-			set
-			{
-				if ((this._Register_Date != value))
-				{
-					this.OnRegister_DateChanging(value);
-					this.SendPropertyChanging();
-					this._Register_Date = value;
-					this.SendPropertyChanged("Register_Date");
-					this.OnRegister_DateChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="User_Table_Admin", Storage="_Admin", ThisKey="User_Id", OtherKey="U_Id", IsUnique=true, IsForeignKey=false)]
-		public Admin Admin
-		{
-			get
-			{
-				return this._Admin.Entity;
-			}
-			set
-			{
-				Admin previousValue = this._Admin.Entity;
-				if (((previousValue != value) 
-							|| (this._Admin.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._Admin.Entity = null;
-						previousValue.User_Table = null;
-					}
-					this._Admin.Entity = value;
-					if ((value != null))
-					{
-						value.User_Table = this;
-					}
-					this.SendPropertyChanged("Admin");
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="User_Table_Cart", Storage="_Carts", ThisKey="User_Id", OtherKey="U_Id")]
-		public EntitySet<Cart> Carts
-		{
-			get
-			{
-				return this._Carts;
-			}
-			set
-			{
-				this._Carts.Assign(value);
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="User_Table_Client", Storage="_Client", ThisKey="User_Id", OtherKey="U_Id", IsUnique=true, IsForeignKey=false)]
-		public Client Client
-		{
-			get
-			{
-				return this._Client.Entity;
-			}
-			set
-			{
-				Client previousValue = this._Client.Entity;
-				if (((previousValue != value) 
-							|| (this._Client.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._Client.Entity = null;
-						previousValue.User_Table = null;
-					}
-					this._Client.Entity = value;
-					if ((value != null))
-					{
-						value.User_Table = this;
-					}
-					this.SendPropertyChanged("Client");
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="User_Table_Custom_Prod", Storage="_Custom_Prods", ThisKey="User_Id", OtherKey="U_Id")]
-		public EntitySet<Custom_Prod> Custom_Prods
-		{
-			get
-			{
-				return this._Custom_Prods;
-			}
-			set
-			{
-				this._Custom_Prods.Assign(value);
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="User_Table_HackFeedback", Storage="_HackFeedbacks", ThisKey="User_Id", OtherKey="U_Id")]
-		public EntitySet<HackFeedback> HackFeedbacks
-		{
-			get
-			{
-				return this._HackFeedbacks;
-			}
-			set
-			{
-				this._HackFeedbacks.Assign(value);
 			}
 		}
 		
@@ -1847,42 +1097,6 @@ namespace BabyHaven_Database
 			{
 				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
 			}
-		}
-		
-		private void attach_Carts(Cart entity)
-		{
-			this.SendPropertyChanging();
-			entity.User_Table = this;
-		}
-		
-		private void detach_Carts(Cart entity)
-		{
-			this.SendPropertyChanging();
-			entity.User_Table = null;
-		}
-		
-		private void attach_Custom_Prods(Custom_Prod entity)
-		{
-			this.SendPropertyChanging();
-			entity.User_Table = this;
-		}
-		
-		private void detach_Custom_Prods(Custom_Prod entity)
-		{
-			this.SendPropertyChanging();
-			entity.User_Table = null;
-		}
-		
-		private void attach_HackFeedbacks(HackFeedback entity)
-		{
-			this.SendPropertyChanging();
-			entity.User_Table = this;
-		}
-		
-		private void detach_HackFeedbacks(HackFeedback entity)
-		{
-			this.SendPropertyChanging();
-			entity.User_Table = null;
 		}
 	}
 	
@@ -1910,8 +1124,6 @@ namespace BabyHaven_Database
 		
 		private bool _isActive;
 		
-		private EntitySet<Cart> _Carts;
-		
     #region Extensibility Method Definitions
     partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
@@ -1938,7 +1150,6 @@ namespace BabyHaven_Database
 		
 		public Product()
 		{
-			this._Carts = new EntitySet<Cart>(new Action<Cart>(this.attach_Carts), new Action<Cart>(this.detach_Carts));
 			OnCreated();
 		}
 		
@@ -2122,16 +1333,257 @@ namespace BabyHaven_Database
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Product_Cart", Storage="_Carts", ThisKey="Product_Id", OtherKey="P_Id")]
-		public EntitySet<Cart> Carts
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.User_Table")]
+	public partial class User_Table : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _User_Id;
+		
+		private string _Email;
+		
+		private string _Password;
+		
+		private int _UserType;
+		
+		private string _Name;
+		
+		private string _Surname;
+		
+		private string _Phone_Number;
+		
+		private string _Address;
+		
+		private System.DateTime _Register_Date;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnUser_IdChanging(int value);
+    partial void OnUser_IdChanged();
+    partial void OnEmailChanging(string value);
+    partial void OnEmailChanged();
+    partial void OnPasswordChanging(string value);
+    partial void OnPasswordChanged();
+    partial void OnUserTypeChanging(int value);
+    partial void OnUserTypeChanged();
+    partial void OnNameChanging(string value);
+    partial void OnNameChanged();
+    partial void OnSurnameChanging(string value);
+    partial void OnSurnameChanged();
+    partial void OnPhone_NumberChanging(string value);
+    partial void OnPhone_NumberChanged();
+    partial void OnAddressChanging(string value);
+    partial void OnAddressChanged();
+    partial void OnRegister_DateChanging(System.DateTime value);
+    partial void OnRegister_DateChanged();
+    #endregion
+		
+		public User_Table()
+		{
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_User_Id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int User_Id
 		{
 			get
 			{
-				return this._Carts;
+				return this._User_Id;
 			}
 			set
 			{
-				this._Carts.Assign(value);
+				if ((this._User_Id != value))
+				{
+					this.OnUser_IdChanging(value);
+					this.SendPropertyChanging();
+					this._User_Id = value;
+					this.SendPropertyChanged("User_Id");
+					this.OnUser_IdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Email", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
+		public string Email
+		{
+			get
+			{
+				return this._Email;
+			}
+			set
+			{
+				if ((this._Email != value))
+				{
+					this.OnEmailChanging(value);
+					this.SendPropertyChanging();
+					this._Email = value;
+					this.SendPropertyChanged("Email");
+					this.OnEmailChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Password", DbType="VarChar(100) NOT NULL", CanBeNull=false)]
+		public string Password
+		{
+			get
+			{
+				return this._Password;
+			}
+			set
+			{
+				if ((this._Password != value))
+				{
+					this.OnPasswordChanging(value);
+					this.SendPropertyChanging();
+					this._Password = value;
+					this.SendPropertyChanged("Password");
+					this.OnPasswordChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UserType", DbType="Int NOT NULL")]
+		public int UserType
+		{
+			get
+			{
+				return this._UserType;
+			}
+			set
+			{
+				if ((this._UserType != value))
+				{
+					this.OnUserTypeChanging(value);
+					this.SendPropertyChanging();
+					this._UserType = value;
+					this.SendPropertyChanged("UserType");
+					this.OnUserTypeChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Name", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
+		public string Name
+		{
+			get
+			{
+				return this._Name;
+			}
+			set
+			{
+				if ((this._Name != value))
+				{
+					this.OnNameChanging(value);
+					this.SendPropertyChanging();
+					this._Name = value;
+					this.SendPropertyChanged("Name");
+					this.OnNameChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Surname", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
+		public string Surname
+		{
+			get
+			{
+				return this._Surname;
+			}
+			set
+			{
+				if ((this._Surname != value))
+				{
+					this.OnSurnameChanging(value);
+					this.SendPropertyChanging();
+					this._Surname = value;
+					this.SendPropertyChanged("Surname");
+					this.OnSurnameChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Phone_Number", DbType="VarChar(15) NOT NULL", CanBeNull=false)]
+		public string Phone_Number
+		{
+			get
+			{
+				return this._Phone_Number;
+			}
+			set
+			{
+				if ((this._Phone_Number != value))
+				{
+					this.OnPhone_NumberChanging(value);
+					this.SendPropertyChanging();
+					this._Phone_Number = value;
+					this.SendPropertyChanged("Phone_Number");
+					this.OnPhone_NumberChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Address", DbType="VarChar(MAX) NOT NULL", CanBeNull=false)]
+		public string Address
+		{
+			get
+			{
+				return this._Address;
+			}
+			set
+			{
+				if ((this._Address != value))
+				{
+					this.OnAddressChanging(value);
+					this.SendPropertyChanging();
+					this._Address = value;
+					this.SendPropertyChanged("Address");
+					this.OnAddressChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Register_Date", DbType="Date NOT NULL")]
+		public System.DateTime Register_Date
+		{
+			get
+			{
+				return this._Register_Date;
+			}
+			set
+			{
+				if ((this._Register_Date != value))
+				{
+					this.OnRegister_DateChanging(value);
+					this.SendPropertyChanging();
+					this._Register_Date = value;
+					this.SendPropertyChanged("Register_Date");
+					this.OnRegister_DateChanged();
+				}
 			}
 		}
 		
@@ -2153,18 +1605,6 @@ namespace BabyHaven_Database
 			{
 				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
 			}
-		}
-		
-		private void attach_Carts(Cart entity)
-		{
-			this.SendPropertyChanging();
-			entity.Product = this;
-		}
-		
-		private void detach_Carts(Cart entity)
-		{
-			this.SendPropertyChanging();
-			entity.Product = null;
 		}
 	}
 }

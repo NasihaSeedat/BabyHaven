@@ -253,7 +253,7 @@ namespace BabyHaven_Database
 
             foreach (var cartItem in cartItems)
             {
-                cartItem.Cart_Price = cartItem.Product.P_Price * cartItem.Cart_Quantity; // Calculate based on product price
+               // cartItem.Cart_Price = cartItem.Product.P_Price * cartItem.Cart_Quantity; // Calculate based on product price
             }
 
             try
