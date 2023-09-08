@@ -47,7 +47,7 @@ namespace Frontend
                     // Add a button for each user
                     TableCell actionCell = new TableCell();
                     Button userButton = new Button();
-                    userButton.ID = "btn_" + u.User_Id;
+                    userButton.ID = "btnAddAdmin";
                     userButton.Text = "Add Admin";
                     userButton.CssClass = "site-btn";
 
