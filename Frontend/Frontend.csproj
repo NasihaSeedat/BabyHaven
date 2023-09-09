@@ -70,6 +70,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="AddAdmin.aspx" />
+    <Content Include="AddProduct.aspx" />
     <Content Include="AdminMain.aspx" />
     <Content Include="Blog.aspx" />
     <Content Include="Cart.aspx" />
@@ -131,6 +132,7 @@
     <Content Include="Logout.aspx" />
     <Content Include="ProductDetails.aspx" />
     <Content Include="Register.aspx" />
+    <Content Include="RemoveProduct.aspx" />
     <Content Include="Shop.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
@@ -141,6 +143,13 @@
     </Compile>
     <Compile Include="AddAdmin.aspx.designer.cs">
       <DependentUpon>AddAdmin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AddProduct.aspx.cs">
+      <DependentUpon>AddProduct.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AddProduct.aspx.designer.cs">
+      <DependentUpon>AddProduct.aspx</DependentUpon>
     </Compile>
     <Compile Include="AdminMain.aspx.cs">
       <DependentUpon>AdminMain.aspx</DependentUpon>
@@ -225,6 +234,13 @@
     </Compile>
     <Compile Include="Register.aspx.designer.cs">
       <DependentUpon>Register.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="RemoveProduct.aspx.cs">
+      <DependentUpon>RemoveProduct.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="RemoveProduct.aspx.designer.cs">
+      <DependentUpon>RemoveProduct.aspx</DependentUpon>
     </Compile>
     <Compile Include="Shop.aspx.cs">
       <DependentUpon>Shop.aspx</DependentUpon>
