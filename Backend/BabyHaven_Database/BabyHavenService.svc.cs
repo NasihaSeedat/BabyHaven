@@ -522,5 +522,48 @@ namespace BabyHaven_Database
                 return false;
             }
         }
+
+        public List<User_Table> SearchUsersByName(string searchQuery)
+        {
+            List<User_Table> searchResults = new List<User_Table>();
+
+            // Use the connection string from the 'BabyHavenDatabaseConnectionString' name
+            string connString = System.Configuration.ConfigurationManager.ConnectionStrings["BabyHavenDatabaseConnectionString"].ConnectionString;
+
+            using (SqlConnection connection = new SqlConnection(connString))
+            {
+                connection.Open();
+
+                string sqlQuery = "SELECT * FROM User_Table WHERE Name LIKE @SearchQuery";
+
+                using (SqlCommand command = new SqlCommand(sqlQuery, connection))
+                {
+                    command.Parameters.AddWithValue("@SearchQuery", "%" + searchQuery + "%");
+
+                    using (SqlDataReader reader = command.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            // Create User_Table objects from the database results
+                            User_Table user = new User_Table
+                            {
+                                User_Id = Convert.ToInt32(reader["User_Id"]),
+                                Email = reader["Email"].ToString(),
+                                Name = reader["Name"].ToString(),
+                                Surname = reader["Surname"].ToString(),
+                                Phone_Number = reader["Phone_Number"].ToString()
+                                
+                            };
+
+                            searchResults.Add(user);
+                        }
+                    }
+                }
+            }
+
+            return searchResults;
+        }
     }
 }
+    
+

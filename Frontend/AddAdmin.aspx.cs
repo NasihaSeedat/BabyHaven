@@ -6,12 +6,16 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using Frontend.BackendReference;
+
 namespace Frontend
 {
     public partial class AddAdmin : System.Web.UI.Page
     {
         //reference to server
         BabyHavenServiceClient sr = new BabyHavenServiceClient();
+
+
+
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
@@ -68,7 +72,7 @@ namespace Frontend
 
             Button clickedButton = (Button)sender; // Get the button that triggered the event
             string userId = clickedButton.CommandArgument;
-            string surname= clickedButton.CommandArgument;
+            string surname = clickedButton.CommandArgument;
 
             bool admin = sr.AddAdmin(sr.GetUser(int.Parse(userId)), surname);
 
@@ -76,10 +80,81 @@ namespace Frontend
             {
                 Response.Redirect("Login.aspx");
             }
-            else if(admin == false){
+            else if (admin == false)
+            {
                 error.Text = "Something went wrong OR the admin already exists";
                 error.Visible = true;
             }
+        }
+
+
+        private void PerformSearch()
+        {
+
+            string tx = txtSearch.Text;
+            
+            if (tx != null)
+            {
+                
+               
+
+
+
+
+                // Call your service method to search for users by name
+                dynamic searchResults = sr.SearchUsersByName(tx);
+
+                // Clear the existing table rows
+                userTable.Rows.Clear();
+
+                foreach (BackendReference.User_Table u in searchResults)
+                {
+                    // Create a new table row for each user
+                    TableRow row = new TableRow();
+
+                    // Add cells with user data
+                    TableCell userIdCell = new TableCell();
+                    userIdCell.Text = u.User_Id.ToString();
+                    row.Cells.Add(userIdCell);
+
+                    TableCell emailCell = new TableCell();
+                    emailCell.Text = u.Email;
+                    row.Cells.Add(emailCell);
+
+                    TableCell nameCell = new TableCell();
+                    nameCell.Text = u.Name;
+                    row.Cells.Add(nameCell);
+
+                    TableCell surnameCell = new TableCell();
+                    surnameCell.Text = u.Surname;
+                    row.Cells.Add(surnameCell);
+
+                    TableCell phoneCell = new TableCell();
+                    phoneCell.Text = u.Phone_Number;
+                    row.Cells.Add(phoneCell);
+
+                    // Add a button for each user
+                    TableCell actionCell = new TableCell();
+                    Button userButton = new Button();
+                    userButton.ID = "btnAddAdmin"; // Give each button a unique ID
+                    userButton.Text = "Add Admin";
+                    userButton.CssClass = "site-btn";
+
+                    // Set the CommandArgument to pass user information to the event handler
+                    userButton.CommandArgument = u.User_Id.ToString() + "|" + u.Surname;
+                    userButton.Click += btn_register; // Attach an event handler
+                    actionCell.Controls.Add(userButton);
+                    row.Cells.Add(actionCell);
+
+                    // Add the row to the userTable
+                    userTable.Rows.Add(row);
+                }
+
+            }
+        }
+        protected void btnSearch_Click(object sender, EventArgs e)
+        {
+            PerformSearch();
         }
     }
 }

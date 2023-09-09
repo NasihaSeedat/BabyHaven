@@ -81,12 +81,17 @@
                             </li>
 
                             <li><a href="Blog.aspx">Blog</a>
-                                <ul class="dropdown">
-                                    <li><a href="BlogDetails.aspx">Blog Details</a></li>
-                                </ul>
+                                
                             </li>
-                            <li><a href="Contact.aspx">Contact</a></li>
-                            <li runat="server" id="adminLink" Visible="false"><a href="#">Admin Panel</a></li>
+                            <li><a href="Contact.aspx">About Us</a></li>
+                            <li runat="server" id="adminLink" Visible="false">
+                                 <a href="#">Admin Panel</a>
+                                    <ul class="dropdown" id="DropAdmin" Visible="false" runat="server">
+                                        <li><a href="AddAdmin.aspx">Add Admin</a></li>
+                                        <!-- Add more menu items here as needed -->
+                                    </ul>
+                            </li>
+
        
                         </ul>
                     </nav>
