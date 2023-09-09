@@ -267,5 +267,17 @@ Created: Colorib
         }
     });
 
+    /*-------------------
+        Remove from cart Btn
+    --------------------- */
+    function removeFromCart(productId) {
+        // You can perform any client-side logic here.
+        // For example, you can show a confirmation dialog.
+        if (confirm("Are you sure you want to remove this item from the cart?")) {
+            // Trigger the server-side event using __doPostBack
+            __doPostBack('<%= RemoveFromCartButton.UniqueID %>', productId);
+        }
+    }
+
 
 })(jQuery);
