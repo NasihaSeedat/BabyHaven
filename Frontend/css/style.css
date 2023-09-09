@@ -294,6 +294,56 @@ ol {
 		box-shadow: 0 0 5px #00bcd4; /* Light blue box shadow */
 	}
 
+/*product quant*/
+.Pro_Quantity input[type="number"] {
+	border: 2px solid #ccc;
+	border-radius: 10px;
+	padding: 10px;
+	font-size: 16px;
+	outline: none; /* Remove the default outline when focused */
+}
+
+	.Pro_Quantity input[type="number"]:focus {
+		border-color: #007bff; /* Blue border color when focused */
+		box-shadow: 0 0 5px rgba(0, 123, 255, 0.5); /* Add a subtle blue shadow */
+	}
+
+/*TEXTBOX*/
+/* Style the text input with rounded edges */
+.textbox {
+	border: 2px solid #ccc;
+	border-radius: 10px;
+	padding: 10px;
+	font-size: 16px;
+	outline: none; /* Remove the default outline when focused */
+}
+
+	/* Style the text input when it is focused (clicked or selected) */
+	.textbox:focus {
+		border-color: #007bff; /* Blue border color when focused */
+		box-shadow: 0 0 5px rgba(0, 123, 255, 0.5); /* Add a subtle blue shadow */
+	}
+
+
+/*---------------------
+ categories
+-----------------------*/
+.Cat_option {
+	border: 2px solid #ccc;
+	border-radius: 10px;
+	padding: 10px;
+	font-size: 16px;
+	outline: none; /* Remove the default outline when focused */
+}
+
+	.Cat_option:focus {
+		border-color: #007bff; /* Blue border color when focused */
+		box-shadow: 0 0 5px rgba(0, 123, 255, 0.5); /* Add a subtle blue shadow */
+	}
+
+
+
+
 /*---------------------
   Header
 -----------------------*/
@@ -3893,4 +3943,7 @@ register__error {
 		width: 100%;
 		font-size: 24px;
 	}
+
+
+
 }
