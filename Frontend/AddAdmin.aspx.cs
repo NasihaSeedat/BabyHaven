@@ -91,18 +91,18 @@ namespace Frontend
         private void PerformSearch()
         {
 
-
-            var txtSearchs = (System.Web.UI.HtmlControls.HtmlInputText)FindControl("txtSearch");
-            if (txtSearchs != null)
+            string tx = txtSearch.Text;
+            
+            if (tx != null)
             {
-                string searchQuery = txtSearchs.Value.Trim();
-                // Rest of your code
+                
+               
 
 
 
 
                 // Call your service method to search for users by name
-                dynamic searchResults = sr.SearchUsersByName(searchQuery); // Replace with your actual service method
+                dynamic searchResults = sr.SearchUsersByName(tx);
 
                 // Clear the existing table rows
                 userTable.Rows.Clear();
