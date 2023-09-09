@@ -490,26 +490,31 @@ namespace BabyHaven_Database
             }
         }
 
-        public bool AddAdmin(User_Table user, string surname)
+        public bool AddAdmin(int user, string surname)
         {
+
+
             var ad = (from a in db.User_Tables
-                      where a.User_Id.Equals(user.User_Id)
+                      where a.User_Id.Equals(user)
                       select a).FirstOrDefault();
 
-            if (ad == null)
+            if (ad != null)
             {
                 var newAd = new Admin()
                 {
-                    U_Id = user.User_Id,
+                    U_Id = user,
                     Surname = surname
                 };
                 db.Admins.InsertOnSubmit(newAd);
 
+                ad.UserType = 0;
+                
                 try
                 {
                     db.SubmitChanges();
                     return true;
-                }catch(Exception ex)
+                }
+                catch (Exception ex)
                 {
                     ex.GetBaseException();
                     return false;
@@ -520,6 +525,10 @@ namespace BabyHaven_Database
                 return false;
             }
         }
+
+    
+
+
 
         public List<User_Table> SearchUsersByName(string searchQuery)
         {
