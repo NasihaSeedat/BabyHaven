@@ -310,6 +310,99 @@ namespace Frontend.BackendReference {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Cart", Namespace="http://schemas.datacontract.org/2004/07/BabyHaven_Database")]
+    [System.SerializableAttribute()]
+    public partial class Cart : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private decimal Cart_PriceField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int Cart_QuantityField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int P_IdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int U_IdField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public decimal Cart_Price {
+            get {
+                return this.Cart_PriceField;
+            }
+            set {
+                if ((this.Cart_PriceField.Equals(value) != true)) {
+                    this.Cart_PriceField = value;
+                    this.RaisePropertyChanged("Cart_Price");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int Cart_Quantity {
+            get {
+                return this.Cart_QuantityField;
+            }
+            set {
+                if ((this.Cart_QuantityField.Equals(value) != true)) {
+                    this.Cart_QuantityField = value;
+                    this.RaisePropertyChanged("Cart_Quantity");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int P_Id {
+            get {
+                return this.P_IdField;
+            }
+            set {
+                if ((this.P_IdField.Equals(value) != true)) {
+                    this.P_IdField = value;
+                    this.RaisePropertyChanged("P_Id");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int U_Id {
+            get {
+                return this.U_IdField;
+            }
+            set {
+                if ((this.U_IdField.Equals(value) != true)) {
+                    this.U_IdField = value;
+                    this.RaisePropertyChanged("U_Id");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="Product", Namespace="http://schemas.datacontract.org/2004/07/BabyHaven_Database")]
     [System.SerializableAttribute()]
     public partial class Product : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
@@ -545,6 +638,12 @@ namespace Frontend.BackendReference {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBabyHavenService/GetTotalCartPrice", ReplyAction="http://tempuri.org/IBabyHavenService/GetTotalCartPriceResponse")]
         System.Threading.Tasks.Task<decimal> GetTotalCartPriceAsync(int clientId);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBabyHavenService/GetAllCartItemsForClient", ReplyAction="http://tempuri.org/IBabyHavenService/GetAllCartItemsForClientResponse")]
+        Frontend.BackendReference.Cart[] GetAllCartItemsForClient(int ClientID);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBabyHavenService/GetAllCartItemsForClient", ReplyAction="http://tempuri.org/IBabyHavenService/GetAllCartItemsForClientResponse")]
+        System.Threading.Tasks.Task<Frontend.BackendReference.Cart[]> GetAllCartItemsForClientAsync(int ClientID);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBabyHavenService/GetCartProducts", ReplyAction="http://tempuri.org/IBabyHavenService/GetCartProductsResponse")]
         Frontend.BackendReference.Product[] GetCartProducts(int id);
         
@@ -556,6 +655,30 @@ namespace Frontend.BackendReference {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBabyHavenService/GetQuantity", ReplyAction="http://tempuri.org/IBabyHavenService/GetQuantityResponse")]
         System.Threading.Tasks.Task<int> GetQuantityAsync(int UserID, int ProductID);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBabyHavenService/AddRemoveProductFromCart", ReplyAction="http://tempuri.org/IBabyHavenService/AddRemoveProductFromCartResponse")]
+        void AddRemoveProductFromCart(int pID, int uID, string action, int amount);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBabyHavenService/AddRemoveProductFromCart", ReplyAction="http://tempuri.org/IBabyHavenService/AddRemoveProductFromCartResponse")]
+        System.Threading.Tasks.Task AddRemoveProductFromCartAsync(int pID, int uID, string action, int amount);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBabyHavenService/RemoveProductFromCart", ReplyAction="http://tempuri.org/IBabyHavenService/RemoveProductFromCartResponse")]
+        void RemoveProductFromCart(int productId, int userId, int quantityToRemove);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBabyHavenService/RemoveProductFromCart", ReplyAction="http://tempuri.org/IBabyHavenService/RemoveProductFromCartResponse")]
+        System.Threading.Tasks.Task RemoveProductFromCartAsync(int productId, int userId, int quantityToRemove);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBabyHavenService/GetProductName", ReplyAction="http://tempuri.org/IBabyHavenService/GetProductNameResponse")]
+        string GetProductName(int productID);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBabyHavenService/GetProductName", ReplyAction="http://tempuri.org/IBabyHavenService/GetProductNameResponse")]
+        System.Threading.Tasks.Task<string> GetProductNameAsync(int productID);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBabyHavenService/GetProductPrice", ReplyAction="http://tempuri.org/IBabyHavenService/GetProductPriceResponse")]
+        decimal GetProductPrice(int productID);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBabyHavenService/GetProductPrice", ReplyAction="http://tempuri.org/IBabyHavenService/GetProductPriceResponse")]
+        System.Threading.Tasks.Task<decimal> GetProductPriceAsync(int productID);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBabyHavenService/Getallproducts", ReplyAction="http://tempuri.org/IBabyHavenService/GetallproductsResponse")]
         Frontend.BackendReference.Product[] Getallproducts();
@@ -683,6 +806,14 @@ namespace Frontend.BackendReference {
             return base.Channel.GetTotalCartPriceAsync(clientId);
         }
         
+        public Frontend.BackendReference.Cart[] GetAllCartItemsForClient(int ClientID) {
+            return base.Channel.GetAllCartItemsForClient(ClientID);
+        }
+        
+        public System.Threading.Tasks.Task<Frontend.BackendReference.Cart[]> GetAllCartItemsForClientAsync(int ClientID) {
+            return base.Channel.GetAllCartItemsForClientAsync(ClientID);
+        }
+        
         public Frontend.BackendReference.Product[] GetCartProducts(int id) {
             return base.Channel.GetCartProducts(id);
         }
@@ -697,6 +828,38 @@ namespace Frontend.BackendReference {
         
         public System.Threading.Tasks.Task<int> GetQuantityAsync(int UserID, int ProductID) {
             return base.Channel.GetQuantityAsync(UserID, ProductID);
+        }
+        
+        public void AddRemoveProductFromCart(int pID, int uID, string action, int amount) {
+            base.Channel.AddRemoveProductFromCart(pID, uID, action, amount);
+        }
+        
+        public System.Threading.Tasks.Task AddRemoveProductFromCartAsync(int pID, int uID, string action, int amount) {
+            return base.Channel.AddRemoveProductFromCartAsync(pID, uID, action, amount);
+        }
+        
+        public void RemoveProductFromCart(int productId, int userId, int quantityToRemove) {
+            base.Channel.RemoveProductFromCart(productId, userId, quantityToRemove);
+        }
+        
+        public System.Threading.Tasks.Task RemoveProductFromCartAsync(int productId, int userId, int quantityToRemove) {
+            return base.Channel.RemoveProductFromCartAsync(productId, userId, quantityToRemove);
+        }
+        
+        public string GetProductName(int productID) {
+            return base.Channel.GetProductName(productID);
+        }
+        
+        public System.Threading.Tasks.Task<string> GetProductNameAsync(int productID) {
+            return base.Channel.GetProductNameAsync(productID);
+        }
+        
+        public decimal GetProductPrice(int productID) {
+            return base.Channel.GetProductPrice(productID);
+        }
+        
+        public System.Threading.Tasks.Task<decimal> GetProductPriceAsync(int productID) {
+            return base.Channel.GetProductPriceAsync(productID);
         }
         
         public Frontend.BackendReference.Product[] Getallproducts() {

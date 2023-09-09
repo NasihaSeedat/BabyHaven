@@ -54,10 +54,26 @@ namespace BabyHaven_Database
         decimal GetTotalCartPrice(int clientId);
 
         [OperationContract]
+        //Returns all the items from a client
+        List<Cart> GetAllCartItemsForClient(int ClientID);
+
+        [OperationContract]
         List<Product> GetCartProducts(int id);
 
         [OperationContract]
         int GetQuantity(int UserID, int ProductID);
+
+        [OperationContract]
+        void AddRemoveProductFromCart(int pID, int uID, string action, int amount);
+
+        [OperationContract]
+        void RemoveProductFromCart(int productId, int userId, int quantityToRemove);
+
+        [OperationContract]
+        string GetProductName(int productID);
+
+        [OperationContract]
+        decimal GetProductPrice(int productID);
 
         //-------------------------------------------PRODUCTS------------------------------------------------------//
         [OperationContract]

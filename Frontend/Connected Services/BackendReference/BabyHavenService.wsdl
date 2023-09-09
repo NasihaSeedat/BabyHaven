@@ -67,6 +67,12 @@
   <wsdl:message name="IBabyHavenService_GetTotalCartPrice_OutputMessage">
     <wsdl:part name="parameters" element="tns:GetTotalCartPriceResponse" />
   </wsdl:message>
+  <wsdl:message name="IBabyHavenService_GetAllCartItemsForClient_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllCartItemsForClient" />
+  </wsdl:message>
+  <wsdl:message name="IBabyHavenService_GetAllCartItemsForClient_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllCartItemsForClientResponse" />
+  </wsdl:message>
   <wsdl:message name="IBabyHavenService_GetCartProducts_InputMessage">
     <wsdl:part name="parameters" element="tns:GetCartProducts" />
   </wsdl:message>
@@ -78,6 +84,30 @@
   </wsdl:message>
   <wsdl:message name="IBabyHavenService_GetQuantity_OutputMessage">
     <wsdl:part name="parameters" element="tns:GetQuantityResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBabyHavenService_AddRemoveProductFromCart_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddRemoveProductFromCart" />
+  </wsdl:message>
+  <wsdl:message name="IBabyHavenService_AddRemoveProductFromCart_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddRemoveProductFromCartResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBabyHavenService_RemoveProductFromCart_InputMessage">
+    <wsdl:part name="parameters" element="tns:RemoveProductFromCart" />
+  </wsdl:message>
+  <wsdl:message name="IBabyHavenService_RemoveProductFromCart_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RemoveProductFromCartResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBabyHavenService_GetProductName_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetProductName" />
+  </wsdl:message>
+  <wsdl:message name="IBabyHavenService_GetProductName_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetProductNameResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBabyHavenService_GetProductPrice_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetProductPrice" />
+  </wsdl:message>
+  <wsdl:message name="IBabyHavenService_GetProductPrice_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetProductPriceResponse" />
   </wsdl:message>
   <wsdl:message name="IBabyHavenService_Getallproducts_InputMessage">
     <wsdl:part name="parameters" element="tns:Getallproducts" />
@@ -138,6 +168,10 @@
       <wsdl:input wsaw:Action="http://tempuri.org/IBabyHavenService/GetTotalCartPrice" message="tns:IBabyHavenService_GetTotalCartPrice_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IBabyHavenService/GetTotalCartPriceResponse" message="tns:IBabyHavenService_GetTotalCartPrice_OutputMessage" />
     </wsdl:operation>
+    <wsdl:operation name="GetAllCartItemsForClient">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBabyHavenService/GetAllCartItemsForClient" message="tns:IBabyHavenService_GetAllCartItemsForClient_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBabyHavenService/GetAllCartItemsForClientResponse" message="tns:IBabyHavenService_GetAllCartItemsForClient_OutputMessage" />
+    </wsdl:operation>
     <wsdl:operation name="GetCartProducts">
       <wsdl:input wsaw:Action="http://tempuri.org/IBabyHavenService/GetCartProducts" message="tns:IBabyHavenService_GetCartProducts_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IBabyHavenService/GetCartProductsResponse" message="tns:IBabyHavenService_GetCartProducts_OutputMessage" />
@@ -145,6 +179,22 @@
     <wsdl:operation name="GetQuantity">
       <wsdl:input wsaw:Action="http://tempuri.org/IBabyHavenService/GetQuantity" message="tns:IBabyHavenService_GetQuantity_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IBabyHavenService/GetQuantityResponse" message="tns:IBabyHavenService_GetQuantity_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddRemoveProductFromCart">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBabyHavenService/AddRemoveProductFromCart" message="tns:IBabyHavenService_AddRemoveProductFromCart_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBabyHavenService/AddRemoveProductFromCartResponse" message="tns:IBabyHavenService_AddRemoveProductFromCart_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RemoveProductFromCart">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBabyHavenService/RemoveProductFromCart" message="tns:IBabyHavenService_RemoveProductFromCart_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBabyHavenService/RemoveProductFromCartResponse" message="tns:IBabyHavenService_RemoveProductFromCart_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetProductName">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBabyHavenService/GetProductName" message="tns:IBabyHavenService_GetProductName_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBabyHavenService/GetProductNameResponse" message="tns:IBabyHavenService_GetProductName_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetProductPrice">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBabyHavenService/GetProductPrice" message="tns:IBabyHavenService_GetProductPrice_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBabyHavenService/GetProductPriceResponse" message="tns:IBabyHavenService_GetProductPrice_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="Getallproducts">
       <wsdl:input wsaw:Action="http://tempuri.org/IBabyHavenService/Getallproducts" message="tns:IBabyHavenService_Getallproducts_InputMessage" />
@@ -251,6 +301,15 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="GetAllCartItemsForClient">
+      <soap:operation soapAction="http://tempuri.org/IBabyHavenService/GetAllCartItemsForClient" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="GetCartProducts">
       <soap:operation soapAction="http://tempuri.org/IBabyHavenService/GetCartProducts" style="document" />
       <wsdl:input>
@@ -262,6 +321,42 @@
     </wsdl:operation>
     <wsdl:operation name="GetQuantity">
       <soap:operation soapAction="http://tempuri.org/IBabyHavenService/GetQuantity" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddRemoveProductFromCart">
+      <soap:operation soapAction="http://tempuri.org/IBabyHavenService/AddRemoveProductFromCart" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RemoveProductFromCart">
+      <soap:operation soapAction="http://tempuri.org/IBabyHavenService/RemoveProductFromCart" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetProductName">
+      <soap:operation soapAction="http://tempuri.org/IBabyHavenService/GetProductName" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetProductPrice">
+      <soap:operation soapAction="http://tempuri.org/IBabyHavenService/GetProductPrice" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

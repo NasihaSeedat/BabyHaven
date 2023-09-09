@@ -288,6 +288,37 @@ namespace BabyHaven_Database
             return totalCartPrice;
         }
 
+        // Returns all the items from a client
+        public List<Cart> GetAllCartItemsForClient(int ClientID)
+        {
+            List<Cart> ShoppingCart = (from s in db.Carts
+                                       where s.U_Id.Equals(ClientID)
+                                       select s).ToList();
+
+            return ShoppingCart;
+        }
+
+
+        public string GetProductName(int productID)
+        {
+            // Find the product by ID
+            Product product = db.Products.FirstOrDefault(p => p.Product_Id == productID);
+
+            // Check if the product exists and return its name
+            return product != null ? product.P_Name : string.Empty;
+        }
+
+        public decimal GetProductPrice(int productID)
+        {
+            // Find the product by ID
+            Product product = db.Products.FirstOrDefault(p => p.Product_Id == productID);
+
+            // Check if the product exists and return its price
+            return product != null ? product.P_Price : 0.0M;
+        }
+
+
+        //-------------------------------------------PRODUCTS------------------------------------------------------//
         public List<Product> GetCartProducts(int id)
         {
             dynamic Pid = (from p in db.Carts
@@ -312,6 +343,85 @@ namespace BabyHaven_Database
                             select p.Cart_Quantity).FirstOrDefault();
             return Quantity;
         }
+
+        public void AddRemoveProductFromCart(int pID, int uID, string action, int amount)
+        {
+            var Pcart = (from p in db.Carts
+                         where p.U_Id.Equals(uID) && p.P_Id.Equals(pID)
+                         select p).FirstOrDefault();
+            if (action.Equals("ADD"))
+            {
+                Pcart.Cart_Quantity += amount;
+                try
+                {
+                    db.SubmitChanges();
+                }
+                catch (Exception e)
+                {
+                    e.GetBaseException();
+                }
+
+            }
+            else if (action.Equals("REMOVE"))
+            {
+                if (Pcart.Cart_Quantity == 1)
+                {
+                    db.Carts.DeleteOnSubmit(Pcart);
+                    try
+                    {
+                        db.SubmitChanges();
+                    }
+                    catch (Exception e)
+                    {
+                        e.GetBaseException();
+                    }
+                }
+                else if (Pcart.Cart_Quantity > 1)
+                {
+                    Pcart.Cart_Quantity -= amount;
+                    try
+                    {
+                        db.SubmitChanges();
+                    }
+                    catch (Exception e)
+                    {
+                        e.GetBaseException();
+                    }
+                }
+            }
+        }
+
+        public void RemoveProductFromCart(int productId, int userId, int quantityToRemove)
+        {
+            // Retrieve the cart item for the specified product and user
+            var cartItem = db.Carts.SingleOrDefault(c => c.P_Id == productId && c.U_Id == userId);
+
+            if (cartItem != null)
+            {
+                // Check if the quantity to remove is less than or equal to the current cart quantity
+                if (quantityToRemove >= cartItem.Cart_Quantity)
+                {
+                    // Remove the entire cart item if the quantity to remove is greater or equal
+                    db.Carts.DeleteOnSubmit(cartItem);
+                }
+                else
+                {
+                    // Reduce the cart quantity by the specified amount
+                    cartItem.Cart_Quantity -= quantityToRemove;
+                }
+
+                try
+                {
+                    db.SubmitChanges();
+                }
+                catch (Exception ex)
+                {
+                    // Handle any exceptions (e.g., log or throw)
+                    throw ex;
+                }
+            }
+        }
+
 
         public List<Product> Getallproducts()
         {

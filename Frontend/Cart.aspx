@@ -24,34 +24,38 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="shop__cart__table">
-                        <table>
-                            <thead>
-                                <tr>
-                                    <th>Product</th>
-                                    <th>Price</th>
-                                    <th>Quantity</th>
-                                    <th>Total</th>
-                                    <th></th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <asp:Repeater ID="CartTable" runat="server">
-                                    <ItemTemplate>
-                                        <tr>
-                                            <td><%# Eval("ProductName") %></td>
-                                            <td><%# Eval("Price", "{0:C}") %></td>
-                                            <td>
-                                                <asp:TextBox runat="server" ID="QuantityTextBox" Text='<%# Eval("Quantity") %>'></asp:TextBox>
-                                            </td>
-                                            <td><%# Eval("Total", "{0:C}") %></td>
-                                            <td>
-                                                <asp:Button runat="server" Text="Remove" OnClick="RemoveFromCartButton_Click" CommandArgument='<%# Eval("ProductId") %>' />
-                                            </td>
-                                        </tr>
-                                    </ItemTemplate>
-                                </asp:Repeater>
-                            </tbody>
-                        </table>
+                        <form runat="server">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Product</th>
+                                        <th>Price</th>
+                                        <th>Quantity</th>
+                                        <th>Total</th>
+                                        <th></th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <asp:Repeater ID="CartTable" runat="server">
+                                        <ItemTemplate>
+                                            <tr>
+                                                <td><%# GetProductName(Eval("P_ID")) %></td>
+                                                <td><%# GetProductPrice(Eval("P_ID")) %></td>
+                                                <td>
+                                                    <asp:TextBox runat="server" ID="QuantityTextBox" Text='<%# Eval("Cart_Quantity") %>'></asp:TextBox>
+                                                </td>
+                                                <td><%# Eval("Cart_Price", "{0:C}") %></td>
+                                                <td>
+                                                    <asp:Button runat="server" Text="Add" CommandName="AddToCart" CommandArgument='<%# Eval("P_ID") %>' />
+                                                    <asp:Button runat="server" Text="Remove" CommandName="RemoveFromCart" CommandArgument='<%# Eval("P_ID") %>' />
+                                                </td>
+                                            </tr>
+                                        </ItemTemplate>
+                                    </asp:Repeater>
+
+                                </tbody>
+                            </table>
+                        </form>
                     </div>
                 </div>
             </div>
@@ -71,7 +75,6 @@
                     <div class="cart__total__procced">
                         <h6>Cart total</h6>
                         <ul>
-                            <li>Subtotal <span><asp:Label ID="SubtotalLabel" runat="server" Text="R 0.00"></asp:Label></span></li>
                             <li>Total <span><asp:Label ID="TotalLabel" runat="server" Text="R 0.00"></asp:Label></span></li>
                         </ul>
                         <%-- Add a conditional check for clientId --%>

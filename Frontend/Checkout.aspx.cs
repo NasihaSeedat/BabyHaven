@@ -13,11 +13,6 @@ namespace Frontend
         {
             if (!IsPostBack)
             {
-                // Populate the cart items, subtotal, tax, discount, and total here.
-                // For demonstration purposes, we'll use sample data.
-                rptCartItems.DataSource = GetSampleCartItems();
-                rptCartItems.DataBind();
-
                 decimal subtotal = CalculateSubtotal();
                 decimal tax = CalculateTax(subtotal);
                 decimal discount = CalculateDiscount(subtotal);
@@ -38,17 +33,6 @@ namespace Frontend
             // For this simplified example, we'll display a confirmation message.
             lblConfirmationMessage.Text = "Your order has been placed successfully!";
             lblConfirmationMessage.Visible = true; // Make the label visible
-        }
-
-        // Sample method to get cart items (replace with your actual data source)
-        private CartItem[] GetSampleCartItems()
-        {
-            return new CartItem[]
-            {
-            new CartItem("Product 1", 100.0),
-            new CartItem("Product 2", 50.0),
-            new CartItem("Product 3", 30.0)
-            };
         }
 
         // Sample methods for calculation (replace with your logic)
