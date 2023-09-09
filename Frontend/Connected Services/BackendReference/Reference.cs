@@ -621,10 +621,10 @@ namespace Frontend.BackendReference {
         System.Threading.Tasks.Task<bool> RegisterAsync(string email, string password, string name, string surname, string phoneno, string address, int usetype);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBabyHavenService/AddAdmin", ReplyAction="http://tempuri.org/IBabyHavenService/AddAdminResponse")]
-        bool AddAdmin(Frontend.BackendReference.User_Table user, string surname);
+        bool AddAdmin(int user, string surname);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBabyHavenService/AddAdmin", ReplyAction="http://tempuri.org/IBabyHavenService/AddAdminResponse")]
-        System.Threading.Tasks.Task<bool> AddAdminAsync(Frontend.BackendReference.User_Table user, string surname);
+        System.Threading.Tasks.Task<bool> AddAdminAsync(int user, string surname);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBabyHavenService/SearchUsersByName", ReplyAction="http://tempuri.org/IBabyHavenService/SearchUsersByNameResponse")]
         Frontend.BackendReference.User_Table[] SearchUsersByName(string searchQuery);
@@ -794,11 +794,11 @@ namespace Frontend.BackendReference {
             return base.Channel.RegisterAsync(email, password, name, surname, phoneno, address, usetype);
         }
         
-        public bool AddAdmin(Frontend.BackendReference.User_Table user, string surname) {
+        public bool AddAdmin(int user, string surname) {
             return base.Channel.AddAdmin(user, surname);
         }
         
-        public System.Threading.Tasks.Task<bool> AddAdminAsync(Frontend.BackendReference.User_Table user, string surname) {
+        public System.Threading.Tasks.Task<bool> AddAdminAsync(int user, string surname) {
             return base.Channel.AddAdminAsync(user, surname);
         }
         

@@ -44,7 +44,7 @@ namespace BabyHaven_Database
 
         //Adding Admin
         [OperationContract]
-        bool AddAdmin(User_Table user, string surname);
+        bool AddAdmin(int user, string surname);
 
         //Searching Users
         [OperationContract]
