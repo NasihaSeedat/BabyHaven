@@ -87,6 +87,9 @@ namespace BabyHaven_Database
         List<Product> Getallproducts();
 
         [OperationContract]
+        List<Product> getProductCat(string cat);
+
+        [OperationContract]
         Product getSingleProd(int id);
 
         [OperationContract]
