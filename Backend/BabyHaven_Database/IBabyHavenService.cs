@@ -46,6 +46,10 @@ namespace BabyHaven_Database
         [OperationContract]
         bool AddAdmin(User_Table user, string surname);
 
+        //Searching Users
+        [OperationContract]
+        List<User_Table> SearchUsersByName(string searchQuery);
+
         //CART
         [OperationContract]
         bool AddToCart(int uId, int pId);
