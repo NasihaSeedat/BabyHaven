@@ -56,9 +56,8 @@
                                                 </td>
                                                 <td class="cart__total"><%# Eval("Cart_Price", "{0:C}") %></td>
                                                 <td class="cart__close">
-                                                   <asp:HyperLink runat="server" ID="RemoveFromCartLink" Text="X" NavigateUrl="javascript:void(0);" OnClientClick='<%# "removeFromCart(" + Eval("P_ID") + "); return false;" %>' />
+                                                    <asp:Button runat="server" ID="RemoveFromCartButton" Text="X" OnClick="RemoveFromCartButton_Click" CommandArgument='<%# Eval("P_ID") %>' />
                                                 </td>
-
                                             </tr>
                                         </ItemTemplate>
                                     </asp:Repeater>

@@ -281,12 +281,15 @@ namespace BabyHaven_Database
 
         public decimal GetTotalCartPrice(int clientId)
         {
-            decimal totalCartPrice = db.Carts
+            var cartPrices = db.Carts
                 .Where(cart => cart.U_Id == clientId)
-                .Sum(cart => cart.Cart_Price);
+                .Select(cart => cart.Cart_Price);
+
+            decimal totalCartPrice = cartPrices.Any() ? cartPrices.Sum() : 0;
 
             return totalCartPrice;
         }
+
 
         // Returns all the items from a client
         public List<Cart> GetAllCartItemsForClient(int ClientID)
@@ -325,8 +328,6 @@ namespace BabyHaven_Database
             return product != null ? product.P_Price : 0.0M;
         }
 
-
-        //-------------------------------------------PRODUCTS------------------------------------------------------//
         public List<Product> GetCartProducts(int id)
         {
             dynamic Pid = (from p in db.Carts
@@ -431,6 +432,7 @@ namespace BabyHaven_Database
         }
 
 
+        //-------------------------------------------PRODUCTS------------------------------------------------------//
         public List<Product> Getallproducts()
         {
             var prods = new List<Product>();

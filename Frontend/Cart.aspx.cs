@@ -16,29 +16,33 @@ namespace Frontend
         protected void Page_Load(object sender, EventArgs e)
         {
 
-            if (Session["LoggedInUserID"] == null)
+            if (!IsPostBack)
             {
-                // If the user is not logged in, redirect them to the login page
-                Response.Redirect("Login.aspx");
+                if (Session["LoggedInUserID"] == null)
+                {
+                    // If the user is not logged in, redirect them to the login page
+                    Response.Redirect("Login.aspx");
+                }
+                else
+                {
+                    // Assuming you have a method in your service reference to get the total cart price
+                    // Replace 'GetTotalCartPrice' with the actual method name in your service reference
+                    int clientId = GetClientId();
+
+                    decimal totalCartPrice = sr.GetTotalCartPrice(clientId);
+
+                    // Format the total cart price as currency (e.g., "R 123.45")
+                    string formattedTotalPrice = string.Format("R {0:N2}", totalCartPrice);
+
+                    // Set the formatted total cart price to the TotalLabel
+                    TotalLabel.Text = formattedTotalPrice;
+
+                    ProceedToCheckoutLink.NavigateUrl = "Checkout.aspx";
+
+                    BindCartData();
+                }
             }
-            else
-            {
-                // Assuming you have a method in your service reference to get the total cart price
-                // Replace 'GetTotalCartPrice' with the actual method name in your service reference
-                int clientId = GetClientId();
-
-                decimal totalCartPrice = sr.GetTotalCartPrice(clientId);
-
-                // Format the total cart price as currency (e.g., "R 123.45")
-                string formattedTotalPrice = string.Format("R {0:N2}", totalCartPrice);
-
-                // Set the formatted total cart price to the TotalLabel
-                TotalLabel.Text = formattedTotalPrice;
-
-                ProceedToCheckoutLink.NavigateUrl = "Checkout.aspx";
-
-                BindCartData();
-            }
+            
         }
 
         protected void CartTable_ItemCommand(object source, RepeaterCommandEventArgs e)
@@ -79,6 +83,25 @@ namespace Frontend
             }
         }
 
+        //Remove a quantity
+        //protected void RemoveFromCartButton_Click(object sender, EventArgs e)
+        //{
+        //    // Get the product ID from the sender button's CommandArgument
+        //    Button btnRemove = (Button)sender;
+        //    int productId = Convert.ToInt32(btnRemove.CommandArgument);
+
+        //    // Specify the user ID (you might have your own method to do this)
+        //    int userId = GetClientId();
+
+        //    // Specify the quantity to remove (e.g., 1)
+        //    int quantityToRemove = 1; // You can adjust this based on your UI
+
+        //    // Call the backend service method to remove the product from the cart
+        //    sr.RemoveProductFromCart(productId, userId, quantityToRemove);
+
+        //    // Refresh the cart or update the UI as needed
+        //    BindCartData(); // Implement this method to rebind cart data
+        //}
 
         protected void RemoveFromCartButton_Click(object sender, EventArgs e)
         {
@@ -90,7 +113,7 @@ namespace Frontend
             int userId = GetClientId();
 
             // Specify the quantity to remove (e.g., 1)
-            int quantityToRemove = 1; // You can adjust this based on your UI
+            int quantityToRemove = sr.GetQuantity(userId, productId);
 
             // Call the backend service method to remove the product from the cart
             sr.RemoveProductFromCart(productId, userId, quantityToRemove);
