@@ -103,6 +103,33 @@ namespace Frontend
         //    BindCartData(); // Implement this method to rebind cart data
         //}
 
+        protected void IncreaseQuantity_Click(object sender, EventArgs e)
+        {
+            Button button = (Button)sender;
+            int productId = Convert.ToInt32(button.CommandArgument);
+            int userId = GetClientId();
+
+            // Call your AddRemoveProductFromCart method with action "ADD"
+            sr.AddRemoveProductFromCart(productId, userId, "ADD", 1);
+
+            // Refresh the cart data
+            BindCartData();
+        }
+
+        protected void DecreaseQuantity_Click(object sender, EventArgs e)
+        {
+            Button button = (Button)sender;
+            int productId = Convert.ToInt32(button.CommandArgument);
+            int userId = GetClientId();
+
+            // Call your AddRemoveProductFromCart method with action "REMOVE"
+            sr.AddRemoveProductFromCart(productId, userId, "REMOVE", 1);
+
+            // Refresh the cart data
+            BindCartData();
+        }
+
+
         protected void RemoveFromCartButton_Click(object sender, EventArgs e)
         {
             // Get the product ID from the sender button's CommandArgument

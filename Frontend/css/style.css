@@ -1731,14 +1731,13 @@ ol {
 	margin-right: 15px;
 }
 
+/* Container style */
 .pro-qty {
-	height: 50px;
-	width: 150px;
-	border: 1px solid #ebebeb;
-	border-radius: 50px;
-	padding: 0 20px;
-	overflow: hidden;
-	display: inline-block;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	width: 70px; /* Adjust the width as needed */
+	margin: 0 5px; /* Add some spacing between the input and buttons */
 }
 
 .pro-qty .qtybtn {

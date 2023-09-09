@@ -361,44 +361,32 @@ namespace BabyHaven_Database
             if (action.Equals("ADD"))
             {
                 Pcart.Cart_Quantity += amount;
-                try
-                {
-                    db.SubmitChanges();
-                }
-                catch (Exception e)
-                {
-                    e.GetBaseException();
-                }
-
             }
             else if (action.Equals("REMOVE"))
             {
                 if (Pcart.Cart_Quantity == 1)
                 {
                     db.Carts.DeleteOnSubmit(Pcart);
-                    try
-                    {
-                        db.SubmitChanges();
-                    }
-                    catch (Exception e)
-                    {
-                        e.GetBaseException();
-                    }
                 }
                 else if (Pcart.Cart_Quantity > 1)
                 {
                     Pcart.Cart_Quantity -= amount;
-                    try
-                    {
-                        db.SubmitChanges();
-                    }
-                    catch (Exception e)
-                    {
-                        e.GetBaseException();
-                    }
                 }
             }
+
+            // Calculate and update the Cart_Price
+            Pcart.Cart_Price = Pcart.Cart_Quantity * GetProductPrice(Pcart.P_Id); // Assuming Product.Price is the price of a single product
+
+            try
+            {
+                db.SubmitChanges();
+            }
+            catch (Exception e)
+            {
+                e.GetBaseException();
+            }
         }
+
 
         public void RemoveProductFromCart(int productId, int userId, int quantityToRemove)
         {
