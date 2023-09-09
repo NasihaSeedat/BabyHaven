@@ -55,6 +55,12 @@
   <wsdl:message name="IBabyHavenService_AddAdmin_OutputMessage">
     <wsdl:part name="parameters" element="tns:AddAdminResponse" />
   </wsdl:message>
+  <wsdl:message name="IBabyHavenService_SearchUsersByName_InputMessage">
+    <wsdl:part name="parameters" element="tns:SearchUsersByName" />
+  </wsdl:message>
+  <wsdl:message name="IBabyHavenService_SearchUsersByName_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SearchUsersByNameResponse" />
+  </wsdl:message>
   <wsdl:message name="IBabyHavenService_AddToCart_InputMessage">
     <wsdl:part name="parameters" element="tns:AddToCart" />
   </wsdl:message>
@@ -165,6 +171,10 @@
     <wsdl:operation name="AddAdmin">
       <wsdl:input wsaw:Action="http://tempuri.org/IBabyHavenService/AddAdmin" message="tns:IBabyHavenService_AddAdmin_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IBabyHavenService/AddAdminResponse" message="tns:IBabyHavenService_AddAdmin_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SearchUsersByName">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBabyHavenService/SearchUsersByName" message="tns:IBabyHavenService_SearchUsersByName_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBabyHavenService/SearchUsersByNameResponse" message="tns:IBabyHavenService_SearchUsersByName_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="AddToCart">
       <wsdl:input wsaw:Action="http://tempuri.org/IBabyHavenService/AddToCart" message="tns:IBabyHavenService_AddToCart_InputMessage" />
@@ -286,6 +296,15 @@
     </wsdl:operation>
     <wsdl:operation name="AddAdmin">
       <soap:operation soapAction="http://tempuri.org/IBabyHavenService/AddAdmin" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SearchUsersByName">
+      <soap:operation soapAction="http://tempuri.org/IBabyHavenService/SearchUsersByName" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

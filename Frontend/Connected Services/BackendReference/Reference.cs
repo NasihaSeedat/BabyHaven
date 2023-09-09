@@ -626,6 +626,12 @@ namespace Frontend.BackendReference {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBabyHavenService/AddAdmin", ReplyAction="http://tempuri.org/IBabyHavenService/AddAdminResponse")]
         System.Threading.Tasks.Task<bool> AddAdminAsync(Frontend.BackendReference.User_Table user, string surname);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBabyHavenService/SearchUsersByName", ReplyAction="http://tempuri.org/IBabyHavenService/SearchUsersByNameResponse")]
+        Frontend.BackendReference.User_Table[] SearchUsersByName(string searchQuery);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBabyHavenService/SearchUsersByName", ReplyAction="http://tempuri.org/IBabyHavenService/SearchUsersByNameResponse")]
+        System.Threading.Tasks.Task<Frontend.BackendReference.User_Table[]> SearchUsersByNameAsync(string searchQuery);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBabyHavenService/AddToCart", ReplyAction="http://tempuri.org/IBabyHavenService/AddToCartResponse")]
         bool AddToCart(int uId, int pId);
         
@@ -794,6 +800,14 @@ namespace Frontend.BackendReference {
         
         public System.Threading.Tasks.Task<bool> AddAdminAsync(Frontend.BackendReference.User_Table user, string surname) {
             return base.Channel.AddAdminAsync(user, surname);
+        }
+        
+        public Frontend.BackendReference.User_Table[] SearchUsersByName(string searchQuery) {
+            return base.Channel.SearchUsersByName(searchQuery);
+        }
+        
+        public System.Threading.Tasks.Task<Frontend.BackendReference.User_Table[]> SearchUsersByNameAsync(string searchQuery) {
+            return base.Channel.SearchUsersByNameAsync(searchQuery);
         }
         
         public bool AddToCart(int uId, int pId) {

@@ -25,11 +25,11 @@
             <div class="row">
                <div class="row">
     <div class="col-md-6">
-        <input type="text" id="txtSearch" class="form-control" placeholder="Search by Name" runat="server" />
+        <input type="text" id="txtSearch" class="search-bar" placeholder="Search by Name" runat="server" />
     </div>
     <div class="col-md-6">
 
-        <asp:Button id="btnSearch" class="site-button" runat="server" Text="Search"  />
+        <asp:Button id="btnSearch" class="site-btn" runat="server" Text="Search" OnClick="btnSearch_Click"  />
 
        
     </div>
