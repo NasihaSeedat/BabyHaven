@@ -25,7 +25,9 @@
             <div class="row">
                <div class="row">
     <div class="col-md-6">
-        <input type="text" id="txtSearch" class="search-bar" placeholder="Search by Name" runat="server" />
+        
+
+        <asp:TextBox ID="txtSearch" class="search-bar" placeholder="Search by Name" runat="server"></asp:TextBox>
     </div>
     <div class="col-md-6">
 
