@@ -84,8 +84,8 @@
 
                 <div class="btn btn-link">
                     
-                     <!--  <div class="site-btn clear-btn" onclick="AddProduct_Click" >Add Product</div>-->
-                        <asp:Button ID="AddProds" class="site-btn" runat="server" Text="Add Product"  Width="198px" />
+                     
+                        <asp:Button ID="AddProds" class="site-btn" runat="server" Text="Add Product"  Width="198px" OnClick="AddProds_Click" />
                     </div>
                 </div>
 
