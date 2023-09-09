@@ -31,6 +31,16 @@ namespace Frontend
             //{
             //    totalItems = 0;
             //}
+
+
+
+            if (Session["LoggedInUserType"] != null && Session["LoggedInUserType"].Equals(0))
+            {
+                adminLink.Visible = true;
+            }else if(Session["LoggedInUserType"] == null && Session["LoggedInUserID"]==null)
+            {
+                adminLink.Visible = false;
+            }
         }
 
         public int GetCartItemCount()

@@ -12,6 +12,7 @@ namespace Frontend
         protected void Page_Load(object sender, EventArgs e)
         {
             Session["LoggedInUserID"] = null; // Clear the session variable
+            Session["LoggedInUserType"] = null;
             Response.Redirect("Login.aspx");
         }
     }

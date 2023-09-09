@@ -23,7 +23,7 @@ namespace Frontend
             var hashedpass = Hash.HashPassword(Password.Value);
             int Id = s.Login(Email.Value, hashedpass);
 
-            //zvar user = s.GetUser(Id);
+            var user = s.GetUser(Id);
             if (Id == 0)
             {
                 error.Visible = true;
@@ -31,6 +31,9 @@ namespace Frontend
             else
             {
                 Session["LoggedInUserID"] = Id;
+                Session["LoggedInUserType"] = user.UserType;
+
+              
                 Response.Redirect("Home.aspx");
             }
         }
