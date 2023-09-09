@@ -2072,7 +2072,10 @@ ol {
 .shop__cart__table tbody tr .cart__product__item img {
 	float: left;
 	margin-right: 25px;
+	max-width: 100px; /* Set the maximum width for the images */
+	height: auto; /* Maintain aspect ratio */
 }
+
 
 .shop__cart__table tbody tr .cart__product__item .cart__product__item__title {
 	overflow: hidden;
@@ -2141,6 +2144,7 @@ ol {
 	font-weight: 600;
 	cursor: pointer;
 }
+
 
 .cart__btn {
 	margin-bottom: 50px;

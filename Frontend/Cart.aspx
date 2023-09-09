@@ -1,5 +1,8 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/BabyHaven.Master" AutoEventWireup="true" CodeBehind="Cart.aspx.cs" Inherits="Frontend.Cart" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+    <style>
+
+    </style>
 </asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
@@ -39,19 +42,26 @@
                                     <asp:Repeater ID="CartTable" runat="server">
                                         <ItemTemplate>
                                             <tr>
-                                                <td><%# GetProductName(Eval("P_ID")) %></td>
-                                                <td><%# GetProductPrice(Eval("P_ID")) %></td>
-                                                <td>
-                                                    <asp:TextBox runat="server" ID="QuantityTextBox" Text='<%# Eval("Cart_Quantity") %>'></asp:TextBox>
+                                                <td class="cart__product__item">
+                                                    <img src='<%# GetProductImage(Eval("P_ID")) %>' alt='<%# GetProductName(Eval("P_ID")) %>'>
+                                                    <div class="cart__product__item__title">
+                                                        <h6><%# GetProductName(Eval("P_ID")) %></h6>
+                                                    </div>
                                                 </td>
-                                                <td><%# Eval("Cart_Price", "{0:C}") %></td>
-                                                <td>
-                                                    <asp:Button runat="server" Text="Add" CommandName="AddToCart" CommandArgument='<%# Eval("P_ID") %>' />
-                                                    <asp:Button runat="server" Text="Remove" CommandName="RemoveFromCart" CommandArgument='<%# Eval("P_ID") %>' />
+                                                <td class="cart__price"><%# GetProductPrice(Eval("P_ID")) %></td>
+                                                <td class="cart__quantity">
+                                                    <div class="pro-qty">
+                                                        <asp:TextBox runat="server" ID="QuantityTextBox" Text='<%# Eval("Cart_Quantity") %>'></asp:TextBox>
+                                                    </div>
+                                                </td>
+                                                <td class="cart__total"><%# Eval("Cart_Price", "{0:C}") %></td>
+                                                <td class="cart__close">
+                                                    <asp:Button runat="server" Text="X" CommandName="RemoveFromCart" CommandArgument='<%# Eval("P_ID") %>' ID="RemoveButton" OnClick="RemoveFromCartButton_Click" />
                                                 </td>
                                             </tr>
                                         </ItemTemplate>
                                     </asp:Repeater>
+
 
                                 </tbody>
                             </table>
@@ -65,12 +75,6 @@
                         <a href="Shop.aspx">Continue Shopping</a>
                     </div>
                 </div>
-                <div class="col-lg-6 col-md-6 col-sm-6">
-                    <%-- Add a conditional check for clientId --%>
-                    <asp:Label ID="ClientIdLabel" runat="server" Text=""></asp:Label>
-                </div>
-            </div>
-            <div class="row">
                 <div class="col-lg-4 offset-lg-2">
                     <div class="cart__total__procced">
                         <h6>Cart total</h6>
@@ -81,6 +85,9 @@
                         <asp:HyperLink ID="ProceedToCheckoutLink" runat="server" CssClass="primary-btn" Text="Proceed to checkout"></asp:HyperLink>
                     </div>
                 </div>
+            </div>
+            <div class="row">
+                
             </div>
         </div>
     </section>

@@ -70,6 +70,9 @@ namespace BabyHaven_Database
         void RemoveProductFromCart(int productId, int userId, int quantityToRemove);
 
         [OperationContract]
+        string GetProductImage(int productID);
+
+        [OperationContract]
         string GetProductName(int productID);
 
         [OperationContract]

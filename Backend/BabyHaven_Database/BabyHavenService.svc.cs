@@ -298,6 +298,14 @@ namespace BabyHaven_Database
             return ShoppingCart;
         }
 
+        public string GetProductImage(int productID)
+        {
+            // Find the product by ID
+            Product product = db.Products.FirstOrDefault(p => p.Product_Id == productID);
+
+            // Check if the product exists and return its name
+            return product != null ? product.P_Image : string.Empty;
+        }
 
         public string GetProductName(int productID)
         {

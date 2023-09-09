@@ -35,6 +35,7 @@ namespace Frontend
                 // Set the formatted total cart price to the TotalLabel
                 TotalLabel.Text = formattedTotalPrice;
 
+                ProceedToCheckoutLink.NavigateUrl = "Checkout.aspx";
 
                 BindCartData();
             }
@@ -96,6 +97,13 @@ namespace Frontend
 
             // Refresh the cart or update the UI as needed
             BindCartData(); // Implement this method to rebind cart data
+        }
+
+        public string GetProductImage(object productId)
+        {
+            int productID = Convert.ToInt32(productId);
+            // Call the backend service to get the product name based on the productID
+            return sr.GetProductImage(productID);
         }
 
         public string GetProductName(object productId)

@@ -97,6 +97,12 @@
   <wsdl:message name="IBabyHavenService_RemoveProductFromCart_OutputMessage">
     <wsdl:part name="parameters" element="tns:RemoveProductFromCartResponse" />
   </wsdl:message>
+  <wsdl:message name="IBabyHavenService_GetProductImage_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetProductImage" />
+  </wsdl:message>
+  <wsdl:message name="IBabyHavenService_GetProductImage_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetProductImageResponse" />
+  </wsdl:message>
   <wsdl:message name="IBabyHavenService_GetProductName_InputMessage">
     <wsdl:part name="parameters" element="tns:GetProductName" />
   </wsdl:message>
@@ -187,6 +193,10 @@
     <wsdl:operation name="RemoveProductFromCart">
       <wsdl:input wsaw:Action="http://tempuri.org/IBabyHavenService/RemoveProductFromCart" message="tns:IBabyHavenService_RemoveProductFromCart_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IBabyHavenService/RemoveProductFromCartResponse" message="tns:IBabyHavenService_RemoveProductFromCart_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetProductImage">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBabyHavenService/GetProductImage" message="tns:IBabyHavenService_GetProductImage_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBabyHavenService/GetProductImageResponse" message="tns:IBabyHavenService_GetProductImage_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="GetProductName">
       <wsdl:input wsaw:Action="http://tempuri.org/IBabyHavenService/GetProductName" message="tns:IBabyHavenService_GetProductName_InputMessage" />
@@ -339,6 +349,15 @@
     </wsdl:operation>
     <wsdl:operation name="RemoveProductFromCart">
       <soap:operation soapAction="http://tempuri.org/IBabyHavenService/RemoveProductFromCart" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetProductImage">
+      <soap:operation soapAction="http://tempuri.org/IBabyHavenService/GetProductImage" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

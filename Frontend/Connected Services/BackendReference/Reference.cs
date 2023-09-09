@@ -668,6 +668,12 @@ namespace Frontend.BackendReference {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBabyHavenService/RemoveProductFromCart", ReplyAction="http://tempuri.org/IBabyHavenService/RemoveProductFromCartResponse")]
         System.Threading.Tasks.Task RemoveProductFromCartAsync(int productId, int userId, int quantityToRemove);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBabyHavenService/GetProductImage", ReplyAction="http://tempuri.org/IBabyHavenService/GetProductImageResponse")]
+        string GetProductImage(int productID);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBabyHavenService/GetProductImage", ReplyAction="http://tempuri.org/IBabyHavenService/GetProductImageResponse")]
+        System.Threading.Tasks.Task<string> GetProductImageAsync(int productID);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBabyHavenService/GetProductName", ReplyAction="http://tempuri.org/IBabyHavenService/GetProductNameResponse")]
         string GetProductName(int productID);
         
@@ -844,6 +850,14 @@ namespace Frontend.BackendReference {
         
         public System.Threading.Tasks.Task RemoveProductFromCartAsync(int productId, int userId, int quantityToRemove) {
             return base.Channel.RemoveProductFromCartAsync(productId, userId, quantityToRemove);
+        }
+        
+        public string GetProductImage(int productID) {
+            return base.Channel.GetProductImage(productID);
+        }
+        
+        public System.Threading.Tasks.Task<string> GetProductImageAsync(int productID) {
+            return base.Channel.GetProductImageAsync(productID);
         }
         
         public string GetProductName(int productID) {
