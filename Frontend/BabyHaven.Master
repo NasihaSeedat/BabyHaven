@@ -88,7 +88,8 @@
                                  <a href="#">Admin Panel</a>
                                     <ul class="dropdown" id="DropAdmin" Visible="false" runat="server">
                                         <li><a href="AddAdmin.aspx">Add Admin</a></li>
-                                        <!-- Add more menu items here as needed -->
+                                        <li><a href="AddProduct.aspx">Add Products</a></li>
+                                        <li><a href="RemoveProduct.aspx">Remove Products</a></li>
                                     </ul>
                             </li>
 
