@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Web;
@@ -21,7 +22,7 @@ namespace Frontend
             if (!IsPostBack)
             {
                 dynamic users = sr.GetAllUsers();
-
+                
                 foreach (BackendReference.User_Table u in users)
                 {
                     // Create a new table row for each user
@@ -48,21 +49,25 @@ namespace Frontend
                     phoneCell.Text = u.Phone_Number;
                     row.Cells.Add(phoneCell);
 
-                    // Add a button for each user
+                    // Add a placeholder for the button in the row
                     TableCell actionCell = new TableCell();
+                    PlaceHolder buttonPlaceholder = new PlaceHolder();
+                    actionCell.Controls.Add(buttonPlaceholder);
+                    row.Cells.Add(actionCell);
+
+                    // Create a button and add it to the placeholder
                     Button userButton = new Button();
-                    userButton.ID = "btnAddAdmin";
+                    userButton.ID = "btnAddAdmin_" + u.User_Id; // Unique ID based on user ID
                     userButton.Text = "Add Admin";
                     userButton.CssClass = "site-btn";
+                    userButton.CommandArgument = u.User_Id.ToString() + "|" + u.Surname;
+                    userButton.Click += btn_register; // Attach the event handler
 
-                    userButton.CommandArgument = u.User_Id.ToString();
-                    userButton.CommandArgument = u.Surname.ToString();
-                    userButton.Click += btn_register; // Attach an event handler
-                    actionCell.Controls.Add(userButton);
-                    row.Cells.Add(actionCell);
+                    buttonPlaceholder.Controls.Add(userButton);
 
                     // Add the row to the userTable
                     userTable.Rows.Add(row);
+
                 }
             }
         }
@@ -70,22 +75,29 @@ namespace Frontend
         protected void btn_register(object sender, EventArgs e)
         {
 
-            Button clickedButton = (Button)sender; // Get the button that triggered the event
-            string userId = clickedButton.CommandArgument;
-            string surname = clickedButton.CommandArgument;
+            Button clickedButton = (Button)sender;
+            string commandArgument = clickedButton.CommandArgument;
 
-            bool admin = sr.AddAdmin(sr.GetUser(int.Parse(userId)), surname);
+            string[] arguments = commandArgument.Split('|');
+            if (arguments.Length == 2)
+            {
+                string userId = arguments[0];
+                string surname = arguments[1];
 
-            if (admin == true)
-            {
-                Response.Redirect("Login.aspx");
-            }
-            else if (admin == false)
-            {
-                error.Text = "Something went wrong OR the admin already exists";
-                error.Visible = true;
+                bool admin = sr.AddAdmin(int.Parse(userId), surname);
+
+                if (admin)
+                {
+                    Response.Redirect("Login.aspx");
+                }
+                else
+                {
+                    error.Text = "Something went wrong OR the admin already exists";
+                    error.Visible = true;
+                }
             }
         }
+
 
 
         private void PerformSearch()
