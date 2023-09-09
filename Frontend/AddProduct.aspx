@@ -18,26 +18,26 @@
                         <tr>
                             <td class="Pro_Name">
                             Product Name:<td>
-                                <input type="text" placeholder="Product name" required runat="server" id="ProName"></td>
+                                <input type="text" class="textbox" placeholder="Product name" required runat="server" id="ProName"></td>
                         </tr>
 
                         <tr>
                             <td class="Pro_Description">
                             Product Description:<td>
-                                <input type="text" placeholder="Product description" required runat="server" id="ProDescription"></td>
+                                <input type="text" class="textbox" placeholder="Product description" required runat="server" id="ProDescription"></td>
                         </tr>
 
                         <tr>
                             <td class="Pro_Price">
                             Product Price:<td>
-                                <input type="number" placeholder="Product price" required min="1" runat="server" id="ProPrice"></td>
+                                <input type="number" class="textbox" placeholder="Product price" required min="1" runat="server" id="ProPrice"></td>
                         </tr>
 
                         <tr>
                             <td class="Pro_Category">
                             Product Category:<td>
                                 <select class="Cat_option" name="category" required runat="server" id="ProCategory">
-                                    <option disabled="disabled" selected="selected">---Choose Category</option>
+                                    <option disabled="disabled" selected="selected">Choose Category</option>
                                     <option value="1">Nursery Items</option>
                                     <option value="2">Baby Gear</option>
                                     <option value="3">Baby Clothes</option>
@@ -51,20 +51,24 @@
                         </tr>
 
                         <tr>
-                            <td class="Pro_Active">
+                            <td >
                             Product Activation Status:<td>
-                                <select class="Act_option" name="active" required runat="server" id="ProActive">
-                                    <option disabled="disabled" selected="selected">---Choose status</option>
+                                <select  class="Cat_option" name="active" required runat="server" id="ProActive">
+                                    <option disabled="disabled" selected="selected">Choose status</option>
                                     <option value="1">Active</option>
                                     <option value="2">Not active</option>
                                 </select></td>
                         </tr>
 
                         <tr>
-                            <td class="Pro_Quantity">
-                            Product Quantity:<td>
-                                <input type="number" placeholder="Product quantity" required min="1" runat="server" id="ProQuantity"></td>
+                              <td >
+                                Product Quantity:
+                              </td>
+                              <td>
+                                <input  class="textbox" type="number" placeholder="Product quantity" required min="1" runat="server" id="ProQuantity">
+                              </td>
                         </tr>
+
 
                         <!---ERROR MESSAGE --->
                         <tr>
@@ -81,7 +85,7 @@
                 <div class="btn btn-link">
                     
                      <!--  <div class="site-btn clear-btn" onclick="AddProduct_Click" >Add Product</div>-->
-                        <asp:Button ID="Button1" runat="server" Text="Add Product"  Width="198px" />
+                        <asp:Button ID="AddProds" class="site-btn" runat="server" Text="Add Product"  Width="198px" />
                     </div>
                 </div>
 
