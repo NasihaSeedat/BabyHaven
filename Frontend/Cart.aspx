@@ -2,34 +2,6 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <style>
 
-/* Style for the "-" button within the pro-qty container */
-.pro-qty .minus {
-    width: 30px; /* Set a fixed width for the "-" button */
-    background: #84B7EE;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    text-align: center;
-    cursor: pointer;
-    color: #fff;
-    font-size: 14px;
-    line-height: 30px;
-}
-
-/* Style for the "+" button within the pro-qty container */
-.pro-qty .plus {
-    width: 30px; /* Set a fixed width for the "+" button */
-    background: #84B7EE;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    text-align: center;
-    cursor: pointer;
-    color: #fff;
-    font-size: 14px;
-    line-height: 30px;
-}
-
-
-
     </style>
 </asp:Content>
 
@@ -87,7 +59,7 @@
 
                                                 <td class="cart__total"><%# Eval("Cart_Price", "{0:C}") %></td>
                                                 <td class="cart__close">
-                                                    <asp:Button runat="server" ID="RemoveFromCartButton" Text="X" OnClick="RemoveFromCartButton_Click" CommandArgument='<%# Eval("P_ID") %>' />
+                                                    <asp:Button runat="server" ID="RemoveFromCartButton" Text="X" OnClick="RemoveFromCartButton_Click" CommandArgument='<%# Eval("P_ID") %>' CssClass="cart-remove-button" />
                                                 </td>
                                             </tr>
                                         </ItemTemplate>
