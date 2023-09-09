@@ -297,6 +297,17 @@ namespace BabyHaven_Database
             return prods;
         }
 
+        //get products from specific catogory
+        public List<Product> getProductCat(string cat)
+        {
+            var prods = new List<Product>();
+            dynamic prod = (from p in db.Products
+                            where p.P_Category.Equals(cat)
+                            select p).FirstOrDefault();
+
+            return prod;
+        }
+
         public string Addproducts(string name, string description, string cat, int quantity, decimal price, bool active, int prodID, int admin)
         {
             var prod = (from p in db.Products
