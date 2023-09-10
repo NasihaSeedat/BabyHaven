@@ -15,136 +15,18 @@
                             </div>
                             <div class="categories__accordion">
                                 <div class="accordion" id="accordionExample">
-                                    <div class="card">
-                                        <div class="card-heading active">
-                                            <a data-toggle="collapse" data-target="#collapseOne">Nursery Items</a>
-                                        </div>
-                                        <div id="collapseOne" class="collapse show" data-parent="#accordionExample">
-                                            <div class="card-body">
-                                                <ul>
-                                                    <li><a href="#">Cribs</a></li>
-                                                    <li><a href="#">Baby Monitors</a></li>
-                                                    <li><a href="#">Dressers</a></li>
-                                                    <li><a href="#">Cradling Chairs</a></li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="card">
-                                        <div class="card-heading">
-                                            <a data-toggle="collapse" data-target="#collapseTwo">Baby Gear </a>
-                                        </div>
-                                        <div id="collapseTwo" class="collapse" data-parent="#accordionExample">
-                                            <div class="card-body">
-                                                <ul>
-                                                    <li><a href="#">Car Seats</a></li>
-                                                    <li><a href="#">Strollers</a></li>
-                                                    <li><a href="#">Swings</a></li>
-                                                    <li><a href="#">Playards</a></li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="card">
-                                        <div class="card-heading">
-                                            <a data-toggle="collapse" data-target="#collapseThree">Baby Clothes</a>
-                                        </div>
-                                        <div id="collapseThree" class="collapse" data-parent="#accordionExample">
-                                            <div class="card-body">
-                                                <ul>
-                                                    <li><a href="#">Onesies</a></li>
-                                                    <li><a href="#">Pajamas</a></li>
-                                                    <li><a href="#">Sweaters/Jackets</a></li>
-                                                    <li><a href="#">Socks</a></li>    
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="card">
-                                        <div class="card-heading">
-                                            <a data-toggle="collapse" data-target="#collapseFour">Feeding Essentials</a>
-                                        </div>
-                                        <div id="collapseFour" class="collapse" data-parent="#accordionExample">
-                                            <div class="card-body">
-                                                <ul>
-                                                    <li><a href="#">Bottles</a></li>
-                                                    <li><a href="#">Bibs</a></li>
-                                                    <li><a href="#">Pacifiers</a></li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="card">
-                                        <div class="card-heading">
-                                            <a data-toggle="collapse" data-target="#collapseFive">Health Products</a>
-                                        </div>
-                                        <div id="collapseFive" class="collapse" data-parent="#accordionExample">
-                                            <div class="card-body">
-                                                <ul>
-                                                    <li><a href="#">Baby Thermometers</a></li>
-                                                    <li><a href="#">First Aid Kit</a></li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="card">
-                                        <div class="card-heading">
-                                            <a data-toggle="collapse" data-target="#collapseSix">Baby Bedding</a>
-                                        </div>
-                                        <div id="collapseSix" class="collapse" data-parent="#accordionExample">
-                                            <div class="card-body">
-                                                <ul>
-                                                    <li><a href="#">Mattress pads</a></li>
-                                                    <li><a href="#">Sheets</a></li>
-                                                    <li><a href="#">Blankets</a></li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="card">
-                                        <div class="card-heading">
-                                            <a data-toggle="collapse" data-target="#collapseSeven">Diapering Must-Haves</a>
-                                        </div>
-                                        <div id="collapseSeven" class="collapse" data-parent="#accordionExample">
-                                            <div class="card-body">
-                                                <ul>
-                                                    <li><a href="#">Changing Tables</a></li>
-                                                    <li><a href="#">Diaper Bags</a></li>
-                                                    <li><a href="#">Diaper Creams</a></li>
-                                                    <li><a href="#">Baby Wipes</a></li>
-                                                    <li><a href="#">Diapers</a></li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="card">
-                                        <div class="card-heading">
-                                            <a data-toggle="collapse" data-target="#collapseEight">Bath Items</a>
-                                        </div>
-                                        <div id="collapseEight" class="collapse" data-parent="#accordionExample">
-                                            <div class="card-body">
-                                                <ul>
-                                                    <li><a href="#">Bathtubs</a></li>
-                                                    <li><a href="#">Towels</a></li>
-                                                    <li><a href="#">Hairbrushes</a></li>
-                                                    <li><a href="#">Washcloths</a></li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="card">
-                                        <div class="card-heading">
-                                            <a data-toggle="collapse" data-target="#collapseNine">Project SafeHaven</a>
-                                        </div>
-                                        <div id="collapseNine" class="collapse" data-parent="#accordionExample">
-                                            <div class="card-body">
-                                                <ul>
-                                                    <li><a href="#">SafeHaven Socks</a></li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
+                            <ul>
+							<li><a style="color:black" href="Shop.aspx?Category=Nursery Items">Nursery Items</a></li>
+							<li><a style="color:black" href="Shop.aspx?Category=Baby Gear">Baby Gear</a></li>
+							<li><a style="color:black" href="Shop.aspx?Category=Baby Clothes">Baby Clothes</a></li>
+							<li><a style="color:black" href="Shop.aspx?Category=Feeding Essentials">Feeding Essentials</a></li>
+							<li><a style="color:black" href="Shop.aspx?Category=Health Products">Health Products</a></li>
+							<li><a style="color:black" href="Shop.aspx?Category=Baby Bedding">Baby Bedding</a></li>
+							<li><a style="color:black" href="Shop.aspx?Category=Diapering Must-Haves">Diapering Must-Haves</a></li>
+							<li><a style="color:black" href="Shop.aspx?Category=Bath Items">Bath Items</a></li>
+                            <li><a style="color:black" href="Shop.aspx?Category=Project SafeHaven">Project SafeHaven</a></li>
+						</ul> 
+                               </div>
                             </div>
                         </div>
                         <div class="sidebar__filter">
