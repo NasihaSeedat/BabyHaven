@@ -1435,9 +1435,38 @@ ol {
 	position: relative;
 	margin-bottom: 60px;
 }
-
+.sidebar__filter .priceFilter{
+	position: relative;
+	margin-bottom: 60px;
+	font-size: 14px;
+	color: black;
+	background: white;
+	font-weight: 600;
+	border: none;
+	text-transform: uppercase;
+	display: inline-block;
+	padding: 6px 10px;
+	border-radius: 50px;
+	margin-bottom: 20px;
+	margin-top: 10px;
+}
 .sidebar__filter .section-title {
 	margin-bottom: 50px;
+}
+.sidebar__filter .filter-button{
+	position: relative;
+	margin-bottom: 60px;
+	font-size: 14px;
+	color: black;
+	background: #84B7EE;
+	font-weight: 600;
+	border: none;
+	text-transform: uppercase;
+	display: inline-block;
+	padding: 6px 20px;
+	border-radius: 50px;
+	margin-bottom: 20px;
+	margin-top: 20px;
 }
 
 .sidebar__filter .section-title h4 {

@@ -31,20 +31,33 @@
                         </div>
                         <div class="sidebar__filter">
                             <div class="section-title">
-                                <h4>Shop by price</h4>
+                                <h4>Sort by price</h4>
                             </div>
-                            <div class="filter-range-wrap">
-                                <div class="price-range ui-slider ui-corner-all ui-slider-horizontal ui-widget ui-widget-content"
-                                data-min="33" data-max="99"></div>
-                                <div class="range-slider">
-                                    <div class="price-input">
-                                        <p>Price:</p>
-                                        <input type="text" id="minamount">
-                                        <input type="text" id="maxamount">
-                                    </div>
+                            <div class="priceFilter">
+                            <form runat="server">
+                                    <label for="minPrice">Min Price:</label>
+                                    <select id="minPrice" runat="server">
+                                        <option value="0">R0</option>
+                                        <option value="50">R50</option>
+                                        <option value="100">R100</option>
+                                        <option value="250">R250</option>
+                                        <option value="500">R500</option>
+                                        <option value="1000">R1000</option>
+                                    </select>
+                                    <br />
+                                    <label for="maxPrice">Max Price:</label>
+                                    <select id="maxPrice" runat="server">
+                                        <option value="100">R100</option>
+                                        <option value="250">R250</option>
+                                        <option value="500">R500</option>
+                                        <option value="1000">R1000</option>
+                                        <option value="2500">R2500</option>
+                                        <option value="5000">R5000</option>
+                                    </select>
+                                    <input type="submit" value="Filter" onserverclick="SearchProducts" runat="server" class="filter-button"/>
+                                </form>
+                                <br />
                                 </div>
-                            </div>
-                            <a href="#">Filter</a>
                         </div>
                         <div class="sidebar__sizes">
                             <div class="section-title">
