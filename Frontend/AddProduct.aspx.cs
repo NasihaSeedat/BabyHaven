@@ -75,7 +75,7 @@ namespace Frontend
 
             admin = Convert.ToInt32(Session["LoggedInUser"]);
 
-            //string add = s.Addproducts(ProName.Value, ProDescription.Value, prodID, quantity, price, active, admin);
+            string add = s.Addproducts(ProName.Value, ProDescription.Value, prodID, quantity, price, active, admin);
         }
     }
 }
