@@ -1781,35 +1781,6 @@ ol {
 	margin-right: 15px;
 }
 
-/* Container style */
-.pro-qty {
-	display: flex;
-	align-items: center;
-	justify-content: space-between;
-	width: 70px; /* Adjust the width as needed */
-	margin: 0 5px; /* Add some spacing between the input and buttons */
-}
-
-.pro-qty .qtybtn {
-	font-size: 14px;
-	color: #666666;
-	cursor: pointer;
-	float: left;
-	width: 12px;
-	line-height: 46px;
-}
-
-.pro-qty input {
-	font-size: 14px;
-	color: #666666;
-	font-weight: 500;
-	border: none;
-	float: left;
-	width: 84px;
-	text-align: center;
-	height: 48px;
-}
-
 .product__details__button {
 	overflow: hidden;
 	margin-bottom: 25px;
@@ -2212,6 +2183,91 @@ ol {
 	display: inline-block;
 	font-weight: 600;
 	cursor: pointer;
+}
+
+/* Style for the cart close button */
+.cart__close .cart-remove-button {
+	height: 45px;
+	width: 45px;
+	background: #f2f2f2;
+	border-radius: 50%;
+	font-size: 18px;
+	color: #111111;
+	line-height: 45px; /* Adjust the line height to vertically center the text */
+	text-align: center;
+	display: inline-block;
+	font-weight: 600;
+	cursor: pointer;
+	border: none; /* Remove the button border */
+	outline: none; /* Remove the default outline */
+	padding: 0; /* Remove padding to ensure the button size */
+	transition: background 0.3s; /* Add a transition for smooth hover effect */
+}
+
+/* Style the button on hover */
+.cart__close .cart-remove-button:hover {
+	background: #84B7EE; /* Change the background color on hover to #84B7EE */
+	color: #fff; /* Change the text color to white on hover */
+}
+
+
+
+/* Container style */
+.pro-qty {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	width: 70px; /* Adjust the width as needed */
+	margin: 0 5px; /* Add some spacing between the input and buttons */
+}
+
+/* Style for the "-" button within the pro-qty container */
+.pro-qty .minus {
+	width: 12px; /* Set a fixed width for the "-" button */
+	background: #fff; /* Background color for the "-" button */
+	border: none; /* Remove the border */
+	text-align: center;
+	cursor: pointer;
+	color: #84B7EE; /* Text color for the "-" button */
+	font-size: 14px;
+	line-height: 30px;
+}
+
+/* Style for the "+" button within the pro-qty container */
+.pro-qty .plus {
+	width: 12px; /* Set a fixed width for the "+" button */
+	background: #fff; /* Background color for the "+" button */
+	border: none; /* Remove the border */
+	text-align: center;
+	cursor: pointer;
+	color: #84B7EE; /* Text color for the "+" button */
+	font-size: 14px;
+	line-height: 30px;
+}
+
+
+.pro-qty .qtybtn {
+	font-size: 14px;
+	color: #666666;
+	cursor: pointer;
+	float: left;
+	width: 12px;
+	line-height: 46px;
+}
+
+.pro-qty input {
+	font-size: 14px;
+	color: #666666;
+	font-weight: 500;
+	border: none;
+	float: left;
+	width: 84px;
+	margin: 0; /* Remove margin for proper alignment */
+	padding: 0; /* Remove padding for proper alignment */
+	overflow: hidden;
+	display: inline; /* Display the input field inline with buttons */
+	text-align: center;
+	height: 48px;
 }
 
 
