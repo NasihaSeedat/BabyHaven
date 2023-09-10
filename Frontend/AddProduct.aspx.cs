@@ -77,6 +77,7 @@ namespace Frontend
             admin = Convert.ToInt32(Session["LoggedInUser"]);
             bool add = s.AdminaddProds(ProName.Value, ProDescription.Value, prodcat, quantity, price, activestate, ProImage.Value);
 
+
             if (add == true)
             {
                 //redirect to the home page 
@@ -87,6 +88,7 @@ namespace Frontend
                 error.Value = "Product not added to database OR Product already exists ";
                 error.Visible = true;
             }
+
         }
     }
 }
