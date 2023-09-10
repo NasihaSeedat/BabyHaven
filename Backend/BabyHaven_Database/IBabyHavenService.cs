@@ -94,5 +94,23 @@ namespace BabyHaven_Database
 
         [OperationContract]
         string Addproducts(string name, string description, string cat, int quantity, decimal price, bool active, int prodID, int admin);
+
+
+        //---------------------------------------------INVOICES--------------------------------------------------------//
+
+        [OperationContract]
+        Order_Table GetInvoice(int id);
+
+        [OperationContract]
+        Order_Item GetItem(int id);
+
+        [OperationContract]
+        List<Order_Item> Getallitems();
+
+        [OperationContract]
+        List<Order_Table> GetallInvoices();
+
+        //[OperationContract]
+        //List<Order_Table> GetInvoicebyclient(int clientid);
     }
 }
