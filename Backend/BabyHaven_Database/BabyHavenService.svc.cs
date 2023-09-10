@@ -572,6 +572,53 @@ namespace BabyHaven_Database
             return searchResults;
         }
 
+        
+        public bool AdminaddProds(string name, string description, string cat, int quantity, decimal price, bool active,string img)
+        {
+            var prod = (from u in db.Products
+                       where u.P_Name.Equals(name)
+                       select u).FirstOrDefault();
+
+            if (prod == null)
+            {
+                try
+                {
+                    var newProd = new Product
+                    {
+                        P_Name = name,
+                        P_Description = description,
+                        P_Category = cat,
+                        P_Quantity = quantity,
+                        P_Price = price,
+                        isActive = active,
+                        P_DateCreated = DateTime.Today,
+                        P_Image=img
+                        
+                    };
+                    db.Products.InsertOnSubmit(newProd);
+                   
+
+
+
+                    db.SubmitChanges();
+                   
+                 
+                    return true;
+                }
+                catch (Exception ex)
+                {
+                    ex.GetBaseException();
+                    return false;
+                }
+            }
+            else
+            {
+                //already exists
+                return false;
+            }
+        }
+
+
         //---------------------------------------------INVOICES----------------------------------------------------//
         public Order_Table GetInvoice(int id)
         {
@@ -636,6 +683,7 @@ namespace BabyHaven_Database
 
             return o;
         }
+
 
     }
 }

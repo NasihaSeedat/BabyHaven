@@ -698,6 +698,12 @@ namespace Frontend.BackendReference {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBabyHavenService/Getallproducts", ReplyAction="http://tempuri.org/IBabyHavenService/GetallproductsResponse")]
         System.Threading.Tasks.Task<Frontend.BackendReference.Product[]> GetallproductsAsync();
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBabyHavenService/getProductCat", ReplyAction="http://tempuri.org/IBabyHavenService/getProductCatResponse")]
+        Frontend.BackendReference.Product[] getProductCat(string cat);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBabyHavenService/getProductCat", ReplyAction="http://tempuri.org/IBabyHavenService/getProductCatResponse")]
+        System.Threading.Tasks.Task<Frontend.BackendReference.Product[]> getProductCatAsync(string cat);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBabyHavenService/getSingleProd", ReplyAction="http://tempuri.org/IBabyHavenService/getSingleProdResponse")]
         Frontend.BackendReference.Product getSingleProd(int id);
         
@@ -709,6 +715,12 @@ namespace Frontend.BackendReference {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBabyHavenService/Addproducts", ReplyAction="http://tempuri.org/IBabyHavenService/AddproductsResponse")]
         System.Threading.Tasks.Task<string> AddproductsAsync(string name, string description, string cat, int quantity, decimal price, bool active, int prodID, int admin);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBabyHavenService/AdminaddProds", ReplyAction="http://tempuri.org/IBabyHavenService/AdminaddProdsResponse")]
+        bool AdminaddProds(string name, string description, string cat, int quantity, decimal price, bool active, string img);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBabyHavenService/AdminaddProds", ReplyAction="http://tempuri.org/IBabyHavenService/AdminaddProdsResponse")]
+        System.Threading.Tasks.Task<bool> AdminaddProdsAsync(string name, string description, string cat, int quantity, decimal price, bool active, string img);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -898,6 +910,14 @@ namespace Frontend.BackendReference {
             return base.Channel.GetallproductsAsync();
         }
         
+        public Frontend.BackendReference.Product[] getProductCat(string cat) {
+            return base.Channel.getProductCat(cat);
+        }
+        
+        public System.Threading.Tasks.Task<Frontend.BackendReference.Product[]> getProductCatAsync(string cat) {
+            return base.Channel.getProductCatAsync(cat);
+        }
+        
         public Frontend.BackendReference.Product getSingleProd(int id) {
             return base.Channel.getSingleProd(id);
         }
@@ -912,6 +932,14 @@ namespace Frontend.BackendReference {
         
         public System.Threading.Tasks.Task<string> AddproductsAsync(string name, string description, string cat, int quantity, decimal price, bool active, int prodID, int admin) {
             return base.Channel.AddproductsAsync(name, description, cat, quantity, price, active, prodID, admin);
+        }
+        
+        public bool AdminaddProds(string name, string description, string cat, int quantity, decimal price, bool active, string img) {
+            return base.Channel.AdminaddProds(name, description, cat, quantity, price, active, img);
+        }
+        
+        public System.Threading.Tasks.Task<bool> AdminaddProdsAsync(string name, string description, string cat, int quantity, decimal price, bool active, string img) {
+            return base.Channel.AdminaddProdsAsync(name, description, cat, quantity, price, active, img);
         }
     }
 }
