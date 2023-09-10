@@ -127,6 +127,12 @@
   <wsdl:message name="IBabyHavenService_Getallproducts_OutputMessage">
     <wsdl:part name="parameters" element="tns:GetallproductsResponse" />
   </wsdl:message>
+  <wsdl:message name="IBabyHavenService_getProductCat_InputMessage">
+    <wsdl:part name="parameters" element="tns:getProductCat" />
+  </wsdl:message>
+  <wsdl:message name="IBabyHavenService_getProductCat_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getProductCatResponse" />
+  </wsdl:message>
   <wsdl:message name="IBabyHavenService_getSingleProd_InputMessage">
     <wsdl:part name="parameters" element="tns:getSingleProd" />
   </wsdl:message>
@@ -219,6 +225,10 @@
     <wsdl:operation name="Getallproducts">
       <wsdl:input wsaw:Action="http://tempuri.org/IBabyHavenService/Getallproducts" message="tns:IBabyHavenService_Getallproducts_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IBabyHavenService/GetallproductsResponse" message="tns:IBabyHavenService_Getallproducts_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getProductCat">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBabyHavenService/getProductCat" message="tns:IBabyHavenService_getProductCat_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBabyHavenService/getProductCatResponse" message="tns:IBabyHavenService_getProductCat_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="getSingleProd">
       <wsdl:input wsaw:Action="http://tempuri.org/IBabyHavenService/getSingleProd" message="tns:IBabyHavenService_getSingleProd_InputMessage" />
@@ -404,6 +414,15 @@
     </wsdl:operation>
     <wsdl:operation name="Getallproducts">
       <soap:operation soapAction="http://tempuri.org/IBabyHavenService/Getallproducts" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getProductCat">
+      <soap:operation soapAction="http://tempuri.org/IBabyHavenService/getProductCat" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

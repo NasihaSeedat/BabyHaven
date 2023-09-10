@@ -698,6 +698,12 @@ namespace Frontend.BackendReference {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBabyHavenService/Getallproducts", ReplyAction="http://tempuri.org/IBabyHavenService/GetallproductsResponse")]
         System.Threading.Tasks.Task<Frontend.BackendReference.Product[]> GetallproductsAsync();
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBabyHavenService/getProductCat", ReplyAction="http://tempuri.org/IBabyHavenService/getProductCatResponse")]
+        Frontend.BackendReference.Product[] getProductCat(string cat);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBabyHavenService/getProductCat", ReplyAction="http://tempuri.org/IBabyHavenService/getProductCatResponse")]
+        System.Threading.Tasks.Task<Frontend.BackendReference.Product[]> getProductCatAsync(string cat);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBabyHavenService/getSingleProd", ReplyAction="http://tempuri.org/IBabyHavenService/getSingleProdResponse")]
         Frontend.BackendReference.Product getSingleProd(int id);
         
@@ -896,6 +902,14 @@ namespace Frontend.BackendReference {
         
         public System.Threading.Tasks.Task<Frontend.BackendReference.Product[]> GetallproductsAsync() {
             return base.Channel.GetallproductsAsync();
+        }
+        
+        public Frontend.BackendReference.Product[] getProductCat(string cat) {
+            return base.Channel.getProductCat(cat);
+        }
+        
+        public System.Threading.Tasks.Task<Frontend.BackendReference.Product[]> getProductCatAsync(string cat) {
+            return base.Channel.getProductCatAsync(cat);
         }
         
         public Frontend.BackendReference.Product getSingleProd(int id) {
