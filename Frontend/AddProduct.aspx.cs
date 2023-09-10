@@ -22,60 +22,71 @@ namespace Frontend
             int quantity = Convert.ToInt32(ProQuantity.Value);
 
             int admin = 0;
-            int prodID = 0;
-            int active = 0;
-
-            //active state
-            if (ProActive.Value.Equals("1"))
+            string prodcat=" ";
+            bool activestate=true;
+            if (ProActive.Equals("1"))
             {
-                active = 1;
-            }
-            else
+                activestate = true;
+            }else if (ProActive.Equals("2"))
             {
-                active = 0;
+                activestate = false;
             }
+            
+                                    
+                                    
+                                
 
             //category
             if (ProCategory.Value.Equals("1"))
             {
-                prodID = 1;
+                prodcat = "Nursery Items";
             }
             else if (ProCategory.Value.Equals("2"))
             {
-                prodID = 2;
+                prodcat = "Baby Gear";
             }
             else if (ProCategory.Value.Equals("3"))
             {
-                prodID = 3;
+                prodcat = "Baby Clothes";
             }
             else if (ProCategory.Value.Equals("4"))
             {
-                prodID = 4;
+                prodcat = "Feeding Essentials";
             }
             else if (ProCategory.Value.Equals("5"))
             {
-                prodID = 5;
+                prodcat = "Health Products";
             }
             else if (ProCategory.Value.Equals("6"))
             {
-                prodID = 6;
+                prodcat = "Baby Bedding";
             }
             else if (ProCategory.Value.Equals("7"))
             {
-                prodID = 7;
+                prodcat = "Diapering Must-Haves";
             }
             else if (ProCategory.Value.Equals("8"))
             {
-                prodID = 8;
+                prodcat = "Bath Items";
             }
             else if (ProCategory.Value.Equals("9"))
             {
-                prodID = 9;
+                prodcat = "Project SafeHaven";
             }
 
             admin = Convert.ToInt32(Session["LoggedInUser"]);
+            bool add = s.AdminaddProds(ProName.Value, ProDescription.Value, prodcat, quantity, price, activestate, ProImage.Value);
 
-            string add = s.Addproducts(ProName.Value, ProDescription.Value, prodID, quantity, price, active, admin);
+            if (add == true)
+            {
+                //redirect to the home page 
+                Response.Redirect("Home.aspx");
+            }else if (add == false)
+            {
+                //Display error message to admin  
+                error.Value = "Product not added to database OR Product already exists ";
+                error.Visible = true;
+            }
         }
     }
 }

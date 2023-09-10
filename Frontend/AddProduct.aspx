@@ -69,8 +69,16 @@
                               </td>
                         </tr>
 
+                        <tr>
+                            <td >
+                            Product Image:<td>
+                                  <input type="text" class="textbox" placeholder="Product image" required runat="server" id="ProImage">
+                        <input type="file" style="display: none;" id="ProImageFile" accept="image/*"  >
+                        <label for="ProImageFile" class="file-chooser-label">Choose Image</label>
+                        </tr>
 
-                        <!---ERROR MESSAGE --->
+                               
+                       <!---ERROR MESSAGE --->
                         <tr>
                             <td class="Error">
                             Error Message:<td>

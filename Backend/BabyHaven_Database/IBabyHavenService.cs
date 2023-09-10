@@ -94,5 +94,8 @@ namespace BabyHaven_Database
 
         [OperationContract]
         string Addproducts(string name, string description, string cat, int quantity, decimal price, bool active, int prodID, int admin);
+        [OperationContract]
+        bool  AdminaddProds(string name, string description, string cat, int quantity, decimal price, bool active, string img);
+
     }
 }

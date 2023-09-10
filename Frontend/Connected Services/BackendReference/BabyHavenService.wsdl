@@ -127,6 +127,12 @@
   <wsdl:message name="IBabyHavenService_Getallproducts_OutputMessage">
     <wsdl:part name="parameters" element="tns:GetallproductsResponse" />
   </wsdl:message>
+  <wsdl:message name="IBabyHavenService_getProductCat_InputMessage">
+    <wsdl:part name="parameters" element="tns:getProductCat" />
+  </wsdl:message>
+  <wsdl:message name="IBabyHavenService_getProductCat_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getProductCatResponse" />
+  </wsdl:message>
   <wsdl:message name="IBabyHavenService_getSingleProd_InputMessage">
     <wsdl:part name="parameters" element="tns:getSingleProd" />
   </wsdl:message>
@@ -138,6 +144,12 @@
   </wsdl:message>
   <wsdl:message name="IBabyHavenService_Addproducts_OutputMessage">
     <wsdl:part name="parameters" element="tns:AddproductsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBabyHavenService_AdminaddProds_InputMessage">
+    <wsdl:part name="parameters" element="tns:AdminaddProds" />
+  </wsdl:message>
+  <wsdl:message name="IBabyHavenService_AdminaddProds_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AdminaddProdsResponse" />
   </wsdl:message>
   <wsdl:portType name="IBabyHavenService">
     <wsdl:operation name="Login">
@@ -220,6 +232,10 @@
       <wsdl:input wsaw:Action="http://tempuri.org/IBabyHavenService/Getallproducts" message="tns:IBabyHavenService_Getallproducts_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IBabyHavenService/GetallproductsResponse" message="tns:IBabyHavenService_Getallproducts_OutputMessage" />
     </wsdl:operation>
+    <wsdl:operation name="getProductCat">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBabyHavenService/getProductCat" message="tns:IBabyHavenService_getProductCat_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBabyHavenService/getProductCatResponse" message="tns:IBabyHavenService_getProductCat_OutputMessage" />
+    </wsdl:operation>
     <wsdl:operation name="getSingleProd">
       <wsdl:input wsaw:Action="http://tempuri.org/IBabyHavenService/getSingleProd" message="tns:IBabyHavenService_getSingleProd_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IBabyHavenService/getSingleProdResponse" message="tns:IBabyHavenService_getSingleProd_OutputMessage" />
@@ -227,6 +243,10 @@
     <wsdl:operation name="Addproducts">
       <wsdl:input wsaw:Action="http://tempuri.org/IBabyHavenService/Addproducts" message="tns:IBabyHavenService_Addproducts_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IBabyHavenService/AddproductsResponse" message="tns:IBabyHavenService_Addproducts_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AdminaddProds">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBabyHavenService/AdminaddProds" message="tns:IBabyHavenService_AdminaddProds_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBabyHavenService/AdminaddProdsResponse" message="tns:IBabyHavenService_AdminaddProds_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_IBabyHavenService" type="tns:IBabyHavenService">
@@ -411,6 +431,15 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="getProductCat">
+      <soap:operation soapAction="http://tempuri.org/IBabyHavenService/getProductCat" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="getSingleProd">
       <soap:operation soapAction="http://tempuri.org/IBabyHavenService/getSingleProd" style="document" />
       <wsdl:input>
@@ -422,6 +451,15 @@
     </wsdl:operation>
     <wsdl:operation name="Addproducts">
       <soap:operation soapAction="http://tempuri.org/IBabyHavenService/Addproducts" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AdminaddProds">
+      <soap:operation soapAction="http://tempuri.org/IBabyHavenService/AdminaddProds" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
