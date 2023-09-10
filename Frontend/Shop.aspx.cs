@@ -13,13 +13,13 @@ namespace Frontend
         BabyHavenServiceClient client = new BabyHavenServiceClient();
         protected void Page_Load(object sender, EventArgs e)
         {
-            
-            
+
+
             if (Request.QueryString["Category"] == null)
             {
                 dynamic prods = client.Getallproducts();
                 displaymethod(prods);
-            }else if (Request.QueryString["Category"] != null)
+            } else if (Request.QueryString["Category"] != null)
             {
                 string cat = Request.QueryString["Category"];
                 dynamic prods;
@@ -78,7 +78,8 @@ namespace Frontend
                     displaymethod(prods);
                 }
 
-                }
+            }
+           
         }
         private void displaymethod(dynamic prods)
         {
@@ -116,6 +117,24 @@ namespace Frontend
 
             display += "</div>";
             productDisplay.Text = display;
+        }
+        //load products based on max/min filter
+        protected void SearchProducts(object sender, EventArgs e)
+        {
+            decimal lowPrice = decimal.Parse(minPrice.Value);
+            decimal highPrice = decimal.Parse(maxPrice.Value);
+            dynamic prods = client.Getallproducts();
+            var filterprods = new List<Product>();
+            foreach(BackendReference.Product pr in prods)
+            {
+                if(pr.P_Price>= lowPrice && pr.P_Price<= highPrice)
+                {
+                    filterprods.Add(pr);
+                }
+            }
+            // Sort filterprods by product price in ascending order
+            filterprods = filterprods.OrderBy(pr => pr.P_Price).ToList();
+            displaymethod(filterprods);
         }
     }
     
