@@ -115,8 +115,8 @@ namespace BabyHaven_Database
         [OperationContract]
         List<Order_Table> GetallInvoices();
 
-       [OperationContract]
-       List<Order_Table> GetInvoicebyclient(int clientid);
+       //[OperationContract]
+      // List<Order_Table> GetInvoicebyclient(int clientid);
 
     }
 }
