@@ -76,16 +76,29 @@ namespace Frontend {
             display += "<div class='col-lg-9 col-md-9'><div class='row'>";
 
             foreach(Product pr in prods) {
+                //display += "<div class='col-lg-4 col-md-6'>";
+                //display += "<div class='product__item'>";
+                //display += "<a href='ProductDetails.aspx?P_ID=" + pr.Product_Id + "'>";
+                //display += "<div class='product__item__pic set-bg' data-setbg='" + pr.P_Image + "'></div>"; // Wrap the image in an anchor tag
+                //display += "<div class='product__hover'>";
+                //display += "<span class='hover-icon'>?</span>"; // Add a question mark or any other icon/image here
+                //display += "</div></a>";
+                //display += "<div class='product__item__text'>";
+                //display += "<h6><a href='#'>" + pr.P_Name + "</a></h6>" + "<br />";
+                //display += "<div class='product__price'>R" + String.Format("{0:0.00}", pr.P_Price);
+                //display += "</div></div></div></div>";
 
                 display += "<div class='col-lg-4 col-md-6'>";
-                display += "<div class='product__item'>";
-                display += "<a href='ProductDetails.aspx?P_ID=" + pr.Product_Id + "'>" + "<div class='product__item__pic set-bg' data-setbg='" + pr.P_Image + "'>";
-                display += "<ul class='product__hover'></ul></div></a>"; // Wrap the image in an anchor tag
+                display += "<div class='product__item'>" + "<div class='product__item__pic set-bg' data-setbg='" + pr.P_Image + "'>";
+                display += "<ul class='product__hover'>" +
+                "<li><a href='" + pr.P_Image + "' class='image-popup'><span class='arrow_expand'></span></a></li>" +
+                "<li><a href='#'><span class='fa fa-shopping-cart'></span></a></li>" +
+                "</ul>" +
+                "</div>";
                 display += "<div class='product__item__text'>";
                 display += "<h6><a href='#'>" + pr.P_Name + "</a></h6>" + "<br />";
-                display += "<div class='product__price'>R" + String.Format("{0:0.00}", pr.P_Price);
+                display += "<div class='product__price'>" + String.Format("{0:0.00}", pr.P_Price);
                 display += "</div></div></div></div>";
-
 
 
                 n++;
