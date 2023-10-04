@@ -130,6 +130,36 @@ namespace Frontend {
             filterprods = filterprods.OrderBy(pr => pr.P_Price).ToList();
             displaymethod(filterprods);
         }
+
+        protected void SortProductsByName(object sender, EventArgs e)
+        {
+            var prods = client.Getallproducts().ToList();
+
+            IEnumerable<BackendReference.Product> sortedProds;
+
+            // Get the selected option from the dropdown
+            string selectedOption = alphabeticalSort.Value;
+
+            if (selectedOption == "asc")
+            {
+                sortedProds = prods.OrderBy(pr => pr.P_Name);
+            }
+            else if (selectedOption == "desc")
+            {
+                sortedProds = prods.OrderByDescending(pr => pr.P_Name);
+            }
+            else
+            {
+                // Default to ascending sorting if no valid option is selected
+                sortedProds = prods.OrderBy(pr => pr.P_Name);
+            }
+
+            displaymethod(sortedProds.ToList());
+        }
+
+
+
+
     }
 
 }
