@@ -92,11 +92,11 @@ namespace Frontend {
                 display += "<div class='product__item'>" + "<div class='product__item__pic set-bg' data-setbg='" + pr.P_Image + "'>";
                 display += "<ul class='product__hover'>" +
                 "<li><a href='" + pr.P_Image + "' class='image-popup'><span class='arrow_expand'></span></a></li>" +
-                "<li><a href='#'><span class='fa fa-shopping-cart'></span></a></li>" +
+                "<li><a href='ProductDetails.aspx?P_ID=" + pr.Product_Id + "'><span class='fa fa-question'></span></li>" +
                 "</ul>" +
                 "</div>";
                 display += "<div class='product__item__text'>";
-                display += "<h6><a href='#'>" + pr.P_Name + "</a></h6>" + "<br />";
+                display += "<h6>" + pr.P_Name + "</h6>" + "<br />";
                 display += "<div class='product__price'>" + String.Format("{0:0.00}", pr.P_Price);
                 display += "</div></div></div></div>";
 
