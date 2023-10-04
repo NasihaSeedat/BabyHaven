@@ -80,7 +80,19 @@ namespace BabyHaven_Database
         string GetProductName(int productID);
 
         [OperationContract]
+        string GetProductCategory(int productID);
+
+        [OperationContract]
+        string GetProductDescription(int productID);
+
+        [OperationContract]
         decimal GetProductPrice(int productID);
+
+        [OperationContract]
+        string GetUserName(int id);
+
+        [OperationContract]
+        string GetProductAvailability(int productID);
 
         //-------------------------------------------PRODUCTS------------------------------------------------------//
         [OperationContract]

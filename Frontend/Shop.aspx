@@ -1,4 +1,5 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/BabyHaven.Master" AutoEventWireup="true" CodeBehind="Shop.aspx.cs" Inherits="Frontend.Shop" %>
+
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
@@ -15,18 +16,18 @@
                             </div>
                             <div class="categories__accordion">
                                 <div class="accordion" id="accordionExample">
-                            <ul>
-							<li><a style="color:black" href="Shop.aspx?Category=Nursery Items">Nursery Items</a></li>
-							<li><a style="color:black" href="Shop.aspx?Category=Baby Gear">Baby Gear</a></li>
-							<li><a style="color:black" href="Shop.aspx?Category=Baby Clothes">Baby Clothes</a></li>
-							<li><a style="color:black" href="Shop.aspx?Category=Feeding Essentials">Feeding Essentials</a></li>
-							<li><a style="color:black" href="Shop.aspx?Category=Health Products">Health Products</a></li>
-							<li><a style="color:black" href="Shop.aspx?Category=Baby Bedding">Baby Bedding</a></li>
-							<li><a style="color:black" href="Shop.aspx?Category=Diapering Must-Haves">Diapering Must-Haves</a></li>
-							<li><a style="color:black" href="Shop.aspx?Category=Bath Items">Bath Items</a></li>
-                            <li><a style="color:black" href="Shop.aspx?Category=Project SafeHaven">Project SafeHaven</a></li>
-						</ul> 
-                               </div>
+                                    <ul>
+                                        <li><a style="color: black" href="Shop.aspx?Category=Nursery Items">Nursery Items</a></li>
+                                        <li><a style="color: black" href="Shop.aspx?Category=Baby Gear">Baby Gear</a></li>
+                                        <li><a style="color: black" href="Shop.aspx?Category=Baby Clothes">Baby Clothes</a></li>
+                                        <li><a style="color: black" href="Shop.aspx?Category=Feeding Essentials">Feeding Essentials</a></li>
+                                        <li><a style="color: black" href="Shop.aspx?Category=Health Products">Health Products</a></li>
+                                        <li><a style="color: black" href="Shop.aspx?Category=Baby Bedding">Baby Bedding</a></li>
+                                        <li><a style="color: black" href="Shop.aspx?Category=Diapering Must-Haves">Diapering Must-Haves</a></li>
+                                        <li><a style="color: black" href="Shop.aspx?Category=Bath Items">Bath Items</a></li>
+                                        <li><a style="color: black" href="Shop.aspx?Category=Project SafeHaven">Project SafeHaven</a></li>
+                                    </ul>
+                                </div>
                             </div>
                         </div>
                         <div class="sidebar__filter">
@@ -34,7 +35,7 @@
                                 <h4>Sort by price</h4>
                             </div>
                             <div class="priceFilter">
-                            <form runat="server">
+                                <form runat="server">
                                     <label for="minPrice">Min Price:</label>
                                     <select id="minPrice" runat="server">
                                         <option value="0">R0</option>
@@ -54,10 +55,10 @@
                                         <option value="2500">R2500</option>
                                         <option value="5000">R5000</option>
                                     </select>
-                                    <input type="submit" value="Filter" onserverclick="SearchProducts" runat="server" class="filter-button"/>
+                                    <input type="submit" value="Filter" onserverclick="SearchProducts" runat="server" class="filter-button" />
                                 </form>
                                 <br />
-                                </div>
+                            </div>
                         </div>
                         <div class="sidebar__sizes">
                             <div class="section-title">
@@ -97,7 +98,8 @@
                                     <input type="checkbox" id="xl">
                                     <span class="checkmark"></span>
                                 </label>
-                            &nbsp;</div>
+                                &nbsp;
+                            </div>
                         </div>
                         <div class="sidebar__color">
                             <div class="section-title">
@@ -137,22 +139,21 @@
                                     <input type="checkbox" id="yellows">
                                     <span class="checkmark"></span>
                                 </label>
-                            &nbsp;</div>
+                                &nbsp;
+                            </div>
                         </div>
                     </div>
                 </div>
                 <!-- show content -->
-               <asp:Literal ID="productDisplay" runat="server"></asp:Literal>
+                <asp:Literal ID="productDisplay" runat="server"></asp:Literal>
 
-                        
-                        <div class="col-lg-12 text-center">
-                            <div class="pagination__option">
-                                <a href="#">1</a>
-                                <a href="#">2</a>
-                                <a href="#">3</a>
-                                <a href="#"><i class="fa fa-angle-right"></i></a>
-                            </div>
-                        </div>
+
+                <div class="col-lg-12 text-center">
+                    <div class="pagination__option">
+                        <a href="#">1</a>
+                        <a href="#">2</a>
+                        <a href="#">3</a>
+                        <a href="#"><i class="fa fa-angle-right"></i></a>
                     </div>
                 </div>
             </div>

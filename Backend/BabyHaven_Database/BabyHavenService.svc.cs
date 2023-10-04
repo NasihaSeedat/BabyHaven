@@ -319,6 +319,47 @@ namespace BabyHaven_Database
             return product != null ? product.P_Name : string.Empty;
         }
 
+        public string GetProductCategory(int productID) {
+            var product = (from u in db.Products
+                           where u.Product_Id.Equals(productID)
+                           select u).FirstOrDefault();
+
+            if(product != null) {
+                return product.P_Category;
+            }
+            else {
+                return null;
+            }
+        }
+
+        public string GetProductDescription(int productID) {
+            Product product = db.Products.FirstOrDefault(p => p.Product_Id == productID);
+
+            return product != null ? product.P_Description : string.Empty;
+        }
+
+        public string GetUserName(int id) {
+            var user = (from u in db.User_Tables
+                        where u.User_Id.Equals(id)
+                        select u).FirstOrDefault();
+
+            return user.Name;
+        }
+
+        public string GetProductAvailability(int productID) {
+            var product = (from u in db.Products
+                           where u.Product_Id.Equals(productID)
+                           select u).FirstOrDefault();
+
+            if(product.P_Quantity > 0) {
+                return "In Stock";
+            }
+            else {
+                return "Product Out of Stock";
+            }
+
+        }
+
         public decimal GetProductPrice(int productID)
         {
             // Find the product by ID
