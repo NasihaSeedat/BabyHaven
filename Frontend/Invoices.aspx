@@ -45,7 +45,7 @@
             <div class="row">
                 <div class="col-md-12">
                     <h2>Your Purchase History</h2>
-                    <br/>
+                    <br />
                 </div>
             </div>
             <form id="invoicesForm" runat="server">
@@ -69,7 +69,7 @@
                                             <td>R <%# Eval("O_Total", "{0:N2}") %></td>
                                             <td><%# Eval("O_Date", "{0:yyyy-MM-dd}") %></td>
                                             <td>
-                                                <asp:Button runat="server" Text="Get Details" CssClass="btn btn-primary" Style="background-color: #84B7EE; border-color: #84B7EE;"
+                                                <asp:Button runat="server" Text="Get Details" CssClass="btnDetails"
                                                     OnClick="DownloadPdfButton_Click" CommandArgument='<%# Eval("O_Id") %>' />
                                             </td>
                                         </tr>
