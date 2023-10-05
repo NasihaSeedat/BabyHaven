@@ -467,6 +467,7 @@ namespace BabyHaven_Database
             var prods = new List<Product>();
 
             dynamic prod = (from t in db.Products
+                            where t.isActive.Equals(true)
                             select t);
 
             foreach (Product p in prod)
