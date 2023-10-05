@@ -104,6 +104,9 @@
     <Content Include="Connected Services\BackendReference\Frontend.BackendReference.Cart.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
+    <Content Include="Connected Services\BackendReference\Frontend.BackendReference.Order_Table.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
     <None Include="Connected Services\BackendReference\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
@@ -118,6 +121,7 @@
     <Content Include="css\slicknav.min.css" />
     <Content Include="css\style.css" />
     <Content Include="Home.aspx" />
+    <Content Include="InvoiceDetails.aspx" />
     <Content Include="Invoices.aspx" />
     <Content Include="js\bootstrap.min.js" />
     <Content Include="js\jquery-3.3.1.min.js" />
@@ -206,6 +210,13 @@
     </Compile>
     <Compile Include="Home.aspx.designer.cs">
       <DependentUpon>Home.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="InvoiceDetails.aspx.cs">
+      <DependentUpon>InvoiceDetails.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="InvoiceDetails.aspx.designer.cs">
+      <DependentUpon>InvoiceDetails.aspx</DependentUpon>
     </Compile>
     <Compile Include="Invoices.aspx.cs">
       <DependentUpon>Invoices.aspx</DependentUpon>

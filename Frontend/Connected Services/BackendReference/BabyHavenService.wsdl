@@ -139,6 +139,42 @@
   <wsdl:message name="IBabyHavenService_Addproducts_OutputMessage">
     <wsdl:part name="parameters" element="tns:AddproductsResponse" />
   </wsdl:message>
+  <wsdl:message name="IBabyHavenService_AdminaddProds_InputMessage">
+    <wsdl:part name="parameters" element="tns:AdminaddProds" />
+  </wsdl:message>
+  <wsdl:message name="IBabyHavenService_AdminaddProds_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AdminaddProdsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBabyHavenService_GetCartProductIds_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCartProductIds" />
+  </wsdl:message>
+  <wsdl:message name="IBabyHavenService_GetCartProductIds_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCartProductIdsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBabyHavenService_ProcessCheckout_InputMessage">
+    <wsdl:part name="parameters" element="tns:ProcessCheckout" />
+  </wsdl:message>
+  <wsdl:message name="IBabyHavenService_ProcessCheckout_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ProcessCheckoutResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBabyHavenService_Checkout_InputMessage">
+    <wsdl:part name="parameters" element="tns:Checkout" />
+  </wsdl:message>
+  <wsdl:message name="IBabyHavenService_Checkout_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CheckoutResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBabyHavenService_GetAllInvoices_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllInvoices" />
+  </wsdl:message>
+  <wsdl:message name="IBabyHavenService_GetAllInvoices_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllInvoicesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBabyHavenService_GetInvoiceDetails_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetInvoiceDetails" />
+  </wsdl:message>
+  <wsdl:message name="IBabyHavenService_GetInvoiceDetails_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetInvoiceDetailsResponse" />
+  </wsdl:message>
   <wsdl:portType name="IBabyHavenService">
     <wsdl:operation name="Login">
       <wsdl:input wsaw:Action="http://tempuri.org/IBabyHavenService/Login" message="tns:IBabyHavenService_Login_InputMessage" />
@@ -227,6 +263,30 @@
     <wsdl:operation name="Addproducts">
       <wsdl:input wsaw:Action="http://tempuri.org/IBabyHavenService/Addproducts" message="tns:IBabyHavenService_Addproducts_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IBabyHavenService/AddproductsResponse" message="tns:IBabyHavenService_Addproducts_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AdminaddProds">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBabyHavenService/AdminaddProds" message="tns:IBabyHavenService_AdminaddProds_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBabyHavenService/AdminaddProdsResponse" message="tns:IBabyHavenService_AdminaddProds_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCartProductIds">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBabyHavenService/GetCartProductIds" message="tns:IBabyHavenService_GetCartProductIds_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBabyHavenService/GetCartProductIdsResponse" message="tns:IBabyHavenService_GetCartProductIds_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ProcessCheckout">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBabyHavenService/ProcessCheckout" message="tns:IBabyHavenService_ProcessCheckout_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBabyHavenService/ProcessCheckoutResponse" message="tns:IBabyHavenService_ProcessCheckout_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Checkout">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBabyHavenService/Checkout" message="tns:IBabyHavenService_Checkout_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBabyHavenService/CheckoutResponse" message="tns:IBabyHavenService_Checkout_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllInvoices">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBabyHavenService/GetAllInvoices" message="tns:IBabyHavenService_GetAllInvoices_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBabyHavenService/GetAllInvoicesResponse" message="tns:IBabyHavenService_GetAllInvoices_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetInvoiceDetails">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBabyHavenService/GetInvoiceDetails" message="tns:IBabyHavenService_GetInvoiceDetails_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBabyHavenService/GetInvoiceDetailsResponse" message="tns:IBabyHavenService_GetInvoiceDetails_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_IBabyHavenService" type="tns:IBabyHavenService">
@@ -422,6 +482,60 @@
     </wsdl:operation>
     <wsdl:operation name="Addproducts">
       <soap:operation soapAction="http://tempuri.org/IBabyHavenService/Addproducts" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AdminaddProds">
+      <soap:operation soapAction="http://tempuri.org/IBabyHavenService/AdminaddProds" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCartProductIds">
+      <soap:operation soapAction="http://tempuri.org/IBabyHavenService/GetCartProductIds" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ProcessCheckout">
+      <soap:operation soapAction="http://tempuri.org/IBabyHavenService/ProcessCheckout" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Checkout">
+      <soap:operation soapAction="http://tempuri.org/IBabyHavenService/Checkout" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllInvoices">
+      <soap:operation soapAction="http://tempuri.org/IBabyHavenService/GetAllInvoices" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetInvoiceDetails">
+      <soap:operation soapAction="http://tempuri.org/IBabyHavenService/GetInvoiceDetails" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

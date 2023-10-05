@@ -69,4 +69,26 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="Product" nillable="true" type="tns:Product" />
+  <xs:complexType name="ArrayOfOrder_Table">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Order_Table" nillable="true" type="tns:Order_Table" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfOrder_Table" nillable="true" type="tns:ArrayOfOrder_Table" />
+  <xs:complexType name="Order_Table">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="First_Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Last_Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="O_Address" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="O_City" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="O_Date" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="O_Email" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="O_Id" type="xs:int" />
+      <xs:element minOccurs="0" name="O_Phone_Number" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="O_Total" type="xs:decimal" />
+      <xs:element minOccurs="0" name="O_ZipCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UserId" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Order_Table" nillable="true" type="tns:Order_Table" />
 </xs:schema>

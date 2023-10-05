@@ -84,13 +84,14 @@
                                 
                             </li>
                             <li><a href="Contact.aspx">About Us</a></li>
-                            <li runat="server" id="adminLink" Visible="false">
-                                 <a href="#">Admin Panel</a>
-                                    <ul class="dropdown" id="DropAdmin" Visible="false" runat="server">
-                                        <li><a href="AddAdmin.aspx">Add Admin</a></li>
-                                        <li><a href="AddProduct.aspx">Add Products</a></li>
-                                        <li><a href="RemoveProduct.aspx">Remove Products</a></li>
-                                    </ul>
+                            <li id="invoices" visible="true" runat="server"><a href="Invoices.aspx">Invoices</a></li>
+                            <li runat="server" id="adminLink" visible="false">
+                                <a href="#">Admin Panel</a>
+                                <ul class="dropdown" id="DropAdmin" visible="false" runat="server">
+                                    <li><a href="AddAdmin.aspx">Add Admin</a></li>
+                                    <li><a href="AddProduct.aspx">Add Products</a></li>
+                                    <li><a href="RemoveProduct.aspx">Remove Products</a></li>
+                                </ul>
                             </li>
 
        

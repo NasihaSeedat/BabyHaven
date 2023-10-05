@@ -579,6 +579,80 @@ namespace BabyHaven_Database
                          where o.O_Id.Equals(id)
                          select o).FirstOrDefault();
 
+        //    if (order == null)
+        //    {
+        //        return null;
+        //    }
+        //    else
+        //    {
+        //        return order;
+        //    }
+        //}
+
+        //public Order_Item GetItem(int id)
+        //{
+        //    var item = (from i in db.Order_Items
+        //                where i.O_Id.Equals(id)
+        //                select i).FirstOrDefault();
+
+        //    if (item == null)
+        //    {
+        //        return null;
+        //    }
+        //    else
+        //    {
+        //        return item;
+        //    }
+        //}
+
+        //public List<Order_Item> Getallitems()
+        //{
+        //    var o = new List<Order_Item>();
+
+        //    dynamic prod = (from t in db.Order_Items
+        //                    select t);
+
+        //    foreach (Order_Item or in prod)
+        //    {
+        //        var ord = GetItem(or.O_Id);
+        //        o.Add(ord);
+        //    }
+
+        //    return o;
+        //}
+
+        //public List<Order_Table> GetallInvoices()
+        //{
+        //    var o = new List<Order_Table>();
+
+        //    dynamic prod = (from t in db.Order_Tables
+        //                    select t);
+
+        //    foreach (Order_Table or in prod)
+        //    {
+        //        var ord = GetInvoice(or.O_Id);
+        //        o.Add(ord);
+        //    }
+
+        //    return o;
+        //}
+
+        public List<Order_Table> GetAllInvoices(int userId)
+        {
+            List<Order_Table> orders = (from u in db.Order_Tables
+                                        where u.UserId.Equals(userId)
+                                        select u).ToList();
+
+            return orders;
+        }
+
+
+        public Order_Table GetInvoiceDetails(int id)
+        {
+            var order = (from o in db.Order_Tables
+                         where o.O_Id.Equals(id)
+                         select o).FirstOrDefault();
+
             if (order == null)
             {
                 return null;
@@ -589,53 +663,6 @@ namespace BabyHaven_Database
             }
         }
 
-        public Order_Item GetItem(int id)
-        {
-            var item = (from i in db.Order_Items
-                        where i.O_Id.Equals(id)
-                        select i).FirstOrDefault();
-
-            if (item == null)
-            {
-                return null;
-            }
-            else
-            {
-                return item;
-            }
-        }
-
-        public List<Order_Item> Getallitems()
-        {
-            var o = new List<Order_Item>();
-
-            dynamic prod = (from t in db.Order_Items
-                            select t);
-
-            foreach (Order_Item or in prod)
-            {
-                var ord = GetItem(or.O_Id);
-                o.Add(ord);
-            }
-
-            return o;
-        }
-
-        public List<Order_Table> GetallInvoices()
-        {
-            var o = new List<Order_Table>();
-
-            dynamic prod = (from t in db.Order_Tables
-                            select t);
-
-            foreach (Order_Table or in prod)
-            {
-                var ord = GetInvoice(or.O_Id);
-                o.Add(ord);
-            }
-
-            return o;
-        }
 
     }
 }

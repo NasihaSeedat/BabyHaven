@@ -102,7 +102,7 @@ namespace BabyHaven_Database
         Order_Table GetInvoice(int id);
 
         [OperationContract]
-        Order_Item GetItem(int id);
+        List<Order_Table> GetAllInvoices(int userId);
 
         [OperationContract]
         List<Order_Item> Getallitems();
