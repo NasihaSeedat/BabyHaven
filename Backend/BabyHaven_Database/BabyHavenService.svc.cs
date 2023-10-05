@@ -568,7 +568,40 @@ namespace BabyHaven_Database
             }
         }
 
-    
+        public bool AddAdminTEST(int user)
+        {
+            var admin = (from a in db.User_Tables
+                         where a.User_Id.Equals(user)
+                         select a).FirstOrDefault();
+            if (admin != null)
+            {
+
+                var newAd = new Admin()
+                {
+                    U_Id = user,
+                    Surname = admin.Surname
+                };
+                db.Admins.InsertOnSubmit(newAd);
+                admin.UserType = 0;
+                try
+                {
+                    db.SubmitChanges();
+                    return true;
+                }
+                catch (Exception ex)
+                {
+                    ex.GetBaseException();
+                    return false;
+                }
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+
+
 
 
 
@@ -658,6 +691,75 @@ namespace BabyHaven_Database
                 return false;
             }
         }
+
+
+        public bool RemoveProds(int id)
+        {
+            var pro = (from u in db.Products
+                       where u.Product_Id.Equals(id)
+                       select u).FirstOrDefault();
+
+            if (pro != null)
+            {
+                pro.isActive = false;
+                try
+                {
+                    db.SubmitChanges();
+                    return true;
+                }
+                catch (Exception ex)
+                {
+                    ex.GetBaseException();
+                    return false;
+                }
+
+
+            }
+            else
+            {
+                //does not exist
+                return false;
+            }
+        }
+
+
+
+
+        public bool UpdateProduct(int id, string name, string description, string cat, int quantity, decimal price, bool active, string img)
+        {
+            var prod = getSingleProd(id);
+
+            if (prod != null)
+            {
+                prod.P_Name = name;
+                prod.P_Description = description;
+                prod.P_Category = cat;
+                prod.P_Quantity = quantity;
+                prod.P_Price = price;
+                prod.isActive = active;
+                prod.P_Image = img;
+                prod.P_DateCreated=DateTime.Today;
+
+
+                try
+                {
+                    db.SubmitChanges();
+                    return true;
+                }
+                catch (Exception e)
+                {
+                    e.GetBaseException();
+                    return false;
+                }
+
+            }
+            else
+            {
+                //dne
+                return false;
+            }
+        }
+
 
 
         //---------------------------------------------INVOICES----------------------------------------------------//

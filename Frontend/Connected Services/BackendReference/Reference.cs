@@ -924,6 +924,12 @@ namespace Frontend.BackendReference {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBabyHavenService/AddAdmin", ReplyAction="http://tempuri.org/IBabyHavenService/AddAdminResponse")]
         System.Threading.Tasks.Task<bool> AddAdminAsync(int user, string surname);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBabyHavenService/AddAdminTEST", ReplyAction="http://tempuri.org/IBabyHavenService/AddAdminTESTResponse")]
+        bool AddAdminTEST(int user);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBabyHavenService/AddAdminTEST", ReplyAction="http://tempuri.org/IBabyHavenService/AddAdminTESTResponse")]
+        System.Threading.Tasks.Task<bool> AddAdminTESTAsync(int user);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBabyHavenService/SearchUsersByName", ReplyAction="http://tempuri.org/IBabyHavenService/SearchUsersByNameResponse")]
         Frontend.BackendReference.User_Table[] SearchUsersByName(string searchQuery);
         
@@ -1043,6 +1049,18 @@ namespace Frontend.BackendReference {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBabyHavenService/AdminaddProds", ReplyAction="http://tempuri.org/IBabyHavenService/AdminaddProdsResponse")]
         System.Threading.Tasks.Task<bool> AdminaddProdsAsync(string name, string description, string cat, int quantity, decimal price, bool active, string img);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBabyHavenService/RemoveProds", ReplyAction="http://tempuri.org/IBabyHavenService/RemoveProdsResponse")]
+        bool RemoveProds(int id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBabyHavenService/RemoveProds", ReplyAction="http://tempuri.org/IBabyHavenService/RemoveProdsResponse")]
+        System.Threading.Tasks.Task<bool> RemoveProdsAsync(int id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBabyHavenService/UpdateProduct", ReplyAction="http://tempuri.org/IBabyHavenService/UpdateProductResponse")]
+        bool UpdateProduct(int id, string name, string description, string cat, int quantity, decimal price, bool active, string img);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBabyHavenService/UpdateProduct", ReplyAction="http://tempuri.org/IBabyHavenService/UpdateProductResponse")]
+        System.Threading.Tasks.Task<bool> UpdateProductAsync(int id, string name, string description, string cat, int quantity, decimal price, bool active, string img);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBabyHavenService/GetCartProductIds", ReplyAction="http://tempuri.org/IBabyHavenService/GetCartProductIdsResponse")]
         int[] GetCartProductIds(int userId);
@@ -1176,6 +1194,14 @@ namespace Frontend.BackendReference {
         
         public System.Threading.Tasks.Task<bool> AddAdminAsync(int user, string surname) {
             return base.Channel.AddAdminAsync(user, surname);
+        }
+        
+        public bool AddAdminTEST(int user) {
+            return base.Channel.AddAdminTEST(user);
+        }
+        
+        public System.Threading.Tasks.Task<bool> AddAdminTESTAsync(int user) {
+            return base.Channel.AddAdminTESTAsync(user);
         }
         
         public Frontend.BackendReference.User_Table[] SearchUsersByName(string searchQuery) {
@@ -1336,6 +1362,22 @@ namespace Frontend.BackendReference {
         
         public System.Threading.Tasks.Task<bool> AdminaddProdsAsync(string name, string description, string cat, int quantity, decimal price, bool active, string img) {
             return base.Channel.AdminaddProdsAsync(name, description, cat, quantity, price, active, img);
+        }
+        
+        public bool RemoveProds(int id) {
+            return base.Channel.RemoveProds(id);
+        }
+        
+        public System.Threading.Tasks.Task<bool> RemoveProdsAsync(int id) {
+            return base.Channel.RemoveProdsAsync(id);
+        }
+        
+        public bool UpdateProduct(int id, string name, string description, string cat, int quantity, decimal price, bool active, string img) {
+            return base.Channel.UpdateProduct(id, name, description, cat, quantity, price, active, img);
+        }
+        
+        public System.Threading.Tasks.Task<bool> UpdateProductAsync(int id, string name, string description, string cat, int quantity, decimal price, bool active, string img) {
+            return base.Channel.UpdateProductAsync(id, name, description, cat, quantity, price, active, img);
         }
         
         public int[] GetCartProductIds(int userId) {
