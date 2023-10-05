@@ -319,6 +319,47 @@ namespace BabyHaven_Database
             return product != null ? product.P_Name : string.Empty;
         }
 
+        public string GetProductCategory(int productID) {
+            var product = (from u in db.Products
+                           where u.Product_Id.Equals(productID)
+                           select u).FirstOrDefault();
+
+            if(product != null) {
+                return product.P_Category;
+            }
+            else {
+                return null;
+            }
+        }
+
+        public string GetProductDescription(int productID) {
+            Product product = db.Products.FirstOrDefault(p => p.Product_Id == productID);
+
+            return product != null ? product.P_Description : string.Empty;
+        }
+
+        public string GetUserName(int id) {
+            var user = (from u in db.User_Tables
+                        where u.User_Id.Equals(id)
+                        select u).FirstOrDefault();
+
+            return user.Name;
+        }
+
+        public string GetProductAvailability(int productID) {
+            var product = (from u in db.Products
+                           where u.Product_Id.Equals(productID)
+                           select u).FirstOrDefault();
+
+            if(product.P_Quantity > 0) {
+                return "In Stock";
+            }
+            else {
+                return "Product Out of Stock";
+            }
+
+        }
+
         public decimal GetProductPrice(int productID)
         {
             // Find the product by ID
@@ -426,6 +467,7 @@ namespace BabyHaven_Database
             var prods = new List<Product>();
 
             dynamic prod = (from t in db.Products
+                            where t.isActive.Equals(true)
                             select t);
 
             foreach (Product p in prod)
@@ -527,7 +569,40 @@ namespace BabyHaven_Database
             }
         }
 
-    
+        public bool AddAdminTEST(int user)
+        {
+            var admin = (from a in db.User_Tables
+                         where a.User_Id.Equals(user)
+                         select a).FirstOrDefault();
+            if (admin != null)
+            {
+
+                var newAd = new Admin()
+                {
+                    U_Id = user,
+                    Surname = admin.Surname
+                };
+                db.Admins.InsertOnSubmit(newAd);
+                admin.UserType = 0;
+                try
+                {
+                    db.SubmitChanges();
+                    return true;
+                }
+                catch (Exception ex)
+                {
+                    ex.GetBaseException();
+                    return false;
+                }
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+
+
 
 
 
@@ -572,7 +647,197 @@ namespace BabyHaven_Database
             return searchResults;
         }
 
+        
+        public bool AdminaddProds(string name, string description, string cat, int quantity, decimal price, bool active,string img)
+        {
+            var prod = (from u in db.Products
+                       where u.P_Name.Equals(name)
+                       select u).FirstOrDefault();
+
+            if (prod == null)
+            {
+                try
+                {
+                    var newProd = new Product
+                    {
+                        P_Name = name,
+                        P_Description = description,
+                        P_Category = cat,
+                        P_Quantity = quantity,
+                        P_Price = price,
+                        isActive = active,
+                        P_DateCreated = DateTime.Today,
+                        P_Image=img
+                        
+                    };
+                    db.Products.InsertOnSubmit(newProd);
+                   
+
+
+
+                    db.SubmitChanges();
+                   
+                 
+                    return true;
+                }
+                catch (Exception ex)
+                {
+                    ex.GetBaseException();
+                    return false;
+                }
+            }
+            else
+            {
+                //already exists
+                return false;
+            }
+        }
+
+
+        public bool RemoveProds(int id)
+        {
+            var pro = (from u in db.Products
+                       where u.Product_Id.Equals(id)
+                       select u).FirstOrDefault();
+
+            if (pro != null)
+            {
+                pro.isActive = false;
+                try
+                {
+                    db.SubmitChanges();
+                    return true;
+                }
+                catch (Exception ex)
+                {
+                    ex.GetBaseException();
+                    return false;
+                }
+
+
+            }
+            else
+            {
+                //does not exist
+                return false;
+            }
+        }
+
+
+
+
+        public bool UpdateProduct(int id, string name, string description, string cat, int quantity, decimal price, bool active, string img)
+        {
+            var prod = getSingleProd(id);
+
+            if (prod != null)
+            {
+                prod.P_Name = name;
+                prod.P_Description = description;
+                prod.P_Category = cat;
+                prod.P_Quantity = quantity;
+                prod.P_Price = price;
+                prod.isActive = active;
+                prod.P_Image = img;
+                prod.P_DateCreated=DateTime.Today;
+
+
+                try
+                {
+                    db.SubmitChanges();
+                    return true;
+                }
+                catch (Exception e)
+                {
+                    e.GetBaseException();
+                    return false;
+                }
+
+            }
+            else
+            {
+                //dne
+                return false;
+            }
+        }
+
+
+
         //---------------------------------------------INVOICES----------------------------------------------------//
+        public List<int> GetCartProductIds(int userId) {
+            List<int> cartProductIds = db.Carts
+                    .Where(cart => cart.U_Id == userId)
+                    .Select(cart => cart.P_Id)
+                    .ToList();
+
+            return cartProductIds;
+        }
+
+        public bool ProcessCheckout(int userId, List<int> productIds) {
+            try {
+                // Get the cart items to remove
+                List<Cart> cartItemsToRemove = db.Carts
+                    .Where(cart => cart.U_Id == userId && productIds.Contains(cart.P_Id))
+                    .ToList();
+
+                // Update product quantities and remove cart items
+                foreach(var cartItem in cartItemsToRemove) {
+                    // Find the corresponding product
+                    Product product = db.Products.FirstOrDefault(p => p.Product_Id == cartItem.P_Id);
+
+                    if(product != null) {
+                        // Reduce the product quantity
+                        product.P_Quantity -= cartItem.Cart_Quantity;
+
+                        // Remove the cart item
+                        db.Carts.DeleteOnSubmit(cartItem);
+                    }
+                }
+
+                // Submit changes to the database
+                db.SubmitChanges();
+
+                return true;
+            } catch(Exception ex) {
+                ex.GetBaseException();
+                return false;
+            }
+        }
+
+
+        public int Checkout(int userId, decimal total, string firstname, string lastname, string email,
+            string address, string city, string zipcode, string phoneno) {
+            try {
+                // Create a new order
+                var newOrder = new Order_Table
+                {
+                    UserId = userId,
+                    O_Date = DateTime.Today,
+                    O_Total = total,
+                    First_Name = firstname,
+                    Last_Name = lastname,
+                    O_Email = email,
+                    O_Address = address,
+                    O_City = city,
+                    O_ZipCode = zipcode,
+                    O_Phone_Number = phoneno,
+                };
+
+                // Insert the new order into the database
+                db.Order_Tables.InsertOnSubmit(newOrder);
+
+                db.SubmitChanges();
+
+                // Return the generated Order_Id
+                return newOrder.O_Id;
+            } catch(Exception ex) {
+                ex.GetBaseException();
+                string errorMessage = ex.Message;
+                Debug.WriteLine(errorMessage);
+                return 0; // Return 0 to indicate that the order creation failed
+            }
+        }
+
         public Order_Table GetInvoice(int id)
         {
             var order = (from o in db.Order_Tables
@@ -662,6 +927,7 @@ namespace BabyHaven_Database
                 return order;
             }
         }
+
 
 
     }

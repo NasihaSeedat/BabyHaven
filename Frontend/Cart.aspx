@@ -82,6 +82,8 @@
                     <div class="cart__total__procced">
                         <h6>Cart total</h6>
                         <ul>
+                            <li>Subotal <span><asp:Label ID="SubtotalLabel" runat="server" Text="R 0.00"></asp:Label></span></li>
+                            <li>VAT <span><asp:Label ID="VATLabel" runat="server" Text="R 0.00"></asp:Label></span></li>
                             <li>Total <span><asp:Label ID="TotalLabel" runat="server" Text="R 0.00"></asp:Label></span></li>
                         </ul>
                         <%-- Add a conditional check for clientId --%>

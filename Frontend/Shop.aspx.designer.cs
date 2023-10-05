@@ -15,6 +15,33 @@ namespace Frontend
     {
 
         /// <summary>
+        /// minPrice control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlSelect minPrice;
+
+        /// <summary>
+        /// maxPrice control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlSelect maxPrice;
+
+        /// <summary>
+        /// alphabeticalSort control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlSelect alphabeticalSort;
+
+        /// <summary>
         /// productDisplay control.
         /// </summary>
         /// <remarks>

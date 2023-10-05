@@ -7,12 +7,10 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Frontend
-{
+namespace Frontend {
 
 
-    public partial class Cart
-    {
+    public partial class Cart {
 
         /// <summary>
         /// CartTable control.
@@ -22,6 +20,24 @@ namespace Frontend
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Repeater CartTable;
+
+        /// <summary>
+        /// SubtotalLabel control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label SubtotalLabel;
+
+        /// <summary>
+        /// VATLabel control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label VATLabel;
 
         /// <summary>
         /// TotalLabel control.

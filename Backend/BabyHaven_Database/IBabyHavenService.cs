@@ -46,6 +46,9 @@ namespace BabyHaven_Database
         [OperationContract]
         bool AddAdmin(int user, string surname);
 
+        [OperationContract]
+        bool AddAdminTEST(int user);
+
         //Searching Users
         [OperationContract]
         List<User_Table> SearchUsersByName(string searchQuery);
@@ -80,7 +83,19 @@ namespace BabyHaven_Database
         string GetProductName(int productID);
 
         [OperationContract]
+        string GetProductCategory(int productID);
+
+        [OperationContract]
+        string GetProductDescription(int productID);
+
+        [OperationContract]
         decimal GetProductPrice(int productID);
+
+        [OperationContract]
+        string GetUserName(int id);
+
+        [OperationContract]
+        string GetProductAvailability(int productID);
 
         //-------------------------------------------PRODUCTS------------------------------------------------------//
         [OperationContract]
@@ -95,8 +110,23 @@ namespace BabyHaven_Database
         [OperationContract]
         string Addproducts(string name, string description, string cat, int quantity, decimal price, bool active, int prodID, int admin);
 
+        [OperationContract]
+        bool  AdminaddProds(string name, string description, string cat, int quantity, decimal price, bool active, string img);
+        [OperationContract]
+        bool RemoveProds(int id);
+        [OperationContract]
+        bool UpdateProduct(int id, string name, string description, string cat, int quantity, decimal price, bool active, string img);
 
-        //---------------------------------------------INVOICES--------------------------------------------------------//
+        //---------------------------------------------INVOICES----------------------------------------------------//
+        [OperationContract]
+        List<int> GetCartProductIds(int userId);
+
+        [OperationContract]
+        bool ProcessCheckout(int userId, List<int> productIds);
+
+        [OperationContract]
+        int Checkout(int userId, decimal total, string firstname, string lastname, string email,
+            string address, string city, string zipcode, string phoneno);
 
         [OperationContract]
         Order_Table GetInvoice(int id);
@@ -110,7 +140,8 @@ namespace BabyHaven_Database
         [OperationContract]
         List<Order_Table> GetallInvoices();
 
-        //[OperationContract]
-        //List<Order_Table> GetInvoicebyclient(int clientid);
+       //[OperationContract]
+      // List<Order_Table> GetInvoicebyclient(int clientid);
+
     }
 }

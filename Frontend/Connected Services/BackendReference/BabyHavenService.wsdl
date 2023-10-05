@@ -5,6 +5,7 @@
       <xsd:import schemaLocation="http://localhost:63329/BabyHavenService.svc?xsd=xsd0" namespace="http://tempuri.org/" />
       <xsd:import schemaLocation="http://localhost:63329/BabyHavenService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
       <xsd:import schemaLocation="http://localhost:63329/BabyHavenService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/BabyHaven_Database" />
+      <xsd:import schemaLocation="http://localhost:63329/BabyHavenService.svc?xsd=xsd3" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
     </xsd:schema>
   </wsdl:types>
   <wsdl:message name="IBabyHavenService_Login_InputMessage">
@@ -54,6 +55,12 @@
   </wsdl:message>
   <wsdl:message name="IBabyHavenService_AddAdmin_OutputMessage">
     <wsdl:part name="parameters" element="tns:AddAdminResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBabyHavenService_AddAdminTEST_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddAdminTEST" />
+  </wsdl:message>
+  <wsdl:message name="IBabyHavenService_AddAdminTEST_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddAdminTESTResponse" />
   </wsdl:message>
   <wsdl:message name="IBabyHavenService_SearchUsersByName_InputMessage">
     <wsdl:part name="parameters" element="tns:SearchUsersByName" />
@@ -115,17 +122,47 @@
   <wsdl:message name="IBabyHavenService_GetProductName_OutputMessage">
     <wsdl:part name="parameters" element="tns:GetProductNameResponse" />
   </wsdl:message>
+  <wsdl:message name="IBabyHavenService_GetProductCategory_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetProductCategory" />
+  </wsdl:message>
+  <wsdl:message name="IBabyHavenService_GetProductCategory_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetProductCategoryResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBabyHavenService_GetProductDescription_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetProductDescription" />
+  </wsdl:message>
+  <wsdl:message name="IBabyHavenService_GetProductDescription_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetProductDescriptionResponse" />
+  </wsdl:message>
   <wsdl:message name="IBabyHavenService_GetProductPrice_InputMessage">
     <wsdl:part name="parameters" element="tns:GetProductPrice" />
   </wsdl:message>
   <wsdl:message name="IBabyHavenService_GetProductPrice_OutputMessage">
     <wsdl:part name="parameters" element="tns:GetProductPriceResponse" />
   </wsdl:message>
+  <wsdl:message name="IBabyHavenService_GetUserName_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetUserName" />
+  </wsdl:message>
+  <wsdl:message name="IBabyHavenService_GetUserName_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetUserNameResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBabyHavenService_GetProductAvailability_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetProductAvailability" />
+  </wsdl:message>
+  <wsdl:message name="IBabyHavenService_GetProductAvailability_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetProductAvailabilityResponse" />
+  </wsdl:message>
   <wsdl:message name="IBabyHavenService_Getallproducts_InputMessage">
     <wsdl:part name="parameters" element="tns:Getallproducts" />
   </wsdl:message>
   <wsdl:message name="IBabyHavenService_Getallproducts_OutputMessage">
     <wsdl:part name="parameters" element="tns:GetallproductsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBabyHavenService_getProductCat_InputMessage">
+    <wsdl:part name="parameters" element="tns:getProductCat" />
+  </wsdl:message>
+  <wsdl:message name="IBabyHavenService_getProductCat_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getProductCatResponse" />
   </wsdl:message>
   <wsdl:message name="IBabyHavenService_getSingleProd_InputMessage">
     <wsdl:part name="parameters" element="tns:getSingleProd" />
@@ -208,6 +245,10 @@
       <wsdl:input wsaw:Action="http://tempuri.org/IBabyHavenService/AddAdmin" message="tns:IBabyHavenService_AddAdmin_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IBabyHavenService/AddAdminResponse" message="tns:IBabyHavenService_AddAdmin_OutputMessage" />
     </wsdl:operation>
+    <wsdl:operation name="AddAdminTEST">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBabyHavenService/AddAdminTEST" message="tns:IBabyHavenService_AddAdminTEST_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBabyHavenService/AddAdminTESTResponse" message="tns:IBabyHavenService_AddAdminTEST_OutputMessage" />
+    </wsdl:operation>
     <wsdl:operation name="SearchUsersByName">
       <wsdl:input wsaw:Action="http://tempuri.org/IBabyHavenService/SearchUsersByName" message="tns:IBabyHavenService_SearchUsersByName_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IBabyHavenService/SearchUsersByNameResponse" message="tns:IBabyHavenService_SearchUsersByName_OutputMessage" />
@@ -248,13 +289,33 @@
       <wsdl:input wsaw:Action="http://tempuri.org/IBabyHavenService/GetProductName" message="tns:IBabyHavenService_GetProductName_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IBabyHavenService/GetProductNameResponse" message="tns:IBabyHavenService_GetProductName_OutputMessage" />
     </wsdl:operation>
+    <wsdl:operation name="GetProductCategory">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBabyHavenService/GetProductCategory" message="tns:IBabyHavenService_GetProductCategory_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBabyHavenService/GetProductCategoryResponse" message="tns:IBabyHavenService_GetProductCategory_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetProductDescription">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBabyHavenService/GetProductDescription" message="tns:IBabyHavenService_GetProductDescription_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBabyHavenService/GetProductDescriptionResponse" message="tns:IBabyHavenService_GetProductDescription_OutputMessage" />
+    </wsdl:operation>
     <wsdl:operation name="GetProductPrice">
       <wsdl:input wsaw:Action="http://tempuri.org/IBabyHavenService/GetProductPrice" message="tns:IBabyHavenService_GetProductPrice_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IBabyHavenService/GetProductPriceResponse" message="tns:IBabyHavenService_GetProductPrice_OutputMessage" />
     </wsdl:operation>
+    <wsdl:operation name="GetUserName">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBabyHavenService/GetUserName" message="tns:IBabyHavenService_GetUserName_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBabyHavenService/GetUserNameResponse" message="tns:IBabyHavenService_GetUserName_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetProductAvailability">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBabyHavenService/GetProductAvailability" message="tns:IBabyHavenService_GetProductAvailability_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBabyHavenService/GetProductAvailabilityResponse" message="tns:IBabyHavenService_GetProductAvailability_OutputMessage" />
+    </wsdl:operation>
     <wsdl:operation name="Getallproducts">
       <wsdl:input wsaw:Action="http://tempuri.org/IBabyHavenService/Getallproducts" message="tns:IBabyHavenService_Getallproducts_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IBabyHavenService/GetallproductsResponse" message="tns:IBabyHavenService_Getallproducts_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getProductCat">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBabyHavenService/getProductCat" message="tns:IBabyHavenService_getProductCat_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBabyHavenService/getProductCatResponse" message="tns:IBabyHavenService_getProductCat_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="getSingleProd">
       <wsdl:input wsaw:Action="http://tempuri.org/IBabyHavenService/getSingleProd" message="tns:IBabyHavenService_getSingleProd_InputMessage" />
@@ -363,6 +424,15 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="AddAdminTEST">
+      <soap:operation soapAction="http://tempuri.org/IBabyHavenService/AddAdminTEST" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="SearchUsersByName">
       <soap:operation soapAction="http://tempuri.org/IBabyHavenService/SearchUsersByName" style="document" />
       <wsdl:input>
@@ -453,6 +523,24 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="GetProductCategory">
+      <soap:operation soapAction="http://tempuri.org/IBabyHavenService/GetProductCategory" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetProductDescription">
+      <soap:operation soapAction="http://tempuri.org/IBabyHavenService/GetProductDescription" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="GetProductPrice">
       <soap:operation soapAction="http://tempuri.org/IBabyHavenService/GetProductPrice" style="document" />
       <wsdl:input>
@@ -462,8 +550,35 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="GetUserName">
+      <soap:operation soapAction="http://tempuri.org/IBabyHavenService/GetUserName" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetProductAvailability">
+      <soap:operation soapAction="http://tempuri.org/IBabyHavenService/GetProductAvailability" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="Getallproducts">
       <soap:operation soapAction="http://tempuri.org/IBabyHavenService/Getallproducts" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getProductCat">
+      <soap:operation soapAction="http://tempuri.org/IBabyHavenService/getProductCat" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

@@ -87,6 +87,9 @@
     <None Include="Connected Services\BackendReference\BabyHavenService2.xsd">
       <SubType>Designer</SubType>
     </None>
+    <None Include="Connected Services\BackendReference\BabyHavenService3.xsd">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Connected Services\BackendReference\configuration91.svcinfo" />
     <None Include="Connected Services\BackendReference\configuration.svcinfo" />
     <Content Include="Connected Services\BackendReference\Frontend.BackendReference.Admin.datasource">
@@ -104,6 +107,11 @@
     <Content Include="Connected Services\BackendReference\Frontend.BackendReference.Cart.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
+
+    <Content Include="Connected Services\BackendReference\Frontend.BackendReference.Order_Item.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+
     <Content Include="Connected Services\BackendReference\Frontend.BackendReference.Order_Table.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
@@ -139,6 +147,7 @@
     <Content Include="Register.aspx" />
     <Content Include="RemoveProduct.aspx" />
     <Content Include="Shop.aspx" />
+    <Content Include="ThankYou.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -267,6 +276,13 @@
     </Compile>
     <Compile Include="Shop.aspx.designer.cs">
       <DependentUpon>Shop.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ThankYou.aspx.cs">
+      <DependentUpon>ThankYou.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ThankYou.aspx.designer.cs">
+      <DependentUpon>ThankYou.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

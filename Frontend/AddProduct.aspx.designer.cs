@@ -78,6 +78,15 @@ namespace Frontend
         protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl ProQuantity;
 
         /// <summary>
+        /// ProImage control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputText ProImage;
+
+        /// <summary>
         /// error control.
         /// </summary>
         /// <remarks>
