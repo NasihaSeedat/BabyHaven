@@ -3518,11 +3518,69 @@ register__error {
     }
 
 
+/*---------------------
+     Thank You Page
+-----------------------*/
+/*.thank-you-container {
+    text-align: center;
+    margin: 50px auto;
+    padding: 20px;
+    border-radius: 5px;
+}
 
+    .thank-you-container h2 {
+        font-size: 28px;
+        color: #333;
+        margin-bottom: 10px;
+    }
 
+    .thank-you-container p {
+        font-size: 16px;
+        color: #555;
+        margin: 10px 0;
+    }*/
 
+.thank-you-container {
+    text-align: center;
+    margin: 50px auto;
+    padding: 20px;
+    border-radius: 5px;
+    background-color: #fff; /* White background */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    max-width: 700px;
+}
+
+    .thank-you-container h2 {
+        font-size: 32px;
+        color: #333;
+        margin-bottom: 20px;
+    }
+
+    .thank-you-container p {
+        color: #555;
+    }
+
+.btnInvoice {
+    font-size: 14px;
+    font-weight: 600;
+    border: none;
+    text-transform: uppercase;
+    display: inline-block;
+    padding: 6px 30px;
+    border-radius: 50px;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    background: #f2f2f2;
+    color: #111111;
+    transition: background 0.3s, color 0.3s; /* Smooth hover effect for background and text color */
+}
+
+    /* Style the button on hover */
+    .btnInvoice:hover {
+        background: #84B7EE; /* Change the background color on hover to #84B7EE */
+        color: #fff; /* Change the text color to white on hover */
+    }
 /*--------------------------------- Responsive Media Quaries -----------------------------*/
-
 @media only screen and (min-width: 1600px) and (max-width: 1900px) {
     .header {
         padding: 0 85px;
