@@ -56,10 +56,32 @@
                                         <option value="5000">R5000</option>
                                     </select>
                                     <input type="submit" value="Filter" onserverclick="SearchProducts" runat="server" class="filter-button" />
+
+                                    <br />
+                                    <br />
+
+                                    <!-- Alphabetical Sort -->
+                                    <div class="sidebar__alphabetical-sort">
+                                        <div class="section-title">
+                                            <h4>Sort by Alphabet</h4>
+                                        </div>
+                                        <div class="filter-group">
+                                            <label for="alphabeticalSort">Alphabetical Sort:</label>
+                                            <select id="alphabeticalSort" runat="server">
+                                                <option value="asc">A to Z</option>
+                                                <option value="desc">Z to A</option>
+                                            </select>
+                                            <input type="submit" value="Sort" onserverclick="SortProductsByName" runat="server" class="filter-button" />
+                                        </div>
+                                    </div>
+
+
                                 </form>
                                 <br />
                             </div>
                         </div>
+
+
 
 
                     </div>
