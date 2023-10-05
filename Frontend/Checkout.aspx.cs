@@ -26,7 +26,13 @@ namespace Frontend
                     decimal discount = CalculateDiscount();
                     decimal total = CalculateTotal(subtotal, discount);
 
-                    lblDelivery.InnerText = ("R 0.00");
+                    if(subtotal >= 2000.00m) {
+                        lblDelivery.InnerHtml = "<s>R 100.00</s> Free Delivery";
+                    }
+                    else {
+                        lblDelivery.InnerText = "R 100.00";
+                    }
+
                     lblDiscount.InnerText = string.Format("R {0:N2}", discount);
                     lblTotal.InnerText = string.Format("R {0:N2}", total);
                 }
@@ -108,7 +114,7 @@ namespace Frontend
                     discountRate = 0.05m; // 10% discount for CODE1
                 }
                 else if(discountCode.Equals("BABYHAVEN", StringComparison.OrdinalIgnoreCase)) {
-                    discountRate = 0.20m; // 20% discount for CODE2
+                    discountRate = 0.10m; // 20% discount for CODE2
                 }
                 // Add more conditions for other discount codes as needed
             }
@@ -116,10 +122,21 @@ namespace Frontend
             return subtotal * discountRate;
         }
 
-        private decimal CalculateTotal(decimal subtotal, decimal discount)
-        {
-            return subtotal - discount; // Replace with your logic to calculate total.
+        private decimal CalculateTotal(decimal subtotal, decimal discount) {
+            decimal deliveryCost = 100.00m; // Default delivery cost
+
+            // Check if the subtotal is greater than or equal to R1000
+            if(subtotal >= 2000.00m) {
+                // If yes, set the delivery cost to 0.00 (free delivery)
+                deliveryCost = 0.00m;
+            }
+
+            // Calculate the total including the discount and delivery cost
+            decimal total = subtotal - discount + deliveryCost;
+
+            return total;
         }
+
 
         protected void btnApplyCoupon_Click(object sender, EventArgs e) {
             // Get the coupon code from the text box
@@ -147,8 +164,13 @@ namespace Frontend
             lblDiscount.InnerText = string.Format("R {0:N2}", discount);
             lblTotal.InnerText = string.Format("R {0:N2}", total);
 
-            // Optionally, you can also update the delivery cost if applicable
-            lblDelivery.InnerText = ("R 0.00");
+            // Update the delivery cost label based on the subtotal
+            if(subtotal >= 2000.00m) {
+                lblDelivery.InnerHtml = "<s>R 100.00</s> Free Delivery";
+            }
+            else {
+                lblDelivery.InnerText = "R 100.00";
+            }
         }
 
     }

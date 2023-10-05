@@ -73,7 +73,7 @@
                         <div class="banner__item">
                             <div class="banner__text">
                                 <span>BabyHaven</span>
-                                <h1>Free Shipping for all orders over R1000</h1>
+                                <h1>Free Shipping for all orders over R2000</h1>
                                 <a href="Shop.aspx">Shop now</a>
                             </div>
                         </div>
