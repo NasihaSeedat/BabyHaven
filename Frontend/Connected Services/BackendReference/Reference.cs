@@ -912,6 +912,12 @@ namespace Frontend.BackendReference {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBabyHavenService/GetAllUsers", ReplyAction="http://tempuri.org/IBabyHavenService/GetAllUsersResponse")]
         System.Threading.Tasks.Task<Frontend.BackendReference.User_Table[]> GetAllUsersAsync();
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBabyHavenService/GetAllUsersNotAdmin", ReplyAction="http://tempuri.org/IBabyHavenService/GetAllUsersNotAdminResponse")]
+        Frontend.BackendReference.User_Table[] GetAllUsersNotAdmin();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBabyHavenService/GetAllUsersNotAdmin", ReplyAction="http://tempuri.org/IBabyHavenService/GetAllUsersNotAdminResponse")]
+        System.Threading.Tasks.Task<Frontend.BackendReference.User_Table[]> GetAllUsersNotAdminAsync();
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBabyHavenService/Register", ReplyAction="http://tempuri.org/IBabyHavenService/RegisterResponse")]
         bool Register(string email, string password, string name, string surname, string phoneno, string address, int usetype);
         
@@ -1178,6 +1184,14 @@ namespace Frontend.BackendReference {
         
         public System.Threading.Tasks.Task<Frontend.BackendReference.User_Table[]> GetAllUsersAsync() {
             return base.Channel.GetAllUsersAsync();
+        }
+        
+        public Frontend.BackendReference.User_Table[] GetAllUsersNotAdmin() {
+            return base.Channel.GetAllUsersNotAdmin();
+        }
+        
+        public System.Threading.Tasks.Task<Frontend.BackendReference.User_Table[]> GetAllUsersNotAdminAsync() {
+            return base.Channel.GetAllUsersNotAdminAsync();
         }
         
         public bool Register(string email, string password, string name, string surname, string phoneno, string address, int usetype) {

@@ -71,7 +71,6 @@
   <ItemGroup>
     <Content Include="AddAdmin.aspx" />
     <Content Include="AddProduct.aspx" />
-    <Content Include="AdminMain.aspx" />
     <Content Include="Blog.aspx" />
     <Content Include="Cart.aspx" />
     <Content Include="Checkout.aspx" />
@@ -161,13 +160,6 @@
     </Compile>
     <Compile Include="AddProduct.aspx.designer.cs">
       <DependentUpon>AddProduct.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="AdminMain.aspx.cs">
-      <DependentUpon>AdminMain.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="AdminMain.aspx.designer.cs">
-      <DependentUpon>AdminMain.aspx</DependentUpon>
     </Compile>
     <Compile Include="BabyHaven.Master.cs">
       <DependentUpon>BabyHaven.Master</DependentUpon>
