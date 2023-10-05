@@ -41,19 +41,24 @@
             </div>
             <!-- User data table -->
             <div class="row">
-                <asp:Table ID="userTable" runat="server" Class="table table-bordered">
+              <%--  <asp:Table ID="userTable" runat="server" Class="table table-bordered">
                     <asp:TableHeaderRow>
                         <asp:TableHeaderCell>User ID</asp:TableHeaderCell>
                         <asp:TableHeaderCell>Email</asp:TableHeaderCell>
                         <asp:TableHeaderCell>Name</asp:TableHeaderCell>
                         <asp:TableHeaderCell>Surname</asp:TableHeaderCell>
                         <asp:TableHeaderCell>Phone Number</asp:TableHeaderCell>
-                        <asp:TableHeaderCell>Add Admin</asp:TableHeaderCell>
+                        <asp:TableHeaderCell>Select Admin</asp:TableHeaderCell>
                     </asp:TableHeaderRow>
-                </asp:Table>
+                </asp:Table>--%>
+                <asp:Literal ID="userTabless" runat="server"></asp:Literal>
+                 
+
             </div>
-            
+            <asp:Button ID="btnAddAdmin" runat="server" CssClass="site-btn" Text="Add Admin" OnClick="btn_register"/>
+          
         </div>
+
     </section>
         </form>
 

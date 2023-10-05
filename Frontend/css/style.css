@@ -294,7 +294,27 @@ ol {
         box-shadow: 0 0 5px #00bcd4; /* Light blue box shadow */
     }
 
+/* Define styles for the table */
+.styled-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+}
 
+    .styled-table th,
+    .styled-table td {
+        border: 1px solid #dddddd;
+        text-align: left;
+        padding: 8px;
+    }
+
+    .styled-table th {
+        background-color: #e4edf7;
+    }
+
+    .styled-table tr:nth-child(even) {
+        background-color: #e4edf7;
+    }
 
 /*TEXTBOX*/
 /* Style the text input with rounded edges */

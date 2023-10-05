@@ -46,6 +46,9 @@ namespace BabyHaven_Database
         [OperationContract]
         bool AddAdmin(int user, string surname);
 
+        [OperationContract]
+        bool AddAdminTEST(int user);
+
         //Searching Users
         [OperationContract]
         List<User_Table> SearchUsersByName(string searchQuery);
@@ -109,9 +112,10 @@ namespace BabyHaven_Database
 
         [OperationContract]
         bool  AdminaddProds(string name, string description, string cat, int quantity, decimal price, bool active, string img);
-
-
-
+        [OperationContract]
+        bool RemoveProds(int id);
+        [OperationContract]
+        bool UpdateProduct(int id, string name, string description, string cat, int quantity, decimal price, bool active, string img);
 
         //---------------------------------------------INVOICES----------------------------------------------------//
         [OperationContract]
