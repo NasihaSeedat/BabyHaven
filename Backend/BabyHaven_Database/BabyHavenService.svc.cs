@@ -116,6 +116,26 @@ namespace BabyHaven_Database
 
         }
 
+        public List<User_Table> GetAllUsersNotAdmin()
+        {
+            var u = new List<User_Table>();
+
+            dynamic users = (from us in db.User_Tables
+                             where us.UserType.Equals(1)
+                             select us);
+
+            foreach (User_Table n in users)
+            {
+                var use = GetUser(n.User_Id);
+                u.Add(use);
+            }
+
+            return u;
+
+
+        }
+
+
         public bool Register(string email, string password, string name, string surname, string phoneno, string address, int usetype)
         {
             var use = (from u in db.User_Tables
@@ -467,6 +487,7 @@ namespace BabyHaven_Database
             var prods = new List<Product>();
 
             dynamic prod = (from t in db.Products
+                            where t.isActive.Equals(true)
                             select t);
 
             foreach (Product p in prod)
@@ -568,7 +589,40 @@ namespace BabyHaven_Database
             }
         }
 
-    
+        public bool AddAdminTEST(int user)
+        {
+            var admin = (from a in db.User_Tables
+                         where a.User_Id.Equals(user)
+                         select a).FirstOrDefault();
+            if (admin != null)
+            {
+
+                var newAd = new Admin()
+                {
+                    U_Id = user,
+                    Surname = admin.Surname
+                };
+                db.Admins.InsertOnSubmit(newAd);
+                admin.UserType = 0;
+                try
+                {
+                    db.SubmitChanges();
+                    return true;
+                }
+                catch (Exception ex)
+                {
+                    ex.GetBaseException();
+                    return false;
+                }
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+
+
 
 
 
@@ -658,6 +712,75 @@ namespace BabyHaven_Database
                 return false;
             }
         }
+
+
+        public bool RemoveProds(int id)
+        {
+            var pro = (from u in db.Products
+                       where u.Product_Id.Equals(id)
+                       select u).FirstOrDefault();
+
+            if (pro != null)
+            {
+                pro.isActive = false;
+                try
+                {
+                    db.SubmitChanges();
+                    return true;
+                }
+                catch (Exception ex)
+                {
+                    ex.GetBaseException();
+                    return false;
+                }
+
+
+            }
+            else
+            {
+                //does not exist
+                return false;
+            }
+        }
+
+
+
+
+        public bool UpdateProduct(int id, string name, string description, string cat, int quantity, decimal price, bool active, string img)
+        {
+            var prod = getSingleProd(id);
+
+            if (prod != null)
+            {
+                prod.P_Name = name;
+                prod.P_Description = description;
+                prod.P_Category = cat;
+                prod.P_Quantity = quantity;
+                prod.P_Price = price;
+                prod.isActive = active;
+                prod.P_Image = img;
+                prod.P_DateCreated=DateTime.Today;
+
+
+                try
+                {
+                    db.SubmitChanges();
+                    return true;
+                }
+                catch (Exception e)
+                {
+                    e.GetBaseException();
+                    return false;
+                }
+
+            }
+            else
+            {
+                //dne
+                return false;
+            }
+        }
+
 
 
         //---------------------------------------------INVOICES----------------------------------------------------//

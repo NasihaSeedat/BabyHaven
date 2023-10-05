@@ -294,7 +294,27 @@ ol {
         box-shadow: 0 0 5px #00bcd4; /* Light blue box shadow */
     }
 
+/* Define styles for the table */
+.styled-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+}
 
+    .styled-table th,
+    .styled-table td {
+        border: 1px solid #dddddd;
+        text-align: left;
+        padding: 8px;
+    }
+
+    .styled-table th {
+        background-color: #e4edf7;
+    }
+
+    .styled-table tr:nth-child(even) {
+        background-color: #e4edf7;
+    }
 
 /*TEXTBOX*/
 /* Style the text input with rounded edges */
@@ -1324,6 +1344,31 @@ ol {
             text-decoration: line-through;
             margin-left: 4px;
         }
+
+
+
+
+        /**edit/ remove buttons*/
+.btn-AdminBut {
+    font-size: 14px;
+    font-weight: 600;
+    border: none;
+    text-transform: uppercase;
+    display: inline-block;
+    padding: 6px 30px;
+    border-radius: 50px;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    background: #f2f2f2;
+    color: #111111;
+    transition: background 0.3s; /* Add a transition for smooth hover effect */
+}
+
+    /* Style the button on hover */
+    .btn-AdminBut:hover {
+        background: #84B7EE; /* Change the background color on hover to #84B7EE */
+        color: #fff; /* Change the text color to white on hover */
+    }
 
 /*---------------------
   Shop

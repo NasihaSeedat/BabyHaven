@@ -2,19 +2,19 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-     <!-- Breadcrumb Begin -->
+       <!-- Breadcrumb Begin -->
     <div class="breadcrumb-option">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
                     <div class="breadcrumb__links">
+                        <a href="Home.aspx"><i class="fa fa-home"></i> Home</a>
                         <span>Add Admin</span>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-
     <!-- Breadcrumb End -->
     <form id="userForm" runat="server">
 
@@ -31,7 +31,7 @@
     </div>
     <div class="col-md-6">
 
-        <asp:Button id="btnSearch" class="site-btn" runat="server" Text="Search" OnClick="btnSearch_Click"  />
+        <asp:Button id="btnSearch" class="site-btn" runat="server" Text="Search" OnClick="btnSearch_Click" style=" margin-left: 30px;" />
 
        
     </div>
@@ -41,19 +41,24 @@
             </div>
             <!-- User data table -->
             <div class="row">
-                <asp:Table ID="userTable" runat="server" Class="table table-bordered">
+              <%--  <asp:Table ID="userTable" runat="server" Class="table table-bordered">
                     <asp:TableHeaderRow>
                         <asp:TableHeaderCell>User ID</asp:TableHeaderCell>
                         <asp:TableHeaderCell>Email</asp:TableHeaderCell>
                         <asp:TableHeaderCell>Name</asp:TableHeaderCell>
                         <asp:TableHeaderCell>Surname</asp:TableHeaderCell>
                         <asp:TableHeaderCell>Phone Number</asp:TableHeaderCell>
-                        <asp:TableHeaderCell>Add Admin</asp:TableHeaderCell>
+                        <asp:TableHeaderCell>Select Admin</asp:TableHeaderCell>
                     </asp:TableHeaderRow>
-                </asp:Table>
+                </asp:Table>--%>
+                <asp:Literal ID="userTabless" runat="server"></asp:Literal>
+                 
+
             </div>
-            
+            <asp:Button ID="btnAddAdmin" runat="server" CssClass="site-btn" Text="Add Admin" OnClick="btn_register"/>
+          
         </div>
+
     </section>
         </form>
 

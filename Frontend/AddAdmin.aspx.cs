@@ -17,84 +17,122 @@ namespace Frontend
 
 
 
+        protected string selectedUserId;
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
             {
-                dynamic users = sr.GetAllUsers();
-                
-                foreach (BackendReference.User_Table u in users)
-                {
-                    // Create a new table row for each user
-                    TableRow row = new TableRow();
+                dynamic users = sr.GetAllUsersNotAdmin();
 
-                    // Add cells with user data
-                    TableCell userIdCell = new TableCell();
-                    userIdCell.Text = u.User_Id.ToString();
-                    row.Cells.Add(userIdCell);
+                //foreach (BackendReference.User_Table u in users)
+                //{
+                //    // Create a new table row for each user
+                //    TableRow row = new TableRow();
 
-                    TableCell emailCell = new TableCell();
-                    emailCell.Text = u.Email;
-                    row.Cells.Add(emailCell);
+                //    // Add cells with user data
+                //    TableCell userIdCell = new TableCell();
+                //    userIdCell.Text = u.User_Id.ToString();
+                //    row.Cells.Add(userIdCell);
 
-                    TableCell nameCell = new TableCell();
-                    nameCell.Text = u.Name;
-                    row.Cells.Add(nameCell);
+                //    TableCell emailCell = new TableCell();
+                //    emailCell.Text = u.Email;
+                //    row.Cells.Add(emailCell);
 
-                    TableCell surnameCell = new TableCell();
-                    surnameCell.Text = u.Surname;
-                    row.Cells.Add(surnameCell);
+                //    TableCell nameCell = new TableCell();
+                //    nameCell.Text = u.Name;
+                //    row.Cells.Add(nameCell);
 
-                    TableCell phoneCell = new TableCell();
-                    phoneCell.Text = u.Phone_Number;
-                    row.Cells.Add(phoneCell);
+                //    TableCell surnameCell = new TableCell();
+                //    surnameCell.Text = u.Surname;
+                //    row.Cells.Add(surnameCell);
 
-                    // Add a placeholder for the button in the row
-                    TableCell actionCell = new TableCell();
-                    PlaceHolder buttonPlaceholder = new PlaceHolder();
-                    actionCell.Controls.Add(buttonPlaceholder);
-                    row.Cells.Add(actionCell);
+                //    TableCell phoneCell = new TableCell();
+                //    phoneCell.Text = u.Phone_Number;
+                //    row.Cells.Add(phoneCell);
 
-                    // Create a button and add it to the placeholder
-                    Button userButton = new Button();
-                    userButton.ID = "btnAddAdmin_" + u.User_Id; // Unique ID based on user ID
-                    userButton.Text = "Add Admin";
-                    userButton.CssClass = "site-btn";
-                    userButton.CommandArgument = u.User_Id.ToString() + "|" + u.Surname;
-                    userButton.Click += btn_register; // Attach the event handler
+                //    // Add a placeholder for the radio button in the row
+                //    TableCell actionCell = new TableCell();
+                //    PlaceHolder radioPlaceholder = new PlaceHolder();
+                //    actionCell.Controls.Add(radioPlaceholder);
+                //    row.Cells.Add(actionCell);
 
-                    buttonPlaceholder.Controls.Add(userButton);
+                //    // Create a radio button and add it to the placeholder
+                //    RadioButton userRadioButton = new RadioButton();
+                //    userRadioButton.ID = "rbtnAddAdmin_" + u.User_Id; // Unique ID based on user ID
+                //    userRadioButton.Text = "Add Admin";
+                //    userRadioButton.GroupName = "AdminGroup"; // Group radio buttons to select only one
+                //    userRadioButton.CssClass = "site-radio";
+                //    userRadioButton.Attributes["data-user-id"] = u.User_Id.ToString(); // Store user ID as an attribute
+                //    userRadioButton.CheckedChanged += userRadioButton_CheckedChanged; // Add event handler for radio button change
 
-                    // Add the row to the userTable
-                    userTable.Rows.Add(row);
+                //    radioPlaceholder.Controls.Add(userRadioButton);
 
-                }
+                //    // Add the row to the userTable
+                //    userTable.Rows.Add(row);
+
+                //}
+
+                displayUsers(users);
             }
         }
+        protected void userRadioButton_CheckedChanged(object sender, EventArgs e)
+        {
+            RadioButton selectedRadioButton = (RadioButton)sender;
+            selectedUserId = selectedRadioButton.Attributes["data-user-id"];
+        }
 
+        private void displayUsers(dynamic users)
+        {
+            string display = "<table class='styled-table'><thead><tr><th>Name</th><th>Surname</th><th>Email</th><th>Phone Number</th><th>Make Admin</th></tr></thead><tbody>";
+
+            foreach (BackendReference.User_Table u in users)
+            {
+                display += "<tr>";
+
+            
+                display += "<td>" + u.Surname + "</td>";
+                display += "<td>" + u.Name + "</td>";
+                display += "<td>" + u.Email + "</td>";
+                display += "<td>" + u.Phone_Number + "</td>";
+               
+
+                display += "<td>";
+                display += "<input type='radio' name='adminRadio' id='adminRadio' value='" + u.User_Id + "'>";
+                display += "</td>";
+
+                display += "</tr>";
+            }
+
+            display += "</tbody></table><br />";
+
+            userTabless.Text = display;
+        }
         protected void btn_register(object sender, EventArgs e)
         {
 
-            Button clickedButton = (Button)sender;
-            string commandArgument = clickedButton.CommandArgument;
+            string makeAdmin = Request.Form["adminRadio"];
 
-            string[] arguments = commandArgument.Split('|');
-            if (arguments.Length == 2)
+            if (!string.IsNullOrEmpty(makeAdmin))
             {
-                string userId = arguments[0];
-                string surname = arguments[1];
 
-                bool admin = sr.AddAdmin(int.Parse(userId), surname);
+                if (int.TryParse(makeAdmin, out int adminRadio))
+                {
 
-                if (admin)
-                {
-                    Response.Redirect("Login.aspx");
+                    sr.AddAdminTEST(adminRadio);
+
+
+                    dynamic updatedUsers = sr.GetAllUsersNotAdmin();
+
+                    
+                    displayUsers(updatedUsers);
+                    string script = "<script>alert('Successfully added admin');</script>";
+                    ClientScript.RegisterStartupScript(this.GetType(), "alert", script);
                 }
-                else
-                {
-                    error.Text = "Something went wrong OR the admin already exists";
-                    error.Visible = true;
-                }
+            }
+            else
+            {
+                string script = "<script>alert('Please select a User to make an admin.');</script>";
+                ClientScript.RegisterStartupScript(this.GetType(), "alert", script);
             }
         }
 
@@ -103,66 +141,101 @@ namespace Frontend
         private void PerformSearch()
         {
 
+
             string tx = txtSearch.Text;
-            
-            if (tx != null)
+
+            if (!string.IsNullOrEmpty(tx))
             {
-                
-               
-
-
-
-
                 // Call your service method to search for users by name
                 dynamic searchResults = sr.SearchUsersByName(tx);
 
-                // Clear the existing table rows
-                userTable.Rows.Clear();
+                // Create a string to store the HTML table
+                string tableHtml = "<table class='styled-table'><thead><tr><th>Name</th><th>Surname</th><th>Email</th><th>Phone Number</th><th>Make Admin</th></tr></thead><tbody>";
 
                 foreach (BackendReference.User_Table u in searchResults)
                 {
-                    // Create a new table row for each user
-                    TableRow row = new TableRow();
+                    tableHtml += "<tr>";
+                    tableHtml += "<td>" + u.Surname + "</td>";
+                    tableHtml += "<td>" + u.Name + "</td>";
+                    tableHtml += "<td>" + u.Email + "</td>";
+                    tableHtml += "<td>" + u.Phone_Number + "</td>";
+                    
 
-                    // Add cells with user data
-                    TableCell userIdCell = new TableCell();
-                    userIdCell.Text = u.User_Id.ToString();
-                    row.Cells.Add(userIdCell);
-
-                    TableCell emailCell = new TableCell();
-                    emailCell.Text = u.Email;
-                    row.Cells.Add(emailCell);
-
-                    TableCell nameCell = new TableCell();
-                    nameCell.Text = u.Name;
-                    row.Cells.Add(nameCell);
-
-                    TableCell surnameCell = new TableCell();
-                    surnameCell.Text = u.Surname;
-                    row.Cells.Add(surnameCell);
-
-                    TableCell phoneCell = new TableCell();
-                    phoneCell.Text = u.Phone_Number;
-                    row.Cells.Add(phoneCell);
-
-                    // Add a button for each user
-                    TableCell actionCell = new TableCell();
-                    Button userButton = new Button();
-                    userButton.ID = "btnAddAdmin"; // Give each button a unique ID
-                    userButton.Text = "Add Admin";
-                    userButton.CssClass = "site-btn";
-
-                    // Set the CommandArgument to pass user information to the event handler
-                    userButton.CommandArgument = u.User_Id.ToString() + "|" + u.Surname;
-                    userButton.Click += btn_register; // Attach an event handler
-                    actionCell.Controls.Add(userButton);
-                    row.Cells.Add(actionCell);
-
-                    // Add the row to the userTable
-                    userTable.Rows.Add(row);
+                    tableHtml += "<td>";
+                    tableHtml += "<input type='radio' name='adminRadio' id='adminRadio' value='" + u.User_Id + "'>";
+                    tableHtml += "</td>";
+                    tableHtml += "</tr>";
                 }
 
+                tableHtml += "</tbody></table><br />";
+
+                // Set the generated HTML to the userTabless Literal control
+                userTabless.Text = tableHtml;
             }
+
+            //string tx = txtSearch.Text;
+
+            //if (tx != null)
+            //{
+
+
+
+
+
+
+            //    // Call your service method to search for users by name
+            //    dynamic searchResults = sr.SearchUsersByName(tx);
+
+            //    // Clear the existing table rows
+            //    userTable.Rows.Clear();
+
+            //    foreach (BackendReference.User_Table u in searchResults)
+            //    {
+            //        // Create a new table row for each user
+            //        TableRow row = new TableRow();
+
+            //        // Add cells with user data
+            //        TableCell userIdCell = new TableCell();
+            //        userIdCell.Text = u.User_Id.ToString();
+            //        row.Cells.Add(userIdCell);
+
+            //        TableCell emailCell = new TableCell();
+            //        emailCell.Text = u.Email;
+            //        row.Cells.Add(emailCell);
+
+            //        TableCell nameCell = new TableCell();
+            //        nameCell.Text = u.Name;
+            //        row.Cells.Add(nameCell);
+
+            //        TableCell surnameCell = new TableCell();
+            //        surnameCell.Text = u.Surname;
+            //        row.Cells.Add(surnameCell);
+
+            //        TableCell phoneCell = new TableCell();
+            //        phoneCell.Text = u.Phone_Number;
+            //        row.Cells.Add(phoneCell);
+
+            //        // Add a placeholder for the radio button in the row
+            //        TableCell actionCell = new TableCell();
+            //        PlaceHolder radioPlaceholder = new PlaceHolder();
+            //        actionCell.Controls.Add(radioPlaceholder);
+            //        row.Cells.Add(actionCell);
+
+            //        // Create a radio button and add it to the placeholder
+            //        RadioButton userRadioButton = new RadioButton();
+            //        userRadioButton.ID = "rbtnAddAdmin_" + u.User_Id; // Unique ID based on user ID
+            //        userRadioButton.Text = "Add Admin";
+            //        userRadioButton.GroupName = "AdminGroup"; // Group radio buttons to select only one
+            //        userRadioButton.CssClass = "site-radio";
+            //        userRadioButton.Attributes["data-user-id"] = u.User_Id.ToString(); // Store user ID as an attribute
+
+            //        radioPlaceholder.Controls.Add(userRadioButton);
+
+            //        // Add the row to the userTable
+            //        userTable.Rows.Add(row);
+            //    }
+
+            //}
         }
         protected void btnSearch_Click(object sender, EventArgs e)
         {

@@ -1,22 +1,22 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/BabyHaven.Master" AutoEventWireup="true" CodeBehind="AddProduct.aspx.cs" Inherits="Frontend.AddProduct" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/BabyHaven.Master" AutoEventWireup="true" CodeBehind="EditProduct.aspx.cs" Inherits="Frontend.EditProduct" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-       <!-- Breadcrumb Begin -->
+           <!-- Breadcrumb Begin -->
     <div class="breadcrumb-option">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
                     <div class="breadcrumb__links">
                         <a href="Home.aspx"><i class="fa fa-home"></i> Home</a>
-                        <span>Add Products</span>
+                        <span>Edit Product</span>
                     </div>
                 </div>
             </div>
         </div>
     </div>
     <!-- Breadcrumb End -->
-     <form id="form1" runat="server">
+    <form id="form1" runat="server">
     <div class="AddProduct_Page">
         <div class="container">
            <div class="col-lg-10 offset-lg-1 text-left text-lg-right">
@@ -24,7 +24,7 @@
                 <table>
                     <thead>
                         <tr>
-                            <th class="addProduct">Add Product</th>
+                            <th class="addProduct">Edit Product</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -106,7 +106,7 @@
                 <div class="btn btn-link">
                     
                      
-                        <asp:Button ID="AddProds" class="site-btn" runat="server" Text="Add Product"  Width="198px" OnClick="AddProds_Click" />
+                        <asp:Button ID="edtpro" class="site-btn" runat="server" Text="Edit Product"  Width="198px" OnClick="edtpro_Click"  />
                     </div>
                 </div>
 
