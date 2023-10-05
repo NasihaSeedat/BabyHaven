@@ -131,20 +131,17 @@ namespace BabyHaven_Database
         int Checkout(int userId, decimal total, string firstname, string lastname, string email,
             string address, string city, string zipcode, string phoneno);
 
-        [OperationContract]
-        Order_Table GetInvoice(int id);
+
 
         [OperationContract]
-        Order_Item GetItem(int id);
+        List<Order_Table> GetAllInvoices(int userId);
 
         [OperationContract]
-        List<Order_Item> Getallitems();
+        Order_Table GetInvoiceDetails(int id);
 
         [OperationContract]
-        List<Order_Table> GetallInvoices();
+        List<Order_Item> GetOrderItems(int id);
 
-       //[OperationContract]
-      // List<Order_Table> GetInvoicebyclient(int clientid);
 
     }
 }

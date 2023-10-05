@@ -1092,29 +1092,23 @@ namespace Frontend.BackendReference {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBabyHavenService/Checkout", ReplyAction="http://tempuri.org/IBabyHavenService/CheckoutResponse")]
         System.Threading.Tasks.Task<int> CheckoutAsync(int userId, decimal total, string firstname, string lastname, string email, string address, string city, string zipcode, string phoneno);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBabyHavenService/GetInvoice", ReplyAction="http://tempuri.org/IBabyHavenService/GetInvoiceResponse")]
-        Frontend.BackendReference.Order_Table GetInvoice(int id);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBabyHavenService/GetAllInvoices", ReplyAction="http://tempuri.org/IBabyHavenService/GetAllInvoicesResponse")]
+        Frontend.BackendReference.Order_Table[] GetAllInvoices(int userId);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBabyHavenService/GetInvoice", ReplyAction="http://tempuri.org/IBabyHavenService/GetInvoiceResponse")]
-        System.Threading.Tasks.Task<Frontend.BackendReference.Order_Table> GetInvoiceAsync(int id);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBabyHavenService/GetAllInvoices", ReplyAction="http://tempuri.org/IBabyHavenService/GetAllInvoicesResponse")]
+        System.Threading.Tasks.Task<Frontend.BackendReference.Order_Table[]> GetAllInvoicesAsync(int userId);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBabyHavenService/GetItem", ReplyAction="http://tempuri.org/IBabyHavenService/GetItemResponse")]
-        Frontend.BackendReference.Order_Item GetItem(int id);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBabyHavenService/GetInvoiceDetails", ReplyAction="http://tempuri.org/IBabyHavenService/GetInvoiceDetailsResponse")]
+        Frontend.BackendReference.Order_Table GetInvoiceDetails(int id);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBabyHavenService/GetItem", ReplyAction="http://tempuri.org/IBabyHavenService/GetItemResponse")]
-        System.Threading.Tasks.Task<Frontend.BackendReference.Order_Item> GetItemAsync(int id);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBabyHavenService/GetInvoiceDetails", ReplyAction="http://tempuri.org/IBabyHavenService/GetInvoiceDetailsResponse")]
+        System.Threading.Tasks.Task<Frontend.BackendReference.Order_Table> GetInvoiceDetailsAsync(int id);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBabyHavenService/Getallitems", ReplyAction="http://tempuri.org/IBabyHavenService/GetallitemsResponse")]
-        Frontend.BackendReference.Order_Item[] Getallitems();
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBabyHavenService/GetOrderItems", ReplyAction="http://tempuri.org/IBabyHavenService/GetOrderItemsResponse")]
+        Frontend.BackendReference.Order_Item[] GetOrderItems(int id);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBabyHavenService/Getallitems", ReplyAction="http://tempuri.org/IBabyHavenService/GetallitemsResponse")]
-        System.Threading.Tasks.Task<Frontend.BackendReference.Order_Item[]> GetallitemsAsync();
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBabyHavenService/GetallInvoices", ReplyAction="http://tempuri.org/IBabyHavenService/GetallInvoicesResponse")]
-        Frontend.BackendReference.Order_Table[] GetallInvoices();
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBabyHavenService/GetallInvoices", ReplyAction="http://tempuri.org/IBabyHavenService/GetallInvoicesResponse")]
-        System.Threading.Tasks.Task<Frontend.BackendReference.Order_Table[]> GetallInvoicesAsync();
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBabyHavenService/GetOrderItems", ReplyAction="http://tempuri.org/IBabyHavenService/GetOrderItemsResponse")]
+        System.Threading.Tasks.Task<Frontend.BackendReference.Order_Item[]> GetOrderItemsAsync(int id);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -1432,36 +1426,28 @@ namespace Frontend.BackendReference {
             return base.Channel.CheckoutAsync(userId, total, firstname, lastname, email, address, city, zipcode, phoneno);
         }
         
-        public Frontend.BackendReference.Order_Table GetInvoice(int id) {
-            return base.Channel.GetInvoice(id);
+        public Frontend.BackendReference.Order_Table[] GetAllInvoices(int userId) {
+            return base.Channel.GetAllInvoices(userId);
         }
         
-        public System.Threading.Tasks.Task<Frontend.BackendReference.Order_Table> GetInvoiceAsync(int id) {
-            return base.Channel.GetInvoiceAsync(id);
+        public System.Threading.Tasks.Task<Frontend.BackendReference.Order_Table[]> GetAllInvoicesAsync(int userId) {
+            return base.Channel.GetAllInvoicesAsync(userId);
         }
         
-        public Frontend.BackendReference.Order_Item GetItem(int id) {
-            return base.Channel.GetItem(id);
+        public Frontend.BackendReference.Order_Table GetInvoiceDetails(int id) {
+            return base.Channel.GetInvoiceDetails(id);
         }
         
-        public System.Threading.Tasks.Task<Frontend.BackendReference.Order_Item> GetItemAsync(int id) {
-            return base.Channel.GetItemAsync(id);
+        public System.Threading.Tasks.Task<Frontend.BackendReference.Order_Table> GetInvoiceDetailsAsync(int id) {
+            return base.Channel.GetInvoiceDetailsAsync(id);
         }
         
-        public Frontend.BackendReference.Order_Item[] Getallitems() {
-            return base.Channel.Getallitems();
+        public Frontend.BackendReference.Order_Item[] GetOrderItems(int id) {
+            return base.Channel.GetOrderItems(id);
         }
         
-        public System.Threading.Tasks.Task<Frontend.BackendReference.Order_Item[]> GetallitemsAsync() {
-            return base.Channel.GetallitemsAsync();
-        }
-        
-        public Frontend.BackendReference.Order_Table[] GetallInvoices() {
-            return base.Channel.GetallInvoices();
-        }
-        
-        public System.Threading.Tasks.Task<Frontend.BackendReference.Order_Table[]> GetallInvoicesAsync() {
-            return base.Channel.GetallInvoicesAsync();
+        public System.Threading.Tasks.Task<Frontend.BackendReference.Order_Item[]> GetOrderItemsAsync(int id) {
+            return base.Channel.GetOrderItemsAsync(id);
         }
     }
 }

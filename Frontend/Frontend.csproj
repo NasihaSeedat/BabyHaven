@@ -74,42 +74,29 @@
     <Content Include="Blog.aspx" />
     <Content Include="Cart.aspx" />
     <Content Include="Checkout.aspx" />
-    <None Include="Connected Services\BackendReference\BabyHavenService.disco" />
     <Content Include="BabyHaven.Master" />
-    <None Include="Connected Services\BackendReference\BabyHavenService.wsdl" />
-    <None Include="Connected Services\BackendReference\BabyHavenService.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Connected Services\BackendReference\BabyHavenService1.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Connected Services\BackendReference\BabyHavenService2.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Connected Services\BackendReference\BabyHavenService3.xsd">
-      <SubType>Designer</SubType>
-    </None>
+    <None Include="Connected Services\BackendReference\BabyHavenService.disco" />
     <None Include="Connected Services\BackendReference\configuration91.svcinfo" />
     <None Include="Connected Services\BackendReference\configuration.svcinfo" />
     <Content Include="Connected Services\BackendReference\Frontend.BackendReference.Admin.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
+    <Content Include="Connected Services\BackendReference\Frontend.BackendReference.Cart.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
     <Content Include="Connected Services\BackendReference\Frontend.BackendReference.Client.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
-    <Content Include="Connected Services\BackendReference\Frontend.BackendReference.User_Table.datasource">
+    <Content Include="Connected Services\BackendReference\Frontend.BackendReference.Order_Table.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
     <Content Include="Connected Services\BackendReference\Frontend.BackendReference.Product.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
-    <Content Include="Connected Services\BackendReference\Frontend.BackendReference.Cart.datasource">
+    <Content Include="Connected Services\BackendReference\Frontend.BackendReference.User_Table.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
     <Content Include="Connected Services\BackendReference\Frontend.BackendReference.Order_Item.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Content>
-    <Content Include="Connected Services\BackendReference\Frontend.BackendReference.Order_Table.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
     <None Include="Connected Services\BackendReference\Reference.svcmap">
@@ -127,6 +114,7 @@
     <Content Include="css\style.css" />
     <Content Include="EditProduct.aspx" />
     <Content Include="Home.aspx" />
+    <Content Include="InvoiceDetails.aspx" />
     <Content Include="Invoices.aspx" />
     <Content Include="js\bootstrap.min.js" />
     <Content Include="js\jquery-3.3.1.min.js" />
@@ -216,6 +204,13 @@
     <Compile Include="Home.aspx.designer.cs">
       <DependentUpon>Home.aspx</DependentUpon>
     </Compile>
+    <Compile Include="InvoiceDetails.aspx.cs">
+      <DependentUpon>InvoiceDetails.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="InvoiceDetails.aspx.designer.cs">
+      <DependentUpon>InvoiceDetails.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Invoices.aspx.cs">
       <DependentUpon>Invoices.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -268,6 +263,19 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <None Include="Connected Services\BackendReference\BabyHavenService.wsdl" />
+    <None Include="Connected Services\BackendReference\BabyHavenService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\BackendReference\BabyHavenService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\BackendReference\BabyHavenService2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\BackendReference\BabyHavenService3.xsd">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="packages.config" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>

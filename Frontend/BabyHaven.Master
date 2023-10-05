@@ -83,6 +83,9 @@
 
                             </li>
                             <li><a href="Contact.aspx">About Us</a></li>
+
+                            <li id="invoices" visible="true" runat="server"><a href="Invoices.aspx">Invoices</a></li>
+
                             <li runat="server" id="adminLink" visible="false">
                                 <a href="#">Admin Panel</a>
                                 <ul class="dropdown" id="DropAdmin" visible="false" runat="server">
