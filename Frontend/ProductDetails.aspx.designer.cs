@@ -7,10 +7,12 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Frontend {
+namespace Frontend
+{
 
 
-    public partial class ProductDetails {
+    public partial class ProductDetails
+    {
 
         /// <summary>
         /// categoryLabel control.
@@ -74,6 +76,24 @@ namespace Frontend {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button addtocart;
+
+        /// <summary>
+        /// editprods control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button editprods;
+
+        /// <summary>
+        /// removeprods control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button removeprods;
 
         /// <summary>
         /// availabilityLabel control.

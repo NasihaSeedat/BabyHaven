@@ -52,7 +52,10 @@
                         </div>
                         <div class="product__details__button">
                             <form runat="server">
-                                <asp:Button runat="server" ID="addtocart" OnClick="AddToCart_Click" Text="Add to cart" CssClass="btn-AddtoCart" />
+                                <asp:Button runat="server" ID="addtocart" OnClick="AddToCart_Click" Text="Add to cart" CssClass="btn-AddtoCart" Visible="true" />
+                                <br />
+                                <asp:Button ID="editprods" runat="server" cssclass="btn-AdminBut" Text="Edit Product" Visible="false" OnClick="editprods_Click"/><br />
+                                <asp:Button ID="removeprods" runat="server" cssclass="btn-AdminBut" Text="Remove Product" Visible="false" OnClick="removeprods_Click"/><br />
                             </form>
                         </div>
                         <div class="product__details__widget">
