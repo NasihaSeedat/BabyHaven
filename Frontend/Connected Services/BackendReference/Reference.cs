@@ -310,99 +310,6 @@ namespace Frontend.BackendReference {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="Cart", Namespace="http://schemas.datacontract.org/2004/07/BabyHaven_Database")]
-    [System.SerializableAttribute()]
-    public partial class Cart : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private decimal Cart_PriceField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int Cart_QuantityField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int P_IdField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int U_IdField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public decimal Cart_Price {
-            get {
-                return this.Cart_PriceField;
-            }
-            set {
-                if ((this.Cart_PriceField.Equals(value) != true)) {
-                    this.Cart_PriceField = value;
-                    this.RaisePropertyChanged("Cart_Price");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int Cart_Quantity {
-            get {
-                return this.Cart_QuantityField;
-            }
-            set {
-                if ((this.Cart_QuantityField.Equals(value) != true)) {
-                    this.Cart_QuantityField = value;
-                    this.RaisePropertyChanged("Cart_Quantity");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int P_Id {
-            get {
-                return this.P_IdField;
-            }
-            set {
-                if ((this.P_IdField.Equals(value) != true)) {
-                    this.P_IdField = value;
-                    this.RaisePropertyChanged("P_Id");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int U_Id {
-            get {
-                return this.U_IdField;
-            }
-            set {
-                if ((this.U_IdField.Equals(value) != true)) {
-                    this.U_IdField = value;
-                    this.RaisePropertyChanged("U_Id");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="Product", Namespace="http://schemas.datacontract.org/2004/07/BabyHaven_Database")]
     [System.SerializableAttribute()]
     public partial class Product : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
@@ -560,6 +467,99 @@ namespace Frontend.BackendReference {
                 if ((this.isActiveField.Equals(value) != true)) {
                     this.isActiveField = value;
                     this.RaisePropertyChanged("isActive");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Cart", Namespace="http://schemas.datacontract.org/2004/07/BabyHaven_Database")]
+    [System.SerializableAttribute()]
+    public partial class Cart : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private decimal Cart_PriceField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int Cart_QuantityField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int P_IdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int U_IdField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public decimal Cart_Price {
+            get {
+                return this.Cart_PriceField;
+            }
+            set {
+                if ((this.Cart_PriceField.Equals(value) != true)) {
+                    this.Cart_PriceField = value;
+                    this.RaisePropertyChanged("Cart_Price");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int Cart_Quantity {
+            get {
+                return this.Cart_QuantityField;
+            }
+            set {
+                if ((this.Cart_QuantityField.Equals(value) != true)) {
+                    this.Cart_QuantityField = value;
+                    this.RaisePropertyChanged("Cart_Quantity");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int P_Id {
+            get {
+                return this.P_IdField;
+            }
+            set {
+                if ((this.P_IdField.Equals(value) != true)) {
+                    this.P_IdField = value;
+                    this.RaisePropertyChanged("P_Id");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int U_Id {
+            get {
+                return this.U_IdField;
+            }
+            set {
+                if ((this.U_IdField.Equals(value) != true)) {
+                    this.U_IdField = value;
+                    this.RaisePropertyChanged("U_Id");
                 }
             }
         }
@@ -942,6 +942,12 @@ namespace Frontend.BackendReference {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBabyHavenService/SearchUsersByName", ReplyAction="http://tempuri.org/IBabyHavenService/SearchUsersByNameResponse")]
         System.Threading.Tasks.Task<Frontend.BackendReference.User_Table[]> SearchUsersByNameAsync(string searchQuery);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBabyHavenService/SearchProducts", ReplyAction="http://tempuri.org/IBabyHavenService/SearchProductsResponse")]
+        Frontend.BackendReference.Product[] SearchProducts(string searchQuery);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBabyHavenService/SearchProducts", ReplyAction="http://tempuri.org/IBabyHavenService/SearchProductsResponse")]
+        System.Threading.Tasks.Task<Frontend.BackendReference.Product[]> SearchProductsAsync(string searchQuery);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBabyHavenService/AddToCart", ReplyAction="http://tempuri.org/IBabyHavenService/AddToCartResponse")]
         bool AddToCart(int uId, int pId);
         
@@ -1224,6 +1230,14 @@ namespace Frontend.BackendReference {
         
         public System.Threading.Tasks.Task<Frontend.BackendReference.User_Table[]> SearchUsersByNameAsync(string searchQuery) {
             return base.Channel.SearchUsersByNameAsync(searchQuery);
+        }
+        
+        public Frontend.BackendReference.Product[] SearchProducts(string searchQuery) {
+            return base.Channel.SearchProducts(searchQuery);
+        }
+        
+        public System.Threading.Tasks.Task<Frontend.BackendReference.Product[]> SearchProductsAsync(string searchQuery) {
+            return base.Channel.SearchProductsAsync(searchQuery);
         }
         
         public bool AddToCart(int uId, int pId) {

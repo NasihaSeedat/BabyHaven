@@ -10,7 +10,19 @@
             <div class="row">
                 <div class="col-lg-3 col-md-3">
                     <div class="shop__sidebar">
+
+                     <%-- <span class="icon_search search-switch"></span>--%>
+                        
+
+                        <form runat="server">
+                          <div class="search-container">
+    <asp:TextBox ID="txtSearch" CssClass="search-bar" placeholder="Search for product" runat="server"></asp:TextBox>
+    <asp:Button ID="btnSearch" runat="server" Text="" CssClass="search-button" style=" margin-left: 5px;" OnClick="btnSearch_Click" /><br />
+</div>
+
+                        
                         <div class="sidebar__categories">
+                            <br />
                             <div class="section-title">
                                 <h4>Sort By Categories</h4>
                             </div>
@@ -35,7 +47,7 @@
                                 <h4>Sort by price</h4>
                             </div>
                             <div class="priceFilter">
-                                <form runat="server">
+                                
                                     <label for="minPrice">Min Price:</label>
                                     <select id="minPrice" runat="server">
                                         <option value="0">R0</option>

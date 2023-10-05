@@ -156,10 +156,21 @@ namespace Frontend {
 
             displaymethod(sortedProds.ToList());
         }
+        private void PerformSearch()
+        {
+            string tx = txtSearch.Text;
 
+            if (!string.IsNullOrEmpty(tx))
+            {
+                dynamic searchResults = client.SearchProducts(tx);
 
-
-
+                displaymethod(searchResults);
+            }
+        }
+        protected void btnSearch_Click(object sender, EventArgs e)
+        {
+            PerformSearch();
+        }
     }
 
 }
