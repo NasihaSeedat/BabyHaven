@@ -116,7 +116,9 @@ namespace Frontend
                 else if(discountCode.Equals("BABYHAVEN", StringComparison.OrdinalIgnoreCase)) {
                     discountRate = 0.10m; // 20% discount for CODE2
                 }
-                // Add more conditions for other discount codes as needed
+                else if(discountCode.Equals("PROJECTSDAY", StringComparison.OrdinalIgnoreCase)) {
+                    discountRate = 0.50m; // 20% discount for CODE2
+                }
             }
 
             return subtotal * discountRate;

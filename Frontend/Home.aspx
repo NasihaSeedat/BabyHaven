@@ -106,8 +106,8 @@
                 <div class="col-lg-6 p-0">
                     <div class="discount__text">
                         <div class="discount__text__title">
-                            <span>Discount</span>
-                            <h2>Summer 2019</h2>
+                            <span>Countdown</span>
+                            <h2>Projects Day 2023</h2>
                             <h5><span>Sale</span> 50%</h5>
                         </div>
                         <div class="discount__countdown" id="countdown-time">
@@ -128,7 +128,7 @@
                                 <p>Sec</p>
                             </div>
                         </div>
-                        <a href="#">Shop now</a>
+                        <a href="Shop.aspx">Shop now</a>
                     </div>
                 </div>
             </div>
