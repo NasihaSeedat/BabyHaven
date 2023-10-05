@@ -838,11 +838,11 @@ namespace BabyHaven_Database
             }
         }
 
-        public Order_Table GetInvoice(int id)
-        {
-            var order = (from o in db.Order_Tables
-                         where o.O_Id.Equals(id)
-                         select o).FirstOrDefault();
+        //public Order_Table GetInvoice(int id)
+        //{
+        //    var order = (from o in db.Order_Tables
+        //                 where o.O_Id.Equals(id)
+        //                 select o).FirstOrDefault();
 
         //    if (order == null)
         //    {
