@@ -779,99 +779,6 @@ namespace Frontend.BackendReference {
         }
     }
     
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="Order_Item", Namespace="http://schemas.datacontract.org/2004/07/BabyHaven_Database")]
-    [System.SerializableAttribute()]
-    public partial class Order_Item : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int O_IdField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int Order_Item_IdField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int Product_IdField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int QuantityField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int O_Id {
-            get {
-                return this.O_IdField;
-            }
-            set {
-                if ((this.O_IdField.Equals(value) != true)) {
-                    this.O_IdField = value;
-                    this.RaisePropertyChanged("O_Id");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int Order_Item_Id {
-            get {
-                return this.Order_Item_IdField;
-            }
-            set {
-                if ((this.Order_Item_IdField.Equals(value) != true)) {
-                    this.Order_Item_IdField = value;
-                    this.RaisePropertyChanged("Order_Item_Id");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int Product_Id {
-            get {
-                return this.Product_IdField;
-            }
-            set {
-                if ((this.Product_IdField.Equals(value) != true)) {
-                    this.Product_IdField = value;
-                    this.RaisePropertyChanged("Product_Id");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int Quantity {
-            get {
-                return this.QuantityField;
-            }
-            set {
-                if ((this.QuantityField.Equals(value) != true)) {
-                    this.QuantityField = value;
-                    this.RaisePropertyChanged("Quantity");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="BackendReference.IBabyHavenService")]
     public interface IBabyHavenService {
@@ -1080,29 +987,17 @@ namespace Frontend.BackendReference {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBabyHavenService/Checkout", ReplyAction="http://tempuri.org/IBabyHavenService/CheckoutResponse")]
         System.Threading.Tasks.Task<int> CheckoutAsync(int userId, decimal total, string firstname, string lastname, string email, string address, string city, string zipcode, string phoneno);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBabyHavenService/GetInvoice", ReplyAction="http://tempuri.org/IBabyHavenService/GetInvoiceResponse")]
-        Frontend.BackendReference.Order_Table GetInvoice(int id);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBabyHavenService/GetAllInvoices", ReplyAction="http://tempuri.org/IBabyHavenService/GetAllInvoicesResponse")]
+        Frontend.BackendReference.Order_Table[] GetAllInvoices(int userId);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBabyHavenService/GetInvoice", ReplyAction="http://tempuri.org/IBabyHavenService/GetInvoiceResponse")]
-        System.Threading.Tasks.Task<Frontend.BackendReference.Order_Table> GetInvoiceAsync(int id);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBabyHavenService/GetAllInvoices", ReplyAction="http://tempuri.org/IBabyHavenService/GetAllInvoicesResponse")]
+        System.Threading.Tasks.Task<Frontend.BackendReference.Order_Table[]> GetAllInvoicesAsync(int userId);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBabyHavenService/GetItem", ReplyAction="http://tempuri.org/IBabyHavenService/GetItemResponse")]
-        Frontend.BackendReference.Order_Item GetItem(int id);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBabyHavenService/GetInvoiceDetails", ReplyAction="http://tempuri.org/IBabyHavenService/GetInvoiceDetailsResponse")]
+        Frontend.BackendReference.Order_Table GetInvoiceDetails(int id);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBabyHavenService/GetItem", ReplyAction="http://tempuri.org/IBabyHavenService/GetItemResponse")]
-        System.Threading.Tasks.Task<Frontend.BackendReference.Order_Item> GetItemAsync(int id);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBabyHavenService/Getallitems", ReplyAction="http://tempuri.org/IBabyHavenService/GetallitemsResponse")]
-        Frontend.BackendReference.Order_Item[] Getallitems();
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBabyHavenService/Getallitems", ReplyAction="http://tempuri.org/IBabyHavenService/GetallitemsResponse")]
-        System.Threading.Tasks.Task<Frontend.BackendReference.Order_Item[]> GetallitemsAsync();
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBabyHavenService/GetallInvoices", ReplyAction="http://tempuri.org/IBabyHavenService/GetallInvoicesResponse")]
-        Frontend.BackendReference.Order_Table[] GetallInvoices();
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBabyHavenService/GetallInvoices", ReplyAction="http://tempuri.org/IBabyHavenService/GetallInvoicesResponse")]
-        System.Threading.Tasks.Task<Frontend.BackendReference.Order_Table[]> GetallInvoicesAsync();
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBabyHavenService/GetInvoiceDetails", ReplyAction="http://tempuri.org/IBabyHavenService/GetInvoiceDetailsResponse")]
+        System.Threading.Tasks.Task<Frontend.BackendReference.Order_Table> GetInvoiceDetailsAsync(int id);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -1404,36 +1299,20 @@ namespace Frontend.BackendReference {
             return base.Channel.CheckoutAsync(userId, total, firstname, lastname, email, address, city, zipcode, phoneno);
         }
         
-        public Frontend.BackendReference.Order_Table GetInvoice(int id) {
-            return base.Channel.GetInvoice(id);
+        public Frontend.BackendReference.Order_Table[] GetAllInvoices(int userId) {
+            return base.Channel.GetAllInvoices(userId);
         }
         
-        public System.Threading.Tasks.Task<Frontend.BackendReference.Order_Table> GetInvoiceAsync(int id) {
-            return base.Channel.GetInvoiceAsync(id);
+        public System.Threading.Tasks.Task<Frontend.BackendReference.Order_Table[]> GetAllInvoicesAsync(int userId) {
+            return base.Channel.GetAllInvoicesAsync(userId);
         }
         
-        public Frontend.BackendReference.Order_Item GetItem(int id) {
-            return base.Channel.GetItem(id);
+        public Frontend.BackendReference.Order_Table GetInvoiceDetails(int id) {
+            return base.Channel.GetInvoiceDetails(id);
         }
         
-        public System.Threading.Tasks.Task<Frontend.BackendReference.Order_Item> GetItemAsync(int id) {
-            return base.Channel.GetItemAsync(id);
-        }
-        
-        public Frontend.BackendReference.Order_Item[] Getallitems() {
-            return base.Channel.Getallitems();
-        }
-        
-        public System.Threading.Tasks.Task<Frontend.BackendReference.Order_Item[]> GetallitemsAsync() {
-            return base.Channel.GetallitemsAsync();
-        }
-        
-        public Frontend.BackendReference.Order_Table[] GetallInvoices() {
-            return base.Channel.GetallInvoices();
-        }
-        
-        public System.Threading.Tasks.Task<Frontend.BackendReference.Order_Table[]> GetallInvoicesAsync() {
-            return base.Channel.GetallInvoicesAsync();
+        public System.Threading.Tasks.Task<Frontend.BackendReference.Order_Table> GetInvoiceDetailsAsync(int id) {
+            return base.Channel.GetInvoiceDetailsAsync(id);
         }
     }
 }

@@ -75,44 +75,26 @@
     <Content Include="Blog.aspx" />
     <Content Include="Cart.aspx" />
     <Content Include="Checkout.aspx" />
-    <None Include="Connected Services\BackendReference\BabyHavenService.disco" />
     <Content Include="BabyHaven.Master" />
-    <None Include="Connected Services\BackendReference\BabyHavenService.wsdl" />
-    <None Include="Connected Services\BackendReference\BabyHavenService.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Connected Services\BackendReference\BabyHavenService1.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Connected Services\BackendReference\BabyHavenService2.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Connected Services\BackendReference\BabyHavenService3.xsd">
-      <SubType>Designer</SubType>
-    </None>
+    <None Include="Connected Services\BackendReference\BabyHavenService.disco" />
     <None Include="Connected Services\BackendReference\configuration91.svcinfo" />
     <None Include="Connected Services\BackendReference\configuration.svcinfo" />
     <Content Include="Connected Services\BackendReference\Frontend.BackendReference.Admin.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
+    <Content Include="Connected Services\BackendReference\Frontend.BackendReference.Cart.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
     <Content Include="Connected Services\BackendReference\Frontend.BackendReference.Client.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
-    <Content Include="Connected Services\BackendReference\Frontend.BackendReference.User_Table.datasource">
+    <Content Include="Connected Services\BackendReference\Frontend.BackendReference.Order_Table.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
     <Content Include="Connected Services\BackendReference\Frontend.BackendReference.Product.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
-    <Content Include="Connected Services\BackendReference\Frontend.BackendReference.Cart.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Content>
-
-    <Content Include="Connected Services\BackendReference\Frontend.BackendReference.Order_Item.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Content>
-
-    <Content Include="Connected Services\BackendReference\Frontend.BackendReference.Order_Table.datasource">
+    <Content Include="Connected Services\BackendReference\Frontend.BackendReference.User_Table.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
     <None Include="Connected Services\BackendReference\Reference.svcmap">
@@ -286,6 +268,19 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <None Include="Connected Services\BackendReference\BabyHavenService.wsdl" />
+    <None Include="Connected Services\BackendReference\BabyHavenService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\BackendReference\BabyHavenService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\BackendReference\BabyHavenService2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\BackendReference\BabyHavenService3.xsd">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="packages.config" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
