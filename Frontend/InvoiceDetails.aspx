@@ -2,7 +2,7 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 
-<style>
+    <style>
         /* Add your CSS styles here */
         .invoice-container {
             max-width: 800px; /* Increase container width */
@@ -31,11 +31,11 @@
             text-align: center;
         }
 
-        .return-link a {
-            text-decoration: none;
-            font-weight: bold;
-            color: #007BFF;
-        }
+            .return-link a {
+                text-decoration: none;
+                font-weight: bold;
+                color: #007BFF;
+            }
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
@@ -69,7 +69,7 @@
                 <span class="invoice-value" runat="server" id="LastNameValue"></span>
             </div>
         </div>
-       
+
         <div class="row">
             <div class="col-md-6">
                 <asp:Label ID="DateLabel" runat="server" CssClass="invoice-label" Text="Date:" />
@@ -133,5 +133,50 @@
             </div>
         </div>
     </div>
+    <section class="shop-cart spad">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="shop__cart__table">
+                        <form runat="server">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Product</th>
+                                        <th>Price</th>
+                                        <th>Quantity</th>
+                                       
+                                        <th></th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <asp:Repeater ID="OrderTable" runat="server">
+                                        <ItemTemplate>
+                                            <tr>
+                                                <td class="cart__product__item">
+                                                    <img src='<%# GetProductImage(Eval("Product_ID")) %>' alt='<%# GetProductName(Eval("Product_ID")) %>'>
+                                                    <div class="cart__product__item__title">
+                                                        <h6><%# GetProductName(Eval("Product_ID")) %></h6>
+                                                    </div>
+                                                </td>
+                                                <td class="cart__price"><%# GetProductPrice(Eval("Product_ID")) %></td>
+                                                <td class="cart__quantity">
+                                                    <div class="pro-qty">
 
+                                                        <asp:TextBox runat="server" ID="QuantityTextBox" Text='<%# Eval("Quantity") %>' CssClass="quantity-input" />
+
+                                                    </div>
+                                                </td>
+
+                                            </tr>
+                                        </ItemTemplate>
+                                    </asp:Repeater>
+
+
+                                </tbody>
+                            </table>
+                        </form>
+                    </div>
+                </div>
+            </div>
 </asp:Content>

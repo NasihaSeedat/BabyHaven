@@ -38,7 +38,7 @@ namespace Frontend
             {
                 adminLink.Visible = true;
                 DropAdmin.Visible = true;
-                invoices.Visible = false;
+                invoices.Visible = true;
             }
             else if(Session["LoggedInUserType"] == null && Session["LoggedInUserID"]==null)
             {

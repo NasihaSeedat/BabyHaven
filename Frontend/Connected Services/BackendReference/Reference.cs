@@ -779,6 +779,99 @@ namespace Frontend.BackendReference {
         }
     }
     
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Order_Item", Namespace="http://schemas.datacontract.org/2004/07/BabyHaven_Database")]
+    [System.SerializableAttribute()]
+    public partial class Order_Item : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int O_IdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int Order_Item_IdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int Product_IdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int QuantityField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int O_Id {
+            get {
+                return this.O_IdField;
+            }
+            set {
+                if ((this.O_IdField.Equals(value) != true)) {
+                    this.O_IdField = value;
+                    this.RaisePropertyChanged("O_Id");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int Order_Item_Id {
+            get {
+                return this.Order_Item_IdField;
+            }
+            set {
+                if ((this.Order_Item_IdField.Equals(value) != true)) {
+                    this.Order_Item_IdField = value;
+                    this.RaisePropertyChanged("Order_Item_Id");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int Product_Id {
+            get {
+                return this.Product_IdField;
+            }
+            set {
+                if ((this.Product_IdField.Equals(value) != true)) {
+                    this.Product_IdField = value;
+                    this.RaisePropertyChanged("Product_Id");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int Quantity {
+            get {
+                return this.QuantityField;
+            }
+            set {
+                if ((this.QuantityField.Equals(value) != true)) {
+                    this.QuantityField = value;
+                    this.RaisePropertyChanged("Quantity");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="BackendReference.IBabyHavenService")]
     public interface IBabyHavenService {
@@ -998,6 +1091,12 @@ namespace Frontend.BackendReference {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBabyHavenService/GetInvoiceDetails", ReplyAction="http://tempuri.org/IBabyHavenService/GetInvoiceDetailsResponse")]
         System.Threading.Tasks.Task<Frontend.BackendReference.Order_Table> GetInvoiceDetailsAsync(int id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBabyHavenService/GetOrderItems", ReplyAction="http://tempuri.org/IBabyHavenService/GetOrderItemsResponse")]
+        Frontend.BackendReference.Order_Item[] GetOrderItems(int id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBabyHavenService/GetOrderItems", ReplyAction="http://tempuri.org/IBabyHavenService/GetOrderItemsResponse")]
+        System.Threading.Tasks.Task<Frontend.BackendReference.Order_Item[]> GetOrderItemsAsync(int id);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -1313,6 +1412,14 @@ namespace Frontend.BackendReference {
         
         public System.Threading.Tasks.Task<Frontend.BackendReference.Order_Table> GetInvoiceDetailsAsync(int id) {
             return base.Channel.GetInvoiceDetailsAsync(id);
+        }
+        
+        public Frontend.BackendReference.Order_Item[] GetOrderItems(int id) {
+            return base.Channel.GetOrderItems(id);
+        }
+        
+        public System.Threading.Tasks.Task<Frontend.BackendReference.Order_Item[]> GetOrderItemsAsync(int id) {
+            return base.Channel.GetOrderItemsAsync(id);
         }
     }
 }

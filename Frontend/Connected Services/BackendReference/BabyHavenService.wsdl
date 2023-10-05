@@ -224,6 +224,12 @@
   <wsdl:message name="IBabyHavenService_GetInvoiceDetails_OutputMessage">
     <wsdl:part name="parameters" element="tns:GetInvoiceDetailsResponse" />
   </wsdl:message>
+  <wsdl:message name="IBabyHavenService_GetOrderItems_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetOrderItems" />
+  </wsdl:message>
+  <wsdl:message name="IBabyHavenService_GetOrderItems_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetOrderItemsResponse" />
+  </wsdl:message>
   <wsdl:portType name="IBabyHavenService">
     <wsdl:operation name="Login">
       <wsdl:input wsaw:Action="http://tempuri.org/IBabyHavenService/Login" message="tns:IBabyHavenService_Login_InputMessage" />
@@ -368,6 +374,10 @@
     <wsdl:operation name="GetInvoiceDetails">
       <wsdl:input wsaw:Action="http://tempuri.org/IBabyHavenService/GetInvoiceDetails" message="tns:IBabyHavenService_GetInvoiceDetails_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IBabyHavenService/GetInvoiceDetailsResponse" message="tns:IBabyHavenService_GetInvoiceDetails_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetOrderItems">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBabyHavenService/GetOrderItems" message="tns:IBabyHavenService_GetOrderItems_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBabyHavenService/GetOrderItemsResponse" message="tns:IBabyHavenService_GetOrderItems_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_IBabyHavenService" type="tns:IBabyHavenService">
@@ -689,6 +699,15 @@
     </wsdl:operation>
     <wsdl:operation name="GetInvoiceDetails">
       <soap:operation soapAction="http://tempuri.org/IBabyHavenService/GetInvoiceDetails" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetOrderItems">
+      <soap:operation soapAction="http://tempuri.org/IBabyHavenService/GetOrderItems" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
