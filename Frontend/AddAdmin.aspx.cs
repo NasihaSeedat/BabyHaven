@@ -22,7 +22,7 @@ namespace Frontend
         {
             if (!IsPostBack)
             {
-                dynamic users = sr.GetAllUsers();
+                dynamic users = sr.GetAllUsersNotAdmin();
 
                 //foreach (BackendReference.User_Table u in users)
                 //{
@@ -83,7 +83,7 @@ namespace Frontend
 
         private void displayUsers(dynamic users)
         {
-            string display = "<div style='text-align: center;'><table class='styled-table'><thead><tr><th>Name</th><th>Surname</th><th>Email</th><th>Phone Number</th><th>Make Admin</th></tr></thead><tbody>";
+            string display = "<table class='styled-table'><thead><tr><th>Name</th><th>Surname</th><th>Email</th><th>Phone Number</th><th>Make Admin</th></tr></thead><tbody>";
 
             foreach (BackendReference.User_Table u in users)
             {
@@ -103,7 +103,7 @@ namespace Frontend
                 display += "</tr>";
             }
 
-            display += "</tbody></table></div><br />";
+            display += "</tbody></table><br />";
 
             userTabless.Text = display;
         }
@@ -121,7 +121,7 @@ namespace Frontend
                     sr.AddAdminTEST(adminRadio);
 
 
-                    dynamic updatedUsers = sr.GetAllUsers();
+                    dynamic updatedUsers = sr.GetAllUsersNotAdmin();
 
                     
                     displayUsers(updatedUsers);
@@ -150,7 +150,7 @@ namespace Frontend
                 dynamic searchResults = sr.SearchUsersByName(tx);
 
                 // Create a string to store the HTML table
-                string tableHtml = "<div style='text-align: center;'><table class='styled-table'><thead><tr><th>Name</th><th>Surname</th><th>Email</th><th>Phone Number</th><th>Make Admin</th></tr></thead><tbody>";
+                string tableHtml = "<table class='styled-table'><thead><tr><th>Name</th><th>Surname</th><th>Email</th><th>Phone Number</th><th>Make Admin</th></tr></thead><tbody>";
 
                 foreach (BackendReference.User_Table u in searchResults)
                 {
@@ -167,7 +167,7 @@ namespace Frontend
                     tableHtml += "</tr>";
                 }
 
-                tableHtml += "</tbody></table></div><br />";
+                tableHtml += "</tbody></table><br />";
 
                 // Set the generated HTML to the userTabless Literal control
                 userTabless.Text = tableHtml;

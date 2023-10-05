@@ -88,7 +88,7 @@
                                 <ul class="dropdown" id="DropAdmin" visible="false" runat="server">
                                     <li><a href="AddAdmin.aspx">Add Admin</a></li>
                                     <li><a href="AddProduct.aspx">Add Products</a></li>
-                                    <li><a href="RemoveProduct.aspx">Remove Products</a></li>
+                                    
                                 </ul>
                             </li>
 

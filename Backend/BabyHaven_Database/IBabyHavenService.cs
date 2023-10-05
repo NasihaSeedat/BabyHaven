@@ -38,6 +38,8 @@ namespace BabyHaven_Database
         //getting all users
         [OperationContract]
         List<User_Table> GetAllUsers();
+        [OperationContract]
+        List<User_Table> GetAllUsersNotAdmin();
 
         [OperationContract]
         bool Register(string email, string password, string name, string surname, string phoneno, string address, int usetype = 1);
