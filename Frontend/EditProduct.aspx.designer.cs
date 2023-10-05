@@ -11,8 +11,17 @@ namespace Frontend
 {
 
 
-    public partial class RemoveProduct
+    public partial class EditProduct
     {
+
+        /// <summary>
+        /// form1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlForm form1;
 
         /// <summary>
         /// ProName control.
@@ -69,6 +78,15 @@ namespace Frontend
         protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl ProQuantity;
 
         /// <summary>
+        /// ProImage control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputText ProImage;
+
+        /// <summary>
         /// error control.
         /// </summary>
         /// <remarks>
@@ -78,12 +96,12 @@ namespace Frontend
         protected global::System.Web.UI.HtmlControls.HtmlInputText error;
 
         /// <summary>
-        /// Button1 control.
+        /// edtpro control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button1;
+        protected global::System.Web.UI.WebControls.Button edtpro;
     }
 }

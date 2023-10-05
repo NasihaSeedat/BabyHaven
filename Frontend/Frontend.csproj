@@ -126,6 +126,7 @@
     <Content Include="css\owl.carousel.min.css" />
     <Content Include="css\slicknav.min.css" />
     <Content Include="css\style.css" />
+    <Content Include="EditProduct.aspx" />
     <Content Include="Home.aspx" />
     <Content Include="Invoices.aspx" />
     <Content Include="js\bootstrap.min.js" />
@@ -142,7 +143,6 @@
     <Content Include="Logout.aspx" />
     <Content Include="ProductDetails.aspx" />
     <Content Include="Register.aspx" />
-    <Content Include="RemoveProduct.aspx" />
     <Content Include="Shop.aspx" />
     <Content Include="ThankYou.aspx" />
     <Content Include="Web.config" />
@@ -209,6 +209,13 @@
     <Compile Include="Contact.aspx.designer.cs">
       <DependentUpon>Contact.aspx</DependentUpon>
     </Compile>
+    <Compile Include="EditProduct.aspx.cs">
+      <DependentUpon>EditProduct.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="EditProduct.aspx.designer.cs">
+      <DependentUpon>EditProduct.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Hash.cs" />
     <Compile Include="Home.aspx.cs">
       <DependentUpon>Home.aspx</DependentUpon>
@@ -252,13 +259,6 @@
     </Compile>
     <Compile Include="Register.aspx.designer.cs">
       <DependentUpon>Register.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="RemoveProduct.aspx.cs">
-      <DependentUpon>RemoveProduct.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="RemoveProduct.aspx.designer.cs">
-      <DependentUpon>RemoveProduct.aspx</DependentUpon>
     </Compile>
     <Compile Include="Shop.aspx.cs">
       <DependentUpon>Shop.aspx</DependentUpon>
