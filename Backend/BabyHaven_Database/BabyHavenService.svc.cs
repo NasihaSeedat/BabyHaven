@@ -667,7 +667,51 @@ namespace BabyHaven_Database
             return searchResults;
         }
 
-        
+
+        public List<Product> SearchProducts(string searchQuery)
+        {
+            List<Product> searchResults = new List<Product>();
+
+            // Use the connection string from the 'BabyHavenDatabaseConnectionString' name
+            string connString = System.Configuration.ConfigurationManager.ConnectionStrings["BabyHavenDatabaseConnectionString"].ConnectionString;
+
+            using (SqlConnection connection = new SqlConnection(connString))
+            {
+                connection.Open();
+
+                string sqlQuery = "SELECT * FROM Product WHERE P_Name LIKE @SearchQuery";
+
+
+                using (SqlCommand command = new SqlCommand(sqlQuery, connection))
+                {
+                    command.Parameters.AddWithValue("@SearchQuery", "%" + searchQuery + "%");
+
+                    using (SqlDataReader reader = command.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+
+                            Product prods = new Product
+                            {
+                                Product_Id = Convert.ToInt32(reader["Product_Id"]),
+                                P_Category = reader["P_Category"].ToString(),
+                                P_Name = reader["P_Name"].ToString(),
+                                P_Description = reader["P_Description"].ToString(),
+                                P_Price = Convert.ToDecimal(reader["P_Price"].ToString()),
+                                P_Image=reader["P_Image"].ToString()
+                            };
+
+
+                            searchResults.Add(prods);
+                        }
+                    }
+                }
+            }
+
+            return searchResults;
+        }
+
+
         public bool AdminaddProds(string name, string description, string cat, int quantity, decimal price, bool active,string img)
         {
             var prod = (from u in db.Products

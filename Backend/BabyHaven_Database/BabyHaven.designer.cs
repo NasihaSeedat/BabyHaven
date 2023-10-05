@@ -45,9 +45,6 @@ namespace BabyHaven_Database
     partial void InsertHackFeedback(HackFeedback instance);
     partial void UpdateHackFeedback(HackFeedback instance);
     partial void DeleteHackFeedback(HackFeedback instance);
-    partial void InsertOrder_Item(Order_Item instance);
-    partial void UpdateOrder_Item(Order_Item instance);
-    partial void DeleteOrder_Item(Order_Item instance);
     partial void InsertPayment(Payment instance);
     partial void UpdatePayment(Payment instance);
     partial void DeletePayment(Payment instance);
@@ -60,14 +57,18 @@ namespace BabyHaven_Database
     partial void InsertOrder_Table(Order_Table instance);
     partial void UpdateOrder_Table(Order_Table instance);
     partial void DeleteOrder_Table(Order_Table instance);
-        #endregion
-
-
-        public BabyHavenDataContext() : base(global::System.Configuration.ConfigurationManager.ConnectionStrings["BabyHavenDatabaseConnectionString"].ConnectionString, mappingSource) {
-            OnCreated();
-        }
-
-        public BabyHavenDataContext(string connection) : 
+    partial void InsertOrder_Item(Order_Item instance);
+    partial void UpdateOrder_Item(Order_Item instance);
+    partial void DeleteOrder_Item(Order_Item instance);
+    #endregion
+		
+		public BabyHavenDataContext() : 
+				base(global::System.Configuration.ConfigurationManager.ConnectionStrings["BabyHavenDatabaseConnectionString"].ConnectionString, mappingSource)
+		{
+			OnCreated();
+		}
+		
+		public BabyHavenDataContext(string connection) : 
 				base(connection, mappingSource)
 		{
 			OnCreated();
@@ -131,14 +132,6 @@ namespace BabyHaven_Database
 			}
 		}
 		
-		public System.Data.Linq.Table<Order_Item> Order_Items
-		{
-			get
-			{
-				return this.GetTable<Order_Item>();
-			}
-		}
-		
 		public System.Data.Linq.Table<Payment> Payments
 		{
 			get
@@ -168,6 +161,14 @@ namespace BabyHaven_Database
 			get
 			{
 				return this.GetTable<Order_Table>();
+			}
+		}
+		
+		public System.Data.Linq.Table<Order_Item> Order_Items
+		{
+			get
+			{
+				return this.GetTable<Order_Item>();
 			}
 		}
 	}
@@ -697,140 +698,6 @@ namespace BabyHaven_Database
 					this._HF_Hack = value;
 					this.SendPropertyChanged("HF_Hack");
 					this.OnHF_HackChanged();
-				}
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Order_Item")]
-	public partial class Order_Item : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private int _Order_Item_Id;
-		
-		private int _Quantity;
-		
-		private int _O_Id;
-		
-		private int _Product_Id;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnOrder_Item_IdChanging(int value);
-    partial void OnOrder_Item_IdChanged();
-    partial void OnQuantityChanging(int value);
-    partial void OnQuantityChanged();
-    partial void OnO_IdChanging(int value);
-    partial void OnO_IdChanged();
-    partial void OnProduct_IdChanging(int value);
-    partial void OnProduct_IdChanged();
-    #endregion
-		
-		public Order_Item()
-		{
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Order_Item_Id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
-		public int Order_Item_Id
-		{
-			get
-			{
-				return this._Order_Item_Id;
-			}
-			set
-			{
-				if ((this._Order_Item_Id != value))
-				{
-					this.OnOrder_Item_IdChanging(value);
-					this.SendPropertyChanging();
-					this._Order_Item_Id = value;
-					this.SendPropertyChanged("Order_Item_Id");
-					this.OnOrder_Item_IdChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Quantity", DbType="Int NOT NULL")]
-		public int Quantity
-		{
-			get
-			{
-				return this._Quantity;
-			}
-			set
-			{
-				if ((this._Quantity != value))
-				{
-					this.OnQuantityChanging(value);
-					this.SendPropertyChanging();
-					this._Quantity = value;
-					this.SendPropertyChanged("Quantity");
-					this.OnQuantityChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_O_Id", DbType="Int NOT NULL")]
-		public int O_Id
-		{
-			get
-			{
-				return this._O_Id;
-			}
-			set
-			{
-				if ((this._O_Id != value))
-				{
-					this.OnO_IdChanging(value);
-					this.SendPropertyChanging();
-					this._O_Id = value;
-					this.SendPropertyChanged("O_Id");
-					this.OnO_IdChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Product_Id", DbType="Int NOT NULL")]
-		public int Product_Id
-		{
-			get
-			{
-				return this._Product_Id;
-			}
-			set
-			{
-				if ((this._Product_Id != value))
-				{
-					this.OnProduct_IdChanging(value);
-					this.SendPropertyChanging();
-					this._Product_Id = value;
-					this.SendPropertyChanged("Product_Id");
-					this.OnProduct_IdChanged();
 				}
 			}
 		}
@@ -1823,6 +1690,140 @@ namespace BabyHaven_Database
 					this._UserId = value;
 					this.SendPropertyChanged("UserId");
 					this.OnUserIdChanged();
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Order_Item")]
+	public partial class Order_Item : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _Order_Item_Id;
+		
+		private int _Quantity;
+		
+		private int _O_Id;
+		
+		private int _Product_Id;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnOrder_Item_IdChanging(int value);
+    partial void OnOrder_Item_IdChanged();
+    partial void OnQuantityChanging(int value);
+    partial void OnQuantityChanged();
+    partial void OnO_IdChanging(int value);
+    partial void OnO_IdChanged();
+    partial void OnProduct_IdChanging(int value);
+    partial void OnProduct_IdChanged();
+    #endregion
+		
+		public Order_Item()
+		{
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Order_Item_Id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int Order_Item_Id
+		{
+			get
+			{
+				return this._Order_Item_Id;
+			}
+			set
+			{
+				if ((this._Order_Item_Id != value))
+				{
+					this.OnOrder_Item_IdChanging(value);
+					this.SendPropertyChanging();
+					this._Order_Item_Id = value;
+					this.SendPropertyChanged("Order_Item_Id");
+					this.OnOrder_Item_IdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Quantity", DbType="Int NOT NULL")]
+		public int Quantity
+		{
+			get
+			{
+				return this._Quantity;
+			}
+			set
+			{
+				if ((this._Quantity != value))
+				{
+					this.OnQuantityChanging(value);
+					this.SendPropertyChanging();
+					this._Quantity = value;
+					this.SendPropertyChanged("Quantity");
+					this.OnQuantityChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_O_Id", DbType="Int NOT NULL")]
+		public int O_Id
+		{
+			get
+			{
+				return this._O_Id;
+			}
+			set
+			{
+				if ((this._O_Id != value))
+				{
+					this.OnO_IdChanging(value);
+					this.SendPropertyChanging();
+					this._O_Id = value;
+					this.SendPropertyChanged("O_Id");
+					this.OnO_IdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Product_Id", DbType="Int NOT NULL")]
+		public int Product_Id
+		{
+			get
+			{
+				return this._Product_Id;
+			}
+			set
+			{
+				if ((this._Product_Id != value))
+				{
+					this.OnProduct_IdChanging(value);
+					this.SendPropertyChanging();
+					this._Product_Id = value;
+					this.SendPropertyChanged("Product_Id");
+					this.OnProduct_IdChanged();
 				}
 			}
 		}

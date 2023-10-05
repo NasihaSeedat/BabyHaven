@@ -1345,7 +1345,31 @@ ol {
             margin-left: 4px;
         }
 
+        /*--------------------------
+            SEARCH BUTTONS
+        */
+.search-container {
+    display: flex;
+    align-items: center;
+}
 
+.search-box {
+    flex: 1;
+    padding: 10px;
+}
+
+.search-button {
+    background-color: #84B7EE;
+    background-image: url('../img/search-icon.png'); /* Replace 'search-icon.png' with the path to your search icon image */
+    background-size: 20px 20px;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 40px; /* Adjust the width as needed */
+    height: 40px; /* Adjust the height as needed */
+    border: none;
+    cursor: pointer;
+    border-radius: 50%;
+}
 
 
         /**edit/ remove buttons*/

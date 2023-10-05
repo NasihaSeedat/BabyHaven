@@ -54,7 +54,8 @@ namespace BabyHaven_Database
         //Searching Users
         [OperationContract]
         List<User_Table> SearchUsersByName(string searchQuery);
-
+        [OperationContract]
+        List<Product> SearchProducts(string searchQuery);
         //CART
         [OperationContract]
         bool AddToCart(int uId, int pId);
