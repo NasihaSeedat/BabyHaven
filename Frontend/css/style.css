@@ -2458,9 +2458,31 @@ ol {
         border: none;
         text-transform: uppercase;
         display: inline-block;
-        padding: 12px 30px;
+        padding: 6px 30px;
         border-radius: 50px;
         margin-bottom: 20px;
+        margin-top: 20px;
+    }
+
+.couponbutton {
+    font-size: 14px;
+    background: #f2f2f2;
+    color: #111111;
+    font-weight: 600;
+    border: none;
+    text-transform: uppercase;
+    display: inline-block;
+    padding: 6px 30px;
+    border-radius: 50px;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    transition: background-color 0.3s ease; /* Add smooth transition */
+}
+
+    /* Define hover effect */
+    .couponbutton:hover {
+        background: #84B7EE;
+        color: #fff;
     }
 
 .checkout__form h5 {

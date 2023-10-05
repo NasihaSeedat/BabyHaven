@@ -584,25 +584,37 @@ namespace Frontend.BackendReference {
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string First_NameField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string Last_NameField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string O_AddressField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string O_CityField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private System.DateTime O_DateField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private decimal O_DiscountField;
+        private string O_EmailField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private int O_IdField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string O_QuantityField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private decimal O_ShippingField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private decimal O_TaxField;
+        private string O_Phone_NumberField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private decimal O_TotalField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string O_ZipCodeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int UserIdField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
@@ -611,6 +623,58 @@ namespace Frontend.BackendReference {
             }
             set {
                 this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string First_Name {
+            get {
+                return this.First_NameField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.First_NameField, value) != true)) {
+                    this.First_NameField = value;
+                    this.RaisePropertyChanged("First_Name");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Last_Name {
+            get {
+                return this.Last_NameField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.Last_NameField, value) != true)) {
+                    this.Last_NameField = value;
+                    this.RaisePropertyChanged("Last_Name");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string O_Address {
+            get {
+                return this.O_AddressField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.O_AddressField, value) != true)) {
+                    this.O_AddressField = value;
+                    this.RaisePropertyChanged("O_Address");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string O_City {
+            get {
+                return this.O_CityField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.O_CityField, value) != true)) {
+                    this.O_CityField = value;
+                    this.RaisePropertyChanged("O_City");
+                }
             }
         }
         
@@ -628,14 +692,14 @@ namespace Frontend.BackendReference {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public decimal O_Discount {
+        public string O_Email {
             get {
-                return this.O_DiscountField;
+                return this.O_EmailField;
             }
             set {
-                if ((this.O_DiscountField.Equals(value) != true)) {
-                    this.O_DiscountField = value;
-                    this.RaisePropertyChanged("O_Discount");
+                if ((object.ReferenceEquals(this.O_EmailField, value) != true)) {
+                    this.O_EmailField = value;
+                    this.RaisePropertyChanged("O_Email");
                 }
             }
         }
@@ -654,40 +718,14 @@ namespace Frontend.BackendReference {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public string O_Quantity {
+        public string O_Phone_Number {
             get {
-                return this.O_QuantityField;
+                return this.O_Phone_NumberField;
             }
             set {
-                if ((object.ReferenceEquals(this.O_QuantityField, value) != true)) {
-                    this.O_QuantityField = value;
-                    this.RaisePropertyChanged("O_Quantity");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public decimal O_Shipping {
-            get {
-                return this.O_ShippingField;
-            }
-            set {
-                if ((this.O_ShippingField.Equals(value) != true)) {
-                    this.O_ShippingField = value;
-                    this.RaisePropertyChanged("O_Shipping");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public decimal O_Tax {
-            get {
-                return this.O_TaxField;
-            }
-            set {
-                if ((this.O_TaxField.Equals(value) != true)) {
-                    this.O_TaxField = value;
-                    this.RaisePropertyChanged("O_Tax");
+                if ((object.ReferenceEquals(this.O_Phone_NumberField, value) != true)) {
+                    this.O_Phone_NumberField = value;
+                    this.RaisePropertyChanged("O_Phone_Number");
                 }
             }
         }
@@ -701,6 +739,32 @@ namespace Frontend.BackendReference {
                 if ((this.O_TotalField.Equals(value) != true)) {
                     this.O_TotalField = value;
                     this.RaisePropertyChanged("O_Total");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string O_ZipCode {
+            get {
+                return this.O_ZipCodeField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.O_ZipCodeField, value) != true)) {
+                    this.O_ZipCodeField = value;
+                    this.RaisePropertyChanged("O_ZipCode");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int UserId {
+            get {
+                return this.UserIdField;
+            }
+            set {
+                if ((this.UserIdField.Equals(value) != true)) {
+                    this.UserIdField = value;
+                    this.RaisePropertyChanged("UserId");
                 }
             }
         }
@@ -980,6 +1044,24 @@ namespace Frontend.BackendReference {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBabyHavenService/AdminaddProds", ReplyAction="http://tempuri.org/IBabyHavenService/AdminaddProdsResponse")]
         System.Threading.Tasks.Task<bool> AdminaddProdsAsync(string name, string description, string cat, int quantity, decimal price, bool active, string img);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBabyHavenService/GetCartProductIds", ReplyAction="http://tempuri.org/IBabyHavenService/GetCartProductIdsResponse")]
+        int[] GetCartProductIds(int userId);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBabyHavenService/GetCartProductIds", ReplyAction="http://tempuri.org/IBabyHavenService/GetCartProductIdsResponse")]
+        System.Threading.Tasks.Task<int[]> GetCartProductIdsAsync(int userId);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBabyHavenService/ProcessCheckout", ReplyAction="http://tempuri.org/IBabyHavenService/ProcessCheckoutResponse")]
+        bool ProcessCheckout(int userId, int[] productIds);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBabyHavenService/ProcessCheckout", ReplyAction="http://tempuri.org/IBabyHavenService/ProcessCheckoutResponse")]
+        System.Threading.Tasks.Task<bool> ProcessCheckoutAsync(int userId, int[] productIds);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBabyHavenService/Checkout", ReplyAction="http://tempuri.org/IBabyHavenService/CheckoutResponse")]
+        int Checkout(int userId, decimal total, string firstname, string lastname, string email, string address, string city, string zipcode, string phoneno);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBabyHavenService/Checkout", ReplyAction="http://tempuri.org/IBabyHavenService/CheckoutResponse")]
+        System.Threading.Tasks.Task<int> CheckoutAsync(int userId, decimal total, string firstname, string lastname, string email, string address, string city, string zipcode, string phoneno);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBabyHavenService/GetInvoice", ReplyAction="http://tempuri.org/IBabyHavenService/GetInvoiceResponse")]
         Frontend.BackendReference.Order_Table GetInvoice(int id);
         
@@ -1254,6 +1336,30 @@ namespace Frontend.BackendReference {
         
         public System.Threading.Tasks.Task<bool> AdminaddProdsAsync(string name, string description, string cat, int quantity, decimal price, bool active, string img) {
             return base.Channel.AdminaddProdsAsync(name, description, cat, quantity, price, active, img);
+        }
+        
+        public int[] GetCartProductIds(int userId) {
+            return base.Channel.GetCartProductIds(userId);
+        }
+        
+        public System.Threading.Tasks.Task<int[]> GetCartProductIdsAsync(int userId) {
+            return base.Channel.GetCartProductIdsAsync(userId);
+        }
+        
+        public bool ProcessCheckout(int userId, int[] productIds) {
+            return base.Channel.ProcessCheckout(userId, productIds);
+        }
+        
+        public System.Threading.Tasks.Task<bool> ProcessCheckoutAsync(int userId, int[] productIds) {
+            return base.Channel.ProcessCheckoutAsync(userId, productIds);
+        }
+        
+        public int Checkout(int userId, decimal total, string firstname, string lastname, string email, string address, string city, string zipcode, string phoneno) {
+            return base.Channel.Checkout(userId, total, firstname, lastname, email, address, city, zipcode, phoneno);
+        }
+        
+        public System.Threading.Tasks.Task<int> CheckoutAsync(int userId, decimal total, string firstname, string lastname, string email, string address, string city, string zipcode, string phoneno) {
+            return base.Channel.CheckoutAsync(userId, total, firstname, lastname, email, address, city, zipcode, phoneno);
         }
         
         public Frontend.BackendReference.Order_Table GetInvoice(int id) {

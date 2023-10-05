@@ -661,6 +661,80 @@ namespace BabyHaven_Database
 
 
         //---------------------------------------------INVOICES----------------------------------------------------//
+        public List<int> GetCartProductIds(int userId) {
+            List<int> cartProductIds = db.Carts
+                    .Where(cart => cart.U_Id == userId)
+                    .Select(cart => cart.P_Id)
+                    .ToList();
+
+            return cartProductIds;
+        }
+
+        public bool ProcessCheckout(int userId, List<int> productIds) {
+            try {
+                // Get the cart items to remove
+                List<Cart> cartItemsToRemove = db.Carts
+                    .Where(cart => cart.U_Id == userId && productIds.Contains(cart.P_Id))
+                    .ToList();
+
+                // Update product quantities and remove cart items
+                foreach(var cartItem in cartItemsToRemove) {
+                    // Find the corresponding product
+                    Product product = db.Products.FirstOrDefault(p => p.Product_Id == cartItem.P_Id);
+
+                    if(product != null) {
+                        // Reduce the product quantity
+                        product.P_Quantity -= cartItem.Cart_Quantity;
+
+                        // Remove the cart item
+                        db.Carts.DeleteOnSubmit(cartItem);
+                    }
+                }
+
+                // Submit changes to the database
+                db.SubmitChanges();
+
+                return true;
+            } catch(Exception ex) {
+                ex.GetBaseException();
+                return false;
+            }
+        }
+
+
+        public int Checkout(int userId, decimal total, string firstname, string lastname, string email,
+            string address, string city, string zipcode, string phoneno) {
+            try {
+                // Create a new order
+                var newOrder = new Order_Table
+                {
+                    UserId = userId,
+                    O_Date = DateTime.Today,
+                    O_Total = total,
+                    First_Name = firstname,
+                    Last_Name = lastname,
+                    O_Email = email,
+                    O_Address = address,
+                    O_City = city,
+                    O_ZipCode = zipcode,
+                    O_Phone_Number = phoneno,
+                };
+
+                // Insert the new order into the database
+                db.Order_Tables.InsertOnSubmit(newOrder);
+
+                db.SubmitChanges();
+
+                // Return the generated Order_Id
+                return newOrder.O_Id;
+            } catch(Exception ex) {
+                ex.GetBaseException();
+                string errorMessage = ex.Message;
+                Debug.WriteLine(errorMessage);
+                return 0; // Return 0 to indicate that the order creation failed
+            }
+        }
+
         public Order_Table GetInvoice(int id)
         {
             var order = (from o in db.Order_Tables

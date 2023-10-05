@@ -113,7 +113,16 @@ namespace BabyHaven_Database
 
 
 
-        //---------------------------------------------INVOICES--------------------------------------------------------//
+        //---------------------------------------------INVOICES----------------------------------------------------//
+        [OperationContract]
+        List<int> GetCartProductIds(int userId);
+
+        [OperationContract]
+        bool ProcessCheckout(int userId, List<int> productIds);
+
+        [OperationContract]
+        int Checkout(int userId, decimal total, string firstname, string lastname, string email,
+            string address, string city, string zipcode, string phoneno);
 
         [OperationContract]
         Order_Table GetInvoice(int id);

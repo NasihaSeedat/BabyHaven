@@ -7,12 +7,10 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Frontend
-{
+namespace Frontend {
 
 
-    public partial class Checkout
-    {
+    public partial class Checkout {
 
         /// <summary>
         /// txtCouponCode control.
@@ -30,7 +28,7 @@ namespace Frontend
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlButton btnApplyCoupon;
+        protected global::System.Web.UI.WebControls.Button btnApplyCoupon;
 
         /// <summary>
         /// txtFirstName control.
@@ -51,15 +49,6 @@ namespace Frontend
         protected global::System.Web.UI.HtmlControls.HtmlInputText txtLastName;
 
         /// <summary>
-        /// txtCountry control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText txtCountry;
-
-        /// <summary>
         /// txtStreetAddress control.
         /// </summary>
         /// <remarks>
@@ -69,22 +58,13 @@ namespace Frontend
         protected global::System.Web.UI.HtmlControls.HtmlInputText txtStreetAddress;
 
         /// <summary>
-        /// txtApartmentSuiteUnit control.
+        /// txtCity control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText txtApartmentSuiteUnit;
-
-        /// <summary>
-        /// txtTown control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText txtTown;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText txtCity;
 
         /// <summary>
         /// txtZip control.
@@ -111,16 +91,7 @@ namespace Frontend
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText txtEmail;
-
-        /// <summary>
-        /// txtPassword control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText txtPassword;
+        protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl txtEmail;
 
         /// <summary>
         /// rptCartItems control.
@@ -141,13 +112,13 @@ namespace Frontend
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl lblSubtotal;
 
         /// <summary>
-        /// lblTax control.
+        /// lblDelivery control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl lblTax;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl lblDelivery;
 
         /// <summary>
         /// lblDiscount control.

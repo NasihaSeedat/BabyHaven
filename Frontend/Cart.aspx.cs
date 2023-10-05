@@ -31,11 +31,27 @@ namespace Frontend
 
                     decimal totalCartPrice = sr.GetTotalCartPrice(clientId);
 
+                    // Calculate VAT (15% of the totalCartPrice)
+                    decimal vat = totalCartPrice * 0.15M;
+
+
+
                     // Format the total cart price as currency (e.g., "R 123.45")
                     string formattedTotalPrice = string.Format("R {0:N2}", totalCartPrice);
+                    string formattedVAT = string.Format("R {0:N2}", vat);
+
 
                     // Set the formatted total cart price to the TotalLabel
-                    TotalLabel.Text = formattedTotalPrice;
+                    SubtotalLabel.Text = formattedTotalPrice;
+                    VATLabel.Text = formattedVAT;
+
+                    // Calculate and display the total cart price including VAT
+                    decimal totalCartPriceWithVAT = totalCartPrice + vat;
+
+                    // Store the totalCartPriceWithVAT in a session variable
+                    Session["TotalCartPriceWithVAT"] = totalCartPriceWithVAT;
+
+                    TotalLabel.Text = string.Format("R {0:N2}", totalCartPriceWithVAT);
 
                     ProceedToCheckoutLink.NavigateUrl = "Checkout.aspx";
 
@@ -191,7 +207,20 @@ namespace Frontend
 
             // Calculate and display the total cart price
             decimal totalCartPrice = sr.GetTotalCartPrice(clientId);
-            TotalLabel.Text = string.Format("R {0:F2}", totalCartPrice); // Format the total price as needed
+            SubtotalLabel.Text = string.Format("R {0:F2}", totalCartPrice); // Format the total price as needed
+
+            // Calculate VAT (15% of the totalCartPrice)
+            decimal vat = totalCartPrice * 0.15M;
+            VATLabel.Text = string.Format("R {0:N2}", vat);
+
+
+            // Calculate and display the total cart price including VAT
+            decimal totalCartPriceWithVAT = totalCartPrice + vat;
+
+            // Store the totalCartPriceWithVAT in a session variable
+            Session["TotalCartPriceWithVAT"] = totalCartPriceWithVAT;
+
+            TotalLabel.Text = string.Format("R {0:N2}", totalCartPriceWithVAT);
         }
 
 
