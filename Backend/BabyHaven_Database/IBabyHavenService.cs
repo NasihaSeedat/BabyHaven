@@ -38,6 +38,8 @@ namespace BabyHaven_Database
         //getting all users
         [OperationContract]
         List<User_Table> GetAllUsers();
+        [OperationContract]
+        List<User_Table> GetAllUsersNotAdmin();
 
         [OperationContract]
         bool Register(string email, string password, string name, string surname, string phoneno, string address, int usetype = 1);
@@ -52,7 +54,8 @@ namespace BabyHaven_Database
         //Searching Users
         [OperationContract]
         List<User_Table> SearchUsersByName(string searchQuery);
-
+        [OperationContract]
+        List<Product> SearchProducts(string searchQuery);
         //CART
         [OperationContract]
         bool AddToCart(int uId, int pId);

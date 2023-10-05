@@ -22,68 +22,17 @@ namespace Frontend
         {
             if (!IsPostBack)
             {
-                dynamic users = sr.GetAllUsers();
+                dynamic users = sr.GetAllUsersNotAdmin();
 
-                //foreach (BackendReference.User_Table u in users)
-                //{
-                //    // Create a new table row for each user
-                //    TableRow row = new TableRow();
-
-                //    // Add cells with user data
-                //    TableCell userIdCell = new TableCell();
-                //    userIdCell.Text = u.User_Id.ToString();
-                //    row.Cells.Add(userIdCell);
-
-                //    TableCell emailCell = new TableCell();
-                //    emailCell.Text = u.Email;
-                //    row.Cells.Add(emailCell);
-
-                //    TableCell nameCell = new TableCell();
-                //    nameCell.Text = u.Name;
-                //    row.Cells.Add(nameCell);
-
-                //    TableCell surnameCell = new TableCell();
-                //    surnameCell.Text = u.Surname;
-                //    row.Cells.Add(surnameCell);
-
-                //    TableCell phoneCell = new TableCell();
-                //    phoneCell.Text = u.Phone_Number;
-                //    row.Cells.Add(phoneCell);
-
-                //    // Add a placeholder for the radio button in the row
-                //    TableCell actionCell = new TableCell();
-                //    PlaceHolder radioPlaceholder = new PlaceHolder();
-                //    actionCell.Controls.Add(radioPlaceholder);
-                //    row.Cells.Add(actionCell);
-
-                //    // Create a radio button and add it to the placeholder
-                //    RadioButton userRadioButton = new RadioButton();
-                //    userRadioButton.ID = "rbtnAddAdmin_" + u.User_Id; // Unique ID based on user ID
-                //    userRadioButton.Text = "Add Admin";
-                //    userRadioButton.GroupName = "AdminGroup"; // Group radio buttons to select only one
-                //    userRadioButton.CssClass = "site-radio";
-                //    userRadioButton.Attributes["data-user-id"] = u.User_Id.ToString(); // Store user ID as an attribute
-                //    userRadioButton.CheckedChanged += userRadioButton_CheckedChanged; // Add event handler for radio button change
-
-                //    radioPlaceholder.Controls.Add(userRadioButton);
-
-                //    // Add the row to the userTable
-                //    userTable.Rows.Add(row);
-
-                //}
+              
 
                 displayUsers(users);
             }
         }
-        protected void userRadioButton_CheckedChanged(object sender, EventArgs e)
-        {
-            RadioButton selectedRadioButton = (RadioButton)sender;
-            selectedUserId = selectedRadioButton.Attributes["data-user-id"];
-        }
-
+        
         private void displayUsers(dynamic users)
         {
-            string display = "<div style='text-align: center;'><table class='styled-table'><thead><tr><th>Name</th><th>Surname</th><th>Email</th><th>Phone Number</th><th>Make Admin</th></tr></thead><tbody>";
+            string display = "<table class='styled-table'><thead><tr><th>Name</th><th>Surname</th><th>Email</th><th>Phone Number</th><th>Make Admin</th></tr></thead><tbody>";
 
             foreach (BackendReference.User_Table u in users)
             {
@@ -103,7 +52,7 @@ namespace Frontend
                 display += "</tr>";
             }
 
-            display += "</tbody></table></div><br />";
+            display += "</tbody></table><br />";
 
             userTabless.Text = display;
         }
@@ -121,7 +70,7 @@ namespace Frontend
                     sr.AddAdminTEST(adminRadio);
 
 
-                    dynamic updatedUsers = sr.GetAllUsers();
+                    dynamic updatedUsers = sr.GetAllUsersNotAdmin();
 
                     
                     displayUsers(updatedUsers);
@@ -150,7 +99,7 @@ namespace Frontend
                 dynamic searchResults = sr.SearchUsersByName(tx);
 
                 // Create a string to store the HTML table
-                string tableHtml = "<div style='text-align: center;'><table class='styled-table'><thead><tr><th>Name</th><th>Surname</th><th>Email</th><th>Phone Number</th><th>Make Admin</th></tr></thead><tbody>";
+                string tableHtml = "<table class='styled-table'><thead><tr><th>Name</th><th>Surname</th><th>Email</th><th>Phone Number</th><th>Make Admin</th></tr></thead><tbody>";
 
                 foreach (BackendReference.User_Table u in searchResults)
                 {
@@ -167,7 +116,7 @@ namespace Frontend
                     tableHtml += "</tr>";
                 }
 
-                tableHtml += "</tbody></table></div><br />";
+                tableHtml += "</tbody></table><br />";
 
                 // Set the generated HTML to the userTabless Literal control
                 userTabless.Text = tableHtml;

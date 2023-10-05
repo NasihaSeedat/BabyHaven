@@ -97,7 +97,7 @@ namespace Frontend {
                 "</div>";
                 display += "<div class='product__item__text'>";
                 display += "<h6>" + pr.P_Name + "</h6>" + "<br />";
-                display += "<div class='product__price'>" + String.Format("{0:0.00}", pr.P_Price);
+                display += "<div class='product__price'>R" + String.Format("{0:0.00}", pr.P_Price);
                 display += "</div></div></div></div>";
 
 
@@ -156,10 +156,21 @@ namespace Frontend {
 
             displaymethod(sortedProds.ToList());
         }
+        private void PerformSearch()
+        {
+            string tx = txtSearch.Text;
 
+            if (!string.IsNullOrEmpty(tx))
+            {
+                dynamic searchResults = client.SearchProducts(tx);
 
-
-
+                displaymethod(searchResults);
+            }
+        }
+        protected void btnSearch_Click(object sender, EventArgs e)
+        {
+            PerformSearch();
+        }
     }
 
 }

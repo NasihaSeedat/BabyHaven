@@ -109,7 +109,12 @@ namespace Frontend {
 
         protected void editprods_Click(object sender, EventArgs e)
         {
+            //getting the user ifm
+            int ID = Convert.ToInt32(Session["LoggedInUserID"]);
 
+            //getting the product
+            var itemid = Request.QueryString["P_ID"];
+            Response.Redirect("EditProduct.aspx?P_ID=" + itemid);
         }
 
         protected void removeprods_Click(object sender, EventArgs e)

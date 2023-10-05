@@ -91,7 +91,7 @@
                                 <ul class="dropdown" id="DropAdmin" visible="false" runat="server">
                                     <li><a href="AddAdmin.aspx">Add Admin</a></li>
                                     <li><a href="AddProduct.aspx">Add Products</a></li>
-                                    <li><a href="RemoveProduct.aspx">Remove Products</a></li>
+                                    
                                 </ul>
                             </li>
 
@@ -112,7 +112,7 @@
                             <% } %>
                         </div>
                         <ul class="header__right__widget">
-                            <li><span class="icon_search search-switch"></span></li>
+                            
                             <li><a href="Cart.aspx"><span class="fa fa-shopping-cart"></span>
                                 <% %>
                                 <div class="tip">
