@@ -11,7 +11,7 @@
                 <table>
                     <thead>
                         <tr>
-                            <th class="addProduct">Add Product</th>
+                            <th class="addProduct">Edit Product</th>
                         </tr>
                     </thead>
                     <tbody>
