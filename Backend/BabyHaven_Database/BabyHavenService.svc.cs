@@ -1030,6 +1030,23 @@ namespace BabyHaven_Database
             return pc;
         }
 
+
+        public bool isSafeHavenSock()
+        {
+            var sock = (from s in db.Carts
+                        where s.P_Id.Equals(60)
+                        select s).DefaultIfEmpty();
+
+            if (sock != null)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
         public List<Order_Table> GetInvoicesForMonth(DateTime targetMonth)
         {
            
@@ -1054,6 +1071,7 @@ namespace BabyHaven_Database
             
 
         }
+
 
     }
 }

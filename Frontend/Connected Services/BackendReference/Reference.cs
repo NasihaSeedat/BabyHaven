@@ -1134,11 +1134,19 @@ namespace Frontend.BackendReference {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBabyHavenService/GetProductCategoryReport", ReplyAction="http://tempuri.org/IBabyHavenService/GetProductCategoryReportResponse")]
         System.Threading.Tasks.Task<int> GetProductCategoryReportAsync(string cat);
         
+
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBabyHavenService/isSafeHavenSock", ReplyAction="http://tempuri.org/IBabyHavenService/isSafeHavenSockResponse")]
+        bool isSafeHavenSock();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBabyHavenService/isSafeHavenSock", ReplyAction="http://tempuri.org/IBabyHavenService/isSafeHavenSockResponse")]
+        System.Threading.Tasks.Task<bool> isSafeHavenSockAsync();
+
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBabyHavenService/GetInvoicesForMonth", ReplyAction="http://tempuri.org/IBabyHavenService/GetInvoicesForMonthResponse")]
         Frontend.BackendReference.Order_Table[] GetInvoicesForMonth(System.DateTime targetMonth);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBabyHavenService/GetInvoicesForMonth", ReplyAction="http://tempuri.org/IBabyHavenService/GetInvoicesForMonthResponse")]
         System.Threading.Tasks.Task<Frontend.BackendReference.Order_Table[]> GetInvoicesForMonthAsync(System.DateTime targetMonth);
+
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -1512,12 +1520,21 @@ namespace Frontend.BackendReference {
             return base.Channel.GetProductCategoryReportAsync(cat);
         }
         
+
+        public bool isSafeHavenSock() {
+            return base.Channel.isSafeHavenSock();
+        }
+        
+        public System.Threading.Tasks.Task<bool> isSafeHavenSockAsync() {
+            return base.Channel.isSafeHavenSockAsync();
+
         public Frontend.BackendReference.Order_Table[] GetInvoicesForMonth(System.DateTime targetMonth) {
             return base.Channel.GetInvoicesForMonth(targetMonth);
         }
         
         public System.Threading.Tasks.Task<Frontend.BackendReference.Order_Table[]> GetInvoicesForMonthAsync(System.DateTime targetMonth) {
             return base.Channel.GetInvoicesForMonthAsync(targetMonth);
+
         }
     }
 }

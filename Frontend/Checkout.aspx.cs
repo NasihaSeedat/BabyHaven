@@ -26,12 +26,25 @@ namespace Frontend
                     decimal discount = CalculateDiscount();
                     decimal total = CalculateTotal(subtotal, discount);
 
-                    if(subtotal >= 2000.00m) {
+                    //if(subtotal >= 2000.00m) {
+                    //    lblDelivery.InnerHtml = "<s>R 100.00</s> Free Delivery";
+                    //}
+                    //else {
+                    //    lblDelivery.InnerText = "R 100.00";
+                    //}
+
+                    if (subtotal >= 2000.00m)
+                    {
+                        lblDelivery.InnerHtml = "<s>R 100.00</s> Free Delivery";
+                    }else if (sc.isSafeHavenSock() == true)
+                    {
                         lblDelivery.InnerHtml = "<s>R 100.00</s> Free Delivery";
                     }
-                    else {
+                    else
+                    {
                         lblDelivery.InnerText = "R 100.00";
                     }
+
 
                     lblDiscount.InnerText = string.Format("R {0:N2}", discount);
                     lblTotal.InnerText = string.Format("R {0:N2}", total);
@@ -130,6 +143,9 @@ namespace Frontend
             // Check if the subtotal is greater than or equal to R1000
             if(subtotal >= 2000.00m) {
                 // If yes, set the delivery cost to 0.00 (free delivery)
+                deliveryCost = 0.00m;
+            }else if (sc.isSafeHavenSock() == true)
+            {
                 deliveryCost = 0.00m;
             }
 
