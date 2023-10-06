@@ -1109,6 +1109,24 @@ namespace Frontend.BackendReference {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBabyHavenService/GetOrderItems", ReplyAction="http://tempuri.org/IBabyHavenService/GetOrderItemsResponse")]
         System.Threading.Tasks.Task<Frontend.BackendReference.Order_Item[]> GetOrderItemsAsync(int id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBabyHavenService/numDifferentProductsSold", ReplyAction="http://tempuri.org/IBabyHavenService/numDifferentProductsSoldResponse")]
+        int numDifferentProductsSold();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBabyHavenService/numDifferentProductsSold", ReplyAction="http://tempuri.org/IBabyHavenService/numDifferentProductsSoldResponse")]
+        System.Threading.Tasks.Task<int> numDifferentProductsSoldAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBabyHavenService/numOnHand", ReplyAction="http://tempuri.org/IBabyHavenService/numOnHandResponse")]
+        int numOnHand(int id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBabyHavenService/numOnHand", ReplyAction="http://tempuri.org/IBabyHavenService/numOnHandResponse")]
+        System.Threading.Tasks.Task<int> numOnHandAsync(int id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBabyHavenService/regperday", ReplyAction="http://tempuri.org/IBabyHavenService/regperdayResponse")]
+        int regperday();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBabyHavenService/regperday", ReplyAction="http://tempuri.org/IBabyHavenService/regperdayResponse")]
+        System.Threading.Tasks.Task<int> regperdayAsync();
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -1448,6 +1466,30 @@ namespace Frontend.BackendReference {
         
         public System.Threading.Tasks.Task<Frontend.BackendReference.Order_Item[]> GetOrderItemsAsync(int id) {
             return base.Channel.GetOrderItemsAsync(id);
+        }
+        
+        public int numDifferentProductsSold() {
+            return base.Channel.numDifferentProductsSold();
+        }
+        
+        public System.Threading.Tasks.Task<int> numDifferentProductsSoldAsync() {
+            return base.Channel.numDifferentProductsSoldAsync();
+        }
+        
+        public int numOnHand(int id) {
+            return base.Channel.numOnHand(id);
+        }
+        
+        public System.Threading.Tasks.Task<int> numOnHandAsync(int id) {
+            return base.Channel.numOnHandAsync(id);
+        }
+        
+        public int regperday() {
+            return base.Channel.regperday();
+        }
+        
+        public System.Threading.Tasks.Task<int> regperdayAsync() {
+            return base.Channel.regperdayAsync();
         }
     }
 }
