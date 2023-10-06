@@ -73,5 +73,10 @@ namespace Frontend
             return totalItems;
         }
 
+        protected void btn_Subscribe(object sender, EventArgs e)
+        {
+            Response.Redirect("Login.aspx");
+        }
+
     }
 }
