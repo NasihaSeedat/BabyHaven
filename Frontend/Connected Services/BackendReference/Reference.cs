@@ -1127,6 +1127,12 @@ namespace Frontend.BackendReference {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBabyHavenService/regperday", ReplyAction="http://tempuri.org/IBabyHavenService/regperdayResponse")]
         System.Threading.Tasks.Task<int> regperdayAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBabyHavenService/GetProductCategoryReport", ReplyAction="http://tempuri.org/IBabyHavenService/GetProductCategoryReportResponse")]
+        int GetProductCategoryReport(string cat);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBabyHavenService/GetProductCategoryReport", ReplyAction="http://tempuri.org/IBabyHavenService/GetProductCategoryReportResponse")]
+        System.Threading.Tasks.Task<int> GetProductCategoryReportAsync(string cat);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -1490,6 +1496,14 @@ namespace Frontend.BackendReference {
         
         public System.Threading.Tasks.Task<int> regperdayAsync() {
             return base.Channel.regperdayAsync();
+        }
+        
+        public int GetProductCategoryReport(string cat) {
+            return base.Channel.GetProductCategoryReport(cat);
+        }
+        
+        public System.Threading.Tasks.Task<int> GetProductCategoryReportAsync(string cat) {
+            return base.Channel.GetProductCategoryReportAsync(cat);
         }
     }
 }

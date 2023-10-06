@@ -85,6 +85,7 @@
                             <li><a href="Contact.aspx">About Us</a></li>
 
                             <li id="invoices" visible="true" runat="server"><a href="Invoices.aspx">Invoices</a></li>
+                            <li id="reports" visible="false" runat="server"><a href="reports.aspx">Reports</a></li>
 
                             <li runat="server" id="adminLink" visible="false">
                                 <a href="#">Admin Panel</a>
@@ -95,6 +96,7 @@
                                 </ul>
                             </li>
 
+                            
 
                         </ul>
                     </nav>
@@ -293,8 +295,10 @@
     <script src="js/jquery.countdown.min.js"></script>
     <script src="js/jquery.slicknav.js"></script>
     <script src="js/owl.carousel.min.js"></script>
+    <script src="js/Chart.js"></script>
     <script src="js/jquery.nicescroll.min.js"></script>
     <script src="js/main.js"></script>
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.5.1/chart.min.js"></script>
+   
 </body>
 </html>

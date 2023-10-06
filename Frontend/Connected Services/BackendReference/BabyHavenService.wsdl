@@ -260,6 +260,12 @@
   <wsdl:message name="IBabyHavenService_regperday_OutputMessage">
     <wsdl:part name="parameters" element="tns:regperdayResponse" />
   </wsdl:message>
+  <wsdl:message name="IBabyHavenService_GetProductCategoryReport_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetProductCategoryReport" />
+  </wsdl:message>
+  <wsdl:message name="IBabyHavenService_GetProductCategoryReport_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetProductCategoryReportResponse" />
+  </wsdl:message>
   <wsdl:portType name="IBabyHavenService">
     <wsdl:operation name="Login">
       <wsdl:input wsaw:Action="http://tempuri.org/IBabyHavenService/Login" message="tns:IBabyHavenService_Login_InputMessage" />
@@ -428,6 +434,10 @@
     <wsdl:operation name="regperday">
       <wsdl:input wsaw:Action="http://tempuri.org/IBabyHavenService/regperday" message="tns:IBabyHavenService_regperday_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IBabyHavenService/regperdayResponse" message="tns:IBabyHavenService_regperday_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetProductCategoryReport">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBabyHavenService/GetProductCategoryReport" message="tns:IBabyHavenService_GetProductCategoryReport_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBabyHavenService/GetProductCategoryReportResponse" message="tns:IBabyHavenService_GetProductCategoryReport_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_IBabyHavenService" type="tns:IBabyHavenService">
@@ -803,6 +813,15 @@
     </wsdl:operation>
     <wsdl:operation name="regperday">
       <soap:operation soapAction="http://tempuri.org/IBabyHavenService/regperday" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetProductCategoryReport">
+      <soap:operation soapAction="http://tempuri.org/IBabyHavenService/GetProductCategoryReport" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
