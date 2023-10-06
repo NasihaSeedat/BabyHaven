@@ -571,39 +571,6 @@ namespace BabyHaven_Database
 
             return searchResults;
         }
-
-        public int numDifferentProductsSold()
-        {
-            var distinctProductCount = (from p in db.Products
-                                        select p.Product_Id).Distinct().Count();
-
-            if(distinctProductCount!= 0)
-            {
-                return distinctProductCount;
-            }
-            else
-            {
-                return 0;
-            }
-        }
-
-        public int numOnHand(int id)
-        {
-            var numOnHand = (from p in db.Products
-                             where p.Product_Id == id
-                             select p).FirstOrDefault();
-
-            return numOnHand.P_Quantity;
-        }
-
-        public int regperday()
-        {
-            var userCountByDay = (from u in db.User_Tables
-                                  group u by u.Register_Date.Date into g
-                                  select g.Count()).Sum();
-
-            return userCountByDay;
-        }
     }
 }
     

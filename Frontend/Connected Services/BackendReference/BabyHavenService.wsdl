@@ -145,24 +145,6 @@
   <wsdl:message name="IBabyHavenService_Addproducts_OutputMessage">
     <wsdl:part name="parameters" element="tns:AddproductsResponse" />
   </wsdl:message>
-  <wsdl:message name="IBabyHavenService_numDifferentProductsSold_InputMessage">
-    <wsdl:part name="parameters" element="tns:numDifferentProductsSold" />
-  </wsdl:message>
-  <wsdl:message name="IBabyHavenService_numDifferentProductsSold_OutputMessage">
-    <wsdl:part name="parameters" element="tns:numDifferentProductsSoldResponse" />
-  </wsdl:message>
-  <wsdl:message name="IBabyHavenService_numOnHand_InputMessage">
-    <wsdl:part name="parameters" element="tns:numOnHand" />
-  </wsdl:message>
-  <wsdl:message name="IBabyHavenService_numOnHand_OutputMessage">
-    <wsdl:part name="parameters" element="tns:numOnHandResponse" />
-  </wsdl:message>
-  <wsdl:message name="IBabyHavenService_regperday_InputMessage">
-    <wsdl:part name="parameters" element="tns:regperday" />
-  </wsdl:message>
-  <wsdl:message name="IBabyHavenService_regperday_OutputMessage">
-    <wsdl:part name="parameters" element="tns:regperdayResponse" />
-  </wsdl:message>
   <wsdl:portType name="IBabyHavenService">
     <wsdl:operation name="Login">
       <wsdl:input wsaw:Action="http://tempuri.org/IBabyHavenService/Login" message="tns:IBabyHavenService_Login_InputMessage" />
@@ -255,18 +237,6 @@
     <wsdl:operation name="Addproducts">
       <wsdl:input wsaw:Action="http://tempuri.org/IBabyHavenService/Addproducts" message="tns:IBabyHavenService_Addproducts_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IBabyHavenService/AddproductsResponse" message="tns:IBabyHavenService_Addproducts_OutputMessage" />
-    </wsdl:operation>
-    <wsdl:operation name="numDifferentProductsSold">
-      <wsdl:input wsaw:Action="http://tempuri.org/IBabyHavenService/numDifferentProductsSold" message="tns:IBabyHavenService_numDifferentProductsSold_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IBabyHavenService/numDifferentProductsSoldResponse" message="tns:IBabyHavenService_numDifferentProductsSold_OutputMessage" />
-    </wsdl:operation>
-    <wsdl:operation name="numOnHand">
-      <wsdl:input wsaw:Action="http://tempuri.org/IBabyHavenService/numOnHand" message="tns:IBabyHavenService_numOnHand_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IBabyHavenService/numOnHandResponse" message="tns:IBabyHavenService_numOnHand_OutputMessage" />
-    </wsdl:operation>
-    <wsdl:operation name="regperday">
-      <wsdl:input wsaw:Action="http://tempuri.org/IBabyHavenService/regperday" message="tns:IBabyHavenService_regperday_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IBabyHavenService/regperdayResponse" message="tns:IBabyHavenService_regperday_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_IBabyHavenService" type="tns:IBabyHavenService">
@@ -471,33 +441,6 @@
     </wsdl:operation>
     <wsdl:operation name="Addproducts">
       <soap:operation soapAction="http://tempuri.org/IBabyHavenService/Addproducts" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="numDifferentProductsSold">
-      <soap:operation soapAction="http://tempuri.org/IBabyHavenService/numDifferentProductsSold" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="numOnHand">
-      <soap:operation soapAction="http://tempuri.org/IBabyHavenService/numOnHand" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="regperday">
-      <soap:operation soapAction="http://tempuri.org/IBabyHavenService/regperday" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
