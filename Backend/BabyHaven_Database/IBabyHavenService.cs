@@ -155,5 +155,8 @@ namespace BabyHaven_Database
 
         int GetProductCategoryReport(string cat);
 
+        [OperationContract]
+        List<Order_Table> GetInvoicesForMonth(DateTime targetMonth);
+
     }
 }

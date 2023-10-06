@@ -46,6 +46,7 @@
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Web.DataVisualization" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -71,6 +72,7 @@
   <ItemGroup>
     <Content Include="AddAdmin.aspx" />
     <Content Include="AddProduct.aspx" />
+    <Content Include="allprods.aspx" />
     <Content Include="Blog.aspx" />
     <Content Include="Cart.aspx" />
     <Content Include="Checkout.aspx" />
@@ -113,6 +115,7 @@
     <Content Include="css\slicknav.min.css" />
     <Content Include="css\style.css" />
     <Content Include="EditProduct.aspx" />
+    <Content Include="handprods.aspx" />
     <Content Include="Home.aspx" />
     <Content Include="InvoiceDetails.aspx" />
     <Content Include="Invoices.aspx" />
@@ -129,13 +132,16 @@
     <Content Include="js\owl.carousel.min.js" />
     <Content Include="Login.aspx" />
     <Content Include="Logout.aspx" />
+    <Content Include="lowprods.aspx" />
     <Content Include="numcat.aspx" />
     <Content Include="ProductDetails.aspx" />
     <Content Include="Register.aspx" />
     <Content Include="reports.aspx" />
+    <Content Include="salesreport.aspx" />
     <Content Include="Shop.aspx" />
     <Content Include="Subscribe.aspx" />
     <Content Include="ThankYou.aspx" />
+    <Content Include="topprods.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -152,6 +158,13 @@
     </Compile>
     <Compile Include="AddProduct.aspx.designer.cs">
       <DependentUpon>AddProduct.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="allprods.aspx.cs">
+      <DependentUpon>allprods.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="allprods.aspx.designer.cs">
+      <DependentUpon>allprods.aspx</DependentUpon>
     </Compile>
     <Compile Include="BabyHaven.Master.cs">
       <DependentUpon>BabyHaven.Master</DependentUpon>
@@ -200,6 +213,13 @@
     <Compile Include="EditProduct.aspx.designer.cs">
       <DependentUpon>EditProduct.aspx</DependentUpon>
     </Compile>
+    <Compile Include="handprods.aspx.cs">
+      <DependentUpon>handprods.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="handprods.aspx.designer.cs">
+      <DependentUpon>handprods.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Hash.cs" />
     <Compile Include="Home.aspx.cs">
       <DependentUpon>Home.aspx</DependentUpon>
@@ -236,6 +256,13 @@
     <Compile Include="Logout.aspx.designer.cs">
       <DependentUpon>Logout.aspx</DependentUpon>
     </Compile>
+    <Compile Include="lowprods.aspx.cs">
+      <DependentUpon>lowprods.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="lowprods.aspx.designer.cs">
+      <DependentUpon>lowprods.aspx</DependentUpon>
+    </Compile>
     <Compile Include="numcat.aspx.cs">
       <DependentUpon>numcat.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -265,6 +292,13 @@
     <Compile Include="reports.aspx.designer.cs">
       <DependentUpon>reports.aspx</DependentUpon>
     </Compile>
+    <Compile Include="salesreport.aspx.cs">
+      <DependentUpon>salesreport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="salesreport.aspx.designer.cs">
+      <DependentUpon>salesreport.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Shop.aspx.cs">
       <DependentUpon>Shop.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -285,6 +319,13 @@
     </Compile>
     <Compile Include="ThankYou.aspx.designer.cs">
       <DependentUpon>ThankYou.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="topprods.aspx.cs">
+      <DependentUpon>topprods.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="topprods.aspx.designer.cs">
+      <DependentUpon>topprods.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
