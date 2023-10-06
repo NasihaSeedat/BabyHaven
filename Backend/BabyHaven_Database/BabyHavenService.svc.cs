@@ -989,6 +989,13 @@ namespace BabyHaven_Database
             }
         }
 
+        public List<Order_Item> GetAllOrderItems() {
+            dynamic items = (from i in db.Order_Items
+                         select i).ToList();
+
+            return items;
+        }
+
         public int numDifferentProductsSold()
         {
             var distinctProductCount = (from p in db.Products

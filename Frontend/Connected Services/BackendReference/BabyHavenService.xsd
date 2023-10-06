@@ -583,6 +583,18 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+  <xs:element name="GetAllOrderItems">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAllOrderItemsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q19="http://schemas.datacontract.org/2004/07/BabyHaven_Database" minOccurs="0" name="GetAllOrderItemsResult" nillable="true" type="q19:ArrayOfOrder_Item" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
   <xs:element name="numDifferentProductsSold">
     <xs:complexType>
       <xs:sequence />
@@ -645,7 +657,7 @@
   <xs:element name="GetInvoicesForMonthResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q19="http://schemas.datacontract.org/2004/07/BabyHaven_Database" minOccurs="0" name="GetInvoicesForMonthResult" nillable="true" type="q19:ArrayOfOrder_Table" />
+        <xs:element xmlns:q20="http://schemas.datacontract.org/2004/07/BabyHaven_Database" minOccurs="0" name="GetInvoicesForMonthResult" nillable="true" type="q20:ArrayOfOrder_Table" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
