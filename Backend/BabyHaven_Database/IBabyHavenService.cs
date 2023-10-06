@@ -151,6 +151,15 @@ namespace BabyHaven_Database
         [OperationContract]
         int regperday();
 
+
+        [OperationContract]
+
+        int GetProductCategoryReport(string cat);
+
+        [OperationContract]
+        List<Order_Table> GetInvoicesForMonth(DateTime targetMonth);
+
+
         [OperationContract]
 
         int GetProductCategoryReport(string cat);

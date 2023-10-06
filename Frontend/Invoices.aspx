@@ -1,3 +1,4 @@
+
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/BabyHaven.Master" AutoEventWireup="true" CodeBehind="Invoices.aspx.cs" Inherits="Frontend.Invoices" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
@@ -46,7 +47,8 @@
             <div class="row">
                 <div class="col-md-12">
                      <%if (Session["LoggedInUserType"] != null && Session["LoggedInUserType"].Equals(1))
-                         {%>
+                         {
+%>
                     <h2>Your Purchase History</h2>
                     <%}
                         else

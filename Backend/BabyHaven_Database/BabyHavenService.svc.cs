@@ -1030,6 +1030,7 @@ namespace BabyHaven_Database
             return pc;
         }
 
+
         public bool isSafeHavenSock()
         {
             var sock = (from s in db.Carts
@@ -1045,6 +1046,33 @@ namespace BabyHaven_Database
                 return false;
             }
         }
+
+        public List<Order_Table> GetInvoicesForMonth(DateTime targetMonth)
+        {
+           
+                List<Order_Table> invoicesForMonth = new List<Order_Table>();
+
+                // Calculate the first day of the target month
+                DateTime startOfMonth = new DateTime(targetMonth.Year, targetMonth.Month, 1);
+
+                // Calculate the first day of the next month
+                DateTime startOfNextMonth = startOfMonth.AddMonths(1);
+
+                // Query the database to retrieve invoices for the specified month
+                var invoices = from i in db.Order_Tables
+                               where i.O_Date >= startOfMonth && i.O_Date < startOfNextMonth
+                               orderby i.O_Date ascending
+                               select i;
+
+                // Add the sorted invoices to the result list
+                invoicesForMonth.AddRange(invoices);
+
+                return invoicesForMonth;
+            
+
+        }
+
+
     }
 }
 

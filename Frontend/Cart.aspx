@@ -57,7 +57,8 @@
                                                     </div>
                                                 </td>
 
-                                                <td class="cart__total"><%# Eval("Cart_Price", "{0:C}") %></td>
+                                                <td class="cart__total"><%# string.Format("R {0:N2}", Eval("Cart_Price")) %></td>
+
                                                 <td class="cart__close">
                                                     <asp:Button runat="server" ID="RemoveFromCartButton" Text="X" OnClick="RemoveFromCartButton_Click" CommandArgument='<%# Eval("P_ID") %>' CssClass="cart-remove-button" />
                                                 </td>

@@ -110,6 +110,33 @@ ol {
   Helper CSS
 -----------------------*/
 
+.custom-gridview {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+    .custom-gridview th, .custom-gridview td {
+        padding: 8px;
+        text-align: left;
+        border-bottom: 1px solid #ddd;
+    }
+
+    .custom-gridview th {
+        background-color: #84B7EE; /* Light Blue */
+        color: #ffffff; /* White Text */
+    }
+
+    .custom-gridview tr:nth-child(even) {
+        background-color: #f0f0f0; /* Light Grayish White */
+    }
+
+    .custom-gridview tr:nth-child(odd) {
+        background-color: #ffffff; /* White */
+    }
+
+    .custom-gridview tr:hover {
+        background-color: #ADD8E6; /* Lighter Blue on Hover */
+    }
 .section-title {
     margin-bottom: 45px;
 }
@@ -280,18 +307,25 @@ ol {
   Search Bar
 -----------------------*/
 .search-bar {
-    width: 250px; /* Adjust the width as needed */
-    padding: 10px;
+    /*width: 250px;*/ /* Adjust the width as needed */
+    /*padding: 10px;
     border: 2px solid #ccc;
-    border-radius: 20px; /* Rounded edges */
-    outline: none; /* Remove the default focus outline */
-    transition: border-color 0.3s, box-shadow 0.3s; /* Smooth transition for border color and box shadow */
+    border-radius: 20px;*/ /* Rounded edges */
+    outline: none;
+    transition: border-color 0.3s, box-shadow 0.3s;
+    height: 50px;
+    width: 250px;
+    border: 1px solid #e1e1e1;
+    border-radius: 2px;
+    font-size: 14px;
+    padding: 10px;
+    color: #666666;
 }
 
-    /* CSS for the search bar when focused (when someone types in it) */
+    /*/* CSS for the search bar when focused (when someone types in it) */
     .search-bar:focus {
-        border-color: #00bcd4; /* Light blue border color */
-        box-shadow: 0 0 5px #00bcd4; /* Light blue box shadow */
+        border-color: #84B7EE; /* Light blue border color */
+        box-shadow: 0 0 5px #84B7EE; /* Light blue box shadow */
     }
 
 /* Define styles for the table */
@@ -1345,7 +1379,7 @@ ol {
             margin-left: 4px;
         }
 
-        /*--------------------------
+/*--------------------------
             SEARCH BUTTONS
         */
 .search-container {
@@ -1359,20 +1393,28 @@ ol {
 }
 
 .search-button {
-    background-color: #84B7EE;
+    background-color: #f2f2f2;
+    color: #111111;
     background-image: url('../img/search-icon.png'); /* Replace 'search-icon.png' with the path to your search icon image */
     background-size: 20px 20px;
     background-repeat: no-repeat;
     background-position: center;
-    width: 40px; /* Adjust the width as needed */
-    height: 40px; /* Adjust the height as needed */
+    width: 55px; /* Adjust the width as needed */
+    height: 50px; /* Adjust the height as needed */
     border: none;
     cursor: pointer;
     border-radius: 50%;
+    transition: background 0.3s, color 0.3s; /* Smooth hover effect for background and text color */
 }
 
+    /* Style the button on hover */
+    .search-button:hover {
+        background-color: #84B7EE; /* Change the background color on hover to #84B7EE */
+        color: #fff; /* Change the text color to white on hover */
+    }
 
-        /**edit/ remove buttons*/
+
+/**edit/ remove buttons*/
 .btn-AdminBut {
     font-size: 14px;
     font-weight: 600;
@@ -1397,6 +1439,26 @@ ol {
 /*---------------------
   Shop
 -----------------------*/
+
+
+.btnFilter {
+    font-size: 14px;
+    font-weight: 600;
+    border: none;
+    text-transform: uppercase;
+    display: inline-block;
+    padding: 8px 30px;
+    border-radius: 50px;
+    background: #f2f2f2;
+    color: #111111;
+    transition: background 0.3s, color 0.3s; /* Smooth hover effect for background and text color */
+}
+
+    /* Style the button on hover */
+    .btnFilter:hover {
+        background: #84B7EE; /* Change the background color on hover to #84B7EE */
+        color: #fff; /* Change the text color to white on hover */
+    }
 
 .shop {
     padding-top: 70px;
@@ -3571,7 +3633,7 @@ register__error {
     border: none;
     text-transform: uppercase;
     display: inline-block;
-    padding: 6px 30px;
+    padding: 18px 30px;
     border-radius: 50px;
     margin-bottom: 20px;
     margin-top: 20px;
@@ -3635,7 +3697,7 @@ register__error {
     border: none;
     text-transform: uppercase;
     display: inline-block;
-    padding: 6px 30px;
+    padding: 18px 30px;
     border-radius: 50px;
     margin-bottom: 20px;
     margin-top: 20px;
@@ -3649,6 +3711,42 @@ register__error {
         background: #84B7EE; /* Change the background color on hover to #84B7EE */
         color: #fff; /* Change the text color to white on hover */
     }
+
+
+.btnDetails {
+    font-size: 14px;
+    font-weight: 600;
+    border: none;
+    text-transform: uppercase;
+    display: inline-block;
+    padding: 8px 30px;
+    border-radius: 50px;
+    background: #f2f2f2;
+    color: #111111;
+    transition: background 0.3s, color 0.3s; /* Smooth hover effect for background and text color */
+}
+
+    /* Style the button on hover */
+    .btnDetails:hover {
+        background: #84B7EE; /* Change the background color on hover to #84B7EE */
+        color: #fff; /* Change the text color to white on hover */
+    }
+/*---------------------
+     Add Products
+-----------------------*/
+
+.file-chooser-label {
+    white-space: nowrap;
+    padding: 8px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-bottom: 1.5rem;
+}
+/*---------------------
+          Reports
+-----------------------*/
+
+
 /*--------------------------------- Responsive Media Quaries -----------------------------*/
 @media only screen and (min-width: 1600px) and (max-width: 1900px) {
     .header {

@@ -40,6 +40,8 @@ namespace Frontend
                 DropAdmin.Visible = true;
                 invoices.Visible = true;
                 safehaveninvoices.Visible = true;
+
+                reports.Visible = true;
             }
             else if(Session["LoggedInUserType"] == null && Session["LoggedInUserID"]==null)
             {
@@ -47,6 +49,8 @@ namespace Frontend
                 DropAdmin.Visible = false;
                 invoices.Visible = false;
                 safehaveninvoices.Visible = false;
+
+                reports.Visible = false;
             }
         }
 
@@ -71,6 +75,11 @@ namespace Frontend
             }
 
             return totalItems;
+        }
+
+        protected void btn_Subscribe(object sender, EventArgs e)
+        {
+            Response.Redirect("Login.aspx");
         }
 
     }
