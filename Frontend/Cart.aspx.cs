@@ -99,26 +99,6 @@ namespace Frontend
             }
         }
 
-        //Remove a quantity
-        //protected void RemoveFromCartButton_Click(object sender, EventArgs e)
-        //{
-        //    // Get the product ID from the sender button's CommandArgument
-        //    Button btnRemove = (Button)sender;
-        //    int productId = Convert.ToInt32(btnRemove.CommandArgument);
-
-        //    // Specify the user ID (you might have your own method to do this)
-        //    int userId = GetClientId();
-
-        //    // Specify the quantity to remove (e.g., 1)
-        //    int quantityToRemove = 1; // You can adjust this based on your UI
-
-        //    // Call the backend service method to remove the product from the cart
-        //    sr.RemoveProductFromCart(productId, userId, quantityToRemove);
-
-        //    // Refresh the cart or update the UI as needed
-        //    BindCartData(); // Implement this method to rebind cart data
-        //}
-
         protected void IncreaseQuantity_Click(object sender, EventArgs e)
         {
             Button button = (Button)sender;
@@ -187,7 +167,7 @@ namespace Frontend
             decimal productPrice = sr.GetProductPrice(productID);
 
             // Return the total price formatted as currency
-            return productPrice.ToString("C");
+            return string.Format("R {0:N2}", productPrice);
         }
 
 
