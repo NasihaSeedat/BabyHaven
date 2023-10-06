@@ -35,6 +35,17 @@ namespace Frontend
             display += "<td><a href='salesreport.aspx'>View Report</a></td>";
             display += "</tr>";
 
+            display += "<tr>";
+            display += "<td>Top 5 Selling Products</td>";
+            display += "<td><a href='topprods.aspx'>View Report</a></td>";
+            display += "</tr>";
+
+            display += "<tr>";
+            display += "<td>Lowest 5 Selling Products</td>";
+            display += "<td><a href='lowprods.aspx'>View Report</a></td>";
+            display += "</tr>";
+
+
             display += "</tbody>";
             display += "</table><br />";
 
