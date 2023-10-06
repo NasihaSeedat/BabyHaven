@@ -134,6 +134,7 @@
     <Content Include="Register.aspx" />
     <Content Include="reports.aspx" />
     <Content Include="Shop.aspx" />
+    <Content Include="Subscribe.aspx" />
     <Content Include="ThankYou.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
@@ -270,6 +271,13 @@
     </Compile>
     <Compile Include="Shop.aspx.designer.cs">
       <DependentUpon>Shop.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Subscribe.aspx.cs">
+      <DependentUpon>Subscribe.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Subscribe.aspx.designer.cs">
+      <DependentUpon>Subscribe.aspx</DependentUpon>
     </Compile>
     <Compile Include="ThankYou.aspx.cs">
       <DependentUpon>ThankYou.aspx</DependentUpon>
