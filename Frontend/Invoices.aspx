@@ -2,7 +2,7 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <style>
-        /* Add your CSS styles here */
+       
         .invoice-table-area {
             padding: 100px;
         }
@@ -42,9 +42,17 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div class="invoice-table-area section-padding-100">
         <div class="container-fluid">
+           
             <div class="row">
                 <div class="col-md-12">
+                     <%if (Session["LoggedInUserType"] != null && Session["LoggedInUserType"].Equals(1))
+                         {%>
                     <h2>Your Purchase History</h2>
+                    <%}
+                        else
+                        { %>
+                    <h2>All Purchases </h2>
+                    <%} %>
                     <br/>
                 </div>
             </div>

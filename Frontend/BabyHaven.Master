@@ -85,6 +85,17 @@
                             <li><a href="Contact.aspx">About Us</a></li>
 
                             <li id="invoices" visible="true" runat="server"><a href="Invoices.aspx">Invoices</a></li>
+                            <li id="safehaveninvoices" visible="false" runat="server"><a href="ProjSafeInvoice.aspx">SafeHaven Invoices</a></li>
+                            
+                            <%--<li runat="server" id="invoiceLink" visible="false">
+                                <a href="#">Invoice Panel</a>
+                                <ul class="dropdown" id="DropInvoice" visible="false" runat="server">
+                                    <li><a href="Invoices.aspx">All Invoices</a></li>
+                                    <li><a href="ProjSafeInvoice.aspx">Project SafeHaven Invoices</a></li>
+                                    
+                                </ul>
+                            </li>--%>
+
 
                             <li runat="server" id="adminLink" visible="false">
                                 <a href="#">Admin Panel</a>

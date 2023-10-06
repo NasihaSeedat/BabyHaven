@@ -69,6 +69,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Action.aspx" />
     <Content Include="AddAdmin.aspx" />
     <Content Include="AddProduct.aspx" />
     <Content Include="Blog.aspx" />
@@ -129,12 +130,21 @@
     <Content Include="Login.aspx" />
     <Content Include="Logout.aspx" />
     <Content Include="ProductDetails.aspx" />
+    <Content Include="ProjSafeInvoice.aspx" />
+    <Content Include="ProjSafeInvoiceDetails.aspx" />
     <Content Include="Register.aspx" />
     <Content Include="Shop.aspx" />
     <Content Include="ThankYou.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Action.aspx.cs">
+      <DependentUpon>Action.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Action.aspx.designer.cs">
+      <DependentUpon>Action.aspx</DependentUpon>
+    </Compile>
     <Compile Include="AddAdmin.aspx.cs">
       <DependentUpon>AddAdmin.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -238,6 +248,20 @@
     </Compile>
     <Compile Include="ProductDetails.aspx.designer.cs">
       <DependentUpon>ProductDetails.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ProjSafeInvoice.aspx.cs">
+      <DependentUpon>ProjSafeInvoice.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ProjSafeInvoice.aspx.designer.cs">
+      <DependentUpon>ProjSafeInvoice.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ProjSafeInvoiceDetails.aspx.cs">
+      <DependentUpon>ProjSafeInvoiceDetails.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ProjSafeInvoiceDetails.aspx.designer.cs">
+      <DependentUpon>ProjSafeInvoiceDetails.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Register.aspx.cs">
