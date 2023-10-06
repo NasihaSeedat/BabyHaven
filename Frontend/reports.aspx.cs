@@ -20,6 +20,15 @@ namespace Frontend
             display += "<td><a href='numcat.aspx'>View Report</a></td>";
             display += "</tr>";
 
+            display += "<tr>";
+            display += "<td>Products Sold On Website</td>";
+            display += "<td><a href='allprods.aspx'>View Report</a></td>";
+            display += "</tr>";
+
+            display += "<tr>";
+            display += "<td>Products On Hand</td>";
+            display += "<td><a href='handprods.aspx'>View Report</a></td>";
+            display += "</tr>";
 
             display += "</tbody>";
             display += "</table><br />";

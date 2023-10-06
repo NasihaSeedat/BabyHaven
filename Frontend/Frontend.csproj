@@ -71,6 +71,7 @@
   <ItemGroup>
     <Content Include="AddAdmin.aspx" />
     <Content Include="AddProduct.aspx" />
+    <Content Include="allprods.aspx" />
     <Content Include="Blog.aspx" />
     <Content Include="Cart.aspx" />
     <Content Include="Checkout.aspx" />
@@ -113,6 +114,7 @@
     <Content Include="css\slicknav.min.css" />
     <Content Include="css\style.css" />
     <Content Include="EditProduct.aspx" />
+    <Content Include="handprods.aspx" />
     <Content Include="Home.aspx" />
     <Content Include="InvoiceDetails.aspx" />
     <Content Include="Invoices.aspx" />
@@ -151,6 +153,13 @@
     </Compile>
     <Compile Include="AddProduct.aspx.designer.cs">
       <DependentUpon>AddProduct.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="allprods.aspx.cs">
+      <DependentUpon>allprods.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="allprods.aspx.designer.cs">
+      <DependentUpon>allprods.aspx</DependentUpon>
     </Compile>
     <Compile Include="BabyHaven.Master.cs">
       <DependentUpon>BabyHaven.Master</DependentUpon>
@@ -198,6 +207,13 @@
     </Compile>
     <Compile Include="EditProduct.aspx.designer.cs">
       <DependentUpon>EditProduct.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="handprods.aspx.cs">
+      <DependentUpon>handprods.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="handprods.aspx.designer.cs">
+      <DependentUpon>handprods.aspx</DependentUpon>
     </Compile>
     <Compile Include="Hash.cs" />
     <Compile Include="Home.aspx.cs">
