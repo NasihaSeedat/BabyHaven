@@ -46,6 +46,7 @@
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Web.DataVisualization" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -135,6 +136,7 @@
     <Content Include="ProductDetails.aspx" />
     <Content Include="Register.aspx" />
     <Content Include="reports.aspx" />
+    <Content Include="salesreport.aspx" />
     <Content Include="Shop.aspx" />
     <Content Include="ThankYou.aspx" />
     <Content Include="Web.config" />
@@ -279,6 +281,13 @@
     </Compile>
     <Compile Include="reports.aspx.designer.cs">
       <DependentUpon>reports.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="salesreport.aspx.cs">
+      <DependentUpon>salesreport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="salesreport.aspx.designer.cs">
+      <DependentUpon>salesreport.aspx</DependentUpon>
     </Compile>
     <Compile Include="Shop.aspx.cs">
       <DependentUpon>Shop.aspx</DependentUpon>
