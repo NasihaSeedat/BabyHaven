@@ -1029,6 +1029,23 @@ namespace BabyHaven_Database
                       select o.P_Quantity).Sum();
             return pc;
         }
+
+        public List<Order_Table> GetInvoicesForMonth(DateTime targetMonth)
+        {
+            List<Order_Table> invoicesForMonth = new List<Order_Table>();
+
+            // Query the database to retrieve invoices for the specified month
+            var invoices = from i in db.Order_Tables
+                           where i.O_Date.Year == targetMonth.Year && i.O_Date.Month == targetMonth.Month
+                           orderby i.O_Date ascending
+                           select i;
+
+            // Add the sorted invoices to the result list
+            invoicesForMonth.AddRange(invoices);
+
+            return invoicesForMonth;
+        }
+
     }
 }
 

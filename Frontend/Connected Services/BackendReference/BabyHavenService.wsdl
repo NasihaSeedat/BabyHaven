@@ -266,6 +266,12 @@
   <wsdl:message name="IBabyHavenService_GetProductCategoryReport_OutputMessage">
     <wsdl:part name="parameters" element="tns:GetProductCategoryReportResponse" />
   </wsdl:message>
+  <wsdl:message name="IBabyHavenService_GetInvoicesForMonth_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetInvoicesForMonth" />
+  </wsdl:message>
+  <wsdl:message name="IBabyHavenService_GetInvoicesForMonth_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetInvoicesForMonthResponse" />
+  </wsdl:message>
   <wsdl:portType name="IBabyHavenService">
     <wsdl:operation name="Login">
       <wsdl:input wsaw:Action="http://tempuri.org/IBabyHavenService/Login" message="tns:IBabyHavenService_Login_InputMessage" />
@@ -438,6 +444,10 @@
     <wsdl:operation name="GetProductCategoryReport">
       <wsdl:input wsaw:Action="http://tempuri.org/IBabyHavenService/GetProductCategoryReport" message="tns:IBabyHavenService_GetProductCategoryReport_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IBabyHavenService/GetProductCategoryReportResponse" message="tns:IBabyHavenService_GetProductCategoryReport_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetInvoicesForMonth">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBabyHavenService/GetInvoicesForMonth" message="tns:IBabyHavenService_GetInvoicesForMonth_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBabyHavenService/GetInvoicesForMonthResponse" message="tns:IBabyHavenService_GetInvoicesForMonth_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_IBabyHavenService" type="tns:IBabyHavenService">
@@ -822,6 +832,15 @@
     </wsdl:operation>
     <wsdl:operation name="GetProductCategoryReport">
       <soap:operation soapAction="http://tempuri.org/IBabyHavenService/GetProductCategoryReport" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetInvoicesForMonth">
+      <soap:operation soapAction="http://tempuri.org/IBabyHavenService/GetInvoicesForMonth" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

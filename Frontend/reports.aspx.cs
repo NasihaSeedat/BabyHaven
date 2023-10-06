@@ -30,6 +30,11 @@ namespace Frontend
             display += "<td><a href='handprods.aspx'>View Report</a></td>";
             display += "</tr>";
 
+            display += "<tr>";
+            display += "<td>Sales Report</td>";
+            display += "<td><a href='salesreport.aspx'>View Report</a></td>";
+            display += "</tr>";
+
             display += "</tbody>";
             display += "</table><br />";
 
