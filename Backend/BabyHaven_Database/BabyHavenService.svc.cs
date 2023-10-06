@@ -1032,18 +1032,27 @@ namespace BabyHaven_Database
 
         public List<Order_Table> GetInvoicesForMonth(DateTime targetMonth)
         {
-            List<Order_Table> invoicesForMonth = new List<Order_Table>();
+           
+                List<Order_Table> invoicesForMonth = new List<Order_Table>();
 
-            // Query the database to retrieve invoices for the specified month
-            var invoices = from i in db.Order_Tables
-                           where i.O_Date.Year == targetMonth.Year && i.O_Date.Month == targetMonth.Month
-                           orderby i.O_Date ascending
-                           select i;
+                // Calculate the first day of the target month
+                DateTime startOfMonth = new DateTime(targetMonth.Year, targetMonth.Month, 1);
 
-            // Add the sorted invoices to the result list
-            invoicesForMonth.AddRange(invoices);
+                // Calculate the first day of the next month
+                DateTime startOfNextMonth = startOfMonth.AddMonths(1);
 
-            return invoicesForMonth;
+                // Query the database to retrieve invoices for the specified month
+                var invoices = from i in db.Order_Tables
+                               where i.O_Date >= startOfMonth && i.O_Date < startOfNextMonth
+                               orderby i.O_Date ascending
+                               select i;
+
+                // Add the sorted invoices to the result list
+                invoicesForMonth.AddRange(invoices);
+
+                return invoicesForMonth;
+            
+
         }
 
     }
