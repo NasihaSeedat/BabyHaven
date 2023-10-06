@@ -110,6 +110,33 @@ ol {
   Helper CSS
 -----------------------*/
 
+.custom-gridview {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+    .custom-gridview th, .custom-gridview td {
+        padding: 8px;
+        text-align: left;
+        border-bottom: 1px solid #ddd;
+    }
+
+    .custom-gridview th {
+        background-color: #84B7EE; /* Light Blue */
+        color: #ffffff; /* White Text */
+    }
+
+    .custom-gridview tr:nth-child(even) {
+        background-color: #f0f0f0; /* Light Grayish White */
+    }
+
+    .custom-gridview tr:nth-child(odd) {
+        background-color: #ffffff; /* White */
+    }
+
+    .custom-gridview tr:hover {
+        background-color: #ADD8E6; /* Lighter Blue on Hover */
+    }
 .section-title {
     margin-bottom: 45px;
 }
