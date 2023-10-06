@@ -1110,6 +1110,12 @@ namespace Frontend.BackendReference {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBabyHavenService/GetOrderItems", ReplyAction="http://tempuri.org/IBabyHavenService/GetOrderItemsResponse")]
         System.Threading.Tasks.Task<Frontend.BackendReference.Order_Item[]> GetOrderItemsAsync(int id);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBabyHavenService/GetAllOrderItems", ReplyAction="http://tempuri.org/IBabyHavenService/GetAllOrderItemsResponse")]
+        Frontend.BackendReference.Order_Item[] GetAllOrderItems();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBabyHavenService/GetAllOrderItems", ReplyAction="http://tempuri.org/IBabyHavenService/GetAllOrderItemsResponse")]
+        System.Threading.Tasks.Task<Frontend.BackendReference.Order_Item[]> GetAllOrderItemsAsync();
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBabyHavenService/numDifferentProductsSold", ReplyAction="http://tempuri.org/IBabyHavenService/numDifferentProductsSoldResponse")]
         int numDifferentProductsSold();
         
@@ -1486,6 +1492,14 @@ namespace Frontend.BackendReference {
         
         public System.Threading.Tasks.Task<Frontend.BackendReference.Order_Item[]> GetOrderItemsAsync(int id) {
             return base.Channel.GetOrderItemsAsync(id);
+        }
+        
+        public Frontend.BackendReference.Order_Item[] GetAllOrderItems() {
+            return base.Channel.GetAllOrderItems();
+        }
+        
+        public System.Threading.Tasks.Task<Frontend.BackendReference.Order_Item[]> GetAllOrderItemsAsync() {
+            return base.Channel.GetAllOrderItemsAsync();
         }
         
         public int numDifferentProductsSold() {

@@ -143,6 +143,9 @@ namespace BabyHaven_Database
         List<Order_Item> GetOrderItems(int id);
 
         [OperationContract]
+        List<Order_Item> GetAllOrderItems();
+
+        [OperationContract]
         int numDifferentProductsSold();
 
         [OperationContract]
