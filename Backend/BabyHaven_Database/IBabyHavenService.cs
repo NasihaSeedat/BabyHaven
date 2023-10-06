@@ -154,6 +154,7 @@ namespace BabyHaven_Database
         [OperationContract]
         int regperday();
 
+
         [OperationContract]
 
         int GetProductCategoryReport(string cat);
@@ -161,5 +162,12 @@ namespace BabyHaven_Database
         [OperationContract]
         List<Order_Table> GetInvoicesForMonth(DateTime targetMonth);
 
+
+        [OperationContract]
+
+        int GetProductCategoryReport(string cat);
+
+        [OperationContract]
+        bool isSafeHavenSock();
     }
 }

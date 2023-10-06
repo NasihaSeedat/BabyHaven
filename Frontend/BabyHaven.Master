@@ -85,7 +85,20 @@
                             <li><a href="Contact.aspx">About Us</a></li>
 
                             <li id="invoices" visible="true" runat="server"><a href="Invoices.aspx">Invoices</a></li>
+
+                            <li id="safehaveninvoices" visible="false" runat="server"><a href="ProjSafeInvoice.aspx">SafeHaven Invoices</a></li>
+                            
+                            <%--<li runat="server" id="invoiceLink" visible="false">
+                                <a href="#">Invoice Panel</a>
+                                <ul class="dropdown" id="DropInvoice" visible="false" runat="server">
+                                    <li><a href="Invoices.aspx">All Invoices</a></li>
+                                    <li><a href="ProjSafeInvoice.aspx">Project SafeHaven Invoices</a></li>
+                                    
+                                </ul>
+                            </li>--%>
+
                             <li id="reports" visible="false" runat="server"><a href="reports.aspx">Reports</a></li>
+
 
                             <li runat="server" id="adminLink" visible="false">
                                 <a href="#">Admin Panel</a>
@@ -237,19 +250,23 @@
                     <div class="footer__widget">
                         <h6>Account</h6>
                         <ul>
-                            <li><a href="#">My Account</a></li>
-                            <li><a href="#">Orders Tracking</a></li>
+                            <li><a href="Home.aspx">My Account</a></li>
+                            <li><a href="Invoices.aspx">Orders Tracking</a></li>
                             <li><a href="Checkout.aspx">Checkout</a></li>
                         </ul>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-8 col-sm-8">
                     <div class="footer__newslatter">
-                        <h6>NEWSLETTER</h6>
-                        <form action="#">
+                       <a href="Subscribe.aspx"> <h6>SUBCRIBE TO OUR NEWSLETTER</h6></a>
+                    <%--    <form action="#">
                             <input type="text" placeholder="Email">
-                            <button type="submit" class="site-btn">Subscribe</button>
-                        </form>
+                            <button type="submit" class="site-btn" onclick="btn_Subscribe">Subscribe</button>
+                        </form>--%>
+
+
+                        
+
                         <div class="footer__social">
                             <a href="#"><i class="fa fa-facebook"></i></a>
                             <a href="#"><i class="fa fa-twitter"></i></a>
