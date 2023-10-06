@@ -132,6 +132,7 @@
     <Content Include="js\owl.carousel.min.js" />
     <Content Include="Login.aspx" />
     <Content Include="Logout.aspx" />
+    <Content Include="lowprods.aspx" />
     <Content Include="numcat.aspx" />
     <Content Include="ProductDetails.aspx" />
     <Content Include="Register.aspx" />
@@ -139,6 +140,7 @@
     <Content Include="salesreport.aspx" />
     <Content Include="Shop.aspx" />
     <Content Include="ThankYou.aspx" />
+    <Content Include="topprods.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -253,6 +255,13 @@
     <Compile Include="Logout.aspx.designer.cs">
       <DependentUpon>Logout.aspx</DependentUpon>
     </Compile>
+    <Compile Include="lowprods.aspx.cs">
+      <DependentUpon>lowprods.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="lowprods.aspx.designer.cs">
+      <DependentUpon>lowprods.aspx</DependentUpon>
+    </Compile>
     <Compile Include="numcat.aspx.cs">
       <DependentUpon>numcat.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -302,6 +311,13 @@
     </Compile>
     <Compile Include="ThankYou.aspx.designer.cs">
       <DependentUpon>ThankYou.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="topprods.aspx.cs">
+      <DependentUpon>topprods.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="topprods.aspx.designer.cs">
+      <DependentUpon>topprods.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
