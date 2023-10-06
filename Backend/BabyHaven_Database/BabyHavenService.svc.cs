@@ -1022,6 +1022,13 @@ namespace BabyHaven_Database
             return userCountByDay;
         }
 
+        public int GetProductCategoryReport(string cat)
+        {
+            var pc = (from o in db.Products
+                      where o.P_Category.Equals(cat)
+                      select o.P_Quantity).Sum();
+            return pc;
+        }
     }
 }
 

@@ -39,12 +39,14 @@ namespace Frontend
                 adminLink.Visible = true;
                 DropAdmin.Visible = true;
                 invoices.Visible = true;
+                reports.Visible = true;
             }
             else if(Session["LoggedInUserType"] == null && Session["LoggedInUserID"]==null)
             {
                 adminLink.Visible = false;
                 DropAdmin.Visible = false;
                 invoices.Visible = false;
+                reports.Visible = false;
             }
         }
 

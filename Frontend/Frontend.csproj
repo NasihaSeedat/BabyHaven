@@ -117,6 +117,7 @@
     <Content Include="InvoiceDetails.aspx" />
     <Content Include="Invoices.aspx" />
     <Content Include="js\bootstrap.min.js" />
+    <Content Include="js\Chart.js" />
     <Content Include="js\jquery-3.3.1.min.js" />
     <Content Include="js\jquery-ui.min.js" />
     <Content Include="js\jquery.countdown.min.js" />
@@ -128,8 +129,10 @@
     <Content Include="js\owl.carousel.min.js" />
     <Content Include="Login.aspx" />
     <Content Include="Logout.aspx" />
+    <Content Include="numcat.aspx" />
     <Content Include="ProductDetails.aspx" />
     <Content Include="Register.aspx" />
+    <Content Include="reports.aspx" />
     <Content Include="Shop.aspx" />
     <Content Include="ThankYou.aspx" />
     <Content Include="Web.config" />
@@ -232,6 +235,13 @@
     <Compile Include="Logout.aspx.designer.cs">
       <DependentUpon>Logout.aspx</DependentUpon>
     </Compile>
+    <Compile Include="numcat.aspx.cs">
+      <DependentUpon>numcat.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="numcat.aspx.designer.cs">
+      <DependentUpon>numcat.aspx</DependentUpon>
+    </Compile>
     <Compile Include="ProductDetails.aspx.cs">
       <DependentUpon>ProductDetails.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -246,6 +256,13 @@
     </Compile>
     <Compile Include="Register.aspx.designer.cs">
       <DependentUpon>Register.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="reports.aspx.cs">
+      <DependentUpon>reports.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="reports.aspx.designer.cs">
+      <DependentUpon>reports.aspx</DependentUpon>
     </Compile>
     <Compile Include="Shop.aspx.cs">
       <DependentUpon>Shop.aspx</DependentUpon>

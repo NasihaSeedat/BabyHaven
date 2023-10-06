@@ -151,5 +151,9 @@ namespace BabyHaven_Database
         [OperationContract]
         int regperday();
 
+        [OperationContract]
+
+        int GetProductCategoryReport(string cat);
+
     }
 }
