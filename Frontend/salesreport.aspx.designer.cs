@@ -11,25 +11,16 @@ namespace Frontend
 {
 
 
-    public partial class handprods
+    public partial class salesreport
     {
 
         /// <summary>
-        /// form1 control.
+        /// ChartDiv control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlForm form1;
-
-        /// <summary>
-        /// ProductGridView control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView ProductGridView;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl ChartDiv;
     }
 }
