@@ -39,8 +39,8 @@ namespace Frontend
                 display += "<tr>";
 
             
-                display += "<td>" + u.Surname + "</td>";
                 display += "<td>" + u.Name + "</td>";
+                display += "<td>" + u.Surname + "</td>";
                 display += "<td>" + u.Email + "</td>";
                 display += "<td>" + u.Phone_Number + "</td>";
                
@@ -104,8 +104,8 @@ namespace Frontend
                 foreach (BackendReference.User_Table u in searchResults)
                 {
                     tableHtml += "<tr>";
-                    tableHtml += "<td>" + u.Surname + "</td>";
                     tableHtml += "<td>" + u.Name + "</td>";
+                    tableHtml += "<td>" + u.Surname + "</td>";
                     tableHtml += "<td>" + u.Email + "</td>";
                     tableHtml += "<td>" + u.Phone_Number + "</td>";
                     

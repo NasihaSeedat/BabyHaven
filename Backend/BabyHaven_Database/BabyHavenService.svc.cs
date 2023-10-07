@@ -512,7 +512,7 @@ namespace BabyHaven_Database
         public List<Product> getProductCat(string cat)
         {
             var products = (from p in db.Products
-                            where p.P_Category.Equals(cat)
+                            where p.P_Category.Equals(cat)&& p.isActive.Equals(true)
                             select p).ToList();
 
             return products;
