@@ -34,6 +34,14 @@
             font-size: 24px;
             color: #333;
         }
+
+        .dealt-with {
+            color: #28a745; /* Green color for the indicator */
+            font-weight: bold;
+            font-size: 14px;
+            margin-left: 10px; /* Adjust the margin as needed to separate it from buttons */
+            display: none; /* Hide the indicator by default */
+        }
     </style>
 
 </asp:Content>
@@ -60,7 +68,7 @@
                             </thead>
                             <tbody>
 
-                                <asp:Repeater ID="InvoicesRepeater2" runat="server">
+                                <%--<asp:Repeater ID="InvoicesRepeater2" runat="server">
                                     <ItemTemplate>
                                         <tr>
                                             <td><%# Eval("O_Id") %></td>
@@ -71,11 +79,40 @@
                                                     OnClick="DownloadPdfButton_Click" CommandArgument='<%# Eval("O_Id") %>' />
 
                                                 <asp:Button runat="server" Text="Take Action" CssClass="btn btn-warning" Style="background-color: #FFA500; border-color: #FFA500;"
-                                                    OnClick="TakeActionButton_Click" CommandArgument='<%# Eval("O_Id") %>' />
+                                                    OnClick="TakeActionButton_Click" CommandArgument='<%# Eval("O_Id") %>'
+                                                    Enabled='<%# !(IsDealtWith(Eval("O_Id"))) %>' />
+                                                <!-- Disable the button if IsDealtWith is true -->
+
+                                                <asp:Label runat="server" Text="Dealt with" CssClass="dealt-with" Visible='<%# IsDealtWith(Eval("O_Id")) %>'></asp:Label>
+                                            </td>
+                                        </tr>
+                                    </ItemTemplate>
+                                </asp:Repeater>--%>
+
+                                <asp:Repeater ID="InvoicesRepeater2" runat="server">
+                                    <ItemTemplate>
+                                        <tr>
+                                            <td><%# Eval("O_Id") %></td>
+                                            <td>R <%# Eval("O_Total", "{0:N2}") %></td>
+                                            <td><%# Eval("O_Date", "{0:yyyy-MM-dd}") %></td>
+                                            <td>
+                                                <asp:Button runat="server" Text="Get Details" CssClass="btn btn-primary" Style="background-color: #84B7EE; border-color: #84B7EE;"
+                                                    OnClick="DownloadPdfButton_Click" CommandArgument='<%# Eval("O_Id") %>' />
+
+                                                <asp:Button runat="server" ID="TakeActionButton" Text="Take Action" CssClass="btn btn-warning" Style="background-color: #FFA500; border-color: #FFA500;"
+                                                    OnClick="TakeActionButton_Click" CommandArgument='<%# Eval("O_Id") %>'
+                                                    Enabled='<%# !(IsDealtWith(Eval("O_Id"))) %>' />
+                                                <!-- Disable the button if IsDealtWith is true -->
+
+                                               <asp:Label runat="server" ID="DealtWithLabel" Text="Dealt with" CssClass="dealt-with" Visible='<%# IsDealtWith(Eval("O_Id")) %>'></asp:Label>
+
                                             </td>
                                         </tr>
                                     </ItemTemplate>
                                 </asp:Repeater>
+
+
+
                             </tbody>
                         </table>
                     </div>
