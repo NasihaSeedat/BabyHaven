@@ -2,7 +2,6 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <style>
-
         
         
     </style>
@@ -49,21 +48,18 @@
                                     </div>
                                 </div>
 
-                                <div class="login__button">
-
-                                    <asp:Button id="login" class="site-btn" runat="server" Text="Login" OnClick="login_Click"/>
+                                <asp:Button ID="login" CssClass="login__button" runat="server" Text="Login" OnClick="login_Click" />
 
 
-                                </div>
                                 <div class="login__error">
-                                    <asp:Label ID="error" runat="server" Text="Incorrect Password or Username" visible="false" ></asp:Label>
+                                    <asp:Label ID="error" runat="server" Text="Incorrect Password or Username" Visible="false"></asp:Label>
                                 </div>
 
                                 <!-- Registration link -->
                                 <div class="registration__link">
                                     <a href="Register.aspx">Don't have an account? Register here.</a>
                                 </div>
-                        
+
                             </div>
 
                         </div>
