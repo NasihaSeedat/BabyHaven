@@ -123,7 +123,7 @@ namespace Frontend
             // Check the discount code and set the discount rate accordingly
             if(!string.IsNullOrEmpty(discountCode)) {
                 // You can define specific discount codes and their corresponding rates here
-                if(discountCode.Equals("DELTA", StringComparison.OrdinalIgnoreCase)) {
+                if(discountCode.Equals("NEWBORN", StringComparison.OrdinalIgnoreCase)) {
                     discountRate = 0.05m; // 10% discount for CODE1
                 }
                 else if(discountCode.Equals("BABYHAVEN", StringComparison.OrdinalIgnoreCase)) {
