@@ -92,7 +92,7 @@
                                         <p>Product Description:</p>
                                     </td>
                                     <td>
-                                        <input type="text" class="textbox" placeholder="Product description" required runat="server" id="ProDescription">
+                                        <textarea class="textbox" placeholder="Product description" required runat="server" style="height: 150px;" id="ProDescription"></textarea>
                                     </td>
                                 </tr>
 
