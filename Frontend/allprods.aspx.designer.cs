@@ -22,12 +22,21 @@ namespace Frontend {
         protected global::System.Web.UI.WebControls.Label lblProductCount;
 
         /// <summary>
-        /// lblProductInfo control.
+        /// invoicesForm control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblProductInfo;
+        protected global::System.Web.UI.HtmlControls.HtmlForm invoicesForm;
+
+        /// <summary>
+        /// ProductsRepeater control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Repeater ProductsRepeater;
     }
 }

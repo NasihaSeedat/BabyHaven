@@ -28,16 +28,9 @@ namespace Frontend
                 lblProductCount.Text = $"<strong>Total Different Products Sold:</strong> {productCount}";
 
 
-                // Create a string to store product information.
-                string productInfo = "<strong>Product Information:</strong><br />";
-
-                // Loop through the products and add their IDs and names to the string, wrapping them in <span> elements.
-                foreach(var product in allProductsList) {
-                    productInfo += $"<span class='product-item'><strong>ID:</strong> {product.Product_Id} | <strong>Name:</strong> {product.P_Name}</span><br />";
-                }
-
-                // Display the product information in the Label control.
-                lblProductInfo.Text = productInfo;
+                // Bind the list of products to the Repeater control.
+                ProductsRepeater.DataSource = allProductsList;
+                ProductsRepeater.DataBind();
 
             }
         }

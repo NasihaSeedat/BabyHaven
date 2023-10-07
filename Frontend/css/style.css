@@ -3785,6 +3785,20 @@ register__error {
 -----------------------*/
 
 
+.lblCount {
+    margin-top: 40px;
+    font-size: 20px;
+    color: #0d0d0d;
+    font-weight: 500;
+    display: inline-block;
+    margin-bottom: 0;
+    transition: color 0.3s;
+}
+
+    .lblCount:hover {
+        color: #84B7EE;
+    }
+
 /*--------------------------------- Responsive Media Quaries -----------------------------*/
 @media only screen and (min-width: 1600px) and (max-width: 1900px) {
     .header {
