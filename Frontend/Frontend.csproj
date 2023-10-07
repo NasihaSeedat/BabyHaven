@@ -118,6 +118,7 @@
     <Content Include="css\owl.carousel.min.css" />
     <Content Include="css\slicknav.min.css" />
     <Content Include="css\style.css" />
+    <Content Include="DealtWith.aspx" />
     <Content Include="EditProduct.aspx" />
     <Content Include="handprods.aspx" />
     <Content Include="Home.aspx" />
@@ -219,6 +220,13 @@
     </Compile>
     <Compile Include="Contact.aspx.designer.cs">
       <DependentUpon>Contact.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DealtWith.aspx.cs">
+      <DependentUpon>DealtWith.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DealtWith.aspx.designer.cs">
+      <DependentUpon>DealtWith.aspx</DependentUpon>
     </Compile>
     <Compile Include="EditProduct.aspx.cs">
       <DependentUpon>EditProduct.aspx</DependentUpon>

@@ -127,9 +127,36 @@ namespace Frontend
 
         protected void TakeActionButton_Click(object sender, EventArgs e)
         {
-            
+
+            //int orderId = Convert.ToInt32(((Button)sender).CommandArgument);
+
+            //// Store the "dealt with" status of the invoice in a session variable
+            //Session["DealtWithStatus_" + orderId] = true;
+
+            //// Redirect to a page or display a message indicating success
+            //Response.Redirect("Action.aspx");
+
+            int orderId = Convert.ToInt32(((Button)sender).CommandArgument);
+
+            // Set the "dealt with" status for this order
+            Session["DealtWithStatus_" + orderId] = true;
+
+            // Redirect to the "Action.aspx" page
             Response.Redirect("Action.aspx");
+
         }
+
+        protected bool IsDealtWith(object orderIdObj)
+        {
+            if (orderIdObj != null)
+            {
+                int orderId = Convert.ToInt32(orderIdObj);
+                object dealtWithStatus = Session["DealtWithStatus_" + orderId];
+                return dealtWithStatus != null && (bool)dealtWithStatus;
+            }
+            return false;
+        }
+
 
     }
 }

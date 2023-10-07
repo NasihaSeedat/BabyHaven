@@ -1046,6 +1046,7 @@ namespace BabyHaven_Database
 
             if (sock != null)
             {
+                
                 return true;
             }
             else
