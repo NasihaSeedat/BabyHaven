@@ -1140,11 +1140,11 @@ namespace Frontend.BackendReference {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBabyHavenService/GetProductCategoryReport", ReplyAction="http://tempuri.org/IBabyHavenService/GetProductCategoryReportResponse")]
         System.Threading.Tasks.Task<int> GetProductCategoryReportAsync(string cat);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBabyHavenService/GetInvoicesForMonth", ReplyAction="http://tempuri.org/IBabyHavenService/GetInvoicesForMonthResponse")]
-        Frontend.BackendReference.Order_Table[] GetInvoicesForMonth(System.DateTime targetMonth);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBabyHavenService/GetInvoicesForYear", ReplyAction="http://tempuri.org/IBabyHavenService/GetInvoicesForYearResponse")]
+        Frontend.BackendReference.Order_Table[] GetInvoicesForYear(System.DateTime targetYear);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBabyHavenService/GetInvoicesForMonth", ReplyAction="http://tempuri.org/IBabyHavenService/GetInvoicesForMonthResponse")]
-        System.Threading.Tasks.Task<Frontend.BackendReference.Order_Table[]> GetInvoicesForMonthAsync(System.DateTime targetMonth);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBabyHavenService/GetInvoicesForYear", ReplyAction="http://tempuri.org/IBabyHavenService/GetInvoicesForYearResponse")]
+        System.Threading.Tasks.Task<Frontend.BackendReference.Order_Table[]> GetInvoicesForYearAsync(System.DateTime targetYear);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBabyHavenService/GetNumberOfUsersRegisteredPerDayInYear", ReplyAction="http://tempuri.org/IBabyHavenService/GetNumberOfUsersRegisteredPerDayInYearRespon" +
             "se")]
@@ -1540,12 +1540,12 @@ namespace Frontend.BackendReference {
             return base.Channel.GetProductCategoryReportAsync(cat);
         }
         
-        public Frontend.BackendReference.Order_Table[] GetInvoicesForMonth(System.DateTime targetMonth) {
-            return base.Channel.GetInvoicesForMonth(targetMonth);
+        public Frontend.BackendReference.Order_Table[] GetInvoicesForYear(System.DateTime targetYear) {
+            return base.Channel.GetInvoicesForYear(targetYear);
         }
         
-        public System.Threading.Tasks.Task<Frontend.BackendReference.Order_Table[]> GetInvoicesForMonthAsync(System.DateTime targetMonth) {
-            return base.Channel.GetInvoicesForMonthAsync(targetMonth);
+        public System.Threading.Tasks.Task<Frontend.BackendReference.Order_Table[]> GetInvoicesForYearAsync(System.DateTime targetYear) {
+            return base.Channel.GetInvoicesForYearAsync(targetYear);
         }
         
         public System.Collections.Generic.Dictionary<System.DateTime, int> GetNumberOfUsersRegisteredPerDayInYear(int year) {

@@ -272,11 +272,11 @@
   <wsdl:message name="IBabyHavenService_GetProductCategoryReport_OutputMessage">
     <wsdl:part name="parameters" element="tns:GetProductCategoryReportResponse" />
   </wsdl:message>
-  <wsdl:message name="IBabyHavenService_GetInvoicesForMonth_InputMessage">
-    <wsdl:part name="parameters" element="tns:GetInvoicesForMonth" />
+  <wsdl:message name="IBabyHavenService_GetInvoicesForYear_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetInvoicesForYear" />
   </wsdl:message>
-  <wsdl:message name="IBabyHavenService_GetInvoicesForMonth_OutputMessage">
-    <wsdl:part name="parameters" element="tns:GetInvoicesForMonthResponse" />
+  <wsdl:message name="IBabyHavenService_GetInvoicesForYear_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetInvoicesForYearResponse" />
   </wsdl:message>
   <wsdl:message name="IBabyHavenService_GetNumberOfUsersRegisteredPerDayInYear_InputMessage">
     <wsdl:part name="parameters" element="tns:GetNumberOfUsersRegisteredPerDayInYear" />
@@ -467,9 +467,9 @@
       <wsdl:input wsaw:Action="http://tempuri.org/IBabyHavenService/GetProductCategoryReport" message="tns:IBabyHavenService_GetProductCategoryReport_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IBabyHavenService/GetProductCategoryReportResponse" message="tns:IBabyHavenService_GetProductCategoryReport_OutputMessage" />
     </wsdl:operation>
-    <wsdl:operation name="GetInvoicesForMonth">
-      <wsdl:input wsaw:Action="http://tempuri.org/IBabyHavenService/GetInvoicesForMonth" message="tns:IBabyHavenService_GetInvoicesForMonth_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IBabyHavenService/GetInvoicesForMonthResponse" message="tns:IBabyHavenService_GetInvoicesForMonth_OutputMessage" />
+    <wsdl:operation name="GetInvoicesForYear">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBabyHavenService/GetInvoicesForYear" message="tns:IBabyHavenService_GetInvoicesForYear_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBabyHavenService/GetInvoicesForYearResponse" message="tns:IBabyHavenService_GetInvoicesForYear_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="GetNumberOfUsersRegisteredPerDayInYear">
       <wsdl:input wsaw:Action="http://tempuri.org/IBabyHavenService/GetNumberOfUsersRegisteredPerDayInYear" message="tns:IBabyHavenService_GetNumberOfUsersRegisteredPerDayInYear_InputMessage" />
@@ -878,8 +878,8 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="GetInvoicesForMonth">
-      <soap:operation soapAction="http://tempuri.org/IBabyHavenService/GetInvoicesForMonth" style="document" />
+    <wsdl:operation name="GetInvoicesForYear">
+      <soap:operation soapAction="http://tempuri.org/IBabyHavenService/GetInvoicesForYear" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
