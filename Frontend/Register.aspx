@@ -1,6 +1,6 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/BabyHaven.Master" AutoEventWireup="true" CodeBehind="Register.aspx.cs" Inherits="Frontend.Register" %>
-<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 
+<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
@@ -34,7 +34,7 @@
                                             <input type="text" name="phone" class="single-input" runat="server" id="contact">
                                         </div>
                                     </div>
-                                    
+
                                     <div class="col-lg-12">
                                         <div class="register__form__input">
                                             <p>Email <span>*</span></p>
@@ -67,14 +67,11 @@
 
                                 </div>
 
-                                <div class="register__button">
 
-                                    <asp:Button id="register" class="site-btn" runat="server" Text="Register" OnClick="Register_Click"/>
-
-                                </div>
+                                <asp:Button ID="register" class="register__button" runat="server" Text="Register" OnClick="Register_Click" />
 
                                 <div class="register__error">
-                                    <asp:Label ID="error" runat="server" Text="" visible="false" ></asp:Label>
+                                    <asp:Label ID="error" runat="server" Text="" Visible="false"></asp:Label>
                                 </div>
 
                                 <!-- Registration link -->
@@ -83,17 +80,17 @@
                                 </div>
 
 
-                        
+
                             </div>
 
 
-                        
-                            </div>
 
                         </div>
+
                     </div>
                 </div>
-            
+            </div>
+
         </form>
     </section>
 
