@@ -8,1855 +8,1544 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Frontend.BackendReference
-{
+namespace Frontend.BackendReference {
     using System.Runtime.Serialization;
     using System;
-
-
+    
+    
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name = "User_Table", Namespace = "http://schemas.datacontract.org/2004/07/BabyHaven_Database")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="User_Table", Namespace="http://schemas.datacontract.org/2004/07/BabyHaven_Database")]
     [System.SerializableAttribute()]
-    public partial class User_Table : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged
-    {
-
+    public partial class User_Table : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
         [System.NonSerializedAttribute()]
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-
+        
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string AddressField;
-
+        
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string EmailField;
-
+        
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string NameField;
-
+        
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string PasswordField;
-
+        
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string Phone_NumberField;
-
+        
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private System.DateTime Register_DateField;
-
+        
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string SurnameField;
-
+        
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private int UserTypeField;
-
+        
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private int User_IdField;
-
+        
         [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData
-        {
-            get
-            {
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
                 return this.extensionDataField;
             }
-            set
-            {
+            set {
                 this.extensionDataField = value;
             }
         }
-
+        
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Address
-        {
-            get
-            {
+        public string Address {
+            get {
                 return this.AddressField;
             }
-            set
-            {
-                if ((object.ReferenceEquals(this.AddressField, value) != true))
-                {
+            set {
+                if ((object.ReferenceEquals(this.AddressField, value) != true)) {
                     this.AddressField = value;
                     this.RaisePropertyChanged("Address");
                 }
             }
         }
-
+        
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Email
-        {
-            get
-            {
+        public string Email {
+            get {
                 return this.EmailField;
             }
-            set
-            {
-                if ((object.ReferenceEquals(this.EmailField, value) != true))
-                {
+            set {
+                if ((object.ReferenceEquals(this.EmailField, value) != true)) {
                     this.EmailField = value;
                     this.RaisePropertyChanged("Email");
                 }
             }
         }
-
+        
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Name
-        {
-            get
-            {
+        public string Name {
+            get {
                 return this.NameField;
             }
-            set
-            {
-                if ((object.ReferenceEquals(this.NameField, value) != true))
-                {
+            set {
+                if ((object.ReferenceEquals(this.NameField, value) != true)) {
                     this.NameField = value;
                     this.RaisePropertyChanged("Name");
                 }
             }
         }
-
+        
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Password
-        {
-            get
-            {
+        public string Password {
+            get {
                 return this.PasswordField;
             }
-            set
-            {
-                if ((object.ReferenceEquals(this.PasswordField, value) != true))
-                {
+            set {
+                if ((object.ReferenceEquals(this.PasswordField, value) != true)) {
                     this.PasswordField = value;
                     this.RaisePropertyChanged("Password");
                 }
             }
         }
-
+        
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Phone_Number
-        {
-            get
-            {
+        public string Phone_Number {
+            get {
                 return this.Phone_NumberField;
             }
-            set
-            {
-                if ((object.ReferenceEquals(this.Phone_NumberField, value) != true))
-                {
+            set {
+                if ((object.ReferenceEquals(this.Phone_NumberField, value) != true)) {
                     this.Phone_NumberField = value;
                     this.RaisePropertyChanged("Phone_Number");
                 }
             }
         }
-
+        
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.DateTime Register_Date
-        {
-            get
-            {
+        public System.DateTime Register_Date {
+            get {
                 return this.Register_DateField;
             }
-            set
-            {
-                if ((this.Register_DateField.Equals(value) != true))
-                {
+            set {
+                if ((this.Register_DateField.Equals(value) != true)) {
                     this.Register_DateField = value;
                     this.RaisePropertyChanged("Register_Date");
                 }
             }
         }
-
+        
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Surname
-        {
-            get
-            {
+        public string Surname {
+            get {
                 return this.SurnameField;
             }
-            set
-            {
-                if ((object.ReferenceEquals(this.SurnameField, value) != true))
-                {
+            set {
+                if ((object.ReferenceEquals(this.SurnameField, value) != true)) {
                     this.SurnameField = value;
                     this.RaisePropertyChanged("Surname");
                 }
             }
         }
-
+        
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public int UserType
-        {
-            get
-            {
+        public int UserType {
+            get {
                 return this.UserTypeField;
             }
-            set
-            {
-                if ((this.UserTypeField.Equals(value) != true))
-                {
+            set {
+                if ((this.UserTypeField.Equals(value) != true)) {
                     this.UserTypeField = value;
                     this.RaisePropertyChanged("UserType");
                 }
             }
         }
-
+        
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public int User_Id
-        {
-            get
-            {
+        public int User_Id {
+            get {
                 return this.User_IdField;
             }
-            set
-            {
-                if ((this.User_IdField.Equals(value) != true))
-                {
+            set {
+                if ((this.User_IdField.Equals(value) != true)) {
                     this.User_IdField = value;
                     this.RaisePropertyChanged("User_Id");
                 }
             }
         }
-
+        
         public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-
-        protected void RaisePropertyChanged(string propertyName)
-        {
+        
+        protected void RaisePropertyChanged(string propertyName) {
             System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null))
-            {
+            if ((propertyChanged != null)) {
                 propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
             }
         }
     }
-
+    
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name = "Admin", Namespace = "http://schemas.datacontract.org/2004/07/BabyHaven_Database")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Admin", Namespace="http://schemas.datacontract.org/2004/07/BabyHaven_Database")]
     [System.SerializableAttribute()]
-    public partial class Admin : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged
-    {
-
+    public partial class Admin : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
         [System.NonSerializedAttribute()]
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-
+        
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string SurnameField;
-
+        
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private int U_IdField;
-
+        
         [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData
-        {
-            get
-            {
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
                 return this.extensionDataField;
             }
-            set
-            {
+            set {
                 this.extensionDataField = value;
             }
         }
-
+        
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Surname
-        {
-            get
-            {
+        public string Surname {
+            get {
                 return this.SurnameField;
             }
-            set
-            {
-                if ((object.ReferenceEquals(this.SurnameField, value) != true))
-                {
+            set {
+                if ((object.ReferenceEquals(this.SurnameField, value) != true)) {
                     this.SurnameField = value;
                     this.RaisePropertyChanged("Surname");
                 }
             }
         }
-
+        
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public int U_Id
-        {
-            get
-            {
+        public int U_Id {
+            get {
                 return this.U_IdField;
             }
-            set
-            {
-                if ((this.U_IdField.Equals(value) != true))
-                {
+            set {
+                if ((this.U_IdField.Equals(value) != true)) {
                     this.U_IdField = value;
                     this.RaisePropertyChanged("U_Id");
                 }
             }
         }
-
+        
         public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-
-        protected void RaisePropertyChanged(string propertyName)
-        {
+        
+        protected void RaisePropertyChanged(string propertyName) {
             System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null))
-            {
+            if ((propertyChanged != null)) {
                 propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
             }
         }
     }
-
+    
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name = "Client", Namespace = "http://schemas.datacontract.org/2004/07/BabyHaven_Database")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Client", Namespace="http://schemas.datacontract.org/2004/07/BabyHaven_Database")]
     [System.SerializableAttribute()]
-    public partial class Client : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged
-    {
-
+    public partial class Client : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
         [System.NonSerializedAttribute()]
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-
+        
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string EmailField;
-
+        
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private int U_IdField;
-
+        
         [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData
-        {
-            get
-            {
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
                 return this.extensionDataField;
             }
-            set
-            {
+            set {
                 this.extensionDataField = value;
             }
         }
-
+        
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Email
-        {
-            get
-            {
+        public string Email {
+            get {
                 return this.EmailField;
             }
-            set
-            {
-                if ((object.ReferenceEquals(this.EmailField, value) != true))
-                {
+            set {
+                if ((object.ReferenceEquals(this.EmailField, value) != true)) {
                     this.EmailField = value;
                     this.RaisePropertyChanged("Email");
                 }
             }
         }
-
+        
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public int U_Id
-        {
-            get
-            {
+        public int U_Id {
+            get {
                 return this.U_IdField;
             }
-            set
-            {
-                if ((this.U_IdField.Equals(value) != true))
-                {
+            set {
+                if ((this.U_IdField.Equals(value) != true)) {
                     this.U_IdField = value;
                     this.RaisePropertyChanged("U_Id");
                 }
             }
         }
-
+        
         public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-
-        protected void RaisePropertyChanged(string propertyName)
-        {
+        
+        protected void RaisePropertyChanged(string propertyName) {
             System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null))
-            {
+            if ((propertyChanged != null)) {
                 propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
             }
         }
     }
-
+    
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name = "Product", Namespace = "http://schemas.datacontract.org/2004/07/BabyHaven_Database")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Product", Namespace="http://schemas.datacontract.org/2004/07/BabyHaven_Database")]
     [System.SerializableAttribute()]
-    public partial class Product : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged
-    {
-
+    public partial class Product : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
         [System.NonSerializedAttribute()]
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-
+        
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string P_CategoryField;
-
+        
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private System.DateTime P_DateCreatedField;
-
+        
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string P_DescriptionField;
-
+        
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string P_ImageField;
-
+        
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string P_NameField;
-
+        
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private decimal P_PriceField;
-
+        
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private int P_QuantityField;
-
+        
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private int Product_IdField;
-
+        
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private bool isActiveField;
-
+        
         [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData
-        {
-            get
-            {
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
                 return this.extensionDataField;
             }
-            set
-            {
+            set {
                 this.extensionDataField = value;
             }
         }
-
+        
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public string P_Category
-        {
-            get
-            {
+        public string P_Category {
+            get {
                 return this.P_CategoryField;
             }
-            set
-            {
-                if ((object.ReferenceEquals(this.P_CategoryField, value) != true))
-                {
+            set {
+                if ((object.ReferenceEquals(this.P_CategoryField, value) != true)) {
                     this.P_CategoryField = value;
                     this.RaisePropertyChanged("P_Category");
                 }
             }
         }
-
+        
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.DateTime P_DateCreated
-        {
-            get
-            {
+        public System.DateTime P_DateCreated {
+            get {
                 return this.P_DateCreatedField;
             }
-            set
-            {
-                if ((this.P_DateCreatedField.Equals(value) != true))
-                {
+            set {
+                if ((this.P_DateCreatedField.Equals(value) != true)) {
                     this.P_DateCreatedField = value;
                     this.RaisePropertyChanged("P_DateCreated");
                 }
             }
         }
-
+        
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public string P_Description
-        {
-            get
-            {
+        public string P_Description {
+            get {
                 return this.P_DescriptionField;
             }
-            set
-            {
-                if ((object.ReferenceEquals(this.P_DescriptionField, value) != true))
-                {
+            set {
+                if ((object.ReferenceEquals(this.P_DescriptionField, value) != true)) {
                     this.P_DescriptionField = value;
                     this.RaisePropertyChanged("P_Description");
                 }
             }
         }
-
+        
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public string P_Image
-        {
-            get
-            {
+        public string P_Image {
+            get {
                 return this.P_ImageField;
             }
-            set
-            {
-                if ((object.ReferenceEquals(this.P_ImageField, value) != true))
-                {
+            set {
+                if ((object.ReferenceEquals(this.P_ImageField, value) != true)) {
                     this.P_ImageField = value;
                     this.RaisePropertyChanged("P_Image");
                 }
             }
         }
-
+        
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public string P_Name
-        {
-            get
-            {
+        public string P_Name {
+            get {
                 return this.P_NameField;
             }
-            set
-            {
-                if ((object.ReferenceEquals(this.P_NameField, value) != true))
-                {
+            set {
+                if ((object.ReferenceEquals(this.P_NameField, value) != true)) {
                     this.P_NameField = value;
                     this.RaisePropertyChanged("P_Name");
                 }
             }
         }
-
+        
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public decimal P_Price
-        {
-            get
-            {
+        public decimal P_Price {
+            get {
                 return this.P_PriceField;
             }
-            set
-            {
-                if ((this.P_PriceField.Equals(value) != true))
-                {
+            set {
+                if ((this.P_PriceField.Equals(value) != true)) {
                     this.P_PriceField = value;
                     this.RaisePropertyChanged("P_Price");
                 }
             }
         }
-
+        
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public int P_Quantity
-        {
-            get
-            {
+        public int P_Quantity {
+            get {
                 return this.P_QuantityField;
             }
-            set
-            {
-                if ((this.P_QuantityField.Equals(value) != true))
-                {
+            set {
+                if ((this.P_QuantityField.Equals(value) != true)) {
                     this.P_QuantityField = value;
                     this.RaisePropertyChanged("P_Quantity");
                 }
             }
         }
-
+        
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public int Product_Id
-        {
-            get
-            {
+        public int Product_Id {
+            get {
                 return this.Product_IdField;
             }
-            set
-            {
-                if ((this.Product_IdField.Equals(value) != true))
-                {
+            set {
+                if ((this.Product_IdField.Equals(value) != true)) {
                     this.Product_IdField = value;
                     this.RaisePropertyChanged("Product_Id");
                 }
             }
         }
-
+        
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public bool isActive
-        {
-            get
-            {
+        public bool isActive {
+            get {
                 return this.isActiveField;
             }
-            set
-            {
-                if ((this.isActiveField.Equals(value) != true))
-                {
+            set {
+                if ((this.isActiveField.Equals(value) != true)) {
                     this.isActiveField = value;
                     this.RaisePropertyChanged("isActive");
                 }
             }
         }
-
+        
         public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-
-        protected void RaisePropertyChanged(string propertyName)
-        {
+        
+        protected void RaisePropertyChanged(string propertyName) {
             System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null))
-            {
+            if ((propertyChanged != null)) {
                 propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
             }
         }
     }
-
+    
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name = "Cart", Namespace = "http://schemas.datacontract.org/2004/07/BabyHaven_Database")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Cart", Namespace="http://schemas.datacontract.org/2004/07/BabyHaven_Database")]
     [System.SerializableAttribute()]
-    public partial class Cart : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged
-    {
-
+    public partial class Cart : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
         [System.NonSerializedAttribute()]
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-
+        
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private decimal Cart_PriceField;
-
+        
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private int Cart_QuantityField;
-
+        
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private int P_IdField;
-
+        
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private int U_IdField;
-
+        
         [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData
-        {
-            get
-            {
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
                 return this.extensionDataField;
             }
-            set
-            {
+            set {
                 this.extensionDataField = value;
             }
         }
-
+        
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public decimal Cart_Price
-        {
-            get
-            {
+        public decimal Cart_Price {
+            get {
                 return this.Cart_PriceField;
             }
-            set
-            {
-                if ((this.Cart_PriceField.Equals(value) != true))
-                {
+            set {
+                if ((this.Cart_PriceField.Equals(value) != true)) {
                     this.Cart_PriceField = value;
                     this.RaisePropertyChanged("Cart_Price");
                 }
             }
         }
-
+        
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public int Cart_Quantity
-        {
-            get
-            {
+        public int Cart_Quantity {
+            get {
                 return this.Cart_QuantityField;
             }
-            set
-            {
-                if ((this.Cart_QuantityField.Equals(value) != true))
-                {
+            set {
+                if ((this.Cart_QuantityField.Equals(value) != true)) {
                     this.Cart_QuantityField = value;
                     this.RaisePropertyChanged("Cart_Quantity");
                 }
             }
         }
-
+        
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public int P_Id
-        {
-            get
-            {
+        public int P_Id {
+            get {
                 return this.P_IdField;
             }
-            set
-            {
-                if ((this.P_IdField.Equals(value) != true))
-                {
+            set {
+                if ((this.P_IdField.Equals(value) != true)) {
                     this.P_IdField = value;
                     this.RaisePropertyChanged("P_Id");
                 }
             }
         }
-
+        
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public int U_Id
-        {
-            get
-            {
+        public int U_Id {
+            get {
                 return this.U_IdField;
             }
-            set
-            {
-                if ((this.U_IdField.Equals(value) != true))
-                {
+            set {
+                if ((this.U_IdField.Equals(value) != true)) {
                     this.U_IdField = value;
                     this.RaisePropertyChanged("U_Id");
                 }
             }
         }
-
+        
         public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-
-        protected void RaisePropertyChanged(string propertyName)
-        {
+        
+        protected void RaisePropertyChanged(string propertyName) {
             System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null))
-            {
+            if ((propertyChanged != null)) {
                 propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
             }
         }
     }
-
+    
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name = "Order_Table", Namespace = "http://schemas.datacontract.org/2004/07/BabyHaven_Database")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Order_Table", Namespace="http://schemas.datacontract.org/2004/07/BabyHaven_Database")]
     [System.SerializableAttribute()]
-    public partial class Order_Table : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged
-    {
-
+    public partial class Order_Table : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
         [System.NonSerializedAttribute()]
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-
+        
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string First_NameField;
-
+        
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string Last_NameField;
-
+        
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string O_AddressField;
-
+        
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string O_CityField;
-
+        
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private System.DateTime O_DateField;
-
+        
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string O_EmailField;
-
+        
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private int O_IdField;
-
+        
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string O_Phone_NumberField;
-
+        
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private decimal O_TotalField;
-
+        
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string O_ZipCodeField;
-
+        
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private int UserIdField;
-
+        
         [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData
-        {
-            get
-            {
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
                 return this.extensionDataField;
             }
-            set
-            {
+            set {
                 this.extensionDataField = value;
             }
         }
-
+        
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public string First_Name
-        {
-            get
-            {
+        public string First_Name {
+            get {
                 return this.First_NameField;
             }
-            set
-            {
-                if ((object.ReferenceEquals(this.First_NameField, value) != true))
-                {
+            set {
+                if ((object.ReferenceEquals(this.First_NameField, value) != true)) {
                     this.First_NameField = value;
                     this.RaisePropertyChanged("First_Name");
                 }
             }
         }
-
+        
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Last_Name
-        {
-            get
-            {
+        public string Last_Name {
+            get {
                 return this.Last_NameField;
             }
-            set
-            {
-                if ((object.ReferenceEquals(this.Last_NameField, value) != true))
-                {
+            set {
+                if ((object.ReferenceEquals(this.Last_NameField, value) != true)) {
                     this.Last_NameField = value;
                     this.RaisePropertyChanged("Last_Name");
                 }
             }
         }
-
+        
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public string O_Address
-        {
-            get
-            {
+        public string O_Address {
+            get {
                 return this.O_AddressField;
             }
-            set
-            {
-                if ((object.ReferenceEquals(this.O_AddressField, value) != true))
-                {
+            set {
+                if ((object.ReferenceEquals(this.O_AddressField, value) != true)) {
                     this.O_AddressField = value;
                     this.RaisePropertyChanged("O_Address");
                 }
             }
         }
-
+        
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public string O_City
-        {
-            get
-            {
+        public string O_City {
+            get {
                 return this.O_CityField;
             }
-            set
-            {
-                if ((object.ReferenceEquals(this.O_CityField, value) != true))
-                {
+            set {
+                if ((object.ReferenceEquals(this.O_CityField, value) != true)) {
                     this.O_CityField = value;
                     this.RaisePropertyChanged("O_City");
                 }
             }
         }
-
+        
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.DateTime O_Date
-        {
-            get
-            {
+        public System.DateTime O_Date {
+            get {
                 return this.O_DateField;
             }
-            set
-            {
-                if ((this.O_DateField.Equals(value) != true))
-                {
+            set {
+                if ((this.O_DateField.Equals(value) != true)) {
                     this.O_DateField = value;
                     this.RaisePropertyChanged("O_Date");
                 }
             }
         }
-
+        
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public string O_Email
-        {
-            get
-            {
+        public string O_Email {
+            get {
                 return this.O_EmailField;
             }
-            set
-            {
-                if ((object.ReferenceEquals(this.O_EmailField, value) != true))
-                {
+            set {
+                if ((object.ReferenceEquals(this.O_EmailField, value) != true)) {
                     this.O_EmailField = value;
                     this.RaisePropertyChanged("O_Email");
                 }
             }
         }
-
+        
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public int O_Id
-        {
-            get
-            {
+        public int O_Id {
+            get {
                 return this.O_IdField;
             }
-            set
-            {
-                if ((this.O_IdField.Equals(value) != true))
-                {
+            set {
+                if ((this.O_IdField.Equals(value) != true)) {
                     this.O_IdField = value;
                     this.RaisePropertyChanged("O_Id");
                 }
             }
         }
-
+        
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public string O_Phone_Number
-        {
-            get
-            {
+        public string O_Phone_Number {
+            get {
                 return this.O_Phone_NumberField;
             }
-            set
-            {
-                if ((object.ReferenceEquals(this.O_Phone_NumberField, value) != true))
-                {
+            set {
+                if ((object.ReferenceEquals(this.O_Phone_NumberField, value) != true)) {
                     this.O_Phone_NumberField = value;
                     this.RaisePropertyChanged("O_Phone_Number");
                 }
             }
         }
-
+        
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public decimal O_Total
-        {
-            get
-            {
+        public decimal O_Total {
+            get {
                 return this.O_TotalField;
             }
-            set
-            {
-                if ((this.O_TotalField.Equals(value) != true))
-                {
+            set {
+                if ((this.O_TotalField.Equals(value) != true)) {
                     this.O_TotalField = value;
                     this.RaisePropertyChanged("O_Total");
                 }
             }
         }
-
+        
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public string O_ZipCode
-        {
-            get
-            {
+        public string O_ZipCode {
+            get {
                 return this.O_ZipCodeField;
             }
-            set
-            {
-                if ((object.ReferenceEquals(this.O_ZipCodeField, value) != true))
-                {
+            set {
+                if ((object.ReferenceEquals(this.O_ZipCodeField, value) != true)) {
                     this.O_ZipCodeField = value;
                     this.RaisePropertyChanged("O_ZipCode");
                 }
             }
         }
-
+        
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public int UserId
-        {
-            get
-            {
+        public int UserId {
+            get {
                 return this.UserIdField;
             }
-            set
-            {
-                if ((this.UserIdField.Equals(value) != true))
-                {
+            set {
+                if ((this.UserIdField.Equals(value) != true)) {
                     this.UserIdField = value;
                     this.RaisePropertyChanged("UserId");
                 }
             }
         }
-
+        
         public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-
-        protected void RaisePropertyChanged(string propertyName)
-        {
+        
+        protected void RaisePropertyChanged(string propertyName) {
             System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null))
-            {
+            if ((propertyChanged != null)) {
                 propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
             }
         }
     }
-
+    
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name = "Order_Item", Namespace = "http://schemas.datacontract.org/2004/07/BabyHaven_Database")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Order_Item", Namespace="http://schemas.datacontract.org/2004/07/BabyHaven_Database")]
     [System.SerializableAttribute()]
-    public partial class Order_Item : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged
-    {
-
+    public partial class Order_Item : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
         [System.NonSerializedAttribute()]
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-
+        
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private int O_IdField;
-
+        
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private int Order_Item_IdField;
-
+        
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private int Product_IdField;
-
+        
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private int QuantityField;
-
+        
         [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData
-        {
-            get
-            {
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
                 return this.extensionDataField;
             }
-            set
-            {
+            set {
                 this.extensionDataField = value;
             }
         }
-
+        
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public int O_Id
-        {
-            get
-            {
+        public int O_Id {
+            get {
                 return this.O_IdField;
             }
-            set
-            {
-                if ((this.O_IdField.Equals(value) != true))
-                {
+            set {
+                if ((this.O_IdField.Equals(value) != true)) {
                     this.O_IdField = value;
                     this.RaisePropertyChanged("O_Id");
                 }
             }
         }
-
+        
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public int Order_Item_Id
-        {
-            get
-            {
+        public int Order_Item_Id {
+            get {
                 return this.Order_Item_IdField;
             }
-            set
-            {
-                if ((this.Order_Item_IdField.Equals(value) != true))
-                {
+            set {
+                if ((this.Order_Item_IdField.Equals(value) != true)) {
                     this.Order_Item_IdField = value;
                     this.RaisePropertyChanged("Order_Item_Id");
                 }
             }
         }
-
+        
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public int Product_Id
-        {
-            get
-            {
+        public int Product_Id {
+            get {
                 return this.Product_IdField;
             }
-            set
-            {
-                if ((this.Product_IdField.Equals(value) != true))
-                {
+            set {
+                if ((this.Product_IdField.Equals(value) != true)) {
                     this.Product_IdField = value;
                     this.RaisePropertyChanged("Product_Id");
                 }
             }
         }
-
+        
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public int Quantity
-        {
-            get
-            {
+        public int Quantity {
+            get {
                 return this.QuantityField;
             }
-            set
-            {
-                if ((this.QuantityField.Equals(value) != true))
-                {
+            set {
+                if ((this.QuantityField.Equals(value) != true)) {
                     this.QuantityField = value;
                     this.RaisePropertyChanged("Quantity");
                 }
             }
         }
-
+        
         public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-
-        protected void RaisePropertyChanged(string propertyName)
-        {
+        
+        protected void RaisePropertyChanged(string propertyName) {
             System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null))
-            {
+            if ((propertyChanged != null)) {
                 propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
             }
         }
     }
-
+    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ServiceModel.ServiceContractAttribute(ConfigurationName = "BackendReference.IBabyHavenService")]
-    public interface IBabyHavenService
-    {
-
-        [System.ServiceModel.OperationContractAttribute(Action = "http://tempuri.org/IBabyHavenService/Login", ReplyAction = "http://tempuri.org/IBabyHavenService/LoginResponse")]
+    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="BackendReference.IBabyHavenService")]
+    public interface IBabyHavenService {
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBabyHavenService/Login", ReplyAction="http://tempuri.org/IBabyHavenService/LoginResponse")]
         int Login(string email, string password);
-
-        [System.ServiceModel.OperationContractAttribute(Action = "http://tempuri.org/IBabyHavenService/Login", ReplyAction = "http://tempuri.org/IBabyHavenService/LoginResponse")]
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBabyHavenService/Login", ReplyAction="http://tempuri.org/IBabyHavenService/LoginResponse")]
         System.Threading.Tasks.Task<int> LoginAsync(string email, string password);
-
-        [System.ServiceModel.OperationContractAttribute(Action = "http://tempuri.org/IBabyHavenService/GetUser", ReplyAction = "http://tempuri.org/IBabyHavenService/GetUserResponse")]
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBabyHavenService/GetUser", ReplyAction="http://tempuri.org/IBabyHavenService/GetUserResponse")]
         Frontend.BackendReference.User_Table GetUser(int id);
-
-        [System.ServiceModel.OperationContractAttribute(Action = "http://tempuri.org/IBabyHavenService/GetUser", ReplyAction = "http://tempuri.org/IBabyHavenService/GetUserResponse")]
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBabyHavenService/GetUser", ReplyAction="http://tempuri.org/IBabyHavenService/GetUserResponse")]
         System.Threading.Tasks.Task<Frontend.BackendReference.User_Table> GetUserAsync(int id);
-
-        [System.ServiceModel.OperationContractAttribute(Action = "http://tempuri.org/IBabyHavenService/GetEmail", ReplyAction = "http://tempuri.org/IBabyHavenService/GetEmailResponse")]
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBabyHavenService/GetEmail", ReplyAction="http://tempuri.org/IBabyHavenService/GetEmailResponse")]
         Frontend.BackendReference.User_Table GetEmail(string email, int id);
-
-        [System.ServiceModel.OperationContractAttribute(Action = "http://tempuri.org/IBabyHavenService/GetEmail", ReplyAction = "http://tempuri.org/IBabyHavenService/GetEmailResponse")]
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBabyHavenService/GetEmail", ReplyAction="http://tempuri.org/IBabyHavenService/GetEmailResponse")]
         System.Threading.Tasks.Task<Frontend.BackendReference.User_Table> GetEmailAsync(string email, int id);
-
-        [System.ServiceModel.OperationContractAttribute(Action = "http://tempuri.org/IBabyHavenService/GetAdmin", ReplyAction = "http://tempuri.org/IBabyHavenService/GetAdminResponse")]
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBabyHavenService/GetAdmin", ReplyAction="http://tempuri.org/IBabyHavenService/GetAdminResponse")]
         Frontend.BackendReference.Admin GetAdmin(int id);
-
-        [System.ServiceModel.OperationContractAttribute(Action = "http://tempuri.org/IBabyHavenService/GetAdmin", ReplyAction = "http://tempuri.org/IBabyHavenService/GetAdminResponse")]
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBabyHavenService/GetAdmin", ReplyAction="http://tempuri.org/IBabyHavenService/GetAdminResponse")]
         System.Threading.Tasks.Task<Frontend.BackendReference.Admin> GetAdminAsync(int id);
-
-        [System.ServiceModel.OperationContractAttribute(Action = "http://tempuri.org/IBabyHavenService/GetClient", ReplyAction = "http://tempuri.org/IBabyHavenService/GetClientResponse")]
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBabyHavenService/GetClient", ReplyAction="http://tempuri.org/IBabyHavenService/GetClientResponse")]
         Frontend.BackendReference.Client GetClient(int id);
-
-        [System.ServiceModel.OperationContractAttribute(Action = "http://tempuri.org/IBabyHavenService/GetClient", ReplyAction = "http://tempuri.org/IBabyHavenService/GetClientResponse")]
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBabyHavenService/GetClient", ReplyAction="http://tempuri.org/IBabyHavenService/GetClientResponse")]
         System.Threading.Tasks.Task<Frontend.BackendReference.Client> GetClientAsync(int id);
-
-        [System.ServiceModel.OperationContractAttribute(Action = "http://tempuri.org/IBabyHavenService/GetAllUsers", ReplyAction = "http://tempuri.org/IBabyHavenService/GetAllUsersResponse")]
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBabyHavenService/GetAllUsers", ReplyAction="http://tempuri.org/IBabyHavenService/GetAllUsersResponse")]
         Frontend.BackendReference.User_Table[] GetAllUsers();
-
-        [System.ServiceModel.OperationContractAttribute(Action = "http://tempuri.org/IBabyHavenService/GetAllUsers", ReplyAction = "http://tempuri.org/IBabyHavenService/GetAllUsersResponse")]
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBabyHavenService/GetAllUsers", ReplyAction="http://tempuri.org/IBabyHavenService/GetAllUsersResponse")]
         System.Threading.Tasks.Task<Frontend.BackendReference.User_Table[]> GetAllUsersAsync();
-
-        [System.ServiceModel.OperationContractAttribute(Action = "http://tempuri.org/IBabyHavenService/GetAllUsersNotAdmin", ReplyAction = "http://tempuri.org/IBabyHavenService/GetAllUsersNotAdminResponse")]
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBabyHavenService/GetAllUsersNotAdmin", ReplyAction="http://tempuri.org/IBabyHavenService/GetAllUsersNotAdminResponse")]
         Frontend.BackendReference.User_Table[] GetAllUsersNotAdmin();
-
-        [System.ServiceModel.OperationContractAttribute(Action = "http://tempuri.org/IBabyHavenService/GetAllUsersNotAdmin", ReplyAction = "http://tempuri.org/IBabyHavenService/GetAllUsersNotAdminResponse")]
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBabyHavenService/GetAllUsersNotAdmin", ReplyAction="http://tempuri.org/IBabyHavenService/GetAllUsersNotAdminResponse")]
         System.Threading.Tasks.Task<Frontend.BackendReference.User_Table[]> GetAllUsersNotAdminAsync();
-
-        [System.ServiceModel.OperationContractAttribute(Action = "http://tempuri.org/IBabyHavenService/Register", ReplyAction = "http://tempuri.org/IBabyHavenService/RegisterResponse")]
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBabyHavenService/Register", ReplyAction="http://tempuri.org/IBabyHavenService/RegisterResponse")]
         bool Register(string email, string password, string name, string surname, string phoneno, string address, int usetype);
-
-        [System.ServiceModel.OperationContractAttribute(Action = "http://tempuri.org/IBabyHavenService/Register", ReplyAction = "http://tempuri.org/IBabyHavenService/RegisterResponse")]
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBabyHavenService/Register", ReplyAction="http://tempuri.org/IBabyHavenService/RegisterResponse")]
         System.Threading.Tasks.Task<bool> RegisterAsync(string email, string password, string name, string surname, string phoneno, string address, int usetype);
-
-        [System.ServiceModel.OperationContractAttribute(Action = "http://tempuri.org/IBabyHavenService/AddAdmin", ReplyAction = "http://tempuri.org/IBabyHavenService/AddAdminResponse")]
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBabyHavenService/AddAdmin", ReplyAction="http://tempuri.org/IBabyHavenService/AddAdminResponse")]
         bool AddAdmin(int user, string surname);
-
-        [System.ServiceModel.OperationContractAttribute(Action = "http://tempuri.org/IBabyHavenService/AddAdmin", ReplyAction = "http://tempuri.org/IBabyHavenService/AddAdminResponse")]
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBabyHavenService/AddAdmin", ReplyAction="http://tempuri.org/IBabyHavenService/AddAdminResponse")]
         System.Threading.Tasks.Task<bool> AddAdminAsync(int user, string surname);
-
-        [System.ServiceModel.OperationContractAttribute(Action = "http://tempuri.org/IBabyHavenService/AddAdminTEST", ReplyAction = "http://tempuri.org/IBabyHavenService/AddAdminTESTResponse")]
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBabyHavenService/AddAdminTEST", ReplyAction="http://tempuri.org/IBabyHavenService/AddAdminTESTResponse")]
         bool AddAdminTEST(int user);
-
-        [System.ServiceModel.OperationContractAttribute(Action = "http://tempuri.org/IBabyHavenService/AddAdminTEST", ReplyAction = "http://tempuri.org/IBabyHavenService/AddAdminTESTResponse")]
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBabyHavenService/AddAdminTEST", ReplyAction="http://tempuri.org/IBabyHavenService/AddAdminTESTResponse")]
         System.Threading.Tasks.Task<bool> AddAdminTESTAsync(int user);
-
-        [System.ServiceModel.OperationContractAttribute(Action = "http://tempuri.org/IBabyHavenService/SearchUsersByName", ReplyAction = "http://tempuri.org/IBabyHavenService/SearchUsersByNameResponse")]
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBabyHavenService/SearchUsersByName", ReplyAction="http://tempuri.org/IBabyHavenService/SearchUsersByNameResponse")]
         Frontend.BackendReference.User_Table[] SearchUsersByName(string searchQuery);
-
-        [System.ServiceModel.OperationContractAttribute(Action = "http://tempuri.org/IBabyHavenService/SearchUsersByName", ReplyAction = "http://tempuri.org/IBabyHavenService/SearchUsersByNameResponse")]
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBabyHavenService/SearchUsersByName", ReplyAction="http://tempuri.org/IBabyHavenService/SearchUsersByNameResponse")]
         System.Threading.Tasks.Task<Frontend.BackendReference.User_Table[]> SearchUsersByNameAsync(string searchQuery);
-
-        [System.ServiceModel.OperationContractAttribute(Action = "http://tempuri.org/IBabyHavenService/SearchProducts", ReplyAction = "http://tempuri.org/IBabyHavenService/SearchProductsResponse")]
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBabyHavenService/SearchProducts", ReplyAction="http://tempuri.org/IBabyHavenService/SearchProductsResponse")]
         Frontend.BackendReference.Product[] SearchProducts(string searchQuery);
-
-        [System.ServiceModel.OperationContractAttribute(Action = "http://tempuri.org/IBabyHavenService/SearchProducts", ReplyAction = "http://tempuri.org/IBabyHavenService/SearchProductsResponse")]
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBabyHavenService/SearchProducts", ReplyAction="http://tempuri.org/IBabyHavenService/SearchProductsResponse")]
         System.Threading.Tasks.Task<Frontend.BackendReference.Product[]> SearchProductsAsync(string searchQuery);
-
-        [System.ServiceModel.OperationContractAttribute(Action = "http://tempuri.org/IBabyHavenService/AddToCart", ReplyAction = "http://tempuri.org/IBabyHavenService/AddToCartResponse")]
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBabyHavenService/AddToCart", ReplyAction="http://tempuri.org/IBabyHavenService/AddToCartResponse")]
         bool AddToCart(int uId, int pId);
-
-        [System.ServiceModel.OperationContractAttribute(Action = "http://tempuri.org/IBabyHavenService/AddToCart", ReplyAction = "http://tempuri.org/IBabyHavenService/AddToCartResponse")]
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBabyHavenService/AddToCart", ReplyAction="http://tempuri.org/IBabyHavenService/AddToCartResponse")]
         System.Threading.Tasks.Task<bool> AddToCartAsync(int uId, int pId);
-
-        [System.ServiceModel.OperationContractAttribute(Action = "http://tempuri.org/IBabyHavenService/GetTotalCartPrice", ReplyAction = "http://tempuri.org/IBabyHavenService/GetTotalCartPriceResponse")]
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBabyHavenService/GetTotalCartPrice", ReplyAction="http://tempuri.org/IBabyHavenService/GetTotalCartPriceResponse")]
         decimal GetTotalCartPrice(int clientId);
-
-        [System.ServiceModel.OperationContractAttribute(Action = "http://tempuri.org/IBabyHavenService/GetTotalCartPrice", ReplyAction = "http://tempuri.org/IBabyHavenService/GetTotalCartPriceResponse")]
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBabyHavenService/GetTotalCartPrice", ReplyAction="http://tempuri.org/IBabyHavenService/GetTotalCartPriceResponse")]
         System.Threading.Tasks.Task<decimal> GetTotalCartPriceAsync(int clientId);
-
-        [System.ServiceModel.OperationContractAttribute(Action = "http://tempuri.org/IBabyHavenService/GetAllCartItemsForClient", ReplyAction = "http://tempuri.org/IBabyHavenService/GetAllCartItemsForClientResponse")]
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBabyHavenService/GetAllCartItemsForClient", ReplyAction="http://tempuri.org/IBabyHavenService/GetAllCartItemsForClientResponse")]
         Frontend.BackendReference.Cart[] GetAllCartItemsForClient(int ClientID);
-
-        [System.ServiceModel.OperationContractAttribute(Action = "http://tempuri.org/IBabyHavenService/GetAllCartItemsForClient", ReplyAction = "http://tempuri.org/IBabyHavenService/GetAllCartItemsForClientResponse")]
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBabyHavenService/GetAllCartItemsForClient", ReplyAction="http://tempuri.org/IBabyHavenService/GetAllCartItemsForClientResponse")]
         System.Threading.Tasks.Task<Frontend.BackendReference.Cart[]> GetAllCartItemsForClientAsync(int ClientID);
-
-        [System.ServiceModel.OperationContractAttribute(Action = "http://tempuri.org/IBabyHavenService/GetCartProducts", ReplyAction = "http://tempuri.org/IBabyHavenService/GetCartProductsResponse")]
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBabyHavenService/GetCartProducts", ReplyAction="http://tempuri.org/IBabyHavenService/GetCartProductsResponse")]
         Frontend.BackendReference.Product[] GetCartProducts(int id);
-
-        [System.ServiceModel.OperationContractAttribute(Action = "http://tempuri.org/IBabyHavenService/GetCartProducts", ReplyAction = "http://tempuri.org/IBabyHavenService/GetCartProductsResponse")]
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBabyHavenService/GetCartProducts", ReplyAction="http://tempuri.org/IBabyHavenService/GetCartProductsResponse")]
         System.Threading.Tasks.Task<Frontend.BackendReference.Product[]> GetCartProductsAsync(int id);
-
-        [System.ServiceModel.OperationContractAttribute(Action = "http://tempuri.org/IBabyHavenService/GetQuantity", ReplyAction = "http://tempuri.org/IBabyHavenService/GetQuantityResponse")]
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBabyHavenService/GetQuantity", ReplyAction="http://tempuri.org/IBabyHavenService/GetQuantityResponse")]
         int GetQuantity(int UserID, int ProductID);
-
-        [System.ServiceModel.OperationContractAttribute(Action = "http://tempuri.org/IBabyHavenService/GetQuantity", ReplyAction = "http://tempuri.org/IBabyHavenService/GetQuantityResponse")]
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBabyHavenService/GetQuantity", ReplyAction="http://tempuri.org/IBabyHavenService/GetQuantityResponse")]
         System.Threading.Tasks.Task<int> GetQuantityAsync(int UserID, int ProductID);
-
-        [System.ServiceModel.OperationContractAttribute(Action = "http://tempuri.org/IBabyHavenService/AddRemoveProductFromCart", ReplyAction = "http://tempuri.org/IBabyHavenService/AddRemoveProductFromCartResponse")]
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBabyHavenService/AddRemoveProductFromCart", ReplyAction="http://tempuri.org/IBabyHavenService/AddRemoveProductFromCartResponse")]
         void AddRemoveProductFromCart(int pID, int uID, string action, int amount);
-
-        [System.ServiceModel.OperationContractAttribute(Action = "http://tempuri.org/IBabyHavenService/AddRemoveProductFromCart", ReplyAction = "http://tempuri.org/IBabyHavenService/AddRemoveProductFromCartResponse")]
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBabyHavenService/AddRemoveProductFromCart", ReplyAction="http://tempuri.org/IBabyHavenService/AddRemoveProductFromCartResponse")]
         System.Threading.Tasks.Task AddRemoveProductFromCartAsync(int pID, int uID, string action, int amount);
-
-        [System.ServiceModel.OperationContractAttribute(Action = "http://tempuri.org/IBabyHavenService/RemoveProductFromCart", ReplyAction = "http://tempuri.org/IBabyHavenService/RemoveProductFromCartResponse")]
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBabyHavenService/RemoveProductFromCart", ReplyAction="http://tempuri.org/IBabyHavenService/RemoveProductFromCartResponse")]
         void RemoveProductFromCart(int productId, int userId, int quantityToRemove);
-
-        [System.ServiceModel.OperationContractAttribute(Action = "http://tempuri.org/IBabyHavenService/RemoveProductFromCart", ReplyAction = "http://tempuri.org/IBabyHavenService/RemoveProductFromCartResponse")]
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBabyHavenService/RemoveProductFromCart", ReplyAction="http://tempuri.org/IBabyHavenService/RemoveProductFromCartResponse")]
         System.Threading.Tasks.Task RemoveProductFromCartAsync(int productId, int userId, int quantityToRemove);
-
-        [System.ServiceModel.OperationContractAttribute(Action = "http://tempuri.org/IBabyHavenService/GetProductImage", ReplyAction = "http://tempuri.org/IBabyHavenService/GetProductImageResponse")]
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBabyHavenService/GetProductImage", ReplyAction="http://tempuri.org/IBabyHavenService/GetProductImageResponse")]
         string GetProductImage(int productID);
-
-        [System.ServiceModel.OperationContractAttribute(Action = "http://tempuri.org/IBabyHavenService/GetProductImage", ReplyAction = "http://tempuri.org/IBabyHavenService/GetProductImageResponse")]
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBabyHavenService/GetProductImage", ReplyAction="http://tempuri.org/IBabyHavenService/GetProductImageResponse")]
         System.Threading.Tasks.Task<string> GetProductImageAsync(int productID);
-
-        [System.ServiceModel.OperationContractAttribute(Action = "http://tempuri.org/IBabyHavenService/GetProductName", ReplyAction = "http://tempuri.org/IBabyHavenService/GetProductNameResponse")]
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBabyHavenService/GetProductName", ReplyAction="http://tempuri.org/IBabyHavenService/GetProductNameResponse")]
         string GetProductName(int productID);
-
-        [System.ServiceModel.OperationContractAttribute(Action = "http://tempuri.org/IBabyHavenService/GetProductName", ReplyAction = "http://tempuri.org/IBabyHavenService/GetProductNameResponse")]
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBabyHavenService/GetProductName", ReplyAction="http://tempuri.org/IBabyHavenService/GetProductNameResponse")]
         System.Threading.Tasks.Task<string> GetProductNameAsync(int productID);
-
-        [System.ServiceModel.OperationContractAttribute(Action = "http://tempuri.org/IBabyHavenService/GetProductCategory", ReplyAction = "http://tempuri.org/IBabyHavenService/GetProductCategoryResponse")]
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBabyHavenService/GetProductCategory", ReplyAction="http://tempuri.org/IBabyHavenService/GetProductCategoryResponse")]
         string GetProductCategory(int productID);
-
-        [System.ServiceModel.OperationContractAttribute(Action = "http://tempuri.org/IBabyHavenService/GetProductCategory", ReplyAction = "http://tempuri.org/IBabyHavenService/GetProductCategoryResponse")]
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBabyHavenService/GetProductCategory", ReplyAction="http://tempuri.org/IBabyHavenService/GetProductCategoryResponse")]
         System.Threading.Tasks.Task<string> GetProductCategoryAsync(int productID);
-
-        [System.ServiceModel.OperationContractAttribute(Action = "http://tempuri.org/IBabyHavenService/GetProductDescription", ReplyAction = "http://tempuri.org/IBabyHavenService/GetProductDescriptionResponse")]
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBabyHavenService/GetProductDescription", ReplyAction="http://tempuri.org/IBabyHavenService/GetProductDescriptionResponse")]
         string GetProductDescription(int productID);
-
-        [System.ServiceModel.OperationContractAttribute(Action = "http://tempuri.org/IBabyHavenService/GetProductDescription", ReplyAction = "http://tempuri.org/IBabyHavenService/GetProductDescriptionResponse")]
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBabyHavenService/GetProductDescription", ReplyAction="http://tempuri.org/IBabyHavenService/GetProductDescriptionResponse")]
         System.Threading.Tasks.Task<string> GetProductDescriptionAsync(int productID);
-
-        [System.ServiceModel.OperationContractAttribute(Action = "http://tempuri.org/IBabyHavenService/GetProductPrice", ReplyAction = "http://tempuri.org/IBabyHavenService/GetProductPriceResponse")]
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBabyHavenService/GetProductPrice", ReplyAction="http://tempuri.org/IBabyHavenService/GetProductPriceResponse")]
         decimal GetProductPrice(int productID);
-
-        [System.ServiceModel.OperationContractAttribute(Action = "http://tempuri.org/IBabyHavenService/GetProductPrice", ReplyAction = "http://tempuri.org/IBabyHavenService/GetProductPriceResponse")]
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBabyHavenService/GetProductPrice", ReplyAction="http://tempuri.org/IBabyHavenService/GetProductPriceResponse")]
         System.Threading.Tasks.Task<decimal> GetProductPriceAsync(int productID);
-
-        [System.ServiceModel.OperationContractAttribute(Action = "http://tempuri.org/IBabyHavenService/GetUserName", ReplyAction = "http://tempuri.org/IBabyHavenService/GetUserNameResponse")]
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBabyHavenService/GetUserName", ReplyAction="http://tempuri.org/IBabyHavenService/GetUserNameResponse")]
         string GetUserName(int id);
-
-        [System.ServiceModel.OperationContractAttribute(Action = "http://tempuri.org/IBabyHavenService/GetUserName", ReplyAction = "http://tempuri.org/IBabyHavenService/GetUserNameResponse")]
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBabyHavenService/GetUserName", ReplyAction="http://tempuri.org/IBabyHavenService/GetUserNameResponse")]
         System.Threading.Tasks.Task<string> GetUserNameAsync(int id);
-
-        [System.ServiceModel.OperationContractAttribute(Action = "http://tempuri.org/IBabyHavenService/GetProductAvailability", ReplyAction = "http://tempuri.org/IBabyHavenService/GetProductAvailabilityResponse")]
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBabyHavenService/GetProductAvailability", ReplyAction="http://tempuri.org/IBabyHavenService/GetProductAvailabilityResponse")]
         string GetProductAvailability(int productID);
-
-        [System.ServiceModel.OperationContractAttribute(Action = "http://tempuri.org/IBabyHavenService/GetProductAvailability", ReplyAction = "http://tempuri.org/IBabyHavenService/GetProductAvailabilityResponse")]
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBabyHavenService/GetProductAvailability", ReplyAction="http://tempuri.org/IBabyHavenService/GetProductAvailabilityResponse")]
         System.Threading.Tasks.Task<string> GetProductAvailabilityAsync(int productID);
-
-        [System.ServiceModel.OperationContractAttribute(Action = "http://tempuri.org/IBabyHavenService/Getallproducts", ReplyAction = "http://tempuri.org/IBabyHavenService/GetallproductsResponse")]
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBabyHavenService/Getallproducts", ReplyAction="http://tempuri.org/IBabyHavenService/GetallproductsResponse")]
         Frontend.BackendReference.Product[] Getallproducts();
-
-        [System.ServiceModel.OperationContractAttribute(Action = "http://tempuri.org/IBabyHavenService/Getallproducts", ReplyAction = "http://tempuri.org/IBabyHavenService/GetallproductsResponse")]
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBabyHavenService/Getallproducts", ReplyAction="http://tempuri.org/IBabyHavenService/GetallproductsResponse")]
         System.Threading.Tasks.Task<Frontend.BackendReference.Product[]> GetallproductsAsync();
-
-        [System.ServiceModel.OperationContractAttribute(Action = "http://tempuri.org/IBabyHavenService/getProductCat", ReplyAction = "http://tempuri.org/IBabyHavenService/getProductCatResponse")]
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBabyHavenService/getProductCat", ReplyAction="http://tempuri.org/IBabyHavenService/getProductCatResponse")]
         Frontend.BackendReference.Product[] getProductCat(string cat);
-
-        [System.ServiceModel.OperationContractAttribute(Action = "http://tempuri.org/IBabyHavenService/getProductCat", ReplyAction = "http://tempuri.org/IBabyHavenService/getProductCatResponse")]
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBabyHavenService/getProductCat", ReplyAction="http://tempuri.org/IBabyHavenService/getProductCatResponse")]
         System.Threading.Tasks.Task<Frontend.BackendReference.Product[]> getProductCatAsync(string cat);
-
-        [System.ServiceModel.OperationContractAttribute(Action = "http://tempuri.org/IBabyHavenService/getSingleProd", ReplyAction = "http://tempuri.org/IBabyHavenService/getSingleProdResponse")]
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBabyHavenService/getSingleProd", ReplyAction="http://tempuri.org/IBabyHavenService/getSingleProdResponse")]
         Frontend.BackendReference.Product getSingleProd(int id);
-
-        [System.ServiceModel.OperationContractAttribute(Action = "http://tempuri.org/IBabyHavenService/getSingleProd", ReplyAction = "http://tempuri.org/IBabyHavenService/getSingleProdResponse")]
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBabyHavenService/getSingleProd", ReplyAction="http://tempuri.org/IBabyHavenService/getSingleProdResponse")]
         System.Threading.Tasks.Task<Frontend.BackendReference.Product> getSingleProdAsync(int id);
-
-        [System.ServiceModel.OperationContractAttribute(Action = "http://tempuri.org/IBabyHavenService/Addproducts", ReplyAction = "http://tempuri.org/IBabyHavenService/AddproductsResponse")]
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBabyHavenService/Addproducts", ReplyAction="http://tempuri.org/IBabyHavenService/AddproductsResponse")]
         string Addproducts(string name, string description, string cat, int quantity, decimal price, bool active, int prodID, int admin);
-
-        [System.ServiceModel.OperationContractAttribute(Action = "http://tempuri.org/IBabyHavenService/Addproducts", ReplyAction = "http://tempuri.org/IBabyHavenService/AddproductsResponse")]
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBabyHavenService/Addproducts", ReplyAction="http://tempuri.org/IBabyHavenService/AddproductsResponse")]
         System.Threading.Tasks.Task<string> AddproductsAsync(string name, string description, string cat, int quantity, decimal price, bool active, int prodID, int admin);
-
-        [System.ServiceModel.OperationContractAttribute(Action = "http://tempuri.org/IBabyHavenService/AdminaddProds", ReplyAction = "http://tempuri.org/IBabyHavenService/AdminaddProdsResponse")]
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBabyHavenService/AdminaddProds", ReplyAction="http://tempuri.org/IBabyHavenService/AdminaddProdsResponse")]
         bool AdminaddProds(string name, string description, string cat, int quantity, decimal price, bool active, string img);
-
-        [System.ServiceModel.OperationContractAttribute(Action = "http://tempuri.org/IBabyHavenService/AdminaddProds", ReplyAction = "http://tempuri.org/IBabyHavenService/AdminaddProdsResponse")]
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBabyHavenService/AdminaddProds", ReplyAction="http://tempuri.org/IBabyHavenService/AdminaddProdsResponse")]
         System.Threading.Tasks.Task<bool> AdminaddProdsAsync(string name, string description, string cat, int quantity, decimal price, bool active, string img);
-
-        [System.ServiceModel.OperationContractAttribute(Action = "http://tempuri.org/IBabyHavenService/RemoveProds", ReplyAction = "http://tempuri.org/IBabyHavenService/RemoveProdsResponse")]
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBabyHavenService/RemoveProds", ReplyAction="http://tempuri.org/IBabyHavenService/RemoveProdsResponse")]
         bool RemoveProds(int id);
-
-        [System.ServiceModel.OperationContractAttribute(Action = "http://tempuri.org/IBabyHavenService/RemoveProds", ReplyAction = "http://tempuri.org/IBabyHavenService/RemoveProdsResponse")]
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBabyHavenService/RemoveProds", ReplyAction="http://tempuri.org/IBabyHavenService/RemoveProdsResponse")]
         System.Threading.Tasks.Task<bool> RemoveProdsAsync(int id);
-
-        [System.ServiceModel.OperationContractAttribute(Action = "http://tempuri.org/IBabyHavenService/UpdateProduct", ReplyAction = "http://tempuri.org/IBabyHavenService/UpdateProductResponse")]
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBabyHavenService/UpdateProduct", ReplyAction="http://tempuri.org/IBabyHavenService/UpdateProductResponse")]
         bool UpdateProduct(int id, string name, string description, string cat, int quantity, decimal price, bool active, string img);
-
-        [System.ServiceModel.OperationContractAttribute(Action = "http://tempuri.org/IBabyHavenService/UpdateProduct", ReplyAction = "http://tempuri.org/IBabyHavenService/UpdateProductResponse")]
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBabyHavenService/UpdateProduct", ReplyAction="http://tempuri.org/IBabyHavenService/UpdateProductResponse")]
         System.Threading.Tasks.Task<bool> UpdateProductAsync(int id, string name, string description, string cat, int quantity, decimal price, bool active, string img);
-
-        [System.ServiceModel.OperationContractAttribute(Action = "http://tempuri.org/IBabyHavenService/GetCartProductIds", ReplyAction = "http://tempuri.org/IBabyHavenService/GetCartProductIdsResponse")]
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBabyHavenService/GetCartProductIds", ReplyAction="http://tempuri.org/IBabyHavenService/GetCartProductIdsResponse")]
         int[] GetCartProductIds(int userId);
-
-        [System.ServiceModel.OperationContractAttribute(Action = "http://tempuri.org/IBabyHavenService/GetCartProductIds", ReplyAction = "http://tempuri.org/IBabyHavenService/GetCartProductIdsResponse")]
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBabyHavenService/GetCartProductIds", ReplyAction="http://tempuri.org/IBabyHavenService/GetCartProductIdsResponse")]
         System.Threading.Tasks.Task<int[]> GetCartProductIdsAsync(int userId);
-
-        [System.ServiceModel.OperationContractAttribute(Action = "http://tempuri.org/IBabyHavenService/ProcessCheckout", ReplyAction = "http://tempuri.org/IBabyHavenService/ProcessCheckoutResponse")]
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBabyHavenService/ProcessCheckout", ReplyAction="http://tempuri.org/IBabyHavenService/ProcessCheckoutResponse")]
         bool ProcessCheckout(int userId, int[] productIds);
-
-        [System.ServiceModel.OperationContractAttribute(Action = "http://tempuri.org/IBabyHavenService/ProcessCheckout", ReplyAction = "http://tempuri.org/IBabyHavenService/ProcessCheckoutResponse")]
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBabyHavenService/ProcessCheckout", ReplyAction="http://tempuri.org/IBabyHavenService/ProcessCheckoutResponse")]
         System.Threading.Tasks.Task<bool> ProcessCheckoutAsync(int userId, int[] productIds);
-
-        [System.ServiceModel.OperationContractAttribute(Action = "http://tempuri.org/IBabyHavenService/Checkout", ReplyAction = "http://tempuri.org/IBabyHavenService/CheckoutResponse")]
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBabyHavenService/Checkout", ReplyAction="http://tempuri.org/IBabyHavenService/CheckoutResponse")]
         int Checkout(int userId, decimal total, string firstname, string lastname, string email, string address, string city, string zipcode, string phoneno);
-
-        [System.ServiceModel.OperationContractAttribute(Action = "http://tempuri.org/IBabyHavenService/Checkout", ReplyAction = "http://tempuri.org/IBabyHavenService/CheckoutResponse")]
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBabyHavenService/Checkout", ReplyAction="http://tempuri.org/IBabyHavenService/CheckoutResponse")]
         System.Threading.Tasks.Task<int> CheckoutAsync(int userId, decimal total, string firstname, string lastname, string email, string address, string city, string zipcode, string phoneno);
-
-        [System.ServiceModel.OperationContractAttribute(Action = "http://tempuri.org/IBabyHavenService/GetAllInvoices", ReplyAction = "http://tempuri.org/IBabyHavenService/GetAllInvoicesResponse")]
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBabyHavenService/GetAllInvoices", ReplyAction="http://tempuri.org/IBabyHavenService/GetAllInvoicesResponse")]
         Frontend.BackendReference.Order_Table[] GetAllInvoices(int userId);
-
-        [System.ServiceModel.OperationContractAttribute(Action = "http://tempuri.org/IBabyHavenService/GetAllInvoices", ReplyAction = "http://tempuri.org/IBabyHavenService/GetAllInvoicesResponse")]
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBabyHavenService/GetAllInvoices", ReplyAction="http://tempuri.org/IBabyHavenService/GetAllInvoicesResponse")]
         System.Threading.Tasks.Task<Frontend.BackendReference.Order_Table[]> GetAllInvoicesAsync(int userId);
-
-        [System.ServiceModel.OperationContractAttribute(Action = "http://tempuri.org/IBabyHavenService/GetInvoiceDetails", ReplyAction = "http://tempuri.org/IBabyHavenService/GetInvoiceDetailsResponse")]
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBabyHavenService/GetInvoiceDetails", ReplyAction="http://tempuri.org/IBabyHavenService/GetInvoiceDetailsResponse")]
         Frontend.BackendReference.Order_Table GetInvoiceDetails(int id);
-
-        [System.ServiceModel.OperationContractAttribute(Action = "http://tempuri.org/IBabyHavenService/GetInvoiceDetails", ReplyAction = "http://tempuri.org/IBabyHavenService/GetInvoiceDetailsResponse")]
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBabyHavenService/GetInvoiceDetails", ReplyAction="http://tempuri.org/IBabyHavenService/GetInvoiceDetailsResponse")]
         System.Threading.Tasks.Task<Frontend.BackendReference.Order_Table> GetInvoiceDetailsAsync(int id);
-
-        [System.ServiceModel.OperationContractAttribute(Action = "http://tempuri.org/IBabyHavenService/GetOrderItems", ReplyAction = "http://tempuri.org/IBabyHavenService/GetOrderItemsResponse")]
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBabyHavenService/GetOrderItems", ReplyAction="http://tempuri.org/IBabyHavenService/GetOrderItemsResponse")]
         Frontend.BackendReference.Order_Item[] GetOrderItems(int id);
-
-        [System.ServiceModel.OperationContractAttribute(Action = "http://tempuri.org/IBabyHavenService/GetOrderItems", ReplyAction = "http://tempuri.org/IBabyHavenService/GetOrderItemsResponse")]
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBabyHavenService/GetOrderItems", ReplyAction="http://tempuri.org/IBabyHavenService/GetOrderItemsResponse")]
         System.Threading.Tasks.Task<Frontend.BackendReference.Order_Item[]> GetOrderItemsAsync(int id);
-
-        [System.ServiceModel.OperationContractAttribute(Action = "http://tempuri.org/IBabyHavenService/GetAllOrderItems", ReplyAction = "http://tempuri.org/IBabyHavenService/GetAllOrderItemsResponse")]
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBabyHavenService/GetAllOrderItems", ReplyAction="http://tempuri.org/IBabyHavenService/GetAllOrderItemsResponse")]
         Frontend.BackendReference.Order_Item[] GetAllOrderItems();
-
-        [System.ServiceModel.OperationContractAttribute(Action = "http://tempuri.org/IBabyHavenService/GetAllOrderItems", ReplyAction = "http://tempuri.org/IBabyHavenService/GetAllOrderItemsResponse")]
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBabyHavenService/GetAllOrderItems", ReplyAction="http://tempuri.org/IBabyHavenService/GetAllOrderItemsResponse")]
         System.Threading.Tasks.Task<Frontend.BackendReference.Order_Item[]> GetAllOrderItemsAsync();
-
-        [System.ServiceModel.OperationContractAttribute(Action = "http://tempuri.org/IBabyHavenService/numDifferentProductsSold", ReplyAction = "http://tempuri.org/IBabyHavenService/numDifferentProductsSoldResponse")]
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBabyHavenService/numDifferentProductsSold", ReplyAction="http://tempuri.org/IBabyHavenService/numDifferentProductsSoldResponse")]
         int numDifferentProductsSold();
-
-        [System.ServiceModel.OperationContractAttribute(Action = "http://tempuri.org/IBabyHavenService/numDifferentProductsSold", ReplyAction = "http://tempuri.org/IBabyHavenService/numDifferentProductsSoldResponse")]
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBabyHavenService/numDifferentProductsSold", ReplyAction="http://tempuri.org/IBabyHavenService/numDifferentProductsSoldResponse")]
         System.Threading.Tasks.Task<int> numDifferentProductsSoldAsync();
-
-        [System.ServiceModel.OperationContractAttribute(Action = "http://tempuri.org/IBabyHavenService/numOnHand", ReplyAction = "http://tempuri.org/IBabyHavenService/numOnHandResponse")]
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBabyHavenService/numOnHand", ReplyAction="http://tempuri.org/IBabyHavenService/numOnHandResponse")]
         int numOnHand(int id);
-
-        [System.ServiceModel.OperationContractAttribute(Action = "http://tempuri.org/IBabyHavenService/numOnHand", ReplyAction = "http://tempuri.org/IBabyHavenService/numOnHandResponse")]
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBabyHavenService/numOnHand", ReplyAction="http://tempuri.org/IBabyHavenService/numOnHandResponse")]
         System.Threading.Tasks.Task<int> numOnHandAsync(int id);
-
-        [System.ServiceModel.OperationContractAttribute(Action = "http://tempuri.org/IBabyHavenService/regperday", ReplyAction = "http://tempuri.org/IBabyHavenService/regperdayResponse")]
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBabyHavenService/regperday", ReplyAction="http://tempuri.org/IBabyHavenService/regperdayResponse")]
         int regperday();
-
-        [System.ServiceModel.OperationContractAttribute(Action = "http://tempuri.org/IBabyHavenService/regperday", ReplyAction = "http://tempuri.org/IBabyHavenService/regperdayResponse")]
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBabyHavenService/regperday", ReplyAction="http://tempuri.org/IBabyHavenService/regperdayResponse")]
         System.Threading.Tasks.Task<int> regperdayAsync();
-
-        [System.ServiceModel.OperationContractAttribute(Action = "http://tempuri.org/IBabyHavenService/GetProductCategoryReport", ReplyAction = "http://tempuri.org/IBabyHavenService/GetProductCategoryReportResponse")]
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBabyHavenService/GetProductCategoryReport", ReplyAction="http://tempuri.org/IBabyHavenService/GetProductCategoryReportResponse")]
         int GetProductCategoryReport(string cat);
-
-        [System.ServiceModel.OperationContractAttribute(Action = "http://tempuri.org/IBabyHavenService/GetProductCategoryReport", ReplyAction = "http://tempuri.org/IBabyHavenService/GetProductCategoryReportResponse")]
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBabyHavenService/GetProductCategoryReport", ReplyAction="http://tempuri.org/IBabyHavenService/GetProductCategoryReportResponse")]
         System.Threading.Tasks.Task<int> GetProductCategoryReportAsync(string cat);
-
-
-        [System.ServiceModel.OperationContractAttribute(Action = "http://tempuri.org/IBabyHavenService/isSafeHavenSock", ReplyAction = "http://tempuri.org/IBabyHavenService/isSafeHavenSockResponse")]
-        bool isSafeHavenSock();
-
-        [System.ServiceModel.OperationContractAttribute(Action = "http://tempuri.org/IBabyHavenService/isSafeHavenSock", ReplyAction = "http://tempuri.org/IBabyHavenService/isSafeHavenSockResponse")]
-        System.Threading.Tasks.Task<bool> isSafeHavenSockAsync();
-
-        [System.ServiceModel.OperationContractAttribute(Action = "http://tempuri.org/IBabyHavenService/GetInvoicesForMonth", ReplyAction = "http://tempuri.org/IBabyHavenService/GetInvoicesForMonthResponse")]
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBabyHavenService/GetInvoicesForMonth", ReplyAction="http://tempuri.org/IBabyHavenService/GetInvoicesForMonthResponse")]
         Frontend.BackendReference.Order_Table[] GetInvoicesForMonth(System.DateTime targetMonth);
-
-        [System.ServiceModel.OperationContractAttribute(Action = "http://tempuri.org/IBabyHavenService/GetInvoicesForMonth", ReplyAction = "http://tempuri.org/IBabyHavenService/GetInvoicesForMonthResponse")]
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBabyHavenService/GetInvoicesForMonth", ReplyAction="http://tempuri.org/IBabyHavenService/GetInvoicesForMonthResponse")]
         System.Threading.Tasks.Task<Frontend.BackendReference.Order_Table[]> GetInvoicesForMonthAsync(System.DateTime targetMonth);
-
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBabyHavenService/isSafeHavenSock", ReplyAction="http://tempuri.org/IBabyHavenService/isSafeHavenSockResponse")]
+        bool isSafeHavenSock();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBabyHavenService/isSafeHavenSock", ReplyAction="http://tempuri.org/IBabyHavenService/isSafeHavenSockResponse")]
+        System.Threading.Tasks.Task<bool> isSafeHavenSockAsync();
     }
-
+    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public interface IBabyHavenServiceChannel : Frontend.BackendReference.IBabyHavenService, System.ServiceModel.IClientChannel
-    {
+    public interface IBabyHavenServiceChannel : Frontend.BackendReference.IBabyHavenService, System.ServiceModel.IClientChannel {
     }
-
+    
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public partial class BabyHavenServiceClient : System.ServiceModel.ClientBase<Frontend.BackendReference.IBabyHavenService>, Frontend.BackendReference.IBabyHavenService
-    {
-
-        public BabyHavenServiceClient()
-        {
+    public partial class BabyHavenServiceClient : System.ServiceModel.ClientBase<Frontend.BackendReference.IBabyHavenService>, Frontend.BackendReference.IBabyHavenService {
+        
+        public BabyHavenServiceClient() {
         }
-
-        public BabyHavenServiceClient(string endpointConfigurationName) :
-                base(endpointConfigurationName)
-        {
+        
+        public BabyHavenServiceClient(string endpointConfigurationName) : 
+                base(endpointConfigurationName) {
         }
-
-        public BabyHavenServiceClient(string endpointConfigurationName, string remoteAddress) :
-                base(endpointConfigurationName, remoteAddress)
-        {
+        
+        public BabyHavenServiceClient(string endpointConfigurationName, string remoteAddress) : 
+                base(endpointConfigurationName, remoteAddress) {
         }
-
-        public BabyHavenServiceClient(string endpointConfigurationName, System.ServiceModel.EndpointAddress remoteAddress) :
-                base(endpointConfigurationName, remoteAddress)
-        {
+        
+        public BabyHavenServiceClient(string endpointConfigurationName, System.ServiceModel.EndpointAddress remoteAddress) : 
+                base(endpointConfigurationName, remoteAddress) {
         }
-
-        public BabyHavenServiceClient(System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) :
-                base(binding, remoteAddress)
-        {
+        
+        public BabyHavenServiceClient(System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) : 
+                base(binding, remoteAddress) {
         }
-
-        public int Login(string email, string password)
-        {
+        
+        public int Login(string email, string password) {
             return base.Channel.Login(email, password);
         }
-
-        public System.Threading.Tasks.Task<int> LoginAsync(string email, string password)
-        {
+        
+        public System.Threading.Tasks.Task<int> LoginAsync(string email, string password) {
             return base.Channel.LoginAsync(email, password);
         }
-
-        public Frontend.BackendReference.User_Table GetUser(int id)
-        {
+        
+        public Frontend.BackendReference.User_Table GetUser(int id) {
             return base.Channel.GetUser(id);
         }
-
-        public System.Threading.Tasks.Task<Frontend.BackendReference.User_Table> GetUserAsync(int id)
-        {
+        
+        public System.Threading.Tasks.Task<Frontend.BackendReference.User_Table> GetUserAsync(int id) {
             return base.Channel.GetUserAsync(id);
         }
-
-        public Frontend.BackendReference.User_Table GetEmail(string email, int id)
-        {
+        
+        public Frontend.BackendReference.User_Table GetEmail(string email, int id) {
             return base.Channel.GetEmail(email, id);
         }
-
-        public System.Threading.Tasks.Task<Frontend.BackendReference.User_Table> GetEmailAsync(string email, int id)
-        {
+        
+        public System.Threading.Tasks.Task<Frontend.BackendReference.User_Table> GetEmailAsync(string email, int id) {
             return base.Channel.GetEmailAsync(email, id);
         }
-
-        public Frontend.BackendReference.Admin GetAdmin(int id)
-        {
+        
+        public Frontend.BackendReference.Admin GetAdmin(int id) {
             return base.Channel.GetAdmin(id);
         }
-
-        public System.Threading.Tasks.Task<Frontend.BackendReference.Admin> GetAdminAsync(int id)
-        {
+        
+        public System.Threading.Tasks.Task<Frontend.BackendReference.Admin> GetAdminAsync(int id) {
             return base.Channel.GetAdminAsync(id);
         }
-
-        public Frontend.BackendReference.Client GetClient(int id)
-        {
+        
+        public Frontend.BackendReference.Client GetClient(int id) {
             return base.Channel.GetClient(id);
         }
-
-        public System.Threading.Tasks.Task<Frontend.BackendReference.Client> GetClientAsync(int id)
-        {
+        
+        public System.Threading.Tasks.Task<Frontend.BackendReference.Client> GetClientAsync(int id) {
             return base.Channel.GetClientAsync(id);
         }
-
-        public Frontend.BackendReference.User_Table[] GetAllUsers()
-        {
+        
+        public Frontend.BackendReference.User_Table[] GetAllUsers() {
             return base.Channel.GetAllUsers();
         }
-
-        public System.Threading.Tasks.Task<Frontend.BackendReference.User_Table[]> GetAllUsersAsync()
-        {
+        
+        public System.Threading.Tasks.Task<Frontend.BackendReference.User_Table[]> GetAllUsersAsync() {
             return base.Channel.GetAllUsersAsync();
         }
-
-        public Frontend.BackendReference.User_Table[] GetAllUsersNotAdmin()
-        {
+        
+        public Frontend.BackendReference.User_Table[] GetAllUsersNotAdmin() {
             return base.Channel.GetAllUsersNotAdmin();
         }
-
-        public System.Threading.Tasks.Task<Frontend.BackendReference.User_Table[]> GetAllUsersNotAdminAsync()
-        {
+        
+        public System.Threading.Tasks.Task<Frontend.BackendReference.User_Table[]> GetAllUsersNotAdminAsync() {
             return base.Channel.GetAllUsersNotAdminAsync();
         }
-
-        public bool Register(string email, string password, string name, string surname, string phoneno, string address, int usetype)
-        {
+        
+        public bool Register(string email, string password, string name, string surname, string phoneno, string address, int usetype) {
             return base.Channel.Register(email, password, name, surname, phoneno, address, usetype);
         }
-
-        public System.Threading.Tasks.Task<bool> RegisterAsync(string email, string password, string name, string surname, string phoneno, string address, int usetype)
-        {
+        
+        public System.Threading.Tasks.Task<bool> RegisterAsync(string email, string password, string name, string surname, string phoneno, string address, int usetype) {
             return base.Channel.RegisterAsync(email, password, name, surname, phoneno, address, usetype);
         }
-
-        public bool AddAdmin(int user, string surname)
-        {
+        
+        public bool AddAdmin(int user, string surname) {
             return base.Channel.AddAdmin(user, surname);
         }
-
-        public System.Threading.Tasks.Task<bool> AddAdminAsync(int user, string surname)
-        {
+        
+        public System.Threading.Tasks.Task<bool> AddAdminAsync(int user, string surname) {
             return base.Channel.AddAdminAsync(user, surname);
         }
-
-        public bool AddAdminTEST(int user)
-        {
+        
+        public bool AddAdminTEST(int user) {
             return base.Channel.AddAdminTEST(user);
         }
-
-        public System.Threading.Tasks.Task<bool> AddAdminTESTAsync(int user)
-        {
+        
+        public System.Threading.Tasks.Task<bool> AddAdminTESTAsync(int user) {
             return base.Channel.AddAdminTESTAsync(user);
         }
-
-        public Frontend.BackendReference.User_Table[] SearchUsersByName(string searchQuery)
-        {
+        
+        public Frontend.BackendReference.User_Table[] SearchUsersByName(string searchQuery) {
             return base.Channel.SearchUsersByName(searchQuery);
         }
-
-        public System.Threading.Tasks.Task<Frontend.BackendReference.User_Table[]> SearchUsersByNameAsync(string searchQuery)
-        {
+        
+        public System.Threading.Tasks.Task<Frontend.BackendReference.User_Table[]> SearchUsersByNameAsync(string searchQuery) {
             return base.Channel.SearchUsersByNameAsync(searchQuery);
         }
-
-        public Frontend.BackendReference.Product[] SearchProducts(string searchQuery)
-        {
+        
+        public Frontend.BackendReference.Product[] SearchProducts(string searchQuery) {
             return base.Channel.SearchProducts(searchQuery);
         }
-
-        public System.Threading.Tasks.Task<Frontend.BackendReference.Product[]> SearchProductsAsync(string searchQuery)
-        {
+        
+        public System.Threading.Tasks.Task<Frontend.BackendReference.Product[]> SearchProductsAsync(string searchQuery) {
             return base.Channel.SearchProductsAsync(searchQuery);
         }
-
-        public bool AddToCart(int uId, int pId)
-        {
+        
+        public bool AddToCart(int uId, int pId) {
             return base.Channel.AddToCart(uId, pId);
         }
-
-        public System.Threading.Tasks.Task<bool> AddToCartAsync(int uId, int pId)
-        {
+        
+        public System.Threading.Tasks.Task<bool> AddToCartAsync(int uId, int pId) {
             return base.Channel.AddToCartAsync(uId, pId);
         }
-
-        public decimal GetTotalCartPrice(int clientId)
-        {
+        
+        public decimal GetTotalCartPrice(int clientId) {
             return base.Channel.GetTotalCartPrice(clientId);
         }
-
-        public System.Threading.Tasks.Task<decimal> GetTotalCartPriceAsync(int clientId)
-        {
+        
+        public System.Threading.Tasks.Task<decimal> GetTotalCartPriceAsync(int clientId) {
             return base.Channel.GetTotalCartPriceAsync(clientId);
         }
-
-        public Frontend.BackendReference.Cart[] GetAllCartItemsForClient(int ClientID)
-        {
+        
+        public Frontend.BackendReference.Cart[] GetAllCartItemsForClient(int ClientID) {
             return base.Channel.GetAllCartItemsForClient(ClientID);
         }
-
-        public System.Threading.Tasks.Task<Frontend.BackendReference.Cart[]> GetAllCartItemsForClientAsync(int ClientID)
-        {
+        
+        public System.Threading.Tasks.Task<Frontend.BackendReference.Cart[]> GetAllCartItemsForClientAsync(int ClientID) {
             return base.Channel.GetAllCartItemsForClientAsync(ClientID);
         }
-
-        public Frontend.BackendReference.Product[] GetCartProducts(int id)
-        {
+        
+        public Frontend.BackendReference.Product[] GetCartProducts(int id) {
             return base.Channel.GetCartProducts(id);
         }
-
-        public System.Threading.Tasks.Task<Frontend.BackendReference.Product[]> GetCartProductsAsync(int id)
-        {
+        
+        public System.Threading.Tasks.Task<Frontend.BackendReference.Product[]> GetCartProductsAsync(int id) {
             return base.Channel.GetCartProductsAsync(id);
         }
-
-        public int GetQuantity(int UserID, int ProductID)
-        {
+        
+        public int GetQuantity(int UserID, int ProductID) {
             return base.Channel.GetQuantity(UserID, ProductID);
         }
-
-        public System.Threading.Tasks.Task<int> GetQuantityAsync(int UserID, int ProductID)
-        {
+        
+        public System.Threading.Tasks.Task<int> GetQuantityAsync(int UserID, int ProductID) {
             return base.Channel.GetQuantityAsync(UserID, ProductID);
         }
-
-        public void AddRemoveProductFromCart(int pID, int uID, string action, int amount)
-        {
+        
+        public void AddRemoveProductFromCart(int pID, int uID, string action, int amount) {
             base.Channel.AddRemoveProductFromCart(pID, uID, action, amount);
         }
-
-        public System.Threading.Tasks.Task AddRemoveProductFromCartAsync(int pID, int uID, string action, int amount)
-        {
+        
+        public System.Threading.Tasks.Task AddRemoveProductFromCartAsync(int pID, int uID, string action, int amount) {
             return base.Channel.AddRemoveProductFromCartAsync(pID, uID, action, amount);
         }
-
-        public void RemoveProductFromCart(int productId, int userId, int quantityToRemove)
-        {
+        
+        public void RemoveProductFromCart(int productId, int userId, int quantityToRemove) {
             base.Channel.RemoveProductFromCart(productId, userId, quantityToRemove);
         }
-
-        public System.Threading.Tasks.Task RemoveProductFromCartAsync(int productId, int userId, int quantityToRemove)
-        {
+        
+        public System.Threading.Tasks.Task RemoveProductFromCartAsync(int productId, int userId, int quantityToRemove) {
             return base.Channel.RemoveProductFromCartAsync(productId, userId, quantityToRemove);
         }
-
-        public string GetProductImage(int productID)
-        {
+        
+        public string GetProductImage(int productID) {
             return base.Channel.GetProductImage(productID);
         }
-
-        public System.Threading.Tasks.Task<string> GetProductImageAsync(int productID)
-        {
+        
+        public System.Threading.Tasks.Task<string> GetProductImageAsync(int productID) {
             return base.Channel.GetProductImageAsync(productID);
         }
-
-        public string GetProductName(int productID)
-        {
+        
+        public string GetProductName(int productID) {
             return base.Channel.GetProductName(productID);
         }
-
-        public System.Threading.Tasks.Task<string> GetProductNameAsync(int productID)
-        {
+        
+        public System.Threading.Tasks.Task<string> GetProductNameAsync(int productID) {
             return base.Channel.GetProductNameAsync(productID);
         }
-
-        public string GetProductCategory(int productID)
-        {
+        
+        public string GetProductCategory(int productID) {
             return base.Channel.GetProductCategory(productID);
         }
-
-        public System.Threading.Tasks.Task<string> GetProductCategoryAsync(int productID)
-        {
+        
+        public System.Threading.Tasks.Task<string> GetProductCategoryAsync(int productID) {
             return base.Channel.GetProductCategoryAsync(productID);
         }
-
-        public string GetProductDescription(int productID)
-        {
+        
+        public string GetProductDescription(int productID) {
             return base.Channel.GetProductDescription(productID);
         }
-
-        public System.Threading.Tasks.Task<string> GetProductDescriptionAsync(int productID)
-        {
+        
+        public System.Threading.Tasks.Task<string> GetProductDescriptionAsync(int productID) {
             return base.Channel.GetProductDescriptionAsync(productID);
         }
-
-        public decimal GetProductPrice(int productID)
-        {
+        
+        public decimal GetProductPrice(int productID) {
             return base.Channel.GetProductPrice(productID);
         }
-
-        public System.Threading.Tasks.Task<decimal> GetProductPriceAsync(int productID)
-        {
+        
+        public System.Threading.Tasks.Task<decimal> GetProductPriceAsync(int productID) {
             return base.Channel.GetProductPriceAsync(productID);
         }
-
-        public string GetUserName(int id)
-        {
+        
+        public string GetUserName(int id) {
             return base.Channel.GetUserName(id);
         }
-
-        public System.Threading.Tasks.Task<string> GetUserNameAsync(int id)
-        {
+        
+        public System.Threading.Tasks.Task<string> GetUserNameAsync(int id) {
             return base.Channel.GetUserNameAsync(id);
         }
-
-        public string GetProductAvailability(int productID)
-        {
+        
+        public string GetProductAvailability(int productID) {
             return base.Channel.GetProductAvailability(productID);
         }
-
-        public System.Threading.Tasks.Task<string> GetProductAvailabilityAsync(int productID)
-        {
+        
+        public System.Threading.Tasks.Task<string> GetProductAvailabilityAsync(int productID) {
             return base.Channel.GetProductAvailabilityAsync(productID);
         }
-
-        public Frontend.BackendReference.Product[] Getallproducts()
-        {
+        
+        public Frontend.BackendReference.Product[] Getallproducts() {
             return base.Channel.Getallproducts();
         }
-
-        public System.Threading.Tasks.Task<Frontend.BackendReference.Product[]> GetallproductsAsync()
-        {
+        
+        public System.Threading.Tasks.Task<Frontend.BackendReference.Product[]> GetallproductsAsync() {
             return base.Channel.GetallproductsAsync();
         }
-
-        public Frontend.BackendReference.Product[] getProductCat(string cat)
-        {
+        
+        public Frontend.BackendReference.Product[] getProductCat(string cat) {
             return base.Channel.getProductCat(cat);
         }
-
-        public System.Threading.Tasks.Task<Frontend.BackendReference.Product[]> getProductCatAsync(string cat)
-        {
+        
+        public System.Threading.Tasks.Task<Frontend.BackendReference.Product[]> getProductCatAsync(string cat) {
             return base.Channel.getProductCatAsync(cat);
         }
-
-        public Frontend.BackendReference.Product getSingleProd(int id)
-        {
+        
+        public Frontend.BackendReference.Product getSingleProd(int id) {
             return base.Channel.getSingleProd(id);
         }
-
-        public System.Threading.Tasks.Task<Frontend.BackendReference.Product> getSingleProdAsync(int id)
-        {
+        
+        public System.Threading.Tasks.Task<Frontend.BackendReference.Product> getSingleProdAsync(int id) {
             return base.Channel.getSingleProdAsync(id);
         }
-
-        public string Addproducts(string name, string description, string cat, int quantity, decimal price, bool active, int prodID, int admin)
-        {
+        
+        public string Addproducts(string name, string description, string cat, int quantity, decimal price, bool active, int prodID, int admin) {
             return base.Channel.Addproducts(name, description, cat, quantity, price, active, prodID, admin);
         }
-
-        public System.Threading.Tasks.Task<string> AddproductsAsync(string name, string description, string cat, int quantity, decimal price, bool active, int prodID, int admin)
-        {
+        
+        public System.Threading.Tasks.Task<string> AddproductsAsync(string name, string description, string cat, int quantity, decimal price, bool active, int prodID, int admin) {
             return base.Channel.AddproductsAsync(name, description, cat, quantity, price, active, prodID, admin);
         }
-
-        public bool AdminaddProds(string name, string description, string cat, int quantity, decimal price, bool active, string img)
-        {
+        
+        public bool AdminaddProds(string name, string description, string cat, int quantity, decimal price, bool active, string img) {
             return base.Channel.AdminaddProds(name, description, cat, quantity, price, active, img);
         }
-
-        public System.Threading.Tasks.Task<bool> AdminaddProdsAsync(string name, string description, string cat, int quantity, decimal price, bool active, string img)
-        {
+        
+        public System.Threading.Tasks.Task<bool> AdminaddProdsAsync(string name, string description, string cat, int quantity, decimal price, bool active, string img) {
             return base.Channel.AdminaddProdsAsync(name, description, cat, quantity, price, active, img);
         }
-
-        public bool RemoveProds(int id)
-        {
+        
+        public bool RemoveProds(int id) {
             return base.Channel.RemoveProds(id);
         }
-
-        public System.Threading.Tasks.Task<bool> RemoveProdsAsync(int id)
-        {
+        
+        public System.Threading.Tasks.Task<bool> RemoveProdsAsync(int id) {
             return base.Channel.RemoveProdsAsync(id);
         }
-
-        public bool UpdateProduct(int id, string name, string description, string cat, int quantity, decimal price, bool active, string img)
-        {
+        
+        public bool UpdateProduct(int id, string name, string description, string cat, int quantity, decimal price, bool active, string img) {
             return base.Channel.UpdateProduct(id, name, description, cat, quantity, price, active, img);
         }
-
-        public System.Threading.Tasks.Task<bool> UpdateProductAsync(int id, string name, string description, string cat, int quantity, decimal price, bool active, string img)
-        {
+        
+        public System.Threading.Tasks.Task<bool> UpdateProductAsync(int id, string name, string description, string cat, int quantity, decimal price, bool active, string img) {
             return base.Channel.UpdateProductAsync(id, name, description, cat, quantity, price, active, img);
         }
-
-        public int[] GetCartProductIds(int userId)
-        {
+        
+        public int[] GetCartProductIds(int userId) {
             return base.Channel.GetCartProductIds(userId);
         }
-
-        public System.Threading.Tasks.Task<int[]> GetCartProductIdsAsync(int userId)
-        {
+        
+        public System.Threading.Tasks.Task<int[]> GetCartProductIdsAsync(int userId) {
             return base.Channel.GetCartProductIdsAsync(userId);
         }
-
-        public bool ProcessCheckout(int userId, int[] productIds)
-        {
+        
+        public bool ProcessCheckout(int userId, int[] productIds) {
             return base.Channel.ProcessCheckout(userId, productIds);
         }
-
-        public System.Threading.Tasks.Task<bool> ProcessCheckoutAsync(int userId, int[] productIds)
-        {
+        
+        public System.Threading.Tasks.Task<bool> ProcessCheckoutAsync(int userId, int[] productIds) {
             return base.Channel.ProcessCheckoutAsync(userId, productIds);
         }
-
-        public int Checkout(int userId, decimal total, string firstname, string lastname, string email, string address, string city, string zipcode, string phoneno)
-        {
+        
+        public int Checkout(int userId, decimal total, string firstname, string lastname, string email, string address, string city, string zipcode, string phoneno) {
             return base.Channel.Checkout(userId, total, firstname, lastname, email, address, city, zipcode, phoneno);
         }
-
-        public System.Threading.Tasks.Task<int> CheckoutAsync(int userId, decimal total, string firstname, string lastname, string email, string address, string city, string zipcode, string phoneno)
-        {
+        
+        public System.Threading.Tasks.Task<int> CheckoutAsync(int userId, decimal total, string firstname, string lastname, string email, string address, string city, string zipcode, string phoneno) {
             return base.Channel.CheckoutAsync(userId, total, firstname, lastname, email, address, city, zipcode, phoneno);
         }
-
-        public Frontend.BackendReference.Order_Table[] GetAllInvoices(int userId)
-        {
+        
+        public Frontend.BackendReference.Order_Table[] GetAllInvoices(int userId) {
             return base.Channel.GetAllInvoices(userId);
         }
-
-        public System.Threading.Tasks.Task<Frontend.BackendReference.Order_Table[]> GetAllInvoicesAsync(int userId)
-        {
+        
+        public System.Threading.Tasks.Task<Frontend.BackendReference.Order_Table[]> GetAllInvoicesAsync(int userId) {
             return base.Channel.GetAllInvoicesAsync(userId);
         }
-
-        public Frontend.BackendReference.Order_Table GetInvoiceDetails(int id)
-        {
+        
+        public Frontend.BackendReference.Order_Table GetInvoiceDetails(int id) {
             return base.Channel.GetInvoiceDetails(id);
         }
-
-        public System.Threading.Tasks.Task<Frontend.BackendReference.Order_Table> GetInvoiceDetailsAsync(int id)
-        {
+        
+        public System.Threading.Tasks.Task<Frontend.BackendReference.Order_Table> GetInvoiceDetailsAsync(int id) {
             return base.Channel.GetInvoiceDetailsAsync(id);
         }
-
-        public Frontend.BackendReference.Order_Item[] GetOrderItems(int id)
-        {
+        
+        public Frontend.BackendReference.Order_Item[] GetOrderItems(int id) {
             return base.Channel.GetOrderItems(id);
         }
-
-        public System.Threading.Tasks.Task<Frontend.BackendReference.Order_Item[]> GetOrderItemsAsync(int id)
-        {
+        
+        public System.Threading.Tasks.Task<Frontend.BackendReference.Order_Item[]> GetOrderItemsAsync(int id) {
             return base.Channel.GetOrderItemsAsync(id);
         }
-
-        public Frontend.BackendReference.Order_Item[] GetAllOrderItems()
-        {
+        
+        public Frontend.BackendReference.Order_Item[] GetAllOrderItems() {
             return base.Channel.GetAllOrderItems();
         }
-
-        public System.Threading.Tasks.Task<Frontend.BackendReference.Order_Item[]> GetAllOrderItemsAsync()
-        {
+        
+        public System.Threading.Tasks.Task<Frontend.BackendReference.Order_Item[]> GetAllOrderItemsAsync() {
             return base.Channel.GetAllOrderItemsAsync();
         }
-
-        public int numDifferentProductsSold()
-        {
+        
+        public int numDifferentProductsSold() {
             return base.Channel.numDifferentProductsSold();
         }
-
-        public System.Threading.Tasks.Task<int> numDifferentProductsSoldAsync()
-        {
+        
+        public System.Threading.Tasks.Task<int> numDifferentProductsSoldAsync() {
             return base.Channel.numDifferentProductsSoldAsync();
         }
-
-        public int numOnHand(int id)
-        {
+        
+        public int numOnHand(int id) {
             return base.Channel.numOnHand(id);
         }
-
-        public System.Threading.Tasks.Task<int> numOnHandAsync(int id)
-        {
+        
+        public System.Threading.Tasks.Task<int> numOnHandAsync(int id) {
             return base.Channel.numOnHandAsync(id);
         }
-
-        public int regperday()
-        {
+        
+        public int regperday() {
             return base.Channel.regperday();
         }
-
-        public System.Threading.Tasks.Task<int> regperdayAsync()
-        {
+        
+        public System.Threading.Tasks.Task<int> regperdayAsync() {
             return base.Channel.regperdayAsync();
         }
-
-        public int GetProductCategoryReport(string cat)
-        {
+        
+        public int GetProductCategoryReport(string cat) {
             return base.Channel.GetProductCategoryReport(cat);
         }
-
-        public System.Threading.Tasks.Task<int> GetProductCategoryReportAsync(string cat)
-        {
+        
+        public System.Threading.Tasks.Task<int> GetProductCategoryReportAsync(string cat) {
             return base.Channel.GetProductCategoryReportAsync(cat);
         }
-
-
-        public bool isSafeHavenSock()
-        {
-            return base.Channel.isSafeHavenSock();
-        }
-
-        public System.Threading.Tasks.Task<bool> isSafeHavenSockAsync()
-        {
-            return base.Channel.isSafeHavenSockAsync();
-        }
-        public Frontend.BackendReference.Order_Table[] GetInvoicesForMonth(System.DateTime targetMonth)
-        {
+        
+        public Frontend.BackendReference.Order_Table[] GetInvoicesForMonth(System.DateTime targetMonth) {
             return base.Channel.GetInvoicesForMonth(targetMonth);
         }
-
-        public System.Threading.Tasks.Task<Frontend.BackendReference.Order_Table[]> GetInvoicesForMonthAsync(System.DateTime targetMonth)
-        {
+        
+        public System.Threading.Tasks.Task<Frontend.BackendReference.Order_Table[]> GetInvoicesForMonthAsync(System.DateTime targetMonth) {
             return base.Channel.GetInvoicesForMonthAsync(targetMonth);
-
+        }
+        
+        public bool isSafeHavenSock() {
+            return base.Channel.isSafeHavenSock();
+        }
+        
+        public System.Threading.Tasks.Task<bool> isSafeHavenSockAsync() {
+            return base.Channel.isSafeHavenSockAsync();
         }
     }
 }
-
