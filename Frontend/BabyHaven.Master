@@ -258,7 +258,7 @@
                 </div>
                 <div class="col-lg-4 col-md-8 col-sm-8">
                     <div class="footer__newslatter">
-                       <a href="Subscribe.aspx"> <h6>SUBCRIBE TO OUR NEWSLETTER</h6></a>
+                       <a href="Subscribe.aspx"> <h6>SUBSCRIBE TO OUR NEWSLETTER</h6></a>
                     <%--    <form action="#">
                             <input type="text" placeholder="Email">
                             <button type="submit" class="site-btn" onclick="btn_Subscribe">Subscribe</button>

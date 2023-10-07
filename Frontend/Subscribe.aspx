@@ -5,7 +5,7 @@
     width: 250px;
     padding: 10px;
     border: 1px solid #ccc;
-    border-radius: 5px;
+    border-radius: 15px;
     font-size: 16px;
 }
 
@@ -13,6 +13,18 @@
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+
+         <!-- Breadcrumb Section Begin -->
+    <section class="breadcrumb-subs set-bg" data-setbg="img/banner/banner.jpg">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h2>Subscribe To Our Newsletter</h2>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Breadcrumb Section End -->
     <form runat="server">
         <div align="center">
 
