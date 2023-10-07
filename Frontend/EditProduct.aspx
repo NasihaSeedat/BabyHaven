@@ -158,7 +158,7 @@
                 <div class="btn btn-link">
                     
                      
-                        <asp:Button ID="edtpro" class="site-btn" runat="server" Text="Edit Product"  Width="198px" OnClick="edtpro_Click"  />
+                        <asp:Button ID="edtpro" class="btnInvoice" runat="server" Text="Edit Product"  Width="198px" OnClick="edtpro_Click"  />
                     </div>
                 </div>
 
