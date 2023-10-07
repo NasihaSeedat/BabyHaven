@@ -163,9 +163,6 @@ namespace BabyHaven_Database
         List<Order_Table> GetInvoicesForMonth(DateTime targetMonth);
 
 
-        [OperationContract]
-
-        int GetProductCategoryReport(string cat);
 
         [OperationContract]
         bool isSafeHavenSock();
