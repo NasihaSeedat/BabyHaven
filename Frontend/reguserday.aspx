@@ -15,4 +15,17 @@
             </div>
         </div>
     </div>
+   <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+    <form id="form1" runat="server">
+        <div id="regchart" runat="server">
+            <!-- Canvas element for the chart -->
+            <canvas id="userRegistrationChart" width="400" height="200"></canvas>
+        </div>
+    </form>
+
+                    </div>
+                </div>
+       </div>
 </asp:Content>

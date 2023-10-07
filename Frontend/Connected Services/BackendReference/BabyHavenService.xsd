@@ -661,6 +661,20 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+  <xs:element name="GetNumberOfUsersRegisteredPerDayInYear">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="year" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetNumberOfUsersRegisteredPerDayInYearResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q21="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="GetNumberOfUsersRegisteredPerDayInYearResult" nillable="true" type="q21:ArrayOfKeyValueOfdateTimeint" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
   <xs:element name="isSafeHavenSock">
     <xs:complexType>
       <xs:sequence />
