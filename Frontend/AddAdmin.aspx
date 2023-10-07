@@ -31,7 +31,7 @@
     </div>
     <div class="col-md-6">
 
-        <asp:Button id="btnSearch" class="site-btn" runat="server" Text="Search" OnClick="btnSearch_Click" style=" margin-left: 30px;" />
+        <asp:Button id="btnSearch" class="btnInvoice" runat="server" Text="Search" OnClick="btnSearch_Click" style=" margin-left: 30px;margin-top: -5px;" />
 
        
     </div>
@@ -55,7 +55,7 @@
                  
 
             </div>
-            <asp:Button ID="btnAddAdmin" runat="server" CssClass="site-btn" Text="Add Admin" OnClick="btn_register"/>
+            <asp:Button ID="btnAddAdmin" runat="server" CssClass="btnInvoice" Text="Add Admin" OnClick="btn_register"/>
           
         </div>
 
