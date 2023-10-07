@@ -164,6 +164,7 @@ namespace BabyHaven_Database
 
 
 
+
         [OperationContract]
         bool isSafeHavenSock();
     }
