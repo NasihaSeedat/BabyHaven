@@ -1079,6 +1079,20 @@ namespace BabyHaven_Database
 
         }
 
+        public Dictionary<DateTime, int> GetNumberOfUsersRegisteredPerDayInYear(int year)
+        {
+            var userCountsPerDay = from u in db.User_Tables
+                                   where u.Register_Date.Year == year
+                                   group u by u.Register_Date.Date into dailyCounts
+                                   select new
+                                   {
+                                       Date = dailyCounts.Key,
+                                       Count = dailyCounts.Count()
+                                   };
+
+            var result = userCountsPerDay.ToDictionary(x => x.Date, x => x.Count);
+            return result;
+        }
 
     }
 }

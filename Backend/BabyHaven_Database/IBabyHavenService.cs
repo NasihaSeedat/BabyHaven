@@ -162,7 +162,8 @@ namespace BabyHaven_Database
         [OperationContract]
         List<Order_Table> GetInvoicesForMonth(DateTime targetMonth);
 
-
+        [OperationContract]
+        Dictionary<DateTime, int> GetNumberOfUsersRegisteredPerDayInYear(int year);
 
 
         [OperationContract]

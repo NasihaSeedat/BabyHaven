@@ -1146,6 +1146,14 @@ namespace Frontend.BackendReference {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBabyHavenService/GetInvoicesForMonth", ReplyAction="http://tempuri.org/IBabyHavenService/GetInvoicesForMonthResponse")]
         System.Threading.Tasks.Task<Frontend.BackendReference.Order_Table[]> GetInvoicesForMonthAsync(System.DateTime targetMonth);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBabyHavenService/GetNumberOfUsersRegisteredPerDayInYear", ReplyAction="http://tempuri.org/IBabyHavenService/GetNumberOfUsersRegisteredPerDayInYearRespon" +
+            "se")]
+        System.Collections.Generic.Dictionary<System.DateTime, int> GetNumberOfUsersRegisteredPerDayInYear(int year);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBabyHavenService/GetNumberOfUsersRegisteredPerDayInYear", ReplyAction="http://tempuri.org/IBabyHavenService/GetNumberOfUsersRegisteredPerDayInYearRespon" +
+            "se")]
+        System.Threading.Tasks.Task<System.Collections.Generic.Dictionary<System.DateTime, int>> GetNumberOfUsersRegisteredPerDayInYearAsync(int year);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBabyHavenService/isSafeHavenSock", ReplyAction="http://tempuri.org/IBabyHavenService/isSafeHavenSockResponse")]
         bool isSafeHavenSock();
         
@@ -1538,6 +1546,14 @@ namespace Frontend.BackendReference {
         
         public System.Threading.Tasks.Task<Frontend.BackendReference.Order_Table[]> GetInvoicesForMonthAsync(System.DateTime targetMonth) {
             return base.Channel.GetInvoicesForMonthAsync(targetMonth);
+        }
+        
+        public System.Collections.Generic.Dictionary<System.DateTime, int> GetNumberOfUsersRegisteredPerDayInYear(int year) {
+            return base.Channel.GetNumberOfUsersRegisteredPerDayInYear(year);
+        }
+        
+        public System.Threading.Tasks.Task<System.Collections.Generic.Dictionary<System.DateTime, int>> GetNumberOfUsersRegisteredPerDayInYearAsync(int year) {
+            return base.Channel.GetNumberOfUsersRegisteredPerDayInYearAsync(year);
         }
         
         public bool isSafeHavenSock() {
