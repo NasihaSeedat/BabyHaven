@@ -144,7 +144,7 @@
                     <div class="services__item">
                         <i class="fa fa-car"></i>
                         <h6>Free Shipping</h6>
-                        <p>For all orders over R1000</p>
+                        <p>For all orders over R2000</p>
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-4 col-sm-6">

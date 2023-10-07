@@ -1155,10 +1155,10 @@ namespace Frontend.BackendReference {
         System.Threading.Tasks.Task<System.Collections.Generic.Dictionary<System.DateTime, int>> GetNumberOfUsersRegisteredPerDayInYearAsync(int year);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBabyHavenService/isSafeHavenSock", ReplyAction="http://tempuri.org/IBabyHavenService/isSafeHavenSockResponse")]
-        bool isSafeHavenSock();
+        bool isSafeHavenSock(int uid);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBabyHavenService/isSafeHavenSock", ReplyAction="http://tempuri.org/IBabyHavenService/isSafeHavenSockResponse")]
-        System.Threading.Tasks.Task<bool> isSafeHavenSockAsync();
+        System.Threading.Tasks.Task<bool> isSafeHavenSockAsync(int uid);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -1556,12 +1556,12 @@ namespace Frontend.BackendReference {
             return base.Channel.GetNumberOfUsersRegisteredPerDayInYearAsync(year);
         }
         
-        public bool isSafeHavenSock() {
-            return base.Channel.isSafeHavenSock();
+        public bool isSafeHavenSock(int uid) {
+            return base.Channel.isSafeHavenSock(uid);
         }
         
-        public System.Threading.Tasks.Task<bool> isSafeHavenSockAsync() {
-            return base.Channel.isSafeHavenSockAsync();
+        public System.Threading.Tasks.Task<bool> isSafeHavenSockAsync(int uid) {
+            return base.Channel.isSafeHavenSockAsync(uid);
         }
     }
 }
