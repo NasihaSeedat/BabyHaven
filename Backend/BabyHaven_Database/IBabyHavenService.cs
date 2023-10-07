@@ -167,6 +167,6 @@ namespace BabyHaven_Database
 
 
         [OperationContract]
-        bool isSafeHavenSock();
+        bool isSafeHavenSock(int uid);
     }
 }

@@ -1038,20 +1038,20 @@ namespace BabyHaven_Database
         }
 
 
-        public bool isSafeHavenSock()
+        public bool isSafeHavenSock(int uid)
         {
             var sock = (from s in db.Carts
-                        where s.P_Id.Equals(60)
-                        select s).DefaultIfEmpty();
+                        where s.P_Id.Equals(60) && s.U_Id.Equals(uid)
+                        select s).ToList();
 
-            if (sock != null)
+            if (sock.Count == 0)
             {
-                
-                return true;
+                 
+                return false;
             }
             else
             {
-                return false;
+                return true;
             }
         }
 

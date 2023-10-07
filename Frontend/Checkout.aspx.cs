@@ -33,10 +33,12 @@ namespace Frontend
                     //    lblDelivery.InnerText = "R 100.00";
                     //}
 
+                    int uid = Convert.ToInt32(Session["LoggedInUserID"]);
+
                     if (subtotal >= 2000.00m)
                     {
                         lblDelivery.InnerHtml = "<s>R 100.00</s> Free Delivery";
-                    }else if (sc.isSafeHavenSock() == true)
+                    }else if (sc.isSafeHavenSock(uid) == true)
                     {
                         lblDelivery.InnerHtml = "<s>R 100.00</s> Free Delivery";
                     }
@@ -127,7 +129,7 @@ namespace Frontend
                     discountRate = 0.05m; // 10% discount for CODE1
                 }
                 else if(discountCode.Equals("BABYHAVEN", StringComparison.OrdinalIgnoreCase)) {
-                    discountRate = 0.10m; // 20% discount for CODE2
+                    discountRate = 0.50m; // 20% discount for CODE2
                 }
                 else if(discountCode.Equals("PROJECTSDAY", StringComparison.OrdinalIgnoreCase)) {
                     discountRate = 0.50m; // 20% discount for CODE2
@@ -140,11 +142,13 @@ namespace Frontend
         private decimal CalculateTotal(decimal subtotal, decimal discount) {
             decimal deliveryCost = 100.00m; // Default delivery cost
 
+            int uid = Convert.ToInt32(Session["LoggedInUserID"]);
+
             // Check if the subtotal is greater than or equal to R1000
-            if(subtotal >= 2000.00m) {
+            if (subtotal >= 2000.00m) {
                 // If yes, set the delivery cost to 0.00 (free delivery)
                 deliveryCost = 0.00m;
-            }else if (sc.isSafeHavenSock() == true)
+            }else if (sc.isSafeHavenSock(uid) == true)
             {
                 deliveryCost = 0.00m;
             }
