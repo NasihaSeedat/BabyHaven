@@ -1,5 +1,51 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/BabyHaven.Master" AutoEventWireup="true" CodeBehind="EditProduct.aspx.cs" Inherits="Frontend.EditProduct" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+    <style>
+        table {
+            width: 100%;
+            padding-top: 120px;
+        }
+
+        th.editProduct {
+            font-size: 24px;
+            text-align: center;
+            padding: 10px;
+        }
+
+        td.Pro_Name,
+        td.Pro_Description,
+        td.Pro_Price,
+        td.Pro_Category,
+        td.ProActive,
+        td.ProQuantity,
+        td.Error {
+            color: #444444;
+            font-weight: 500;
+            margin-bottom: 10px;
+        }
+
+        .textbox,
+        .Cat_option {
+            height: 50px;
+            width: 100%;
+            border: 1px solid #e1e1e1;
+            border-radius: 2px;
+            margin-bottom: 25px;
+            font-size: 14px;
+            padding-left: 20px;
+            color: #666666;
+        }
+
+        table td {
+            text-align: center;
+        }
+
+        .p {
+            color: #444444;
+            font-weight: 500;
+            margin-bottom: 10px;
+        }
+    </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
            <!-- Breadcrumb Begin -->
@@ -24,31 +70,32 @@
                 <table>
                     <thead>
                         <tr>
-                            <th class="addProduct">Edit Product</th>
+                            <th class="editProduct">Edit Product</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
                             <td class="Pro_Name">
-                            Product Name:<td>
+                           <p> Product Name:</p><td>
                                 <input type="text" class="textbox" placeholder="Product name" required runat="server" id="ProName"></td>
                         </tr>
 
                         <tr>
                             <td class="Pro_Description">
-                            Product Description:<td>
-                                <input type="text" class="textbox" placeholder="Product description" required runat="server" id="ProDescription"></td>
+                           <p> Product Description:</p><td>
+                                <textarea class="textbox" placeholder="Product description" required runat="server" style="height: 150px;" id="ProDescription"></textarea>
+
                         </tr>
 
                         <tr>
                             <td class="Pro_Price">
-                            Product Price:<td>
+                           <p> Product Price:</p><td>
                                 <input type="number" class="textbox" placeholder="Product price" required min="1" runat="server" id="ProPrice"></td>
                         </tr>
 
                         <tr>
                             <td class="Pro_Category">
-                            Product Category:<td>
+                           <p> Product Category:</p><td>
                                 <select class="Cat_option" name="category" required runat="server" id="ProCategory">
                                     <option disabled="disabled" selected="selected">Choose Category</option>
                                     <option value="1">Nursery Items</option>
@@ -65,7 +112,7 @@
 
                         <tr>
                             <td >
-                            Product Activation Status:<td>
+                            <p>Product Activation Status:</p><td>
                                 <select  class="Cat_option" name="active" required runat="server" id="ProActive">
                                     <option disabled="disabled" selected="selected">Choose status</option>
                                     <option value="1">Active</option>
@@ -75,26 +122,31 @@
 
                         <tr>
                               <td >
-                                Product Quantity:
+                              <p>  Product Quantity:</p>
                               </td>
                               <td>
                                 <input  class="textbox" type="number" placeholder="Product quantity" required min="1" runat="server" id="ProQuantity">
                               </td>
                         </tr>
 
-                        <tr>
-                            <td >
-                            Product Image:<td>
-                                  <input type="text" class="textbox" placeholder="Product image" required runat="server" id="ProImage">
-                        <input type="file" style="display: none;" id="ProImageFile" accept="image/*"  >
-                        <label for="ProImageFile" class="file-chooser-label">Choose Image</label>
-                        </tr>
+                          <tr>
+                                    <td>
+                                        <p>Product Image:</p>
+                                    </td>
+                                    <td>
+                                        <div style="display: flex; align-items: center;">
+                                            <input type="text" class="textbox" placeholder="Product image" required runat="server" id="ProImage" style="flex: 1;">
+                                            <input type="file" style="display: none;" id="ProImageFile" accept="image/*">
+                                            <label for="ProImageFile" class="file-chooser-label" style="white-space: nowrap;">Choose Image</label>
+                                        </div>
+                                    </td>
+                                </tr>
 
                                
                        <!---ERROR MESSAGE --->
                         <tr>
                             <td class="Error">
-                            Error Message:<td>
+                           <p> Error Message:</p><td>
                                 <input type="text" visible="false" runat="server" id="error"></td>
                         </tr>
 
