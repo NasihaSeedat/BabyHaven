@@ -39,18 +39,18 @@ namespace Frontend
                 adminLink.Visible = true;
                 DropAdmin.Visible = true;
                 invoices.Visible = true;
-                safehaveninvoices.Visible = true;
-
-                reports.Visible = true;
+                // safehaveninvoices.Visible = true;
+                dropInvoices.Visible = true;
+                //reports.Visible = true;
             }
             else if(Session["LoggedInUserType"] == null && Session["LoggedInUserID"]==null)
             {
                 adminLink.Visible = false;
                 DropAdmin.Visible = false;
                 invoices.Visible = false;
-                safehaveninvoices.Visible = false;
-
-                reports.Visible = false;
+                // safehaveninvoices.Visible = false;
+                dropInvoices.Visible = false;
+               // reports.Visible = false;
             }
         }
 
