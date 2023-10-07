@@ -45,6 +45,10 @@ namespace Frontend
             display += "<td><a href='lowprods.aspx'>View Report</a></td>";
             display += "</tr>";
 
+            display += "<tr>";
+            display += "<td>Users Registered Per Day</td>";
+            display += "<td><a href='reguserday.aspx'>View Report</a></td>";
+            display += "</tr>";
 
             display += "</tbody>";
             display += "</table><br />";

@@ -647,17 +647,6 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-
-  <xs:element name="isSafeHavenSock">
-    <xs:complexType>
-      <xs:sequence />
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="isSafeHavenSockResponse">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element minOccurs="0" name="isSafeHavenSockResult" type="xs:boolean" />
-
   <xs:element name="GetInvoicesForMonth">
     <xs:complexType>
       <xs:sequence>
@@ -668,12 +657,19 @@
   <xs:element name="GetInvoicesForMonthResponse">
     <xs:complexType>
       <xs:sequence>
-
         <xs:element xmlns:q20="http://schemas.datacontract.org/2004/07/BabyHaven_Database" minOccurs="0" name="GetInvoicesForMonthResult" nillable="true" type="q20:ArrayOfOrder_Table" />
-
-        
-
-
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="isSafeHavenSock">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="isSafeHavenSockResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="isSafeHavenSockResult" type="xs:boolean" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
