@@ -1054,29 +1054,26 @@ namespace BabyHaven_Database
             }
         }
 
-        public List<Order_Table> GetInvoicesForMonth(DateTime targetMonth)
+        public List<Order_Table> GetInvoicesForYear(DateTime targetYear)
         {
-           
-                List<Order_Table> invoicesForMonth = new List<Order_Table>();
+            List<Order_Table> invoicesForYear = new List<Order_Table>();
 
-                // Calculate the first day of the target month
-                DateTime startOfMonth = new DateTime(targetMonth.Year, targetMonth.Month, 1);
+            // Calculate the first day of the target year
+            DateTime startOfYear = new DateTime(targetYear.Year, 1, 1);
 
-                // Calculate the first day of the next month
-                DateTime startOfNextMonth = startOfMonth.AddMonths(1);
+            // Calculate the first day of the next year
+            DateTime startOfNextYear = startOfYear.AddYears(1);
 
-                // Query the database to retrieve invoices for the specified month
-                var invoices = from i in db.Order_Tables
-                               where i.O_Date >= startOfMonth && i.O_Date < startOfNextMonth
-                               orderby i.O_Date ascending
-                               select i;
+            // Query the database to retrieve invoices for the specified year
+            var invoices = from i in db.Order_Tables
+                           where i.O_Date >= startOfYear && i.O_Date < startOfNextYear
+                           orderby i.O_Date ascending
+                           select i;
 
-                // Add the sorted invoices to the result list
-                invoicesForMonth.AddRange(invoices);
+            // Add the sorted invoices to the result list
+            invoicesForYear.AddRange(invoices);
 
-                return invoicesForMonth;
-            
-
+            return invoicesForYear;
         }
 
         public Dictionary<DateTime, int> GetNumberOfUsersRegisteredPerDayInYear(int year)

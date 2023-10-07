@@ -647,17 +647,17 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="GetInvoicesForMonth">
+  <xs:element name="GetInvoicesForYear">
     <xs:complexType>
       <xs:sequence>
-        <xs:element minOccurs="0" name="targetMonth" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="targetYear" type="xs:dateTime" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="GetInvoicesForMonthResponse">
+  <xs:element name="GetInvoicesForYearResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q20="http://schemas.datacontract.org/2004/07/BabyHaven_Database" minOccurs="0" name="GetInvoicesForMonthResult" nillable="true" type="q20:ArrayOfOrder_Table" />
+        <xs:element xmlns:q20="http://schemas.datacontract.org/2004/07/BabyHaven_Database" minOccurs="0" name="GetInvoicesForYearResult" nillable="true" type="q20:ArrayOfOrder_Table" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>

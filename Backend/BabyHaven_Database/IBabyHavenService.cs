@@ -160,7 +160,7 @@ namespace BabyHaven_Database
         int GetProductCategoryReport(string cat);
 
         [OperationContract]
-        List<Order_Table> GetInvoicesForMonth(DateTime targetMonth);
+        List<Order_Table> GetInvoicesForYear(DateTime targetYear);
 
         [OperationContract]
         Dictionary<DateTime, int> GetNumberOfUsersRegisteredPerDayInYear(int year);

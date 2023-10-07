@@ -16,16 +16,16 @@ namespace Frontend
         {
             if (!IsPostBack)
             {
-                int year = 2023; // Replace with the desired year
+                int year = 2023; 
                 var userData = SC.GetNumberOfUsersRegisteredPerDayInYear(year);
 
-                // Create a JavaScript array for labels (dates)
+               
                 var labels = userData.Keys.Select(date => date.ToString("yyyy-MM-dd")).ToArray();
 
-                // Create a JavaScript array for data points (user registrations)
+                
                 var data = userData.Values.ToArray();
 
-                // Construct the Chart.js script
+                
                 string chartScript = $@"
                     <canvas id='userChart' width='400' height='200'></canvas>
                     <script>
@@ -58,7 +58,7 @@ namespace Frontend
                     </script>
                 ";
 
-                // Assign the chartScript string to your HTML element's InnerHtml as needed
+               
                 regchart.InnerHtml = chartScript;
             }
         }

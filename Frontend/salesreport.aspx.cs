@@ -15,10 +15,10 @@ namespace Frontend
         
         protected void Page_Load(object sender, EventArgs e)
         {
-            DateTime targetMonth = new DateTime(2023, 10, 1);
+            DateTime targetMonth = new DateTime(2023, 1, 1);
 
             
-            dynamic invoices = SC.GetInvoicesForMonth(targetMonth);
+            dynamic invoices = SC.GetInvoicesForYear(targetMonth);
             
 
             
