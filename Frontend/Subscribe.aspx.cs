@@ -37,7 +37,7 @@ namespace Frontend
 
      The BabyHaven Team
                  * */
-                string mailbody = "<p>Dear valued customer, <br/><br/>  We would like to express our sincere gratitude for your decision to subscribe to our newsletter. <br/>In light of your support, we are thrilled to offer you an exclusive opportunity to enjoy a discount of 10% on your upcoming order." +
+                string mailbody = "<p>Dear valued customer, <br/><br/>  We would like to express our sincere gratitude for your decision to subscribe to our newsletter. <br/>In light of your support, we are thrilled to offer you an exclusive opportunity to enjoy a discount of 5% on your upcoming order." +
                     " <br/>Simply utilize the provided code, '<b>NEWBORN</b>', during the checkout process.<br/>" +
                         " <br/>Thank you once again for your continued patronage.<br/> <br/>Best regards, <br/> <br/>The BabyHaven Team </p><br/><br/>";
 
