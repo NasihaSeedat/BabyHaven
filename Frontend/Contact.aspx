@@ -30,11 +30,11 @@
                                 </li>
                                 <li>
                                     <h6><i class="fa fa-headphones"></i> Support</h6>
-                                    <p>babyhavenproject@gmail.com</p>
+                                    <p><a href="mailto:babyhavenproject@gmail.com">babyhavenproject@gmail.com</a></p>
                                 </li>
                             </ul>
                         </div>
-                        <div class="contact__form">
+                    <%--    <div class="contact__form">
                             <h5>SEND MESSAGE</h5>
                             <form action="#">
                                 <input type="text" placeholder="Name">
@@ -43,7 +43,7 @@
                                 <textarea placeholder="Message"></textarea>
                                 <button type="submit" class="site-btn">Send Message</button>
                             </form>
-                        </div>
+                        </div>--%>
                     </div>
                 </div>
                 <div class="col-lg-6 col-md-6">

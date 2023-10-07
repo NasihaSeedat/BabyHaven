@@ -46,6 +46,18 @@
             margin-bottom: 10px;
         }
     </style>
+        <script>
+        function addPrefix(input) {
+            var prefix = "img/shop/";
+            var value = input.value;
+
+            // Check if the current value does not start with the prefix
+            if (!value.startsWith(prefix)) {
+                // Prepend the prefix to the current value
+                input.value = prefix + value;
+            }
+        }
+        </script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
            <!-- Breadcrumb Begin -->
@@ -135,9 +147,8 @@
                                     </td>
                                     <td>
                                         <div style="display: flex; align-items: center;">
-                                            <input type="text" class="textbox" placeholder="Product image" required runat="server" id="ProImage" style="flex: 1;">
-                                            <input type="file" style="display: none;" id="ProImageFile" accept="image/*">
-                                            <label for="ProImageFile" class="file-chooser-label" style="white-space: nowrap;">Choose Image</label>
+                                            <input type="text" class="textbox" placeholder="Product image" required runat="server" id="ProImage" style="flex: 1;" oninput="addPrefix(this);">
+                                            
                                         </div>
                                     </td>
                                 </tr>
