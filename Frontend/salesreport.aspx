@@ -25,6 +25,18 @@
             <div class="col-md-12">
                 <h2>Sales Report</h2>
                 <br />
+                
+        <form runat="server">
+                <asp:DropDownList ID="ddlMonths" runat="server" AutoPostBack="true" OnSelectedIndexChanged="ddlMonths_SelectedIndexChanged" CssClass="styled-dropdown"> 
+                    <asp:ListItem Text="Select" Value="0"></asp:ListItem>
+                    <asp:ListItem Text="3 months" Value="3"></asp:ListItem>
+                    <asp:ListItem Text="6 months" Value="6"></asp:ListItem>
+                    <asp:ListItem Text="9 months" Value="9"></asp:ListItem>
+                </asp:DropDownList>
+
+            </form>
+                <br />
+                   <asp:Label ID="valid" runat="server" Visible="true" Text="" />
             </div>
 
             <div id="ChartDiv" runat="server" style="position: center; top: 60px; left: 10px; width: 600px; height: 500px;">
