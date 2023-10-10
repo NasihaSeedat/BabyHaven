@@ -44,8 +44,8 @@
                     <!-- GridView -->
                     <asp:GridView ID="ProductGridView" runat="server" AutoGenerateColumns="false" CssClass="custom-gridview">
                         <Columns>
-                            <asp:BoundField DataField="p_name" HeaderText="Product Name" />
-                            <asp:BoundField DataField="numhand" HeaderText="Number on Hand" />
+                            <asp:BoundField DataField="p_name" HeaderText="Product Name" HeaderStyle-ForeColor="Black"/>
+                            <asp:BoundField DataField="numhand" HeaderText="Number on Hand" HeaderStyle-ForeColor="Black" />
                         </Columns>
                     </asp:GridView>
                 </div>
