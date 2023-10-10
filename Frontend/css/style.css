@@ -122,7 +122,6 @@ ol {
     }
 
     .custom-gridview th {
-        background-color: #84B7EE; /* Light Blue */
         color: #ffffff; /* White Text */
     }
 
@@ -142,13 +141,17 @@ ol {
     .styled-dropdown option {
         padding: 8px;
     }
-    .custom-gridview tr:nth-child(odd) {
-        background-color: #ffffff; /* White */
-    }
 
-    .custom-gridview tr:hover {
-        background-color: #ADD8E6; /* Lighter Blue on Hover */
-    }
+.custom-gridview tr:nth-child(odd) {
+    background-color: #ffffff; /* White */
+}
+
+.custom-gridview tr:hover {
+    background-color: #84B7EE;
+    color: white;
+    transition: background-color 0.3s, color 0.3s; /* Add smooth transition */
+}
+
 .section-title {
     margin-bottom: 45px;
 }
@@ -1475,6 +1478,20 @@ ol {
     .btnFilter:hover {
         background: #84B7EE; /* Change the background color on hover to #84B7EE */
         color: #fff; /* Change the text color to white on hover */
+    }
+
+.quantity-textbox {
+    width: 80%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+    .quantity-textbox:focus {
+        outline: none;
+        border-color: #84B7EE; /* Change border color when focused */
     }
 
 .shop {
