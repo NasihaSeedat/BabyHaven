@@ -16,8 +16,8 @@ namespace Frontend
             display += "<tbody>";
 
             display += "<tr>";
-            display += "<td>Number of Items Per Category</td>";
-            display += "<td><a href='numcat.aspx'>View Report</a></td>";
+            display += "<td>Users Registered Per Day</td>";
+            display += "<td><a href='reguserday.aspx'>View Report</a></td>";
             display += "</tr>";
 
             display += "<tr>";
@@ -31,9 +31,10 @@ namespace Frontend
             display += "</tr>";
 
             display += "<tr>";
-            display += "<td>Sales Report</td>";
-            display += "<td><a href='salesreport.aspx'>View Report</a></td>";
+            display += "<td>Number of Items Per Category</td>";
+            display += "<td><a href='numcat.aspx'>View Report</a></td>";
             display += "</tr>";
+
 
             display += "<tr>";
             display += "<td>Top 5 Selling Products</td>";
@@ -46,9 +47,11 @@ namespace Frontend
             display += "</tr>";
 
             display += "<tr>";
-            display += "<td>Users Registered Per Day</td>";
-            display += "<td><a href='reguserday.aspx'>View Report</a></td>";
+            display += "<td>Sales Report</td>";
+            display += "<td><a href='salesreport.aspx'>View Report</a></td>";
             display += "</tr>";
+
+            
 
             display += "</tbody>";
             display += "</table><br />";

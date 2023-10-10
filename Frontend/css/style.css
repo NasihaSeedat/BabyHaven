@@ -130,6 +130,18 @@ ol {
         background-color: #f0f0f0; /* Light Grayish White */
     }
 
+.styled-dropdown {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+    width: 200px; /* Adjust the width as needed */
+}
+
+    /* Optional: Style the dropdown options */
+    .styled-dropdown option {
+        padding: 8px;
+    }
     .custom-gridview tr:nth-child(odd) {
         background-color: #ffffff; /* White */
     }

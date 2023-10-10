@@ -1060,7 +1060,7 @@ namespace BabyHaven_Database
             List<Order_Table> invoicesForYear = new List<Order_Table>();
 
             // Calculate the first day of the target year
-            DateTime startOfYear = new DateTime(targetYear.Year, 1, 1);
+            DateTime startOfYear = new DateTime(targetYear.Year, targetYear.Month, 1);
 
             // Calculate the first day of the next year
             DateTime startOfNextYear = startOfYear.AddYears(1);
