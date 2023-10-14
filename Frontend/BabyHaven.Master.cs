@@ -41,6 +41,8 @@ namespace Frontend
                 invoices.Visible = true;
                 // safehaveninvoices.Visible = true;
                 dropInvoices.Visible = true;
+                TaskAdmins.Visible = true;
+                DropTasks.Visible = true;
                 //reports.Visible = true;
             }
             else if(Session["LoggedInUserType"] == null && Session["LoggedInUserID"]==null)
@@ -50,7 +52,9 @@ namespace Frontend
                 invoices.Visible = false;
                 // safehaveninvoices.Visible = false;
                 dropInvoices.Visible = false;
-               // reports.Visible = false;
+                TaskAdmins.Visible = false;
+                DropTasks.Visible = false;
+                // reports.Visible = false;
             }
         }
 

@@ -93,6 +93,9 @@
     <Content Include="Connected Services\BackendReference\Frontend.BackendReference.Client.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
+    <Content Include="Connected Services\BackendReference\Frontend.BackendReference.Order_Item.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
     <Content Include="Connected Services\BackendReference\Frontend.BackendReference.Order_Table.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
@@ -100,9 +103,6 @@
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
     <Content Include="Connected Services\BackendReference\Frontend.BackendReference.User_Table.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Content>
-    <Content Include="Connected Services\BackendReference\Frontend.BackendReference.Order_Item.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
     <None Include="Connected Services\BackendReference\Reference.svcmap">
@@ -119,6 +119,7 @@
     <Content Include="css\slicknav.min.css" />
     <Content Include="css\style.css" />
     <Content Include="DealtWith.aspx" />
+    <Content Include="DelegateTask.aspx" />
     <Content Include="EditProduct.aspx" />
     <Content Include="handprods.aspx" />
     <Content Include="Home.aspx" />
@@ -150,6 +151,7 @@
     <Content Include="Subscribe.aspx" />
     <Content Include="ThankYou.aspx" />
     <Content Include="topprods.aspx" />
+    <Content Include="ViewTask.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -227,6 +229,13 @@
     </Compile>
     <Compile Include="DealtWith.aspx.designer.cs">
       <DependentUpon>DealtWith.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DelegateTask.aspx.cs">
+      <DependentUpon>DelegateTask.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DelegateTask.aspx.designer.cs">
+      <DependentUpon>DelegateTask.aspx</DependentUpon>
     </Compile>
     <Compile Include="EditProduct.aspx.cs">
       <DependentUpon>EditProduct.aspx</DependentUpon>
@@ -369,6 +378,13 @@
     </Compile>
     <Compile Include="topprods.aspx.designer.cs">
       <DependentUpon>topprods.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ViewTask.aspx.cs">
+      <DependentUpon>ViewTask.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ViewTask.aspx.designer.cs">
+      <DependentUpon>ViewTask.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

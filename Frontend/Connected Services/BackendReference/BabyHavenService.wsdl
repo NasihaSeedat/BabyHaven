@@ -50,6 +50,12 @@
   <wsdl:message name="IBabyHavenService_GetAllUsersNotAdmin_OutputMessage">
     <wsdl:part name="parameters" element="tns:GetAllUsersNotAdminResponse" />
   </wsdl:message>
+  <wsdl:message name="IBabyHavenService_GetAllUsersAdmin_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllUsersAdmin" />
+  </wsdl:message>
+  <wsdl:message name="IBabyHavenService_GetAllUsersAdmin_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllUsersAdminResponse" />
+  </wsdl:message>
   <wsdl:message name="IBabyHavenService_Register_InputMessage">
     <wsdl:part name="parameters" element="tns:Register" />
   </wsdl:message>
@@ -68,11 +74,41 @@
   <wsdl:message name="IBabyHavenService_AddAdminTEST_OutputMessage">
     <wsdl:part name="parameters" element="tns:AddAdminTESTResponse" />
   </wsdl:message>
+  <wsdl:message name="IBabyHavenService_AssignTask_InputMessage">
+    <wsdl:part name="parameters" element="tns:AssignTask" />
+  </wsdl:message>
+  <wsdl:message name="IBabyHavenService_AssignTask_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AssignTaskResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBabyHavenService_MarkTaskCompleted_InputMessage">
+    <wsdl:part name="parameters" element="tns:MarkTaskCompleted" />
+  </wsdl:message>
+  <wsdl:message name="IBabyHavenService_MarkTaskCompleted_OutputMessage">
+    <wsdl:part name="parameters" element="tns:MarkTaskCompletedResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBabyHavenService_GetAssignedTasks_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAssignedTasks" />
+  </wsdl:message>
+  <wsdl:message name="IBabyHavenService_GetAssignedTasks_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAssignedTasksResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBabyHavenService_GetAssignmentIdForTask_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAssignmentIdForTask" />
+  </wsdl:message>
+  <wsdl:message name="IBabyHavenService_GetAssignmentIdForTask_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAssignmentIdForTaskResponse" />
+  </wsdl:message>
   <wsdl:message name="IBabyHavenService_SearchUsersByName_InputMessage">
     <wsdl:part name="parameters" element="tns:SearchUsersByName" />
   </wsdl:message>
   <wsdl:message name="IBabyHavenService_SearchUsersByName_OutputMessage">
     <wsdl:part name="parameters" element="tns:SearchUsersByNameResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBabyHavenService_SearchUsersByNameAdmins_InputMessage">
+    <wsdl:part name="parameters" element="tns:SearchUsersByNameAdmins" />
+  </wsdl:message>
+  <wsdl:message name="IBabyHavenService_SearchUsersByNameAdmins_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SearchUsersByNameAdminsResponse" />
   </wsdl:message>
   <wsdl:message name="IBabyHavenService_SearchProducts_InputMessage">
     <wsdl:part name="parameters" element="tns:SearchProducts" />
@@ -319,6 +355,10 @@
       <wsdl:input wsaw:Action="http://tempuri.org/IBabyHavenService/GetAllUsersNotAdmin" message="tns:IBabyHavenService_GetAllUsersNotAdmin_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IBabyHavenService/GetAllUsersNotAdminResponse" message="tns:IBabyHavenService_GetAllUsersNotAdmin_OutputMessage" />
     </wsdl:operation>
+    <wsdl:operation name="GetAllUsersAdmin">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBabyHavenService/GetAllUsersAdmin" message="tns:IBabyHavenService_GetAllUsersAdmin_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBabyHavenService/GetAllUsersAdminResponse" message="tns:IBabyHavenService_GetAllUsersAdmin_OutputMessage" />
+    </wsdl:operation>
     <wsdl:operation name="Register">
       <wsdl:input wsaw:Action="http://tempuri.org/IBabyHavenService/Register" message="tns:IBabyHavenService_Register_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IBabyHavenService/RegisterResponse" message="tns:IBabyHavenService_Register_OutputMessage" />
@@ -331,9 +371,29 @@
       <wsdl:input wsaw:Action="http://tempuri.org/IBabyHavenService/AddAdminTEST" message="tns:IBabyHavenService_AddAdminTEST_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IBabyHavenService/AddAdminTESTResponse" message="tns:IBabyHavenService_AddAdminTEST_OutputMessage" />
     </wsdl:operation>
+    <wsdl:operation name="AssignTask">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBabyHavenService/AssignTask" message="tns:IBabyHavenService_AssignTask_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBabyHavenService/AssignTaskResponse" message="tns:IBabyHavenService_AssignTask_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="MarkTaskCompleted">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBabyHavenService/MarkTaskCompleted" message="tns:IBabyHavenService_MarkTaskCompleted_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBabyHavenService/MarkTaskCompletedResponse" message="tns:IBabyHavenService_MarkTaskCompleted_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAssignedTasks">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBabyHavenService/GetAssignedTasks" message="tns:IBabyHavenService_GetAssignedTasks_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBabyHavenService/GetAssignedTasksResponse" message="tns:IBabyHavenService_GetAssignedTasks_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAssignmentIdForTask">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBabyHavenService/GetAssignmentIdForTask" message="tns:IBabyHavenService_GetAssignmentIdForTask_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBabyHavenService/GetAssignmentIdForTaskResponse" message="tns:IBabyHavenService_GetAssignmentIdForTask_OutputMessage" />
+    </wsdl:operation>
     <wsdl:operation name="SearchUsersByName">
       <wsdl:input wsaw:Action="http://tempuri.org/IBabyHavenService/SearchUsersByName" message="tns:IBabyHavenService_SearchUsersByName_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IBabyHavenService/SearchUsersByNameResponse" message="tns:IBabyHavenService_SearchUsersByName_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SearchUsersByNameAdmins">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBabyHavenService/SearchUsersByNameAdmins" message="tns:IBabyHavenService_SearchUsersByNameAdmins_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBabyHavenService/SearchUsersByNameAdminsResponse" message="tns:IBabyHavenService_SearchUsersByNameAdmins_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="SearchProducts">
       <wsdl:input wsaw:Action="http://tempuri.org/IBabyHavenService/SearchProducts" message="tns:IBabyHavenService_SearchProducts_InputMessage" />
@@ -545,6 +605,15 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="GetAllUsersAdmin">
+      <soap:operation soapAction="http://tempuri.org/IBabyHavenService/GetAllUsersAdmin" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="Register">
       <soap:operation soapAction="http://tempuri.org/IBabyHavenService/Register" style="document" />
       <wsdl:input>
@@ -572,8 +641,53 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="AssignTask">
+      <soap:operation soapAction="http://tempuri.org/IBabyHavenService/AssignTask" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MarkTaskCompleted">
+      <soap:operation soapAction="http://tempuri.org/IBabyHavenService/MarkTaskCompleted" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAssignedTasks">
+      <soap:operation soapAction="http://tempuri.org/IBabyHavenService/GetAssignedTasks" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAssignmentIdForTask">
+      <soap:operation soapAction="http://tempuri.org/IBabyHavenService/GetAssignmentIdForTask" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="SearchUsersByName">
       <soap:operation soapAction="http://tempuri.org/IBabyHavenService/SearchUsersByName" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SearchUsersByNameAdmins">
+      <soap:operation soapAction="http://tempuri.org/IBabyHavenService/SearchUsersByNameAdmins" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

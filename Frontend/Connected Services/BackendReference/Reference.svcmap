@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="8b7c96e8-eb5e-4b88-9df4-c804813e5306" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="e7d33381-fad4-432f-b585-02bb06015610" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
   <ClientOptions>
     <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
     <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
@@ -22,12 +22,12 @@
     <MetadataSource Address="http://localhost:63329/BabyHavenService.svc" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="BabyHavenService.disco" MetadataType="Disco" ID="aa47d6ea-3dc1-437f-8216-4b4875d5c607" SourceId="1" SourceUrl="http://localhost:63329/BabyHavenService.svc?disco" />
-    <MetadataFile FileName="BabyHavenService.xsd" MetadataType="Schema" ID="7ae56a0b-ea89-4c6f-8ec3-4e5d179378a1" SourceId="1" SourceUrl="http://localhost:63329/BabyHavenService.svc?xsd=xsd0" />
-    <MetadataFile FileName="BabyHavenService.wsdl" MetadataType="Wsdl" ID="844fda98-06de-4f48-83b1-ba6f950e6975" SourceId="1" SourceUrl="http://localhost:63329/BabyHavenService.svc?wsdl" />
-    <MetadataFile FileName="BabyHavenService1.xsd" MetadataType="Schema" ID="6c6ec8ae-3ee8-4394-9bde-9c7927b78126" SourceId="1" SourceUrl="http://localhost:63329/BabyHavenService.svc?xsd=xsd2" />
-    <MetadataFile FileName="BabyHavenService2.xsd" MetadataType="Schema" ID="583d0e5c-19e2-49d0-939a-3a614bb01f7a" SourceId="1" SourceUrl="http://localhost:63329/BabyHavenService.svc?xsd=xsd1" />
-    <MetadataFile FileName="BabyHavenService3.xsd" MetadataType="Schema" ID="12e1567c-a9e3-4a6b-8e64-216ea758f869" SourceId="1" SourceUrl="http://localhost:63329/BabyHavenService.svc?xsd=xsd3" />
+    <MetadataFile FileName="BabyHavenService.disco" MetadataType="Disco" ID="34db8999-380c-40bc-9e0a-25073ca942fc" SourceId="1" SourceUrl="http://localhost:63329/BabyHavenService.svc?disco" />
+    <MetadataFile FileName="BabyHavenService.xsd" MetadataType="Schema" ID="92d311cf-7259-4cb0-94d7-769b9ed1e81a" SourceId="1" SourceUrl="http://localhost:63329/BabyHavenService.svc?xsd=xsd0" />
+    <MetadataFile FileName="BabyHavenService.wsdl" MetadataType="Wsdl" ID="be97890b-b121-4ef9-ae20-d194801524ed" SourceId="1" SourceUrl="http://localhost:63329/BabyHavenService.svc?wsdl" />
+    <MetadataFile FileName="BabyHavenService1.xsd" MetadataType="Schema" ID="64ce996c-d362-4ae5-a6ba-a798dccc7ddb" SourceId="1" SourceUrl="http://localhost:63329/BabyHavenService.svc?xsd=xsd2" />
+    <MetadataFile FileName="BabyHavenService2.xsd" MetadataType="Schema" ID="06bf9314-b1fa-4df0-9606-fb365b80401f" SourceId="1" SourceUrl="http://localhost:63329/BabyHavenService.svc?xsd=xsd1" />
+    <MetadataFile FileName="BabyHavenService3.xsd" MetadataType="Schema" ID="dd807f20-724a-465f-9942-9900dbb2e667" SourceId="1" SourceUrl="http://localhost:63329/BabyHavenService.svc?xsd=xsd3" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

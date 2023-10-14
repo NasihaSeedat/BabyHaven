@@ -40,6 +40,8 @@ namespace BabyHaven_Database
         List<User_Table> GetAllUsers();
         [OperationContract]
         List<User_Table> GetAllUsersNotAdmin();
+        [OperationContract]
+        List<User_Table> GetAllUsersAdmin();
 
         [OperationContract]
         bool Register(string email, string password, string name, string surname, string phoneno, string address, int usetype = 1);
@@ -51,9 +53,27 @@ namespace BabyHaven_Database
         [OperationContract]
         bool AddAdminTEST(int user);
 
+        //tasks
+        [OperationContract]
+        void AssignTask(int adminId, string taskDescription);
+        [OperationContract]
+        bool MarkTaskCompleted(int assignmentId);
+
+        [OperationContract]
+        List<string> GetAssignedTasks(int adminId);
+
+        [OperationContract]
+        int GetAssignmentIdForTask(string taskDescription);
+
+
+
+
         //Searching Users
         [OperationContract]
         List<User_Table> SearchUsersByName(string searchQuery);
+        [OperationContract]
+        List<User_Table> SearchUsersByNameAdmins(string searchQuery);
+
         [OperationContract]
         List<Product> SearchProducts(string searchQuery);
         //CART

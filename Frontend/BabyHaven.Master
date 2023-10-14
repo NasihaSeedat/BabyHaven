@@ -119,6 +119,15 @@
                             </li>
 
 
+                            <li runat="server" id="TaskAdmins" visible="false">
+                                <a href="#">Tasks</a>
+                                <ul class="dropdown" id="DropTasks" visible="false" runat="server">
+                                     <li><a href="DelegateTask.aspx">Delegate Tasks</a></li>
+                                    <li><a href="ViewTask.aspx">View Tasks</a></li>
+                                </ul>
+
+                            </li>
+
 
                         </ul>
                     </nav>
