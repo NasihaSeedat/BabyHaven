@@ -135,6 +135,25 @@ namespace BabyHaven_Database
 
         }
 
+        public List<User_Table> GetAllUsersAdmin()
+        {
+            var u = new List<User_Table>();
+
+            dynamic users = (from us in db.User_Tables
+                             where us.UserType.Equals(0)
+                             select us);
+
+            foreach (User_Table n in users)
+            {
+                var use = GetUser(n.User_Id);
+                u.Add(use);
+            }
+
+            return u;
+
+
+        }
+
 
         public bool Register(string email, string password, string name, string surname, string phoneno, string address, int usetype)
         {
@@ -632,6 +651,157 @@ namespace BabyHaven_Database
 
 
 
+        ///////////// /******TASKS********//////////////////
+        private string connectionString = System.Configuration.ConfigurationManager.ConnectionStrings["BabyHavenDatabaseConnectionString"].ConnectionString;
+
+        public void AssignTask(int adminId, string taskDescription)
+        {
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                connection.Open();
+                using (SqlCommand command = new SqlCommand("INSERT INTO Task_Table (T_Des) VALUES (@TaskDescription); SELECT SCOPE_IDENTITY();", connection))
+                {
+                    command.Parameters.AddWithValue("@TaskDescription", taskDescription);
+                    int taskId = Convert.ToInt32(command.ExecuteScalar());
+
+                    // Now, insert the assignment into the TasksAssign table
+                    InsertTaskAssignment(taskId, adminId);
+                }
+            }
+        }
+
+        private void InsertTaskAssignment(int taskId, int adminId)
+        {
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                connection.Open();
+                using (SqlCommand command = new SqlCommand("INSERT INTO TasksAssign (T_Id, Admin_Id, T_Completed) VALUES (@TaskId, @AdminId, 0);", connection))
+                {
+                    command.Parameters.AddWithValue("@TaskId", taskId);
+                    command.Parameters.AddWithValue("@AdminId", adminId);
+                    command.ExecuteNonQuery();
+                }
+            }
+        }
+
+        public bool MarkTaskCompleted(int assignmentId)
+        {
+
+            var t = (from i in db.TasksAssigns
+                     where i.T_Id.Equals(assignmentId)
+                     select i).FirstOrDefault();
+
+            if (t != null)
+            {
+            t.T_Completed = true;
+
+                try
+                {
+                    db.SubmitChanges();
+                    return true;
+                }catch(Exception e)
+                {
+                    e.GetBaseException();
+                    return false;
+                }
+
+            }
+            else
+            {
+                return false;
+            }
+
+            //using (SqlConnection connection = new SqlConnection(connectionString))
+            //{
+            //    connection.Open();
+            //    using (SqlCommand command = new SqlCommand("UPDATE TasksAssign SET T_Completed = 1 WHERE A_Id = @AssignmentId;", connection))
+            //    {
+            //        command.Parameters.AddWithValue("@AssignmentId", assignmentId);
+            //        command.ExecuteNonQuery();
+            //    }
+            //}
+        }
+
+        //public List<TasksAssign> GetAssignedTasks(int adminId)
+        //{
+        //    List<TasksAssign> assignedTasks = new List<TasksAssign>();
+
+        //    string queryString = "SELECT A_Id, T_Id, T_Completed FROM TasksAssign " +
+        //                        "WHERE Admin_Id = @AdminId";
+
+        //    using (SqlConnection connection = new SqlConnection(connectionString))
+        //    using (SqlCommand command = new SqlCommand(queryString, connection))
+        //    {
+        //        command.Parameters.AddWithValue("@AdminId", adminId);
+        //        connection.Open();
+        //        using (SqlDataReader reader = command.ExecuteReader())
+        //        {
+        //            while (reader.Read())
+        //            {
+        //                TasksAssign task = new TasksAssign
+        //                {
+        //                    A_Id = reader.GetInt32(0),
+        //                    T_Id = reader.GetInt32(1),
+        //                       T_Completed = reader.GetBoolean(2)
+        //                };
+        //                assignedTasks.Add(task);
+        //            }
+        //        }
+        //    }
+
+        //    return assignedTasks;
+        //}
+
+        public List<string> GetAssignedTasks(int adminId)
+        {
+            List<string> assignedTaskDescriptions = new List<string>();
+
+            string queryString = "SELECT T.T_Des " +
+                                "FROM TasksAssign AS A " +
+                                "INNER JOIN Task_Table AS T ON A.T_Id = T.T_Id " +
+                                "WHERE A.Admin_Id = @AdminId AND A.T_Completed=0";
+
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            using (SqlCommand command = new SqlCommand(queryString, connection))
+            {
+                command.Parameters.AddWithValue("@AdminId", adminId);
+                connection.Open();
+                using (SqlDataReader reader = command.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        string taskDescription = reader.GetString(0);
+                        assignedTaskDescriptions.Add(taskDescription);
+                    }
+                }
+            }
+
+            return assignedTaskDescriptions;
+        }
+
+        public int GetAssignmentIdForTask(string taskDescription)
+        {
+            int assignmentId = -1; // Default value indicating no assignment found
+
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                connection.Open();
+                using (SqlCommand command = new SqlCommand("SELECT T_Id FROM Task_Table WHERE T_Des = @TaskDescription", connection))
+                {
+                    command.Parameters.AddWithValue("@TaskDescription", taskDescription);
+
+                    using (SqlDataReader reader = command.ExecuteReader())
+                    {
+                        if (reader.Read())
+                        {
+                            assignmentId = reader.GetInt32(0);
+                        }
+                    }
+                }
+            }
+
+            return assignmentId;
+        }
 
 
 
@@ -646,7 +816,48 @@ namespace BabyHaven_Database
             {
                 connection.Open();
 
-                string sqlQuery = "SELECT * FROM User_Table WHERE Name LIKE @SearchQuery";
+                string sqlQuery = "SELECT * FROM User_Table WHERE Name LIKE @SearchQuery AND UserType=1";
+
+                using (SqlCommand command = new SqlCommand(sqlQuery, connection))
+                {
+                    command.Parameters.AddWithValue("@SearchQuery", "%" + searchQuery + "%");
+
+                    using (SqlDataReader reader = command.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            // Create User_Table objects from the database results
+                            User_Table user = new User_Table
+                            {
+                                User_Id = Convert.ToInt32(reader["User_Id"]),
+                                Email = reader["Email"].ToString(),
+                                Name = reader["Name"].ToString(),
+                                Surname = reader["Surname"].ToString(),
+                                Phone_Number = reader["Phone_Number"].ToString()
+
+                            };
+
+                            searchResults.Add(user);
+                        }
+                    }
+                }
+            }
+
+            return searchResults;
+        }
+
+        public List<User_Table> SearchUsersByNameAdmins(string searchQuery)
+        {
+            List<User_Table> searchResults = new List<User_Table>();
+
+            // Use the connection string from the 'BabyHavenDatabaseConnectionString' name
+            string connString = System.Configuration.ConfigurationManager.ConnectionStrings["BabyHavenDatabaseConnectionString"].ConnectionString;
+
+            using (SqlConnection connection = new SqlConnection(connString))
+            {
+                connection.Open();
+
+                string sqlQuery = "SELECT * FROM User_Table WHERE Name LIKE @SearchQuery AND UserType=0";
 
                 using (SqlCommand command = new SqlCommand(sqlQuery, connection))
                 {

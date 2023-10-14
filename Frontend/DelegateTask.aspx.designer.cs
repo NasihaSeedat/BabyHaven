@@ -11,79 +11,70 @@ namespace Frontend
 {
 
 
-    public partial class BabyHaven
+    public partial class DelegateTask
     {
 
         /// <summary>
-        /// head control.
+        /// txtSearch control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ContentPlaceHolder head;
+        protected global::System.Web.UI.WebControls.TextBox txtSearch;
 
         /// <summary>
-        /// invoices control.
+        /// btnSearch control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl invoices;
+        protected global::System.Web.UI.WebControls.Button btnSearch;
 
         /// <summary>
-        /// dropInvoices control.
+        /// error control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl dropInvoices;
+        protected global::System.Web.UI.WebControls.Label error;
 
         /// <summary>
-        /// adminLink control.
+        /// userTabless control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl adminLink;
+        protected global::System.Web.UI.WebControls.Literal userTabless;
 
         /// <summary>
-        /// DropAdmin control.
+        /// TaskTextBox control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl DropAdmin;
+        protected global::System.Web.UI.WebControls.TextBox TaskTextBox;
 
         /// <summary>
-        /// TaskAdmins control.
+        /// AddTaskButton control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl TaskAdmins;
+        protected global::System.Web.UI.WebControls.Button AddTaskButton;
 
         /// <summary>
-        /// DropTasks control.
+        /// ListBox1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl DropTasks;
-
-        /// <summary>
-        /// ContentPlaceHolder1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.ContentPlaceHolder ContentPlaceHolder1;
+        protected global::System.Web.UI.WebControls.ListBox ListBox1;
     }
 }

@@ -39,12 +39,6 @@ namespace BabyHaven_Database
     partial void InsertClient(Client instance);
     partial void UpdateClient(Client instance);
     partial void DeleteClient(Client instance);
-    partial void InsertCustom_Prod(Custom_Prod instance);
-    partial void UpdateCustom_Prod(Custom_Prod instance);
-    partial void DeleteCustom_Prod(Custom_Prod instance);
-    partial void InsertHackFeedback(HackFeedback instance);
-    partial void UpdateHackFeedback(HackFeedback instance);
-    partial void DeleteHackFeedback(HackFeedback instance);
     partial void InsertOrder_Item(Order_Item instance);
     partial void UpdateOrder_Item(Order_Item instance);
     partial void DeleteOrder_Item(Order_Item instance);
@@ -63,6 +57,12 @@ namespace BabyHaven_Database
     partial void InsertHaven(Haven instance);
     partial void UpdateHaven(Haven instance);
     partial void DeleteHaven(Haven instance);
+    partial void InsertTask_Table(Task_Table instance);
+    partial void UpdateTask_Table(Task_Table instance);
+    partial void DeleteTask_Table(Task_Table instance);
+    partial void InsertTasksAssign(TasksAssign instance);
+    partial void UpdateTasksAssign(TasksAssign instance);
+    partial void DeleteTasksAssign(TasksAssign instance);
     #endregion
 		
 		public BabyHavenDataContext() : 
@@ -119,22 +119,6 @@ namespace BabyHaven_Database
 			}
 		}
 		
-		public System.Data.Linq.Table<Custom_Prod> Custom_Prods
-		{
-			get
-			{
-				return this.GetTable<Custom_Prod>();
-			}
-		}
-		
-		public System.Data.Linq.Table<HackFeedback> HackFeedbacks
-		{
-			get
-			{
-				return this.GetTable<HackFeedback>();
-			}
-		}
-		
 		public System.Data.Linq.Table<Order_Item> Order_Items
 		{
 			get
@@ -180,6 +164,22 @@ namespace BabyHaven_Database
 			get
 			{
 				return this.GetTable<Haven>();
+			}
+		}
+		
+		public System.Data.Linq.Table<Task_Table> Task_Tables
+		{
+			get
+			{
+				return this.GetTable<Task_Table>();
+			}
+		}
+		
+		public System.Data.Linq.Table<TasksAssign> TasksAssigns
+		{
+			get
+			{
+				return this.GetTable<TasksAssign>();
 			}
 		}
 	}
@@ -465,250 +465,6 @@ namespace BabyHaven_Database
 					this._Email = value;
 					this.SendPropertyChanged("Email");
 					this.OnEmailChanged();
-				}
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Custom_Prod")]
-	public partial class Custom_Prod : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private int _CustProd_Id;
-		
-		private string _CustProd_Image;
-		
-		private int _U_Id;
-		
-		private int _O_Id;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnCustProd_IdChanging(int value);
-    partial void OnCustProd_IdChanged();
-    partial void OnCustProd_ImageChanging(string value);
-    partial void OnCustProd_ImageChanged();
-    partial void OnU_IdChanging(int value);
-    partial void OnU_IdChanged();
-    partial void OnO_IdChanging(int value);
-    partial void OnO_IdChanged();
-    #endregion
-		
-		public Custom_Prod()
-		{
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CustProd_Id", DbType="Int NOT NULL", IsPrimaryKey=true)]
-		public int CustProd_Id
-		{
-			get
-			{
-				return this._CustProd_Id;
-			}
-			set
-			{
-				if ((this._CustProd_Id != value))
-				{
-					this.OnCustProd_IdChanging(value);
-					this.SendPropertyChanging();
-					this._CustProd_Id = value;
-					this.SendPropertyChanged("CustProd_Id");
-					this.OnCustProd_IdChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CustProd_Image", DbType="VarChar(MAX) NOT NULL", CanBeNull=false)]
-		public string CustProd_Image
-		{
-			get
-			{
-				return this._CustProd_Image;
-			}
-			set
-			{
-				if ((this._CustProd_Image != value))
-				{
-					this.OnCustProd_ImageChanging(value);
-					this.SendPropertyChanging();
-					this._CustProd_Image = value;
-					this.SendPropertyChanged("CustProd_Image");
-					this.OnCustProd_ImageChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_U_Id", DbType="Int NOT NULL")]
-		public int U_Id
-		{
-			get
-			{
-				return this._U_Id;
-			}
-			set
-			{
-				if ((this._U_Id != value))
-				{
-					this.OnU_IdChanging(value);
-					this.SendPropertyChanging();
-					this._U_Id = value;
-					this.SendPropertyChanged("U_Id");
-					this.OnU_IdChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_O_Id", DbType="Int NOT NULL")]
-		public int O_Id
-		{
-			get
-			{
-				return this._O_Id;
-			}
-			set
-			{
-				if ((this._O_Id != value))
-				{
-					this.OnO_IdChanging(value);
-					this.SendPropertyChanging();
-					this._O_Id = value;
-					this.SendPropertyChanged("O_Id");
-					this.OnO_IdChanged();
-				}
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.HackFeedback")]
-	public partial class HackFeedback : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private int _HF_Id;
-		
-		private int _U_Id;
-		
-		private string _HF_Hack;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnHF_IdChanging(int value);
-    partial void OnHF_IdChanged();
-    partial void OnU_IdChanging(int value);
-    partial void OnU_IdChanged();
-    partial void OnHF_HackChanging(string value);
-    partial void OnHF_HackChanged();
-    #endregion
-		
-		public HackFeedback()
-		{
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_HF_Id", DbType="Int NOT NULL", IsPrimaryKey=true)]
-		public int HF_Id
-		{
-			get
-			{
-				return this._HF_Id;
-			}
-			set
-			{
-				if ((this._HF_Id != value))
-				{
-					this.OnHF_IdChanging(value);
-					this.SendPropertyChanging();
-					this._HF_Id = value;
-					this.SendPropertyChanged("HF_Id");
-					this.OnHF_IdChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_U_Id", DbType="Int NOT NULL", IsPrimaryKey=true)]
-		public int U_Id
-		{
-			get
-			{
-				return this._U_Id;
-			}
-			set
-			{
-				if ((this._U_Id != value))
-				{
-					this.OnU_IdChanging(value);
-					this.SendPropertyChanging();
-					this._U_Id = value;
-					this.SendPropertyChanged("U_Id");
-					this.OnU_IdChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_HF_Hack", DbType="VarChar(MAX) NOT NULL", CanBeNull=false)]
-		public string HF_Hack
-		{
-			get
-			{
-				return this._HF_Hack;
-			}
-			set
-			{
-				if ((this._HF_Hack != value))
-				{
-					this.OnHF_HackChanging(value);
-					this.SendPropertyChanging();
-					this._HF_Hack = value;
-					this.SendPropertyChanged("HF_Hack");
-					this.OnHF_HackChanged();
 				}
 			}
 		}
@@ -1921,6 +1677,226 @@ namespace BabyHaven_Database
 					this._dealt = value;
 					this.SendPropertyChanged("dealt");
 					this.OndealtChanged();
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Task_Table")]
+	public partial class Task_Table : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _T_Id;
+		
+		private string _T_Des;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnT_IdChanging(int value);
+    partial void OnT_IdChanged();
+    partial void OnT_DesChanging(string value);
+    partial void OnT_DesChanged();
+    #endregion
+		
+		public Task_Table()
+		{
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_T_Id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int T_Id
+		{
+			get
+			{
+				return this._T_Id;
+			}
+			set
+			{
+				if ((this._T_Id != value))
+				{
+					this.OnT_IdChanging(value);
+					this.SendPropertyChanging();
+					this._T_Id = value;
+					this.SendPropertyChanged("T_Id");
+					this.OnT_IdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_T_Des", DbType="VarChar(MAX) NOT NULL", CanBeNull=false)]
+		public string T_Des
+		{
+			get
+			{
+				return this._T_Des;
+			}
+			set
+			{
+				if ((this._T_Des != value))
+				{
+					this.OnT_DesChanging(value);
+					this.SendPropertyChanging();
+					this._T_Des = value;
+					this.SendPropertyChanged("T_Des");
+					this.OnT_DesChanged();
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.TasksAssign")]
+	public partial class TasksAssign : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _A_Id;
+		
+		private int _T_Id;
+		
+		private int _Admin_Id;
+		
+		private bool _T_Completed;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnA_IdChanging(int value);
+    partial void OnA_IdChanged();
+    partial void OnT_IdChanging(int value);
+    partial void OnT_IdChanged();
+    partial void OnAdmin_IdChanging(int value);
+    partial void OnAdmin_IdChanged();
+    partial void OnT_CompletedChanging(bool value);
+    partial void OnT_CompletedChanged();
+    #endregion
+		
+		public TasksAssign()
+		{
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_A_Id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int A_Id
+		{
+			get
+			{
+				return this._A_Id;
+			}
+			set
+			{
+				if ((this._A_Id != value))
+				{
+					this.OnA_IdChanging(value);
+					this.SendPropertyChanging();
+					this._A_Id = value;
+					this.SendPropertyChanged("A_Id");
+					this.OnA_IdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_T_Id", DbType="Int NOT NULL")]
+		public int T_Id
+		{
+			get
+			{
+				return this._T_Id;
+			}
+			set
+			{
+				if ((this._T_Id != value))
+				{
+					this.OnT_IdChanging(value);
+					this.SendPropertyChanging();
+					this._T_Id = value;
+					this.SendPropertyChanged("T_Id");
+					this.OnT_IdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Admin_Id", DbType="Int NOT NULL")]
+		public int Admin_Id
+		{
+			get
+			{
+				return this._Admin_Id;
+			}
+			set
+			{
+				if ((this._Admin_Id != value))
+				{
+					this.OnAdmin_IdChanging(value);
+					this.SendPropertyChanging();
+					this._Admin_Id = value;
+					this.SendPropertyChanged("Admin_Id");
+					this.OnAdmin_IdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_T_Completed", DbType="Bit NOT NULL")]
+		public bool T_Completed
+		{
+			get
+			{
+				return this._T_Completed;
+			}
+			set
+			{
+				if ((this._T_Completed != value))
+				{
+					this.OnT_CompletedChanging(value);
+					this.SendPropertyChanging();
+					this._T_Completed = value;
+					this.SendPropertyChanged("T_Completed");
+					this.OnT_CompletedChanged();
 				}
 			}
 		}
