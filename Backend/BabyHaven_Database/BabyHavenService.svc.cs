@@ -689,7 +689,7 @@ namespace BabyHaven_Database
             {
                 connection.Open();
 
-                string sqlQuery = "SELECT * FROM Product WHERE P_Name LIKE @SearchQuery";
+                string sqlQuery = "SELECT * FROM Product WHERE P_Name LIKE @SearchQuery AND isActive = 1";
 
 
                 using (SqlCommand command = new SqlCommand(sqlQuery, connection))
@@ -698,6 +698,7 @@ namespace BabyHaven_Database
 
                     using (SqlDataReader reader = command.ExecuteReader())
                     {
+
                         while (reader.Read())
                         {
 
