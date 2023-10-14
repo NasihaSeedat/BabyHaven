@@ -102,13 +102,13 @@ namespace Frontend
             string taskDescription = TaskTextBox.Text;
             if (!string.IsNullOrEmpty(taskDescription))
             {
-                // Add the task to the ListBox
-                ListBox1.Items.Add(new ListItem(taskDescription, taskDescription));
+                
                 string selAdm = Request.Form["adminRadio"];
 
                 if (!string.IsNullOrEmpty(selAdm))
                 {
-
+                    // Add the task to the ListBox
+                    ListBox1.Items.Add(new ListItem(taskDescription, taskDescription));
                     if (int.TryParse(selAdm, out int adminRadio))
                     {
 
@@ -128,7 +128,7 @@ namespace Frontend
                
                 
             }
-
+            TaskTextBox.Text = "";
         }
     }
 }
