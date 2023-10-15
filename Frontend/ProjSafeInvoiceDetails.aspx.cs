@@ -34,20 +34,22 @@ namespace Frontend
                 String city = (string)Session["City"];
                 String zipcode = (string)Session["ZipCode"];
                 String phoneno = (string)Session["PhoneNumber"];
+                string note = (string)Session["Note"];
 
                 // Populate the labels with the retrieved invoice details
-                OrderIdLabel.Text = "Order ID: " + selectedInvoiceId.ToString();
-                TotalAmountLabel.Text = "Total Amount: R " + selectedInvoiceTotalAmount.ToString("N2");
-                DateLabel.Text = "Date: " + selectedInvoiceDate.ToString("yyyy-MM-dd");
+                OrderIdLabel.Text = "<b>Order ID:</b> " + selectedInvoiceId.ToString();
+                TotalAmountLabel.Text = "<b>Total Amount:</b> R " + selectedInvoiceTotalAmount.ToString("N2");
+                DateLabel.Text = "<b>Date:</b> " + selectedInvoiceDate.ToString("yyyy-MM-dd");
 
                 // Populate other labels with additional invoice details
-                FirstNameLabel.Text = "First Name: " + firstname;
-                LastNameLabel.Text = "Last Name: " + lastname;
-                EmailLabel.Text = "Email: " + email;
-                AddressLabel.Text = "Address: " + address;
-                CityLabel.Text = "City: " + city;
-                ZipCodeLabel.Text = "Zip Code: " + zipcode;
-                PhoneNumberLabel.Text = "Phone Number: " + phoneno;
+                FirstNameLabel.Text = "<b>First Name:</b> " + firstname;
+                LastNameLabel.Text = "<b>Last Name:</b> " + lastname;
+                EmailLabel.Text = "<b>Email:</b> " + email;
+                AddressLabel.Text = "<b>Address:</b> " + address;
+                CityLabel.Text = "<b>City:</b> " + city;
+                ZipCodeLabel.Text = "<b>Zip Code:</b> " + zipcode;
+                PhoneNumberLabel.Text = "<b>Phone Number:</b> " + phoneno;
+                NoteLabel.Text = "<b>Note:</b> " + note;
 
                 BindOrderData();
             }
