@@ -2721,6 +2721,23 @@ ol {
         color: #666666;
     }
 
+/* Apply styles for textarea in the checkout form */
+.checkout__form .checkout__form__input textarea {
+    border: 1px solid #e1e1e1;
+    border-radius: 2px;
+    margin-bottom: 25px;
+    font-size: 14px;
+    padding-left: 20px;
+    color: #666666;
+    padding: 10px 20px;
+}
+
+
+    /* Apply styles to the Notes placeholder */
+    .checkout__form .checkout__form__input textarea::placeholder {
+        color: #666666;
+    }
+
 .checkout__form .checkout__form__checkbox {
     margin-bottom: 20px;
 }
