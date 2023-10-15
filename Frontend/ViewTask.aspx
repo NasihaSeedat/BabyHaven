@@ -16,7 +16,7 @@
 
         .checkbox-list {
             margin-left: 15px;
-            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            box-shadow: 0px 0px 10px rgba(132, 183, 238, 0.8);
             font-size: 18px;
             line-height: 2;
             padding: 200px 100px;
