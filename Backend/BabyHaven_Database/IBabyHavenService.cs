@@ -188,5 +188,11 @@ namespace BabyHaven_Database
 
         [OperationContract]
         bool isSafeHavenSock(int uid);
+
+        [OperationContract]
+        void Subscribe(string email);
+
+        [OperationContract]
+        List<string> GetSubscribedEmails();
     }
 }

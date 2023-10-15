@@ -326,6 +326,18 @@
   <wsdl:message name="IBabyHavenService_isSafeHavenSock_OutputMessage">
     <wsdl:part name="parameters" element="tns:isSafeHavenSockResponse" />
   </wsdl:message>
+  <wsdl:message name="IBabyHavenService_Subscribe_InputMessage">
+    <wsdl:part name="parameters" element="tns:Subscribe" />
+  </wsdl:message>
+  <wsdl:message name="IBabyHavenService_Subscribe_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SubscribeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBabyHavenService_GetSubscribedEmails_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetSubscribedEmails" />
+  </wsdl:message>
+  <wsdl:message name="IBabyHavenService_GetSubscribedEmails_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetSubscribedEmailsResponse" />
+  </wsdl:message>
   <wsdl:portType name="IBabyHavenService">
     <wsdl:operation name="Login">
       <wsdl:input wsaw:Action="http://tempuri.org/IBabyHavenService/Login" message="tns:IBabyHavenService_Login_InputMessage" />
@@ -538,6 +550,14 @@
     <wsdl:operation name="isSafeHavenSock">
       <wsdl:input wsaw:Action="http://tempuri.org/IBabyHavenService/isSafeHavenSock" message="tns:IBabyHavenService_isSafeHavenSock_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IBabyHavenService/isSafeHavenSockResponse" message="tns:IBabyHavenService_isSafeHavenSock_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Subscribe">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBabyHavenService/Subscribe" message="tns:IBabyHavenService_Subscribe_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBabyHavenService/SubscribeResponse" message="tns:IBabyHavenService_Subscribe_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSubscribedEmails">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBabyHavenService/GetSubscribedEmails" message="tns:IBabyHavenService_GetSubscribedEmails_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBabyHavenService/GetSubscribedEmailsResponse" message="tns:IBabyHavenService_GetSubscribedEmails_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_IBabyHavenService" type="tns:IBabyHavenService">
@@ -1012,6 +1032,24 @@
     </wsdl:operation>
     <wsdl:operation name="isSafeHavenSock">
       <soap:operation soapAction="http://tempuri.org/IBabyHavenService/isSafeHavenSock" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Subscribe">
+      <soap:operation soapAction="http://tempuri.org/IBabyHavenService/Subscribe" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSubscribedEmails">
+      <soap:operation soapAction="http://tempuri.org/IBabyHavenService/GetSubscribedEmails" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
