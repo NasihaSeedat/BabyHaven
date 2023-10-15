@@ -74,5 +74,11 @@
         <elementListCompartment Id="30eba5a2-7275-44bf-aaae-3d569adbea05" absoluteBounds="2.3899999999999997, 3.835, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
+    <classShape Id="ef43f743-459d-4b4d-b3b1-36a2c52c9827" absoluteBounds="5.25, 2.625, 2, 1.1939925130208333">
+      <DataClassMoniker Name="/BabyHavenDataContext/Subscription1" />
+      <nestedChildShapes>
+        <elementListCompartment Id="832a64a9-67ab-431f-bf43-0afe219e52eb" absoluteBounds="5.265, 3.085, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
   </nestedChildShapes>
 </ordesignerObjectsDiagram>

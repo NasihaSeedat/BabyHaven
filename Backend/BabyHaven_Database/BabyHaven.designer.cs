@@ -66,14 +66,18 @@ namespace BabyHaven_Database
     partial void InsertSubscription(Subscription instance);
     partial void UpdateSubscription(Subscription instance);
     partial void DeleteSubscription(Subscription instance);
-        #endregion
-
-        public BabyHavenDataContext() :
-        base(global::System.Configuration.ConfigurationManager.ConnectionStrings["BabyHavenDatabaseConnectionString"].ConnectionString, mappingSource) {
-            OnCreated();
-        }
-
-        public BabyHavenDataContext(string connection) : 
+    partial void InsertSubscription1(Subscription1 instance);
+    partial void UpdateSubscription1(Subscription1 instance);
+    partial void DeleteSubscription1(Subscription1 instance);
+    #endregion
+		
+		public BabyHavenDataContext() : 
+				base(global::System.Configuration.ConfigurationManager.ConnectionStrings["BabyHavenDatabaseConnectionString"].ConnectionString, mappingSource)
+		{
+			OnCreated();
+		}
+		
+		public BabyHavenDataContext(string connection) : 
 				base(connection, mappingSource)
 		{
 			OnCreated();
@@ -190,6 +194,14 @@ namespace BabyHaven_Database
 			get
 			{
 				return this.GetTable<Subscription>();
+			}
+		}
+		
+		public System.Data.Linq.Table<Subscription1> Subscription1s
+		{
+			get
+			{
+				return this.GetTable<Subscription1>();
 			}
 		}
 	}
@@ -1982,6 +1994,92 @@ namespace BabyHaven_Database
 		}
 		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_S_Id", DbType="Int NOT NULL", IsPrimaryKey=true)]
+		public int S_Id
+		{
+			get
+			{
+				return this._S_Id;
+			}
+			set
+			{
+				if ((this._S_Id != value))
+				{
+					this.OnS_IdChanging(value);
+					this.SendPropertyChanging();
+					this._S_Id = value;
+					this.SendPropertyChanged("S_Id");
+					this.OnS_IdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_S_Email", DbType="VarChar(100) NOT NULL", CanBeNull=false)]
+		public string S_Email
+		{
+			get
+			{
+				return this._S_Email;
+			}
+			set
+			{
+				if ((this._S_Email != value))
+				{
+					this.OnS_EmailChanging(value);
+					this.SendPropertyChanging();
+					this._S_Email = value;
+					this.SendPropertyChanged("S_Email");
+					this.OnS_EmailChanged();
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Subscription")]
+	public partial class Subscription1 : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _S_Id;
+		
+		private string _S_Email;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnS_IdChanging(int value);
+    partial void OnS_IdChanged();
+    partial void OnS_EmailChanging(string value);
+    partial void OnS_EmailChanged();
+    #endregion
+		
+		public Subscription1()
+		{
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_S_Id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
 		public int S_Id
 		{
 			get
