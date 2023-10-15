@@ -40,6 +40,8 @@ namespace BabyHaven_Database
         List<User_Table> GetAllUsers();
         [OperationContract]
         List<User_Table> GetAllUsersNotAdmin();
+        [OperationContract]
+        List<User_Table> GetAllUsersAdmin();
 
         [OperationContract]
         bool Register(string email, string password, string name, string surname, string phoneno, string address, int usetype = 1);
@@ -51,9 +53,29 @@ namespace BabyHaven_Database
         [OperationContract]
         bool AddAdminTEST(int user);
 
+        //tasks
+        [OperationContract]
+        void AssignTask(int adminId, string taskDescription);
+        [OperationContract]
+        bool MarkTaskCompleted(int assignmentId);
+        [OperationContract]
+        int GetTasksCount(int AdminId);
+
+        [OperationContract]
+        Dictionary<int, string> GetAssignedTasks(int adminId);
+
+        [OperationContract]
+        int GetAssignmentIdForTask(string taskDescription);
+
+
+
+
         //Searching Users
         [OperationContract]
         List<User_Table> SearchUsersByName(string searchQuery);
+        [OperationContract]
+        List<User_Table> SearchUsersByNameAdmins(string searchQuery);
+
         [OperationContract]
         List<Product> SearchProducts(string searchQuery);
         //CART
@@ -129,7 +151,7 @@ namespace BabyHaven_Database
 
         [OperationContract]
         int Checkout(int userId, decimal total, string firstname, string lastname, string email,
-            string address, string city, string zipcode, string phoneno);
+            string address, string city, string zipcode, string phoneno, string note);
 
 
 
@@ -168,5 +190,11 @@ namespace BabyHaven_Database
 
         [OperationContract]
         bool isSafeHavenSock(int uid);
+
+        [OperationContract]
+        void Subscribe(string email);
+
+        [OperationContract]
+        List<string> GetSubscribedEmails();
     }
 }

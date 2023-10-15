@@ -605,6 +605,9 @@ namespace Frontend.BackendReference {
         private int O_IdField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string O_NoteField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string O_Phone_NumberField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
@@ -713,6 +716,19 @@ namespace Frontend.BackendReference {
                 if ((this.O_IdField.Equals(value) != true)) {
                     this.O_IdField = value;
                     this.RaisePropertyChanged("O_Id");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string O_Note {
+            get {
+                return this.O_NoteField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.O_NoteField, value) != true)) {
+                    this.O_NoteField = value;
+                    this.RaisePropertyChanged("O_Note");
                 }
             }
         }
@@ -918,6 +934,12 @@ namespace Frontend.BackendReference {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBabyHavenService/GetAllUsersNotAdmin", ReplyAction="http://tempuri.org/IBabyHavenService/GetAllUsersNotAdminResponse")]
         System.Threading.Tasks.Task<Frontend.BackendReference.User_Table[]> GetAllUsersNotAdminAsync();
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBabyHavenService/GetAllUsersAdmin", ReplyAction="http://tempuri.org/IBabyHavenService/GetAllUsersAdminResponse")]
+        Frontend.BackendReference.User_Table[] GetAllUsersAdmin();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBabyHavenService/GetAllUsersAdmin", ReplyAction="http://tempuri.org/IBabyHavenService/GetAllUsersAdminResponse")]
+        System.Threading.Tasks.Task<Frontend.BackendReference.User_Table[]> GetAllUsersAdminAsync();
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBabyHavenService/Register", ReplyAction="http://tempuri.org/IBabyHavenService/RegisterResponse")]
         bool Register(string email, string password, string name, string surname, string phoneno, string address, int usetype);
         
@@ -936,11 +958,47 @@ namespace Frontend.BackendReference {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBabyHavenService/AddAdminTEST", ReplyAction="http://tempuri.org/IBabyHavenService/AddAdminTESTResponse")]
         System.Threading.Tasks.Task<bool> AddAdminTESTAsync(int user);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBabyHavenService/AssignTask", ReplyAction="http://tempuri.org/IBabyHavenService/AssignTaskResponse")]
+        void AssignTask(int adminId, string taskDescription);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBabyHavenService/AssignTask", ReplyAction="http://tempuri.org/IBabyHavenService/AssignTaskResponse")]
+        System.Threading.Tasks.Task AssignTaskAsync(int adminId, string taskDescription);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBabyHavenService/MarkTaskCompleted", ReplyAction="http://tempuri.org/IBabyHavenService/MarkTaskCompletedResponse")]
+        bool MarkTaskCompleted(int assignmentId);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBabyHavenService/MarkTaskCompleted", ReplyAction="http://tempuri.org/IBabyHavenService/MarkTaskCompletedResponse")]
+        System.Threading.Tasks.Task<bool> MarkTaskCompletedAsync(int assignmentId);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBabyHavenService/GetTasksCount", ReplyAction="http://tempuri.org/IBabyHavenService/GetTasksCountResponse")]
+        int GetTasksCount(int AdminId);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBabyHavenService/GetTasksCount", ReplyAction="http://tempuri.org/IBabyHavenService/GetTasksCountResponse")]
+        System.Threading.Tasks.Task<int> GetTasksCountAsync(int AdminId);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBabyHavenService/GetAssignedTasks", ReplyAction="http://tempuri.org/IBabyHavenService/GetAssignedTasksResponse")]
+        System.Collections.Generic.Dictionary<int, string> GetAssignedTasks(int adminId);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBabyHavenService/GetAssignedTasks", ReplyAction="http://tempuri.org/IBabyHavenService/GetAssignedTasksResponse")]
+        System.Threading.Tasks.Task<System.Collections.Generic.Dictionary<int, string>> GetAssignedTasksAsync(int adminId);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBabyHavenService/GetAssignmentIdForTask", ReplyAction="http://tempuri.org/IBabyHavenService/GetAssignmentIdForTaskResponse")]
+        int GetAssignmentIdForTask(string taskDescription);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBabyHavenService/GetAssignmentIdForTask", ReplyAction="http://tempuri.org/IBabyHavenService/GetAssignmentIdForTaskResponse")]
+        System.Threading.Tasks.Task<int> GetAssignmentIdForTaskAsync(string taskDescription);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBabyHavenService/SearchUsersByName", ReplyAction="http://tempuri.org/IBabyHavenService/SearchUsersByNameResponse")]
         Frontend.BackendReference.User_Table[] SearchUsersByName(string searchQuery);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBabyHavenService/SearchUsersByName", ReplyAction="http://tempuri.org/IBabyHavenService/SearchUsersByNameResponse")]
         System.Threading.Tasks.Task<Frontend.BackendReference.User_Table[]> SearchUsersByNameAsync(string searchQuery);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBabyHavenService/SearchUsersByNameAdmins", ReplyAction="http://tempuri.org/IBabyHavenService/SearchUsersByNameAdminsResponse")]
+        Frontend.BackendReference.User_Table[] SearchUsersByNameAdmins(string searchQuery);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBabyHavenService/SearchUsersByNameAdmins", ReplyAction="http://tempuri.org/IBabyHavenService/SearchUsersByNameAdminsResponse")]
+        System.Threading.Tasks.Task<Frontend.BackendReference.User_Table[]> SearchUsersByNameAdminsAsync(string searchQuery);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBabyHavenService/SearchProducts", ReplyAction="http://tempuri.org/IBabyHavenService/SearchProductsResponse")]
         Frontend.BackendReference.Product[] SearchProducts(string searchQuery);
@@ -1087,10 +1145,10 @@ namespace Frontend.BackendReference {
         System.Threading.Tasks.Task<bool> ProcessCheckoutAsync(int userId, int[] productIds);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBabyHavenService/Checkout", ReplyAction="http://tempuri.org/IBabyHavenService/CheckoutResponse")]
-        int Checkout(int userId, decimal total, string firstname, string lastname, string email, string address, string city, string zipcode, string phoneno);
+        int Checkout(int userId, decimal total, string firstname, string lastname, string email, string address, string city, string zipcode, string phoneno, string note);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBabyHavenService/Checkout", ReplyAction="http://tempuri.org/IBabyHavenService/CheckoutResponse")]
-        System.Threading.Tasks.Task<int> CheckoutAsync(int userId, decimal total, string firstname, string lastname, string email, string address, string city, string zipcode, string phoneno);
+        System.Threading.Tasks.Task<int> CheckoutAsync(int userId, decimal total, string firstname, string lastname, string email, string address, string city, string zipcode, string phoneno, string note);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBabyHavenService/GetAllInvoices", ReplyAction="http://tempuri.org/IBabyHavenService/GetAllInvoicesResponse")]
         Frontend.BackendReference.Order_Table[] GetAllInvoices(int userId);
@@ -1159,6 +1217,18 @@ namespace Frontend.BackendReference {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBabyHavenService/isSafeHavenSock", ReplyAction="http://tempuri.org/IBabyHavenService/isSafeHavenSockResponse")]
         System.Threading.Tasks.Task<bool> isSafeHavenSockAsync(int uid);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBabyHavenService/Subscribe", ReplyAction="http://tempuri.org/IBabyHavenService/SubscribeResponse")]
+        void Subscribe(string email);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBabyHavenService/Subscribe", ReplyAction="http://tempuri.org/IBabyHavenService/SubscribeResponse")]
+        System.Threading.Tasks.Task SubscribeAsync(string email);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBabyHavenService/GetSubscribedEmails", ReplyAction="http://tempuri.org/IBabyHavenService/GetSubscribedEmailsResponse")]
+        string[] GetSubscribedEmails();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBabyHavenService/GetSubscribedEmails", ReplyAction="http://tempuri.org/IBabyHavenService/GetSubscribedEmailsResponse")]
+        System.Threading.Tasks.Task<string[]> GetSubscribedEmailsAsync();
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -1244,6 +1314,14 @@ namespace Frontend.BackendReference {
             return base.Channel.GetAllUsersNotAdminAsync();
         }
         
+        public Frontend.BackendReference.User_Table[] GetAllUsersAdmin() {
+            return base.Channel.GetAllUsersAdmin();
+        }
+        
+        public System.Threading.Tasks.Task<Frontend.BackendReference.User_Table[]> GetAllUsersAdminAsync() {
+            return base.Channel.GetAllUsersAdminAsync();
+        }
+        
         public bool Register(string email, string password, string name, string surname, string phoneno, string address, int usetype) {
             return base.Channel.Register(email, password, name, surname, phoneno, address, usetype);
         }
@@ -1268,12 +1346,60 @@ namespace Frontend.BackendReference {
             return base.Channel.AddAdminTESTAsync(user);
         }
         
+        public void AssignTask(int adminId, string taskDescription) {
+            base.Channel.AssignTask(adminId, taskDescription);
+        }
+        
+        public System.Threading.Tasks.Task AssignTaskAsync(int adminId, string taskDescription) {
+            return base.Channel.AssignTaskAsync(adminId, taskDescription);
+        }
+        
+        public bool MarkTaskCompleted(int assignmentId) {
+            return base.Channel.MarkTaskCompleted(assignmentId);
+        }
+        
+        public System.Threading.Tasks.Task<bool> MarkTaskCompletedAsync(int assignmentId) {
+            return base.Channel.MarkTaskCompletedAsync(assignmentId);
+        }
+        
+        public int GetTasksCount(int AdminId) {
+            return base.Channel.GetTasksCount(AdminId);
+        }
+        
+        public System.Threading.Tasks.Task<int> GetTasksCountAsync(int AdminId) {
+            return base.Channel.GetTasksCountAsync(AdminId);
+        }
+        
+        public System.Collections.Generic.Dictionary<int, string> GetAssignedTasks(int adminId) {
+            return base.Channel.GetAssignedTasks(adminId);
+        }
+        
+        public System.Threading.Tasks.Task<System.Collections.Generic.Dictionary<int, string>> GetAssignedTasksAsync(int adminId) {
+            return base.Channel.GetAssignedTasksAsync(adminId);
+        }
+        
+        public int GetAssignmentIdForTask(string taskDescription) {
+            return base.Channel.GetAssignmentIdForTask(taskDescription);
+        }
+        
+        public System.Threading.Tasks.Task<int> GetAssignmentIdForTaskAsync(string taskDescription) {
+            return base.Channel.GetAssignmentIdForTaskAsync(taskDescription);
+        }
+        
         public Frontend.BackendReference.User_Table[] SearchUsersByName(string searchQuery) {
             return base.Channel.SearchUsersByName(searchQuery);
         }
         
         public System.Threading.Tasks.Task<Frontend.BackendReference.User_Table[]> SearchUsersByNameAsync(string searchQuery) {
             return base.Channel.SearchUsersByNameAsync(searchQuery);
+        }
+        
+        public Frontend.BackendReference.User_Table[] SearchUsersByNameAdmins(string searchQuery) {
+            return base.Channel.SearchUsersByNameAdmins(searchQuery);
+        }
+        
+        public System.Threading.Tasks.Task<Frontend.BackendReference.User_Table[]> SearchUsersByNameAdminsAsync(string searchQuery) {
+            return base.Channel.SearchUsersByNameAdminsAsync(searchQuery);
         }
         
         public Frontend.BackendReference.Product[] SearchProducts(string searchQuery) {
@@ -1468,12 +1594,12 @@ namespace Frontend.BackendReference {
             return base.Channel.ProcessCheckoutAsync(userId, productIds);
         }
         
-        public int Checkout(int userId, decimal total, string firstname, string lastname, string email, string address, string city, string zipcode, string phoneno) {
-            return base.Channel.Checkout(userId, total, firstname, lastname, email, address, city, zipcode, phoneno);
+        public int Checkout(int userId, decimal total, string firstname, string lastname, string email, string address, string city, string zipcode, string phoneno, string note) {
+            return base.Channel.Checkout(userId, total, firstname, lastname, email, address, city, zipcode, phoneno, note);
         }
         
-        public System.Threading.Tasks.Task<int> CheckoutAsync(int userId, decimal total, string firstname, string lastname, string email, string address, string city, string zipcode, string phoneno) {
-            return base.Channel.CheckoutAsync(userId, total, firstname, lastname, email, address, city, zipcode, phoneno);
+        public System.Threading.Tasks.Task<int> CheckoutAsync(int userId, decimal total, string firstname, string lastname, string email, string address, string city, string zipcode, string phoneno, string note) {
+            return base.Channel.CheckoutAsync(userId, total, firstname, lastname, email, address, city, zipcode, phoneno, note);
         }
         
         public Frontend.BackendReference.Order_Table[] GetAllInvoices(int userId) {
@@ -1562,6 +1688,22 @@ namespace Frontend.BackendReference {
         
         public System.Threading.Tasks.Task<bool> isSafeHavenSockAsync(int uid) {
             return base.Channel.isSafeHavenSockAsync(uid);
+        }
+        
+        public void Subscribe(string email) {
+            base.Channel.Subscribe(email);
+        }
+        
+        public System.Threading.Tasks.Task SubscribeAsync(string email) {
+            return base.Channel.SubscribeAsync(email);
+        }
+        
+        public string[] GetSubscribedEmails() {
+            return base.Channel.GetSubscribedEmails();
+        }
+        
+        public System.Threading.Tasks.Task<string[]> GetSubscribedEmailsAsync() {
+            return base.Channel.GetSubscribedEmailsAsync();
         }
     }
 }

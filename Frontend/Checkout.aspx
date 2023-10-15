@@ -45,13 +45,13 @@
                             <div class="col-lg-6 col-md-6 col-sm-6">
                                 <div class="checkout__form__input">
                                     <p>First Name <span>*</span></p>
-                                    <input type="text" id="txtFirstName" runat="server" required>
+                                    <input type="text" id="txtFirstName" runat="server" placeholder="First Name" required>
                                 </div>
                             </div>
                             <div class="col-lg-6 col-md-6 col-sm-6">
                                 <div class="checkout__form__input">
                                     <p>Last Name <span>*</span></p>
-                                    <input type="text" id="txtLastName" runat="server" required>
+                                    <input type="text" id="txtLastName" runat="server" placeholder="Last Name" required>
                                 </div>
                             </div>
                             <div class="col-lg-12">
@@ -62,23 +62,29 @@
 
                                 <div class="checkout__form__input">
                                     <p>Town/City <span>*</span></p>
-                                    <input type="text" id="txtCity" runat="server" required>
+                                    <input type="text" id="txtCity" runat="server" placeholder="Town/City" required>
                                 </div>
                                 <div class="checkout__form__input">
                                     <p>Postcode/Zip <span>*</span></p>
-                                    <input type="text" id="txtZip" runat="server" required>
+                                    <input type="text" id="txtZip" runat="server" placeholder="Postcode/Zip" required>
                                 </div>
                             </div>
                             <div class="col-lg-6 col-md-6 col-sm-6">
                                 <div class="checkout__form__input">
                                     <p>Phone <span>*</span></p>
-                                    <input type="text" id="txtPhone" runat="server" required>
+                                    <input type="text" id="txtPhone" runat="server" placeholder="Phone Number" required>
                                 </div>
                             </div>
                             <div class="col-lg-6 col-md-6 col-sm-6">
                                 <div class="checkout__form__input">
                                     <p>Email <span>*</span></p>
-                                    <input type="email" id="txtEmail" runat="server" required>
+                                    <input type="email" id="txtEmail" runat="server" placeholder="Email Address" required>
+                                </div>
+                            </div>
+                            <div class="col-lg-8">
+                                <div class="checkout__form__input">
+                                    <p>Notes</p>
+                                    <textarea id="txtNotes" runat="server" placeholder="Any special notes (e.g., delivery instructions)" rows="4" style="width: 153%;"></textarea>
                                 </div>
                             </div>
                         </div>

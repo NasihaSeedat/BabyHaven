@@ -86,16 +86,16 @@
 
                             <li id="invoices" visible="true" runat="server">
                                 <a href="Invoices.aspx">Invoices</a>
-                                     <ul class="dropdown" id="dropInvoices" visible="false" runat="server">
-                                         <li ><a href="ProjSafeInvoice.aspx">SafeHaven Invoices</a></li>
-                                 </ul>
+                                <ul class="dropdown" id="dropInvoices" visible="false" runat="server">
+                                    <li><a href="ProjSafeInvoice.aspx">SafeHaven Invoices</a></li>
+                                </ul>
 
                             </li>
-                          
-                        
-                                 
 
-                            
+
+
+
+
 
                             <%--<li runat="server" id="invoiceLink" visible="false">
                                 <a href="#">Invoice Panel</a>
@@ -106,7 +106,7 @@
                                 </ul>
                             </li>--%>
 
-                           <%-- <li id="reports" visible="false" runat="server"><a href="reports.aspx">Reports</a></li>--%>
+                            <%-- <li id="reports" visible="false" runat="server"><a href="reports.aspx">Reports</a></li>--%>
 
 
                             <li runat="server" id="adminLink" visible="false">
@@ -114,10 +114,24 @@
                                 <ul class="dropdown" id="DropAdmin" visible="false" runat="server">
                                     <li><a href="AddAdmin.aspx">Add Admin</a></li>
                                     <li><a href="AddProduct.aspx">Add Products</a></li>
-                                     <li runat="server"><a href="reports.aspx">Reports</a></li>
+                                    <li runat="server"><a href="reports.aspx">Reports</a></li>
+                                    <li><a href="AdminNewsletter.aspx">Newsletter</a></li>
                                 </ul>
                             </li>
+                    
+                            <li runat="server" id="TaskAdmins" visible="false">
+                                <div id="tas" runat="server" style="position: absolute;right: -12px;top: -11px;height: 18px;width: 18px;background: #111111;font-size: 10px;font-weight: 500;color: #ffffff;line-height: 18px;text-align: center;border-radius: 50%;">
+                                   <%int taskcount = getTaskCounts(); %>
+                                    <%=taskcount %>
+                                    </div>
+                                <a href="#">Tasks</a>
 
+                                <ul class="dropdown" id="DropTasks" visible="false" runat="server">
+                                    <li><a href="DelegateTask.aspx">Delegate Tasks</a></li>
+                                    <li><a href="ViewTask.aspx">View Tasks</a></li>
+                                </ul>
+
+                            </li>
 
 
                         </ul>

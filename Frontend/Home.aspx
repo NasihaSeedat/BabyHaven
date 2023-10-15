@@ -22,7 +22,7 @@
                         <div class="categories__item set-bg" data-setbg="img/categories/nursery.jpg">
                             <div class="categories__text">
                                 <h4>Nursery Needs</h4>
-                                <a href="Shop.aspx">Shop now</a>
+                                <a href="Shop.aspx?Category=Nursery Items">Shop now</a>
                             </div>
                         </div>
                     </div>
@@ -30,7 +30,7 @@
                         <div class="categories__item set-bg" data-setbg="img/categories/bib.jpg">
                             <div class="categories__text">
                                 <h4>Feeding Essentials</h4>
-                                <a href="Shop.aspx">Shop now</a>
+                                <a href="Shop.aspx?Category=Feeding Essentials">Shop now</a>
                             </div>
                         </div>
                     </div>
@@ -38,7 +38,7 @@
                         <div class="categories__item set-bg" data-setbg="img/categories/swing.jpg">
                             <div class="categories__text">
                                 <h4>Baby Gear</h4>
-                                <a href="Shop.aspx">Shop now</a>
+                                <a href="Shop.aspx?Category=Baby Gear">Shop now</a>
                             </div>
                         </div>
                     </div>
@@ -46,7 +46,7 @@
                         <div class="categories__item set-bg" data-setbg="img/categories/bath.jpg">
                             <div class="categories__text">
                                 <h4>Bath Time</h4>
-                                <a href="Shop.aspx">Shop now</a>
+                                <a href="Shop.aspx?Category=Bath Items">Shop now</a>
                             </div>
                         </div>
                     </div>
@@ -81,7 +81,7 @@
                             <div class="banner__text">
                                 <span>BabyHaven</span>
                                 <h1>Project SafeHaven</h1>
-                                <a href="#">need help with GBV?</a>
+                                <a href="Shop.aspx?Category=Project SafeHaven">need help with GBV?</a>
                             </div>
                         </div>
                         
@@ -106,25 +106,26 @@
                 <div class="col-lg-6 p-0">
                     <div class="discount__text">
                         <div class="discount__text__title">
-                            <span>Countdown</span>
+                            <h5>50% <span>OFF</span></h5>
                             <h2>Projects Day 2023</h2>
-                            <h5><span>Sale</span> 50%</h5>
+                            <h5><span>use code</span></h5>
+                            <h5 style="margin-top: 5px;">PROJECTSDAY</h5> 
                         </div>
                         <div class="discount__countdown" id="countdown-time">
                             <div class="countdown__item">
-                                <span>22</span>
+                                <span></span>
                                 <p>Days</p>
                             </div>
                             <div class="countdown__item">
-                                <span>18</span>
+                                <span></span>
                                 <p>Hour</p>
                             </div>
                             <div class="countdown__item">
-                                <span>46</span>
+                                <span></span>
                                 <p>Min</p>
                             </div>
                             <div class="countdown__item">
-                                <span>05</span>
+                                <span></span>
                                 <p>Sec</p>
                             </div>
                         </div>

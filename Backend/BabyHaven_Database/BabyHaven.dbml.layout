@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="BabyHaven">
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11.125, 8.5" name="BabyHaven">
   <DataContextMoniker Name="/BabyHavenDataContext" />
   <nestedChildShapes>
     <classShape Id="602e5329-4e03-4047-abe1-bf11133bcff6" absoluteBounds="0.5, 0.5, 2, 1.1939925130208333">
@@ -20,28 +20,10 @@
         <elementListCompartment Id="732f638d-03ed-4521-a00c-23d02f926267" absoluteBounds="0.515, 2.71, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="a4491b47-0cda-4eec-a9c7-14c9aec62fb9" absoluteBounds="5.125, 2.875, 2, 1.5785953776041666">
-      <DataClassMoniker Name="/BabyHavenDataContext/Custom_Prod" />
-      <nestedChildShapes>
-        <elementListCompartment Id="911d6f9d-fe72-46fe-ab37-1c9ff23b5e4d" absoluteBounds="5.14, 3.335, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
-      </nestedChildShapes>
-    </classShape>
-    <classShape Id="f7b26da6-4632-49c1-8f3a-9d6eb29d2ba9" absoluteBounds="4.75, 4.5, 2, 1.3862939453125">
-      <DataClassMoniker Name="/BabyHavenDataContext/HackFeedback" />
-      <nestedChildShapes>
-        <elementListCompartment Id="d25deef8-aa41-470d-ab64-b7825f441a79" absoluteBounds="4.7650000000000006, 4.96, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
-      </nestedChildShapes>
-    </classShape>
     <classShape Id="e0008936-1332-49a8-bacd-828c9566a420" absoluteBounds="6.25, 0.5, 2, 1.5785953776041666">
       <DataClassMoniker Name="/BabyHavenDataContext/Order_Item" />
       <nestedChildShapes>
         <elementListCompartment Id="9f9380fe-b984-4135-92b6-22db4a0aee60" absoluteBounds="6.265, 0.96, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
-      </nestedChildShapes>
-    </classShape>
-    <classShape Id="719d5c61-a200-40b9-b2cc-10c79413bd36" absoluteBounds="3, 3.125, 2, 2.9247054036458331">
-      <DataClassMoniker Name="/BabyHavenDataContext/Order_Table" />
-      <nestedChildShapes>
-        <elementListCompartment Id="94100fb2-af98-43e9-8a44-f8b9674444e3" absoluteBounds="3.015, 3.585, 1.9700000000000002, 2.364705403645833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
     <classShape Id="8db4d224-72e2-4027-a624-e61151656d12" absoluteBounds="0.5, 3.625, 2, 1.9631982421875">
@@ -66,6 +48,36 @@
       <DataClassMoniker Name="/BabyHavenDataContext/Haven" />
       <nestedChildShapes>
         <elementListCompartment Id="f255e04f-3fbb-4687-9e98-3eb0316a8b77" absoluteBounds="1.1400000000000001, 2.335, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="16050296-ad41-47ed-ad37-4ccb50c2f593" absoluteBounds="5.75, 5.875, 2, 1.1939925130208333">
+      <DataClassMoniker Name="/BabyHavenDataContext/Task_Table" />
+      <nestedChildShapes>
+        <elementListCompartment Id="7fa3fc88-184d-49c8-ab38-9bef2a052915" absoluteBounds="5.765, 6.335, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="d31facb2-5cb2-4943-b07e-1b58ca97cca9" absoluteBounds="8.875, 5.875, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/BabyHavenDataContext/TasksAssign" />
+      <nestedChildShapes>
+        <elementListCompartment Id="b274462b-36e6-4308-b993-16a6fb83f6b3" absoluteBounds="8.89, 6.335, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="c3395e60-f254-4550-bd40-f6a14d4bcc85" absoluteBounds="4.25, 3.75, 2, 3.1170068359375">
+      <DataClassMoniker Name="/BabyHavenDataContext/Order_Table" />
+      <nestedChildShapes>
+        <elementListCompartment Id="0a996c99-8996-4fdf-be6e-3089df13b6be" absoluteBounds="4.265, 4.21, 1.9700000000000002, 2.5570068359375" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="7bd9954e-4c11-4897-b196-0cdf9e98f6e6" absoluteBounds="2.375, 3.375, 2, 1.1939925130208333">
+      <DataClassMoniker Name="/BabyHavenDataContext/Subscription" />
+      <nestedChildShapes>
+        <elementListCompartment Id="30eba5a2-7275-44bf-aaae-3d569adbea05" absoluteBounds="2.3899999999999997, 3.835, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="ef43f743-459d-4b4d-b3b1-36a2c52c9827" absoluteBounds="5.25, 2.625, 2, 1.1939925130208333">
+      <DataClassMoniker Name="/BabyHavenDataContext/Subscription1" />
+      <nestedChildShapes>
+        <elementListCompartment Id="832a64a9-67ab-431f-bf43-0afe219e52eb" absoluteBounds="5.265, 3.085, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
   </nestedChildShapes>

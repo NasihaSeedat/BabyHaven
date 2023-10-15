@@ -122,7 +122,6 @@ ol {
     }
 
     .custom-gridview th {
-        background-color: #84B7EE; /* Light Blue */
         color: #ffffff; /* White Text */
     }
 
@@ -130,13 +129,29 @@ ol {
         background-color: #f0f0f0; /* Light Grayish White */
     }
 
-    .custom-gridview tr:nth-child(odd) {
-        background-color: #ffffff; /* White */
+.styled-dropdown {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+    width: 200px; /* Adjust the width as needed */
+}
+
+    /* Optional: Style the dropdown options */
+    .styled-dropdown option {
+        padding: 8px;
     }
 
-    .custom-gridview tr:hover {
-        background-color: #ADD8E6; /* Lighter Blue on Hover */
-    }
+.custom-gridview tr:nth-child(odd) {
+    background-color: #ffffff; /* White */
+}
+
+.custom-gridview tr:hover {
+    background-color: #84B7EE;
+    color: white;
+    transition: background-color 0.3s, color 0.3s; /* Add smooth transition */
+}
+
 .section-title {
     margin-bottom: 45px;
 }
@@ -756,13 +771,13 @@ ol {
         position: absolute;
         left: 50%;
         top: -38px;
-        height: 183px;
-        width: 183px;
+        height: 200px;
+        width: 200px;
         background: #ffffff;
         content: "";
         border-radius: 50%;
         z-index: -1;
-        margin-left: -91.5px;
+        margin-left: -98.5px;
     }
 
     .discount__text__title span {
@@ -1463,6 +1478,20 @@ ol {
     .btnFilter:hover {
         background: #84B7EE; /* Change the background color on hover to #84B7EE */
         color: #fff; /* Change the text color to white on hover */
+    }
+
+.quantity-textbox {
+    width: 80%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+    .quantity-textbox:focus {
+        outline: none;
+        border-color: #84B7EE; /* Change border color when focused */
     }
 
 .shop {
@@ -2689,6 +2718,23 @@ ol {
     }
 
     .checkout__form .checkout__form__input input::placeholder {
+        color: #666666;
+    }
+
+/* Apply styles for textarea in the checkout form */
+.checkout__form .checkout__form__input textarea {
+    border: 1px solid #e1e1e1;
+    border-radius: 2px;
+    margin-bottom: 25px;
+    font-size: 14px;
+    padding-left: 20px;
+    color: #666666;
+    padding: 10px 20px;
+}
+
+
+    /* Apply styles to the Notes placeholder */
+    .checkout__form .checkout__form__input textarea::placeholder {
         color: #666666;
     }
 
@@ -4248,6 +4294,8 @@ register__error {
                     border-radius: 50%;
                 }
 
+              
+
     .offcanvas__auth a {
         font-size: 15px;
         color: #111111;
@@ -4433,4 +4481,6 @@ register__error {
         width: 100%;
         font-size: 24px;
     }
+
+  
 }

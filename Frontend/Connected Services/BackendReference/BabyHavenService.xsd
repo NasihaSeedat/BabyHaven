@@ -98,6 +98,18 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+  <xs:element name="GetAllUsersAdmin">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAllUsersAdminResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/BabyHaven_Database" minOccurs="0" name="GetAllUsersAdminResult" nillable="true" type="q7:ArrayOfUser_Table" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
   <xs:element name="Register">
     <xs:complexType>
       <xs:sequence>
@@ -147,6 +159,75 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+  <xs:element name="AssignTask">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="adminId" type="xs:int" />
+        <xs:element minOccurs="0" name="taskDescription" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AssignTaskResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="MarkTaskCompleted">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="assignmentId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="MarkTaskCompletedResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="MarkTaskCompletedResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetTasksCount">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="AdminId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetTasksCountResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetTasksCountResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAssignedTasks">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="adminId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAssignedTasksResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q8="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="GetAssignedTasksResult" nillable="true" type="q8:ArrayOfKeyValueOfintstring" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAssignmentIdForTask">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="taskDescription" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAssignmentIdForTaskResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetAssignmentIdForTaskResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
   <xs:element name="SearchUsersByName">
     <xs:complexType>
       <xs:sequence>
@@ -157,7 +238,21 @@
   <xs:element name="SearchUsersByNameResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/BabyHaven_Database" minOccurs="0" name="SearchUsersByNameResult" nillable="true" type="q7:ArrayOfUser_Table" />
+        <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/BabyHaven_Database" minOccurs="0" name="SearchUsersByNameResult" nillable="true" type="q9:ArrayOfUser_Table" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SearchUsersByNameAdmins">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="searchQuery" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SearchUsersByNameAdminsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/BabyHaven_Database" minOccurs="0" name="SearchUsersByNameAdminsResult" nillable="true" type="q10:ArrayOfUser_Table" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -171,7 +266,7 @@
   <xs:element name="SearchProductsResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/BabyHaven_Database" minOccurs="0" name="SearchProductsResult" nillable="true" type="q8:ArrayOfProduct" />
+        <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/BabyHaven_Database" minOccurs="0" name="SearchProductsResult" nillable="true" type="q11:ArrayOfProduct" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -214,7 +309,7 @@
   <xs:element name="GetAllCartItemsForClientResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/BabyHaven_Database" minOccurs="0" name="GetAllCartItemsForClientResult" nillable="true" type="q9:ArrayOfCart" />
+        <xs:element xmlns:q12="http://schemas.datacontract.org/2004/07/BabyHaven_Database" minOccurs="0" name="GetAllCartItemsForClientResult" nillable="true" type="q12:ArrayOfCart" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -228,7 +323,7 @@
   <xs:element name="GetCartProductsResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/BabyHaven_Database" minOccurs="0" name="GetCartProductsResult" nillable="true" type="q10:ArrayOfProduct" />
+        <xs:element xmlns:q13="http://schemas.datacontract.org/2004/07/BabyHaven_Database" minOccurs="0" name="GetCartProductsResult" nillable="true" type="q13:ArrayOfProduct" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -382,7 +477,7 @@
   <xs:element name="GetallproductsResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/BabyHaven_Database" minOccurs="0" name="GetallproductsResult" nillable="true" type="q11:ArrayOfProduct" />
+        <xs:element xmlns:q14="http://schemas.datacontract.org/2004/07/BabyHaven_Database" minOccurs="0" name="GetallproductsResult" nillable="true" type="q14:ArrayOfProduct" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -396,7 +491,7 @@
   <xs:element name="getProductCatResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q12="http://schemas.datacontract.org/2004/07/BabyHaven_Database" minOccurs="0" name="getProductCatResult" nillable="true" type="q12:ArrayOfProduct" />
+        <xs:element xmlns:q15="http://schemas.datacontract.org/2004/07/BabyHaven_Database" minOccurs="0" name="getProductCatResult" nillable="true" type="q15:ArrayOfProduct" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -410,7 +505,7 @@
   <xs:element name="getSingleProdResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q13="http://schemas.datacontract.org/2004/07/BabyHaven_Database" minOccurs="0" name="getSingleProdResult" nillable="true" type="q13:Product" />
+        <xs:element xmlns:q16="http://schemas.datacontract.org/2004/07/BabyHaven_Database" minOccurs="0" name="getSingleProdResult" nillable="true" type="q16:Product" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -500,7 +595,7 @@
   <xs:element name="GetCartProductIdsResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q14="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="GetCartProductIdsResult" nillable="true" type="q14:ArrayOfint" />
+        <xs:element xmlns:q17="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="GetCartProductIdsResult" nillable="true" type="q17:ArrayOfint" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -508,7 +603,7 @@
     <xs:complexType>
       <xs:sequence>
         <xs:element minOccurs="0" name="userId" type="xs:int" />
-        <xs:element xmlns:q15="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="productIds" nillable="true" type="q15:ArrayOfint" />
+        <xs:element xmlns:q18="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="productIds" nillable="true" type="q18:ArrayOfint" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -531,6 +626,7 @@
         <xs:element minOccurs="0" name="city" nillable="true" type="xs:string" />
         <xs:element minOccurs="0" name="zipcode" nillable="true" type="xs:string" />
         <xs:element minOccurs="0" name="phoneno" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="note" nillable="true" type="xs:string" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -551,7 +647,7 @@
   <xs:element name="GetAllInvoicesResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q16="http://schemas.datacontract.org/2004/07/BabyHaven_Database" minOccurs="0" name="GetAllInvoicesResult" nillable="true" type="q16:ArrayOfOrder_Table" />
+        <xs:element xmlns:q19="http://schemas.datacontract.org/2004/07/BabyHaven_Database" minOccurs="0" name="GetAllInvoicesResult" nillable="true" type="q19:ArrayOfOrder_Table" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -565,7 +661,7 @@
   <xs:element name="GetInvoiceDetailsResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q17="http://schemas.datacontract.org/2004/07/BabyHaven_Database" minOccurs="0" name="GetInvoiceDetailsResult" nillable="true" type="q17:Order_Table" />
+        <xs:element xmlns:q20="http://schemas.datacontract.org/2004/07/BabyHaven_Database" minOccurs="0" name="GetInvoiceDetailsResult" nillable="true" type="q20:Order_Table" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -579,7 +675,7 @@
   <xs:element name="GetOrderItemsResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q18="http://schemas.datacontract.org/2004/07/BabyHaven_Database" minOccurs="0" name="GetOrderItemsResult" nillable="true" type="q18:ArrayOfOrder_Item" />
+        <xs:element xmlns:q21="http://schemas.datacontract.org/2004/07/BabyHaven_Database" minOccurs="0" name="GetOrderItemsResult" nillable="true" type="q21:ArrayOfOrder_Item" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -591,7 +687,7 @@
   <xs:element name="GetAllOrderItemsResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q19="http://schemas.datacontract.org/2004/07/BabyHaven_Database" minOccurs="0" name="GetAllOrderItemsResult" nillable="true" type="q19:ArrayOfOrder_Item" />
+        <xs:element xmlns:q22="http://schemas.datacontract.org/2004/07/BabyHaven_Database" minOccurs="0" name="GetAllOrderItemsResult" nillable="true" type="q22:ArrayOfOrder_Item" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -657,7 +753,7 @@
   <xs:element name="GetInvoicesForYearResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q20="http://schemas.datacontract.org/2004/07/BabyHaven_Database" minOccurs="0" name="GetInvoicesForYearResult" nillable="true" type="q20:ArrayOfOrder_Table" />
+        <xs:element xmlns:q23="http://schemas.datacontract.org/2004/07/BabyHaven_Database" minOccurs="0" name="GetInvoicesForYearResult" nillable="true" type="q23:ArrayOfOrder_Table" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -671,7 +767,7 @@
   <xs:element name="GetNumberOfUsersRegisteredPerDayInYearResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q21="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="GetNumberOfUsersRegisteredPerDayInYearResult" nillable="true" type="q21:ArrayOfKeyValueOfdateTimeint" />
+        <xs:element xmlns:q24="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="GetNumberOfUsersRegisteredPerDayInYearResult" nillable="true" type="q24:ArrayOfKeyValueOfdateTimeint" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -686,6 +782,30 @@
     <xs:complexType>
       <xs:sequence>
         <xs:element minOccurs="0" name="isSafeHavenSockResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Subscribe">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="email" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SubscribeResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSubscribedEmails">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSubscribedEmailsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q25="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="GetSubscribedEmailsResult" nillable="true" type="q25:ArrayOfstring" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>

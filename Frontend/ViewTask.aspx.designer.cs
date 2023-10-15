@@ -7,54 +7,47 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Frontend {
+namespace Frontend
+{
 
 
-    public partial class handprods {
+    public partial class ViewTask
+    {
 
         /// <summary>
-        /// form1 control.
+        /// Taskss control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlForm form1;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl Taskss;
 
         /// <summary>
-        /// txtMinQuantity control.
+        /// CheckBoxList1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtMinQuantity;
+        protected global::System.Web.UI.WebControls.CheckBoxList CheckBoxList1;
 
         /// <summary>
-        /// txtMaxQuantity control.
+        /// donetasks control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtMaxQuantity;
+        protected global::System.Web.UI.WebControls.Button donetasks;
 
         /// <summary>
-        /// btnFilter control.
+        /// notask control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnFilter;
-
-        /// <summary>
-        /// ProductGridView control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView ProductGridView;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl notask;
     }
 }

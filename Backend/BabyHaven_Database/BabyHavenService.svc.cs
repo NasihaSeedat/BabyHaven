@@ -9,104 +9,85 @@ using System.Security.Cryptography;
 using System.ServiceModel;
 using System.Text;
 
-namespace BabyHaven_Database
-{
+namespace BabyHaven_Database {
     // NOTE: You can use the "Rename" command on the "Refactor" menu to change the class name "BabyHavenService" in code, svc and config file together.
     // NOTE: In order to launch WCF Test Client for testing this service, please select BabyHavenService.svc or BabyHavenService.svc.cs at the Solution Explorer and start debugging.
-    public class BabyHavenService : IBabyHavenService
-    {
+    public class BabyHavenService : IBabyHavenService {
         BabyHavenDataContext db = new BabyHavenDataContext();
 
-        public Admin GetAdmin(int id)
-        {
+        public Admin GetAdmin(int id) {
             var adm = (from a in db.Admins
                        where a.U_Id.Equals(id)
                        select a).FirstOrDefault();
-            if (adm == null)
-            {
+            if(adm == null) {
                 return null;
             }
-            else
-            {
+            else {
                 return adm;
             }
         }
 
-        public Client GetClient(int id)
-        {
+        public Client GetClient(int id) {
             var cl = (from c in db.Clients
                       where c.U_Id.Equals(id)
                       select c).FirstOrDefault();
 
-            if (cl == null)
-            {
+            if(cl == null) {
                 return null;
             }
-            else
-            {
+            else {
                 return cl;
             }
         }
 
-        public User_Table GetEmail(string email, int id)
-        {
+        public User_Table GetEmail(string email, int id) {
             var us = (from e in db.User_Tables
                       where e.Email.Equals(email) && e.User_Id != id
                       select e).FirstOrDefault();
 
-            if (us == null)
-            {
+            if(us == null) {
                 return null;
             }
-            else
-            {
+            else {
                 return us;
             }
         }
 
-        public User_Table GetUser(int id)
-        {
+        public User_Table GetUser(int id) {
             var us = (from u in db.User_Tables
                       where u.User_Id.Equals(id)
                       select u).FirstOrDefault();
 
-            if (us != null)
-            {
+            if(us != null) {
                 return us;
 
             }
-            else
-            {
+            else {
                 return null;
             }
         }
 
-        public int Login(string email, string password)
-        {
+        public int Login(string email, string password) {
             var us = (from u in db.User_Tables
                       where u.Email.Equals(email) && u.Password.Equals(password)
                       select u).FirstOrDefault();
 
-            if (us != null)
-            {
+            if(us != null) {
                 return us.User_Id;
             }
-            else
-            {
+            else {
                 return 0;
             }
         }
 
 
-        public List<User_Table> GetAllUsers()
-        {
+        public List<User_Table> GetAllUsers() {
             var u = new List<User_Table>();
 
             dynamic users = (from us in db.User_Tables
                              select us);
 
-            foreach (User_Table n in users)
-            {
+            foreach(User_Table n in users) {
                 var use = GetUser(n.User_Id);
                 u.Add(use);
             }
@@ -116,16 +97,31 @@ namespace BabyHaven_Database
 
         }
 
-        public List<User_Table> GetAllUsersNotAdmin()
-        {
+        public List<User_Table> GetAllUsersNotAdmin() {
             var u = new List<User_Table>();
 
             dynamic users = (from us in db.User_Tables
                              where us.UserType.Equals(1)
                              select us);
 
-            foreach (User_Table n in users)
-            {
+            foreach(User_Table n in users) {
+                var use = GetUser(n.User_Id);
+                u.Add(use);
+            }
+
+            return u;
+
+
+        }
+
+        public List<User_Table> GetAllUsersAdmin() {
+            var u = new List<User_Table>();
+
+            dynamic users = (from us in db.User_Tables
+                             where us.UserType.Equals(0)
+                             select us);
+
+            foreach(User_Table n in users) {
                 var use = GetUser(n.User_Id);
                 u.Add(use);
             }
@@ -136,16 +132,13 @@ namespace BabyHaven_Database
         }
 
 
-        public bool Register(string email, string password, string name, string surname, string phoneno, string address, int usetype)
-        {
+        public bool Register(string email, string password, string name, string surname, string phoneno, string address, int usetype) {
             var use = (from u in db.User_Tables
                        where u.Email.Equals(email)
                        select u).FirstOrDefault();
 
-            if (use == null)
-            {
-                try
-                {
+            if(use == null) {
+                try {
                     var newUser = new User_Table
                     {
                         Email = email,
@@ -166,8 +159,7 @@ namespace BabyHaven_Database
                     var userr = (from u in db.User_Tables
                                  where u.Email.Equals(email)
                                  select u).FirstOrDefault();
-                    if (usetype == 0)
-                    {
+                    if(usetype == 0) {
                         Admin a = new Admin
                         {
                             U_Id = userr.User_Id,
@@ -175,8 +167,7 @@ namespace BabyHaven_Database
                         };
                         db.Admins.InsertOnSubmit(a);
                     }
-                    else
-                    {
+                    else {
                         Client c = new Client
                         {
                             U_Id = userr.User_Id,
@@ -187,57 +178,47 @@ namespace BabyHaven_Database
                     }
                     db.SubmitChanges();
                     return true;
-                }
-                catch (Exception ex)
-                {
+                } catch(Exception ex) {
                     ex.GetBaseException();
                     return false;
                 }
             }
-            else
-            {
+            else {
                 //already exists
                 return false;
             }
         }
 
-        public Product getSingleProd(int id)
-        {
+        public Product getSingleProd(int id) {
             var prod = (from p in db.Products
                         where p.Product_Id == id
                         select p).FirstOrDefault();
-            if (prod != null)
-            {
+            if(prod != null) {
                 return prod;
             }
-            else
-            {
+            else {
                 return null;
             }
 
         }
 
         //CART
-        public bool AddToCart(int uId, int pId)
-        {
+        public bool AddToCart(int uId, int pId) {
             var existingCartItem = (from c in db.Carts
                                     where c.U_Id == uId && c.P_Id == pId
                                     select c).FirstOrDefault();
 
-            if (existingCartItem != null)
-            {
+            if(existingCartItem != null) {
                 // Item already exists in the cart, increase quantity
                 existingCartItem.Cart_Quantity += 1;
             }
-            else
-            {
+            else {
                 // Item does not exist in the cart, add it
                 var product = (from p in db.Products
                                where p.Product_Id == pId
                                select p).FirstOrDefault();
 
-                if (product != null)
-                {
+                if(product != null) {
                     Cart newProduct = new Cart
                     {
                         U_Id = uId,
@@ -247,20 +228,16 @@ namespace BabyHaven_Database
 
                     db.Carts.InsertOnSubmit(newProduct);
                 }
-                else
-                {
+                else {
                     // Handle the case where the product does not exist
                     return false;
                 }
             }
 
             // Submit changes before calculating and updating the total cart price
-            try
-            {
+            try {
                 db.SubmitChanges();
-            }
-            catch (Exception ex)
-            {
+            } catch(Exception ex) {
                 Debug.WriteLine(ex.GetBaseException());
                 return false;
             }
@@ -270,38 +247,31 @@ namespace BabyHaven_Database
                              where c.U_Id == uId
                              select c).ToList();
 
-            foreach (var cartItem in cartItems)
-            {
+            foreach(var cartItem in cartItems) {
                 // Calculate Cart_Price based on the product's price
                 var product = (from p in db.Products
                                where p.Product_Id == cartItem.P_Id
                                select p).FirstOrDefault();
 
-                if (product != null)
-                {
+                if(product != null) {
                     cartItem.Cart_Price = product.P_Price * cartItem.Cart_Quantity;
                 }
-                else
-                {
+                else {
                     Debug.WriteLine("Product does not exist");
                     return false;
                 }
             }
 
-            try
-            {
+            try {
                 db.SubmitChanges();
                 return true;
-            }
-            catch (Exception ex)
-            {
+            } catch(Exception ex) {
                 Debug.WriteLine(ex.GetBaseException());
                 return false;
             }
         }
 
-        public decimal GetTotalCartPrice(int clientId)
-        {
+        public decimal GetTotalCartPrice(int clientId) {
             var cartPrices = db.Carts
                 .Where(cart => cart.U_Id == clientId)
                 .Select(cart => cart.Cart_Price);
@@ -313,8 +283,7 @@ namespace BabyHaven_Database
 
 
         // Returns all the items from a client
-        public List<Cart> GetAllCartItemsForClient(int ClientID)
-        {
+        public List<Cart> GetAllCartItemsForClient(int ClientID) {
             List<Cart> ShoppingCart = (from s in db.Carts
                                        where s.U_Id.Equals(ClientID)
                                        select s).ToList();
@@ -322,8 +291,7 @@ namespace BabyHaven_Database
             return ShoppingCart;
         }
 
-        public string GetProductImage(int productID)
-        {
+        public string GetProductImage(int productID) {
             // Find the product by ID
             Product product = db.Products.FirstOrDefault(p => p.Product_Id == productID);
 
@@ -331,8 +299,7 @@ namespace BabyHaven_Database
             return product != null ? product.P_Image : string.Empty;
         }
 
-        public string GetProductName(int productID)
-        {
+        public string GetProductName(int productID) {
             // Find the product by ID
             Product product = db.Products.FirstOrDefault(p => p.Product_Id == productID);
 
@@ -340,31 +307,26 @@ namespace BabyHaven_Database
             return product != null ? product.P_Name : string.Empty;
         }
 
-        public string GetProductCategory(int productID)
-        {
+        public string GetProductCategory(int productID) {
             var product = (from u in db.Products
                            where u.Product_Id.Equals(productID)
                            select u).FirstOrDefault();
 
-            if (product != null)
-            {
+            if(product != null) {
                 return product.P_Category;
             }
-            else
-            {
+            else {
                 return null;
             }
         }
 
-        public string GetProductDescription(int productID)
-        {
+        public string GetProductDescription(int productID) {
             Product product = db.Products.FirstOrDefault(p => p.Product_Id == productID);
 
             return product != null ? product.P_Description : string.Empty;
         }
 
-        public string GetUserName(int id)
-        {
+        public string GetUserName(int id) {
             var user = (from u in db.User_Tables
                         where u.User_Id.Equals(id)
                         select u).FirstOrDefault();
@@ -372,25 +334,21 @@ namespace BabyHaven_Database
             return user.Name;
         }
 
-        public string GetProductAvailability(int productID)
-        {
+        public string GetProductAvailability(int productID) {
             var product = (from u in db.Products
                            where u.Product_Id.Equals(productID)
                            select u).FirstOrDefault();
 
-            if (product.P_Quantity > 0)
-            {
+            if(product.P_Quantity > 0) {
                 return "In Stock";
             }
-            else
-            {
+            else {
                 return "Product Out of Stock";
             }
 
         }
 
-        public decimal GetProductPrice(int productID)
-        {
+        public decimal GetProductPrice(int productID) {
             // Find the product by ID
             Product product = db.Products.FirstOrDefault(p => p.Product_Id == productID);
 
@@ -398,48 +356,40 @@ namespace BabyHaven_Database
             return product != null ? product.P_Price : 0.0M;
         }
 
-        public List<Product> GetCartProducts(int id)
-        {
+        public List<Product> GetCartProducts(int id) {
             dynamic Pid = (from p in db.Carts
                            where p.U_Id == id
                            select p.P_Id).ToList();
 
             List<Product> products = new List<Product>();
-            foreach (int productid in Pid)
-            {
+            foreach(int productid in Pid) {
                 Product pr = getSingleProd(productid);
-                if (pr != null)
+                if(pr != null)
                     products.Add(pr);
             }
 
             return products;
         }
 
-        public int GetQuantity(int UserID, int ProductID)
-        {
+        public int GetQuantity(int UserID, int ProductID) {
             int Quantity = (from p in db.Carts
                             where p.U_Id == UserID && p.P_Id == ProductID
                             select p.Cart_Quantity).FirstOrDefault();
             return Quantity;
         }
 
-        public void AddRemoveProductFromCart(int pID, int uID, string action, int amount)
-        {
+        public void AddRemoveProductFromCart(int pID, int uID, string action, int amount) {
             var Pcart = (from p in db.Carts
                          where p.U_Id.Equals(uID) && p.P_Id.Equals(pID)
                          select p).FirstOrDefault();
-            if (action.Equals("ADD"))
-            {
+            if(action.Equals("ADD")) {
                 Pcart.Cart_Quantity += amount;
             }
-            else if (action.Equals("REMOVE"))
-            {
-                if (Pcart.Cart_Quantity == 1)
-                {
+            else if(action.Equals("REMOVE")) {
+                if(Pcart.Cart_Quantity == 1) {
                     db.Carts.DeleteOnSubmit(Pcart);
                 }
-                else if (Pcart.Cart_Quantity > 1)
-                {
+                else if(Pcart.Cart_Quantity > 1) {
                     Pcart.Cart_Quantity -= amount;
                 }
             }
@@ -447,42 +397,32 @@ namespace BabyHaven_Database
             // Calculate and update the Cart_Price
             Pcart.Cart_Price = Pcart.Cart_Quantity * GetProductPrice(Pcart.P_Id); // Assuming Product.Price is the price of a single product
 
-            try
-            {
+            try {
                 db.SubmitChanges();
-            }
-            catch (Exception e)
-            {
+            } catch(Exception e) {
                 e.GetBaseException();
             }
         }
 
 
-        public void RemoveProductFromCart(int productId, int userId, int quantityToRemove)
-        {
+        public void RemoveProductFromCart(int productId, int userId, int quantityToRemove) {
             // Retrieve the cart item for the specified product and user
             var cartItem = db.Carts.SingleOrDefault(c => c.P_Id == productId && c.U_Id == userId);
 
-            if (cartItem != null)
-            {
+            if(cartItem != null) {
                 // Check if the quantity to remove is less than or equal to the current cart quantity
-                if (quantityToRemove >= cartItem.Cart_Quantity)
-                {
+                if(quantityToRemove >= cartItem.Cart_Quantity) {
                     // Remove the entire cart item if the quantity to remove is greater or equal
                     db.Carts.DeleteOnSubmit(cartItem);
                 }
-                else
-                {
+                else {
                     // Reduce the cart quantity by the specified amount
                     cartItem.Cart_Quantity -= quantityToRemove;
                 }
 
-                try
-                {
+                try {
                     db.SubmitChanges();
-                }
-                catch (Exception ex)
-                {
+                } catch(Exception ex) {
                     // Handle any exceptions (e.g., log or throw)
                     throw ex;
                 }
@@ -491,16 +431,14 @@ namespace BabyHaven_Database
 
 
         //-------------------------------------------PRODUCTS------------------------------------------------------//
-        public List<Product> Getallproducts()
-        {
+        public List<Product> Getallproducts() {
             var prods = new List<Product>();
 
             dynamic prod = (from t in db.Products
                             where t.isActive.Equals(true)
                             select t);
 
-            foreach (Product p in prod)
-            {
+            foreach(Product p in prod) {
                 var ps = getSingleProd(p.Product_Id);
                 prods.Add(ps);
             }
@@ -509,8 +447,7 @@ namespace BabyHaven_Database
         }
 
         //get products from specific catogory
-        public List<Product> getProductCat(string cat)
-        {
+        public List<Product> getProductCat(string cat) {
             var products = (from p in db.Products
                             where p.P_Category.Equals(cat)&& p.isActive.Equals(true)
                             select p).ToList();
@@ -519,8 +456,7 @@ namespace BabyHaven_Database
         }
 
 
-        public string Addproducts(string name, string description, string cat, int quantity, decimal price, bool active, int prodID, int admin)
-        {
+        public string Addproducts(string name, string description, string cat, int quantity, decimal price, bool active, int prodID, int admin) {
             var prod = (from p in db.Products
                         where p.P_Name.Equals(name)
                         select p).FirstOrDefault();
@@ -531,8 +467,7 @@ namespace BabyHaven_Database
             var pr = getSingleProd(prodID);
             pr.Product_Id = prodID;
 
-            if (prod == null)
-            {
+            if(prod == null) {
                 var newprod = new Product
                 {
                     P_Name = name,
@@ -545,33 +480,27 @@ namespace BabyHaven_Database
                 };
                 db.Products.InsertOnSubmit(newprod);
 
-                try
-                {
+                try {
                     db.SubmitChanges();
                     return "added";
-                }
-                catch (Exception ex)
-                {
+                } catch(Exception ex) {
                     ex.GetBaseException();
                     return "not added";
                 }
             }
-            else
-            {
+            else {
                 return "error";
             }
         }
 
-        public bool AddAdmin(int user, string surname)
-        {
+        public bool AddAdmin(int user, string surname) {
 
 
             var ad = (from a in db.User_Tables
                       where a.User_Id.Equals(user)
                       select a).FirstOrDefault();
 
-            if (ad != null)
-            {
+            if(ad != null) {
                 var newAd = new Admin()
                 {
                     U_Id = user,
@@ -581,30 +510,24 @@ namespace BabyHaven_Database
 
                 ad.UserType = 0;
 
-                try
-                {
+                try {
                     db.SubmitChanges();
                     return true;
-                }
-                catch (Exception ex)
-                {
+                } catch(Exception ex) {
                     ex.GetBaseException();
                     return false;
                 }
             }
-            else
-            {
+            else {
                 return false;
             }
         }
 
-        public bool AddAdminTEST(int user)
-        {
+        public bool AddAdminTEST(int user) {
             var admin = (from a in db.User_Tables
                          where a.User_Id.Equals(user)
                          select a).FirstOrDefault();
-            if (admin != null)
-            {
+            if(admin != null) {
 
                 var newAd = new Admin()
                 {
@@ -613,49 +536,201 @@ namespace BabyHaven_Database
                 };
                 db.Admins.InsertOnSubmit(newAd);
                 admin.UserType = 0;
-                try
-                {
+                try {
                     db.SubmitChanges();
                     return true;
-                }
-                catch (Exception ex)
-                {
+                } catch(Exception ex) {
                     ex.GetBaseException();
                     return false;
                 }
             }
-            else
-            {
+            else {
                 return false;
             }
         }
 
 
 
+        ///////////// /******TASKS********//////////////////
+        private string connectionString = System.Configuration.ConfigurationManager.ConnectionStrings["BabyHavenDatabaseConnectionString"].ConnectionString;
+
+        public void AssignTask(int adminId, string taskDescription) {
+            using(SqlConnection connection = new SqlConnection(connectionString)) {
+                connection.Open();
+                using(SqlCommand command = new SqlCommand("INSERT INTO Task_Table (T_Des) VALUES (@TaskDescription); SELECT SCOPE_IDENTITY();", connection)) {
+                    command.Parameters.AddWithValue("@TaskDescription", taskDescription);
+                    int taskId = Convert.ToInt32(command.ExecuteScalar());
+
+                    // Now, insert the assignment into the TasksAssign table
+                    InsertTaskAssignment(taskId, adminId);
+                }
+            }
+        }
+
+        private void InsertTaskAssignment(int taskId, int adminId) {
+            using(SqlConnection connection = new SqlConnection(connectionString)) {
+                connection.Open();
+                using(SqlCommand command = new SqlCommand("INSERT INTO TasksAssign (T_Id, Admin_Id, T_Completed) VALUES (@TaskId, @AdminId, 0);", connection)) {
+                    command.Parameters.AddWithValue("@TaskId", taskId);
+                    command.Parameters.AddWithValue("@AdminId", adminId);
+                    command.ExecuteNonQuery();
+                }
+            }
+        }
+
+        public bool MarkTaskCompleted(int assignmentId) {
+
+            var t = (from i in db.TasksAssigns
+                     where i.T_Id.Equals(assignmentId)
+                     select i).FirstOrDefault();
+
+            if(t != null) {
+                t.T_Completed = true;
+
+                try {
+                    db.SubmitChanges();
+                    return true;
+                } catch(Exception e) {
+                    e.GetBaseException();
+                    return false;
+                }
+
+            }
+            else {
+                return false;
+            }
+
+     
+        }
 
 
+        
 
-        public List<User_Table> SearchUsersByName(string searchQuery)
+        public int GetTasksCount(int AdminId)
         {
+            var sel = (from c in db.TasksAssigns
+                       where c.Admin_Id.Equals(AdminId) && c.T_Completed.Equals(false)
+                       select c).ToList();
+
+
+            
+
+
+                return sel.Count();
+            
+        }
+
+        public Dictionary<int,string> GetAssignedTasks(int adminId)
+        {
+            var taskss = (from t in db.TasksAssigns
+                          where t.Admin_Id.Equals(adminId)
+                          && t.T_Completed.Equals(false)
+                          select t).ToList();
+
+            if (taskss.Any())
+            {
+                Dictionary<int, string> taskDescriptions = new Dictionary<int, string>();
+                foreach (var a in taskss)
+                {
+                    var TDes=(from tt in db.Task_Tables
+                               where tt.T_Id == a.T_Id
+                               select tt.T_Des).FirstOrDefault();
+                    if (TDes!=null)
+                    {
+                        taskDescriptions.Add(a.T_Id, TDes);
+                    
+
+                    }
+
+                }
+                return taskDescriptions;
+
+            }
+            else
+            {
+                return new Dictionary<int, string> ();
+            }
+
+
+        }
+
+
+        public int GetAssignmentIdForTask(string taskDescription)
+        {
+            var tasks = (from b in db.Task_Tables
+                         where b.T_Des.Equals(taskDescription)
+                         select b).FirstOrDefault();
+            int ids ;
+            if (tasks != null)
+            {
+                ids = tasks.T_Id;
+
+
+            }
+            else
+            {
+                ids = -1;
+            }
+
+            return ids;
+
+            
+        }
+
+
+
+        public List<User_Table> SearchUsersByName(string searchQuery) {
             List<User_Table> searchResults = new List<User_Table>();
 
             // Use the connection string from the 'BabyHavenDatabaseConnectionString' name
             string connString = System.Configuration.ConfigurationManager.ConnectionStrings["BabyHavenDatabaseConnectionString"].ConnectionString;
 
-            using (SqlConnection connection = new SqlConnection(connString))
-            {
+            using(SqlConnection connection = new SqlConnection(connString)) {
                 connection.Open();
 
-                string sqlQuery = "SELECT * FROM User_Table WHERE Name LIKE @SearchQuery";
+                string sqlQuery = "SELECT * FROM User_Table WHERE Name LIKE @SearchQuery AND UserType=1";
 
-                using (SqlCommand command = new SqlCommand(sqlQuery, connection))
-                {
+                using(SqlCommand command = new SqlCommand(sqlQuery, connection)) {
                     command.Parameters.AddWithValue("@SearchQuery", "%" + searchQuery + "%");
 
-                    using (SqlDataReader reader = command.ExecuteReader())
-                    {
-                        while (reader.Read())
-                        {
+                    using(SqlDataReader reader = command.ExecuteReader()) {
+                        while(reader.Read()) {
+                            // Create User_Table objects from the database results
+                            User_Table user = new User_Table
+                            {
+                                User_Id = Convert.ToInt32(reader["User_Id"]),
+                                Email = reader["Email"].ToString(),
+                                Name = reader["Name"].ToString(),
+                                Surname = reader["Surname"].ToString(),
+                                Phone_Number = reader["Phone_Number"].ToString()
+
+                            };
+
+                            searchResults.Add(user);
+                        }
+                    }
+                }
+            }
+
+            return searchResults;
+        }
+
+        public List<User_Table> SearchUsersByNameAdmins(string searchQuery) {
+            List<User_Table> searchResults = new List<User_Table>();
+
+            // Use the connection string from the 'BabyHavenDatabaseConnectionString' name
+            string connString = System.Configuration.ConfigurationManager.ConnectionStrings["BabyHavenDatabaseConnectionString"].ConnectionString;
+
+            using(SqlConnection connection = new SqlConnection(connString)) {
+                connection.Open();
+
+                string sqlQuery = "SELECT * FROM User_Table WHERE Name LIKE @SearchQuery AND UserType=0";
+
+                using(SqlCommand command = new SqlCommand(sqlQuery, connection)) {
+                    command.Parameters.AddWithValue("@SearchQuery", "%" + searchQuery + "%");
+
+                    using(SqlDataReader reader = command.ExecuteReader()) {
+                        while(reader.Read()) {
                             // Create User_Table objects from the database results
                             User_Table user = new User_Table
                             {
@@ -678,28 +753,24 @@ namespace BabyHaven_Database
 
 
 
-        public List<Product> SearchProducts(string searchQuery)
-        {
+        public List<Product> SearchProducts(string searchQuery) {
             List<Product> searchResults = new List<Product>();
 
             // Use the connection string from the 'BabyHavenDatabaseConnectionString' name
             string connString = System.Configuration.ConfigurationManager.ConnectionStrings["BabyHavenDatabaseConnectionString"].ConnectionString;
 
-            using (SqlConnection connection = new SqlConnection(connString))
-            {
+            using(SqlConnection connection = new SqlConnection(connString)) {
                 connection.Open();
 
-                string sqlQuery = "SELECT * FROM Product WHERE P_Name LIKE @SearchQuery";
+                string sqlQuery = "SELECT * FROM Product WHERE P_Name LIKE @SearchQuery AND isActive = 1";
 
 
-                using (SqlCommand command = new SqlCommand(sqlQuery, connection))
-                {
+                using(SqlCommand command = new SqlCommand(sqlQuery, connection)) {
                     command.Parameters.AddWithValue("@SearchQuery", "%" + searchQuery + "%");
 
-                    using (SqlDataReader reader = command.ExecuteReader())
-                    {
-                        while (reader.Read())
-                        {
+                    using(SqlDataReader reader = command.ExecuteReader()) {
+
+                        while(reader.Read()) {
 
                             Product prods = new Product
                             {
@@ -722,16 +793,13 @@ namespace BabyHaven_Database
         }
 
 
-        public bool AdminaddProds(string name, string description, string cat, int quantity, decimal price, bool active,string img)
-        {
+        public bool AdminaddProds(string name, string description, string cat, int quantity, decimal price, bool active, string img) {
             var prod = (from u in db.Products
                         where u.P_Name.Equals(name)
                         select u).FirstOrDefault();
 
-            if (prod == null)
-            {
-                try
-                {
+            if(prod == null) {
+                try {
                     var newProd = new Product
                     {
                         P_Name = name,
@@ -753,45 +821,36 @@ namespace BabyHaven_Database
 
 
                     return true;
-                }
-                catch (Exception ex)
-                {
+                } catch(Exception ex) {
                     ex.GetBaseException();
                     return false;
                 }
             }
-            else
-            {
+            else {
                 //already exists
                 return false;
             }
         }
 
 
-        public bool RemoveProds(int id)
-        {
+        public bool RemoveProds(int id) {
             var pro = (from u in db.Products
                        where u.Product_Id.Equals(id)
                        select u).FirstOrDefault();
 
-            if (pro != null)
-            {
+            if(pro != null) {
                 pro.isActive = false;
-                try
-                {
+                try {
                     db.SubmitChanges();
                     return true;
-                }
-                catch (Exception ex)
-                {
+                } catch(Exception ex) {
                     ex.GetBaseException();
                     return false;
                 }
 
 
             }
-            else
-            {
+            else {
                 //does not exist
                 return false;
             }
@@ -800,12 +859,10 @@ namespace BabyHaven_Database
 
 
 
-        public bool UpdateProduct(int id, string name, string description, string cat, int quantity, decimal price, bool active, string img)
-        {
+        public bool UpdateProduct(int id, string name, string description, string cat, int quantity, decimal price, bool active, string img) {
             var prod = getSingleProd(id);
 
-            if (prod != null)
-            {
+            if(prod != null) {
                 prod.P_Name = name;
                 prod.P_Description = description;
                 prod.P_Category = cat;
@@ -816,20 +873,16 @@ namespace BabyHaven_Database
                 prod.P_DateCreated = DateTime.Today;
 
 
-                try
-                {
+                try {
                     db.SubmitChanges();
                     return true;
-                }
-                catch (Exception e)
-                {
+                } catch(Exception e) {
                     e.GetBaseException();
                     return false;
                 }
 
             }
-            else
-            {
+            else {
                 //dne
                 return false;
             }
@@ -838,8 +891,7 @@ namespace BabyHaven_Database
 
 
         //---------------------------------------------INVOICES----------------------------------------------------//
-        public List<int> GetCartProductIds(int userId)
-        {
+        public List<int> GetCartProductIds(int userId) {
             List<int> cartProductIds = db.Carts
                     .Where(cart => cart.U_Id == userId)
                     .Select(cart => cart.P_Id)
@@ -848,23 +900,19 @@ namespace BabyHaven_Database
             return cartProductIds;
         }
 
-        public bool ProcessCheckout(int userId, List<int> productIds)
-        {
-            try
-            {
+        public bool ProcessCheckout(int userId, List<int> productIds) {
+            try {
                 // Get the cart items to remove
                 List<Cart> cartItemsToRemove = db.Carts
                     .Where(cart => cart.U_Id == userId && productIds.Contains(cart.P_Id))
                     .ToList();
 
                 // Update product quantities and remove cart items
-                foreach (var cartItem in cartItemsToRemove)
-                {
+                foreach(var cartItem in cartItemsToRemove) {
                     // Find the corresponding product
                     Product product = db.Products.FirstOrDefault(p => p.Product_Id == cartItem.P_Id);
 
-                    if (product != null)
-                    {
+                    if(product != null) {
                         // Reduce the product quantity
                         product.P_Quantity -= cartItem.Cart_Quantity;
 
@@ -877,9 +925,7 @@ namespace BabyHaven_Database
                 db.SubmitChanges();
 
                 return true;
-            }
-            catch (Exception ex)
-            {
+            } catch(Exception ex) {
                 ex.GetBaseException();
                 return false;
             }
@@ -887,10 +933,8 @@ namespace BabyHaven_Database
 
 
         public int Checkout(int userId, decimal total, string firstname, string lastname, string email,
-            string address, string city, string zipcode, string phoneno)
-        {
-            try
-            {
+            string address, string city, string zipcode, string phoneno, string note) {
+            try {
                 // Create a new order
                 var newOrder = new Order_Table
                 {
@@ -904,6 +948,7 @@ namespace BabyHaven_Database
                     O_City = city,
                     O_ZipCode = zipcode,
                     O_Phone_Number = phoneno,
+                    O_Note = note,
                 };
 
                 // Insert the new order into the database
@@ -912,10 +957,8 @@ namespace BabyHaven_Database
                 db.SubmitChanges();
                 List<Cart> items = GetAllCartItemsForClient(userId);
                 List<Order_Item> orderitems = new List<Order_Item>();
-                foreach (Cart i in items)
-                {
-                    orderitems.Add(new Order_Item
-                    {
+                foreach(Cart i in items) {
+                    orderitems.Add(new Order_Item {
                         Quantity = i.Cart_Quantity,
                         O_Id = newOrder.O_Id,
                         Product_Id = i.P_Id
@@ -925,9 +968,7 @@ namespace BabyHaven_Database
                 db.SubmitChanges();
                 // Return the generated Order_Id
                 return newOrder.O_Id;
-            }
-            catch (Exception ex)
-            {
+            } catch(Exception ex) {
                 ex.GetBaseException();
                 string errorMessage = ex.Message;
                 Debug.WriteLine(errorMessage);
@@ -935,18 +976,15 @@ namespace BabyHaven_Database
             }
         }
 
-        public List<Order_Table> GetAllInvoices(int userId)
-        {
+        public List<Order_Table> GetAllInvoices(int userId) {
             Admin a = GetAdmin(userId);
             List<Order_Table> orders;
-            if (a == null)
-            {
+            if(a == null) {
                 orders = (from u in db.Order_Tables
                           where u.UserId.Equals(userId)
                           select u).ToList();
             }
-            else
-            {
+            else {
 
                 orders = (from u in db.Order_Tables
                           select u).ToList();
@@ -957,62 +995,52 @@ namespace BabyHaven_Database
         }
 
 
-        public Order_Table GetInvoiceDetails(int id)
-        {
+        public Order_Table GetInvoiceDetails(int id) {
             var order = (from o in db.Order_Tables
                          where o.O_Id.Equals(id)
                          select o).FirstOrDefault();
 
-            if (order == null)
-            {
+            if(order == null) {
                 return null;
             }
-            else
-            {
+            else {
                 return order;
             }
         }
 
-        public List<Order_Item> GetOrderItems(int id)
-        {
+        public List<Order_Item> GetOrderItems(int id) {
             var item = (from i in db.Order_Items
                         where i.O_Id.Equals(id)
                         select i).ToList();
 
-            if (item == null)
-            {
+            if(item == null) {
                 return null;
             }
-            else
-            {
+            else {
                 return item;
             }
         }
 
         public List<Order_Item> GetAllOrderItems() {
             dynamic items = (from i in db.Order_Items
-                         select i).ToList();
+                             select i).ToList();
 
             return items;
         }
 
-        public int numDifferentProductsSold()
-        {
+        public int numDifferentProductsSold() {
             var distinctProductCount = (from p in db.Products
                                         select p.Product_Id).Distinct().Count();
 
-            if (distinctProductCount != 0)
-            {
+            if(distinctProductCount != 0) {
                 return distinctProductCount;
             }
-            else
-            {
+            else {
                 return 0;
             }
         }
 
-        public int numOnHand(int id)
-        {
+        public int numOnHand(int id) {
             var numOnHand = (from p in db.Products
                              where p.Product_Id == id
                              select p).FirstOrDefault();
@@ -1020,8 +1048,7 @@ namespace BabyHaven_Database
             return numOnHand.P_Quantity;
         }
 
-        public int regperday()
-        {
+        public int regperday() {
             var userCountByDay = (from u in db.User_Tables
                                   group u by u.Register_Date.Date into g
                                   select g.Count()).Sum();
@@ -1029,8 +1056,7 @@ namespace BabyHaven_Database
             return userCountByDay;
         }
 
-        public int GetProductCategoryReport(string cat)
-        {
+        public int GetProductCategoryReport(string cat) {
             var pc = (from o in db.Products
                       where o.P_Category.Equals(cat)
                       select o.P_Quantity).Sum();
@@ -1038,29 +1064,25 @@ namespace BabyHaven_Database
         }
 
 
-        public bool isSafeHavenSock(int uid)
-        {
+        public bool isSafeHavenSock(int uid) {
             var sock = (from s in db.Carts
                         where s.P_Id.Equals(60) && s.U_Id.Equals(uid)
                         select s).ToList();
 
-            if (sock.Count == 0)
-            {
-                 
+            if(sock.Count == 0) {
+
                 return false;
             }
-            else
-            {
+            else {
                 return true;
             }
         }
 
-        public List<Order_Table> GetInvoicesForYear(DateTime targetYear)
-        {
+        public List<Order_Table> GetInvoicesForYear(DateTime targetYear) {
             List<Order_Table> invoicesForYear = new List<Order_Table>();
 
             // Calculate the first day of the target year
-            DateTime startOfYear = new DateTime(targetYear.Year, 1, 1);
+            DateTime startOfYear = new DateTime(targetYear.Year, targetYear.Month, 1);
 
             // Calculate the first day of the next year
             DateTime startOfNextYear = startOfYear.AddYears(1);
@@ -1077,8 +1099,7 @@ namespace BabyHaven_Database
             return invoicesForYear;
         }
 
-        public Dictionary<DateTime, int> GetNumberOfUsersRegisteredPerDayInYear(int year)
-        {
+        public Dictionary<DateTime, int> GetNumberOfUsersRegisteredPerDayInYear(int year) {
             var userCountsPerDay = from u in db.User_Tables
                                    where u.Register_Date.Year == year
                                    group u by u.Register_Date.Date into dailyCounts
@@ -1091,6 +1112,38 @@ namespace BabyHaven_Database
             var result = userCountsPerDay.ToDictionary(x => x.Date, x => x.Count);
             return result;
         }
+
+        /*Subscription*/
+        public void Subscribe(string email) {
+            try {
+                // Create a new subscription record
+                var newSubscription = new Subscription
+                {
+                    S_Email = email
+                };
+
+                // Insert the new subscription record into the database
+                db.Subscriptions.InsertOnSubmit(newSubscription);
+
+                db.SubmitChanges();
+            } catch(Exception ex) {
+                ex.GetBaseException();
+                string errorMessage = ex.Message;
+                Debug.WriteLine(errorMessage);
+                // Handle any exceptions here (e.g., log the error, return an error code)
+            }
+        }
+
+        public List<string> GetSubscribedEmails() {
+            List<string> subscribedEmails = new List<string>();
+
+            // Fetch the email addresses from the Subscription table
+            subscribedEmails = db.Subscriptions.Select(s => s.S_Email).ToList();
+
+            return subscribedEmails;
+        }
+
+
 
     }
 }

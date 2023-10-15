@@ -58,7 +58,7 @@ namespace Frontend
                 int price = Convert.ToInt32(ProPrice.Value);
                 string prodcat = "";
                 int quant = Convert.ToInt32(ProQuantity.Value);
-                string procol = "";
+                
                 bool active;
                 if (ProActive.Value.Equals("1"))
                 {
