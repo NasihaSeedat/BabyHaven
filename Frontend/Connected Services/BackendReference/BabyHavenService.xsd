@@ -186,6 +186,20 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+  <xs:element name="GetTasksCount">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="AdminId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetTasksCountResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetTasksCountResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
   <xs:element name="GetAssignedTasks">
     <xs:complexType>
       <xs:sequence>
@@ -196,7 +210,7 @@
   <xs:element name="GetAssignedTasksResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q8="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="GetAssignedTasksResult" nillable="true" type="q8:ArrayOfstring" />
+        <xs:element xmlns:q8="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="GetAssignedTasksResult" nillable="true" type="q8:ArrayOfKeyValueOfintstring" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>

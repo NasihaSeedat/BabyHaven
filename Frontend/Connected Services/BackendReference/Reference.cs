@@ -970,11 +970,17 @@ namespace Frontend.BackendReference {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBabyHavenService/MarkTaskCompleted", ReplyAction="http://tempuri.org/IBabyHavenService/MarkTaskCompletedResponse")]
         System.Threading.Tasks.Task<bool> MarkTaskCompletedAsync(int assignmentId);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBabyHavenService/GetAssignedTasks", ReplyAction="http://tempuri.org/IBabyHavenService/GetAssignedTasksResponse")]
-        string[] GetAssignedTasks(int adminId);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBabyHavenService/GetTasksCount", ReplyAction="http://tempuri.org/IBabyHavenService/GetTasksCountResponse")]
+        int GetTasksCount(int AdminId);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBabyHavenService/GetTasksCount", ReplyAction="http://tempuri.org/IBabyHavenService/GetTasksCountResponse")]
+        System.Threading.Tasks.Task<int> GetTasksCountAsync(int AdminId);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBabyHavenService/GetAssignedTasks", ReplyAction="http://tempuri.org/IBabyHavenService/GetAssignedTasksResponse")]
-        System.Threading.Tasks.Task<string[]> GetAssignedTasksAsync(int adminId);
+        System.Collections.Generic.Dictionary<int, string> GetAssignedTasks(int adminId);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBabyHavenService/GetAssignedTasks", ReplyAction="http://tempuri.org/IBabyHavenService/GetAssignedTasksResponse")]
+        System.Threading.Tasks.Task<System.Collections.Generic.Dictionary<int, string>> GetAssignedTasksAsync(int adminId);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBabyHavenService/GetAssignmentIdForTask", ReplyAction="http://tempuri.org/IBabyHavenService/GetAssignmentIdForTaskResponse")]
         int GetAssignmentIdForTask(string taskDescription);
@@ -1356,11 +1362,19 @@ namespace Frontend.BackendReference {
             return base.Channel.MarkTaskCompletedAsync(assignmentId);
         }
         
-        public string[] GetAssignedTasks(int adminId) {
+        public int GetTasksCount(int AdminId) {
+            return base.Channel.GetTasksCount(AdminId);
+        }
+        
+        public System.Threading.Tasks.Task<int> GetTasksCountAsync(int AdminId) {
+            return base.Channel.GetTasksCountAsync(AdminId);
+        }
+        
+        public System.Collections.Generic.Dictionary<int, string> GetAssignedTasks(int adminId) {
             return base.Channel.GetAssignedTasks(adminId);
         }
         
-        public System.Threading.Tasks.Task<string[]> GetAssignedTasksAsync(int adminId) {
+        public System.Threading.Tasks.Task<System.Collections.Generic.Dictionary<int, string>> GetAssignedTasksAsync(int adminId) {
             return base.Channel.GetAssignedTasksAsync(adminId);
         }
         

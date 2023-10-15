@@ -54,6 +54,7 @@ line-height: 2;
     <form runat="server">
         <div align="center" runat="server" id="Taskss" visible="true">
         <h2 >Pending Tasks</h2><br />
+           
             <asp:CheckBoxList ID="CheckBoxList1" CssClass="checkbox-list"  runat="server" AutoPostBack="true"  OnSelectedIndexChanged="CheckBoxList1_SelectedIndexChanged" Width="570px" ></asp:CheckBoxList>
             <br />
             <asp:Button ID="donetasks" CssClass="btnInvoice" runat="server" Text="Done" OnClick="donetasks_Click" />

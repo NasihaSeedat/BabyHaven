@@ -118,10 +118,14 @@
                                     <li><a href="AdminNewsletter.aspx">Newsletter</a></li>
                                 </ul>
                             </li>
-
-
+                    
                             <li runat="server" id="TaskAdmins" visible="false">
+                                <div id="tas" runat="server" style="position: absolute;right: -12px;top: -11px;height: 18px;width: 18px;background: #111111;font-size: 10px;font-weight: 500;color: #ffffff;line-height: 18px;text-align: center;border-radius: 50%;">
+                                   <%int taskcount = getTaskCounts(); %>
+                                    <%=taskcount %>
+                                    </div>
                                 <a href="#">Tasks</a>
+
                                 <ul class="dropdown" id="DropTasks" visible="false" runat="server">
                                     <li><a href="DelegateTask.aspx">Delegate Tasks</a></li>
                                     <li><a href="ViewTask.aspx">View Tasks</a></li>
