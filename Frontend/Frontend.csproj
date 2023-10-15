@@ -76,6 +76,7 @@
     <Content Include="Action.aspx" />
     <Content Include="AddAdmin.aspx" />
     <Content Include="AddProduct.aspx" />
+    <Content Include="AdminNewsletter.aspx" />
     <Content Include="allprods.aspx" />
     <Content Include="Blog.aspx" />
     <Content Include="Cart.aspx" />
@@ -175,6 +176,13 @@
     </Compile>
     <Compile Include="AddProduct.aspx.designer.cs">
       <DependentUpon>AddProduct.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AdminNewsletter.aspx.cs">
+      <DependentUpon>AdminNewsletter.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminNewsletter.aspx.designer.cs">
+      <DependentUpon>AdminNewsletter.aspx</DependentUpon>
     </Compile>
     <Compile Include="allprods.aspx.cs">
       <DependentUpon>allprods.aspx</DependentUpon>

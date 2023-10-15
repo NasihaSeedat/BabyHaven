@@ -1211,6 +1211,18 @@ namespace Frontend.BackendReference {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBabyHavenService/isSafeHavenSock", ReplyAction="http://tempuri.org/IBabyHavenService/isSafeHavenSockResponse")]
         System.Threading.Tasks.Task<bool> isSafeHavenSockAsync(int uid);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBabyHavenService/Subscribe", ReplyAction="http://tempuri.org/IBabyHavenService/SubscribeResponse")]
+        void Subscribe(string email);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBabyHavenService/Subscribe", ReplyAction="http://tempuri.org/IBabyHavenService/SubscribeResponse")]
+        System.Threading.Tasks.Task SubscribeAsync(string email);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBabyHavenService/GetSubscribedEmails", ReplyAction="http://tempuri.org/IBabyHavenService/GetSubscribedEmailsResponse")]
+        string[] GetSubscribedEmails();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBabyHavenService/GetSubscribedEmails", ReplyAction="http://tempuri.org/IBabyHavenService/GetSubscribedEmailsResponse")]
+        System.Threading.Tasks.Task<string[]> GetSubscribedEmailsAsync();
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -1662,6 +1674,22 @@ namespace Frontend.BackendReference {
         
         public System.Threading.Tasks.Task<bool> isSafeHavenSockAsync(int uid) {
             return base.Channel.isSafeHavenSockAsync(uid);
+        }
+        
+        public void Subscribe(string email) {
+            base.Channel.Subscribe(email);
+        }
+        
+        public System.Threading.Tasks.Task SubscribeAsync(string email) {
+            return base.Channel.SubscribeAsync(email);
+        }
+        
+        public string[] GetSubscribedEmails() {
+            return base.Channel.GetSubscribedEmails();
+        }
+        
+        public System.Threading.Tasks.Task<string[]> GetSubscribedEmailsAsync() {
+            return base.Channel.GetSubscribedEmailsAsync();
         }
     }
 }
