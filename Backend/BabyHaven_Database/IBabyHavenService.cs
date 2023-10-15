@@ -149,7 +149,7 @@ namespace BabyHaven_Database
 
         [OperationContract]
         int Checkout(int userId, decimal total, string firstname, string lastname, string email,
-            string address, string city, string zipcode, string phoneno);
+            string address, string city, string zipcode, string phoneno, string note);
 
 
 

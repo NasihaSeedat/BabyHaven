@@ -75,8 +75,16 @@ namespace Frontend
             string o_phoneNumber = txtPhone.Value;
             string o_email = txtEmail.Value;
 
+            // Retrieve the notes from the textarea
+            string o_note = txtNotes.Value;
+
+            // If notes are not provided, set it to "No note provided"
+            if(string.IsNullOrEmpty(o_note)) {
+                o_note = "No note provided";
+            }
+
             // Call the Checkout function to create the order
-            int orderId = sc.Checkout(userId, total, o_firstName, o_lastName, o_email, o_address, o_city, o_zipCode, o_phoneNumber);
+            int orderId = sc.Checkout(userId, total, o_firstName, o_lastName, o_email, o_address, o_city, o_zipCode, o_phoneNumber, o_note);
 
             if(orderId > 0) {
                 // Call the ProcessCheckout method to clear the cart and move products to Purchase_History

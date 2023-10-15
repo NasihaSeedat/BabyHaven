@@ -17,7 +17,7 @@
         .invoice-label {
             font-size: 18px;
             color: #333;
-            font-weight: bold; /* Make labels stand out */
+            /*font-weight: bold;*/
         }
 
         .invoice-value {
@@ -36,6 +36,7 @@
                 font-weight: bold;
                 color: #007BFF;
             }
+
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
@@ -127,6 +128,14 @@
             </div>
         </div>
         <div class="row">
+            <div class="col-md-12">
+                <asp:Label ID="NoteLabel" runat="server" CssClass="invoice-label" Text="Note:" />
+            </div>
+            <div class="col-md-6">
+                <span class="invoice-value" runat="server" id="NoteValue"></span>
+            </div>
+        </div>
+        <div class="row">
             <div class="col-md-12 text-center">
                 <!-- Add a link to return to Invoices.aspx page -->
                 <asp:HyperLink ID="ReturnToInvoicesLink" runat="server" NavigateUrl="~/Invoices.aspx" CssClass="return-link" Text="Return to Invoices" />
@@ -145,7 +154,7 @@
                                         <th>Product</th>
                                         <th>Price</th>
                                         <th>Quantity</th>
-                                       
+
                                         <th></th>
                                     </tr>
                                 </thead>
@@ -179,4 +188,6 @@
                     </div>
                 </div>
             </div>
+        </div>
+    </section>
 </asp:Content>

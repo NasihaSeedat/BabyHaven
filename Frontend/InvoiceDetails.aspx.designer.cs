@@ -7,12 +7,10 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Frontend
-{
+namespace Frontend {
 
 
-    public partial class InvoiceDetails
-    {
+    public partial class InvoiceDetails {
 
         /// <summary>
         /// OrderIdLabel control.
@@ -193,6 +191,24 @@ namespace Frontend
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl TotalAmountValue;
+
+        /// <summary>
+        /// NoteLabel control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label NoteLabel;
+
+        /// <summary>
+        /// NoteValue control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl NoteValue;
 
         /// <summary>
         /// ReturnToInvoicesLink control.

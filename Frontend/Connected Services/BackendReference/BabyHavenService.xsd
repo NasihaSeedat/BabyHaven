@@ -612,6 +612,7 @@
         <xs:element minOccurs="0" name="city" nillable="true" type="xs:string" />
         <xs:element minOccurs="0" name="zipcode" nillable="true" type="xs:string" />
         <xs:element minOccurs="0" name="phoneno" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="note" nillable="true" type="xs:string" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
