@@ -8,17 +8,24 @@
     /* Style for checked items */
     .checked-item label {
         text-decoration: line-through;
+        margin-left: 10px;
         color: #e0dede; /* Gray out the text */
     }
 
     /* Border around CheckBoxList */
     .checkbox-list {
+       margin-left: 15px;
+      box-shadow: -1px 3px 12px rgba(132, 183, 238, 0.8);
         font-size: 18px;
-   
-      border: 1px solid #999; /* Add a border around the CheckBoxList */
-        padding: 100px; /* Optional: Add some padding for spacing */
+line-height: 2;
+  
+        padding: 200px 100px;/* Optional: Add some padding for spacing */
+        padding-left: 20px; 
     }
-
+    .checkbox-list label{
+         margin-left: 10px;
+    }
+   
  
 </style>
 
@@ -45,8 +52,10 @@
     </div>
     <!-- Breadcrumb End -->
     <form runat="server">
-        <div style="margin-left: 100px;" runat="server" id="Taskss" visible="true">
-            <asp:CheckBoxList ID="CheckBoxList1" CssClass="checkbox-list"  runat="server" AutoPostBack="true"  OnSelectedIndexChanged="CheckBoxList1_SelectedIndexChanged" Width="570px"></asp:CheckBoxList>
+        <div align="center" runat="server" id="Taskss" visible="true">
+        <h2 >Pending Tasks</h2><br />
+            <asp:CheckBoxList ID="CheckBoxList1" CssClass="checkbox-list"  runat="server" AutoPostBack="true"  OnSelectedIndexChanged="CheckBoxList1_SelectedIndexChanged" Width="570px" ></asp:CheckBoxList>
+            <br />
             <asp:Button ID="donetasks" CssClass="btnInvoice" runat="server" Text="Done" OnClick="donetasks_Click" />
         </div>
 

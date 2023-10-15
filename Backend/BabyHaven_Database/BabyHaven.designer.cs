@@ -63,14 +63,17 @@ namespace BabyHaven_Database
     partial void InsertOrder_Table(Order_Table instance);
     partial void UpdateOrder_Table(Order_Table instance);
     partial void DeleteOrder_Table(Order_Table instance);
-        #endregion
 
-        public BabyHavenDataContext() :
-        base(global::System.Configuration.ConfigurationManager.ConnectionStrings["BabyHavenDatabaseConnectionString"].ConnectionString, mappingSource) {
-            OnCreated();
-        }
+    #endregion
+		
+		public BabyHavenDataContext() : 
+				base(global::System.Configuration.ConfigurationManager.ConnectionStrings["BabyHavenDatabaseConnectionString"].ConnectionString, mappingSource)
+		{
+			OnCreated();
+		}
+		
+		public BabyHavenDataContext(string connection) : 
 
-        public BabyHavenDataContext(string connection) : 
 				base(connection, mappingSource)
 		{
 			OnCreated();
@@ -787,6 +790,7 @@ namespace BabyHaven_Database
 		public event PropertyChangingEventHandler PropertyChanging;
 		
 		public event PropertyChangedEventHandler PropertyChanged;
+
 		
 		protected virtual void SendPropertyChanging()
 		{
@@ -803,6 +807,7 @@ namespace BabyHaven_Database
 				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
 			}
 		}
+
 	}
 	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Product")]
