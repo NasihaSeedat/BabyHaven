@@ -63,17 +63,17 @@ namespace BabyHaven_Database
     partial void InsertOrder_Table(Order_Table instance);
     partial void UpdateOrder_Table(Order_Table instance);
     partial void DeleteOrder_Table(Order_Table instance);
+    partial void InsertSubscription(Subscription instance);
+    partial void UpdateSubscription(Subscription instance);
+    partial void DeleteSubscription(Subscription instance);
+        #endregion
 
-    #endregion
-		
-		public BabyHavenDataContext() : 
-				base(global::System.Configuration.ConfigurationManager.ConnectionStrings["BabyHavenDatabaseConnectionString"].ConnectionString, mappingSource)
-		{
-			OnCreated();
-		}
-		
-		public BabyHavenDataContext(string connection) : 
+        public BabyHavenDataContext() :
+        base(global::System.Configuration.ConfigurationManager.ConnectionStrings["BabyHavenDatabaseConnectionString"].ConnectionString, mappingSource) {
+            OnCreated();
+        }
 
+        public BabyHavenDataContext(string connection) : 
 				base(connection, mappingSource)
 		{
 			OnCreated();
@@ -182,6 +182,14 @@ namespace BabyHaven_Database
 			get
 			{
 				return this.GetTable<Order_Table>();
+			}
+		}
+		
+		public System.Data.Linq.Table<Subscription> Subscriptions
+		{
+			get
+			{
+				return this.GetTable<Subscription>();
 			}
 		}
 	}
@@ -790,7 +798,6 @@ namespace BabyHaven_Database
 		public event PropertyChangingEventHandler PropertyChanging;
 		
 		public event PropertyChangedEventHandler PropertyChanged;
-
 		
 		protected virtual void SendPropertyChanging()
 		{
@@ -807,7 +814,6 @@ namespace BabyHaven_Database
 				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
 			}
 		}
-
 	}
 	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Product")]
@@ -1925,6 +1931,92 @@ namespace BabyHaven_Database
 					this._UserId = value;
 					this.SendPropertyChanged("UserId");
 					this.OnUserIdChanged();
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Subscription")]
+	public partial class Subscription : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _S_Id;
+		
+		private string _S_Email;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnS_IdChanging(int value);
+    partial void OnS_IdChanged();
+    partial void OnS_EmailChanging(string value);
+    partial void OnS_EmailChanged();
+    #endregion
+		
+		public Subscription()
+		{
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_S_Id", DbType="Int NOT NULL", IsPrimaryKey=true)]
+		public int S_Id
+		{
+			get
+			{
+				return this._S_Id;
+			}
+			set
+			{
+				if ((this._S_Id != value))
+				{
+					this.OnS_IdChanging(value);
+					this.SendPropertyChanging();
+					this._S_Id = value;
+					this.SendPropertyChanged("S_Id");
+					this.OnS_IdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_S_Email", DbType="VarChar(100) NOT NULL", CanBeNull=false)]
+		public string S_Email
+		{
+			get
+			{
+				return this._S_Email;
+			}
+			set
+			{
+				if ((this._S_Email != value))
+				{
+					this.OnS_EmailChanging(value);
+					this.SendPropertyChanging();
+					this._S_Email = value;
+					this.SendPropertyChanged("S_Email");
+					this.OnS_EmailChanged();
 				}
 			}
 		}

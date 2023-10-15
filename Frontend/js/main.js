@@ -164,7 +164,7 @@ Created: Colorib
 
     // Uncomment below and use your date //
 
-    var timerdate = "2023/10/18"
+    var timerdate = "2023/10/19"
 
 	$("#countdown-time").countdown(timerdate, function(event) {
         $(this).html(event.strftime("<div class='countdown__item'><span>%D</span> <p>Day</p> </div>" + "<div class='countdown__item'><span>%H</span> <p>Hour</p> </div>" + "<div class='countdown__item'><span>%M</span> <p>Min</p> </div>" + "<div class='countdown__item'><span>%S</span> <p>Sec</p> </div>"));
