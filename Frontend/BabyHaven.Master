@@ -24,6 +24,23 @@
     <link rel="stylesheet" href="css/slicknav.min.css" type="text/css">
     <link rel="stylesheet" href="css/style.css" type="text/css">
 
+    <style>
+    .header__menu ul {
+        padding: 0;
+        list-style: none;
+        display: flex;
+        flex-wrap: wrap; /* Allow items to wrap to the next line if needed */
+    }
+
+    .header__menu ul li {
+        white-space: nowrap; /* Prevent text from wrapping */
+        margin-right: 20px; /* Adjust the spacing between tabs */
+    }
+
+
+</style>
+
+
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
 </head>
@@ -87,7 +104,7 @@
                             <li id="invoices" visible="true" runat="server">
                                 <a href="Invoices.aspx">Invoices</a>
                                 <ul class="dropdown" id="dropInvoices" visible="false" runat="server">
-                                    <li><a href="ProjSafeInvoice.aspx">SafeHaven Invoices</a></li>
+                                    <li><a href="ProjSafeInvoice.aspx">SafeHaven</a></li>
                                 </ul>
 
                             </li>
