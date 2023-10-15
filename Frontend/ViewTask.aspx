@@ -3,39 +3,42 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 
     <style>
-   
+        .checked-item label {
+            position: relative;
+            text-decoration: line-through;
+            margin-left: 12px;
+            padding: 10px;
+            color: #e0dede;
+            font-size: 18px;
+            line-height: 1.6;
+            cursor: pointer;
+        }
 
-    /* Style for checked items */
-    .checked-item label {
-        text-decoration: line-through;
-        margin-left: 10px;
-        color: #e0dede; /* Gray out the text */
-    }
+        .checkbox-list {
+            margin-left: 15px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            font-size: 18px;
+            line-height: 2;
+            padding: 200px 100px;
+            padding-left: 20px;
+        }
 
-    /* Border around CheckBoxList */
-    .checkbox-list {
-       margin-left: 15px;
-      box-shadow: -1px 3px 12px rgba(132, 183, 238, 0.8);
-        font-size: 18px;
-line-height: 2;
-  
-        padding: 200px 100px;/* Optional: Add some padding for spacing */
-        padding-left: 20px; 
-    }
-    .checkbox-list label{
-         margin-left: 10px;
-    }
-   
- 
-</style>
+            .checkbox-list label {
+                margin-left: 12px;
+                padding: 10px;
+                font-size: 18px;
+                line-height: 1.6;
+                cursor: pointer;
+            }
 
-
-
-
-
-
+        .checkbox-list input[type="checkbox"] {
+            margin-left: 20px;
+        }
+    </style>
 
 </asp:Content>
+
+
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <!-- Breadcrumb Begin -->
     <div class="breadcrumb-option">
@@ -51,11 +54,16 @@ line-height: 2;
         </div>
     </div>
     <!-- Breadcrumb End -->
+
+
     <form runat="server">
         <div align="center" runat="server" id="Taskss" visible="true">
-        <h2 >Pending Tasks</h2><br />
-           
-            <asp:CheckBoxList ID="CheckBoxList1" CssClass="checkbox-list"  runat="server" AutoPostBack="true"  OnSelectedIndexChanged="CheckBoxList1_SelectedIndexChanged" Width="570px" ></asp:CheckBoxList>
+            <div class="task" style="margin-top: 50px;">
+                <h3>Pending Tasks</h3>
+            </div>
+            <br />
+
+            <asp:CheckBoxList ID="CheckBoxList1" CssClass="checkbox-list" runat="server" AutoPostBack="true" OnSelectedIndexChanged="CheckBoxList1_SelectedIndexChanged" Width="570px"></asp:CheckBoxList>
             <br />
             <asp:Button ID="donetasks" CssClass="btnInvoice" runat="server" Text="Done" OnClick="donetasks_Click" />
         </div>
