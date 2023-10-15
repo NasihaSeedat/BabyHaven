@@ -15,17 +15,23 @@ namespace Frontend
             if (!IsPostBack)
             {
                 int adminId = Convert.ToInt32(Session["LoggedInUserID"]); ;
-                String[] assignedTasks = sr.GetAssignedTasks(adminId);
-                if (!assignedTasks.Length.Equals(0))
+               Dictionary<int,string> assignedTasks = sr.GetAssignedTasks(adminId); 
+                if (assignedTasks.Count>0)
                 {
-                    foreach (string td in assignedTasks)
+                    foreach (KeyValuePair<int, string> td in assignedTasks)
                     {
-                        ListItem item = new ListItem(td);
-                        string idd = Convert.ToString(sr.GetAssignmentIdForTask(td));
-                        item.Attributes["AssignmentId"] = idd;
+                        //Dictionary<int, string> item = new Dictionary<int, string>(td.Key, Convert.ToString(td.Value));
+                        //string idd = Convert.ToString(sr.GetAssignmentIdForTask(td));
+                        //item.Attributes["AssignmentId"] = idd;
 
-                        CheckBoxList1.Items.Add(item);
+                        //CheckBoxList1.Items.Add(item);
+                        
+                        CheckBoxList1.Items.Add(td.Value);
+                        
+
                     }
+
+                  
                 }
                 else
                 {
@@ -62,7 +68,7 @@ namespace Frontend
             {
                 if (item.Selected)
                 {
-                    
+                   
                     string idd = Convert.ToString(sr.GetAssignmentIdForTask(Convert.ToString(item)));
 
                     item.Attributes["AssignmentId"] = idd;

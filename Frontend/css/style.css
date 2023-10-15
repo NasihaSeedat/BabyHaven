@@ -4294,6 +4294,8 @@ register__error {
                     border-radius: 50%;
                 }
 
+              
+
     .offcanvas__auth a {
         font-size: 15px;
         color: #111111;
@@ -4479,4 +4481,6 @@ register__error {
         width: 100%;
         font-size: 24px;
     }
+
+  
 }

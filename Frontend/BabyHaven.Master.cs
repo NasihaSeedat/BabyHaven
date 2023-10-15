@@ -32,7 +32,7 @@ namespace Frontend
             //    totalItems = 0;
             //}
 
-
+           
 
             if (Session["LoggedInUserType"] != null && Session["LoggedInUserType"].Equals(0))
             {
@@ -44,6 +44,7 @@ namespace Frontend
                 TaskAdmins.Visible = true;
                 DropTasks.Visible = true;
                 //reports.Visible = true;
+                getTaskCounts();
             }
             else if(Session["LoggedInUserType"] == null && Session["LoggedInUserID"]==null)
             {
@@ -79,6 +80,32 @@ namespace Frontend
             }
 
             return totalItems;
+        }
+
+        public int getTaskCounts()
+        {
+            int UsId;
+           
+            if (Session["LoggedInUserId"] != null)
+            {
+                
+                UsId = Convert.ToInt32(Session["LoggedInUserId"]);
+                
+                int count = sr.GetTasksCount(UsId);
+                if (count == 0)
+                {
+                    tas.Visible = false;
+                }
+                
+                return count;
+            }
+            else
+            {
+                tas.Visible = false;
+                return 0;
+            }
+          
+         
         }
 
         protected void btn_Subscribe(object sender, EventArgs e)

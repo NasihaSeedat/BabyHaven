@@ -58,9 +58,11 @@ namespace BabyHaven_Database
         void AssignTask(int adminId, string taskDescription);
         [OperationContract]
         bool MarkTaskCompleted(int assignmentId);
+        [OperationContract]
+        int GetTasksCount(int AdminId);
 
         [OperationContract]
-        List<string> GetAssignedTasks(int adminId);
+        Dictionary<int, string> GetAssignedTasks(int adminId);
 
         [OperationContract]
         int GetAssignmentIdForTask(string taskDescription);

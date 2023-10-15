@@ -711,96 +711,75 @@ namespace BabyHaven_Database
                 return false;
             }
 
-            //using (SqlConnection connection = new SqlConnection(connectionString))
-            //{
-            //    connection.Open();
-            //    using (SqlCommand command = new SqlCommand("UPDATE TasksAssign SET T_Completed = 1 WHERE A_Id = @AssignmentId;", connection))
-            //    {
-            //        command.Parameters.AddWithValue("@AssignmentId", assignmentId);
-            //        command.ExecuteNonQuery();
-            //    }
-            //}
+     
         }
 
-        //public List<TasksAssign> GetAssignedTasks(int adminId)
-        //{
-        //    List<TasksAssign> assignedTasks = new List<TasksAssign>();
+        
 
-        //    string queryString = "SELECT A_Id, T_Id, T_Completed FROM TasksAssign " +
-        //                        "WHERE Admin_Id = @AdminId";
-
-        //    using (SqlConnection connection = new SqlConnection(connectionString))
-        //    using (SqlCommand command = new SqlCommand(queryString, connection))
-        //    {
-        //        command.Parameters.AddWithValue("@AdminId", adminId);
-        //        connection.Open();
-        //        using (SqlDataReader reader = command.ExecuteReader())
-        //        {
-        //            while (reader.Read())
-        //            {
-        //                TasksAssign task = new TasksAssign
-        //                {
-        //                    A_Id = reader.GetInt32(0),
-        //                    T_Id = reader.GetInt32(1),
-        //                       T_Completed = reader.GetBoolean(2)
-        //                };
-        //                assignedTasks.Add(task);
-        //            }
-        //        }
-        //    }
-
-        //    return assignedTasks;
-        //}
-
-        public List<string> GetAssignedTasks(int adminId)
+        public int GetTasksCount(int AdminId)
         {
-            List<string> assignedTaskDescriptions = new List<string>();
+            var sel = (from c in db.TasksAssigns
+                       where c.Admin_Id.Equals(AdminId) && c.T_Completed.Equals(false)
+                       select c).ToList();
 
-            string queryString = "SELECT T.T_Des " +
-                                "FROM TasksAssign AS A " +
-                                "INNER JOIN Task_Table AS T ON A.T_Id = T.T_Id " +
-                                "WHERE A.Admin_Id = @AdminId AND A.T_Completed=0";
+            
 
-            using (SqlConnection connection = new SqlConnection(connectionString))
-            using (SqlCommand command = new SqlCommand(queryString, connection))
+                return sel.Count();
+            
+        }
+
+        public Dictionary<int,string> GetAssignedTasks(int adminId)
+        {
+            var taskss = (from t in db.TasksAssigns
+                          where t.Admin_Id.Equals(adminId)
+                          && t.T_Completed.Equals(false)
+                          select t).ToList();
+
+            if (taskss.Any())
             {
-                command.Parameters.AddWithValue("@AdminId", adminId);
-                connection.Open();
-                using (SqlDataReader reader = command.ExecuteReader())
+                Dictionary<int, string> taskDescriptions = new Dictionary<int, string>();
+                foreach (var a in taskss)
                 {
-                    while (reader.Read())
+                    var TDes=(from tt in db.Task_Tables
+                               where tt.T_Id == a.T_Id
+                               select tt.T_Des).FirstOrDefault();
+                    if (TDes!=null)
                     {
-                        string taskDescription = reader.GetString(0);
-                        assignedTaskDescriptions.Add(taskDescription);
+                        taskDescriptions.Add(a.T_Id, TDes);
+                    
                     }
+
                 }
+                return taskDescriptions;
+
+            }
+            else
+            {
+                return new Dictionary<int, string> ();
             }
 
-            return assignedTaskDescriptions;
+
         }
 
         public int GetAssignmentIdForTask(string taskDescription)
         {
-            int assignmentId = -1; // Default value indicating no assignment found
-
-            using (SqlConnection connection = new SqlConnection(connectionString))
+            var tasks = (from b in db.Task_Tables
+                         where b.T_Des.Equals(taskDescription)
+                         select b).FirstOrDefault();
+            int ids ;
+            if (tasks != null)
             {
-                connection.Open();
-                using (SqlCommand command = new SqlCommand("SELECT T_Id FROM Task_Table WHERE T_Des = @TaskDescription", connection))
-                {
-                    command.Parameters.AddWithValue("@TaskDescription", taskDescription);
+                ids = tasks.T_Id;
 
-                    using (SqlDataReader reader = command.ExecuteReader())
-                    {
-                        if (reader.Read())
-                        {
-                            assignmentId = reader.GetInt32(0);
-                        }
-                    }
-                }
+            }
+            else
+            {
+                ids = -1;
             }
 
-            return assignmentId;
+            return ids;
+
+            
         }
 
 
