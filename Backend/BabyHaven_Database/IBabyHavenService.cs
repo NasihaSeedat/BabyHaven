@@ -95,6 +95,11 @@ namespace BabyHaven_Database
         [OperationContract]
         int GetQuantity(int UserID, int ProductID);
 
+
+
+        
+
+
         [OperationContract]
         void AddRemoveProductFromCart(int pID, int uID, string action, int amount);
 
@@ -153,8 +158,8 @@ namespace BabyHaven_Database
         int Checkout(int userId, decimal total, string firstname, string lastname, string email,
             string address, string city, string zipcode, string phoneno, string note);
 
-
-
+        [OperationContract]
+        int GetProductQuantityInCart(int orderId, int productId);
         [OperationContract]
         List<Order_Table> GetAllInvoices(int userId);
 

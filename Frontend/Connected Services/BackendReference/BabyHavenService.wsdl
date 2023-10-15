@@ -266,6 +266,12 @@
   <wsdl:message name="IBabyHavenService_Checkout_OutputMessage">
     <wsdl:part name="parameters" element="tns:CheckoutResponse" />
   </wsdl:message>
+  <wsdl:message name="IBabyHavenService_GetProductQuantityInCart_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetProductQuantityInCart" />
+  </wsdl:message>
+  <wsdl:message name="IBabyHavenService_GetProductQuantityInCart_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetProductQuantityInCartResponse" />
+  </wsdl:message>
   <wsdl:message name="IBabyHavenService_GetAllInvoices_InputMessage">
     <wsdl:part name="parameters" element="tns:GetAllInvoices" />
   </wsdl:message>
@@ -516,6 +522,10 @@
     <wsdl:operation name="Checkout">
       <wsdl:input wsaw:Action="http://tempuri.org/IBabyHavenService/Checkout" message="tns:IBabyHavenService_Checkout_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IBabyHavenService/CheckoutResponse" message="tns:IBabyHavenService_Checkout_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetProductQuantityInCart">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBabyHavenService/GetProductQuantityInCart" message="tns:IBabyHavenService_GetProductQuantityInCart_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBabyHavenService/GetProductQuantityInCartResponse" message="tns:IBabyHavenService_GetProductQuantityInCart_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="GetAllInvoices">
       <wsdl:input wsaw:Action="http://tempuri.org/IBabyHavenService/GetAllInvoices" message="tns:IBabyHavenService_GetAllInvoices_InputMessage" />
@@ -952,6 +962,15 @@
     </wsdl:operation>
     <wsdl:operation name="Checkout">
       <soap:operation soapAction="http://tempuri.org/IBabyHavenService/Checkout" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetProductQuantityInCart">
+      <soap:operation soapAction="http://tempuri.org/IBabyHavenService/GetProductQuantityInCart" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

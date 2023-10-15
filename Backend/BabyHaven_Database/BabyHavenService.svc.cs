@@ -404,6 +404,27 @@ namespace BabyHaven_Database {
             }
         }
 
+        public int GetProductQuantityInCart(int orderId, int productId)
+        {
+          
+
+            int quantity = 0; // Default quantity is 0
+
+
+            
+                // Assuming you have an Order_Item table that stores items in completed orders
+                var orderItem = db.Order_Items
+                    .Where(item => item.O_Id == orderId /* Assuming userId is the order ID */ && item.Product_Id == productId)
+                    .FirstOrDefault();
+
+                if (orderItem != null)
+                {
+                    quantity = orderItem.Quantity; // Get the quantity from the order item
+                }
+            
+
+            return quantity;
+        }
 
         public void RemoveProductFromCart(int productId, int userId, int quantityToRemove) {
             // Retrieve the cart item for the specified product and user

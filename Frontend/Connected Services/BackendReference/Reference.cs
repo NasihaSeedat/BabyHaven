@@ -1150,6 +1150,12 @@ namespace Frontend.BackendReference {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBabyHavenService/Checkout", ReplyAction="http://tempuri.org/IBabyHavenService/CheckoutResponse")]
         System.Threading.Tasks.Task<int> CheckoutAsync(int userId, decimal total, string firstname, string lastname, string email, string address, string city, string zipcode, string phoneno, string note);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBabyHavenService/GetProductQuantityInCart", ReplyAction="http://tempuri.org/IBabyHavenService/GetProductQuantityInCartResponse")]
+        int GetProductQuantityInCart(int orderId, int productId);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBabyHavenService/GetProductQuantityInCart", ReplyAction="http://tempuri.org/IBabyHavenService/GetProductQuantityInCartResponse")]
+        System.Threading.Tasks.Task<int> GetProductQuantityInCartAsync(int orderId, int productId);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBabyHavenService/GetAllInvoices", ReplyAction="http://tempuri.org/IBabyHavenService/GetAllInvoicesResponse")]
         Frontend.BackendReference.Order_Table[] GetAllInvoices(int userId);
         
@@ -1600,6 +1606,14 @@ namespace Frontend.BackendReference {
         
         public System.Threading.Tasks.Task<int> CheckoutAsync(int userId, decimal total, string firstname, string lastname, string email, string address, string city, string zipcode, string phoneno, string note) {
             return base.Channel.CheckoutAsync(userId, total, firstname, lastname, email, address, city, zipcode, phoneno, note);
+        }
+        
+        public int GetProductQuantityInCart(int orderId, int productId) {
+            return base.Channel.GetProductQuantityInCart(orderId, productId);
+        }
+        
+        public System.Threading.Tasks.Task<int> GetProductQuantityInCartAsync(int orderId, int productId) {
+            return base.Channel.GetProductQuantityInCartAsync(orderId, productId);
         }
         
         public Frontend.BackendReference.Order_Table[] GetAllInvoices(int userId) {
