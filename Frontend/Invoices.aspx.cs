@@ -65,6 +65,7 @@ namespace Frontend
             Session["City"] = selectedInvoice.O_City;
             Session["ZipCode"] = selectedInvoice.O_ZipCode;
             Session["PhoneNumber"] = selectedInvoice.O_Phone_Number;
+            Session["Note"] = selectedInvoice.O_Note;
 
 
             // Redirect to the InvoiceDetails.aspx page

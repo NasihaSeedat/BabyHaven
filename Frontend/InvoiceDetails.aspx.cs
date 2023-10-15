@@ -29,27 +29,44 @@ namespace Frontend
                 DateTime selectedInvoiceDate = (DateTime)Session["SelectedInvoiceDate"];
 
                 // Store other values from the selected invoice as session variables
-                String firstname = (string)Session["FirstName"];
-                String lastname = (string)Session["LastName"];
-                String email = (string)Session["Email"];
-                String address = (string)Session["Address"];
-                String city = (string)Session["City"];
-                String zipcode = (string)Session["ZipCode"];
-                String phoneno = (string)Session["PhoneNumber"];
+                string firstname = (string)Session["FirstName"];
+                string lastname = (string)Session["LastName"];
+                string email = (string)Session["Email"];
+                string address = (string)Session["Address"];
+                string city = (string)Session["City"];
+                string zipcode = (string)Session["ZipCode"];
+                string phoneno = (string)Session["PhoneNumber"];
+                string note = (string)Session["Note"];
 
                 // Populate the labels with the retrieved invoice details
-                OrderIdLabel.Text = "Order ID: " + selectedInvoiceId.ToString();
-                TotalAmountLabel.Text = "Total Amount: R " + selectedInvoiceTotalAmount.ToString("N2");
-                DateLabel.Text = "Date: " + selectedInvoiceDate.ToString("yyyy-MM-dd");
+                OrderIdLabel.Text = "<b>Order ID:</b> " + selectedInvoiceId.ToString();
+                TotalAmountLabel.Text = "<b>Total Amount:</b> R " + selectedInvoiceTotalAmount.ToString("N2");
+                DateLabel.Text = "<b>Date:</b> " + selectedInvoiceDate.ToString("yyyy-MM-dd");
 
                 // Populate other labels with additional invoice details
-                FirstNameLabel.Text = "First Name: " + firstname;
-                LastNameLabel.Text = "Last Name: " + lastname;
-                EmailLabel.Text = "Email: " + email;
-                AddressLabel.Text = "Address: " + address;
-                CityLabel.Text = "City: " + city;
-                ZipCodeLabel.Text = "Zip Code: " + zipcode;
-                PhoneNumberLabel.Text = "Phone Number: " + phoneno;
+                FirstNameLabel.Text = "<b>First Name:</b> " + firstname;
+                LastNameLabel.Text = "<b>Last Name:</b> " + lastname;
+                EmailLabel.Text = "<b>Email:</b> " + email;
+                AddressLabel.Text = "<b>Address:</b> " + address;
+                CityLabel.Text = "<b>City:</b> " + city;
+                ZipCodeLabel.Text = "<b>Zip Code:</b> " + zipcode;
+                PhoneNumberLabel.Text = "<b>Phone Number:</b> " + phoneno;
+                NoteLabel.Text = "<b>Note:</b> " + note;
+
+
+                //OrderIdValue.InnerText = selectedInvoiceId.ToString();
+                //TotalAmountValue.InnerText = "R " + selectedInvoiceTotalAmount.ToString("N2");
+                //DateValue.InnerText = selectedInvoiceDate.ToString("yyyy-MM-dd");
+
+                //// Populate other labels with additional invoice details
+                //FirstNameValue.InnerText = firstname;
+                //LastNameValue.InnerText = lastname;
+                //EmailValue.InnerText = email;
+                //AddressValue.InnerText = address;
+                //CityValue.InnerText = city;
+                //ZipCodeValue.InnerText = zipcode;
+                //PhoneNumberValue.InnerText = phoneno;
+                //NoteValue.InnerText = note;
 
                 BindOrderData();
             }

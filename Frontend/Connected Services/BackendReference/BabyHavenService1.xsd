@@ -84,6 +84,7 @@
       <xs:element minOccurs="0" name="O_Date" type="xs:dateTime" />
       <xs:element minOccurs="0" name="O_Email" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="O_Id" type="xs:int" />
+      <xs:element minOccurs="0" name="O_Note" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="O_Phone_Number" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="O_Total" type="xs:decimal" />
       <xs:element minOccurs="0" name="O_ZipCode" nillable="true" type="xs:string" />

@@ -1099,7 +1099,7 @@ namespace BabyHaven_Database
 
 
         public int Checkout(int userId, decimal total, string firstname, string lastname, string email,
-            string address, string city, string zipcode, string phoneno)
+            string address, string city, string zipcode, string phoneno, string note)
         {
             try
             {
@@ -1116,6 +1116,7 @@ namespace BabyHaven_Database
                     O_City = city,
                     O_ZipCode = zipcode,
                     O_Phone_Number = phoneno,
+                    O_Note = note,
                 };
 
                 // Insert the new order into the database

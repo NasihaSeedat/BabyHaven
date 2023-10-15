@@ -605,6 +605,9 @@ namespace Frontend.BackendReference {
         private int O_IdField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string O_NoteField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string O_Phone_NumberField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
@@ -713,6 +716,19 @@ namespace Frontend.BackendReference {
                 if ((this.O_IdField.Equals(value) != true)) {
                     this.O_IdField = value;
                     this.RaisePropertyChanged("O_Id");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string O_Note {
+            get {
+                return this.O_NoteField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.O_NoteField, value) != true)) {
+                    this.O_NoteField = value;
+                    this.RaisePropertyChanged("O_Note");
                 }
             }
         }
@@ -1123,10 +1139,10 @@ namespace Frontend.BackendReference {
         System.Threading.Tasks.Task<bool> ProcessCheckoutAsync(int userId, int[] productIds);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBabyHavenService/Checkout", ReplyAction="http://tempuri.org/IBabyHavenService/CheckoutResponse")]
-        int Checkout(int userId, decimal total, string firstname, string lastname, string email, string address, string city, string zipcode, string phoneno);
+        int Checkout(int userId, decimal total, string firstname, string lastname, string email, string address, string city, string zipcode, string phoneno, string note);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBabyHavenService/Checkout", ReplyAction="http://tempuri.org/IBabyHavenService/CheckoutResponse")]
-        System.Threading.Tasks.Task<int> CheckoutAsync(int userId, decimal total, string firstname, string lastname, string email, string address, string city, string zipcode, string phoneno);
+        System.Threading.Tasks.Task<int> CheckoutAsync(int userId, decimal total, string firstname, string lastname, string email, string address, string city, string zipcode, string phoneno, string note);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBabyHavenService/GetAllInvoices", ReplyAction="http://tempuri.org/IBabyHavenService/GetAllInvoicesResponse")]
         Frontend.BackendReference.Order_Table[] GetAllInvoices(int userId);
@@ -1552,12 +1568,12 @@ namespace Frontend.BackendReference {
             return base.Channel.ProcessCheckoutAsync(userId, productIds);
         }
         
-        public int Checkout(int userId, decimal total, string firstname, string lastname, string email, string address, string city, string zipcode, string phoneno) {
-            return base.Channel.Checkout(userId, total, firstname, lastname, email, address, city, zipcode, phoneno);
+        public int Checkout(int userId, decimal total, string firstname, string lastname, string email, string address, string city, string zipcode, string phoneno, string note) {
+            return base.Channel.Checkout(userId, total, firstname, lastname, email, address, city, zipcode, phoneno, note);
         }
         
-        public System.Threading.Tasks.Task<int> CheckoutAsync(int userId, decimal total, string firstname, string lastname, string email, string address, string city, string zipcode, string phoneno) {
-            return base.Channel.CheckoutAsync(userId, total, firstname, lastname, email, address, city, zipcode, phoneno);
+        public System.Threading.Tasks.Task<int> CheckoutAsync(int userId, decimal total, string firstname, string lastname, string email, string address, string city, string zipcode, string phoneno, string note) {
+            return base.Channel.CheckoutAsync(userId, total, firstname, lastname, email, address, city, zipcode, phoneno, note);
         }
         
         public Frontend.BackendReference.Order_Table[] GetAllInvoices(int userId) {
