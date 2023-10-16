@@ -42,6 +42,9 @@
         }
 
     </style>
+    <script
+        src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js">
+    </script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
@@ -92,6 +95,16 @@
                     </div>
                 </div>
             </form>
+            <br />
+             <div class="row">
+                <div class="col-md-12">
+                    <h2>Top 5 performing products Pie Chart</h2>
+                    <br />
+                </div>
+            </div>
+            <div id="ChartDiv" runat="server">
+                <canvas id="myPieChart" width="400" height="200"></canvas>
+            </div>
         </div>
     </div>
 </asp:Content>

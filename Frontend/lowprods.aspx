@@ -41,6 +41,9 @@
             transition: background-color 0.3s, color 0.3s; /* Add smooth transition */
         }
     </style>
+    <script
+        src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js">
+    </script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div class="breadcrumb-option">
@@ -90,6 +93,15 @@
                     </div>
                 </div>
             </form>
+             <div class="row">
+                <div class="col-md-12">
+                    <h2>Least 5 performing products Pie Chart</h2>
+                    <br />
+                </div>
+            </div>
+            <div id="ChartDiv" runat="server">
+                <canvas id="myPieChart" width="400" height="200"></canvas>
+            </div>
         </div>
     </div>
 </asp:Content>
