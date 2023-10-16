@@ -246,12 +246,20 @@ namespace Frontend
         }
         private void SendEmail(string oID,string tot,string date,string recemail,string fname,string lname,string address,string city,string zip,string phoneno, string note,string subb, List<int> productIds)
         {
+            if (productIds.Contains(60))
+            {
 
+            }
+            else
+            {
+
+           
             // Construct the email body with order summary and product details
-            string mailbody = "<p><b>Order ID:</b> " + oID + "<br><b>Total Amount:</b> R " + tot + "<br><b>Date:</b> " + date +
+            string mailbody = "<p><h2><b>Order Details</b></h2><br>" +
+                "<b>Order ID:</b> " + oID + "<br><b>Total Amount:</b> R " + tot + "<br><b>Date:</b> " + date +
                 "<br><b>First Name:</b> " + fname + "<br><b>Last Name:</b> " + lname + "<br><b>Email:</b> " + recemail +
                 "<br><b>Address:</b> " + address + "<br><b>City:</b> " + city + "<br><b>Zip Code:</b> " + zip +
-                "<br><b>Phone Number:</b> " + phoneno + "<br><b>Note:</b> " + note + "</p><hr />";
+                "<br><b>Phone Number:</b> " + phoneno + "<br><b>Note:</b> " + note + "</p><hr /><br><h2><b>Order Summary</b></h2></b>";
 
             if (productIds.Count > 0)
             {
@@ -300,6 +308,7 @@ namespace Frontend
             {
 
                 throw ex;
+            }
             }
         }
 
