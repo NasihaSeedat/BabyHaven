@@ -39,7 +39,23 @@
 
 
 </style>
+    <script type="text/javascript">
+        function checkAndHideTab() {
+            var taskCount = <%= getTaskCounts() %>; // Get the task count from the server
+            if (taskCount === 0) {
+                // Hide the "Tasks" tab
+                document.getElementById('tas').style.display = 'none';
+            }
+        }
 
+        // Check and hide the tab initially when the page loads
+        window.onload = function () {
+            checkAndHideTab();
+        }
+
+        // Periodically check and hide the tab
+        setInterval(checkAndHideTab, 5000); // Check every 5 seconds (adjust the interval as needed)
+    </script>
 
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
